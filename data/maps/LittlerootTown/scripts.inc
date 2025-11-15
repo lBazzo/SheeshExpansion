@@ -4,13 +4,13 @@ LittlerootTown_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
 	.byte 0
 
-	@ State descriptions for VAR_LITTLEROOT_TOWN_STATE
+	@ State descriptions for VAR_GARBAGEVAR
 	@ 1: Met Rival
 	@ 2: Saving Birch
 	@ 3: Received Pokedex
 	@ 4: Received Running Shoes
 
-	@ State descriptions for VAR_LITTLEROOT_INTRO_STATE
+	@ State descriptions for VAR_GARBAGEVAR
 	@ 1: In truck male
 	@ 2: In truck female
 	@ 3: Entered house
@@ -19,15 +19,15 @@ LittlerootTown_MapScripts::
 	@ 6: Set clock
 	@ 7: Told to go meet rival
 
-	@ State descriptions for VAR_LITTLEROOT_HOUSES_STATE_MAY
-	@                    and VAR_LITTLEROOT_HOUSES_STATE_BRENDAN
+	@ State descriptions for VAR_GARBAGEVAR
+	@                    and VAR_GARBAGEVAR
 	@ 1: On Truck (and is corresponding gender)
 	@ 2: Met Rival's Mom (and is corresponding gender)
 	@ 3: Entered Hall of Fame
 	@ 4: Completed Lati TV / SS Ticket event
 	@ 5: Exited house after above event
 
-	@ State descriptions for VAR_LITTLEROOT_RIVAL_STATE
+	@ State descriptions for VAR_GARBAGEVAR
 	@ 1: Never occurs
 	@ 2: Entered Rival's bedroom
 	@ 3: Met Rival
@@ -35,18 +35,26 @@ LittlerootTown_MapScripts::
 
 
 LittlerootTown_OnTransition:
-	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	call_if_unset FLAG_MINTS_ENABLED, LittlerootTown_Disable_Pokeball_Mints
+	setflag FLAG_VISITED_NEWBARK_TOWN
 	call Common_EventScript_SetupRivalGfxId
-	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
+	call_if_eq VAR_GARBAGEVAR, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
 	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
-	call_if_eq VAR_LITTLEROOT_TOWN_STATE, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
-	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
-	call_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
+	call_if_eq VAR_GARBAGEVAR, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
+	call_if_eq VAR_GARBAGEVAR, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
+	call_if_eq VAR_GARBAGEVAR, 4, LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent
 	call_if_eq VAR_OLDALE_RIVAL_STATE, 1, LittlerootTown_EventScript_MoveRivalFromOldale
-	call_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
+	call_if_eq VAR_GARBAGEVAR, 3, LittlerootTown_EventScript_SetRivalLeftForRoute103
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_HideMapNamePopup
 	call_if_eq VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_EventScript_LeftLabAfterDexUpgrade
 	end
+
+LittlerootTown_Disable_Pokeball_Mints::
+	setflag FLAG_MODEST_MINT_LILYCOVE
+	setflag FLAG_TIMID_MINT_MAUVILLE
+	setflag FLAG_CALM_MINT_SANDTOWER
+	setflag FLAG_RASH_MINT_METEOR_FALLS
+	return
 
 LittlerootTown_EventScript_LeftLabAfterDexUpgrade::
 	setvar VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 3
@@ -62,12 +70,12 @@ LittlerootTown_EventScript_SetRivalLeftForRoute103::
 
 LittlerootTown_EventScript_MoveRivalFromOldale::
 	setvar VAR_OLDALE_RIVAL_STATE, 2
-	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
+	setflag FLAG_GARBAGEFLAG
 	return
 
 LittlerootTown_EventScript_SetExitedHouseAfterLatiSSTicketEvent::
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 5
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 5
+	setvar VAR_GARBAGEVAR, 5
+	setvar VAR_GARBAGEVAR, 5
 	return
 
 LittlerootTown_EventScript_MoveMomToMaysDoor::
@@ -75,7 +83,7 @@ LittlerootTown_EventScript_MoveMomToMaysDoor::
 	return
 
 LittlerootTown_EventScript_SetTwinPos::
-	goto_if_eq VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
+	goto_if_eq VAR_GARBAGEVAR, 0, LittlerootTown_EventScript_SetTwinGuardingRoutePos
 	setobjectxyperm LOCALID_LITTLEROOT_TWIN, 10, 1
 	setobjectmovementtype LOCALID_LITTLEROOT_TWIN, MOVEMENT_TYPE_FACE_UP
 	return
@@ -86,7 +94,7 @@ LittlerootTown_EventScript_SetTwinGuardingRoutePos::
 	return
 
 LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos::
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
+	clearflag FLAG_GARBAGEFLAG
 	setobjectmovementtype LOCALID_LITTLEROOT_MOM, MOVEMENT_TYPE_FACE_DOWN
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, LittlerootTown_EventScript_SetMomInFrontOfDoorMale
@@ -102,8 +110,8 @@ LittlerootTown_EventScript_SetMomInFrontOfDoorFemale::
 	return
 
 LittlerootTown_OnFrame:
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 1, LittlerootTown_EventScript_StepOffTruckMale
-	map_script_2 VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_StepOffTruckFemale
+	map_script_2 VAR_GARBAGEVAR, 1, LittlerootTown_EventScript_StepOffTruckMale
+	map_script_2 VAR_GARBAGEVAR, 2, LittlerootTown_EventScript_StepOffTruckFemale
 	map_script_2 VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 1, LittlerootTown_EventScript_BeginDexUpgradeScene
 	.2byte 0
 
@@ -112,7 +120,7 @@ LittlerootTown_EventScript_StepOffTruckMale::
 	setvar VAR_0x8004, 5
 	setvar VAR_0x8005, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
+	setflag FLAG_GARBAGEFLAG
 	warpsilent MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F, 8, 8
 	waitstate
 	releaseall
@@ -123,7 +131,7 @@ LittlerootTown_EventScript_StepOffTruckFemale::
 	setvar VAR_0x8004, 14
 	setvar VAR_0x8005, 8
 	call LittlerootTown_EventScript_GoInsideWithMom
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
+	setflag FLAG_GARBAGEFLAG
 	warpsilent MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F, 2, 8
 	waitstate
 	releaseall
@@ -154,12 +162,12 @@ LittlerootTown_EventScript_GoInsideWithMom::
 	applymovement LOCALID_LITTLEROOT_MOM, LittlerootTown_Movement_MomEnterHouse
 	applymovement LOCALID_PLAYER, LittlerootTown_Movement_PlayerEnterHouse
 	waitmovement 0
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE
-	setvar VAR_LITTLEROOT_INTRO_STATE, 3
+	setflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 3
 	hideobjectat LOCALID_PLAYER, 0
 	closedoor VAR_0x8004, VAR_0x8005
 	waitdooranim
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN
+	clearflag FLAG_HIDE_MOMS_FRIEND
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
@@ -208,10 +216,23 @@ LittlerootTown_EventScript_BeginDexUpgradeScene::
 	applymovement LOCALID_LITTLEROOT_BIRCH, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 80
+	goto_if_ge VAR_TIME_BASED_ENCOUNTER, 3, LittlerootTown_EventScript_BeginDexUpgradeSceneSkip
 	msgbox LittlerootTown_Text_BirchSomethingToShowYouAtLab, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_RIVAL
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	delay 20
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
+	waitstate
+	releaseall
+	end
+
+LittlerootTown_EventScript_BeginDexUpgradeSceneSkip::
+	msgbox LittlerootTown_Text_BirchSomethingToShowYouAtLab2, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
 	delay 20
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 6, 5
@@ -254,7 +275,7 @@ LittlerootTown_EventScript_Twin::
 	faceplayer
 	goto_if_set FLAG_ADVENTURE_STARTED, LittlerootTown_EventScript_GoodLuck
 	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_YouSavedBirch
-	goto_if_ne VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_GoSaveBirch
+	goto_if_ne VAR_GARBAGEVAR, 0, LittlerootTown_EventScript_GoSaveBirch
 	msgbox LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut, MSGBOX_DEFAULT
 	release
 	end
@@ -265,7 +286,7 @@ LittlerootTown_EventScript_GoSaveBirch::
 	closemessage
 	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	release
 	end
 
@@ -383,7 +404,7 @@ LittlerootTown_EventScript_GoSaveBirchTrigger::
 	closemessage
 	applymovement LOCALID_LITTLEROOT_TWIN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	setvar VAR_LITTLEROOT_TOWN_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	releaseall
 	end
 
@@ -888,7 +909,7 @@ LittlerootTown_EventScript_Mom::
 LittlerootTown_EventScript_SetReceivedRunningShoes::
 	removeobject LOCALID_LITTLEROOT_MOM
 	setflag FLAG_SYS_B_DASH
-	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	setvar VAR_GARBAGEVAR, 4
 	release
 	end
 
@@ -955,7 +976,27 @@ LittlerootTown_Text_ComeHomeIfAnythingHappens:
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "If you use a PC, you can store items\n"
 	.string "and POKéMON.\p"
-	.string "The power of science is staggering!$"
+	.string "The power of science is staggering!\p"
+	.string "In fact, do you know you can change\n"
+	.string "the order of your PARTY by\p"
+	.string "pressing the SELECT Button?\p"
+	.string "Or the fact that you can press\n"
+	.string "the L or R Button at the STAT\p"
+	.string "SCREEN of a POKéMON to see EV\n"
+	.string "and IV values?\p"
+	.string "And . . . \p"
+	.string "Did you know that the BLUE and\n"
+	.string "RED color of a STAT comes from\p"
+	.string "the NATURE of your POKéMON?\n"
+	.string "RED is a boosted stat, and BLUE\p"
+	.string "is the opposite.\p"
+	.string "AND I HAVEN'T FINISHED YET!\p"
+	.string "If you hold the L and R Button…\p"
+	.string "While encountering a wild POKéMON…\p"
+	.string "You will instantly run away!\p"
+	.string "I'm… I'm out of breath…\p"
+	.string ". . . . . . \p"
+	.string "You don't know what EV or IV are??$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH spends days in his LAB\n"
@@ -1014,3 +1055,10 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+LittlerootTown_Text_BirchSomethingToShowYouAtLab2:
+	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "That was good work out there!\p"
+	.string "I knew there was something special\n"
+	.string "about you when I first saw you,\l"
+	.string "but I never expected this.\p"
+	.string "Let's go to my LAB.$"

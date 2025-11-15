@@ -75,8 +75,8 @@ Route114_EventScript_FossilManiacsHouseSign::
 	msgbox Route114_Text_FossilManiacsHouseSign, MSGBOX_SIGN
 	end
 
-Route114_EventScript_LanettesHouseSign::
-	msgbox Route114_Text_LanettesHouse, MSGBOX_SIGN
+Route114_EventScript_BillsHouseSign::
+	msgbox Route114_Text_BillsHouse, MSGBOX_SIGN
 	end
 
 Route114_EventScript_Lenny::
@@ -121,7 +121,7 @@ Route114_EventScript_RematchSteve::
 	end
 
 Route114_EventScript_Bernie::
-	trainerbattle_single TRAINER_BERNIE_1, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
+	trainerbattle_single TRAINER_DARYL, Route114_Text_BernieIntro, Route114_Text_BernieDefeat, Route114_EventScript_RegisterBernie
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route114_EventScript_RematchBernie
 	msgbox Route114_Text_BerniePostBattle, MSGBOX_DEFAULT
@@ -132,12 +132,12 @@ Route114_EventScript_RegisterBernie::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route114_Text_BernieRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_BERNIE_1
+	register_matchcall TRAINER_DARYL
 	release
 	end
 
 Route114_EventScript_RematchBernie::
-	trainerbattle_rematch TRAINER_BERNIE_1, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
+	trainerbattle_rematch TRAINER_DARYL, Route114_Text_BernieRematchIntro, Route114_Text_BernieRematchDefeat
 	msgbox Route114_Text_BerniePostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -162,12 +162,12 @@ Route114_EventScript_Ivy::
 	end
 
 Route114_EventScript_Angelina::
-	trainerbattle_single TRAINER_ANGELINA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
+	trainerbattle_single TRAINER_CARA, Route114_Text_AngelinaIntro, Route114_Text_AngelinaDefeat
 	msgbox Route114_Text_AngelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route114_EventScript_Charlotte::
-	trainerbattle_single TRAINER_CHARLOTTE, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
+	trainerbattle_single TRAINER_GRUNT_13, Route114_Text_CharlotteIntro, Route114_Text_CharlotteDefeat
 	msgbox Route114_Text_CharlottePostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -197,6 +197,6 @@ Route114_Text_FossilManiacsHouseSign:
 	.string "FOSSIL MANIAC'S HOUSE\n"
 	.string "“Fossils gratefully accepted!”$"
 
-Route114_Text_LanettesHouse:
-	.string "LANETTE'S HOUSE$"
+Route114_Text_BillsHouse:
+	.string "BILL'S HOUSE$"
 

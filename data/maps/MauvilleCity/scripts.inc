@@ -1,22 +1,40 @@
+.set LOCALID_MAUVILLE_WALLY, 6
+.set LOCALID_MAUVILLE_WALLYS_UNCLE, 7
+.set LOCALID_MAUVILLE_SCOTT, 11
+
 MauvilleCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MauvilleCity_OnTransition
 	.byte 0
 
 MauvilleCity_OnTransition:
-	setflag FLAG_VISITED_MAUVILLE_CITY
+	setflag FLAG_VISITED_BLACKTHORN_CITY
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
-	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
+	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_SYS_TV_START
 	clearflag FLAG_MAUVILLE_GYM_BARRIERS_STATE
-	setvar VAR_MAUVILLE_GYM_STATE, 0
+	setvar VAR_GARBAGEVAR, 0
 	call_if_set FLAG_GOT_TM_THUNDERBOLT_FROM_WATTSON, MauvilleCity_EventScript_MoveWattsonBackToGym
 	end
 
 MauvilleCity_EventScript_MoveWattsonBackToGym::
-	clearflag FLAG_HIDE_MAUVILLE_GYM_WATTSON
-	setflag FLAG_HIDE_MAUVILLE_CITY_WATTSON
+	clearflag FLAG_GARBAGEFLAG
+	setflag FLAG_GARBAGEFLAG
 	setflag FLAG_WATTSON_REMATCH_AVAILABLE
 	return
+
+MauvilleCity_EventScript_MagnezoneEvo::
+	msgbox MauvilleCity_EventScript_MagnezoneEvo_Text, MSGBOX_NPC
+	end
+
+MauvilleCity_EventScript_MagnezoneEvo_Text:
+	.string "Did you know that MAGNETON can evolve?\n"
+	.string "Do you know how?\p"
+	.string "Because… I would like to know.\p"
+	.string "I know it was something related to a\n"
+	.string "STONE. A THUNDER STONE, to be exact!\p"
+	.string "But it was not using it.\n"
+	.string "Was it battling? HOLDING IT?\l"
+	.string "I seriously don't know…$"
 
 MauvilleCity_EventScript_Boy::
 	msgbox MauvilleCity_Text_NurseHurtMonBackToHealth, MSGBOX_NPC
@@ -154,7 +172,7 @@ MauvilleCity_EventScript_DefeatedWally::
 	removeobject LOCALID_MAUVILLE_WALLY
 	removeobject LOCALID_MAUVILLE_WALLYS_UNCLE
 	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLY
-	clearflag FLAG_HIDE_VERDANTURF_TOWN_WANDAS_HOUSE_WALLYS_UNCLE
+	clearflag FLAG_GARBAGEFLAG
 	setflag FLAG_DEFEATED_WALLY_MAUVILLE
 	setvar VAR_WALLY_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL
@@ -198,7 +216,7 @@ MauvilleCity_EventScript_ScottExitEast::
 
 MauvilleCity_EventScript_BattleWally::
 	msgbox MauvilleCity_Text_WallyHereICome, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, MauvilleCity_Text_WallyDefeat
+	trainerbattle_no_intro TRAINER_NONE, MauvilleCity_Text_WallyDefeat
 	applymovement LOCALID_MAUVILLE_WALLY, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
 	msgbox MauvilleCity_Text_WallyIllGoBackToVerdanturf, MSGBOX_DEFAULT

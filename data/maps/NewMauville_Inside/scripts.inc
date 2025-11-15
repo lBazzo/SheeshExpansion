@@ -17,6 +17,7 @@ NewMauville_Inside_EventScript_TryRemoveVoltorb::
 	return
 
 NewMauville_Inside_OnTransition:
+	goto_if_set FLAG_UNLOCK_DOGS, NewMauville_Inside_SwitchToModern
 	setvar VAR_TEMP_1, 0
 	setvar VAR_TEMP_2, 0
 	call_if_unset FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb1
@@ -24,16 +25,23 @@ NewMauville_Inside_OnTransition:
 	call_if_unset FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE, NewMauville_Inside_EventScript_ShowVoltorb3
 	end
 
+NewMauville_Inside_SwitchToModern::
+	setmaplayoutindex LAYOUT_NEW_MAUVILLE_INSIDE_MODERN
+	goto_if_set FLAG_DEFEATED_RAIKOU, MagmaHideout_End
+	playmoncry SPECIES_RAIKOU, CRY_MODE_FAINT
+	release
+	end
+
 NewMauville_Inside_EventScript_ShowVoltorb1::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb2::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_EventScript_ShowVoltorb3::
-	clearflag FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 NewMauville_Inside_OnLoad:

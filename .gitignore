@@ -29,7 +29,7 @@ build/
 .DS_Store
 *.ddump
 .idea/
-porymap.*.cfg
+porymap.user.cfg
 prefabs.json
 .vscode/
 *.a
@@ -39,6 +39,7 @@ prefabs.json
 *.sym
 *.js
 /pokeemerald-*.png
+/pokeemerald_modern-*.png
 src/data/map_group_count.h
 tools/trainerproc/trainerproc
 tools/compresSmol/compresSmol

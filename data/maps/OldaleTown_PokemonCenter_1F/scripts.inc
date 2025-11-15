@@ -9,6 +9,7 @@ OldaleTown_PokemonCenter_1F_OnTransition:
 	end
 
 OldaleTown_PokemonCenter_1F_EventScript_Nurse::
+	applymovement OBJ_EVENT_ID_FOLLOWER, Common_Movement_Enter_Pokeball
 	setvar VAR_0x800B, LOCALID_OLDALE_NURSE
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage

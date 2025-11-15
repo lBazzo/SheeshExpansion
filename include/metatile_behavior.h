@@ -31,6 +31,7 @@ bool8 MetatileBehavior_IsEastArrowWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsWestArrowWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsNorthArrowWarp(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSouthArrowWarp(u8 metatileBehavior);
+bool8 MetatileBehavior_IsArrowWarp(u8); // HnS
 bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior);
 bool8 MetatileBehavior_IsIce_2(u8 metatileBehavior);
 bool8 MetatileBehavior_IsTrickHouseSlipperyFloor(u8 metatileBehavior);
@@ -49,6 +50,7 @@ bool8 MetatileBehavior_IsSlideEast(u8 metatileBehavior);
 bool8 MetatileBehavior_IsCounter(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPlayerFacingTVScreen(u8 metatileBehavior, u8 playerDir);
 bool8 MetatileBehavior_IsPC(u8 metatileBehavior);
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior); // HnS
 bool8 MetatileBehavior_IsCableBoxResults1(u8 metatileBehavior);
 bool8 MetatileBehavior_IsOpenSecretBaseDoor(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSecretBaseCave(u8 metatileBehavior);
@@ -99,7 +101,7 @@ bool8 MetatileBehavior_IsNorthBlocked(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSouthBlocked(u8 metatileBehavior);
 bool8 MetatileBehavior_IsShortGrass(u8 metatileBehavior);
 bool8 MetatileBehavior_IsHotSprings(u8 metatileBehavior);
-bool8 MetatileBehavior_IsWaterfall(u8 metatileBehavior);
+bool8 MetatileBehavior_IsWaterfall(u8 metatileBehavior); // TODO USEFUL
 bool8 MetatileBehavior_IsFortreeBridge(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPacifidlogVerticalLogTop(u8 metatileBehavior);
 bool8 MetatileBehavior_IsPacifidlogVerticalLogBottom(u8 metatileBehavior);
@@ -156,6 +158,9 @@ bool8 MetatileBehavior_IsSignpost(u32);
 bool8 MetatileBehavior_IsPokemonCenterSign(u32);
 bool8 MetatileBehavior_IsPokeMartSign(u32);
 bool8 MetatileBehavior_IsRockStairs(u8);
+bool32 MetatileBehavior_IsCyclingRoadPullDownTile(u8 metatileBehavior);
+bool8 MetatileBehavior_IsCyclingRoadPullDownTileGrass(u8 metatileBehavior);
+//sideways stairs
 bool8 MetatileBehavior_IsSidewaysStairsRightSide(u8);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSide(u8);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideTop(u8 metatileBehavior);

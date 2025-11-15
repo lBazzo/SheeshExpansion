@@ -1,6 +1,11 @@
 	.set ALLOCATE_SCRIPT_CMD_TABLE, 0
 	.include "data/script_cmd_table.inc"
 
+	@ HnS PORT - where did these come from?
+	@ HnS PORT - are these defined elsewhere now?
+	NULL = 0
+	OBJ_ID_NONE = 0
+
 	@ Does nothing.
 	.macro nop
 	.byte SCR_OP_NOP
@@ -144,6 +149,7 @@
 	.4byte \source
 	.endm
 
+	@ HnS NOTE - Expansion added a safety check, otherwise identical
 	@ Changes the value of destination to value.
 	.macro setvar destination:req, value:req, warn=TRUE
 	.if \warn && ((\value >= VARS_START && \value <= VARS_END) || (\value >= SPECIAL_VARS_START && \value <= SPECIAL_VARS_END))
@@ -256,6 +262,7 @@
 		.endif
 	.endm
 
+	@ HnS NOTE - Expansion added "request effects" flag for additional functionality
 	@ Calls the native C function stored at func.
 	@ 'callnative's should set 'requests_effects=1' if the native
 	@ contains a call to 'Script_RequestEffects', which allows them
@@ -341,6 +348,7 @@
 	.byte SCR_OP_GETTIME
 	.endm
 
+	@ HnS USEFUL - easy way to identify time of day
 	@ Sets the values of variable VAR_0x8000 to the time of day according to those found in rtc.h.
 	@ 0 = MORNING, 1 = DAY, 2 = EVENING, 3 = NIGHT
 	.macro gettimeofday
@@ -703,11 +711,11 @@
 	.byte \direction
 	.endm
 
-	NULL = 0
-	OBJ_ID_NONE = 0
 
+	@ HnS PORT - Major Rework of trainerbattle. Should be more usable across the board.
+	@ HnS USEFUL - Can be called by any of the trainerbattle_XXX macros below.
 	@ Configures the arguments for a trainer battle, then jumps to the appropriate script in scripts/trainer_battle.inc
-	.macro trainerbattle type:req localIdA:req, trainer_a:req, intro_text_a:req, lose_text_a:req, event_script_a:req, localIdB:req, trainer_b:req, intro_text_b:req, lose_text_b:req, event_script_b:req, victory_text:req, cannot_battle:req, isDouble:req, playMusicA:req, playMusicB:req, isRematch:req
+	.macro trainerbattle type:req, localIdA:req, trainer_a:req, intro_text_a:req, lose_text_a:req, event_script_a:req, localIdB:req, trainer_b:req, intro_text_b:req, lose_text_b:req, event_script_b:req, victory_text:req, cannot_battle:req, isDouble:req, playMusicA:req, playMusicB:req, isRematch:req
 	.byte SCR_OP_TRAINERBATTLE
 	.set trainerbattle_flags, 0
 	.ifgt \isDouble; .set trainerbattle_flags, trainerbattle_flags | (1 << 0); .endif
@@ -774,11 +782,12 @@
 	@ Starts a double battle with the player against two trainers
 	@ Takes two trainers and defeat text for each
 	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
-	trainerbattle TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO, OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
+	trainerbattle TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO, LOCALID_NONE, \trainer_a, NULL, \lose_text_a, NULL, LOCALID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE
 	.endm
 
-	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
-	@ are run by trainerbattle), and blocks script execution until the battle finishes.
+	@ Starts a trainer battle using the battle information stored in RAM
+	@ (usually by the scripts in trainer_battle.inc, which are run by trainerbattle),
+	@ and blocks script execution until the battle finishes.
 	.macro dotrainerbattle
 	.byte SCR_OP_DOTRAINERBATTLE
 	.endm
@@ -984,6 +993,8 @@
 	.byte \textTop
 	.endm
 
+	@ HnS PORT - Major Rework. Allows a far simpler one-stop-shop for generating a far more customized pokemon.
+	@ HnS TODO - can this be made to send it to box?
 	@ Gives the player a Pokémon of the specified species and level, and allows to customize extra parameters.
 	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
 	.macro givemon species:req, level:req, item, ball, nature, abilityNum, gender, hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv, hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv, move1, move2, move3, move4, isShiny, gmaxFactor, teraType, dmaxLevel
@@ -1220,6 +1231,7 @@
 	.4byte \products
 	.endm
 
+	@ HnS PORT USEFUL - Expansion added this for QOL
 	@ Used as the endpoint for a Pokemart item list
 	.macro pokemartlistend
 	.2byte ITEM_NONE
@@ -1549,11 +1561,13 @@
 	.2byte \count
 	.endm
 
+	@ HnS PORT - Notable Rework.
+	@ HnS TODO - can a isShiny flag be added?
 	@ Prepares to start a wild battle against a 'species' at 'level' holding 'item'.
 	@ If 'species2' is something other than SPECIES_NONE, then the battle is a double battle
 	@ that is also against 'species2' at 'level2' holding 'item2'.
 	@ Running this command will not affect normal wild battles. You start the prepared battle with dowildbattle.
-	@ If the player only has one Pokemon, a scripted double battle will be buggy.
+	@ If the player only has one Pokemon, the scripted double battle will be buggy.
 	.macro setwildbattle species:req, level:req, item=ITEM_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE
 	.byte SCR_OP_SETWILDBATTLE
 	.2byte \species
@@ -1562,6 +1576,16 @@
 	.2byte \species2
 	.byte \level2
 	.2byte \item2
+	.endm
+
+	@ HnS - may have an alternative in expansion, but at least used for the Red Gyarados
+	@ Prepares to start a wild battle against a 'species' at 'level' holding 'item'. Running this command will not affect
+	@ normal wild battles. You start the prepared battle with dowildbattle.
+	.macro setwildbattleshiny species:req, level:req, item=ITEM_NONE
+	.byte SCR_OP_SETWILDBATTLESHINY
+	.2byte \species
+	.byte \level
+	.2byte \item
 	.endm
 
 	@ Starts a wild battle against the Pokemon generated by setwildbattle. Blocks script execution until the battle finishes.
@@ -1799,8 +1823,8 @@
 	.4byte \text
 	.endm
 
-	@ Equivalent to fadescreen but uses a hardware fade and darken/lighten blend modes,
-	@ to avoid modifying palettes at all.
+	@ Equivalent to fadescreen but uses a hardware fade and darken/lighten blend modes to avoid modifying palettes at all.
+	@ MODERN VERSION: "but copies gPlttBufferUnfaded to gPaletteDecompressionBuffer on the fade out and the reverse on the fade in, in effect saving gPlttBufferUnfaded to restore it."
 	@ Useful for fade-out/fade-in without leaving the overworld or entering a new scene.
 	@ If nowait set, doesn't wait for the fade to complete
 	.macro fadescreenswapbuffers mode:req, nowait=0
@@ -1857,7 +1881,42 @@
 	.2byte \quantity
 	.endm
 
-	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req argv:vararg
+	@ HnS/Modern - set of scripts for various purposes
+	@ SCR_OP_CHECKPCSPACE
+	@ Checks if the player has enough space in their PC to hold quantity more of the specified item. Sets VAR_RESULT to
+	@ TRUE if there is room, or FALSE is there is no room.
+	.macro checkpcspace itemId:req, quantity=1
+	.byte SCR_OP_CHECKPCSPACE
+	.2byte \itemId
+	.2byte \quantity
+	.endm
+
+	@ HnS/Modern - set of scripts for various purposes
+	@ SCR_OP_CHECKPARTYMONLEVEL
+	@ Checks to see if the player has a Pokemon in their party. Result returns to VAR_RESULT
+    .macro checkpartymonlevel level:req
+    .byte SCR_OP_CHECKPARTYMONLEVEL
+    .2byte \level
+    .endm
+
+	@ HnS/Modern - set of scripts for various purposes
+	@ SCR_OP_CALCULATEMONSTATS
+	@ re-calculates mon party
+    .macro calculatemonstats
+    .byte SCR_OP_CALCULATEMONSTATS
+    .endm
+
+	@ HnS/Modern - set of scripts for various purposes
+	@ SCR_OP_DELETEPARTY
+	@ deletesparty
+    .macro deleteparty
+    .byte SCR_OP_DELETEPARTY
+    .endm
+	
+	@ HnS PORT - removed callfunc, all uses should be replaced with callnative or gotonative
+
+	@ HnS TODO - add explanatory comments for this
+	.macro _dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, shouldSort:req, initialSelected:req, callbacks:req, argv:vararg
 	.byte SCR_OP_DYNMULTICHOICE
 	.2byte \left
 	.2byte \top
@@ -1876,7 +1935,7 @@
 	@ Lists of options are provided in argv.
 	@ If ignoreBPress is set to a non-zero value, then the user will not be allowed to back out of the multichoice with the B button.
 	@ For a simple menu supply DYN_MULTICHOICE_CB_NONE in callbacks.
-	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req argv:vararg
+	.macro dynmultichoice left:req, top:req, ignoreBPress:req, maxBeforeScroll:req, initialSelected:req, callbacks:req, argv:vararg
 	_dynmultichoice \left, \top, \ignoreBPress, \maxBeforeScroll, FALSE, \initialSelected, \callbacks, \argv
 	.endm
 
@@ -2100,9 +2159,110 @@
 	special CreateEnemyEventMon
 	.endm
 
+	@ HnS PORT TODO - May have Expansion alternative (but a useful macro if not)
+	@ SCR_OP_CHOOSEITEM
+	@ Opens the bag in the specified pocket and lets the Player choose an item.
+	@ This item can be used for scripting purposes and it's stored in VAR_ITEM_ID.
+	.macro chooseitem pocket:req
+	setvar VAR_TEMP_1, \pocket
+	fadescreen FADE_TO_BLACK
+	special ChooseItemFromBag
+	waitstate
+	.endm
+
+	@ HnS/Modern - completely unsure what this achieves
+@	@ SCR_OP_BUFFERUNITSYSTEMTEXT
+@	@ Adds unit system string to the respective stringvar.
+@	@ texttype values:
+@	@ UNIT_TEXT_LENGTH_SMALL_SINGLE,  UNIT_TEXT_LENGTH_SMALL_PLURAL,  UNIT_TEXT_LENGTH_SMALL_SYMBOL.
+@	@ UNIT_TEXT_LENGTH_MEDIUM_SINGLE, UNIT_TEXT_LENGTH_MEDIUM_PLURAL, UNIT_TEXT_LENGTH_MEDIUM_SYMBOL.
+@	@ UNIT_TEXT_WEIGHT_SINGLE,        UNIT_TEXT_WEIGHT_PLURAL,        UNIT_TEXT_WEIGHT_SYMBOL.
+@	.macro bufferunitsystemtext texttype:req, stringvarnumber=1
+@	setvar VAR_0x8000, \texttype
+@	setvar VAR_0x8001, \stringvarnumber
+@	special BufferUnitSystemText
+@	.endm
+
 	.macro setdynamicaifunc func:req
 	callnative ScriptSetDynamicAiFunc, requests_effects=1
 	.4byte \func
+	.endm
+
+	@ HnS macros ========================================================================================================================
+
+	@ HnS PORT - seems to keep follower loaded between transitions?
+	@ HnS applymovement but doesnt remove follower.
+	.macro applymovement2 localId:req, movements:req, map
+		.ifb \map
+			.byte SCR_OP_APPLYMOVEMENT2
+			.2byte \localId
+			.4byte \movements
+		.else
+			@ Really only useful if the object has followed from one map to another (e.g. Wally during the catching event).
+			.byte SCR_OP_APPLYMOVEMENTAT
+			.2byte \localId
+			.4byte \movements
+			map \map
+		.endif
+	.endm
+
+	@ HnS - Scripts for Gen II side quests
+	
+	@ HNS NOTE - I don't understand the name/actual function of this? why 5mons?
+	@ HnS - Scripts for Gen II side quests
+	@ Removes Pokémon from player's party. 1 = KENYA, 2 = SHUCKIE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_CANT_GIVE depending on the outcome.
+	.macro remove5mons
+	.byte SCR_OP_REMOVE5MONS
+	.endm
+
+	@ Gives the player a Pokémon. 1 = KENYA, 2 = SHUCKIE, 3 = EEVEE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_GIVEN_TO_PC, or MON_CANT_GIVE depending on the outcome.
+	.macro givenamedmon number:req
+	.byte SCR_OP_GIVENAMEDMON
+	.2byte \number
+	.endm
+
+	@ HnS - Scripts for Gen II side quests
+	@ HnS TODO - maybe switch to "MON_TAKEN_FROM_PARTY" or "MON_CANT_TAKE"?
+	@ Removes Pokémon from player's party. 1 = KENYA, 2 = SHUCKIE
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, MON_CANT_GIVE depending on the outcome.
+	.macro removenamedmon number:req
+	.byte SCR_OP_REMOVENAMEDMON
+	.2byte \number
+	.endm
+
+	@ HnS - Scripts for Gen II side quests
+	@ Removes Pokémon from player's party.
+	@ If species in VAR_0x8004 matches the species passed in as number, it will remove the mon.
+	@ VAR_RESULT will be set to TRUE if it works. FALSE if it doesn't.
+	.macro removegenericmon number:req
+	.byte SCR_OP_REMOVEGENERICMON
+	.2byte \number
+	.endm
+
+	@ HnS - Scripts for Gen II side quests
+	@ New: Check Baoba target species in party slot VAR_0x8004.
+	@ Usage (script): baobacheckmon <1|2|3|4>
+	@ Result: gSpecialVar_Result = TRUE if the mon at VAR_0x8004 matches
+	@ the allowed species list for the given case; FALSE otherwise.
+	.macro baobacheckmon number:req
+	.byte SCR_OP_BAOBACHECKMON
+	.2byte \number
+	.endm
+
+	@ SCR_OP_GIVEODDEGG = 0xef
+	@ Gives the player the odd egg. If name matches, 100% shiny. If not, 14% shiny. Input parameter 1-7
+	@ VAR_RESULT will be set to MON_GIVEN_TO_PARTY, or MON_CANT_GIVE depending on the outcome.
+	.macro giveoddegg number:req
+	.byte SCR_OP_GIVEODDEGG
+	.2byte \number
+	.endm
+
+	@ Gives the player the number of BP (battle points) inputted
+	.macro givebp number:req
+	.byte SCR_OP_GIVEBP
+	.2byte \number
 	.endm
 
 	@ Set up a totem boost for the next battle.
@@ -2427,6 +2587,7 @@
 	.2byte \dest
 	.endm
 
+	@ HnS NOTE USEFUL - suite of pokedex seen/caught flag getters/setters
 	@ Returns the state of the Pokedex Seen Flag to VAR_RESULT for the Pokemon with speciesId
 	.macro getseenmon species:req
 	callnative Scrcmd_getsetpokedexflag, requests_effects=1
@@ -2455,6 +2616,7 @@
 	.2byte FLAG_SET_CAUGHT
 	.endm
 
+	@ HnS PORT USEFUL - might be the alternative to baobacheckmon or used in other HnS-added macros
 	@ Check if the Player has speciesId in their party. OPEN_PARTY_SCREEN will have the player select a mon from their party. NO_PARTY_SCREEN will automatically check every mon in the player's party.
 	.macro checkspecies speciesId:req, mode=NO_PARTY_SCREEN
 	.if \mode == OPEN_PARTY_SCREEN
@@ -2507,6 +2669,7 @@
 	waitstate
 	.endm
 
+	@ HnS NOTE USEFUL - disable trainers locking eyes
 	@ Makes the trainer unable to see the player if executed.
 	@ This is a no-op if the player interacts with the trainer.
 	.macro cant_see_if, condition:req

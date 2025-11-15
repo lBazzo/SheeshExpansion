@@ -407,7 +407,12 @@ extern const u8 EventScript_UseCut[];
 extern const u8 EventScript_UseRockSmash[];
 extern const u8 EventScript_UseDig[];
 extern const u8 EventScript_UseCutGrass[];
-extern const u8 EventScript_UseDefog[];
+extern const u8 EventScript_Defog[];
+extern const u8 EventScript_Headbutt[];
+extern const u8 EventScript_Whirlpool[];
+// extern const u8 EventScript_UseWaterfall[]; // ?
+// extern const u8 EventScript_UseDive[]; // ?
+// extern const u8 EventScript_UseDiveUnderwater[]; // ?
 
 //player pc
 extern const u8 LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC[];
@@ -546,6 +551,7 @@ extern const u8 MauvilleCity_PokemonCenter_1F_Text_HotSpringsStory[];
 extern const u8 LittlerootTown_BrendansHouse_2F_EventScript_PC[];
 extern const u8 LittlerootTown_MaysHouse_2F_EventScript_PC[];
 extern const u8 EventScript_PC[];
+extern const u8 EventScript_Headbutt[]; // HnS
 extern const u8 EventScript_AccessPokemonBoxLink[];
 extern const u8 EventScript_TestSignpostMsg[];
 extern const u8 EventScript_HiddenItemScript[];
@@ -626,7 +632,7 @@ extern const u8 EventScript_SelectWithoutRegisteredItem[];
 extern const u8 EventScript_WhiteOut[];
 extern const u8 EventScript_AfterWhiteOutMomHeal[];
 extern const u8 EventScript_AfterWhiteOutHeal[];
-extern const u8 EventScript_ResetMrBriney[];
+// extern const u8 EventScript_ResetMrBriney[];
 extern const u8 EventScript_DoLinkRoomExit[];
 extern const u8 CableClub_EventScript_TooBusyToNotice[];
 extern const u8 CableClub_EventScript_ReadTrainerCard[];

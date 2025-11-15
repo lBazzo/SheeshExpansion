@@ -5,7 +5,7 @@ RustboroCity_DevonCorp_3F_MapScripts::
 	.byte 0
 
 RustboroCity_DevonCorp_3F_OnTransition:
-	call_if_eq VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos
+	call_if_eq VAR_GARBAGEVAR, 0, RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos
 	end
 
 RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos::
@@ -14,7 +14,7 @@ RustboroCity_DevonCorp_3F_EventScript_SetEmployeePos::
 	return
 
 RustboroCity_DevonCorp_3F_OnWarp:
-	map_script_2 VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast
+	map_script_2 VAR_GARBAGEVAR, 0, RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast
 	.2byte 0
 
 RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast::
@@ -22,7 +22,7 @@ RustboroCity_DevonCorp_3F_EventScript_PlayerFaceEast::
 	end
 
 RustboroCity_DevonCorp_3F_OnFrame:
-	map_script_2 VAR_DEVON_CORP_3F_STATE, 0, RustboroCity_DevonCorp_3F_EventScript_MeetPresident
+	map_script_2 VAR_GARBAGEVAR, 0, RustboroCity_DevonCorp_3F_EventScript_MeetPresident
 	.2byte 0
 
 RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
@@ -59,15 +59,15 @@ RustboroCity_DevonCorp_3F_EventScript_MeetPresident::
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox RustboroCity_DevonCorp_3F_Text_MrStoneGoWithCautionAndCare, MSGBOX_DEFAULT
-	setflag FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND
-	clearflag FLAG_HIDE_RUSTURF_TUNNEL_WANDAS_BOYFRIEND
-	clearflag FLAG_HIDE_RUSTURF_TUNNEL_WANDA
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
-	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	setvar VAR_BRINEY_LOCATION, 1
-	clearflag FLAG_HIDE_RUSTBORO_CITY_RIVAL
-	setvar VAR_DEVON_CORP_3F_STATE, 1
-	setvar VAR_RUSTBORO_CITY_STATE, 6
+	setflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 1
+	clearflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 1
+	setvar VAR_GARBAGEVAR, 6
 	releaseall
 	end
 
@@ -249,11 +249,9 @@ RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "It should help you, a TRAINER.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
-	.string "MR. STONE: A POKéMON holding that\n"
-	.string "EXP. SHARE will be given some of the\l"
-	.string "EXP Points from battle.\p"
-	.string "It will get EXP Points even if it didn't\n"
-	.string "actually battle.\p"
+	.string "MR. STONE: If you turn EXP. SHARE on,\n"
+	.string "all POKéMON in the party will gain\l"
+	.string "half the EXP Points from battle.\p"
 	.string "I would say EXP. SHARE is quite useful\n"
 	.string "for raising weak POKéMON.$"
 

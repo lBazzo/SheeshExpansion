@@ -746,9 +746,9 @@ static void CreatePCMultichoice(void)
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, NULL);
     }
 
-    // Change PC name if player has met Lanette
-    if (FlagGet(FLAG_SYS_PC_LANETTE))
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, NULL);
+    // Change PC name if player has met Bill
+    if (FlagGet(FLAG_SYS_PC_BILL))
+        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_BillsPC, x, 1, TEXT_SKIP_DRAW, NULL);
     else
         AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, NULL);
 
@@ -842,6 +842,7 @@ static void CreateLilycoveSSTidalMultichoice(void)
         }
     }
 
+    // HnS PORT NOTE - ticket creation occurs here
     if (CheckBagHasItem(ITEM_AURORA_TICKET, 1) == TRUE && FlagGet(FLAG_ENABLE_SHIP_BIRTH_ISLAND) == TRUE)
     {
         if (gSpecialVar_0x8004 == 0)

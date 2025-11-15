@@ -19,7 +19,9 @@
 	.4byte \script
 	.endm
 
-	@ Defines an object event template for map data, to be used by a normal object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
+	@ HnS PORT - not sure why "kind" argument existed, now removed
+	@ Defines an object event template for map data, to be used by a normal object.
+	@ Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
 	.macro object_event index:req, gfx:req, x:req, y:req, elevation:req, movement_type:req, x_radius:req, y_radius:req, trainer_type:req, sight_radius_tree_etc:req, script:req, event_flag:req
 	.byte \index
 	.2byte \gfx
@@ -28,6 +30,7 @@
 	.byte \elevation
 	.byte \movement_type
 	.if \x_radius > 15
+		@ HnS NOTE
 		@ This warning is relevant for GetItemBallIdAndAmountFromTemplate
 		.error "movementRangeX has a bitfield of 4 bytes, so values over 15 will overflow. Use a custom script for item balls that should give the player more than 15 items."
 	.endif
@@ -41,7 +44,8 @@
 	inc _num_npcs
 	.endm
 
-	@ Defines an object event template for map data, to be used by a clone object. Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
+	@ Defines an object event template for map data, to be used by a clone object.
+	@ Mirrors the struct layout of ObjectEventTemplate in include/global.fieldmap.h
 	@ NOTE: The handling for this type of event does not exist in Emerald by default; it is exclusive to FRLG.
 	.macro clone_event index:req, gfx:req, x:req, y:req, target_local_id:req, target_map_id:req
 	.byte \index

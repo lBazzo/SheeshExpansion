@@ -8,7 +8,7 @@ Route128_OnTransition:
 	end
 
 Route128_OnFrame:
-	map_script_2 VAR_ROUTE128_STATE, 1, Route128_EventScript_KyogreAwakenedScene
+	map_script_2 VAR_GARBAGEVAR, 1, Route128_EventScript_KyogreAwakenedScene
 	.2byte 0
 
 Route128_EventScript_KyogreAwakenedScene::
@@ -74,7 +74,7 @@ Route128_EventScript_KyogreAwakenedScene::
 	removeobject LOCALID_ROUTE128_STEVEN
 	waitfieldeffect FLDEFF_NPCFLY_OUT
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE128_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	releaseall
 	end
 
@@ -175,7 +175,7 @@ Route128_Movement_MaxieApproachPlayer:
 	step_end
 
 Route128_EventScript_Isaiah::
-	trainerbattle_single TRAINER_ISAIAH_1, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
+	trainerbattle_single TRAINER_WILL_2, Route128_Text_IsaiahIntro, Route128_Text_IsaiahDefeat, Route128_EventScript_RegisterIsaiah
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route128_EventScript_RematchIsaiah
 	msgbox Route128_Text_IsaiahPostBattle, MSGBOX_DEFAULT
@@ -186,12 +186,12 @@ Route128_EventScript_RegisterIsaiah::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route128_Text_IsaiahRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_ISAIAH_1
+	register_matchcall TRAINER_WILL_2
 	release
 	end
 
 Route128_EventScript_RematchIsaiah::
-	trainerbattle_rematch TRAINER_ISAIAH_1, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
+	trainerbattle_rematch TRAINER_WILL_2, Route128_Text_IsaiahRematchIntro, Route128_Text_IsaiahRematchDefeat
 	msgbox Route128_Text_IsaiahPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -217,7 +217,7 @@ Route128_EventScript_RematchKatelyn::
 	end
 
 Route128_EventScript_Alexa::
-	trainerbattle_single TRAINER_ALEXA, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat
+	trainerbattle_single TRAINER_BAILEY, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat
 	msgbox Route128_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -232,12 +232,12 @@ Route128_EventScript_Wayne::
 	end
 
 Route128_EventScript_Harrison::
-	trainerbattle_single TRAINER_HARRISON, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
+	trainerbattle_single TRAINER_PRYCE_1_2, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
 	msgbox Route128_Text_HarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Carlee::
-	trainerbattle_single TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat
+	trainerbattle_single TRAINER_GRUNT, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat
 	msgbox Route128_Text_CarleePostBattle, MSGBOX_AUTOCLOSE
 	end
 

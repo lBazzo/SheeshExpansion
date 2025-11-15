@@ -3,7 +3,7 @@
   "name": "EverGrandeCity_PokemonCenter_1F",
   "layout": "LAYOUT_POKEMON_CENTER_1F",
   "music": "MUS_POKE_CENTER",
-  "region_map_section": "MAPSEC_EVER_GRANDE_CITY",
+  "region_map_section": "MAPSEC_INDIGO_PLATEAU",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -29,7 +29,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 5,
       "y": 5,
       "elevation": 3,
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 10,
       "y": 7,
       "elevation": 3,
@@ -56,7 +56,7 @@
     },
     {
       "local_id": "LOCALID_EVER_GRANDE_SCOTT",
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
       "x": 9,
       "y": 4,
       "elevation": 3,
@@ -66,7 +66,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EverGrandeCity_PokemonCenter_1F_EventScript_Scott",
-      "flag": "FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT"
+      "flag": "FLAG_GARBAGEFLAG"
     }
   ],
   "warp_events": [

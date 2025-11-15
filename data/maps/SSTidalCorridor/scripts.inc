@@ -137,7 +137,7 @@ SSTidalCorridor_EventScript_ExitSlateport::
 	end
 
 SSTidalCorridor_EventScript_HideSnatchGiver::
-	setflag FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER
+	setflag FLAG_GARBAGEFLAG
 	return
 
 SSTidalCorridor_EventScript_Porthole::
@@ -170,7 +170,7 @@ SSTidalCorridor_EventScript_EnjoyYourCruise::
 SSTidalCorridor_EventScript_CheckIfTrainersDefeated::
 	goto_if_not_defeated TRAINER_PHILLIP, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_LEONARD, SSTidalCorridor_EventScript_TrainerNotDefeated
-	goto_if_not_defeated TRAINER_COLTON, SSTidalCorridor_EventScript_TrainerNotDefeated
+	goto_if_not_defeated TRAINER_GRUNT_26, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_MICAH, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_THOMAS, SSTidalCorridor_EventScript_TrainerNotDefeated
 	goto_if_not_defeated TRAINER_LEA_AND_JED, SSTidalCorridor_EventScript_TrainerNotDefeated

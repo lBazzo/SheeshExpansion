@@ -23,14 +23,14 @@ BattleFrontier_BattleTowerMultiPartnerRoom_OnTransition:
 	end
 
 BattleFrontier_BattleTowerMultiPartnerRoom_EventScript_ChosePartner::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_BOY_1
-	setvar VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_BOY_1
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_MR_FUJI
+	setvar VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_MR_FUJI
 	setvar VAR_TEMP_1, 1
 	setvar VAR_TEMP_3, 1
 	setobjectxyperm LOCALID_TOWER_PARTNER_ROOM_ATTENDANT, 10, 2
@@ -1803,4 +1803,3 @@ BattleFrontier_BattleTowerMultiPartnerRoom_Text_SwimmerMAccept::
 BattleFrontier_BattleTowerMultiPartnerRoom_Text_SwimmerMReject::
 	.string "If we meet again, you have to team up\n"
 	.string "with me. You'll do that, right?$"
-

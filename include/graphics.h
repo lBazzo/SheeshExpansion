@@ -1,6 +1,8 @@
 #ifndef GUARD_GRAPHICS_H
 #define GUARD_GRAPHICS_H
 
+#include "constants/rtc.h"
+
 // overworld
 extern const u8 gSignpostWindow_Gfx[];
 extern const u8 gMessageBox_Gfx[];
@@ -63,6 +65,8 @@ extern const u32 gBallGfx_Beast[];
 extern const u16 gBallPal_Beast[];
 extern const u32 gBallGfx_Cherish[];
 extern const u16 gBallPal_Cherish[];
+extern const u32 gBallGfx_GS[];
+extern const u16 gBallPal_GS[];
 extern const u32 gOpenPokeballGfx[];
 
 // Pokémon gfx
@@ -219,67 +223,144 @@ extern const u32 gBattleEnvironmentTiles_TallGrass[];
 extern const u32 gBattleEnvironmentTilemap_TallGrass[];
 extern const u32 gBattleEnvironmentAnimTiles_TallGrass[];
 extern const u32 gBattleEnvironmentAnimTilemap_TallGrass[];
-extern const u16 gBattleEnvironmentPalette_TallGrass[];
+extern const u16 gBattleEnvironmentPalette_TallGrass_Morning[];
+extern const u16 gBattleEnvironmentPalette_TallGrass_Day[];
+extern const u16 gBattleEnvironmentPalette_TallGrass_Evening[];
+extern const u16 gBattleEnvironmentPalette_TallGrass_Night[];
 extern const u32 gBattleEnvironmentTiles_LongGrass[];
 extern const u32 gBattleEnvironmentTilemap_LongGrass[];
 extern const u32 gBattleEnvironmentAnimTiles_LongGrass[];
 extern const u32 gBattleEnvironmentAnimTilemap_LongGrass[];
-extern const u16 gBattleEnvironmentPalette_LongGrass[];
+extern const u16 gBattleEnvironmentPalette_LongGrass_Morning[];
+extern const u16 gBattleEnvironmentPalette_LongGrass_Day[];
+extern const u16 gBattleEnvironmentPalette_LongGrass_Evening[];
+extern const u16 gBattleEnvironmentPalette_LongGrass_Night[];
 extern const u32 gBattleEnvironmentTiles_Sand[];
 extern const u32 gBattleEnvironmentTilemap_Sand[];
 extern const u32 gBattleEnvironmentAnimTiles_Sand[];
 extern const u32 gBattleEnvironmentAnimTilemap_Sand[];
-extern const u16 gBattleEnvironmentPalette_Sand[];
+extern const u16 gBattleEnvironmentPalette_Sand_Morning[];
+extern const u16 gBattleEnvironmentPalette_Sand_Day[];
+extern const u16 gBattleEnvironmentPalette_Sand_Evening[];
+extern const u16 gBattleEnvironmentPalette_Sand_Night[];
 extern const u32 gBattleEnvironmentTiles_Underwater[];
 extern const u32 gBattleEnvironmentTilemap_Underwater[];
 extern const u32 gBattleEnvironmentAnimTiles_Underwater[];
 extern const u32 gBattleEnvironmentAnimTilemap_Underwater[];
-extern const u16 gBattleEnvironmentPalette_Underwater[];
+extern const u16 gBattleEnvironmentPalette_Underwater_Morning[];
+extern const u16 gBattleEnvironmentPalette_Underwater_Day[];
+extern const u16 gBattleEnvironmentPalette_Underwater_Evening[];
+extern const u16 gBattleEnvironmentPalette_Underwater_Night[];
 extern const u32 gBattleEnvironmentTiles_Water[];
 extern const u32 gBattleEnvironmentTilemap_Water[];
 extern const u32 gBattleEnvironmentAnimTiles_Water[];
 extern const u32 gBattleEnvironmentAnimTilemap_Water[];
-extern const u16 gBattleEnvironmentPalette_Water[];
+extern const u16 gBattleEnvironmentPalette_Water_Morning[];
+extern const u16 gBattleEnvironmentPalette_Water_Day[];
+extern const u16 gBattleEnvironmentPalette_Water_Evening[];
+extern const u16 gBattleEnvironmentPalette_Water_Night[];
 extern const u32 gBattleEnvironmentTiles_PondWater[];
 extern const u32 gBattleEnvironmentTilemap_PondWater[];
 extern const u32 gBattleEnvironmentAnimTiles_PondWater[];
 extern const u32 gBattleEnvironmentAnimTilemap_PondWater[];
-extern const u16 gBattleEnvironmentPalette_PondWater[];
+extern const u16 gBattleEnvironmentPalette_PondWater_Morning[];
+extern const u16 gBattleEnvironmentPalette_PondWater_Day[];
+extern const u16 gBattleEnvironmentPalette_PondWater_Evening[];
+extern const u16 gBattleEnvironmentPalette_PondWater_Night[];
 extern const u32 gBattleEnvironmentTiles_Rock[];
 extern const u32 gBattleEnvironmentTilemap_Rock[];
 extern const u32 gBattleEnvironmentAnimTiles_Rock[];
 extern const u32 gBattleEnvironmentAnimTilemap_Rock[];
-extern const u16 gBattleEnvironmentPalette_Rock[];
+extern const u16 gBattleEnvironmentPalette_Rock_Morning[];
+extern const u16 gBattleEnvironmentPalette_Rock_Day[];
+extern const u16 gBattleEnvironmentPalette_Rock_Evening[];
+extern const u16 gBattleEnvironmentPalette_Rock_Night[];
 extern const u32 gBattleEnvironmentTiles_Cave[];
 extern const u32 gBattleEnvironmentTilemap_Cave[];
 extern const u32 gBattleEnvironmentAnimTiles_Cave[];
 extern const u32 gBattleEnvironmentAnimTilemap_Cave[];
-extern const u16 gBattleEnvironmentPalette_Cave[];
+extern const u16 gBattleEnvironmentPalette_Cave_Morning[];
+extern const u16 gBattleEnvironmentPalette_Cave_Day[];
+extern const u16 gBattleEnvironmentPalette_Cave_Evening[];
+extern const u16 gBattleEnvironmentPalette_Cave_Night[];
 extern const u32 gBattleEnvironmentTiles_Building[];
 extern const u32 gBattleEnvironmentTilemap_Building[];
 extern const u32 gBattleEnvironmentAnimTiles_Building[];
 extern const u32 gBattleEnvironmentAnimTilemap_Building[];
-extern const u16 gBattleEnvironmentPalette_Building[];
-extern const u16 gBattleEnvironmentPalette_Plain[];
-extern const u16 gBattleEnvironmentPalette_Frontier[];
+extern const u32 gBattleEnvironmentTiles_Blue_Building[];
+extern const u16 gBattleEnvironmentPalette_Blue_Building_Morning[];
+extern const u16 gBattleEnvironmentPalette_Blue_Building_Day[];
+extern const u16 gBattleEnvironmentPalette_Blue_Building_Evening[];
+extern const u16 gBattleEnvironmentPalette_Blue_Building_Night[];
+extern const u32 gBattleEnvironmentTilemap_Blue_Building[];
+extern const u32 gBattleEnvironmentAnimTiles_Blue_Building[];
+extern const u32 gBattleEnvironmentAnimTilemap_Blue_Building[];
+extern const u16 gBattleEnvironmentPalette_Building_Morning[];
+extern const u16 gBattleEnvironmentPalette_Building_Day[];
+extern const u16 gBattleEnvironmentPalette_Building_Evening[];
+extern const u16 gBattleEnvironmentPalette_Building_Night[];
+extern const u16 gBattleEnvironmentPalette_Plain_Morning[];
+extern const u16 gBattleEnvironmentPalette_Plain_Day[];
+extern const u16 gBattleEnvironmentPalette_Plain_Evening[];
+extern const u16 gBattleEnvironmentPalette_Plain_Night[];
+extern const u16 gBattleEnvironmentPalette_Frontier_Morning[];
+extern const u16 gBattleEnvironmentPalette_Frontier_Day[];
+extern const u16 gBattleEnvironmentPalette_Frontier_Evening[];
+extern const u16 gBattleEnvironmentPalette_Frontier_Night[];
 extern const u32 gBattleEnvironmentTiles_Stadium[];
 extern const u32 gBattleEnvironmentTilemap_Stadium[];
 extern const u32 gBattleEnvironmentTiles_Rayquaza[];
 extern const u32 gBattleEnvironmentTilemap_Rayquaza[];
 extern const u32 gBattleEnvironmentAnimTiles_Rayquaza[];
 extern const u32 gBattleEnvironmentAnimTilemap_Rayquaza[];
-extern const u16 gBattleEnvironmentPalette_Rayquaza[];
-extern const u16 gBattleEnvironmentPalette_Kyogre[];
-extern const u16 gBattleEnvironmentPalette_Groudon[];
-extern const u16 gBattleEnvironmentPalette_BuildingGym[];
-extern const u16 gBattleEnvironmentPalette_BuildingLeader[];
-extern const u16 gBattleEnvironmentPalette_StadiumAqua[];
-extern const u16 gBattleEnvironmentPalette_StadiumMagma[];
-extern const u16 gBattleEnvironmentPalette_StadiumSidney[];
-extern const u16 gBattleEnvironmentPalette_StadiumPhoebe[];
-extern const u16 gBattleEnvironmentPalette_StadiumGlacia[];
-extern const u16 gBattleEnvironmentPalette_StadiumDrake[];
-extern const u16 gBattleEnvironmentPalette_StadiumWallace[];
+extern const u16 gBattleEnvironmentPalette_Rayquaza_Morning[];
+extern const u16 gBattleEnvironmentPalette_Rayquaza_Day[];
+extern const u16 gBattleEnvironmentPalette_Rayquaza_Evening[];
+extern const u16 gBattleEnvironmentPalette_Rayquaza_Night[];
+extern const u16 gBattleEnvironmentPalette_Kyogre_Morning[];
+extern const u16 gBattleEnvironmentPalette_Kyogre_Day[];
+extern const u16 gBattleEnvironmentPalette_Kyogre_Evening[];
+extern const u16 gBattleEnvironmentPalette_Kyogre_Night[];
+extern const u16 gBattleEnvironmentPalette_Groudon_Morning[];
+extern const u16 gBattleEnvironmentPalette_Groudon_Day[];
+extern const u16 gBattleEnvironmentPalette_Groudon_Evening[];
+extern const u16 gBattleEnvironmentPalette_Groudon_Night[];
+extern const u16 gBattleEnvironmentPalette_BuildingGym_Morning[];
+extern const u16 gBattleEnvironmentPalette_BuildingGym_Day[];
+extern const u16 gBattleEnvironmentPalette_BuildingGym_Evening[];
+extern const u16 gBattleEnvironmentPalette_BuildingGym_Night[];
+extern const u16 gBattleEnvironmentPalette_BuildingLeader_Morning[];
+extern const u16 gBattleEnvironmentPalette_BuildingLeader_Day[];
+extern const u16 gBattleEnvironmentPalette_BuildingLeader_Evening[];
+extern const u16 gBattleEnvironmentPalette_BuildingLeader_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumAqua_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumAqua_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumAqua_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumAqua_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumMagma_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumMagma_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumMagma_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumMagma_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumSidney_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumSidney_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumSidney_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumSidney_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumPhoebe_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumPhoebe_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumPhoebe_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumPhoebe_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumGlacia_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumGlacia_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumGlacia_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumGlacia_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumDrake_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumDrake_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumDrake_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumDrake_Night[];
+extern const u16 gBattleEnvironmentPalette_StadiumWallace_Morning[];
+extern const u16 gBattleEnvironmentPalette_StadiumWallace_Day[];
+extern const u16 gBattleEnvironmentPalette_StadiumWallace_Evening[];
+extern const u16 gBattleEnvironmentPalette_StadiumWallace_Night[];
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
@@ -416,6 +497,8 @@ extern const u32 gItemIcon_BeastBall[];
 extern const u16 gItemIconPalette_BeastBall[];
 extern const u32 gItemIcon_CherishBall[];
 extern const u16 gItemIconPalette_CherishBall[];
+extern const u32 gItemIcon_GSBall[];
+extern const u16 gItemIconPalette_GSBall[];
 // Medicine
 extern const u32 gItemIcon_Potion[];
 extern const u16 gItemIconPalette_Potion[];
@@ -2050,6 +2133,7 @@ extern const u16 gBattlePyramidFloor_Pal[][16];
 
 extern const u16 gStandardMenuPalette[];
 
+extern const u32 gTitleScreenHnSVersionGfx[];
 extern const u32 gTitleScreenEmeraldVersionGfx[];
 extern const u32 gTitleScreenPressStartGfx[];
 extern const u32 gTitleScreenPokemonLogoGfx[];
@@ -2057,6 +2141,7 @@ extern const u32 gTitleScreenPokemonLogoTilemap[];
 extern const u32 gTitleScreenCloudsTilemap[];
 extern const u16 gTitleScreenBgPalettes[];
 extern const u16 gTitleScreenPressStartPal[];
+extern const u16 gTitleScreenHnSVersionPal[];
 extern const u16 gTitleScreenEmeraldVersionPal[];
 
 // Battle Dome
@@ -3392,5 +3477,39 @@ extern const u32 gBattleIcons_Gfx1[];
 extern const u32 gBattleIcons_Gfx2[];
 extern const u16 gBattleIcons_Pal1[];
 extern const u16 gBattleIcons_Pal2[];
+
+// HnS
+// crystal johto items
+extern const u32 gItemIcon_ClearBell[];
+extern const u16 gItemIcon_Palette_ClearBell[];
+
+extern const u32 gItemIcon_LostItem[];
+extern const u16 gItemIcon_Palette_LostItem[];
+
+extern const u32 gItemIcon_MachinePart[];
+extern const u16 gItemIcon_Palette_MachinePart[];
+
+extern const u32 gItemIcon_MysteryEgg[];
+extern const u16 gItemIcon_Palette_MysteryEgg[];
+
+extern const u32 gItemIcon_Pass[];
+extern const u16 gItemIcon_Palette_Pass[];
+
+extern const u32 gItemIcon_RainbowWing[];
+extern const u16 gItemIcon_Palette_RainbowWing[];
+
+extern const u32 gItemIcon_RedScale[];
+extern const u16 gItemIcon_Palette_RedScale[];
+
+extern const u32 gItemIcon_SecretPotion[];
+extern const u16 gItemIcon_Palette_SecretPotion[];
+
+extern const u32 gItemIcon_SilverWing[];
+extern const u16 gItemIcon_Palette_SilverWing[];
+
+extern const u32 gItemIcon_TidalBell[];
+extern const u16 gItemIcon_Palette_TidalBell[];
+
+extern const u32 gItemIcon_Radio[];
 
 #endif //GUARD_GRAPHICS_H

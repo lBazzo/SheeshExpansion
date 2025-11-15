@@ -1,5 +1,20 @@
 VictoryRoad_B2F_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, VictoryRoad_B2F_OnResume
+	map_script MAP_SCRIPT_ON_TRANSITION, VictoryRoad_B2F_OnTransition
 	.byte 0
+
+VictoryRoad_B2F_OnResume:
+	callnative SetTimeBasedEncounters
+	end
+
+VictoryRoad_B2F_OnTransition:
+	callnative SetTimeBasedEncounters
+	goto_if_set FLAG_UNLOCK_BIRDS, VictoryRoad_B2F_SwitchToModern
+	end
+
+VictoryRoad_B2F_SwitchToModern::
+	setmaplayoutindex LAYOUT_VICTORY_ROAD_B2F_MODERN
+	end
 
 VictoryRoad_B2F_EventScript_Vito::
 	trainerbattle_single TRAINER_VITO, VictoryRoad_B2F_Text_VitoIntro, VictoryRoad_B2F_Text_VitoDefeat
@@ -22,12 +37,12 @@ VictoryRoad_B2F_EventScript_Julie::
 	end
 
 VictoryRoad_B2F_EventScript_Felix::
-	trainerbattle_single TRAINER_FELIX, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
+	trainerbattle_single TRAINER_NORMAN, VictoryRoad_B2F_Text_FelixIntro, VictoryRoad_B2F_Text_FelixDefeat
 	msgbox VictoryRoad_B2F_Text_FelixPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_B2F_EventScript_Dianne::
-	trainerbattle_single TRAINER_DIANNE, VictoryRoad_B2F_Text_DianneIntro, VictoryRoad_B2F_Text_DianneDefeat
+	trainerbattle_single TRAINER_KENJI, VictoryRoad_B2F_Text_DianneIntro, VictoryRoad_B2F_Text_DianneDefeat
 	msgbox VictoryRoad_B2F_Text_DiannePostBattle, MSGBOX_AUTOCLOSE
 	end
 

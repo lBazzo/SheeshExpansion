@@ -287,7 +287,6 @@ static const union AnimCmd sSpriteAnim_Icons2[] =
     ANIMCMD_END
 };
 
-
 static const union AnimCmd sSpriteAnim_Icons3[] =
 {
     ANIMCMD_FRAME(2, 60),
@@ -326,7 +325,7 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MAY,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
     .oam = &sOamData_Icons,
     .anims = sSpriteAnimTable_Icons,
     .images = sSpriteImageTable_ExclamationQuestionMark,
@@ -361,6 +360,7 @@ bool8 CheckForTrainersWantingBattle(void)
 {
     u8 i;
 
+    // HnS PORT TODO - different implementations
     if (FlagGet(OW_FLAG_NO_TRAINER_SEE))
         return FALSE;
 
@@ -950,7 +950,6 @@ u8 FldEff_HeartIcon(void)
 
     return 0;
 }
-
 
 u8 FldEff_DoubleExclMarkIcon(void)
 {

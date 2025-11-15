@@ -1331,24 +1331,31 @@ static void DebugAction_DestroyExtraWindow(u8 taskId)
 
 static const u16 sLocationFlags[] =
 {
-    FLAG_VISITED_LITTLEROOT_TOWN,
-    FLAG_VISITED_OLDALE_TOWN,
-    FLAG_VISITED_DEWFORD_TOWN,
-    FLAG_VISITED_LAVARIDGE_TOWN,
-    FLAG_VISITED_FALLARBOR_TOWN,
-    FLAG_VISITED_VERDANTURF_TOWN,
-    FLAG_VISITED_PACIFIDLOG_TOWN,
-    FLAG_VISITED_PETALBURG_CITY,
-    FLAG_VISITED_SLATEPORT_CITY,
-    FLAG_VISITED_MAUVILLE_CITY,
-    FLAG_VISITED_RUSTBORO_CITY,
-    FLAG_VISITED_FORTREE_CITY,
-    FLAG_VISITED_LILYCOVE_CITY,
-    FLAG_VISITED_MOSSDEEP_CITY,
-    FLAG_VISITED_SOOTOPOLIS_CITY,
-    FLAG_VISITED_EVER_GRANDE_CITY,
-    FLAG_LANDMARK_POKEMON_LEAGUE,
-    FLAG_LANDMARK_BATTLE_FRONTIER,
+    FLAG_VISITED_NEWBARK_TOWN,
+    FLAG_VISITED_CHERRYGROVE_CITY,
+    FLAG_VISITED_VIOLET_CITY,
+    FLAG_VISITED_AZALEA_TOWN,
+    FLAG_VISITED_GOLDENROD_CITY,
+    FLAG_VISITED_ECRUTEAK_CITY,
+    FLAG_VISITED_OLIVINE_CITY,
+    FLAG_VISITED_CIANWOOD_CITY,
+    FLAG_VISITED_SAFARI_ZONE_GATE,
+    FLAG_VISITED_MAHOGANY_TOWN,
+    FLAG_VISITED_LAKE_OF_RAGE,
+    FLAG_VISITED_BLACKTHORN_CITY,
+    FLAG_VISITED_INDIGO_PLATEAU,
+    FLAG_VISITED_PALLET_TOWN,
+    FLAG_VISITED_VIRIDIAN_CITY,
+    FLAG_VISITED_PEWTER_CITY,
+    FLAG_VISITED_CERULEAN_CITY,
+    FLAG_VISITED_VERMILION_CITY,
+    FLAG_VISITED_LAVENDER_TOWN,
+    FLAG_VISITED_CELADON_CITY,
+    FLAG_VISITED_SAFFRON_CITY,
+    FLAG_VISITED_FUCHSIA_CITY,
+    FLAG_VISITED_CINNABAR_ISLAND,
+    FLAG_VISITED_MT_SILVER,
+    FLAG_VISITED_RECEPTION_GATE,
 };
 
 static u8 Debug_CheckToggleFlags(u8 id)
@@ -4135,7 +4142,7 @@ static void DebugAction_Sound_MUS(u8 taskId)
 
     // Display initial song
     StringCopy(gStringVar2, gText_DigitIndicator[0]);
-    ConvertIntToDecimalStringN(gStringVar3, START_MUS, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
+    ConvertIntToDecimalStringN(gStringVar3, MUS_LITTLEROOT_TEST, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringCopyPadded(gStringVar1, sBGMNames[0], CHAR_SPACE, 35);
     StringExpandPlaceholders(gStringVar4, sDebugText_Sound_Music_ID);
     AddTextPrinterParameterized(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);
@@ -4144,7 +4151,7 @@ static void DebugAction_Sound_MUS(u8 taskId)
 
     gTasks[taskId].func = DebugAction_Sound_MUS_SelectId;
     gTasks[taskId].tSubWindowId = windowId;
-    gTasks[taskId].tInput = START_MUS;
+    gTasks[taskId].tInput = MUS_LITTLEROOT_TEST;
     gTasks[taskId].tDigit = 0;
     gTasks[taskId].tCurrentSong = gTasks[taskId].tInput;
 }
@@ -4153,10 +4160,10 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
 {
     if (JOY_NEW(DPAD_ANY))
     {
-        Debug_HandleInput_Numeric(taskId, START_MUS, END_MUS, DEBUG_NUMBER_DIGITS_ITEMS);
+        Debug_HandleInput_Numeric(taskId, MUS_LITTLEROOT_TEST, END_MUS, DEBUG_NUMBER_DIGITS_ITEMS);
 
         StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].tDigit]);
-        StringCopyPadded(gStringVar1, sBGMNames[gTasks[taskId].tInput - START_MUS], CHAR_SPACE, 35);
+        StringCopyPadded(gStringVar1, sBGMNames[gTasks[taskId].tInput - MUS_LITTLEROOT_TEST], CHAR_SPACE, 35);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
         StringExpandPlaceholders(gStringVar4, sDebugText_Sound_Music_ID);
         AddTextPrinterParameterized(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL);

@@ -127,6 +127,7 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
 }
+
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {
     u8 heldItem1[2];
@@ -154,6 +155,37 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
         heldItem2[0] = item2;
         heldItem2[1] = item2 >> 8;
         SetMonData(&gEnemyParty[1], MON_DATA_HELD_ITEM, heldItem2);
+    }
+}
+
+// HnS PORT NOTE - no longer used? Expansion has a way to just say "this mon is shiny"
+u32 GenerateShinyPersonalityForOtId(u32 otId)
+{
+    u32 personality;
+    do {
+        personality = Random32(); // or a deterministic value if you want
+    } while ((HIHALF(otId) ^ LOHALF(otId) ^ HIHALF(personality) ^ LOHALF(personality)) >= 8);
+    return personality;
+}
+
+void CreateShinyScriptedMon(u16 species, u8 level, u16 item)
+{
+    u8 heldItem[2];
+    ZeroEnemyPartyMons();
+
+    u32 otId = gSaveBlock2Ptr->playerTrainerId[0]
+             | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
+             | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
+             | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
+
+    u32 shinyPersonality = GenerateShinyPersonalityForOtId(otId);
+
+    CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, shinyPersonality, OT_ID_PLAYER_ID, 0);
+
+    if (item) {
+        heldItem[0] = item;
+        heldItem[1] = item >> 8;
+        SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
     }
 }
 
@@ -359,6 +391,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     else
         CreateMonWithNature(&mon, species, level, 32, nature);
 
+    // HnS PORT TODO - figure out how to use this?
     // shininess
     if (P_FLAG_FORCE_SHINY != 0 && FlagGet(P_FLAG_FORCE_SHINY))
         isShiny = TRUE;

@@ -3,7 +3,7 @@
   "name": "JaggedPass",
   "layout": "LAYOUT_JAGGED_PASS",
   "music": "MUS_PETALBURG_WOODS",
-  "region_map_section": "MAPSEC_JAGGED_PASS",
+  "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_BURN_HEAL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_JAGGED_PASS_BURN_HEAL"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -68,7 +68,7 @@
     },
     {
       "local_id": "LOCALID_MAGMA_HIDEOUT_GUARD",
-      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "graphics_id": "OBJ_EVENT_GFX_PETREL",
       "x": 16,
       "y": 19,
       "elevation": 3,
@@ -78,7 +78,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JaggedPass_EventScript_MagmaHideoutGuard",
-      "flag": "FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -94,7 +94,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
+      "graphics_id": "OBJ_EVENT_GFX_BIKER",
       "x": 18,
       "y": 25,
       "elevation": 3,

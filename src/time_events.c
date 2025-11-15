@@ -44,8 +44,11 @@ bool8 IsMirageIslandPresent(void)
     u16 rnd = GetMirageRnd() >> 16;
     int i;
 
+    // HnS NOTE - Mirage Island is guaranteed with Mew in the party
     for (i = 0; i < PARTY_SIZE; i++)
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) && (GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY) & 0xFFFF) == rnd)
+            return TRUE;
+        else if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_MEW)
             return TRUE;
 
     return FALSE;
@@ -85,9 +88,9 @@ void UpdateShoalTideFlag(void)
     {
         RtcCalcLocalTime();
         if (tide[gLocalTime.hours])
-            FlagSet(FLAG_SYS_SHOAL_TIDE);
+            FlagSet(FLAG_SYS_LAKE_OF_RAGE_TIDE);
         else
-            FlagClear(FLAG_SYS_SHOAL_TIDE);
+            FlagClear(FLAG_SYS_LAKE_OF_RAGE_TIDE);
     }
 }
 

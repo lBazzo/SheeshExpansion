@@ -10,7 +10,7 @@ EverGrandeCity_PokemonCenter_1F_OnTransition:
 
 EverGrandeCity_PokemonCenter_1F_EventScript_TryShowScott::
 	goto_if_unset FLAG_BADGE06_GET, Common_EventScript_NopReturn
-	clearflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 EverGrandeCity_PokemonCenter_1F_EventScript_Nurse::
@@ -96,4 +96,3 @@ EverGrandeCity_PokemonCenter_1F_Text_ScottHappyForYou:
 	.string "I'll get in touch with you then.\p"
 	.string "Okay, {PLAYER}{KUN}.\n"
 	.string "Go for greatness!$"
-

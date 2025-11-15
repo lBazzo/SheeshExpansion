@@ -343,6 +343,7 @@ bool8 UNUSED Unref_MetatileBehavior_IsArrowWarp(u8 metatileBehavior)
     return isArrowWarp;
 }
 
+// TODO USEFUL
 bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
 {
     if ((metatileBehavior >= MB_WALK_EAST && metatileBehavior <= MB_TRICK_HOUSE_PUZZLE_8_FLOOR)
@@ -499,6 +500,16 @@ bool8 MetatileBehavior_IsPlayerFacingTVScreen(u8 metatileBehavior, u8 playerDir)
 bool8 MetatileBehavior_IsPC(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_PC)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+// HnS
+//headbutt added
+bool8 MetatileBehavior_IsHeadbuttTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HEADBUTT_TREE)
         return TRUE;
     else
         return FALSE;
@@ -1000,6 +1011,7 @@ bool8 MetatileBehavior_IsHotSprings(u8 metatileBehavior)
         return FALSE;
 }
 
+// TODO USEFUL
 bool8 MetatileBehavior_IsWaterfall(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_WATERFALL)

@@ -157,7 +157,7 @@ const u8 *const gPokeblockWasTooXStringTable[FLAVOR_COUNT] =
 };
 
 static const u8 sText_Someones[] = _("someone's");
-static const u8 sText_Lanettes[] = _("LANETTE's"); //no decapitalize until it is everywhere
+static const u8 sText_Bills[] = _("BILL's"); //no decapitalize until it is everywhere
 static const u8 sText_EnigmaBerry[] = _("ENIGMA BERRY"); //no decapitalize until it is everywhere
 static const u8 sText_BerrySuffix[] = _(" BERRY"); //no decapitalize until it is everywhere
 const u8 gText_EmptyString3[] = _("");
@@ -539,9 +539,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_QUESTIONFORFEITMATCH]                 = COMPOUND_STRING("Would you like to forfeit the match and quit now?"),
     [STRINGID_FORFEITEDMATCH]                       = COMPOUND_STRING("The match was forfeited."),
     [STRINGID_PKMNTRANSFERREDSOMEONESPC]            = gText_PkmnTransferredSomeonesPC,
-    [STRINGID_PKMNTRANSFERREDLANETTESPC]            = gText_PkmnTransferredLanettesPC,
+    [STRINGID_PKMNTRANSFERREDBILLSPC]            = gText_PkmnTransferredBillsPC,
     [STRINGID_PKMNBOXSOMEONESPCFULL]                = gText_PkmnTransferredSomeonesPCBoxFull,
-    [STRINGID_PKMNBOXLANETTESPCFULL]                = gText_PkmnTransferredLanettesPCBoxFull,
+    [STRINGID_PKMNBOXBILLSPCFULL]                = gText_PkmnTransferredBillsPCBoxFull,
     [STRINGID_TRAINER1WINTEXT]                      = COMPOUND_STRING("{B_TRAINER1_WIN_TEXT}"),
     [STRINGID_TRAINER2WINTEXT]                      = COMPOUND_STRING("{B_TRAINER2_WIN_TEXT}"),
     [STRINGID_ENDUREDSTURDY]                        = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} endured the hit using {B_DEF_ABILITY}!"),
@@ -1363,9 +1363,9 @@ const u16 gFlashFireStringIds[] =
 const u16 gCaughtMonStringIds[] =
 {
     [B_MSG_SENT_SOMEONES_PC]   = STRINGID_PKMNTRANSFERREDSOMEONESPC,
-    [B_MSG_SENT_LANETTES_PC]   = STRINGID_PKMNTRANSFERREDLANETTESPC,
+    [B_MSG_SENT_BILLS_PC]   = STRINGID_PKMNTRANSFERREDBILLSPC,
     [B_MSG_SOMEONES_BOX_FULL]  = STRINGID_PKMNBOXSOMEONESPCFULL,
-    [B_MSG_LANETTES_BOX_FULL]  = STRINGID_PKMNBOXLANETTESPCFULL,
+    [B_MSG_BILLS_BOX_FULL]  = STRINGID_PKMNBOXBILLSPCFULL,
     [B_MSG_SWAPPED_INTO_PARTY] = STRINGID_PKMNSENTTOPCAFTERCATCH,
 };
 
@@ -2896,9 +2896,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 StringGet_Nickname(text);
                 toCpy = text;
                 break;
-            case B_TXT_PC_CREATOR_NAME: // lanette pc
-                if (FlagGet(FLAG_SYS_PC_LANETTE))
-                    toCpy = sText_Lanettes;
+            case B_TXT_PC_CREATOR_NAME: // bill pc
+                if (FlagGet(FLAG_SYS_PC_BILL))
+                    toCpy = sText_Bills;
                 else
                     toCpy = sText_Someones;
                 break;

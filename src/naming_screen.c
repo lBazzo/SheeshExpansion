@@ -190,9 +190,9 @@ static const u16 sRival_Pal[] = INCBIN_U16("graphics/naming_screen/rival.gbapal"
 static const u8 *const sTransferredToPCMessages[] =
 {
     gText_PkmnTransferredSomeonesPC,
-    gText_PkmnTransferredLanettesPC,
+    gText_PkmnTransferredBillsPC,
     gText_PkmnTransferredSomeonesPCBoxFull,
-    gText_PkmnTransferredLanettesPCBoxFull
+    gText_PkmnTransferredBillsPCBoxFull
 };
 
 static const u8 sText_AlphabetUpperLower[] = _("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!");
@@ -718,7 +718,7 @@ static UNUSED void DisplaySentToPCMessage(void)
         stringToDisplay = 2;
     }
 
-    if (FlagGet(FLAG_SYS_PC_LANETTE))
+    if (FlagGet(FLAG_SYS_PC_BILL))
         stringToDisplay++;
 
     StringExpandPlaceholders(gStringVar4, sTransferredToPCMessages[stringToDisplay]);
@@ -1422,7 +1422,7 @@ static void NamingScreen_CreateWaldaDadIcon(void)
 {
     u8 spriteId;
 
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 56, 37, 0);
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_BALDING_MAN, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }

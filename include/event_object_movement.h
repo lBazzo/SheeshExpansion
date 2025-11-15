@@ -316,6 +316,7 @@ void MovementType_RunInPlace(struct Sprite *sprite);
 void MovementType_Invisible(struct Sprite *sprite);
 void MovementType_WalkSlowlyInPlace(struct Sprite *sprite);
 void MovementType_FollowPlayer(struct Sprite *sprite);
+void MovementType_TowerBeam(struct Sprite *);
 u8 GetSlideMovementAction(u32);
 u8 GetJump2MovementAction(u32);
 u8 CopySprite(struct Sprite *sprite, s16 x, s16 y, u8 subpriority);
@@ -453,6 +454,11 @@ u8 MovementType_WalkSequenceUpRightDownLeft_Step1(struct ObjectEvent *objectEven
 u8 MovementType_WalkSequenceDownLeftUpRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_WalkSequenceLeftUpRightDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_WalkSequenceRightDownLeftUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
+u8 MovementType_TowerBeam_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step2(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step3(struct ObjectEvent *, struct Sprite *);
+u8 MovementType_TowerBeam_Step4(struct ObjectEvent *, struct Sprite *);
 u8 MovementType_CopyPlayer_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_CopyPlayer_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite);
 u8 MovementType_CopyPlayer_Step2(struct ObjectEvent *objectEvent, struct Sprite *sprite);
@@ -510,6 +516,6 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
-bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
+bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent); // TODO USEFUL
 
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

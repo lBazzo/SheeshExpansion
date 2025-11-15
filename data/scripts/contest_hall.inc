@@ -12,6 +12,7 @@ LilycoveCity_ContestLobby_EventScript_ReceptionWelcome::
 	msgbox LilycoveCity_ContestLobby_Text_ContestReception, MSGBOX_DEFAULT
 	return
 
+@ HnS PORT NOTE - added handling for if the player has no room for pokeblock case
 LilycoveCity_ContestLobby_EventScript_GivePokeblockCase::
 	msgbox LilycoveCity_ContestLobby_Text_ReceptionDontHavePokeblockCase, MSGBOX_DEFAULT
 	giveitem ITEM_POKEBLOCK_CASE
@@ -179,7 +180,7 @@ LilycoveCity_ContestLobby_EventScript_EnterMon::
 	msgbox LilycoveCity_ContestLobby_Text_YourMonIsEntryNum4, MSGBOX_DEFAULT
 	closemessage
 	releaseall
-	setvar VAR_CONTEST_HALL_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	return
 
 ContestHall_EventScript_DoContest::
@@ -202,7 +203,7 @@ ContestHall_EventScript_DoContest::
 	call ContestHall_EventScript_CongratulateWinner
 	call ContestHall_EventScript_AudienceLookAround
 	call ContestHall_EventScript_GiveWinnerPrize
-	setvar VAR_CONTEST_HALL_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	return
 
 ContestHall_EventScript_GetContestRankStringId::

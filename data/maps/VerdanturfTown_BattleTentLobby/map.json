@@ -3,7 +3,7 @@
   "name": "VerdanturfTown_BattleTentLobby",
   "layout": "LAYOUT_BATTLE_TENT_LOBBY",
   "music": "MUS_B_TOWER_RS",
-  "region_map_section": "MAPSEC_VERDANTURF_TOWN",
+  "region_map_section": "MAPSEC_OLIVINE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_VERDANTURF_TENT_ATTENDANT",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 6,
       "y": 5,
       "elevation": 3,
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
       "x": 9,
       "y": 7,
       "elevation": 3,
@@ -55,7 +55,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 1,
       "y": 8,
       "elevation": 3,
@@ -68,7 +68,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCOTT",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_OAK",
       "x": 12,
       "y": 6,
       "elevation": 3,
@@ -78,7 +78,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VerdanturfTown_BattleTentLobby_EventScript_Scott",
-      "flag": "FLAG_HIDE_VERDANTURF_TOWN_SCOTT"
+      "flag": "FLAG_GARBAGEFLAG"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",

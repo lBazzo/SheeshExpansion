@@ -4,13 +4,13 @@ LavaridgeTown_MapScripts::
 	.byte 0
 
 LavaridgeTown_OnTransition:
-	setflag FLAG_VISITED_LAVARIDGE_TOWN
+	setflag FLAG_VISITED_GOLDENROD_CITY
 	call_if_set FLAG_WHITEOUT_TO_LAVARIDGE, LavaridgeTown_EventScript_ClearLavaridgeWhiteOut
 	call_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, LavaridgeTown_EventScript_ShowMtChimneyTrainers
 	call Common_EventScript_SetupRivalGfxId
 	call Common_EventScript_SetupRivalOnBikeGfxId
-	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_CheckSetRivalPos
-	call_if_eq VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_HideMapNamePopup
+	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_CheckSetRivalPos
+	call_if_eq VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_HideMapNamePopup
 	end
 
 LavaridgeTown_EventScript_ClearLavaridgeWhiteOut::
@@ -26,11 +26,11 @@ LavaridgeTown_EventScript_SetRivalPos::
 	setobjectxyperm LOCALID_LAVARIDGE_RIVAL, 11, 9
 	setobjectxyperm LOCALID_LAVARIDGE_RIVAL_ON_BIKE, 9, 8
 	setobjectmovementtype LOCALID_LAVARIDGE_RIVAL_ON_BIKE, MOVEMENT_TYPE_FACE_UP
-	clearflag FLAG_HIDE_LAVARIDGE_TOWN_RIVAL
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 LavaridgeTown_EventScript_ShowMtChimneyTrainers::
-	clearflag FLAG_HIDE_MT_CHIMNEY_TRAINERS
+	clearflag FLAG_GARBAGEFLAG
 	return
 
 LavaridgeTown_EventScript_HideMapNamePopup::
@@ -38,7 +38,7 @@ LavaridgeTown_EventScript_HideMapNamePopup::
 	return
 
 LavaridgeTown_OnFrame:
-	map_script_2 VAR_LAVARIDGE_TOWN_STATE, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
+	map_script_2 VAR_GARBAGEVAR, 1, LavaridgeTown_EventScript_RivalGiveGoGoggles
 	.2byte 0
 
 LavaridgeTown_EventScript_RivalGiveGoGoggles::
@@ -81,7 +81,7 @@ LavaridgeTown_EventScript_RivalExit::
 	call_if_eq VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit1
 	call_if_ne VAR_0x8008, 9, LavaridgeTown_EventScript_RivalExit2
 	removeobject LOCALID_LAVARIDGE_RIVAL_ON_BIKE
-	setvar VAR_LAVARIDGE_TOWN_STATE, 2
+	setvar VAR_GARBAGEVAR, 2
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -293,6 +293,8 @@ LavaridgeTown_Text_MayExplainGoGogglesChallengeDad:
 	.string "want to lose to me, I bet!\p"
 	.string "{PLAYER}{KUN}, I think I should challenge\n"
 	.string "your dad in PETALBURG GYM.\p"
+	.string "Oh yeah, and you should check the\n"
+	.string "NATURE MINTS in the FLOWERSHOP!\p"
 	.string "See you again!$"
 
 LavaridgeTown_Text_BrendanNiceBadgesTakeThis:
@@ -315,6 +317,8 @@ LavaridgeTown_Text_BrendanExplainGoGogglesChallengeDad:
 	.string "the GYM LEADER of PETALBURG.\p"
 	.string "Unlike you, {PLAYER}, your dad looks like\n"
 	.string "he really is tough.\p"
+	.string "Oh, and go check the NATURE\n"
+	.string "MINTS in the FLOWERSHOP!\p"
 	.string "See you around!$"
 
 LavaridgeTown_Text_HaveEggWillYouTakeIt:

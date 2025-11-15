@@ -4,15 +4,15 @@ OldaleTown_MapScripts::
 
 OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
-	setflag FLAG_VISITED_OLDALE_TOWN
+	setflag FLAG_VISITED_VIOLET_CITY
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
 	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
-@ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
+@ This script seems pointless because nothing uses VAR_GARBAGEVAR
 OldaleTown_EventScript_SetOldaleState::
-	setvar VAR_OLDALE_TOWN_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	return
 
 OldaleTown_EventScript_BlockWestEntrance::
@@ -277,7 +277,7 @@ OldaleTown_EventScript_RivalFinish::
 	waitmovement 0
 	removeobject LOCALID_OLDALE_RIVAL
 	setvar VAR_OLDALE_RIVAL_STATE, 2
-	setflag FLAG_HIDE_OLDALE_TOWN_RIVAL
+	setflag FLAG_GARBAGEFLAG
 	releaseall
 	end
 

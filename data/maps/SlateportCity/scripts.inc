@@ -6,14 +6,14 @@ SlateportCity_MapScripts::
 SlateportCity_OnTransition:
 	setvar VAR_SLATEPORT_MUSEUM_1F_STATE, 0
 	call SlateportCity_EventScript_EnterSlateport
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_MovePeopleForSternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_MovePeopleForSternInterview
 	call_if_eq VAR_SLATEPORT_OUTSIDE_MUSEUM_STATE, 1, SlateportCity_EventScript_SetReadyForScottScene
 	end
 
 SlateportCity_EventScript_EnterSlateport::
-	setflag FLAG_VISITED_SLATEPORT_CITY
-	setvar VAR_CONTEST_HALL_STATE, 0
-	setflag FLAG_HIDE_SLATEPORT_CITY_CONTEST_REPORTER
+	setflag FLAG_VISITED_MAHOGANY_TOWN
+	setvar VAR_GARBAGEVAR, 0
+	setflag FLAG_GARBAGEFLAG
 	return
 
 SlateportCity_EventScript_MovePeopleForSternInterview::
@@ -164,7 +164,7 @@ SlateportCity_EventScript_MonHasEffortRibbon::
 SlateportCity_EventScript_Cook::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_CookSternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_CookSternInterview
 	msgbox SlateportCity_Text_SeaweedFullOfLife, MSGBOX_DEFAULT
 	release
 	end
@@ -177,7 +177,7 @@ SlateportCity_EventScript_CookSternInterview::
 SlateportCity_EventScript_OldWoman::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_OldWomanSternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_OldWomanSternInterview
 	msgbox SlateportCity_Text_HowTownIsBornAndGrows, MSGBOX_DEFAULT
 	release
 	end
@@ -190,7 +190,7 @@ SlateportCity_EventScript_OldWomanSternInterview::
 SlateportCity_EventScript_Girl::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_GirlSternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_GirlSternInterview
 	goto_if_set FLAG_RECEIVED_SECRET_POWER, SlateportCity_EventScript_GirlSecretBase
 	msgbox SlateportCity_Text_SlateportWonderfulPlace, MSGBOX_DEFAULT
 	release
@@ -209,7 +209,7 @@ SlateportCity_EventScript_GirlSecretBase::
 SlateportCity_EventScript_RichBoy::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_RichBoySternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_RichBoySternInterview
 	msgbox SlateportCity_Text_GoingToCompeteInBattleTent, MSGBOX_DEFAULT
 	release
 	end
@@ -220,7 +220,7 @@ SlateportCity_EventScript_RichBoySternInterview::
 	end
 
 SlateportCity_EventScript_FatMan::
-	goto_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_FatManSternInterview
+	goto_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_FatManSternInterview
 	msgbox SlateportCity_Text_BushedHikingFromMauville, MSGBOX_NPC
 	end
 
@@ -231,7 +231,7 @@ SlateportCity_EventScript_FatManSternInterview::
 SlateportCity_EventScript_Man1::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_Man1SternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_Man1SternInterview
 	msgbox SlateportCity_Text_EveryoneCallsHimCaptStern, MSGBOX_DEFAULT
 	release
 	end
@@ -311,7 +311,7 @@ SlateportCity_EventScript_NameRatersHouseSign::
 SlateportCity_EventScript_Maniac::
 	lock
 	faceplayer
-	call_if_eq VAR_SLATEPORT_CITY_STATE, 1, SlateportCity_EventScript_ManiacSternInterview
+	call_if_eq VAR_GARBAGEVAR, 1, SlateportCity_EventScript_ManiacSternInterview
 	msgbox SlateportCity_Text_GetNameRaterToHelpYou, MSGBOX_DEFAULT
 	release
 	end
@@ -537,6 +537,8 @@ SlateportCity_EventScript_PowerTMClerk::
 
 	.align 2
 SlateportCity_Pokemart_PowerTMs:
+	.2byte ITEM_SEA_INCENSE
+	.2byte ITEM_LAX_INCENSE
 	.2byte ITEM_TM_HIDDEN_POWER
 	.2byte ITEM_TM_SECRET_POWER
 	pokemartlistend
@@ -589,11 +591,11 @@ SlateportCity_EventScript_CaptStern::
 	applymovement LOCALID_PLAYER, SlateportCity_Movement_PlayerEnterHarbor
 	waitmovement 0
 	removeobject LOCALID_SLATEPORT_CAPT_STERN
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_CAPTAIN_STERN
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_SUBMARINE_SHADOW
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_AQUA_GRUNT
-	clearflag FLAG_HIDE_SLATEPORT_CITY_HARBOR_ARCHIE
-	setvar VAR_SLATEPORT_CITY_STATE, 2
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
+	setvar VAR_GARBAGEVAR, 2
 	warp MAP_SLATEPORT_CITY_HARBOR, 11, 14
 	waitstate
 	releaseall

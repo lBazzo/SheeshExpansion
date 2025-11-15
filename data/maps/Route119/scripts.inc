@@ -21,10 +21,74 @@ Route119_OnTransition:
 	end
 
 Route119_EventScript_MoveInstituteWorkersDownstairs::
-	setflag FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
-	clearflag FLAG_HIDE_WEATHER_INSTITUTE_1F_WORKERS
+	setflag FLAG_GARBAGEFLAG
+	clearflag FLAG_GARBAGEFLAG
 	setvar VAR_WEATHER_INSTITUTE_STATE, 2
 	return
+
+Route119_EventScript_SapphireKecleon::
+	lock
+	faceplayer
+	setvar VAR_0x8009, 7
+	checkitem ITEM_DEVON_SCOPE
+	goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_SapphireKecleon2
+	msgbox Kecleon_Text_SomethingUnseeable, MSGBOX_DEFAULT
+	release
+	end
+
+Route119_EventScript_SapphireKecleon2::
+	msgbox Kecleon_Text_WantToUseDevonScope, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route119_EventScript_SapphireKecleon3
+	release
+	end
+
+Route119_EventScript_SapphireKecleon3::
+	msgbox Kecleon_Text_UseDevonScopeMonAttacked, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	applymovement VAR_LAST_TALKED, Movement_KecleonAppears
+	waitmovement 0
+	waitse
+	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_KECLEON, 29
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route119_EventScript_SapphireKecleon4
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route119_EventScript_SapphireKecleon4
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route119_EventScript_SapphireKecleon5
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route119_EventScript_SapphireKecleon5
+	release
+	end
+
+Route119_EventScript_SapphireKecleon4::
+	msgbox Route119_EventScript_SapphireKecleon_Text1, MSGBOX_DEFAULT
+	closemessage
+	giveitem ITEM_SAPPHIRE
+	closemessage
+	setflag FLAG_SAPPHIRE_KECLEON
+	goto Common_EventScript_RemoveStaticPokemon
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	releaseall
+	end
+
+Route119_EventScript_SapphireKecleon5::
+	msgbox Route119_EventScript_SapphireKecleon_Text2, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+Route119_EventScript_SapphireKecleon_Text1:
+	.string "The KECLEON dropped a\n"
+	.string "SHINY object!$"
+
+Route119_EventScript_SapphireKecleon_Text2:
+	.string "The invisible KECLEON\n"
+	.string "is still here…$"
 
 Route119_EventScript_RivalTrigger1::
 	setvar VAR_TEMP_1, 1
@@ -142,7 +206,7 @@ Route119_EventScript_RivalExitScottArrive::
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_RivalExit1
 	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_RivalExit2
 	removeobject LOCALID_ROUTE119_RIVAL_ON_BIKE
-	setvar VAR_ROUTE119_STATE, 1
+	setvar VAR_GARBAGEVAR, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	delay 60
@@ -348,7 +412,7 @@ Route119_EventScript_Kent::
 	end
 
 Route119_EventScript_Jackson::
-	trainerbattle_single TRAINER_JACKSON_1, Route119_Text_JacksonIntro, Route119_Text_JacksonDefeat, Route119_EventScript_RegisterJackson
+	trainerbattle_single TRAINER_RIVAL_CHIKORITA_4, Route119_Text_JacksonIntro, Route119_Text_JacksonDefeat, Route119_EventScript_RegisterJackson
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_RematchJackson
 	msgbox Route119_Text_JacksonPostBattle, MSGBOX_DEFAULT
@@ -359,17 +423,17 @@ Route119_EventScript_RegisterJackson::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route119_Text_JacksonRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_JACKSON_1
+	register_matchcall TRAINER_RIVAL_CHIKORITA_4
 	release
 	end
 
 Route119_EventScript_RematchJackson::
-	trainerbattle_rematch TRAINER_JACKSON_1, Route119_Text_JacksonRematchIntro, Route119_Text_JacksonRematchDefeat
+	trainerbattle_rematch TRAINER_RIVAL_CHIKORITA_4, Route119_Text_JacksonRematchIntro, Route119_Text_JacksonRematchDefeat
 	msgbox Route119_Text_JacksonPostRematch, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Catherine::
-	trainerbattle_single TRAINER_CATHERINE_1, Route119_Text_CatherineIntro, Route119_Text_CatherineDefeat, Route119_EventScript_RegisterCatherine
+	trainerbattle_single TRAINER_GRUNT_3, Route119_Text_CatherineIntro, Route119_Text_CatherineDefeat, Route119_EventScript_RegisterCatherine
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, Route119_EventScript_RematchCatherine
 	msgbox Route119_Text_CatherinePostBattle, MSGBOX_DEFAULT
@@ -380,12 +444,12 @@ Route119_EventScript_RegisterCatherine::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	msgbox Route119_Text_CatherineRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_CATHERINE_1
+	register_matchcall TRAINER_GRUNT_3
 	release
 	end
 
 Route119_EventScript_RematchCatherine::
-	trainerbattle_rematch TRAINER_CATHERINE_1, Route119_Text_CatherineRematchIntro, Route119_Text_CatherineRematchDefeat
+	trainerbattle_rematch TRAINER_GRUNT_3, Route119_Text_CatherineRematchIntro, Route119_Text_CatherineRematchDefeat
 	msgbox Route119_Text_CatherinePostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -410,22 +474,22 @@ Route119_EventScript_Takashi::
 	end
 
 Route119_EventScript_Hideo::
-	trainerbattle_single TRAINER_HIDEO, Route119_Text_HideoIntro, Route119_Text_HideoDefeat
+	trainerbattle_single TRAINER_JASMINE_1_2, Route119_Text_HideoIntro, Route119_Text_HideoDefeat
 	msgbox Route119_Text_HideoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Chris::
-	trainerbattle_single TRAINER_CHRIS, Route119_Text_ChrisIntro, Route119_Text_ChrisDefeat
+	trainerbattle_single TRAINER_GRUNT_17, Route119_Text_ChrisIntro, Route119_Text_ChrisDefeat
 	msgbox Route119_Text_ChrisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Fabian::
-	trainerbattle_single TRAINER_FABIAN, Route119_Text_FabianIntro, Route119_Text_FabianDefeat
+	trainerbattle_single TRAINER_NOB, Route119_Text_FabianIntro, Route119_Text_FabianDefeat
 	msgbox Route119_Text_FabianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route119_EventScript_Dayton::
-	trainerbattle_single TRAINER_DAYTON, Route119_Text_DaytonIntro, Route119_Text_DaytonDefeat
+	trainerbattle_single TRAINER_JOHN, Route119_Text_DaytonIntro, Route119_Text_DaytonDefeat
 	msgbox Route119_Text_DaytonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
