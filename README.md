@@ -52,6 +52,7 @@ For detailed documentation, visit the [pokehns-expansion documentation page](htt
 If you are looking to [report a bug](CONTRIBUTING.md#Bug-Report), [open a pull request](CONTRIBUTING.md#Pull-Requests), or [request a feature](CONTRIBUTING.md#Feature-Request), our [`CONTRIBUTING.md`](CONTRIBUTING.md) has guides for each.
 
 # [`PULL REQUEST SCOPE`]
+All pull requests are to be made to the `development-bugfix` branch.
 At this time the **`pokehns-expansion`** will only accept pull requests for the following:
 1. Bug fixes. Current known bugs include but are not restricted to:
 - Battle music mapping correction
