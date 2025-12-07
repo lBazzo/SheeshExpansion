@@ -12,11 +12,11 @@
 	.2byte \move
 	.endm
 
-	.macro attackstring
+	.macro printattackstring
 	.byte 0x2
 	.endm
 
-	.macro ppreduce
+	.macro unused_0x3
 	.byte 0x3
 	.endm
 
@@ -48,14 +48,16 @@
 	.byte 0xa
 	.endm
 
-	.macro healthbarupdate battler:req
+	.macro healthbarupdate battler:req updateState:req
 	.byte 0xb
 	.byte \battler
+	.byte \updateState
 	.endm
 
-	.macro datahpupdate battler:req
+	.macro datahpupdate battler:req updateState:req
 	.byte 0xc
 	.byte \battler
+	.byte \updateState
 	.endm
 
 	.macro critmessage
@@ -191,8 +193,13 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro unused_0x21
+	.macro jumpifstatignorecontrary battler:req, comparison:req, stat:req, value:req, jumpInstr:req
 	.byte 0x21
+	.byte \battler
+	.byte \comparison
+	.byte \stat
+	.byte \value
+	.4byte \jumpInstr
 	.endm
 
 	.macro jumpbasedontype battler:req, type:req, jumpIfType:req, jumpInstr:req
@@ -362,9 +369,8 @@
 	.byte 0x3a
 	.endm
 
-	.macro absorbhealthbarupdate battler:req
+	.macro isdmgblockedbydisguise
 	.byte 0x3b
-	.byte \battler
 	.endm
 
 	.macro return
@@ -684,10 +690,8 @@
 	.byte 0x75
 	.endm
 
-	.macro various battler:req, id:req
+	.macro unused_0x78
 	.byte 0x76
-	.byte \battler
-	.byte \id
 	.endm
 
 	.macro setprotectlike
@@ -707,10 +711,10 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryhealhalfhealth failInstr:req, battler:req
+	.macro tryhealhalfhealth battler:req, failInstr:req
 	.byte 0x7b
-	.4byte \failInstr
 	.byte \battler
+	.4byte \failInstr
 	.endm
 
 	.macro trymirrormove
@@ -735,14 +739,12 @@
 	.byte \mode
 	.endm
 
-	.macro trysetrest failInstr:req
+	.macro trysetrest
 	.byte 0x81
-	.4byte \failInstr
 	.endm
 
-	.macro jumpifnotfirstturn jumpInstr:req
+	.macro unused_0x82
 	.byte 0x82
-	.4byte \jumpInstr
 	.endm
 
 	.macro unused_0x83
@@ -759,9 +761,8 @@
 	.byte \id
 	.endm
 
-	.macro stockpiletobasedamage failInstr:req
+	.macro stockpiletobasedamage
 	.byte 0x86
-	.4byte \failInstr
 	.endm
 
 	.macro stockpiletohpheal failInstr:req
@@ -773,7 +774,7 @@
 	callnative BS_RemoveStockpileCounters
 	.endm
 
-	.macro setdrainedhp
+	.macro unused_0x88
 	.byte 0x88
 	.endm
 
@@ -888,7 +889,7 @@
 	.4byte \failInstr
 	.endm
 
-	.macro metronome
+	.macro setcalledmove
 	.byte 0x9e
 	.endm
 
@@ -949,7 +950,7 @@
 	.4byte \failInstr
 	.endm
 
-	.macro trysetdestinybondtohappen
+	.macro unused_0xab
 	.byte 0xab
 	.endm
 
@@ -1025,8 +1026,10 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro tryrestorehpberry
+	.macro tryactivateitem battler:req, flag:req
 	.byte 0xbb
+	.byte \battler
+	.byte \flag
 	.endm
 
 	.macro halvehp failInstr:req
@@ -1056,12 +1059,11 @@
 	.byte 0xc2
 	.endm
 
-	.macro trysetfutureattack failInstr:req
+	.macro setfutureattack
 	.byte 0xc3
-	.4byte \failInstr
 	.endm
 
-	.macro trydobeatup endInstr, failInstr
+	.macro trydobeatup endInstr:req, failInstr:req
 	.byte 0xc4
 	.4byte \endInstr
 	.4byte \failInstr
@@ -1108,7 +1110,7 @@
 	.byte 0xca
 	.endm
 
-	.macro setcharge battler:req
+	.macro unused_0xcb battler:req
 	.byte 0xcb
 	.byte \battler
 	.endm
@@ -1235,10 +1237,8 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro jumpifnotcurrentmoveargtype battler:req, failInstr:req
+	.macro unused_0xE4
 	.byte 0xe4
-	.byte \battler
-	.4byte \failInstr
 	.endm
 
 	.macro pickup
@@ -1308,7 +1308,7 @@
 	.byte 0xf3
 	.endm
 
-	.macro subattackerhpbydmg
+	.macro unused_0xf4
 	.byte 0xf4
 	.endm
 
@@ -1354,7 +1354,7 @@
 	.byte \trigger
 	.endm
 
-	.macro tryworryseed failInstr:req
+	.macro tryoverwriteability failInstr:req
 	.byte 0xfe
 	.4byte \failInstr
 	.endm
@@ -1389,17 +1389,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro jumpifcantfling battler:req, jumpInstr:req
-	callnative BS_JumpIfCantFling
-	.byte \battler
-	.4byte \jumpInstr
-	.endm
-
-	.macro itemstatchangeeffects battler:req
-	callnative BS_RunStatChangeItems
-	.byte \battler
-	.endm
-
 	.macro allyswitchswapbattlers
 	callnative BS_AllySwitchSwapBattler
 	.endm
@@ -1427,9 +1416,10 @@
 	.4byte \restoreBattlerInstr
 	.endm
 
-	.macro itemcurestatus jumpInstr:req
+	.macro itemcurestatus jumpInstr:req, restoreBattlerInstr:req
 	callnative BS_ItemCureStatus
 	.4byte \jumpInstr
+	.4byte \restoreBattlerInstr
 	.endm
 
 	.macro itemincreasestat
@@ -1449,24 +1439,15 @@
 	.4byte \failInstr
 	.endm
 
-	.macro setglaiverush
-	callnative BS_SetGlaiveRush
-	.endm
-
 	.macro setpledge jumpInstr:req
 	callnative BS_SetPledge
 	.4byte \jumpInstr
 	.endm
 
-	.macro setpledgestatus battler:req sidestatus:req
+	.macro setpledgestatus battler:req, sidestatus:req
 	callnative BS_SetPledgeStatus
 	.byte \battler
 	.4byte \sidestatus
-	.endm
-
-	.macro trycopycat failInstr:req
-	callnative BS_TryCopycat
-	.4byte \failInstr
 	.endm
 
 	.macro setzeffect
@@ -1651,14 +1632,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro tryupdaterecoiltracker
-	callnative BS_TryUpdateRecoilTracker
-	.endm
-
-	.macro tryupdateleaderscresttracker
-	callnative BS_TryUpdateLeadersCrestTracker
-	.endm
-
 	.macro trytidyup clear:req, jumpInstr:req
 	callnative BS_TryTidyUp
 	.byte \clear
@@ -1771,10 +1744,6 @@
 	callnative BS_WaitFanfare
 	.endm
 
-	.macro setbeakblast
-	callnative BS_SetBeakBlast
-	.endm
-
 	.macro cantarshotwork failInstr:req
 	callnative BS_CanTarShotWork
 	.4byte \failInstr
@@ -1798,6 +1767,10 @@
 	.2byte \flags
 	.endm
 
+	.macro clearspecialstatuses
+	callnative BS_ClearSpecialStatuses
+	.endm
+
 	.macro clearmoveresultflags flags:req
 	callnative BS_ClearMoveResultFlags
 	.2byte \flags
@@ -1809,8 +1782,8 @@
 	.4byte \failInstr
 	.endm
 
-	.macro jumpifcriticalhit failInstr:req
-	callnative BS_JumpIfCriticalHit
+	.macro jumpifnotcriticalhit failInstr:req
+	callnative BS_JumpIfNotCriticalHit
 	.4byte \failInstr
 	.endm
 
@@ -1820,11 +1793,8 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro jumpiflastuseditemholdeffect holdEffect:req, secondaryId:req, jumpInstr:req
-	callnative BS_JumpIfLastUsedItemHoldEffect
-	.byte \holdEffect
-	.2byte \secondaryId
-	.4byte \jumpInstr
+	.macro tryflingholdeffect
+	callnative BS_TryFlingHoldEffect
 	.endm
 
 	.macro swapsidestatuses
@@ -1847,7 +1817,6 @@
 
 	.macro setmoveeffect effect:req
 	sethword sMOVE_EFFECT, \effect
-	sethword sSAVED_MOVE_EFFECT, \effect
 	.endm
 
 	.macro sethword dst:req, value:req
@@ -1931,8 +1900,8 @@
 	1:
 	.endm
 
-	.macro jumpifabilitycantbesuppressed battler:req, jumpInstr:req
-	callnative BS_JumpIfAbilityCantBeSuppressed
+	.macro jumpifabilitycantbereactivated battler:req, jumpInstr:req
+	callnative BS_JumpIfAbilityCantBeReactivated
 	.byte \battler
 	.4byte \jumpInstr
 	.endm
@@ -1974,12 +1943,6 @@
 	callnative BS_JumpIfNoAlly
 	.byte \battler
 	.4byte \jumpInstr
-	.endm
-
-	.macro infatuatewithbattler battler:req, infatuateWith:req
-	callnative BS_InfatuateWithBattler
-	.byte \battler
-	.byte \infatuateWith
 	.endm
 
 	.macro setlastuseditem battler:req
@@ -2113,9 +2076,8 @@
 	.byte \id
 	.endm
 
-	.macro arenawaitmessage id:req
+	.macro arenawaitmessage
 	callnative BS_ArenaWaitMessage
-	.byte \id
 	.endm
 
 	.macro waitcry
@@ -2195,16 +2157,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro suckerpunchcheck failInstr:req
-	callnative BS_SuckerPunchCheck
-	.4byte \failInstr
-	.endm
-
-	.macro setsimplebeam failInstr:req
-	callnative BS_SetSimpleBeam
-	.4byte \failInstr
-	.endm
-
 	.macro tryentrainment failInstr:req
 	callnative BS_TryEntrainment
 	.4byte \failInstr
@@ -2216,11 +2168,6 @@
 
 	.macro invertstatstages
 	callnative BS_InvertStatStages
-	.endm
-
-	.macro trymefirst failInstr:req
-	callnative BS_TryMeFirst
-	.4byte \failInstr
 	.endm
 
 	.macro tryelectrify failInstr:req
@@ -2237,11 +2184,6 @@
 	callnative BS_HandleFormChange
 	.byte \battler
 	.byte \case_
-	.endm
-
-	.macro trylastresort failInstr:req
-	callnative BS_TryLastResort
-	.4byte \failInstr
 	.endm
 
 	.macro tryautotomize failInstr:req
@@ -2417,8 +2359,8 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro jumpifleafguardprotected battler:req, jumpInstr:req
-	callnative BS_JumpIfLeafGuardProtected
+	.macro jumpifabilitypreventsrest battler:req, jumpInstr:req
+	callnative BS_JumpIfAbilityPreventsRest
 	.byte \battler
 	.4byte \jumpInstr
 	.endm
@@ -2432,18 +2374,9 @@
 	.4byte \failInstr
 	.endm
 
-	.macro checkpoltergeist failInstr:req
-	callnative BS_CheckPoltergeist
+	.macro setpoltergeistmessage failInstr:req
+	callnative BS_SetPoltergeistMessage
 	.4byte \failInstr
-	.endm
-
-	.macro trynoretreat failInstr:req
-	callnative BS_TryNoRetreat
-	.4byte \failInstr
-	.endm
-
-	.macro curecertainstatuses
-	callnative BS_CureCertainStatuses
 	.endm
 
 	.macro tryresetnegativestatstages
@@ -2534,4 +2467,11 @@
 	.macro tryboosterenergy onFieldStatus:req
 	callnative BS_TryBoosterEnergy
 	.byte \onFieldStatus
+	.endm
+
+	.macro jumpifgenconfiglowerthan tag:req, gen:req, jumpInstr:req
+	callnative BS_JumpIfGenConfigLowerThan
+	.2byte \tag
+	.byte \gen
+	.4byte \jumpInstr
 	.endm
