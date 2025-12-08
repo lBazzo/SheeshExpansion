@@ -860,8 +860,8 @@
 #define TRAINER_MAY_PLACEHOLDER             854
 #define TRAINER_GRUNT_12                    855 //857
 #define TRAINER_WALLACE2                    856 //858
-#define TRAINER_CHANSEY3                    857 //859
-#define TRAINER_CHANSEY4                    858 //85A
+#define TRAINER_DAHLIA_NORMAL                    857 //859
+#define TRAINER_DAHLIA_HARD                    858 //85A
 #define TRAINER_CHANSEY5                    859 //85B
 #define TRAINER_SIDNEY2                     860 //85C
 #define TRAINER_PHOEBE2                     861 //85D

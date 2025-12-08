@@ -12,10 +12,10 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 7,
       "y": 3,
       "elevation": 0,
@@ -23,8 +23,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnionCave_1F_EventScript_Item_Potion",
       "flag": "FLAG_ITEM_UNION_CAVE_POTION"
     },
     {
@@ -32,7 +32,7 @@
       "x": 16,
       "y": 13,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 7,
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -42,10 +42,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 24,
-      "y": 3,
+      "x": 19,
+      "y": 31,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 7,
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 11,
       "y": 18,
       "elevation": 0,
@@ -62,16 +62,16 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_AWAKENING",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnionCave_1F_EventScript_Item_Awakening",
       "flag": "FLAG_ITEM_UNION_CAVE_AWAKENING"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIREBREATHER",
-      "x": 27,
-      "y": 30,
+      "x": 5,
+      "y": 46,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 7,
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 32,
       "y": 32,
       "elevation": 0,
@@ -88,14 +88,14 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnionCave_1F_EventScript_Item_GreatBall",
       "flag": "FLAG_ITEM_UNION_CAVE_GREAT_BALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 7,
-      "y": 31,
+      "x": 5,
+      "y": 47,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 5,
@@ -110,7 +110,7 @@
       "x": 25,
       "y": 37,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 7,
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 22,
       "y": 55,
       "elevation": 0,
@@ -127,8 +127,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_X_ATTACK",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnionCave_1F_EventScript_Item_Xattack",
       "flag": "FLAG_ITEM_UNION_CAVE_X_ATTACK"
     },
     {
@@ -381,5 +381,7 @@
       "script": "UnionCave_1F_Trigger_Monview"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

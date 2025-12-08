@@ -1,3 +1,5 @@
+.set LOCALID_POTTER, 25
+
 Route45_hns_MapScripts::
 	.byte 0
 
@@ -180,3 +182,88 @@ Route45_Text_CamperQuentinAfter:
 Route45_Text_Sign:
     .string "ROUTE 45\n"
     .string "MOUNTAIN RD. AHEAD$"
+
+
+
+
+Route45_EventScript_Potter::
+    lock
+    faceplayer
+    msgbox Route45_Text_PotterBefore, MSGBOX_DEFAULT
+    closemessage
+    trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, Route45_Text_PotterWin
+    msgbox Route45_Text_PotterAfter, MSGBOX_DEFAULT
+    giveitem ITEM_CLEAR_BELL
+    closemessage
+    applymovement LOCALID_POTTER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	delay 30
+	setfieldeffectargument 0, 1
+	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
+	removeobject LOCALID_POTTER
+    setflag FLAG_HIDE_ROUTE45_POTTER
+	waitfieldeffect FLDEFF_NPCFLY_OUT
+    delay 20
+	setvar VAR_GOLDENROD_CITY_STATE, 6
+	clearflag FLAG_HIDE_GOLDENROD_ROCKETS
+	setflag FLAG_HIDE_GOLDENROD_ROCKET_SCOUT
+	setflag FLAG_HIDE_GOLDENROD_NPCS
+	clearflag FLAG_HIDE_ROCKET_GOLDENROD_RADIOTOWER_1
+    goto Route45_EventScript_RocketTrigger
+
+Route45_EventScript_RocketTrigger::
+    lock
+	pokenavcall ElmPhoneRadioTowerRocketTakeoverText
+	waitmessage
+    delay 10
+	release
+	end
+
+ElmPhoneRadioTowerRocketTakeoverText:
+	.string "PROF.ELM: {PLAYER}, how are\n"
+	.string "things going?\p"
+	.string "I called because something weird\n"
+	.string "is happening with the radio\l"
+	.string "broadcasts.\p"
+	.string "They were talking about TEAM\n"
+	.string "ROCKET.\p"
+	.string "{PLAYER}, do you know anything\n"
+	.string "about it?\p"
+	.string "Maybe TEAM ROCKET has returned.\n"
+	.string "No, that just can't be true.\p"
+	.string "Sorry to bug you.\n"
+	.string "Take care!$"
+
+Route45_Text_PotterBefore:
+    .string "Hm? Who are you?\p"
+    .string "...\p"
+    .string "{PLAYER}, is it?\p"
+    .string "I see. Well, I'm just Harry. It's good to\n"
+    .string "meet you.\p"
+    .string "I knew I'd run into you here, {PLAYER}.\n"
+    .string "I just felt like ROUTE 45 was the place\l"
+    .string "to be, do you know what I mean?\p"
+    .string "Anyway, it's fascinating, isn't it?\p"
+    .string "How the people here get animals to use\n"
+    .string "magic rather than cast spells\l"
+    .string "themselves, I mean.\p"
+    .string "I can't say it's very efficient, but it's\n"
+    .string "certainly a lot of fun.\p"
+    .string "I've only taken up battling recently,\n"
+    .string "but I think I've gotten the hang of it.\p"
+    .string "Since you're here, why don't we have a\n"
+    .string "go at it?$"
+
+Route45_Text_PotterWin:
+    .string "Bloody hell!$"
+
+Route45_Text_PotterAfter:
+    .string "I see...\p"
+    .string "Clearly fame isn't everything, is it?\p"
+    .string "Well, I must be off. Lots to do, you see.\p"
+    .string "I'd ask what you're going to do next,\n"
+    .string "but something tells me you're going to\l"
+    .string "become pretty busy right about now.\p"
+    .string "Why don't you take this with you? It\n"
+    .string "feels like it belongs to you, somehow.$"

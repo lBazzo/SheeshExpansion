@@ -3,7 +3,7 @@
 .set LOCALID_ROCKETHIDEOUT2_MURKROWSTAIRS, 15
 .set LOCALID_ROCKETHIDEOUT2_MURKROWGATE, 16
 .set LOCALID_ROCKETHIDEOUT2_ARIANA, 14
-.set LOCALID_ROCKETHIDEOUT2_GRUNT, 12
+.set LOCALID_ROCKETHIDEOUT2_ARCHER, 12
 .set LOCALID_LANCEELECTRODE1, 3
 .set LOCALID_LANCEELECTRODE2, 2
 .set LOCALID_LANCEELECTRODE3, 1
@@ -186,11 +186,11 @@ RocketHideout_B2F_Text_MurkrowUnlock:
 @============================================================================================================================================
 
 RocketHideout_B2F_Trigger_PlayerMoveLeft::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
 	return
 RocketHideout_B2F_Trigger_PlayerMoveRight::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
 	return
 
@@ -200,20 +200,26 @@ RocketHideout_B2F_Trigger_Ariana::
 	setobjectxyperm LOCALID_ROCKETHIDEOUT2_DRAGONITE, 5, 26
 	clearflag FLAG_HIDE_ROCKETHIDEOUT2_ARIANA_AND_GRUNT
 	addobject LOCALID_ROCKETHIDEOUT2_ARIANA
-	addobject LOCALID_ROCKETHIDEOUT2_GRUNT
+	addobject LOCALID_ROCKETHIDEOUT2_ARCHER
 	delay 20
 	msgbox RocketHideout_B2F_Text_ArianaHoldIt, MSGBOX_AUTOCLOSE
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 14, RocketHideout_B2F_Trigger_PlayerMoveLeft
 	call_if_eq VAR_TEMP_0, 16, 	RocketHideout_B2F_Trigger_PlayerMoveRight
-	applymovement LOCALID_PLAYER, RocketHideout_B2F_Movement_PlayerMeetAriana
+	applymovement OBJ_EVENT_ID_PLAYER, RocketHideout_B2F_Movement_PlayerMeetAriana
 	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, RocketHideout_B2F_Movement_Ariana
 	delay 20
-	applymovement LOCALID_ROCKETHIDEOUT2_GRUNT, RocketHideout_B2F_Movement_Ariana
-	waitmovement LOCALID_ROCKETHIDEOUT2_GRUNT
+	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, RocketHideout_B2F_Movement_Ariana
+	waitmovement LOCALID_ROCKETHIDEOUT2_ARCHER
+	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox RocketHideout_B2F_Text_ArcherIntro, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, Common_Movement_WalkInPlaceUp
+	waitmovement 0
 	msgbox RocketHideout_B2F_Text_ArianaChallenge, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_ROCKETHIDEOUT2_LANCE_DRAGONITE
@@ -225,8 +231,11 @@ RocketHideout_B2F_Trigger_Ariana::
 	waitmovement 0
 	msgbox RocketHideout_B2F_Text_LanceInterrupt, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, Common_Movement_WalkInPlaceUp
 	msgbox RocketHideout_B2F_Text_ArianaOutraged
+	closemessage
+	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, Common_Movement_WalkInPlaceUp
+	msgbox RocketHideout_B2F_Text_ArcherAngry
 	closemessage
 	goto RocketHideout_B2F_EventScript_ReadyForBattlePrompt
 	end
@@ -261,8 +270,24 @@ RocketHideout_B2F_Movement_Lance:
 RocketHideout_B2F_Text_ArianaHoldIt:
     .string "ARIANA: Hold it right there!$"
 
+RocketHideout_B2F_Text_ArcherIntro:
+	.string "ARCHER: So, it's indeed true, then.\p"
+	.string "A mere child has been able to infiltrate\n"
+	.string "our base this easily.\p"
+	.string "Not that our Grunts are the pick of the\n"
+	.string "litter when it comes to battling\l"
+	.string "prowess, but it's a remarkable feat to\l"
+	.string "show bravery in the face of such an\l"
+	.string "overwhelming force of opposition.\p"
+	.string "A shame, really. Were you not so\n"
+	.string "righteous in your goals, you'd make a\l"
+	.string "useful piece for TEAM ROCKET's goals.\p"
+	.string "As it is, your noble cause ends here and\n"
+	.string "now.$"
+
 RocketHideout_B2F_Text_ArianaChallenge:
-    .string "ARIANA: We can't let a brat like you\n"
+	.string "ARIANA: That's right.\n"
+    .string "We can't let a brat like you\l"
     .string "do as you please forever.\p"
     .string "It'll hurt Team Rocket's pride over\n"
     .string "and over again. Making it lessen,\l"
@@ -285,14 +310,24 @@ RocketHideout_B2F_Text_LanceInterrupt:
 
 RocketHideout_B2F_Text_ArianaOutraged:
     .string "ARIANA: What? You had an accomplice?\n"
-    .string "Where is your sense of dignity?\p"
-    .string "As interim boss in place of Giovanni,\n"
-    .string "I'll show you how wrong it is to meddle\l"
-    .string "with Team Rocket!$"
+    .string "Where is your sense of dignity?$"
+
+RocketHideout_B2F_Text_ArcherAngry:
+	.string "ARCHER: Ah, now the truth makes itself\n"
+	.string "clear. I should have known.\p"
+	.string "No matter.\p"
+	.string "If your friend here is the real driving\n"
+	.string "force behind your success, that simply\l"
+	.string "means you are the weakest link in this\l"
+	.string "scenario.\p"
+	.string "I'm afraid your feebleness will let down\n"
+	.string "the very friend you wish to help. A pity.$"
 
 RocketHideout_B2F_Text_LanceChooseMons:
     .string "LANCE: Quickly {PLAYER}, choose\n"
-	.string "your POKéMON!$"
+	.string "your POKéMON!\p"
+	.string "Together, we'll make them regret\n"
+	.string "underestimating you!$"
 
 RocketHideout_B2F_EventScript_ReadyForBattlePrompt::
 	msgbox RocketHideout_B2F_Text_LanceChooseMons, MSGBOX_DEFAULT
@@ -315,9 +350,9 @@ RocketHideout_B2F_EventScript_ChoosePartyForMultiBattle::
 
 RocketHideout_B2F_EventScript_DoLanceMultiBattle::
 	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, Common_Movement_WalkUp
-	applymovement LOCALID_ROCKETHIDEOUT2_GRUNT, Common_Movement_WalkUp
+	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, Common_Movement_WalkUp
 	waitmovement 0
-	turnobject LOCALID_ROCKETHIDEOUT2_GRUNT, DIR_WEST
+	turnobject LOCALID_ROCKETHIDEOUT2_ARCHER, DIR_WEST
 	multi_2_vs_2 TRAINER_ARIANA_1, RocketHideout_B2F_Text_ArianaLoss, TRAINER_GRUNT_23, RocketHideout_B2F_Text_GruntLoss, PARTNER_LANCE
 	switch VAR_RESULT
 	case 1, RocketHideout_B2F_EventScript_DefeatedAriana
@@ -327,29 +362,43 @@ RocketHideout_B2F_EventScript_DoLanceMultiBattle::
 	special SetCB2WhiteOut
 	waitstate
 
+@RocketHideout_B2F_EventScript_ArianaTrainer::
+@	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_ARIANA_1, 0, RocketHideout_B2F_Text_ArianaLoss, RocketHideout_B2F_Text_ArianaLoss
+@	end
+
+@RocketHideout_B2F_EventScript_GruntTrainer::
+@	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_GRUNT_23, 0, RocketHideout_B2F_Text_GruntLoss, RocketHideout_B2F_Text_GruntLoss
+@	end
+
 RocketHideout_B2F_EventScript_DefeatedAriana::
 	clearflag FLAG_ROCKETHIDEOUT2_BATTLE
+	applymovement LOCALID_ROCKETHIDEOUT2_ARIANA, Common_Movement_WalkInPlaceUp
+	waitmovement 0
 	msgbox RocketHideout_Text_ArianaRetreat, MSGBOX_DEFAULT
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
-	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, Common_Movement_WalkUp
-	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, Common_Movement_WalkUp
+	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
-	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, Common_Movement_WalkRight
-	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, Common_Movement_WalkRight
+	msgbox RocketHideout_Text_ArcherRetreat, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, Common_Movement_WalkUp1
+	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, Common_Movement_WalkUp1
+	waitmovement 0
+	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, Common_Movement_WalkRight1
+	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, Common_Movement_WalkRight1
 	waitmovement 0
 	setflag FLAG_HIDE_MAHOGANY_ROCKETS
 	setflag FLAG_HIDE_ROCKETHIDEOUT2_ARIANA_AND_GRUNT
 	removeobject LOCALID_ROCKETHIDEOUT2_ARIANA
-	removeobject LOCALID_ROCKETHIDEOUT2_GRUNT
-	turnobject LOCALID_PLAYER, DIR_WEST
+	removeobject LOCALID_ROCKETHIDEOUT2_ARCHER
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox RocketHideout_Text_LanceStepBack, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, RocketHideout_B2F_Movement_LanceWalkToGenerator
 	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, RocketHideout_B2F_Movement_DragoniteWalkToGenerator
 	delay 55
-	applymovement LOCALID_PLAYER, RocketHideout_B2F_Movement_LanceWalkToGenerator
+	applymovement OBJ_EVENT_ID_PLAYER, RocketHideout_B2F_Movement_LanceWalkToGenerator
 	waitmovement 0
 
 	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, RocketHideout_B2F_Movement_DragoniteInvestigateGenerator
@@ -364,7 +413,7 @@ RocketHideout_B2F_EventScript_DefeatedAriana::
 	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, RocketHideout_B2F_Movement_LanceWalkToElectrode
 	waitmovement LOCALID_ROCKETHIDEOUT2_DRAGONITE
 	waitmovement LOCALID_ROCKETHIDEOUT2_LANCE
-	applymovement LOCALID_PLAYER, RocketHideout_B2F_Movement_PlayerWalkToElectrode
+	applymovement OBJ_EVENT_ID_PLAYER, RocketHideout_B2F_Movement_PlayerWalkToElectrode
 	waitmovement 0
 	setobjectxyperm LOCALID_ROCKETHIDEOUT2_DRAGONITE, 20, 16
 	setobjectxyperm LOCALID_ROCKETHIDEOUT2_LANCE, 19, 16
@@ -458,7 +507,7 @@ RocketHideout_B2F_Trigger_Electrode::
 	msgbox RocketHideout_B2F_Text_LanceSide, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_ROCKETHIDEOUT2_LANCE, DIR_NORTH
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
 	release
 	end
@@ -491,23 +540,22 @@ RocketHideout_B2F_EventScript_ElectrodeDone::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1 
 	call_if_eq VAR_TEMP_1, 16, RocketHideout_B2F_Movement_PlayerMeetLanceTop
 	call_if_eq VAR_TEMP_1, 18, RocketHideout_B2F_Movement_PlayerMeetLanceBot
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	applymovement LOCALID_ROCKETHIDEOUT2_LANCE, RocketHideout_B2F_Movement_LanceMeetPlayerAfterElectrode
 	applymovement LOCALID_ROCKETHIDEOUT2_DRAGONITE, RocketHideout_B2F_Movement_LanceMeetPlayerAfterElectrode
 	waitmovement LOCALID_ROCKETHIDEOUT2_DRAGONITE
 
 	playse SE_CLICK
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	turnobject LOCALID_ROCKETHIDEOUT2_LANCE, DIR_NORTH
 	call RockerHideout2_DeactivateGenerator
 	special DrawWholeMapView
 	delay 55
 	turnobject LOCALID_ROCKETHIDEOUT2_LANCE DIR_WEST
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 30
 	msgbox RocketHideout_B2F_Text_LanceElectrodeDone, MSGBOX_DEFAULT
 	giveitem ITEM_HM_WHIRLPOOL
-	setflag FLAG_RECEIVED_HM_WHIRLPOOL
 	msgbox RocketHideout_B2F_Text_LanceWhirlpool, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_ROCKETHIDEOUT2_LANCE, DIR_SOUTH
@@ -528,16 +576,17 @@ RocketHideout_B2F_EventScript_ElectrodeDone::
 	setvar VAR_MAHOGANY_TOWN_STATE, 14
 	clearflag FLAG_HIDE_MAHOGANY_COP
 	setflag FLAG_HIDE_MAHOGANY_TOWN_FATMAN
+	clearflag FLAG_HIDE_MAHOGANY_TOWN_FRONTIER_NPCS
 	release
 	end
 
 RocketHideout_B2F_Movement_PlayerMeetLanceTop:
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	return
 
 RocketHideout_B2F_Movement_PlayerMeetLanceBot:
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	return
 
@@ -589,7 +638,10 @@ RocketHideout_B2F_Movement_DragoniteFinalExit:
 	step_end
 
 RocketHideout_B2F_Text_GruntLoss:
-    .string "....................$"
+    .string "I stand corrected. Both of you are much\n"
+    .string "more troublesome than I had imagined.\p"
+    .string "Consider yourself let off with just a\n"
+    .string "warning this time as a reward.$"
 
 RocketHideout_B2F_Text_ArianaLoss:
     .string "Tch, you really are strong.\n"
@@ -597,17 +649,27 @@ RocketHideout_B2F_Text_ArianaLoss:
     .string "If you were to join Team Rocket,\n"
     .string "you could become an Executive.$"
 
+RocketHideout_Text_ArcherRetreat:
+    .string "ARCHER: Don't spend too long patting\n"
+	.string "yourselves on the back.\p"
+	.string "A single fleeting victory thanks to the\n"
+	.string "element of surprise will not be enough\l"
+	.string "to save you next time.\p"
+	.string "Especially when our true leader returns\n"
+	.string "to his former glory...\p"
+	.string "Why don't you get back to your little\n"
+	.string "BADGE hunt for the time being?\p"
+	.string "If you know what's good for you, you'll\n"
+	.string "stay out my way from now on.\p"
+	.string "I hope we never see each other again,\n"
+	.string "for your own sake. Farewell.$"
+
 RocketHideout_Text_ArianaRetreat:
     .string "ARIANA: But that's fine.\n"
     .string "The broadcast experiment was a\l"
     .string "total success.\p"
     .string "It doesn't matter what happens to\n"
-    .string "this hideout now.\p"
-    .string "We have much bigger plans.\n"
-    .string "You'll come to appreciate Team\l"
-    .string "Rocket's true power soon enough.\p"
-    .string "Enjoy yourself while you can...\n"
-    .string "Hee hee hee...$"
+    .string "this hideout now.$"
 
 RocketHideout_Text_LanceStepBack:
     .string "Sorry, {PLAYER}. I saw how well you\n"
@@ -641,16 +703,17 @@ RocketHideout_B2F_Text_LanceElectrodeDone:
     .string "you on behalf of all the\l"
     .string "POKéMON.\p"
     .string "Oh, yes. You should take this.\n"
-    .string "I found it here, but I don't\l"
-    .string "have any need for it.$"
+    .string "I found it here, but I already\l"
+    .string "have my own.$"
 
 RocketHideout_B2F_Text_LanceWhirlpool:
-    .string "That's WHIRLPOOL. Teach it to a\n"
-    .string "POKéMON to get across wild water.\p"
-    .string "But keep this in mind.\p"
-    .string "You can use that out of battle\n"
-    .string "only with the BADGE from\l"
-    .string "MAHOGANY GYM.$"
+    .string "That's the LIFE ORB. It increases your\n"
+    .string "POKéMON's power, but at a cost of its\l"
+    .string "own health.\p"
+    .string "It can be a curse in the hands of an\n"
+    .string "inexperienced trainer, but I'm sure\l"
+    .string "someone of your calibre can make good\l"
+	.string "use of it.$"
 
 RocketHideout_B2F_Text_LanceMonMaster:
     .string "{PLAYER}…\p"
@@ -685,21 +748,21 @@ RocketHideout_EventScript_Item_Thief::
 
 RocketHideout_B2F_EventScript_LanceTriggerLeft::
 	lock
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	goto RocketHideout_B2F_EventScript_Lance
 
 RocketHideout_B2F_EventScript_LanceTriggerRight::
 	lock
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	goto RocketHideout_B2F_EventScript_Lance
 
 RocketHideout_B2F_EventScript_Lance::
 	lock
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	msgbox RocketHideout_B2F_Text_LanceHeals1, MSGBOX_DEFAULT
 	closemessage

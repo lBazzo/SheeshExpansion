@@ -12,10 +12,9 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_FRONTIER",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
-      "local_id": "LOCALID_TOWER_ATTENDANT_SINGLES",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 6,
       "y": 5,
@@ -68,7 +67,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TOWER_LOBBY_REPORTER",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_M",
       "x": 4,
       "y": 8,
@@ -96,7 +94,6 @@
       "flag": "FLAG_HIDE_APPRENTICE"
     },
     {
-      "local_id": "LOCALID_TOWER_ATTENDANT_DOUBLES",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 10,
       "y": 5,
@@ -110,7 +107,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TOWER_ATTENDANT_MULTIS",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 14,
       "y": 5,
@@ -124,7 +120,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TOWER_ATTENDANT_LINK_MULTIS",
       "graphics_id": "OBJ_EVENT_GFX_WORKER_F",
       "x": 18,
       "y": 5,
@@ -161,7 +156,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

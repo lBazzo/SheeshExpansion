@@ -2,7 +2,6 @@
 
 CianwoodPokecenter_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CianwoodPokecenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 CianwoodPokecenter_OnTransition::
@@ -55,43 +54,6 @@ CianwoodCity_Text_PokecenterLass:
 	.string "Did you meet the POKéMANIAC?\p"
 	.string "He's always bragging about his\n"
 	.string "rare POKéMON.$"
-
-
-CianwoodGym_EventScript_GymGuide::
-	lock
-	faceplayer
-	goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, CianwoodGym_EventScript_GymGuideAfter
-	msgbox CianwoodCity_Text_GymGuide, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-CianwoodGym_EventScript_GymGuideAfter::
-	msgbox CianwoodCity_Text_GymGuideWin, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-CianwoodCity_Text_GymGuide:
-	.string "The POKéMON GYM trainers here are\n"
-	.string "macho bullies.\p"
-	.string "If I stick around, they might\n"
-	.string "come after me.\p"
-	.string "Here's some advice: the GYM LEADER\n"
-	.string "uses the FIGHTING-type.\p"
-	.string "So you should confound him with\n"
-	.string "psychic POKéMON.\p"
-	.string "Wipe out his POKéMON before they\n"
-	.string "can use their physical strength.\p"
-	.string "And those boulders in the middle\n"
-	.string "of the GYM?\p"
-	.string "If you don't move them correctly,\n"
-	.string "you won't reach the GYM LEADER.\p"
-	.string "If you get stuck, go outside.$"
-
-CianwoodCity_Text_GymGuideWin:
-	.string "{PLAYER}! You won!\n"
-	.string "I could tell by looking at you!$"
 
 CianwoodPokecenter_EventScript_Nerd::
 	lock

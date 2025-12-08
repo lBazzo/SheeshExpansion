@@ -47,11 +47,6 @@ Route35_EventScript_FirebreatherWalt::
 	msgbox Route35_Text_FirebreatherWaltAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route35_EventScript_PolicemanDirk::
-	trainerbattle_single TRAINER_DIRK Route35_Text_OfficerDirkSeen, Route35_Text_OfficerDirkBeaten
-	msgbox Route35_Text_OfficerDirkAfter, MSGBOX_AUTOCLOSE
-	end
-
 Route35_EventScript_Sign1::
 	lock
 	msgbox Route35_Text_Sign, MSGBOX_SIGN
@@ -129,9 +124,9 @@ Route35_Text_BirdKeeperBryanBeaten:
 
 Route35_Text_BirdKeeperBryanAfter:
 	.string "Some POKéMON flee right away.\p"
-	.string "Try catching them with KURT's FAST\n"
-	.string "BALL.\p"
-	.string "Whenever I find a WHT APRICORN, I\n"
+	.string "Try catching them with KURT's\n"
+	.string "FAST BALL.\p"
+	.string "Whenever I find a ASPEAR BERRY, I\n"
 	.string "take it to KURT.\p"
 	.string "He turns it into a custom BALL.$"
 
@@ -170,21 +165,6 @@ Route35_Text_FirebreatherWaltBeaten:
 Route35_Text_FirebreatherWaltAfter:
 	.string "The POKéMON March on the radio\n"
 	.string "lures wild POKéMON.$"
-
-Route35_Text_OfficerDirkSeen:
-	.string "Danger lurks in the night!$"
-
-Route35_Text_OfficerDirkBeaten:
-	.string "Whoops!$"
-
-Route35_Text_OfficerDirkAfter:
-	.string "You know, nighttime is fun in its\n"
-	.string "own ways.\p"
-	.string "But don't overdo it, OK?$"
-
-Route35_Text_OfficerDirkTough:
-	.string "Your POKéMON look pretty tough.\p"
-	.string "You could go anywhere safely.$"
 
 Route35_Text_Sign:
 	.string "ROUTE 35$"

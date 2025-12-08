@@ -10976,6 +10976,44 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Faint Attack
 - Fly
 
+=== TRAINER_DAHLIA_NORMAL ===
+Name: ARIANA
+Class: Rocket Admin
+Pic: Ariana
+Gender: Male
+Music: Rocket
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: DarkRed
+
+Arbok
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Screech
+- Bite
+- Glare
+- Sludge Bomb
+
+=== TRAINER_DAHLIA_HARD ===
+Name: ARIANA
+Class: Rocket Admin
+Pic: Ariana
+Gender: Male
+Music: Rocket
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability
+Mugshot: DarkRed
+
+Arbok
+Level: 39
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Screech
+- Bite
+- Glare
+- Sludge Bomb
+
 /*TEST SYSTEM TRAINERS*/
 === TRAINER_RED ===
 Name: RED

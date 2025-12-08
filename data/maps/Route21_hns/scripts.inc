@@ -17,11 +17,6 @@ Route21_EventScript_Nikki::
 	msgbox Route21_Text_SwimmerfNikkiAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route21_EventScript_Arnold::
-	trainerbattle_single TRAINER_ARNOLD Route21_Text_FisherArnoldSeen, Route21_Text_FisherArnoldBeaten
-	msgbox Route21_Text_FisherArnoldAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route21_Text_SwimmermSethSeen:
 	.string "Land ho! Gotta keep going!$"
 
@@ -42,13 +37,3 @@ Route21_Text_SwimmerfNikkiBeaten:
 Route21_Text_SwimmerfNikkiAfterBattle:
 	.string "I have to watch out for blemishes\n"
 	.string "caused by the sun.$"
-
-Route21_Text_FisherArnoldSeen:
-	.string "I'm bored by fishing. Let's battle!$"
-
-Route21_Text_FisherArnoldBeaten:
-	.string "Utter failure…$"
-
-Route21_Text_FisherArnoldAfterBattle:
-	.string "I'll just go back to fishing…$"
-

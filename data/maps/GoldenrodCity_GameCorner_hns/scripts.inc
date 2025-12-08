@@ -25,11 +25,6 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons::
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon
 	end
 
-GoldenrodCity_GameCorner_EventScript_NeedCoinCase::
-	msgbox GoldenrodCity_GameCorner_Text_NeedCoinCaseForCoins, MSGBOX_DEFAULT
-	release
-	end
-
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 	showcoinsbox 1, 1
 	message GoldenrodCity_GameCorner_Text_WhichPrize
@@ -136,7 +131,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_PartyFull::
-	msgbox GoldenrodCity_GameCorner_Text_NoRoomForPokemon
+	msgbox GoldenrodCity_GameCorner_Text_NeedCoinCaseForCoins
 	hidecoinsbox 0, 0
 	closemessage
 	release
@@ -297,13 +292,13 @@ GoldenrodCity_GameCorner_EventScript_CoinsClerk::
 	waitmessage
 	showmoneybox 0, 0
 	showcoinsbox 1, 6
-	goto MauvilleCity_GameCorner_EventScript_ChooseCoinsDefault50
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50
 
 GoldenrodCity_GameCorner_Text_ThisIsGoldenrodGameCorner:
 	.string "This is the GAME CORNER.$"
 
 GoldenrodCity_GameCorner_EventScript_NoRoomFor50Coins::
-	msgbox MauvilleCity_GameCorner_Text_NoRoomFor50Coins, MSGBOX_DEFAULT
+	msgbox GoldenrodCity_GameCorner_Text_NoRoomFor50Coins, MSGBOX_DEFAULT
 	clearflag FLAG_TEMP_2
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -311,7 +306,7 @@ GoldenrodCity_GameCorner_EventScript_NoRoomFor50Coins::
 	end
 
 GoldenrodCity_GameCorner_EventScript_NotEnoughMoneyFor50::
-	msgbox MauvilleCity_GameCorner_Text_DontHaveEnoughMoneyFor50, MSGBOX_DEFAULT
+	msgbox GoldenrodCity_GameCorner_Text_DontHaveEnoughMoneyFor50, MSGBOX_DEFAULT
 	clearflag FLAG_TEMP_2
 	hidemoneybox
 	hidecoinsbox 0, 5
@@ -383,15 +378,317 @@ GoldenrodCity_GameCorner_EventScript_TMIceBeam::
 
 GoldenrodCity_GameCorner_EventScript_ConfirmTMPrize::
 	special BufferTMHMMoveName
-	msgbox MauvilleCity_GameCorner_Text_SoYourChoiceIsTheTMX, MSGBOX_YESNO
+	msgbox GoldenrodCity_GameCorner_Text_SoYourChoiceIsTheTMX, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_GameCorner_EventScript_CancelTMSelect
-	goto_if_unset FLAG_FINITE_TMS, MauvilleCity_GameCorner_EventScript_ConfirmTMPrizeInfinite
+	goto_if_unset FLAG_FINITE_TMS, GoldenrodCity_GameCorner_EventScript_ConfirmTMPrizeInfinite
 	switch VAR_TEMP_1
-	case 1, MauvilleCity_GameCorner_EventScript_BuyTMDoubleTeam
-	case 2, MauvilleCity_GameCorner_EventScript_BuyTMPsychic
-	case 3, MauvilleCity_GameCorner_EventScript_BuyTMFlamethrower
-	case 4, MauvilleCity_GameCorner_EventScript_BuyTMThunderbolt
-	case 5, MauvilleCity_GameCorner_EventScript_BuyTMIceBeam
+	case 1, GoldenrodCity_GameCorner_EventScript_BuyTMDoubleTeam
+	case 2, GoldenrodCity_GameCorner_EventScript_BuyTMPsychic
+	case 3, GoldenrodCity_GameCorner_EventScript_BuyTMFlamethrower
+	case 4, GoldenrodCity_GameCorner_EventScript_BuyTMThunderbolt
+	case 5, GoldenrodCity_GameCorner_EventScript_BuyTMIceBeam
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTMDoubleTeam::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_DOUBLE_TEAM_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_DOUBLE_TEAM
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NoRoomForTM
+	removecoins TM_DOUBLE_TEAM_COINS
+	additem ITEM_TM_DOUBLE_TEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTMPsychic::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_PSYCHIC_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_PSYCHIC
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NoRoomForTM
+	removecoins TM_PSYCHIC_COINS
+	additem ITEM_TM_PSYCHIC
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTMFlamethrower::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_FLAMETHROWER_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_FLAMETHROWER
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NoRoomForTM
+	removecoins TM_FLAMETHROWER_COINS
+	additem ITEM_TM_FLAMETHROWER
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTMThunderbolt::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_THUNDERBOLT_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_THUNDERBOLT
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NoRoomForTM
+	removecoins TM_THUNDERBOLT_COINS
+	additem ITEM_TM_THUNDERBOLT
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTMIceBeam::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_ICE_BEAM_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitemspace ITEM_TM_ICE_BEAM
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NoRoomForTM
+	removecoins TM_ICE_BEAM_COINS
+	additem ITEM_TM_ICE_BEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_NeedCoinCase::
+	msgbox GoldenrodCity_GameCorner_Text_NeedCoinCaseForCoins, MSGBOX_DEFAULT
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_NotEnoughMoney::
+	checkmoney COINS_PRICE_50
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoneyFor50
+	msgbox GoldenrodCity_GameCorner_Text_DontHaveEnoughMoney, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50
+	end
+
+GoldenrodCity_GameCorner_EventScript_CancelBuyCoins::
+	goto_if_set FLAG_TEMP_2, GoldenrodCity_GameCorner_EventScript_ThanksBuyCoins
+	msgbox GoldenrodCity_GameCorner_Text_DontNeedCoinsThen, MSGBOX_DEFAULT
+	clearflag FLAG_TEMP_2
+	hidemoneybox
+	hidecoinsbox 0, 5
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Buy50Coins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 50), GoldenrodCity_GameCorner_EventScript_NoRoomFor50Coins
+	checkmoney COINS_PRICE_50
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoneyFor50
+	addcoins 50
+	removemoney COINS_PRICE_50
+	updatemoneybox
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50
+	end
+
+GoldenrodCity_GameCorner_EventScript_Buy500Coins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 500), GoldenrodCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_500
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 500
+	removemoney COINS_PRICE_500
+	updatemoneybox
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault500
+	end
+
+GoldenrodCity_GameCorner_EventScript_Buy1000Coins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 1000), GoldenrodCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_1000
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 1000
+	removemoney COINS_PRICE_1000
+	updatemoneybox
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault1000
+	end
+
+GoldenrodCity_GameCorner_EventScript_Buy2500Coins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 2500), GoldenrodCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_2500
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 2500
+	removemoney COINS_PRICE_2500
+	updatemoneybox
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault2500
+	end
+
+GoldenrodCity_GameCorner_EventScript_Buy5000Coins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 5000), GoldenrodCity_GameCorner_EventScript_NoRoomForCoins
+	checkmoney COINS_PRICE_5000
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NotEnoughMoney
+	addcoins 5000
+	removemoney COINS_PRICE_5000
+	updatemoneybox
+	updatecoinsbox 1, 6
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_2
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault5000
+	end
+
+GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50::
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 0, FALSE
+	switch VAR_RESULT
+	case 0, GoldenrodCity_GameCorner_EventScript_Buy50Coins
+	case 1, GoldenrodCity_GameCorner_EventScript_Buy500Coins
+	case 2, GoldenrodCity_GameCorner_EventScript_Buy1000Coins
+	case 3, GoldenrodCity_GameCorner_EventScript_Buy2500Coins
+	case 4, GoldenrodCity_GameCorner_EventScript_Buy5000Coins
+	goto GoldenrodCity_GameCorner_EventScript_CancelBuyCoins
+	end
+
+GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault500::
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 1, FALSE
+	switch VAR_RESULT
+	case 0, GoldenrodCity_GameCorner_EventScript_Buy50Coins
+	case 1, GoldenrodCity_GameCorner_EventScript_Buy500Coins
+	case 2, GoldenrodCity_GameCorner_EventScript_Buy1000Coins
+	case 3, GoldenrodCity_GameCorner_EventScript_Buy2500Coins
+	case 4, GoldenrodCity_GameCorner_EventScript_Buy5000Coins
+	goto GoldenrodCity_GameCorner_EventScript_CancelBuyCoins
+	end
+
+GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault1000::
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 2, FALSE
+	switch VAR_RESULT
+	case 0, GoldenrodCity_GameCorner_EventScript_Buy50Coins
+	case 1, GoldenrodCity_GameCorner_EventScript_Buy500Coins
+	case 2, GoldenrodCity_GameCorner_EventScript_Buy1000Coins
+	case 3, GoldenrodCity_GameCorner_EventScript_Buy2500Coins
+	case 4, GoldenrodCity_GameCorner_EventScript_Buy5000Coins
+	goto GoldenrodCity_GameCorner_EventScript_CancelBuyCoins
+	end
+
+GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault2500::
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 3, FALSE
+	switch VAR_RESULT
+	case 0, GoldenrodCity_GameCorner_EventScript_Buy50Coins
+	case 1, GoldenrodCity_GameCorner_EventScript_Buy500Coins
+	case 2, GoldenrodCity_GameCorner_EventScript_Buy1000Coins
+	case 3, GoldenrodCity_GameCorner_EventScript_Buy2500Coins
+	case 4, GoldenrodCity_GameCorner_EventScript_Buy5000Coins
+	goto GoldenrodCity_GameCorner_EventScript_CancelBuyCoins
+	end
+
+GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault5000::
+	multichoicedefault 15, 0, MULTI_GAME_CORNER_COINS, 4, FALSE
+	switch VAR_RESULT
+	case 0, GoldenrodCity_GameCorner_EventScript_Buy50Coins
+	case 1, GoldenrodCity_GameCorner_EventScript_Buy500Coins
+	case 2, GoldenrodCity_GameCorner_EventScript_Buy1000Coins
+	case 3, GoldenrodCity_GameCorner_EventScript_Buy2500Coins
+	case 4, GoldenrodCity_GameCorner_EventScript_Buy5000Coins
+	goto GoldenrodCity_GameCorner_EventScript_CancelBuyCoins
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTM32InfiniteDoubleTeam::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_DOUBLE_TEAM_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_DOUBLE_TEAM, 1
+    goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis
+	removecoins TM_DOUBLE_TEAM_COINS
+	additem ITEM_TM_DOUBLE_TEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTM29InfinitePsychic::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_PSYCHIC_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_PSYCHIC, 1
+    goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis
+	removecoins TM_PSYCHIC_COINS
+	additem ITEM_TM_PSYCHIC
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTM35InfiniteFlamethrower::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_FLAMETHROWER_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_FLAMETHROWER, 1
+    goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis
+	removecoins TM_FLAMETHROWER_COINS
+	additem ITEM_TM_FLAMETHROWER
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTM24InfiniteThunderbolt::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_THUNDERBOLT_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_THUNDERBOLT, 1
+    goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis
+	removecoins TM_THUNDERBOLT_COINS
+	additem ITEM_TM_THUNDERBOLT
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_BuyTM13InfiniteIceBeam::
+	checkcoins VAR_TEMP_2
+	goto_if_lt VAR_TEMP_2, TM_ICE_BEAM_COINS, GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM
+	checkitem ITEM_TM_ICE_BEAM, 1
+    goto_if_eq VAR_RESULT, TRUE, GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis
+	removecoins  TM_ICE_BEAM_COINS
+	additem ITEM_TM_ICE_BEAM
+	updatecoinsbox 1, 1
+	playse SE_SHOP
+	msgbox GoldenrodCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_NotEnoughCoinsForTM::
+	msgbox GoldenrodCity_GameCorner_Text_NotEnoughCoins, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_NoRoomForTM::
+	call Common_EventScript_BagIsFull
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_YouAlreadyHaveThis::
+    msgbox gText_YouAlreadyHaveThis, MSGBOX_AUTOCLOSE
+	goto GoldenrodCity_GameCorner_EventScript_ReturnToChooseTMPrize
+	end
+
+GoldenrodCity_GameCorner_EventScript_CancelTMSelect::
+	msgbox GoldenrodCity_GameCorner_Text_OhIsThatSo, MSGBOX_DEFAULT
+	hidecoinsbox 0, 0
+	release
 	end
 
 GoldenrodCity_GameCorner_Text_WereYouLookingForCoins:
@@ -671,3 +968,165 @@ Roulette_Text_BoardWillBeCleared::
 Roulette_Text_CoinCaseIsFull::
 	.string "Your COIN CASE is full!\n"
 	.string "Coins can be exchanged for prizes.$"
+
+@ Unused
+GoldenrodCity_GameCorner_Text_NoRoomForPlacingDecor:
+	.string "There isn't any room available for\n"
+	.string "placing {STR_VAR_1}.$"
+
+GoldenrodCity_GameCorner_Text_OhIsThatSo:
+	.string "Oh, is that so? \n"
+	.string "You need to save some COINS before\l"
+	.string "coming back here.$"
+
+GoldenrodCity_GameCorner_Text_SoYourChoiceIsX:
+	.string "So your choice is {STR_VAR_1}?$"
+
+GoldenrodCity_GameCorner_Text_HereYouGo:
+	.string "Here you go!$"
+
+@ Unused
+GoldenrodCity_GameCorner_Text_CantCarryAnyMore:
+	.string "Oh, you can't carry any more than that.$"
+
+GoldenrodCity_GameCorner_Text_GotTwoOfSameDollWantOne:
+	.string "I made a mistake and got two of\n"
+	.string "the same DOLLS.\p"
+	.string "Would you like one of them?$"
+
+GoldenrodCity_GameCorner_Text_HereYouGo2:
+	.string "Here you go!$"
+
+GoldenrodCity_GameCorner_Text_YouWantItButNotNow:
+	.string "Huh?\n"
+	.string "You want it, but not right now?$"
+
+GoldenrodCity_GameCorner_Text_DontBeNegative:
+	.string "Oh, don't be so negative!\n"
+	.string "You can have this!$"
+
+GoldenrodCity_GameCorner_Text_CantWinJackpot:
+	.string "There's a prize I want, but I can't win\n"
+	.string "the jackpot.$"
+
+GoldenrodCity_GameCorner_Text_NeedCoinCaseGoNextDoor:
+	.string "Hey, kid, if you want to play here,\n"
+	.string "you need a COIN CASE.\p"
+	.string "I think the young lady next door\n"
+	.string "had one. Go see her!$"
+
+GoldenrodCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
+	.string "My luck can only last so long.\n"
+	.string "This is too much for me.\l"
+	.string "Here, take some COINS!$"
+
+GoldenrodCity_GameCorner_Text_MauvilleSomethingForEveryone:
+	.string "MAUVILLE has something for\n"
+	.string "everyone.\p"
+	.string "For me, it's the GAME CORNER.$"
+
+GoldenrodCity_GameCorner_Text_RouletteTablesDifferentRates:
+	.string "The ROULETTE tables have different\n"
+	.string "rates.\p"
+	.string "Check your COINS if you're going to\n"
+	.string "pick a table.$"
+
+GoldenrodCity_GameCorner_Text_EasyToLoseTrackOfTime:
+	.string "It's easy to lose track of time in here. \n"
+	.string "I should get back to work.$"
+
+GoldenrodCity_GameCorner_Text_CoinsAreNeededToPlay:
+	.string "COINS are needed to play here\n"
+	.string "in the GAME CORNER.$"
+
+GoldenrodCity_GameCorner_Text_RouletteOnlyLuck:
+	.string "This ROULETTE thing…\n"
+	.string "It's rather demanding.\p"
+	.string "Win or lose, it's only by luck.$"
+
+GoldenrodCity_GameCorner_Text_UpTo3CoinsCanBeUsed:
+	.string "Up to three COINS can be used to play\n"
+	.string "the SLOTS.$"
+
+GoldenrodCity_GameCorner_Text_DifficultToStopOn7:
+	.string "It's very difficult to make it stop\n"
+	.string "right on “7.”\p"
+	.string "If it stops on “7” during the REEL TIME\n"
+	.string "bonus game, you'll receive extra COINS.$"
+
+GoldenrodCity_GameCorner_Text_HeresSomeSlotsInfo:
+	.string "Here's some information for you\n"
+	.string "about the SLOTS.\p"
+	.string "The more lightning bolts you stock,\n"
+	.string "the more REEL TIME chances you get.\p"
+	.string "In a game with the maximum five\n"
+	.string "REEL TIME chances…\p"
+	.string "It is possible to receive four regular\n"
+	.string "bonuses, then a big bonus.\p"
+	.string "That would total 660 COINS, but it's\n"
+	.string "very difficult to get.$"
+
+GoldenrodCity_GameCorner_Text_NotEnoughCoins:
+	.string "You don't have enough COINS.$"
+
+GoldenrodCity_GameCorner_EventScript_ConfirmTMPrizeInfinite::
+	switch VAR_TEMP_1
+	case 1, GoldenrodCity_GameCorner_EventScript_BuyTM32InfiniteDoubleTeam
+	case 2, GoldenrodCity_GameCorner_EventScript_BuyTM29InfinitePsychic
+	case 3, GoldenrodCity_GameCorner_EventScript_BuyTM35InfiniteFlamethrower
+	case 4, GoldenrodCity_GameCorner_EventScript_BuyTM24InfiniteThunderbolt
+	case 5, GoldenrodCity_GameCorner_EventScript_BuyTM13InfiniteIceBeam
+	end
+
+GoldenrodCity_GameCorner_Text_ThankYouHereAreYourCoins:
+	.string "Thank you very much!\n"
+	.string "Here are your COINS!$"
+
+GoldenrodCity_GameCorner_Text_NoRoomFor50Coins:
+	.string "Oh! Your COIN CASE is too full to buy\n"
+	.string "any more COINS!\p"
+	.string "Enjoy the GOLDENROD GAME CORNER or\n"
+	.string "exchange your COINS for prizes before\l"
+	.string "coming back!$"
+
+GoldenrodCity_GameCorner_Text_DontHaveEnoughMoneyFor50:
+	.string "Um… You don't appear to have\n"
+	.string "enough money to buy COINS…\p"
+	.string "Please come back when you have\n"
+	.string "at least ¥1000!$"
+
+GoldenrodCity_GameCorner_Text_SoYourChoiceIsTheTMX:
+	.string "So your choice is\n"
+	.string "the {STR_VAR_1} {STR_VAR_2}?$"
+
+GoldenrodCity_GameCorner_Text_DontHaveEnoughMoney:
+	.string "Um… You don't appear to have\n"
+	.string "enough money for that many COINS…$"
+
+GoldenrodCity_GameCorner_EventScript_ThanksBuyCoins::
+	msgbox GoldenrodCity_GameCorner_Text_ThanksBuyCoins, MSGBOX_DEFAULT
+	clearflag FLAG_TEMP_2
+	hidemoneybox
+	hidecoinsbox 0, 5
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_ThanksBuyCoins:
+	.string "Thank you for buying some COINS!\n"
+	.string "Good luck on your adventure!$"
+
+GoldenrodCity_GameCorner_Text_DontNeedCoinsThen:
+	.string "Oh… You don't need COINS, then?\n"
+	.string "Good luck on your adventure!$"
+
+GoldenrodCity_GameCorner_EventScript_NoRoomForCoins::
+	checkcoins VAR_TEMP_1
+	goto_if_ge VAR_TEMP_1, (MAX_COINS + 1 - 50), GoldenrodCity_GameCorner_EventScript_NoRoomFor50Coins
+	msgbox GoldenrodCity_GameCorner_Text_NoRoomForCoins, MSGBOX_DEFAULT
+	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50
+	end
+
+GoldenrodCity_GameCorner_Text_NoRoomForCoins:
+	.string "Oh?\n"
+	.string "Your COIN CASE can't fit those COINS...$"
+

@@ -5,20 +5,14 @@
   "music": "MUS_HG_ROUTE42",
   "region_map_section": "MAPSEC_LAKE_OF_RAGE",
   "requires_flash": false,
-  "weather": "WEATHER_RAIN_THUNDERSTORM",
+  "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_CITY",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE43",
-      "offset": 16,
-      "direction": "down"
-    }
-  ],
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -43,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LakeOfRage_EventScript_Andre",
+      "script": "NULL",
       "flag": "0"
     },
     {
@@ -73,19 +67,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_FISHER",
-      "x": 3,
-      "y": 39,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 6,
-      "movement_range_y": 4,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "6",
-      "script": "LakeOfRage_EventScript_Raymond",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
       "x": 55,
       "y": 15,
@@ -97,19 +78,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LakeOfRage_EventScript_Wesley",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-      "x": 16,
-      "y": 39,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 6,
-      "movement_range_y": 4,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "6",
-      "script": "LakeOfRage_EventScript_Lois",
-      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINY_GYARADOS",
@@ -125,20 +93,7 @@
       "flag": "FLAG_HIDE_LAKE_OF_RAGE_GYARADOS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "x": 42,
-      "y": 2,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 4,
-      "movement_range_y": 4,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "4",
-      "script": "LakeOfRage_EventScript_Aaron",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 21,
       "y": 3,
       "elevation": 0,
@@ -146,12 +101,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_FULL_RESTORE",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
       "flag": "FLAG_ITEM_LAKEOFRAGE_FULL_RESTORE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 37,
       "y": 1,
       "elevation": 0,
@@ -159,12 +114,12 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
       "flag": "FLAG_ITEM_LAKEOFRAGE_MAX_REVIVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 54,
       "y": 9,
       "elevation": 0,
@@ -172,8 +127,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_RED_FLUTE",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
       "flag": "FLAG_ITEM_LAKEOFRAGE_RED_FLUTE"
     },
     {
@@ -212,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LakeOfRage_EventScript_Nerd",
+      "script": "NULL",
       "flag": "0"
     },
     {
@@ -238,7 +193,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LakeOfRage_EventScript_Pryce",
+      "script": "NULL",
       "flag": "FLAG_HIDE_LAKE_PRYCE"
     }
   ],
@@ -258,7 +213,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

@@ -60,12 +60,12 @@ Gate_NationalPark_EventScript_OnlyOneMon::
 	end
 
 Gate_NationalPark_EventScript_AttendantEnterTop::
-	applymovement LOCALID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkTop
+	applymovement OBJ_EVENT_ID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkTop
 	waitmovement 0
 	return
 
 Gate_NationalPark_EventScript_AttendantEnterBot::
-	applymovement LOCALID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkBot
+	applymovement OBJ_EVENT_ID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkBot
 	waitmovement 0
 	return
 
@@ -171,12 +171,12 @@ Gate_NationalPark_EventScript_OnlyOneMonB::
 	end
 
 Gate_NationalPark_EventScript_AttendantBEnterTop::
-	applymovement LOCALID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkTopB
+	applymovement OBJ_EVENT_ID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkTopB
 	waitmovement 0
 	return
 
 Gate_NationalPark_EventScript_AttendantBEnterBot::
-	applymovement LOCALID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkBotB
+	applymovement OBJ_EVENT_ID_PLAYER, Gate_NationalPark_Movement_Player_EnterParkBotB
 	waitmovement 0
 	return
 

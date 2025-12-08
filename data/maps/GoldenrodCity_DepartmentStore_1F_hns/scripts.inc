@@ -1,3 +1,5 @@
+.set LOCALID_GOLDENROD_CITY_RECEPTIONIST1F, 4
+
 GoldenrodCity_DepartmentStore_1F_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodDeptElevator_OnFrame
 	.byte 0
@@ -5,10 +7,44 @@ GoldenrodCity_DepartmentStore_1F_hns_MapScripts::
 GoldenrodDeptStore1_EventScript_Receptionist::
 	lock
 	faceplayer
-	msgbox GoldenrodDeptStor1_Text_Receptionist, MSGBOX_DEFAULT
+	goto_if_set FLAG_GOT_TYPE_BOOSTING_ITEMS, GoldenrodDeptStore1_EventScript_ReceptionistAfter
+	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay1, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_RECEPTIONIST1F, Common_Movement_ExclamationMark
+	delay 60
+	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay2, MSGBOX_DEFAULT
+	giveitem ITEM_BLACK_BELT
+	giveitem ITEM_BLACK_GLASSES
+	giveitem ITEM_CHARCOAL
+	giveitem ITEM_DRAGON_FANG
+	giveitem ITEM_HARD_STONE
+	giveitem ITEM_MAGNET
+	giveitem ITEM_METAL_COAT
+	giveitem ITEM_MIRACLE_SEED
+	giveitem ITEM_MYSTIC_WATER
+	giveitem ITEM_NEVER_MELT_ICE
+	giveitem ITEM_POISON_BARB
+	giveitem ITEM_SHARP_BEAK
+	giveitem ITEM_SILK_SCARF
+	giveitem ITEM_SILVER_POWDER
+	giveitem ITEM_SOFT_SAND
+	giveitem ITEM_SPELL_TAG
+	giveitem ITEM_TWISTED_SPOON
+	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay3, MSGBOX_DEFAULT
+	setflag FLAG_GOT_TYPE_BOOSTING_ITEMS
 	closemessage
 	release
 	end
+
+
+
+GoldenrodDeptStore1_EventScript_ReceptionistAfter::
+	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 GoldenrodDeptStore1_EventScript_Gentleman::
 	lock
 	faceplayer
@@ -37,6 +73,24 @@ GoldenrodDeptStore1_EventScript_Directory::
 	closemessage
 	release
 	end
+
+GoldenrodDeptStor1_Text_ReceptionistLuckyDay1:
+    .string "Welcome to...$"
+
+GoldenrodDeptStor1_Text_ReceptionistLuckyDay2:
+	.string "Is that you, {PLAYER}?\p"
+	.string "It's me! Your MOM's friend from\n"
+	.string "NEWBARKTOWN!\p"
+	.string "To think you've made it all the way\n"
+	.string "here...\p"
+	.string "Your MOM will be so proud.\p"
+	.string "I've got a few little goodies from her\n"
+	.string "to give to you. Promise you'll go back\l"
+	.string "sometime to thank her in person, 'kay?$"
+
+GoldenrodDeptStor1_Text_ReceptionistLuckyDay3:
+	.string "Good luck with your journey!\n"
+	.string "We'll always be rooting for you!$"
 
 GoldenrodDeptStor1_Text_Receptionist:
     .string "Welcome to GOLDENROD DEPT.STORE.$"

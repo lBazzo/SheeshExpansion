@@ -40,6 +40,7 @@ VioletCity_Gym_EventScript_Falkner::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
+	giveitem ITEM_HEART_SCALE, 4
 	giveitem ITEM_TM_DOUBLE_TEAM
 	msgbox VioletGym_Text_Falkner_TMExplain, MSGBOX_DEFAULT
 	setvar VAR_VIOLET_CITY_STATE, 3
@@ -141,19 +142,7 @@ VioletGym_Text_GymGuide_Intro:
 	.string "Hey! What's up? I'm no trainer,\n"
 	.string "but I can give some advice!\p"
 	.string "Believe me! If you believe, a\n"
-	.string "championship dream can come true.\p"
-	.string "You believe? Then listen.\p"
-	.string "FALKNER's ace is a bulky owl\n"
-	.string "that loves to eat BERRIES.\p"
-	.string "While it's not the strongest,\n"
-	.string "it can take a lot of hits.\p"
-	.string "You can hurt it with ELECTRIC \n"
-	.string "and ROCK-type moves, but watch out\l"
-	.string "for MUD-SLAP!\p"
-	.string "If you want more help, go visit the\n"
-	.string "POKéMON ACADEMY.\p"
-	.string "The students there really know\n"
-	.string "their stuff!$"
+	.string "championship dream can come true!$"
 
 VioletGym_Text_GymGuide_Win:
 	.string "Nice battle! Keep it up,\n"

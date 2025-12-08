@@ -127,16 +127,16 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 19,
-      "y": 15,
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 17,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EcruteakCity_EventScript_Item_RareCandy",
       "flag": "FLAG_ITEM_ECRUTEAK_RARE_CANDY"
     },
     {
@@ -388,7 +388,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEOTTO)",
-      "x": 40,
+      "x": 41,
       "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
@@ -463,6 +463,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_ECRUTEAK_SILVER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 22,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EcruteakCity_EventScript_BurnedTowerYoungster",
+      "flag": "FLAG_HIDE_ECRUTEAK_CITY_BURNEDTOWERYOUNGSTER"
     }
   ],
   "warp_events": [
@@ -558,17 +571,17 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
-      "y": 48,
-      "elevation": 0,
-      "dest_map": "MAP_ECRUTEAK_CITY_GYM",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 39,
       "y": 46,
       "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_CELADON_CITY_GYM",
       "dest_warp_id": "0"
     }
   ],

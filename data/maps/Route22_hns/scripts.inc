@@ -53,11 +53,11 @@ Route22_EventScript_Scene::
 	waitse
 	waitmovement 0
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_QuestionMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	delay 60
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, Route22_Movement_CelebiSpin1
 	playse SE_LEDGE
@@ -81,12 +81,12 @@ Route22_EventScript_Scene::
 	playbgm MUS_RG_ROUTE3, TRUE
 	fadescreenswapbuffers FADE_FROM_WHITE
 	delay 50
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	special SpawnCameraObject
 	applymovement2 OBJ_EVENT_ID_CAMERA, Route22_Movement_CameraPanLeft
 	waitmovement 0
 	delay 30
-	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft
+	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft1
 	waitmovement 0
 	msgbox Route22_Text_Silver1, MSGBOX_DEFAULT
 	closemessage
@@ -106,7 +106,7 @@ Route22_EventScript_Scene::
 	msgbox Route22_Text_Giovanni2, MSGBOX_DEFAULT
 	closemessage
 	delay 10
-	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft
+	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft1
 	waitmovement 0
 	msgbox Route22_Text_Silver3, MSGBOX_DEFAULT
 	closemessage
@@ -121,7 +121,7 @@ Route22_EventScript_Scene::
 	msgbox Route22_Text_Silver4, MSGBOX_DEFAULT
 	closemessage
 	delay 30
-	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft
+	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkLeft1
 	waitmovement 0
 	msgbox Route22_Text_Silver5, MSGBOX_DEFAULT
 	closemessage
@@ -132,18 +132,18 @@ Route22_EventScript_Scene::
 	waitmovement LOCALID_ROUTE22_SILVER
 	waitmovement OBJ_EVENT_ID_CAMERA
 	special RemoveCameraObject
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	playse SE_PIN
 	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_ExclamationMark
 	delay 60
 	msgbox Route22_Text_Silver6, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkRight
-	applymovement2 LOCALID_PLAYER, Route22_Movement_PlayerPushed
+	applymovement2 LOCALID_ROUTE22_SILVER, Common_Movement_WalkRight1
+	applymovement2 OBJ_EVENT_ID_PLAYER, Route22_Movement_PlayerPushed
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, Route22_Movement_CelebiPush
 	playse SE_LEDGE
 	waitmovement LOCALID_ROUTE22_SILVER
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	waitse
 	applymovement2 LOCALID_ROUTE22_SILVER, Route22_Movement_SilverFinishLeave
@@ -159,12 +159,12 @@ Route22_EventScript_Scene::
 	waitse
 	waitmovement 0
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 20
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_QuestionMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	delay 60
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, Route22_Movement_CelebiSpin1
 	playse SE_LEDGE
@@ -199,19 +199,19 @@ Route22_Movement_PlayerPushed:
 	step_end
 
 Route22_EventScript_PlayerFaceSouth::
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	return
 
 Route22_EventScript_PlayerFaceWest::
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	return
 	
 Route22_EventScript_PlayerFaceNorth::
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	return
 	
 Route22_EventScript_PlayerFaceEast::
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	return
 	
 Route22_Movement_CameraPanLeft:
@@ -311,7 +311,7 @@ Route22_Text_Giovanni2:
 	.string "potential of many is how you\l"
 	.string "produce a huge power...\l"
 	.string "That's what an organization is...\l"
-	.string "That's the strength of organizatoin\p"
+	.string "That's the strength of organization\p"
 	.string "I failed... to make the best use of\n"
 	.string "my subordinates' potential...!\p"
 	.string "But you shall witness one day the\n"

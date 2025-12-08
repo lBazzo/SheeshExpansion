@@ -1,9 +1,11 @@
 .set LOCALID_LASS, 2
 .set LOCALID_SILVER, 3
+.set LOCALID_GRASS_GIRL, 10
 
 NewBarkTown_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, NewBarkTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, NewBarkTown_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 NewBarkTown_OnFrame::
@@ -21,17 +23,24 @@ NewBarkTown_EventScript_ElmCallAfterLeague::
 	end
 
 NewBarkTown_OnTransition::
+	call_if_lt VAR_NEWBARK_TOWN_STATE, 3, NewBarkTown_Set_MoveGrassGirl
 	goto_if_eq VAR_NEWBARK_TOWN_STATE, 2, NewBarkTown_Set_TalkToElm
 	goto_if_eq VAR_NEWBARK_TOWN_STATE, 4, NewBarkTown_Set_TalkToMom
 	end
 
+NewBarkTown_Set_MoveGrassGirl::
+	setobjectxyperm LOCALID_GRASS_GIRL, 23, 12
+	return
+
 NewBarkTown_Set_TalkToElm::
 	clearflag FLAG_HIDE_SILVER_NEWBARKTOWN
 	setobjectxyperm LOCALID_LASS, 0, 11
+	callnative SetTimeBasedEncounters
 	end
 
 NewBarkTown_Set_TalkToMom::
 	setobjectxyperm LOCALID_LASS, 0, 11
+	callnative SetTimeBasedEncounters
 	end
 
 NewBarkTown_EventScript_LabSign::
@@ -97,10 +106,15 @@ NewBarkTown_EventScript_LeaveTrigger::
 	lock
 	call_if_eq VAR_NEWBARK_TOWN_STATE, 2, NewBarkTown_EventScript_LeaveTriggersState2
 	call_if_eq VAR_NEWBARK_TOWN_STATE, 4, NewBarkTown_EventScript_LeaveTriggersState4
-	applymovement LOCALID_PLAYER, NewBarkTown_Movement_PlayerStepBack
+	applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_Movement_PlayerStepBack
 	waitmovement 0
 	release
 	end
+
+NewBarkTown_Movement_PlayerStepBack:
+	delay_8
+	walk_right
+	step_end
 
 NewBarkTown_EventScript_LeaveTriggersState2::
 	playse SE_PIN
@@ -139,6 +153,21 @@ NewBarkTown_EventScript_FatManState2::
 	release
 	end
 
+NewBarkTown_EventScript_GrassGirl::
+	lock
+	faceplayer
+	goto_if_le VAR_NEWBARK_TOWN_STATE, 2, NewBarkTown_EventScript_GrassGirlState2
+	msgbox NewBarkTown_Text_GrassGirlState3, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+NewBarkTown_EventScript_GrassGirlState2::
+	msgbox NewBarkTown_Text_GrassGirlState2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 NewBarkTown_EventScript_Silver::
 	lock
 	msgbox NewBarkTown_Text_Silver1, MSGBOX_DEFAULT
@@ -150,7 +179,7 @@ NewBarkTown_EventScript_Silver::
 	msgbox NewBarkTown_Text_Silver2, MSGBOX_DEFAULT
 	playse SE_BANG
 	applymovement LOCALID_SILVER, NewBarkTown_Movement_SilverPushesPlayer
-	applymovement LOCALID_PLAYER, NewBarkTown_Movement_PlayerPushedBySilver
+	applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_Movement_PlayerPushedBySilver
 	waitmovement 0
 	applymovement LOCALID_SILVER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -208,10 +237,8 @@ NewBarkTown_Movement_PlayerPushedBySilver:
 	face_down
 	step_end
 
-NewBarkTown_Movement_PlayerStepBack:
-	delay_8
-	walk_right
-	step_end
+	
+
 
 NewBarkTown_Movement_FaceDown:
 	face_down
@@ -234,6 +261,16 @@ NewBarkTown_Text_FatManState3:
 	.string "Yo, {PLAYER}!\p"
 	.string "I hear PROF.ELM discovered\n"
 	.string "some new POKéMON.$"
+
+NewBarkTown_Text_GrassGirlState2:
+	.string "I'm standing guard. Your mum said it's\n"
+	.string "too dangerous to go this way until you\l"
+	.string "have your own POKéMON.$"
+
+NewBarkTown_Text_GrassGirlState3:
+	.string "Hi, {PLAYER}!\p"
+	.string "I hear PROF.ELM gave you a new POKéMON.\n"
+	.string "Go right ahead!$"
 
 NewBarkTown_Text_LassState2:
 	.string "Wait, {PLAYER}!\p"

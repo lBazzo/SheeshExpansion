@@ -5456,6 +5456,50 @@
       "border_filepath": "data/layouts/BattleColosseum_4P_hns/border.bin",
       "blockdata_filepath": "data/layouts/BattleColosseum_4P_hns/map.bin",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_VIOLET_CITY_POND",
+      "name": "VioletCity_Pond_Layout",
+      "width": 15,
+      "height": 15,
+      "primary_tileset": "gTileset_Johto_General",
+      "secondary_tileset": "gTileset_VioletCity",
+      "border_filepath": "data/layouts/VioletCity_Pond_hns/border.bin",
+      "blockdata_filepath": "data/layouts/VioletCity_Pond_hns/map.bin",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_DARK_CAVE_INNER",
+      "name": "DarkCave_Inner_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave_Default",
+      "border_filepath": "data/layouts/DarkCave_Inner_hns/border.bin",
+      "blockdata_filepath": "data/layouts/DarkCave_Inner_hns/map.bin",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_ILEX_FOREST_INNER",
+      "name": "IlexForest_Inner_Layout",
+      "width": 28,
+      "height": 39,
+      "primary_tileset": "gTileset_Johto_South",
+      "secondary_tileset": "gTileset_IlexForest",
+      "border_filepath": "data/layouts/IlexForest_Inner_hns/border.bin",
+      "blockdata_filepath": "data/layouts/IlexForest_Inner_hns/map.bin",
+      "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_HIDDEN_GROVE",
+      "name": "HiddenGrove_Layout",
+      "width": 30,
+      "height": 32,
+      "primary_tileset": "gTileset_Johto_South",
+      "secondary_tileset": "gTileset_IlexForest",
+      "border_filepath": "data/layouts/HiddenGrove_hns/border.bin",
+      "blockdata_filepath": "data/layouts/HiddenGrove_hns/map.bin",
+      "layout_version": "hns"
     }
   ]
 }

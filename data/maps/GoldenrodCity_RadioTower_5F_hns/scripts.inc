@@ -41,6 +41,7 @@ GoldenrodCity_RadioTower_5F_EventScript_Petrel::
 	giveitem ITEM_BASEMENT_KEY
 	setvar VAR_GOLDENROD_CITY_STATE, 7
 	clearflag FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO
+	clearflag FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY
 	closemessage
 	release
 	end
@@ -182,7 +183,7 @@ GoldenrodCity_RadioTower_5F_EventScript_Archer::
 GoldenrodCity_RadioTower_5F_EventScript_WingTop::
 	applymovement LOCALID_DIRECTOR_STUDIO, GoldenrodCity_RadioTower_5F_Movement_WalkToPlayerTop
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	msgbox GoldenrodCity_RadioTower_5F_Text_DirectorThanks, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_LUGIA_OR_HOOH, 1,  GoldenrodCity_RadioTower_5F_EventScript_GiveTidalWing
@@ -195,7 +196,7 @@ GoldenrodCity_RadioTower_5F_EventScript_WingTop::
 GoldenrodCity_RadioTower_5F_EventScript_WingMid::
 	applymovement LOCALID_DIRECTOR_STUDIO, GoldenrodCity_RadioTower_5F_Movement_WalkToPlayerMid
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	msgbox GoldenrodCity_RadioTower_5F_Text_DirectorThanks, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_LUGIA_OR_HOOH, 1,  GoldenrodCity_RadioTower_5F_EventScript_GiveTidalWing
@@ -208,7 +209,7 @@ GoldenrodCity_RadioTower_5F_EventScript_WingMid::
 GoldenrodCity_RadioTower_5F_EventScript_WingBot::
 	applymovement LOCALID_DIRECTOR_STUDIO, GoldenrodCity_RadioTower_5F_Movement_WalkToPlayerBot
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	msgbox GoldenrodCity_RadioTower_5F_Text_DirectorThanks, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_LUGIA_OR_HOOH, 1,  GoldenrodCity_RadioTower_5F_EventScript_GiveTidalWing
@@ -251,7 +252,6 @@ GoldenrodCity_RadioTower_5F_Fakeout::
 	waitmovement 0
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR_2
 	removeobject LOCALID_DIRECTOR_STUDIO
-	setvar VAR_MAHOGANY_TOWN_STATE, 17
 	release
 	end
 
@@ -347,14 +347,20 @@ GoldenrodCity_RadioTower_5F_Text_ExecutiveF1After:
 	.string "your power.$"
 
 GoldenrodCity_RadioTower_5F_Text_RocketBossSeen:
-	.string "Oh? You managed to get this far?\p"
-	.string "You must be quite the trainer.\p"
+	.string "To chase us even here... You are\n"
+	.string "persistent, if nothing else.\p"
+	.string "I'm sure you've figured out what our\n"
+	.string "ultimate goal is by now.\p"
 	.string "We intend to take over this RADIO\n"
 	.string "STATION and announce our comeback.\p"
 	.string "That should bring our boss GIOVANNI\n"
 	.string "back from his solitary training.\p"
 	.string "We are going to regain our former\n"
 	.string "glory...\p"
+	.string "Do not imagine that I failed to learn\n"
+	.string "from our last encounter, {PLAYER}.\p"
+	.string "This time, I'm coming at you with\n"
+	.string "everything I have.\p"
 	.string "I won't allow you to interfere with\n"
 	.string "our meticulous plans!$"
 
@@ -365,9 +371,16 @@ GoldenrodCity_RadioTower_5F_Text_RocketBossAfter:
 	.string "How could this be?\p"
 	.string "Our dreams have come to naught.\p"
 	.string "I wasn't up to the task after all.\p"
+	.string "Finally I see why GIOVANNI left us.\p"
+	.string "To be defeated by the same opponent\n"
+	.string "time and again, knowing you and other\l"
+	.string "like-minded trainers will chase us to the\l"
+	.string "ends of the earth...\p"
+	.string "Perhaps if I had your spirit, I'd be able\n"
+	.string "to endure such a pointless struggle.\p"
 	.string "Like GIOVANNI did before me, I will\n"
 	.string "disband TEAM ROCKET here today.\p"
-	.string "Farewell.$"
+	.string "Farewell, {PLAYER}.$"
 
 GoldenrodCity_RadioTower_5F_Text_DirectorThanks:
 	.string "DIRECTOR: {PLAYER}, thank you!\p"

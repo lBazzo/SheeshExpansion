@@ -5,7 +5,7 @@
   "music": "MUS_HG_VIOLET",
   "region_map_section": "MAPSEC_OLIVINE_CITY",
   "requires_flash": false,
-  "weather": "WEATHER_RAIN",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_CITY",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OlivineCity_EventScript_Youngster",
-      "flag": "FLAG_ITEM_OLIVINE_TM_SHOCK_WAVE"
+      "flag": "FLAG_ITEM_OLIVINE_TM_SHOCKWAVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -58,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 11,
-      "y": 44,
+      "x": 20,
+      "y": 46,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -299,9 +299,9 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_SHOCK_WAVE",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_OLIVINE_TM_SHOCK_WAVE"
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OlivineCity_EventScript_Item_Shockwave",
+      "flag": "FLAG_ITEM_OLIVINE_TM_SHOCKWAVE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ATTENDANT",
@@ -328,6 +328,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FallarborTown_Mart_EventScript_MetronomeTutor",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JANINE",
+      "x": 0,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_OLIVINE_DAHLIA"
     }
   ],
   "warp_events": [
@@ -415,6 +428,60 @@
       "var": "VAR_OLIVINE_CITY_STATE",
       "var_value": "1",
       "script": "OlivineCity_EventScript_SilverTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "1",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "1",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "1",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 45,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "2",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "2",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 47,
+      "elevation": 0,
+      "var": "VAR_DAHLIA_STATE",
+      "var_value": "2",
+      "script": "OlivineCity_EventScript_DahliaTrigger"
     }
   ],
   "bg_events": [

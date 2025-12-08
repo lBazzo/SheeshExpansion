@@ -188,3 +188,37 @@ Rotue40_EventScript_MonicaCompleted::
 	closemessage
 	release
 	end
+
+Route40_EventScript_Charlie::
+	trainerbattle_single TRAINER_CHARLIE, Route40_Text_SwimmermCharlieSeen, Route40_Text_SwimmermCharlieBeaten
+	msgbox Route40_Text_SwimmermCharlieAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route40_Text_SwimmermCharlieSeen:
+	.string "The water's warm here.\n"
+	.string "I'm loose and limber.\p"
+	.string "Sure, I'll take you on!$"
+
+Route40_Text_SwimmermCharlieBeaten:
+	.string "Yikes! I've got prune skin!$"
+
+Route40_Text_SwimmermCharlieAfter:
+	.string "Isn't it relaxing just floating\n"
+	.string "like this?$"
+
+Route40_EventScript_Kirk::
+	trainerbattle_single TRAINER_KIRK, Route40_Text_SwimmermKirkSeen, Route40_Text_SwimmermKirkBeaten
+	msgbox Route40_Text_SwimmermKirkAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route40_Text_SwimmermKirkSeen:
+	.string "The waves are wild here.\p"
+	.string "They tire you out while\n"
+	.string "you swim.$"
+
+Route40_Text_SwimmermKirkBeaten:
+	.string "I'm beat!$"
+
+Route40_Text_SwimmermKirkAfter:
+	.string "The currents keep me from\n"
+	.string "reaching that island.$"

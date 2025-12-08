@@ -11,7 +11,7 @@ SafariZoneGate_SafariZoneEntrance_OnFrame::
 
 SafariZoneGate_SafariZoneEntrance_EventScript_ExitSafari::
 	lock
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	msgbox SafariZone_Text_WouldYouLikeToExit, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, SafariZoneGate_SafariZoneEntrance_EventScript_ReenterSafari
 	special ExitSafariMode
@@ -19,14 +19,14 @@ SafariZoneGate_SafariZoneEntrance_EventScript_ExitSafari::
 	setflag FLAG_GOOD_LUCK_SAFARI_ZONE
 	msgbox SafariZone_South_Text_ExitEarlyThankYouForPlaying
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	release
 	end
 
 SafariZoneGate_SafariZoneEntrance_EventScript_ReenterSafari::
 	closemessage
-	applymovement LOCALID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_EnterSafariZone
+	applymovement OBJ_EVENT_ID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_EnterSafariZone
 	waitmovement 0
 	warp MAP_SAFARI_ZONE_ENTERANCE, 0
 	delay 120
@@ -38,7 +38,7 @@ SafariZoneGate_SafariZoneEntrance_MeetBaoba::
 	applymovement LOCALID_SAFARIZONEGATE_BAOBA, Common_Movement_ExclamationMark
 	delay 60
 	applymovement LOCALID_SAFARIZONEGATE_BAOBA, SafariZoneGate_SafariZoneEntrance_Movement_WalkToPlayer
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement LOCALID_SAFARIZONEGATE_BAOBA
 	msgbox SafariZoneGate_SafariZoneEntrance_Text_BaobaWelcome, MSGBOX_DEFAULT
 	closemessage
@@ -264,7 +264,7 @@ SafariZoneGate_SafariZoneEntrance_Text_BaobaDone:
 
 SafariZoneGate_SafariZoneEntrance_EventScript_EntranceCounterTrigger::
 	lockall
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	showmoneybox 0, 0
 	msgbox Route121_SafariZoneEntrance_Text_WouldYouLikeToPlay, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SafariZoneGate_SafariZoneEntrance_EventScript_TryEnterSafariZone
@@ -289,7 +289,7 @@ SafariZoneGate_SafariZoneEntrance_EventScript_TryEnterSafariZone::
 	msgbox Route121_SafariZoneEntrance_Text_PleaseEnjoyYourself, MSGBOX_DEFAULT
 	closemessage
 	hidemoneybox
-	applymovement LOCALID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_EnterSafariZone
+	applymovement OBJ_EVENT_ID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_EnterSafariZone
 	waitmovement 0
 	special EnterSafariMode
 	setvar VAR_SAFARI_ZONE_STATE, 2
@@ -323,7 +323,7 @@ SafariZoneGate_SafariZoneEntrance_EventScript_NotEnoughMoney::
 SafariZoneGate_SafariZoneEntrance_EventScript_MovePlayerBackFromCounter::
 	closemessage
 	hidemoneybox
-	applymovement LOCALID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_BackAwayFromCounter
+	applymovement OBJ_EVENT_ID_PLAYER, SafariZoneGate_SafariZoneEntrance_Movement_BackAwayFromCounter
 	waitmovement 0
 	releaseall
 	end

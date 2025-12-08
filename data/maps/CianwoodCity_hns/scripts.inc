@@ -6,6 +6,7 @@ CianwoodCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CianwoodCity_EventScript_CityEnter
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, CianwoodCity_OnFrame
 	map_script MAP_SCRIPT_ON_LOAD, CianwoodCity_EventScript_InitializeSuicune
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 CianwoodCity_RemoveEusine::
@@ -18,6 +19,7 @@ CianwoodCity_OnFrame::
 
 CianwoodCity_EventScript_CityEnter::
 	setflag FLAG_VISITED_CIANWOOD_CITY
+	callnative SetTimeBasedEncounters
 	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_MapScript_ClearWeather
 	end
 
@@ -41,7 +43,6 @@ CianwoodCity_EventScript_Flytrigger::
 	waitmovement 0
 	msgbox CianwoodCity_Text_ChucksWifeGiveHM, MSGBOX_DEFAULT
 	giveitem ITEM_HM_FLY
-	setflag FLAG_RECEIVED_HM_FLY
 	msgbox CianwoodCity_Text_ChucksWifeFlySpeech, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_GETFLY, 2
@@ -78,7 +79,6 @@ CianwoodCity_EventScript_ChucksWife::
 CianwoodCity_EventScript_ChucksWifeGiveFly::
 	msgbox CianwoodCity_Text_ChucksWifeGiveHM, MSGBOX_DEFAULT
 	giveitem ITEM_HM_FLY
-	setflag FLAG_RECEIVED_HM_FLY
 	msgbox CianwoodCity_Text_ChucksWifeFlySpeech, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -168,7 +168,7 @@ CianwoodCity_EventScript_SuicuneTrigger::
 	waitmovement 0
 	waitmoncry
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune2
 	playse SE_LEDGE
@@ -178,7 +178,7 @@ CianwoodCity_EventScript_SuicuneTrigger::
 	playse SE_LEDGE
 	delay 30
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	waitmoncry
 	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune3
@@ -188,26 +188,31 @@ CianwoodCity_EventScript_SuicuneTrigger::
 	delay 30
 	playse SE_LEDGE
 	delay 30
-	playse SE_LEDGE
-	delay 30
-	playse SE_LEDGE
-	delay 30
 	waitmovement 0
-	delay 30
 	playbgm MUS_HG_EUSINE, TRUE
 	clearflag FLAG_HIDE_CIANWOOD_EUSINE
 	addobject LOCALID_CIANWOOD_EUSINE
 	applymovement LOCALID_CIANWOOD_EUSINE, CianwoodCity_Movement_Eusine1
-	waitmovement 0
-	delay 55
-	applymovement LOCALID_CIANWOOD_EUSINE, CianwoodCity_Movement_Eusine2
+	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune4
 	waitmovement 0 
+	waitmovement 0
 	msgbox CianwoodCity_Text_EusineSuicune, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_EUSINE, CianwoodCity_Text_EusineBeaten
 	playbgm MUS_HG_EUSINE, TRUE
 	msgbox CianwoodCity_Text_EusineAfter, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CIANWOOD_EUSINE, CianwoodCity_Movement_Eusine3
+	applymovement LOCALID_CIANWOOD_EUSINE, CianwoodCity_Movement_Eusine2
+	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune5
+	waitmovement 0
+	waitmovement 0
+	delay 60
+	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune6
+	playse SE_LEDGE
+	delay 30
+	playse SE_LEDGE
+	delay 30
 	waitmovement 0
 	setflag FLAG_HIDE_CIANWOOD_EUSINE
 	setflag FLAG_HIDE_CIANWOOD_SUICUNE
@@ -239,53 +244,68 @@ CianwoodCity_Movement_Suicune2:
 
 CianwoodCity_Movement_Suicune3:
 	jump_2_down
-	jump_2_right
-	jump_2_right
-	jump_2_right
-	jump_2_right
-	jump_2_right
+	jump_2_down
+	jump_2_down
+	jump_down
+	face_up
 	step_end
 
 CianwoodCity_Movement_Eusine1:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	face_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+CianwoodCity_Movement_Suicune4:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_up
 	step_end
 
 CianwoodCity_Movement_Eusine2:
-	face_up
-	walk_up
-	walk_up
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
-CianwoodCity_Movement_Eusine3:
-	face_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+CianwoodCity_Movement_Suicune5:
+	walk_right
+	walk_down
+	walk_down
+	face_up
+	step_end
+
+CianwoodCity_Movement_Suicune6:
+	jump_2_down
+	jump_2_down
 	step_end
 
 CianwoodCity_Text_EusineSuicune:
-	.string "EUSINE: Yo, {PLAYER}.\p"
-	.string "Wasn't that SUICUNE just now?\p"
-	.string "I only caught a quick glimpse, but\n"
-	.string "I thought I saw SUICUNE running on\l"
-	.string "the waves.\p"
-	.string "SUICUNE is beautiful and grand.\p"
-	.string "And it races through towns and\n"
-	.string "roads at simply awesome speeds.\p"
-	.string "It's wonderful…\p"
-	.string "I want to see SUICUNE up close…\p"
-	.string "I've decided.\p"
-	.string "I'll battle you as a trainer to\n"
-	.string "earn SUICUNE's respect!\p"
-	.string "Come on, {PLAYER}. Let's battle now!$"
+	.string "EUSINE: Yo, {PLAYER}!\p"
+	.string "We meet again at last.\p"
+	.string "You may have bested me the last time we\n"
+	.string "met, but things are different now.\p"
+	.string "Behold!\p"
+	.string "I have convinced SUICUNE to join my\n"
+	.string "side and earned its respect, and I owe\l"
+	.string "it all to you!\p"
+	.string "I was able to learn a lot in our last\n"
+	.string "battle. I'm still not sure if I can beat\l"
+	.string "you, {PLAYER}, but I must ask you to\l"
+	.string "face me one more time.\p"
+	.string "Let's do this, SUICUNE!$"
 
 CianwoodCity_Text_EusineBeaten:
 	.string "I hate to admit it, but you win.$"
@@ -294,7 +314,7 @@ CianwoodCity_Text_EusineAfter:
 	.string "You're amazing, {PLAYER}!\p"
 	.string "No wonder POKéMON gravitate to you.\p"
 	.string "I get it now.\p"
-	.string "I'm going to keep searching for\n"
+	.string "I'm going to keep training with\n"
 	.string "SUICUNE.\p"
 	.string "I'm sure we'll see each other again.\p"
 	.string "See you around!$"
@@ -322,17 +342,20 @@ CianwoodCity_Text_GymSign:
 	.string "LEADER: CHUCK\p"
 	.string "His Roaring Fists Do the Talking$"
 
-CianwoodCity_EventScript_Pharmacy::
+CianwoodCity_EventScript_PharmacyBlocked::
 	lock
-	msgbox CianwoodCity_Text_PharmacySign, MSGBOX_SIGN
+	msgbox CianwoodCity_Text_PharmacyBlockedSign, MSGBOX_SIGN
 	closemessage
 	release
 	end
 
-CianwoodCity_Text_PharmacySign:
-	.string "500 Years of Tradition\p"
-	.string "CIANWOOD CITY PHARMACY\p"
-	.string "We Await Your Medicinal Queries$"
+CianwoodCity_Text_PharmacyBlockedSign:
+	.string "CIANWOOD PHARMACY\n"
+	.string "Notice for visitors:\p"
+	.string "We have now moved shop to the SAFARI\n"
+	.string "ZONE GATE.\p"
+	.string "We apologise for any inconvenience\n"
+	.string "caused.$"
 
 CianwoodCity_EventScript_CaveSign::
 	lock

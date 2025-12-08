@@ -173,10 +173,10 @@
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099 //Not used in HnS but may be later
 #define VAR_ROUTE22_GIOVANNI_STATE                       0x409A
 #define VAR_ROUTE27_BAOBA_CALL                           0x409B 
-#define VAR_UNUSED_HNS_VAR4                              0x409C
-#define VAR_UNUSED_HNS_VAR5                              0x409D 
-#define VAR_UNUSED_HNS_VAR6                              0x409E
-#define VAR_UNUSED_HNS_VAR7                              0x409F// HnS Vars end
+#define VAR_THORTON_STATE                                0x409C
+#define VAR_BRUNOS_ROOM_STATE                            0x409D 
+#define VAR_KARENS_ROOM_STATE                            0x409E
+#define VAR_SLOWPOKE_WELL_B2B_STATE                      0x409F// HnS Vars end
 #define VAR_SLATEPORT_HARBOR_STATE                       0x40A0
 #define VAR_UNUSED_0x40A1                                0x40A1 
 #define VAR_SEAFLOOR_CAVERN_STATE                        0x40A2
@@ -201,10 +201,10 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR              0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2                 0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE                     0x40B7
-#define VAR_UNUSED_0x40B8                                0x40B8 // Unused Var
+#define VAR_POTTER_STATE                                 0x40B8 // Unused Var
 #define VAR_MT_PYRE_STATE                                0x40B9
 #define VAR_NEW_MAUVILLE_STATE                           0x40BA
-#define VAR_UNUSED_0x40BB                                0x40BB // Unused Var
+#define VAR_KOGAS_ROOM_STATE                             0x40BB // Unused Var
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON                0x40BC
 #define VAR_JAGGED_PASS_ASH_WEATHER                      0x40BD
 #define VAR_GLASS_WORKSHOP_STATE                         0x40BE
@@ -236,13 +236,13 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+#define VAR_WILLS_ROOM_STATE                             0x40DB // Unused Var
+#define VAR_DAHLIA_STATE                                 0x40DC // Unused Var
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
-#define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
-#define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
-#define VAR_GIFT_UNUSED_3                                0x40E0 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_4                                0x40E1 // Var is written to, but never read
+#define VAR_WHITNEY_GYM_B2B_STATE                        0x40DE // Var is written to, but never read
+#define VAR_ALL_B2B_STATE                                0x40DF // Var is written to, but never read
+#define VAR_GYM_WEATHER_STATE                            0x40E0 // Var is written to, but never read
+#define VAR_LIGHTHOUSE_GAUNTLET_SAILOR                   0x40E1 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
@@ -267,7 +267,7 @@
 #define VAR_SUICUNE_EVENT                                0x40F7
 #define VAR_ENTEI_EVENT                                  0x40F8
 #define VAR_RAIKOU_EVENT                                 0x40F9
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_GOLDENROD_SILVER_STATE                       0x40FA // Used for Goldenrod Rival
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_SURF_MON_SLOT                                0x40FD // Added new VAR for Surfing Overworld Sprites - Holds Surfing Party Mon index

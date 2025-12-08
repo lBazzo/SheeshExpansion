@@ -2,7 +2,13 @@
 .set LOCALID_ECRUTEK_SILVER, 33
 
 EcruteakCity_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EcruteakCity_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
+
+EcruteakCity_OnTransition::
+	callnative SetTimeBasedEncounters
+	end
 
 EcruteakCity_Test_Lugia::
 	setvar VAR_LUGIA_OR_HOOH, 1
@@ -40,6 +46,8 @@ EcruteakCity_EventScript_Trigger::
 	clearflag FLAG_HIDE_WHIRL_ISLANDS_TENTACRUEL
 	clearflag FLAG_HIDE_LUGIA
 	clearflag FLAG_HIDE_HO_OH
+	clearflag FLAG_HIDE_ROUTE42_TEAPARTY
+	clearflag FLAG_HIDE_ECRUTEAK_CITY_BURNEDTOWERYOUNGSTER
 
 	setflag FLAG_VISITED_ECRUTEAK_CITY
 	setflag FLAG_HIDE_ROUTE42_EUSINE
@@ -65,12 +73,12 @@ EcruteakCity_Trigger_Silver::
 	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
 	playse SE_BANG
 	applymovement LOCALID_ECRUTEK_SILVER, EcruteakCity_Movement_Silver1
-	applymovement LOCALID_PLAYER, EcruteakCity_Movement_Silver1
+	applymovement OBJ_EVENT_ID_PLAYER, EcruteakCity_Movement_Silver1
 	message EcruteakCity_Text_Silver1
 	
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_ECRUTEK_SILVER
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	closedoor 39, 40
 	waitdooranim
 	msgbox EcruteakCity_Text_Silver2, MSGBOX_DEFAULT
@@ -217,6 +225,14 @@ EcruteakCity_EventScript_SageGym::
 	release
 	end
 
+EcruteakCity_EventScript_BurnedTowerYoungster::
+	lock
+	faceplayer
+	msgbox EcruteakCity_Text_BurnedTowerYoungster, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 EcruteakCity_EventScript_TheaterSign::
 	lock
 	msgbox EcruteakCity_Text_DanceTheaterSign, MSGBOX_SIGN
@@ -347,9 +363,28 @@ EcruteakCity_Text_Gramps3:
 	.string "Hohoho!$"
 
 EcruteakCity_Text_SageGym:
-	.string "Gym Leader MORTY is not here right\n"
-	.string "now. You may find him at the\l"
-	.string "BURNED TOWER.$"
+	.string "Gym Leader ERIKA is not here right\n"
+	.string "now. She will be back shortly.\p"
+	.string "While you wait, why not pay a visit to\n"
+	.string "the ECRUTEAK DANCE THEATER or the\l"
+	.string "BURNED TOWER?$"
+
+EcruteakCity_Text_BurnedTowerYoungster:
+	.string "What should I do?\p"
+	.string "I was supposed to meet my big sister\n"
+	.string "here and we'd explore BURNED TOWER\l"
+	.string "together, but she hasn't shown up yet.\p"
+	.string "I'd go to ECRUTEAK DANCE THEATER and\n"
+	.string "find her myself, what with me being all\p"
+	.string "grown up and everything, but I saw one\n"
+	.string "of those shady TEAM ROCKET guys go in\l"
+	.string "first...\p"
+	.string "N-not that I'm scared or anything!\p"
+	.string "It's just... she told me not to go near\n"
+	.string "those guys, so I don't want to make her\l"
+	.string "mad.\p"
+	.string "Could you go and look for her instead?\n"
+	.string "Pretty please...?$"
 
 EcruteakCity_Text_Sign:
 	.string "ECRUTEAK CITY\n"
@@ -366,9 +401,9 @@ EcruteakCity_Text_OfficeSign:
 	.string "No Tresspassing by the Unworthy.$"
 
 EcruteakCity_Text_GymSign:
-	.string "ECRUTEAK CITY POKéMON GYM\n"
-	.string "LEADER: MORTY\p"
-	.string "The Mystic Seer of the Future$"
+	.string "ECRUTEAK CITY POKéMON GYM\p"
+	.string "LEADER: ERIKA\l"
+	.string "The Nature-Loving Princess$"
 
 EcruteakCity_Text_DanceTheaterSign:
 	.string "ECRUTEAK DANCE THEATER$"

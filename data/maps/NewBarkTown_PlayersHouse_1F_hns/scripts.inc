@@ -50,23 +50,42 @@ NewBarkTown_PlayersHouse_1F_MomEventScript_GoodLuck::
 
 
 NewBarkTown_PlayersHouse_1F_EventScript_Mom_Regular::
-	call NewBarkTown_PlayersHouse_1F_EventScript_MomHealsParty
+	call PlayersHouse_1F_EventScript_MomHealsParty
 	release
 	end
 
+PlayersHouse_1F_EventScript_MomHealsParty::
+	@ specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	@ goto_if_eq VAR_RESULT, TRUE, PlayersHouse_1F_EventScript_MomHealsParty_PokecenterChallenge
+	msgbox PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
+	goto PlayersHouse_1F_EventScript_HealParty
+	end
+
+PlayersHouse_1F_EventScript_HealParty::
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	incrementgamestat GAME_STAT_RESTED_AT_HOME
+	msgbox PlayersHouse_1F_Text_TakeCareHoney, MSGBOX_DEFAULT
+	release
+	end
+
+PlayersHouse_1F_Text_TakeCareHoney:
+	.string "MOM: Take care, honey!$"
+
 NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger1::
 	lock
-	applymovement LOCALID_PLAYER, NewBarkTown_PlayersHouse_1F_PlayerIntroMovement1
+	applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_PlayersHouse_1F_PlayerIntroMovement1
 	waitmovement 0
 	goto NewBarkTown_PlayersHouse_1F_EventScript_MomsIntro
 	end
 
 NewBarkTown_PlayersHouse_1F_EventScript_MomsIntroTrigger2::
 	lock
-	applymovement LOCALID_PLAYER, NewBarkTown_PlayersHouse_1F_PlayerIntroMovement2
+	applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_PlayersHouse_1F_PlayerIntroMovement2
 	waitmovement 0
 	goto NewBarkTown_PlayersHouse_1F_EventScript_MomsIntro
 	end
+
 
 NewBarkTown_PlayersHouse_1F_EventScript_MomsIntro::
 	playse SE_PIN
@@ -120,47 +139,6 @@ NewBarkTown_PlayersHouse_1F_EventScript_GiveRunningShoes::
 EventScript_RunningShoesManual::
 	msgbox NewBarkTown_PlayersHouse_1F_Text_ExplainRunningShoes, MSGBOX_SIGN
 	end
-
-NewBarkTown_PlayersHouse_1F_EventScript_MomHealsParty::
-	@ specialvar VAR_RESULT, IsPokecenterChallengeActivated
-	@ goto_if_eq VAR_RESULT, TRUE, NewBarkTown_PlayersHouse_1F_EventScript_MomHealsParty_PokecenterChallenge
-	msgbox NewBarkTown_PlayersHouse_1F_Text_YouShouldRestABit, MSGBOX_DEFAULT
-	goto NewBarkTown_PlayersHouse_1F_EventScript_HealParty
-	end
-
-NewBarkTown_PlayersHouse_1F_EventScript_HealParty::
-	closemessage
-	call Common_EventScript_OutOfCenterPartyHeal
-	incrementgamestat GAME_STAT_RESTED_AT_HOME
-	msgbox NewBarkTown_PlayersHouse_1F_Text_TakeCareHoney, MSGBOX_DEFAULT
-	release
-	end
-
-NewBarkTown_PlayersHouse_1F_EventScript_MomHealsParty_PokecenterChallenge::
-	msgbox NewBarkTown_PlayersHouse_1F_Text_YouShouldRestABit_PokecenterChallenge, MSGBOX_DEFAULT
-	closemessage
-	end
-
-NewBarkTown_PlayersHouse_1F_Text_YouShouldRestABit_PokecenterChallenge:
-	.string "MOM: Sorry honey, you are playing\n"
-	.string "with the POKéCENTER challenge!$"
-
-NewBarkTown_PlayersHouse_1F_Text_YouShouldRestABit:
-	.string "MOM: How are you doing, {PLAYER}?\n"
-	.string "You look a little tired.\p"
-	.string "I think you should rest a bit.$"
-
-@ HnS
-Common_Text_ReceivedMon:
-	.string "{PLAYER} received {STR_VAR_1}!$"
-
-Common_Text_PartyIsFull:
-	.string "Whoa, wait. You can't carry any\n"
-	.string "more POKéMON.$"	
-
-Common_Text_LookCloserAtMap:
-	.string "{PLAYER} took a closer look at the\n"
-	.string "Region Map.$"
 
 NewBarkTown_PlayersHouse_1F_PlayerIntroMovement1:
 	delay_8
@@ -251,17 +229,11 @@ NewBarkTown_PlayersHouse_1F_Text_MomLeaving:
 	.string "Now, go on!\n"
 	.string "I'm behind you all the way!$"
 
-NewBarkTown_PlayersHouse_1F_Text_TakeCareHoney:
-	.string "MOM: Take care, honey!$"
+PlayersHouse_1F_Text_YouShouldRestABit:
+	.string "MOM: How are you doing, {PLAYER}?\n"
+	.string "You look a little tired.\p"
+	.string "I think you should rest a bit.$"
 
-LilycoveCity_ContestLobby_Text_PleaseDecideLinkLeader:
-	.string "Please decide which of you will\n"
-	.string "become the GROUP LEADER.\p"
-	.string "The other players must then choose\n"
-	.string "“JOIN GROUP.”$"
-
-TrainerHill_1F_EventScript_Lost::
-	trainerhill_settrainerflags
-	trainerhill_lost
-	setvar VAR_TEMP_1, 1
-	end
+PlayersHouse_1F_Text_YouShouldRestABit_PokecenterChallenge:
+	.string "MOM: Sorry honey, you are playing\n"
+	.string "with the POKéCENTER challenge!$"

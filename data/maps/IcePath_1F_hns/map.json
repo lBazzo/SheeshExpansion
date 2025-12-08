@@ -12,19 +12,19 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 48,
-      "y": 14,
+      "x": 51,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PP_UP",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IcePath_1F_EventScript_Item_PpUp",
       "flag": "FLAG_ITEM_ICEPATH1_PP_UP"
     },
     {
@@ -36,21 +36,21 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_HM_WATERFALL",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IcePath_1F_EventScript_Item_HM_Waterfall",
       "flag": "FLAG_ITEM_ICEPATH1_HM_WATERFALL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 47,
-      "y": 29,
+      "x": 50,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PROTEIN",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IcePath_1F_EventScript_Item_Protein",
       "flag": "FLAG_ITEM_ICEPATH1_PROTEIN"
     },
     {
@@ -199,5 +199,7 @@
       "script": "IcePath_1F_Trigger_KimonoGirl"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+
+  ]
 }

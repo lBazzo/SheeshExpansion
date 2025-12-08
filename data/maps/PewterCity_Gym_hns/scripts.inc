@@ -11,7 +11,7 @@ PewterCity_Gym_EventScript_Jerry::
 PewterCity_Gym_EventScript_Brock::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_JOHTO_PEWTER_GYM, PewterCity_Gym_EventScript_Brock_Defeated
+	goto_if_set FLAG_DEFEATED_PEWTER_GYM, PewterCity_Gym_EventScript_Brock_Defeated
 	msgbox PewterCity_Gym_Text_Brock_Intro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_BROCK, PewterCity_Gym_Text_Brock_WinLoss
 	message PewterCity_Gym_Text_ReceivedBoulderBadge
@@ -20,7 +20,7 @@ PewterCity_Gym_EventScript_Brock::
 	msgbox PewterCity_Gym_Text_Brock_FightDone, MSGBOX_DEFAULT
 	giveitem ITEM_TM_EARTHQUAKE
 	setflag FLAG_BADGE09_GET
-	setflag FLAG_DEFEATED_JOHTO_PEWTER_GYM
+	setflag FLAG_DEFEATED_PEWTER_GYM
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 9
 	call Common_EventScript_SetGymTrainers
@@ -98,7 +98,7 @@ PewterCity_Gym_Text_Guide_Win:
 	.string "inspiring. I mean that seriously.$"
 
 PewterCity_Gym_EventScript_GymGuy::
-	goto_if_set FLAG_DEFEATED_JOHTO_PEWTER_GYM, PewterCity_Gym_EventScript_GymGuyAfter
+	goto_if_set FLAG_DEFEATED_PEWTER_GYM, PewterCity_Gym_EventScript_GymGuyAfter
 	msgbox PewterCity_Gym_Text_Guide, MSGBOX_NPC
 	end
 

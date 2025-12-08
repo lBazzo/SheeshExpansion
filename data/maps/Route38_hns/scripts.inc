@@ -155,3 +155,19 @@ Route38_Text_WaterSign:
 	.string "NO SWIMMING OR FISHING.\n"
 	.string "WATER FOR FARMING ONLY.\p"
 	.string "-ECRUTEAK COUNCIL$"
+
+Route38_EventScript_PolicemanDirk::
+	trainerbattle_single TRAINER_DIRK Route38_Text_OfficerDirkSeen, Route38_Text_OfficerDirkBeaten
+	msgbox Route38_Text_OfficerDirkAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route38_Text_OfficerDirkSeen:
+	.string "Danger lurks in the night!$"
+
+Route38_Text_OfficerDirkBeaten:
+	.string "Whoops!$"
+
+Route38_Text_OfficerDirkAfter:
+	.string "You know, nighttime is fun in its\n"
+	.string "own ways.\p"
+	.string "But don't overdo it, OK?$"

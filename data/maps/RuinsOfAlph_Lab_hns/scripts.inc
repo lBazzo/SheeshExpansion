@@ -1,3 +1,5 @@
+.set LOCALID_FOSSIL_SCIENTIST, 3
+
 RuinsOfAlph_Lab_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, RuinsOfAlph_Lab_OnTransition
 	.byte 0

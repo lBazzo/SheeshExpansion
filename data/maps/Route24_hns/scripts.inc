@@ -87,7 +87,7 @@ Route24_EventScript_Grunt::
 	delay 50
 	msgbox Route24_Text_RocketDisappears, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Route24_Movement_PlayerSlide
+	applymovement OBJ_EVENT_ID_PLAYER, Route24_Movement_PlayerSlide
 	delay 20
 	applymovement LOCALID_ROUTE24_GRUNT, Route24_Movement_GruntLeave
 	waitmovement LOCALID_ROUTE24_GRUNT
@@ -140,7 +140,7 @@ Route24_Text_RocketBeaten:
 	.string "I am not to you!$"
 
 Route24_Text_RocketAfter:
-	.string "OK. Tell you mine secret will I\n"
+	.string "OK. Tell you mine secret will I?\n"
 	.string "MACHINE PART steal by me, hide it\l"
 	.string "I did in GYM of the CERULEAN.\p"
 	.string "Inside water put it I did. Look\n"

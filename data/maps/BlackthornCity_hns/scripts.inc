@@ -5,12 +5,14 @@ BlackthornCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, BlackthornCity_OnFrame
 	map_script MAP_SCRIPT_ON_LOAD, BlackthornCity_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, BlackthornCity_EventScript_CityEnter
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 BlackthornCity_OnLoad::
 	goto_if_unset FLAG_BADGE05_GET, BlackThornCity_EventScript_MoveGymBoy
 	goto_if_unset FLAG_BADGE06_GET, BlackThornCity_EventScript_MoveGymBoy
 	goto_if_unset FLAG_BADGE07_GET, BlackThornCity_EventScript_MoveGymBoy
+	goto_if_lt VAR_GOLDENROD_CITY_STATE, 11, BlackThornCity_EventScript_MoveGymBoy
 	end
 
 BlackThornCity_EventScript_MoveGymBoy::
@@ -21,8 +23,11 @@ BlackthornCity_OnFrame::
 	map_script_2 VAR_BLACKTHORN_CITY_STATE, 4, BlackthornCity_EventScript_Call
 	.2byte 0
 
-BlackthornCity_EventScript_CityEnter::
+BlackthornCity_EventScript_CityEnter:: 
 	setflag FLAG_VISITED_BLACKTHORN_CITY
+	clearflag FLAG_HIDE_ROUTE45_POTTER
+	setvar VAR_POTTER_STATE, 1
+	callnative SetTimeBasedEncounters
 	end
 
 BlackthornCity_EventScript_Call::
@@ -48,38 +53,13 @@ BlackthornCity_Text_ElmCall:
 	.string "Could you swing by my LAB?\p"
 	.string "See you later!$"
 
-BlackThornCity_EventScript_Sage::
-	lock
-	faceplayer
-	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 1, BlackThornCity_EventScript_SageRefuse
-	msgbox BlackthornGrampsGrantsEntryText, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-BlackThornCity_EventScript_SageRefuse::
-	msgbox BlackthornGrampsRefusesEntryText, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-BlackThornCity_Trigger_Sage::
-	lock
-	turnobject LOCALID_BLACKTHORN_SAGE, DIR_EAST
-	msgbox BlackthornGrampsRefusesEntryText, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER Common_Movement_WalkDown
-	waitmovement 0
-	turnobject LOCALID_BLACKTHORN_SAGE, DIR_SOUTH
-	release
-	end
-
 BlackthornCity_EventScript_GymBoy::
 	lock
 	faceplayer
 	goto_if_unset FLAG_BADGE05_GET, BlackThornCity_EventScript_GymBoyNotReady
 	goto_if_unset FLAG_BADGE06_GET, BlackThornCity_EventScript_GymBoyNotReady
 	goto_if_unset FLAG_BADGE07_GET, BlackThornCity_EventScript_GymBoyNotReady
+	goto_if_lt VAR_GOLDENROD_CITY_STATE, 11, BlackThornCity_EventScript_GymBoyNotReady
 	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 1, BlackThornCity_EventScript_GymBoyBefore
 	msgbox BlackthornCity_Text_ClairIsBeaten, MSGBOX_DEFAULT
 	closemessage
@@ -179,7 +159,7 @@ BlackthornCity_Text_ClairNotReady:
 	.string "CLAIR, our GYM LEADER, has been\n"
 	.string "following your progress.\p"
 	.string "However, she only battles trainers\n"
-	.string "who already have 7 badges.$"
+	.string "who have proven themselves worthy.$"
 
 BlackthornCity_Text_ClairIsIn:
 	.string "CLAIR, our GYM LEADER, is waiting\n"

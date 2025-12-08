@@ -186,3 +186,37 @@ GoldenrodCity_RadioTower_4F4_Text_ProductionSign:
 
 GoldenrodCity_RadioTower_4F4_Text_Studio2Sign:
 	.string "4F STUDIO 2$"
+
+GoldenrodCity_RadioTower_4F4_EventScript_Glenn::
+	trainerbattle_single TRAINER_GLENN GoldenrodCity_RadioTower_4F4_Text_BikerGlennSeen, GoldenrodCity_RadioTower_4F4_Text_BikerGlennBeaten
+	msgbox GoldenrodCity_RadioTower_4F4_Text_BikerGlennAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+GoldenrodCity_RadioTower_4F4_Text_BikerGlennSeen:
+	.string "You must be getting pretty tired now,\n"
+	.string "huh?\p"
+	.string "This'll be like taking candy from a baby!$"
+
+GoldenrodCity_RadioTower_4F4_Text_BikerGlennBeaten:
+	.string "You're one tough baby...$"
+
+GoldenrodCity_RadioTower_4F4_Text_BikerGlennAfterBattle:
+	.string "Well, I guess I didn't sleep well today\n"
+	.string "either, ha ha ha...$"
+
+GoldenrodCity_RadioTower_4F4_EventScript_Joel::
+	trainerbattle_single TRAINER_JOEL GoldenrodCity_RadioTower_4F4_Text_BikerJoelSeen, GoldenrodCity_RadioTower_4F4_Text_BikerJoelBeaten
+	msgbox GoldenrodCity_RadioTower_4F4_Text_BikerJoelAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+GoldenrodCity_RadioTower_4F4_Text_BikerJoelSeen:
+	.string "Oi mate, you wanna go or what?$"
+
+GoldenrodCity_RadioTower_4F4_Text_BikerJoelBeaten:
+	.string "Chill bruv!$"
+
+GoldenrodCity_RadioTower_4F4_Text_BikerJoelAfterBattle:
+	.string "Nah you're going crazy on it, and for\n"
+	.string "what?$"
+
+

@@ -26,7 +26,7 @@ CianwoodCity_EventScript_PharmacistAfter::
 	end
 
 
-CianwoodCity_Text_PharmacistGivePotion:
+CianwoodCity_Text_PharmacistGivePotion::
 	.string "Your POKéMON appear to be fine.\p"
 	.string "Is something worrying you?\p"
 	.string "…\p"
@@ -35,10 +35,10 @@ CianwoodCity_Text_PharmacistGivePotion:
 	.string "I got it!\p"
 	.string "This ought to do the trick.$"
 
-CianwoodCity_Text_ReceivedSecretpotion:
+CianwoodCity_Text_ReceivedSecretpotion::
 	.string "{PLAYER} received SECRETPOTION.$"
 
-CianwoodCity_Text_PharmacistDescribePotion:
+CianwoodCity_Text_PharmacistDescribePotion::
 	.string "My SECRETPOTION is a tad too\n"
 	.string "strong, so I only offer it in an\l"
 	.string "emergency.$"

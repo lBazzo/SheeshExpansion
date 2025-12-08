@@ -265,6 +265,14 @@ static const struct MenuAction MultichoiceList_GameCornerDolls[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_GameCornerDolls2[] =
+{
+    {gText_RegirockDollAndPrice},
+    {gText_RegiceDollAndPrice},
+    {gText_RegisteelDollAndPrice},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_GameCornerTMs[] =
 {
     {COMPOUND_STRING("TM32{CLEAR_TO 0x48}1,500 COINS")},
@@ -778,6 +786,174 @@ static const struct MenuAction MultichoiceList_BerryPlot[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_TagChallenge[] =
+{
+    {gText_Easy},
+    {gText_Normal},
+    {gText_Hard},
+};
+
+static const struct MenuAction MultichoiceList_TagGamemode[] =
+{
+    {gText_Classic},
+    {gText_Modern},
+};
+
+static const struct MenuAction MultichoiceList_DaysOfWeek[] =
+{
+    {gText_Sunday},
+    {gText_Monday},
+    {gText_Tuesday},
+    {gText_Wednesday},
+    {gText_Thursday},
+    {gText_Friday},
+    {gText_Saturday},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_KurtsBalls[] =
+{
+    {gText_LoveBall},
+    {gText_Lure},
+    {gText_FriendBall},
+    {gText_Heavy},
+    {gText_Moon},
+    {gText_Fast},
+    {gText_LevelBall},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_OlivineHarbor[] =
+{
+    {gText_Vermilion},   
+    {gText_SouthernIsland},
+    {gText_BirthIsland},
+    {gText_FarawayIsland},
+    {gText_Exit},
+};
+static const struct MenuAction MultichoiceList_VermilionHarbor[] =
+{
+    {gText_Olivine},   
+    {gText_SouthernIsland},
+    {gText_BirthIsland},
+    {gText_FarawayIsland},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_PrizeMons[] = 
+{
+    {gText_Abra},
+    {gText_Clefairy},
+    {gText_Munchlax},
+    {gText_Dratini},
+    {gText_Porygon},
+    {gText_Exit},
+};
+static const struct MenuAction MultichoiceList_7Floors[] = 
+{
+    {gText_Floor6},
+    {gText_Floor5},
+    {gText_Floor4},
+    {gText_Floor3},
+    {gText_Floor2},
+    {gText_Floor1},
+    {gText_Floor0},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_5Floors[] = 
+{
+    {gText_Floor5},
+    {gText_Floor4},
+    {gText_Floor3},
+    {gText_Floor2},
+    {gText_Floor1},
+    {gText_Exit},   
+};
+
+static const struct MenuAction MultichoiceList_GoldSilver[] = 
+{
+    {gText_Gold},
+    {gText_Silver},
+};
+
+static const struct MenuAction MultichoiceList_DahliaChallenge[] = 
+{
+    {gText_Normal},
+    {gText_Hard},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_BugsyStones[] = 
+{
+    {gText_WaterStone},
+    {gText_LeafStone},
+    {gText_ThunderStone},
+    {gText_ShinyStone},
+    {gText_SunStone},
+    {gText_IceStone},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_DarachCaitlin[] = 
+{
+    {gText_Double},
+    {gText_B2B},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_ElderQuiz1[] = 
+{
+    {gText_Pal},
+    {gText_Underling},
+    {gText_Friend},
+};
+static const struct MenuAction MultichoiceList_ElderQuiz2[] = 
+{
+    {gText_Strategy},
+    {gText_Training},
+    {gText_Cheating},
+};
+static const struct MenuAction MultichoiceList_ElderQuiz3[] = 
+{
+    {gText_WeakPerson},
+    {gText_ToughPerson},
+    {gText_Anybody},
+};
+static const struct MenuAction MultichoiceList_ElderQuiz4[] = 
+{
+    {gText_Love2},
+    {gText_Violence},
+    {gText_Knowledge},
+};
+static const struct MenuAction MultichoiceList_ElderQuiz5[] = 
+{
+    {gText_Tough3},
+    {gText_Weak},
+    {gText_Both},
+};
+static const struct MenuAction MultichoiceList_HoennStarters[] = 
+{
+    {gText_GreenStone},
+    {gText_RedStone},
+    {gText_BlueStone},
+};
+
+static const struct MenuAction MultichoiceList_StevenGifts[] = 
+{
+    {gText_Corviknight},
+    {gText_Escavalier},
+    {gText_Tinkaton},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_OlivineGymChallenge[] = 
+{
+    {gText_Blaine},
+    {gText_Surge},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -906,6 +1082,26 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_GAME_CORNER_DOLLS2]         = MULTICHOICE(MultichoiceList_GameCornerDolls2),
+    [MULTI_DAYS_OF_WEEK]               = MULTICHOICE(MultichoiceList_DaysOfWeek),
+    [MULTI_KURT_BALLS]                 = MULTICHOICE(MultichoiceList_KurtsBalls),
+    [MULTI_PRIZE_MONS]                 = MULTICHOICE(MultichoiceList_PrizeMons),
+    [MULTI_7FLOORS]                    = MULTICHOICE(MultichoiceList_7Floors),
+    [MULTI_GOLDSILVER]                 = MULTICHOICE(MultichoiceList_GoldSilver),
+    [MULTI_OLIVINE_HARBOR]             = MULTICHOICE(MultichoiceList_OlivineHarbor),
+    [MULTI_VERMILION_HARBOR]           = MULTICHOICE(MultichoiceList_VermilionHarbor),
+    [MULTI_ELDERQUIIZ1]                = MULTICHOICE(MultichoiceList_ElderQuiz1),
+    [MULTI_ELDERQUIIZ2]                = MULTICHOICE(MultichoiceList_ElderQuiz2),
+    [MULTI_ELDERQUIIZ3]                = MULTICHOICE(MultichoiceList_ElderQuiz3),
+    [MULTI_ELDERQUIIZ4]                = MULTICHOICE(MultichoiceList_ElderQuiz4),
+    [MULTI_ELDERQUIIZ5]                = MULTICHOICE(MultichoiceList_ElderQuiz5),
+    [MULTI_HOENN_STARTERS]             = MULTICHOICE(MultichoiceList_HoennStarters),
+    [MULTI_5FLOORS]                    = MULTICHOICE(MultichoiceList_5Floors),
+    [MULTI_DAHLIACHALLENGE]            = MULTICHOICE(MultichoiceList_DahliaChallenge),
+    [MULTI_STEVEN_GIFTS]               = MULTICHOICE(MultichoiceList_StevenGifts),
+    [MULTI_OLIVINE_GYM_CHALLENGE]      = MULTICHOICE(MultichoiceList_OlivineGymChallenge),
+    [MULTI_BUGSY_STONES]               = MULTICHOICE(MultichoiceList_BugsyStones),
+    [MULTI_DARACH_CAITLIN]             = MULTICHOICE(MultichoiceList_DarachCaitlin),
 };
 
 const u8 *const gStdStrings[] =

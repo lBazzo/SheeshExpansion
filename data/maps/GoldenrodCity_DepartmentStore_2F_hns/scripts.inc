@@ -78,4 +78,3 @@ LilycoveCity_DepartmentStore_2F_EventScript_ClerkLeft::
 @	.2byte ITEM_AWAKENING
 @	.2byte ITEM_FLUFFY_TAIL
 @	pokemartlistend
-

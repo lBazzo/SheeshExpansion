@@ -14,7 +14,7 @@ EcruteakCity_Theater_hns_MapScripts::
 
 EcruteakCity_Theater_OnTransition::
 	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 1, EcruteakCity_Theater_MapScript_SetRocketSceneActive
-	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 7, EcruteakCity_Theater_MapScript_SetKimonoMovement
+	call_if_eq VAR_ECRUTEAK_CITY_THEATER, 8, EcruteakCity_Theater_MapScript_SetKimonoMovement
 	end
 
 EcruteakCity_Theater_MapScript_SetRocketSceneActive::
@@ -34,8 +34,8 @@ EcruteakCity_Theater_MapScript_SetKimonoMovement::
 EcruteakCity_Theater_EventScript_RocketEventTrigger::
 	lockall
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	delay 60
 	turnobject LOCALID_ECRUTEAK_ROCKET, DIR_NORTH
 	special SpawnCameraObject
@@ -150,24 +150,25 @@ EcruteakCity_Theater_EventScript_Rocket::
 	call_if_eq VAR_FACING, DIR_EAST, EcruteakCity_Theater_EventScript_PostRocketLeft
 	call_if_eq VAR_FACING, DIR_WEST, EcruteakCity_Theater_EventScript_PostRocketRight
 	call_if_eq VAR_FACING, DIR_SOUTH, EcruteakCity_Theater_EventScript_PostRocketTop
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox EcruteakCity_Theater_Text_KimonoRocket3, MSGBOX_DEFAULT
 	closemessage	
+	setflag FLAG_HIDE_ECRUTEAK_CITY_BURNEDTOWERYOUNGSTER
 	setvar VAR_ECRUTEAK_CITY_THEATER, 2
 	release
 	end
 	
 EcruteakCity_Theater_EventScript_PostRocketLeft::
-	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkLeft
+	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkLeft1
 	waitmovement 0
-	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown
+	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown1
 	waitmovement 0
 	return
 
 EcruteakCity_Theater_EventScript_PostRocketRight::
-	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkRight
+	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkRight1
 	waitmovement 0
-	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown
+	applymovement LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown1
 	waitmovement 0
 	return
 
@@ -234,7 +235,7 @@ EcruteakCity_Theater_EventScript_KimonoGirlDuringEvent::
 EcruteakCity_Theater_EventScript_Zuki::
 	lock
 	faceplayer
-	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 7, EcruteakCity_Theater_EventScript_ZukiAfterLegendary
+	goto_if_ge VAR_ECRUTEAK_CITY_THEATER, 8, EcruteakCity_Theater_EventScript_ZukiAfterLegendary
 	goto_if_eq VAR_ECRUTEAK_CITY_THEATER, 6, EcruteakCity_Theater_EventScript_ZukiBattle
 	goto_if_eq VAR_ECRUTEAK_CITY_THEATER, 1, EcruteakCity_Theater_EventScript_ZukiDuringRocket
 	msgbox EcruteakCity_Theater_Text_Kimono, MSGBOX_DEFAULT
@@ -294,7 +295,7 @@ EcruteakCity_Theater_EventScript_TriggerSurfGuy::
 	lock
 	applymovement LOCALID_SURF_GUY, EcruteakCity_Theater_Movement_SurfGuy1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox EcruteakCity_Theater_Text_SurfGuyGiveSurf, MSGBOX_DEFAULT
 	giveitem ITEM_HM_SURF
 	setflag FLAG_RECEIVED_HM_SURF
@@ -494,30 +495,30 @@ EcruteakCity_Theater_Text_FancyPanel:
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneLeft::
 	lock
-	applymovement2 LOCALID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiLeft
+	applymovement2 OBJ_EVENT_ID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiLeft
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, EcruteakCity_Theater_Movement_MonWalkToZukiLeft
 	waitmovement OBJ_EVENT_ID_FOLLOWER
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 10
 	lockall
 	goto EcruteakCity_Theater_EventScript_LegendaryCutscene
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneTop::
 	lock
-	applymovement2 LOCALID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiTop
+	applymovement2 OBJ_EVENT_ID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiTop
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, EcruteakCity_Theater_Movement_MonWalkToZukiTop
 	waitmovement OBJ_EVENT_ID_FOLLOWER
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 10
 	lockall
 	goto EcruteakCity_Theater_EventScript_LegendaryCutscene
 
 EcruteakCity_Theater_Trigger_PreBattleCutsceneRight::
 	lock
-	applymovement2 LOCALID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiRight
+	applymovement2 OBJ_EVENT_ID_PLAYER, EcruteakCity_Theater_Movement_PlayerWalkToZukiRight
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, EcruteakCity_Theater_Movement_MonWalkToZukiRight
 	waitmovement OBJ_EVENT_ID_FOLLOWER
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	delay 10
 	lockall
 	goto EcruteakCity_Theater_EventScript_LegendaryCutscene
@@ -750,40 +751,40 @@ EcruteakCity_Theater_EventScript_KuniBattle::
 	applymovement2 LOCALID_ECRUTEAK_KUNI, EcruteakCity_Theater_Movement_KuniWalkBack
 	waitmovement 0
 EcruteakCity_Theater_EventScript_BeatGauntlet::
-	applymovement2 LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown
+	applymovement2 LOCALID_ECRUTEAK_ZUKI, Common_Movement_WalkDown1
 	waitmovement 0
 	msgbox EcruteakCity_Theater_Text_ZukiDone, MSGBOX_DEFAULT
 	goto_if_eq VAR_LUGIA_OR_HOOH, 1, EcruteakCity_Theater_EventScript_Lugia
 	goto_if_eq VAR_LUGIA_OR_HOOH, 2, EcruteakCity_Theater_EventScript_Hooh
 
 	EcruteakCity_Theater_Movement_SouthCorrection::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	turnobject LOCALID_ECRUTEAK_ZUKI, DIR_SOUTH
 	return
 
 	EcruteakCity_Theater_Movement_WestCorrection::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	turnobject LOCALID_ECRUTEAK_ZUKI, DIR_SOUTH
 	return
 
 	EcruteakCity_Theater_Movement_EastCorrection::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	turnobject LOCALID_ECRUTEAK_ZUKI, DIR_SOUTH
 	return
 

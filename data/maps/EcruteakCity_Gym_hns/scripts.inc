@@ -40,7 +40,6 @@ EcruteakCity_Gym_EventScript_Morty::
 	goto_if_set FLAG_DEFEATED_ECRUTEAK_CITY_GYM, EcruteakCity_Gym_EventScript_Morty_Defeated
 	msgbox MortyIntroText, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_MORTY_1, MortyWinLossText
-	message Text_ReceivedFogBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MortyText_FogBadgeSpeech, MSGBOX_DEFAULT
@@ -105,9 +104,6 @@ MortyIntroText:
 MortyWinLossText:
 	.string "I'm not good enough yet...\p"
 	.string "All right. This BADGE is yours.$"
-
-Text_ReceivedFogBadge:
-	.string "{PLAYER} received the FOGBADGE.$"
 
 MortyText_FogBadgeSpeech:
 	.string "With the FOGBADGE, POKéMON up\n"

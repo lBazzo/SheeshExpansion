@@ -16,7 +16,6 @@ IcePath_1F_EventScript_Item_Protein::
 	end
 IcePath_1F_EventScript_Item_HM_Waterfall::
 	finditem ITEM_HM_WATERFALL
-	setflag FLAG_RECEIVED_HM_WATERFALL
 	end
 
 IcePath_1F_EventScript_KimonoGirl::
@@ -33,7 +32,7 @@ IcePath_1F_Trigger_KimonoGirl::
 	lock
 	msgbox IcePath_1F_Text_Leave, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	release
 	end
@@ -45,7 +44,7 @@ IcePath_1F_EventScript_KimonoGirlPush::
 	msgbox IcePath_1F_Text_Shove, MSGBOX_AUTOCLOSE
 	closemessage
 	playse SE_LEDGE
-	applymovement LOCALID_PLAYER, IcePath_Movement_PlayerJump
+	applymovement OBJ_EVENT_ID_PLAYER, IcePath_Movement_PlayerJump
 	waitmovement 0
 	waitse
 	playse SE_M_ICY_WIND

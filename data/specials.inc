@@ -590,6 +590,7 @@ gSpecials::
 	def_special RemoveSafariBalls
 	def_special ShowBugContestChosenMon
 	def_special DoPokemonLeagueLightingEffect
+	def_special StopPokemonLeagueLightingEffectTask
 	def_special SetVermilionTrashCans
 	def_special SwitchMonAbility
 	def_special TrySpecialOverworldEvo
@@ -618,3 +619,6 @@ gSpecials::
 	def_special SetAbility
 	def_special ObjectEventInteractionGetApricornTreeData
 	def_special ObjectEventInteractionPickApricornTree
+	def_special TeleportCamera
+	def_special MoveCameraAndRedrawMap
+	def_special CustomGiveBattlePoints

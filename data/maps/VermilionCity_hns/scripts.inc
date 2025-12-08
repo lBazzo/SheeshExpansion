@@ -4,16 +4,19 @@
 
 VermilionCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, VermilionCity_MapScript_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 VermilionCity_MapScript_OnTransition::
 	setflag FLAG_VISITED_VERMILION_CITY
 	goto_if_eq VAR_SUICUNE_ENCOUNTERS, 3, VermilionCity_EventScript_SetSuicuneScene
 	setflag FLAG_HIDE_VERMILION_EUSINE_SUICUNE
+	callnative SetTimeBasedEncounters
 	end
 
 VermilionCity_EventScript_SetSuicuneScene::
 	clearflag FLAG_HIDE_VERMILION_EUSINE_SUICUNE
+	callnative SetTimeBasedEncounters
 	end
 
 VermilionCity_EventScript_OldSeaMap::
@@ -23,7 +26,7 @@ VermilionCity_EventScript_OldSeaMap::
 VermilionCity_TriggerSuicuneTop::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_Suicune1
@@ -34,16 +37,16 @@ VermilionCity_TriggerSuicuneTop::
 	playse SE_LEDGE
 	waitse
 	waitmovement 0
-	applymovement2 LOCALID_PLAYER, VermilionCity_Movement_PlayerWalkToRailTop
+	applymovement2 OBJ_EVENT_ID_PLAYER, VermilionCity_Movement_PlayerWalkToRailTop
 	delay 60
 	applymovement2 LOCALID_VERMILION_EUSINE, VermilionCity_Movement_EusineWalkToRail
 	waitmovement LOCALID_VERMILION_EUSINE
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto VermilionCity_EventScript_SuicuneEpisode
 VermilionCity_TriggerSuicuneMid::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_Suicune1
@@ -54,25 +57,25 @@ VermilionCity_TriggerSuicuneMid::
 	playse SE_LEDGE
 	waitse
 	waitmovement 0
-	applymovement2 LOCALID_PLAYER, VermilionCity_Movement_PlayerWalkToRailMid
+	applymovement2 OBJ_EVENT_ID_PLAYER, VermilionCity_Movement_PlayerWalkToRailMid
 	delay 60
 	applymovement2 LOCALID_VERMILION_EUSINE, VermilionCity_Movement_EusineWalkToRail
 	waitmovement LOCALID_VERMILION_EUSINE
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto VermilionCity_EventScript_SuicuneEpisode
 VermilionCity_TriggerSuicuneBot::
 	lock
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement2 LOCALID_VERMILION_SUICUNE, VermilionCity_Movement_Suicune1
 	waitmovement 0
-	applymovement2 LOCALID_PLAYER, VermilionCity_Movement_PlayerWalkToRailBot
+	applymovement2 OBJ_EVENT_ID_PLAYER, VermilionCity_Movement_PlayerWalkToRailBot
 	delay 60
 	applymovement2 LOCALID_VERMILION_EUSINE, VermilionCity_Movement_EusineWalkToRail
 	waitmovement LOCALID_VERMILION_EUSINE
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto VermilionCity_EventScript_SuicuneEpisode
 
 VermilionCity_EventScript_SuicuneEpisode::
@@ -89,7 +92,7 @@ VermilionCity_EventScript_SuicuneEpisode::
 	waitmovement 0
 	msgbox VermilionCity_Text_Eusine, MSGBOX_DEFAULT
 	turnobject LOCALID_VERMILION_EUSINE, DIR_SOUTH
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox VermilionCity_Text_Eusine2, MSGBOX_DEFAULT
 	closemessage
 	applymovement2 LOCALID_VERMILION_EUSINE, VermilionCity_Movement_EusineLeave
@@ -135,31 +138,32 @@ VermilionCity_EventScript_Snorlax::
 	end
 
 VermilionCity_EventScript_SnorlaxWakeUp::
-	playse MUS_HG_RADIO_POKE_FLUTE
-	msgbox VermilionCity_Text_RadioNearSnorlax, MSGBOX_DEFAULT
-	waitse
-	playmoncry SPECIES_SNORLAX, CRY_MODE_ENCOUNTER
-	delay 40
-	waitmoncry
-	setwildbattle SPECIES_SNORLAX, 50
-	dowildbattle
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VermilionCity_EventScript_SnorlaxRan
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject LOCALID_VERMILION_SNORLAX
-	removeobject 8
-	removeobject 9
-	removeobject 10
-	removeobject 11
-	setflag FLAG_HIDE_VERMILION_SNORLAX
-	fadescreenswapbuffers FADE_FROM_BLACK
-	setflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
-	release
-	end
+    playbgm MUS_HG_RADIO_POKE_FLUTE, TRUE
+    msgbox VermilionCity_Text_RadioNearSnorlax, MSGBOX_DEFAULT
+    playmoncry SPECIES_SNORLAX, CRY_MODE_ENCOUNTER
+    delay 40
+    waitmoncry
+    setwildbattle SPECIES_SNORLAX, 50
+    dowildbattle
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, VermilionCity_EventScript_SnorlaxRan
+    fadescreenswapbuffers FADE_TO_BLACK
+    removeobject LOCALID_VERMILION_SNORLAX
+    removeobject 8
+    removeobject 9
+    removeobject 10
+    removeobject 11
+    setflag FLAG_HIDE_VERMILION_SNORLAX
+    fadescreenswapbuffers FADE_FROM_BLACK
+    setflag FLAG_INDIGOJUNCTION_HIDE_KANTO_GUARD
+    fadedefaultbgm
+    release
+    end
 
 VermilionCity_EventScript_SnorlaxRan::
-	release
-	end
+    fadedefaultbgm
+    release
+    end
 
 VermilionCity_EventScript_BadgeGuy::
 	lock

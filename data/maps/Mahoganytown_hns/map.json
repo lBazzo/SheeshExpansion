@@ -146,6 +146,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MahoganyTown_EventScript_DarachIntro",
+      "flag": "FLAG_HIDE_MAHOGANY_TOWN_FRONTIER_NPCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MahoganyTown_EventScript_CaitlinIntro",
+      "flag": "FLAG_HIDE_MAHOGANY_TOWN_FRONTIER_NPCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_1",
+      "x": 12,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MahoganyTown_EventScript_CaitlinPokemonIntro",
+      "flag": "FLAG_HIDE_MAHOGANY_TOWN_FRONTIER_NPCS"
     }
   ],
   "warp_events": [
@@ -525,7 +564,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_MAHOGANY_TOWN_STATE",
-      "var_value": "7",
+      "var_value": "16",
       "script": "MahoganyTown_EventScript_MerchantTrigger"
     },
     {
@@ -615,7 +654,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_MAHOGANY_TOWN_STATE",
-      "var_value": "7",
+      "var_value": "16",
       "script": "MahoganyTown_EventScript_MerchantTrigger"
     }
   ],

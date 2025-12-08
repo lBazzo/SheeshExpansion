@@ -56,7 +56,7 @@ WhirlIslands_1F_EventScript_TalkToKimono::
 
 	applymovement LOCALID_KIMONO_MID, WhirlIslands_1F_Movement_Kimono_Step_Aside
 	waitmovement 0
-	applymovement LOCALID_PLAYER, WhirlIslands_1F_Walk_To_Center
+	applymovement OBJ_EVENT_ID_PLAYER, WhirlIslands_1F_Walk_To_Center
 	waitmovement 0
 	applymovement LOCALID_KIMONO_MID, WhirlIslands_1F_Movement_Kimono_Step_In
 	applymovement LOCALID_KIMONO_1, WhirlIslands_1F_Movement_Kimono_Step_Start_Left
@@ -159,7 +159,7 @@ WhirlIslands_1F_EventScript_TalkToKimono::
 	special SpawnCameraObject
 	setvar VAR_0x8004, 3  @ num loops
 	setvar VAR_0x8005, 35 @ delay
-	special LoopWingFlapSE
+	@special LoopWingFlapSE
 	applymovement LOCALID_LUGIA, WhirlIslands_1F_Movement_LugiaAppear
 	applymovement OBJ_EVENT_ID_CAMERA, WhirlIslands_1F_Movement_CameraPanUp
 	waitmovement 0
@@ -173,7 +173,7 @@ WhirlIslands_1F_EventScript_TalkToKimono::
 	delay 60
 	setvar VAR_0x8004, 3  @ num loops
 	setvar VAR_0x8005, 35 @ delay
-	special LoopWingFlapSE
+	@special LoopWingFlapSE
 	applymovement LOCALID_LUGIA, WhirlIslands_1F_Movement_LugiaApproach
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_CAMERA, WhirlIslands_1F_Movement_CameraPanDown
@@ -204,7 +204,7 @@ WhirlIslands_1F_EventScript_Lugia::
 	delay 30
 	waitmoncry
 	playbgm MUS_HG_VS_LUGIA, 0
-	seteventmon SPECIES_LUGIA, 50
+	seteventmon SPECIES_POLITOED, 69
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -221,8 +221,9 @@ WhirlIslands_1F_EventScript_Lugia::
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS
-	setvar VAR_ECRUTEAK_CITY_THEATER, 7
+	setvar VAR_ECRUTEAK_CITY_THEATER, 8
 	setvar VAR_COMPLETED_LUGIA, 3
+	setflag FLAG_HIDE_TOHJO_PSYDUCK
 	releaseall
 	end
 
@@ -231,7 +232,7 @@ WhirlIslands_1F_EventScript_LugiaPostgame::
 	delay 30
 	waitmoncry
 	playbgm MUS_HG_VS_LUGIA, 0
-	seteventmon SPECIES_LUGIA, 70
+	seteventmon SPECIES_POLITOED, 69
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -243,6 +244,7 @@ WhirlIslands_1F_EventScript_LugiaPostgame::
 	call_if_eq VAR_RESULT, B_OUTCOME_WON, WhirlIslands_1F_EventScript_LugiaFlewAway
 	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, WhirlIslands_1F_EventScript_CaughtLugia
 	setvar VAR_COMPLETED_LUGIA, 3
+	setflag FLAG_HIDE_TOHJO_PSYDUCK
 	releaseall
 	end
 

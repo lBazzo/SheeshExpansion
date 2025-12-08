@@ -23,7 +23,7 @@ MahoganyTown_Shop_EventScript_Raid::
 	playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	msgbox MahoganyMart1F_Text_Lance_HyperBeam, MSGBOX_DEFAULT
 	closemessage
@@ -55,9 +55,9 @@ MahoganyTown_Shop_EventScript_Raid::
 	playmoncry SPECIES_DRAGONITE, CRY_MODE_NORMAL
 	waitmovement 0
 	applymovement LOCALID_MAHOGANYSHOP_LANCE, MahoganyTown_Shop_Movement_LanceGotoBox
-	applymovement LOCALID_PLAYER, MahoganyTown_Shop_Movement_PlayerGotoBox
+	applymovement OBJ_EVENT_ID_PLAYER, MahoganyTown_Shop_Movement_PlayerGotoBox
 	waitmovement LOCALID_MAHOGANYSHOP_LANCE
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 
 	playse SE_M_HYPER_BEAM
 	applymovement LOCALID_MAHOGANYSHOP_DRAGONITE, MahoganyTown_Shop_Movement_Dragonite2
@@ -83,13 +83,13 @@ MahoganyTown_Shop_EventScript_Raid::
 	turnobject LOCALID_MAHOGANYSHOP_LANCE, DIR_SOUTH
 	msgbox MahoganyMart1F_Text_Lance_SplitUp, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_MAHOGANYSHOP_DRAGONITE, Common_Movement_WalkRight
+	applymovement LOCALID_MAHOGANYSHOP_DRAGONITE, Common_Movement_WalkRight1
 	waitmovement 0
 	removeobject LOCALID_MAHOGANYSHOP_DRAGONITE
 	playse SE_EXIT
-	applymovement LOCALID_MAHOGANYSHOP_LANCE, Common_Movement_WalkRight
+	applymovement LOCALID_MAHOGANYSHOP_LANCE, Common_Movement_WalkRight1
 	waitmovement 0
-	applymovement LOCALID_MAHOGANYSHOP_LANCE, Common_Movement_WalkRight
+	applymovement LOCALID_MAHOGANYSHOP_LANCE, Common_Movement_WalkRight1
 	waitmovement 0
 	removeobject LOCALID_MAHOGANYSHOP_LANCE
 	playse SE_EXIT

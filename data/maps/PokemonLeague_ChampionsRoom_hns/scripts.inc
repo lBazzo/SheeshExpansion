@@ -20,7 +20,7 @@ ChampionRoom_CloseDoor::
 	lock
 	setflag FLAG_TEMP_2
 	special DrawWholeMapView
-	applymovement LOCALID_PLAYER, ChamionRoom_Movement_Enter
+	applymovement OBJ_EVENT_ID_PLAYER, ChamionRoom_Movement_Enter
 	waitmovement 0
 	setvar VAR_TEMP_0, 1
 	release
@@ -37,7 +37,7 @@ ChamionRoom_Movement_Enter:
 
 ChampionRoom_Trigger::
 	lock
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	release
 	end
@@ -79,11 +79,12 @@ PokemonLeague_WillsRoom_EventScript_LanceOnDefeatJohto::
 	playse SE_PIN
 	applymovement LOCALID_LEAGUE_LANCE, Common_Movement_ExclamationMark
 	delay 40
-	turnobject LOCALID_PLAYER, DIR_SOUTH
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerMoveToCenter
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerMoveToCenter
 	applymovement LOCALID_LEAGUE_LANCE, PokemonLeague_ChampionsRoom_Movement_LanceMoveOver
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_LEAGUE_LANCE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
 	addobject LOCALID_LEAGUE_MARY
 	addobject LOCALID_LEAGUE_OAK
 	applymovement LOCALID_LEAGUE_MARY, PokemonLeague_ChampionsRoom_Movement_MaryEnter
@@ -106,14 +107,14 @@ PokemonLeague_WillsRoom_EventScript_LanceOnDefeatJohto::
 	closemessage
 	applymovement LOCALID_LEAGUE_LANCE, PokemonLeague_ChampionsRoom_Movement_LanceLeave
 	delay 30
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerLeave
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerLeave
 	waitmovement LOCALID_LEAGUE_LANCE
 	@setobjectxyperm LOCALID_LEAGUE_LANCE, 6, 14
 	removeobject LOCALID_LEAGUE_LANCE
 	playse SE_EXIT
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_EXIT
 	waitse
 	delay 50
@@ -146,10 +147,10 @@ PokemonLeague_WillsRoom_EventScript_LanceOnDefeatKanto::
 	playse SE_PIN
 	applymovement LOCALID_LEAGUE_LANCE, Common_Movement_ExclamationMark
 	delay 40
-	turnobject LOCALID_PLAYER, DIR_SOUTH
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerMoveToCenter
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerMoveToCenter
 	applymovement LOCALID_LEAGUE_LANCE, PokemonLeague_ChampionsRoom_Movement_LanceMoveOver
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_LEAGUE_LANCE
 	addobject LOCALID_LEAGUE_MARY
 	addobject LOCALID_LEAGUE_OAK
@@ -173,14 +174,14 @@ PokemonLeague_WillsRoom_EventScript_LanceOnDefeatKanto::
 	closemessage
 	applymovement LOCALID_LEAGUE_LANCE, PokemonLeague_ChampionsRoom_Movement_LanceLeave
 	delay 30
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerLeave
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_PlayerLeave
 	waitmovement LOCALID_LEAGUE_LANCE
 	@setobjectxyperm LOCALID_LEAGUE_LANCE, 6, 14
 	removeobject LOCALID_LEAGUE_LANCE
 	playse SE_EXIT
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_EXIT
 	waitse
 	delay 50
@@ -197,15 +198,15 @@ PokemonLeague_WillsRoom_EventScript_LanceOnDefeatKanto::
 	end
 
 PokemonLeague_ChampionsRoom_EventScript_AdjustPlayerFacingEast::
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingEast
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingEast
 	waitmovement 0
 	return
 PokemonLeague_ChampionsRoom_EventScript_AdjustPlayerFacingSouth::
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingSouth
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingSouth
 	waitmovement 0
 	return
 PokemonLeague_ChampionsRoom_EventScript_AdjustPlayerFacingWest::
-	applymovement LOCALID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingWest
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_ChampionsRoom_Movement_AdjustPlayerFacingWest
 	waitmovement 0
 	return
 
@@ -392,10 +393,6 @@ PokemonLeague_ChampionsRoom_Text_RematchOakCongratulations:
     .string "foundation of your success.\p"
     .string "But remember, a trainer's journey\n"
     .string "is never truly over.\p"
-    .string "When you have a moment, do visit\n"
-    .string "me in my lab.\p"
-    .string "There's something I'd like to\n"
-    .string "discuss with you.\p"
     .string "Congratulations on your victory,\n"
     .string "{PLAYER}!$"
 

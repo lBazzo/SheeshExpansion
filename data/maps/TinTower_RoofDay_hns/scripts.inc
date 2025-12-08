@@ -48,7 +48,7 @@ TinTower_RoofDay_EventScript_TalkToKimono::
 
 	applymovement LOCALID_KIMONO_MID, TinTower_RoofDay_Movement_Kimono_Step_Aside
 	waitmovement 0
-	applymovement LOCALID_PLAYER, TinTower_RoofDay_Walk_To_Center
+	applymovement OBJ_EVENT_ID_PLAYER, TinTower_RoofDay_Walk_To_Center
 	waitmovement 0
 	applymovement LOCALID_KIMONO_MID, TinTower_RoofDay_Movement_Kimono_Step_In
 	applymovement LOCALID_KIMONO_1, TinTower_RoofDay_Movement_Kimono_Step_Start_Left
@@ -200,7 +200,7 @@ TinTower_RoofDay_EventScript_HoOh::
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_KIMONOS
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_ZUKI
 	clearflag FLAG_HIDE_ECRUTEAK_CITY_THEATER_NPCS
-	setvar VAR_ECRUTEAK_CITY_THEATER, 7
+	setvar VAR_ECRUTEAK_CITY_THEATER, 8
 	setvar VAR_COMPLETED_HO_OH, 3
 	releaseall
 	end

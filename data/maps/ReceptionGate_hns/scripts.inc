@@ -36,7 +36,7 @@ ReceptionGate_Trigger::
     playse SE_PIN
     applymovement LOCALID_INDIGOJUNCTION_POLICEMAN, Common_Movement_ExclamationMark
     delay 20
-    goto_if_lt VAR_ECRUTEAK_CITY_THEATER, 7, ReceptionGate_EventScript_Kimono
+    goto_if_lt VAR_ECRUTEAK_CITY_THEATER, 8, ReceptionGate_EventScript_Kimono
     msgbox VictoryRoadGate_Text_Officer, MSGBOX_DEFAULT
     goto_if_unset FLAG_BADGE08_GET, ReceptionGate_EventScript_NotEnough
     msgbox VictoryRoadGate_Text_EightBadges, MSGBOX_DEFAULT
@@ -48,7 +48,7 @@ ReceptionGate_Trigger::
 ReceptionGate_EventScript_Kimono::
     msgbox VictoryRoadGate_Text_Kimono, MSGBOX_DEFAULT
     closemessage
-    applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
     waitmovement 0
     release
     end 
@@ -56,7 +56,7 @@ ReceptionGate_EventScript_Kimono::
 ReceptionGate_EventScript_NotEnough::
     msgbox VictoryRoadGate_Text_NotEnoughBadges, MSGBOX_DEFAULT
     closemessage
-    applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
     waitmovement 0
     release
     end

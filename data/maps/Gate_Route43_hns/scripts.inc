@@ -19,9 +19,9 @@ Gate_Route43_Rocket_EventScript_Shakedown::
 	lock
 	showmoneybox 0, 0
 	msgbox Gate_Route43_Rocket_Text_TollFee, MSGBOX_DEFAULT
-	checkmoney 500
+	checkmoney 1
 	goto_if_eq VAR_RESULT, FALSE, Gate_Route43_Rocket_EventScript_ShakedownBroke
-	removemoney 500
+	removemoney 1
 	playse SE_SHOP
 	updatemoneybox
 	msgbox Gate_Route43_Rocket_Text_ThankYou, MSGBOX_DEFAULT
@@ -33,7 +33,7 @@ Gate_Route43_Rocket_EventScript_ShakedownBroke::
 	checkmoney 1
 	goto_if_eq VAR_RESULT, FALSE, Gate_Route43_Rocket_EventScript_KickOut
 	msgbox Gate_Route43_Rocket_Text_AllYouGot, MSGBOX_DEFAULT
-	removemoney 500
+	removemoney 1
 	playse SE_SHOP
 	updatemoneybox
 	msgbox Gate_Route43_Rocket_Text_ThankYou, MSGBOX_DEFAULT
@@ -71,7 +71,7 @@ Gate_Route43_Rocket_EventScript_Rockets::
 
 Gate_Route43_Rocket_Text_TollFee:
     .string "Hold it there, kiddo!\p"
-    .string "The toll is ¥500 to go\n"
+    .string "The toll is ¥1 to go\n"
     .string "through.$"
 
 Gate_Route43_Rocket_Text_ThankYou:

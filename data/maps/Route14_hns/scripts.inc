@@ -14,48 +14,48 @@ Route14_OnTransition:
 Route14_TriggerSuicune_5::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
-	applymovement LOCALID_PLAYER, Route14_Movement_5
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_5
 	waitmovement 0
 	goto Route14_EventScript_Suicune
 
 Route14_TriggerSuicune_4::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
-	applymovement LOCALID_PLAYER, Route14_Movement_4
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_4
 	waitmovement 0
 	goto Route14_EventScript_Suicune
 
 Route14_TriggerSuicune_3::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
-	applymovement LOCALID_PLAYER, Route14_Movement_3
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_3
 	waitmovement 0
 	goto Route14_EventScript_Suicune
 
 Route14_TriggerSuicune_2::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
 	goto Route14_EventScript_Suicune
 
 Route14_TriggerSuicune_1::
 	lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
 	goto Route14_EventScript_Suicune
 
@@ -86,7 +86,7 @@ Route14_EventScript_Suicune::
 	waitse
 	playse SE_LEDGE
 	waitse
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	playse SE_LEDGE
 	delay 30
 	playse SE_LEDGE
@@ -102,7 +102,7 @@ Route14_EventScript_Suicune::
 	addobject LOCALID_ROUTE14_EUSINE
 	applymovement LOCALID_ROUTE14_EUSINE, Route14_Movement_EusineEnter
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	waitmovement 0
 	msgbox Route14_Text_Eusine, MSGBOX_DEFAULT
 	closemessage
@@ -163,19 +163,9 @@ Route14_Movement_EusineLeave:
 	walk_fast_up
 	step_end
 
-Route14_EventScript_Carter::
-	trainerbattle_single TRAINER_CARTER Route14_Text_PokefanmCarterSeen, Route14_Text_PokefanmCarterBeaten
-	msgbox Route14_Text_PokefanmCarterAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route14_EventScript_Roy::
 	trainerbattle_single TRAINER_ROY Route14_Text_BirdKeeperRoySeen, Route14_Text_BirdKeeperRoyBeaten
 	msgbox Route14_Text_BirdKeeperRoyAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route14_EventScript_Trevor::
-	trainerbattle_single TRAINER_TREVOR Route14_Text_PokefanmTrevorSeen, Route14_Text_PokefanmTrevorBeaten
-	msgbox Route14_Text_PokefanmTrevorAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -201,17 +191,6 @@ Route14_Text_Eusine:
 	.string "Who'll find it first?\n"
 	.string "I challenge you!$"
 
-Route14_Text_PokefanmCarterSeen:
-	.string "Let me tell you, I had a hard time\n"
-	.string "catching my prized POKéMON.$"
-
-Route14_Text_PokefanmCarterBeaten:
-	.string "Awaaah!$"
-
-Route14_Text_PokefanmCarterAfterBattle:
-	.string "TOTODILE, CYNDAQUIL, CHIKORITA…\p"
-	.string "I think that's a well-balanced mix.$"
-
 Route14_Text_BirdKeeperRoySeen:
 	.string "My dream is to fly with my beloved\n"
 	.string "bird POKéMON.$"
@@ -222,19 +201,6 @@ Route14_Text_BirdKeeperRoyBeaten:
 Route14_Text_BirdKeeperRoyAfterBattle:
 	.string "You have POKéMON that know the HM\n"
 	.string "move FLY, don't you? I envy you.$"
-
-Route14_Text_PokefanmTrevorSeen:
-	.string "Hi. Did you know…?\p"
-	.string "POKéMON get more friendly if you\n"
-	.string "train them in a place that they\n"
-	.string "remember.$"
-
-Route14_Text_PokefanmTrevorBeaten:
-	.string "Where did I meet this SCIZOR?$"
-
-Route14_Text_PokefanmTrevorAfterBattle:
-	.string "If only there were an easy way to\n"
-	.string "identify where I got my POKéMON…$"
 
 Route14_EventScript_Pidgeotto::
 	lockall
@@ -263,7 +229,7 @@ Route14_EventScript_PidgeottoDislikedBerry::
 
 Route14_EventScript_PidgeottoBlowPlayerLeft::
 	applymovement LOCALID_ROUTE14_PIDGEOTTO, Route14_Movement_JumpLeft
-	applymovement LOCALID_PLAYER, Route14_Movement_Player_BlownLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Route14_Movement_Player_BlownLeft
 	waitmovement 0
 	return
 

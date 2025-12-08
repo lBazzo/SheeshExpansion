@@ -12,12 +12,12 @@ PokemonLeague_HallOfFame_EventScript_Cutscene::
 	lock
 	goto_if_set FLAG_IS_CHAMPION, PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp
 	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
-	applymovement LOCALID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
-	waitmovement LOCALID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_HALLOFFAME_LANCE
 	msgbox PokemonLeague_HallOfFame_LanceText, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 20
 	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD
@@ -34,12 +34,12 @@ PokemonLeague_HallOfFame_EventScript_Cutscene::
 
 PokemonLeague_HallOfFame_EventScript_CutsceneKantoChamp::
 	applymovement LOCALID_HALLOFFAME_LANCE, PokemonLeague_HallOfFame_Movement_LanceEnter
-	applymovement LOCALID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
-	waitmovement LOCALID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, PokemonLeague_HallOfFame_Movement_PlayerEnter
+	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement LOCALID_HALLOFFAME_LANCE
 	msgbox PokemonLeague_HallOfFame_Rematch_LanceText, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	delay 20
 	dofieldeffect FLDEFF_HALL_OF_FAME_RECORD
@@ -60,7 +60,6 @@ PokemonLeague_HallOfFame_EventScript_SetFirstGameClearFlags::
 	setflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
 	setvar VAR_SHUCKIE, 2
 	setvar VAR_LEAGUE_STATE, 1
-	setvar VAR_NEWBARK_TOWN_STATE, 6
 	setvar VAR_SSAQUA_STATE, 0
 	return
 
@@ -94,7 +93,6 @@ PokemonLeague_HallOfFame_EventScript_SetGameClearFlags::
 	setvar VAR_LEAGUE_STATE, 1
 	return
 
-@ HnS TODO - fix roamers
 PokemonLeague_HallOfFame_EventScript_SpawnRoamers::
 	setvar VAR_0x8004, 1
 	special InitRoamer

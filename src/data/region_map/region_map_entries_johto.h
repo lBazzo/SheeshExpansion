@@ -113,6 +113,18 @@ static const u8 sJMapName_Ruins_of_Alph[] = _("Ruins of Alph");
 static const u8 sJMapName_S_S__AQUA[] = _("S.S. AQUA");
 static const u8 sJMapName_EMBEDDED_TOWER[] = _("EMBEDDED TOWER");
 static const u8 sJMapName_LIGHTHOUSE[] = _("LIGHTHOUSE");
+static const u8 sJMapName_INNER_DARK_CAVE[] = _("INNER DARK CAVE");
+static const u8 sJMapName_VIOLET_CITY_POND[] = _("VIOLET CITY POND");
+static const u8 sJMapName_LOWER_RUINS[] = _("LOWER RUINS");
+static const u8 sJMapName_INNER_UNION_CAVE[] = _("INNER UNION CAVE");
+static const u8 sJMapName_WELL_DEPTHS[] = _("WELL DEPTHS");
+static const u8 sJMapName_INNER_ILEX_FOREST[] = _("INNER ILEX FOREST");
+static const u8 sJMapName_HIDDEN_GROVE[] = _("HIDDEN GROVE");
+static const u8 sJMapName_BILLS_HOUSE[] = _("BILLS HOUSE");
+static const u8 sJMapName_ASHEN_CRYPT[] = _("ASHEN CRYPT");
+static const u8 sJMapName_BATTLE_TOWER[] = _("BATTLE TOWER");
+static const u8 sJMapName_RADIO_ROOM[] = _("RADIO ROOM");
+static const u8 sJMapName_PROF_ELMS_LAB[] = _("PROF ELMS LAB");
 
 const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_VIOLET_CITY] = {
@@ -912,6 +924,90 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .width = 1,
         .height = 1,
         .name = sJMapName_,
+    },
+    [MAPSEC_INNER_DARK_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_INNER_DARK_CAVE,
+    },
+    [MAPSEC_VIOLET_CITY_POND] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_VIOLET_CITY_POND,
+    },
+    [MAPSEC_LOWER_RUINS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_LOWER_RUINS,
+    },
+    [MAPSEC_INNER_UNION_CAVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_INNER_UNION_CAVE,
+    },
+    [MAPSEC_WELL_DEPTHS] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_WELL_DEPTHS,
+    },
+    [MAPSEC_INNER_ILEX_FOREST] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_INNER_ILEX_FOREST,
+    },
+    [MAPSEC_HIDDEN_GROVE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_HIDDEN_GROVE,
+    },
+    [MAPSEC_BILLS_HOUSE] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_BILLS_HOUSE,
+    },
+    [MAPSEC_ASHEN_CRYPT] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_ASHEN_CRYPT,
+    },
+    [MAPSEC_BATTLE_TOWER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_BATTLE_TOWER,
+    },
+    [MAPSEC_RADIO_ROOM] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_RADIO_ROOM,
+    },
+    [MAPSEC_PROF_ELMS_LAB] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_PROF_ELMS_LAB,
     },
 };
 

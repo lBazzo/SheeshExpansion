@@ -21,7 +21,7 @@ SSAqua_RoomSSE_SetGirlPos::
 
 SSAqua_RoomSSE_EventScript_ReuinionScene::
 	lock
-    turnobject LOCALID_PLAYER, DIR_NORTH
+    turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
     turnobject LOCALID_SSAQUA_ROOM_SSE_GRANDFATHER, DIR_SOUTH
     playse SE_PIN
     applymovement LOCALID_SSAQUA_ROOM_SSE_GRANDFATHER, Common_Movement_ExclamationMark
@@ -31,7 +31,7 @@ SSAqua_RoomSSE_EventScript_ReuinionScene::
     turnobject LOCALID_SSAQUA_ROOM_SSE_GRANDFATHER, DIR_EAST
     msgbox SSAqua_RoomSSE_Text_GranddaughterWasPlaying, MSGBOX_DEFAULT
     closemessage
-    applymovement LOCALID_PLAYER, SSAqua_RoomSSE_Movement_PlayerEnter
+    applymovement OBJ_EVENT_ID_PLAYER, SSAqua_RoomSSE_Movement_PlayerEnter
     waitmovement 0
     turnobject LOCALID_SSAQUA_ROOM_SSE_GRANDFATHER, DIR_SOUTH
     msgbox SSAqua_RoomSSE_Text_EntertainedGranddaughter, MSGBOX_DEFAULT

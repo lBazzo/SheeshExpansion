@@ -911,6 +911,102 @@
       "y": 17,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_INNER_DARK_CAVE",
+      "name": "INNER DARK CAVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_VIOLET_CITY_POND",
+      "name": "VIOLET CITY POND",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_LOWER_RUINS",
+      "name": "LOWER RUINS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_INNER_UNION_CAVE",
+      "name": "INNER UNION CAVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WELL_DEPTHS",
+      "name": "WELL DEPTHS",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_INNER_ILEX_FOREST",
+      "name": "INNER ILEX FOREST",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_HIDDEN_GROVE",
+      "name": "HIDDEN GROVE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_BILLS_HOUSE",
+      "name": "BILLS HOUSE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ASHEN_CRYPT",
+      "name": "ASHEN CRYPT",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_BATTLE_TOWER",
+      "name": "BATTLE TOWER",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_RADIO_ROOM",
+      "name": "RADIO ROOM",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_PROF_ELMS_LAB",
+      "name": "PROF ELMS LAB",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
   ]
 }

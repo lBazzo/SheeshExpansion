@@ -63,6 +63,7 @@ CianwoodGym_EventScript_ChuckVictory::
 	msgbox CianwoodGym_Text_ChuckBadgeSpeech, MSGBOX_DEFAULT
 	setflag FLAG_BADGE05_GET
 	setflag FLAG_DEFEATED_CIANWOOD_GYM
+	setflag FLAG_HIDE_ROUTE42_TEAPARTY
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 5
 	call Common_EventScript_SetGymTrainers
@@ -187,6 +188,23 @@ CianwoodGym_Text_ChuckRematchDefeat:
 	.string "Wha? Huh? I lost?\n"
 	.string "Again?$"
 
+CianwoodGym_EventScript_Kenji::
+	trainerbattle_single TRAINER_KENJI CianwoodGym_Text_BlackbeltKenjiSeen, CianwoodGym_Text_BlackbeltKenjiBeaten
+	msgbox CianwoodGym_Text_BlackbeltKenjiAfter, MSGBOX_AUTOCLOSE
+	end
+
+CianwoodGym_Text_BlackbeltKenjiSeen:
+    .string "I've training hard here.\p"
+    .string "Behold the fruits of my labor!$"
+
+CianwoodGym_Text_BlackbeltKenjiBeaten:
+    .string "Waaaargh!$"
+
+CianwoodGym_Text_BlackbeltKenjiAfter:
+    .string "This calls for extreme measures.\p"
+    .string "I must take to the hills and train\n"
+    .string "in solitude.$"
+
 CianwoodGym_EventScript_Yoshi::
 	trainerbattle_single TRAINER_YOSHI CianwoodGym_Text_BlackbeltYoshiSeen, CianwoodGym_Text_BlackbeltYoshiBeaten
 	msgbox CianwoodGym_Text_BlackbeltYoshiAfter, MSGBOX_AUTOCLOSE
@@ -251,3 +269,33 @@ CianwoodGym_Text_BlackbeltLungAfter:
 	.string "My POKéMON lost…\n"
 	.string "My… my pride is shattered…$"
 
+CianwoodGym_EventScript_GymGuide::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, CianwoodGym_EventScript_GymGuideAfter
+	msgbox CianwoodCity_Text_GymGuide, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CianwoodGym_EventScript_GymGuideAfter::
+	msgbox CianwoodCity_Text_GymGuideWin, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CianwoodCity_Text_GymGuide:
+	.string "The POKéMON GYM trainers here are\n"
+	.string "macho bullies.\p"
+	.string "If I stick around, they might\n"
+	.string "come after me.\p"
+	.string "Here's some advice: the GYM LEADER\n"
+	.string "uses the FIGHTING-type.\p"
+	.string "So you should confound him with\n"
+	.string "psychic POKéMON.\p"
+	.string "Wipe out his POKéMON before they\n"
+	.string "can use their physical strength.$"
+
+CianwoodCity_Text_GymGuideWin:
+	.string "{PLAYER}! You won!\n"
+	.string "I could tell by looking at you!$"

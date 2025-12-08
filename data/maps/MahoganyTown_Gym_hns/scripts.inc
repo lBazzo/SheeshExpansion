@@ -1,6 +1,5 @@
 MahoganyTown_Gym_hns_MapScripts::
-	.byte 0
-
+    .byte 0
 
 MahoganyTown_Gym_EventScript_Statue::
 	lock
@@ -31,6 +30,7 @@ MahoganyTown_GymEventScript_GymGuy::
 	goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, MahoganyTown_Gym_EventScript_GymGuy2
 	msgbox MahoganyTown_Gym_Text_Guide, MSGBOX_DEFAULT
 	closemessage
+    setvar VAR_GYM_WEATHER_STATE, 1
 	release
 	end
 	
@@ -55,7 +55,7 @@ MahoganyTown_Gym_EventScript_Douglas::
 	end
 
 MahoganyTown_Gym_EventScript_Roxanne::
-	trainerbattle_single TRAINER_ROXANNE MahoganyTown_Gym_Text_SkierRoxanneSeen, MahoganyTown_Gym_Text_SkierRoxanneBeaten
+    trainerbattle_single TRAINER_ROXANNE MahoganyTown_Gym_Text_SkierRoxanneSeen, MahoganyTown_Gym_Text_SkierRoxanneBeaten
 	msgbox MahoganyTown_Gym_Text_SkierRoxanneAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -85,7 +85,8 @@ MahoganyTown_Gym_EventScript_PryceVictory::
 	call Common_EventScript_SetGymTrainers
 	giveitem ITEM_TM_HAIL
 	msgbox MahoganyTown_Gym_Text_HailSpeech, MSGBOX_DEFAULT
-	setvar VAR_MAHOGANY_TOWN_STATE, 15
+    setvar VAR_SAFARI_ZONE_GATE_STATE, 1
+    setflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS
     setrespawn HEAL_LOCATION_MAHOGANYTOWN
 	closemessage
 	release
@@ -185,8 +186,7 @@ MahoganyTown_Gym_Text_Guide:
     .string "He's got a solid lineup of\n"
     .string "POKéMON to cover whatever\l"
     .string "you bring his way.\p"
-    .string "Fire is a good place to start,\n"
-    .string "but watch out for the rain!$"
+    .string "Fire is a good place to start.$"
 
 MahoganyTown_Gym_Text_GuideWin:
     .string "PRYCE is something, but you're\n"
@@ -253,3 +253,25 @@ MahoganyTown_Gym_Text_SkierClarissaAfter:
     .string "I shouldn't have been bragging\n"
     .string "about my skiing…$"
 
+MahoganyTown_Gym_EventScript_Dean::
+	trainerbattle_single TRAINER_DEAN MahoganyTown_Gym_Text_CamperDeanSeen, MahoganyTown_Gym_Text_CamperDeanBeaten
+	msgbox MahoganyTown_Gym_Text_CamperDeanAfter, MSGBOX_AUTOCLOSE
+	end
+
+MahoganyTown_Gym_Text_CamperDeanSeen:
+	.string "Think you're ready to take on PRYCE?\n"
+	.string "We'll see about that!$"
+
+MahoganyTown_Gym_Text_CamperDeanBeaten:
+	.string "Whoa! You're the real deal!$"
+
+MahoganyTown_Gym_Text_CamperDeanAfter:
+	.string "If you open a POKéMON GYM someday, can\n"
+	.string "I be a trainer there?\p"
+	.string "PRYCE is kind of strict with us...$"
+
+MahoganyTown_Gym_EventScript_ChangeWeatherHailState1::
+    setweather WEATHER_SNOW
+	doweather
+    setvar VAR_GYM_WEATHER_STATE, 2
+    end
