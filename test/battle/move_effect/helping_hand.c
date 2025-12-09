@@ -123,3 +123,45 @@ DOUBLE_BATTLE_TEST("Helping Hand boosts the power of attacking moves by 125% if 
 }
 
 TO_DO_BATTLE_TEST("TODO: Write Helping Hand (Move Effect) test titles")
+
+AI_DOUBLE_BATTLE_TEST("Helping Hand gets +7 when AI's partner outdamages them on both Player mons, +12 when it's outsped OHKO'd by enemy mon, +6 otherwise")
+{
+    u32 moveOpponent;
+    u32 hp;
+
+    PARAMETRIZE { moveOpponent = MOVE_TWISTER; hp = 1; }
+    PARAMETRIZE { moveOpponent = MOVE_TWISTER; hp = 999; }
+    PARAMETRIZE { moveOpponent = MOVE_DRACO_METEOR; hp = 1; }
+    PARAMETRIZE { moveOpponent = MOVE_DRACO_METEOR; hp = 999; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(5); Moves(MOVE_TACKLE, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(5); Moves(MOVE_TACKLE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(4); HP(hp); Moves(moveOpponent, MOVE_HELPING_HAND); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(6); Moves(MOVE_DRACO_METEOR, MOVE_CELEBRATE); }
+    } WHEN {
+        if (hp == 1)
+            {
+                TURN {  
+                    SCORE_EQ_VAL(opponentLeft, MOVE_HELPING_HAND, 112, target:opponentRight);
+                }
+            }
+            
+        else if (hp == 999 && moveOpponent == MOVE_TWISTER)
+            {
+                TURN {
+                    SCORE_EQ_VAL(opponentLeft, MOVE_HELPING_HAND, 107, target:opponentRight);
+                }
+            }
+        else if (hp == 999 && moveOpponent == MOVE_DRACO_METEOR)
+            {
+                TURN {
+                    SCORE_EQ_VAL(opponentLeft, MOVE_HELPING_HAND, 106, target:opponentRight);
+                }
+            }
+            
+        }
+}
+
+

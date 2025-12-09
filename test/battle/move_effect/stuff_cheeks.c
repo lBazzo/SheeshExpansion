@@ -104,6 +104,7 @@ SINGLE_BATTLE_TEST("Stuff Cheeks fails if the user's berry is removed before the
     }
 }
 
+// Bazzo note: this makes sense + is working as intended (stuff treated as a flat setup move here)
 AI_SINGLE_BATTLE_TEST("AI uses Stuff Cheeks")
 {
     GIVEN {

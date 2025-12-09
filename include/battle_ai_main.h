@@ -32,22 +32,22 @@ enum StatChange
     STAT_CHANGE_EVASION
 };
 
-#define BEST_DAMAGE_MOVE         1  // Move with the most amount of hits with the best accuracy/effect
-#define POWERFUL_STATUS_MOVE     10 // Moves with this score will be chosen over a move that faints target
+#define BEST_DAMAGE_MOVE         6  // Move with the most amount of hits with the best accuracy/effect
+#define POWERFUL_STATUS_MOVE     50 // Moves with this score will be chosen over a move that faints target
 #define NO_DAMAGE_OR_FAILS      -20 // Move fails or does no damage
 
 // Scores given in AI_CalcMoveEffectScore and AI_CalcHoldEffectMoveScore
 enum AIScore
 {
     NO_INCREASE = 0,
-    WEAK_EFFECT = 1,
-    DECENT_EFFECT = 2,
-    GOOD_EFFECT = 3,
-    BEST_EFFECT = 4,
-    PERFECT_EFFECT = 10,
+    WEAK_EFFECT = 7,
+    DECENT_EFFECT = 8,
+    GOOD_EFFECT = 9,
+    BEST_EFFECT = 13,
+    PERFECT_EFFECT = 16,
     BAD_EFFECT = -1,
-    AWFUL_EFFECT = -3,
-    WORST_EFFECT = -10
+    AWFUL_EFFECT = -2,
+    WORST_EFFECT = -3
 };
 
 enum MoveComparisonResult

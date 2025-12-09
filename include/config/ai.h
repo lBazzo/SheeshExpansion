@@ -61,7 +61,7 @@
 #define ENABLE_RECOVERY_THRESHOLD                               60 // HP percentage beneath which SHOULD_RECOVER_CHANCE is active
 #define SUCKER_PUNCH_CHANCE                                     50 // Chance for the AI to not use Sucker Punch if the player has a status move
 #define SUCKER_PUNCH_PREDICTION_CHANCE                          50 // Additional chance for the AI to not use Sucker Punch if actively predicting a status move if SUCKER_PUNCH_CHANCE fails
-#define PRIORITIZE_LAST_CHANCE_CHANCE                           50 // Chance the AI will prioritize Last Chance (priority move in the face of being outsped and KO'd) over Slow KO
+#define PRIORITIZE_LAST_CHANCE_CHANCE                           100 // Chance the AI will prioritize Last Chance (priority move in the face of being outsped and KO'd) over Slow KO
 
 // AI damage calc considerations
 #define RISKY_AI_CRIT_STAGE_THRESHOLD                           2   // Stat stages at which Risky will assume it gets a crit
@@ -114,5 +114,16 @@
 #define Z_EFFECT_FOLLOW_ME_THRESHOLD    30
 #define Z_EFFECT_RESTORE_HP_LOWER_THRESHOLD   ENABLE_RECOVERY_THRESHOLD // threshold used for moves you could conceivably use more than once
 #define Z_EFFECT_RESTORE_HP_HIGHER_THRESHOLD  90                        // these moves are one-time use or drop your HP
+
+// Custom percentages
+#define CUSTOM_AI_TEN_PERCENT           10
+#define CUSTOM_AI_TWENTY_PERCENT        20
+#define CUSTOM_AI_THIRTY_PERCENT        30
+#define CUSTOM_AI_FOURTY_PERCENT        40
+#define CUSTOM_AI_FIFTY_PERCENT         50
+#define CUSTOM_AI_SIXTY_PERCENT         60
+#define CUSTOM_AI_SEVENTY_PERCENT       70
+#define CUSTOM_AI_EIGHTY_PERCENT        80
+#define CUSTOM_AI_NINETY_PERCENT        90
 
 #endif // GUARD_CONFIG_AI_H

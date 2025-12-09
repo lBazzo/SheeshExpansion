@@ -105,3 +105,33 @@ SINGLE_BATTLE_TEST("Volt Absorb prevents Cell Battery from activating")
 
     }
 }
+
+AI_DOUBLE_BATTLE_TEST("Volt Absorb on partner gives spread moves an appropriate scoring based on max hp")
+{
+    u32 maxHp;
+
+    PARAMETRIZE { maxHp = 100; }
+    PARAMETRIZE { maxHp = 99; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_LANTURN) { Ability(ABILITY_VOLT_ABSORB); HP(99); MaxHP(maxHp); }
+        OPPONENT(SPECIES_JOLTEON) { Moves(MOVE_DISCHARGE); }
+    } WHEN {
+        if (maxHp == 100)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponentRight, MOVE_DISCHARGE, 111, target:playerLeft);
+            }
+        }
+
+        else if (maxHp == 99)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponentRight, MOVE_DISCHARGE, 108, target:playerLeft);
+            }
+        }
+    }
+}

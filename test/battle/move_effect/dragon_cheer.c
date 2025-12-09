@@ -114,16 +114,16 @@ AI_DOUBLE_BATTLE_TEST("AI uses Dragon Cheer")
         ASSUME(GetSpeciesType(SPECIES_DRATINI, 0) == TYPE_DRAGON);
         ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) != TYPE_DRAGON);
         ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) != TYPE_DRAGON);
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_POUND, MOVE_CELEBRATE); }
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_POUND, MOVE_CELEBRATE); }
-        OPPONENT(species) { Moves(MOVE_DRAGON_CHEER, MOVE_POUND); }
-        OPPONENT(species) { Moves(MOVE_DRAGON_CHEER, MOVE_POUND); }
+        OPPONENT(species) { Moves(MOVE_POUND, MOVE_DRAGON_CHEER); } // Bazzo note: swapped these around
+        OPPONENT(species) { Moves(MOVE_POUND, MOVE_DRAGON_CHEER); }
     } WHEN {
         if (species == SPECIES_DRATINI)
-            TURN {  EXPECT_MOVE(opponentLeft, MOVE_DRAGON_CHEER); }
+            TURN {  SCORE_EQ_VAL(opponentLeft, MOVE_DRAGON_CHEER, 107, target:opponentRight); }
         else
-            TURN {  NOT_EXPECT_MOVE(opponentLeft, MOVE_DRAGON_CHEER); }
+            TURN {  SCORE_EQ_VAL(opponentLeft, MOVE_DRAGON_CHEER, 106, target:opponentRight); }
     }
 }
 

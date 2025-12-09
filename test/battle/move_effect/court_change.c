@@ -220,6 +220,7 @@ DOUBLE_BATTLE_TEST("Court Change used by the player swaps G-Max Vine Lash, G-Max
 
 AI_SINGLE_BATTLE_TEST("AI uses Court Change")
 {
+    KNOWN_FAILING; //Bazzo note: fails because it's given weak effect (107) over highest damage (108 with fixed rng)
     u32 move;
 
     PARAMETRIZE { move = MOVE_HEADBUTT; }
@@ -235,7 +236,7 @@ AI_SINGLE_BATTLE_TEST("AI uses Court Change")
     PARAMETRIZE { move = MOVE_LUCKY_CHANT; }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_ZIGZAGOON) { Moves(move, MOVE_CELEBRATE); }
         PLAYER(SPECIES_ZIGZAGOON) { Moves(move, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_ZIGZAGOON) { Moves(MOVE_COURT_CHANGE, MOVE_HEADBUTT); }

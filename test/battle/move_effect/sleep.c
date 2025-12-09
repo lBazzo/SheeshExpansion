@@ -37,3 +37,47 @@ SINGLE_BATTLE_TEST("Hypnosis inflicts 1-3 turns of sleep")
         STATUS_ICON(opponent, none: TRUE);
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI will vary sleep score depending on different circumstances")
+{
+    u32 opponentMove1;
+    u32 opponentMove2;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { opponentMove1 = MOVE_TACKLE ; opponentMove2 = MOVE_SWIFT ; opponentSpeed = 10; }
+    PARAMETRIZE { opponentMove1 = MOVE_TACKLE ; opponentMove2 = MOVE_SWIFT ; opponentSpeed = 150; }
+    PARAMETRIZE { opponentMove1 = MOVE_TACKLE ; opponentMove2 = MOVE_DREAM_EATER ; opponentSpeed = 150; }
+    PARAMETRIZE { opponentMove1 = MOVE_HEX ; opponentMove2 = MOVE_DREAM_EATER ; opponentSpeed = 150; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(20); Moves(MOVE_DRAGON_RAGE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); HP(20); Moves(opponentMove1, opponentMove2, MOVE_SLEEP_POWDER); }
+    } WHEN {
+        if (opponentMove1 == MOVE_TACKLE && opponentMove2 == MOVE_SWIFT && opponentSpeed == 10)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_SLEEP_POWDER, 106);
+            }
+        }
+        else if (opponentMove1 == MOVE_TACKLE && opponentMove2 == MOVE_SWIFT && opponentSpeed == 150)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_SLEEP_POWDER, 107);
+            }
+        }
+        else if (opponentMove1 == MOVE_TACKLE && opponentMove2 == MOVE_DREAM_EATER && opponentSpeed == 150)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_SLEEP_POWDER, 108);
+            }
+        }
+        else if (opponentMove1 == MOVE_HEX && opponentMove2 == MOVE_DREAM_EATER && opponentSpeed == 150)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_SLEEP_POWDER, 109);
+            }
+        }
+    }
+
+}
