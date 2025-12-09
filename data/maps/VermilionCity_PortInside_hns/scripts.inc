@@ -111,11 +111,11 @@ VermilionPort_EventScript_EnterShip::
 	applymovement LOCALID_VERMILIONMARINA_SAILOR, VermilionPort_Movement_SailorEnterBoat
 	waitmovement 0
 	playse SE_EXIT
-	applymovement LOCALID_PLAYER, VermilionPort_Movement_PlayerEnterBoat
+	applymovement OBJ_EVENT_ID_PLAYER, VermilionPort_Movement_PlayerEnterBoat
 	waitmovement 0
 	special SpawnCameraObject
 	playse SE_EXIT
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	delay 60
 	applymovement LOCALID_VERMILIONMARINA_SAILOR, VermilionPort_Movement_BoatLeave
 	applymovement LOCALID_VERMILIONMARINA_BOAT, VermilionPort_Movement_BoatLeave

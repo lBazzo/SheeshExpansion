@@ -26,7 +26,7 @@ Route42_EventScript_Suicune_Trigger::
 	waitmovement 0
 	waitmoncry
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	applymovement LOCALID_ROUTE42_SUICUNE, Route42_Movement_Suicune2
 	playse SE_LEDGE
@@ -41,7 +41,7 @@ Route42_EventScript_Suicune_Trigger::
 
 	playmoncry SPECIES_SUICUNE, CRY_MODE_NORMAL
 	applymovement LOCALID_ROUTE42_SUICUNE, Route42_Movement_Suicune3
-	applymovement LOCALID_PLAYER, Route42_Movement_Player
+	applymovement OBJ_EVENT_ID_PLAYER, Route42_Movement_Player
 	playse SE_LEDGE
 	delay 60
 	playse SE_LEDGE
@@ -61,7 +61,7 @@ Route42_EventScript_Suicune_Trigger::
 	clearflag FLAG_HIDE_ROUTE42_EUSINE
 	addobject LOCALID_ROUTE42_EUSINE
 	playse SE_EXIT
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	applymovement LOCALID_ROUTE42_EUSINE, Route42_Movement_Eusine1
 	waitmovement 0
 	msgbox Route42_Text_EusineAdmireSuicune, MSGBOX_DEFAULT
@@ -249,3 +249,69 @@ Route42_Text_Sign1:
 Route42_Text_MtMortarSign1:
 	.string "MT.MORTAR\p"
 	.string "WATERFALL CAVE INSIDE$"
+
+Route42_EventScript_TeaPartyMom::
+	lock
+	faceplayer
+	msgbox Route42_Text_TeaPartyMom, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route42_EventScript_TeaPartyGirl1::
+	lock
+	msgbox Route42_Text_TeaPartyGirl1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route42_EventScript_TeaPartyGirl2::
+	lock
+	faceplayer
+	msgbox Route42_Text_TeaPartyGirl2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route42_EventScript_TeaPartyDad::
+	lock
+	faceplayer
+	msgbox Route42_Text_TeaPartyDad, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route42_Text_TeaPartyMom:
+	.string "We're having a tea party! Would you like\n"
+	.string "to join?\p"
+	.string "I'm sure our little angels would love to\n"
+	.string "make a new friend!$"
+
+Route42_Text_TeaPartyGirl1:
+	.string "Waiter! Waiter! There's a FLYGON in my\n"
+	.string "soup!$"
+
+Route42_Text_TeaPartyGirl2:
+	.string "The service here is terrible...$"
+
+Route42_Text_TeaPartyDad:
+	.string "Yes, dearest!\n"
+	.string "Right away, honey bun!$"
+
+Route42_2F_EventScript_Nerd::
+	trainerbattle_single TRAINER_HUGH Route42_2F_Text_SupernerdHughSeen, Route42_2F_Text_SupernerdHughBeaten
+	msgbox Route42_2F_Text_SupernerdHughAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route42_2F_Text_SupernerdHughSeen::
+	.string "Yo! MARKUS!$"
+
+Route42_2F_Text_SupernerdHughBeaten:
+	.string "Sorry, my mistake.\n"
+	.string "I misjudged you.$"
+
+Route42_2F_Text_SupernerdHughAfter:
+	.string "I was investigating MT.MORTAR,\n"
+	.string "but my pal's gone AWOL.\p"
+	.string "I came out here to look for him, but\n"
+	.string "what if he's still inside...?$"

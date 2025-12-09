@@ -1,3 +1,8 @@
+LakeOfRage_hns_MapScripts::
+	.byte 0
+
+/*
+
 .set LOCALID_LAKEOFRAGE_GYARADOS, 8
 .set LOCALID_LAKEOFRAGE_LANCE, 3
 .set LOCALID_LAKEOFRAGE_DRAGONITE, 16
@@ -11,9 +16,9 @@ LakeOfRage_hns_MapScripts::
 LakeOfRage_OnTransition::
 	setflag FLAG_VISITED_LAKE_OF_RAGE
 	call_if_lt VAR_MAHOGANY_TOWN_STATE, 2, LakeOfRage_EventScript_HideLois
-	goto_if_lt VAR_MAHOGANY_TOWN_STATE, 14, LakeOfRage_EventScript_SetHighTide
+	goto_if_lt VAR_MAHOGANY_TOWN_STATE, 14, LakeOfRage_EventScript_SetLowTide
 	special UpdateShoalTideFlag
-	goto_if_set FLAG_SYS_LAKE_OF_RAGE_TIDE, LakeOfRage_EventScript_SetHighTide
+	goto_if_set FLAG_SYS_LAKE_OF_RAGE_TIDE, LakeOfRage_EventScript_SetLowTide
 	goto LakeOfRage_EventScript_SetLowTide
 
 LakeOfRage_EventScript_SetLowTide::
@@ -21,7 +26,7 @@ LakeOfRage_EventScript_SetLowTide::
 	setmaplayoutindex LAYOUT_LAKE_OF_RAGE_LOW_TIDE
 	end
 
-LakeOfRage_EventScript_SetHighTide::
+@LakeOfRage_EventScript_SetHighTide::
 	setmaplayoutindex LAYOUT_LAKE_OF_RAGE
 	goto_if_lt VAR_MAHOGANY_TOWN_STATE, 14, LakeOfRage_EventScript_ThunderStorm
 	random 2
@@ -446,3 +451,6 @@ LakeOfRage_Text_Sign:
 
 LakeOfRage_Text_FishingGuruSign:
     .string "FISHING GURU'S HOUSE$"
+
+
+*/

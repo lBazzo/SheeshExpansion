@@ -12,21 +12,8 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 4,
-      "y": 30,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 3,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "GoldenrodUnderground_EventScript_Issac",
-      "flag": "FLAG_HIDE_GOLDENROD_NPCS"
-    },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 6,
@@ -67,45 +54,6 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 4,
-      "y": 10,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 3,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "GoldenrodUnderground_EventScript_Teru",
-      "flag": "FLAG_HIDE_GOLDENROD_NPCS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 4,
-      "y": 7,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 3,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "GoldenrodUnderground_EventScript_Eric",
-      "flag": "FLAG_HIDE_GOLDENROD_NPCS"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 1,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 3,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "GoldenrodUnderground_EventScript_Donald",
-      "flag": "FLAG_HIDE_GOLDENROD_NPCS"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 13,
       "y": 13,
@@ -114,8 +62,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_COIN_CASE",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GoldenrodCity_UndergroundTunnel_EventScript_Item_CoinCase",
       "flag": "FLAG_ITEM_GOLDENROD_UNDERGROUND_COIN_CASE"
     },
     {
@@ -127,8 +75,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_PARALYZE_HEAL",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GoldenrodCity_UndergroundTunnel_EventScript_Item_ParalyzeHeal",
       "flag": "FLAG_ITEM_GOLDENROD_UNDERGROUND_PARALYZE_HEAL"
     },
     {
@@ -140,8 +88,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ANTIDOTE",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GoldenrodCity_UndergroundTunnel_EventScript_Item_Antidote",
       "flag": "FLAG_ITEM_GOLDENROD_UNDERGROUND_ANTIDOTE"
     },
     {
@@ -153,8 +101,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GoldenrodCity_UndergroundTunnel_EventScript_Item_SuperPotion",
       "flag": "FLAG_ITEM_GOLDENROD_UNDERGROUND_SUPER_POTION"
     },
     {
@@ -169,6 +117,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 12,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GoldenrodCity_UndergroundTunnel_EventScript_Lucy",
+      "flag": "FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY"
     }
   ],
   "warp_events": [

@@ -2396,6 +2396,192 @@ extern const u8 gText_NuzlockeCantThrowPokeBallSpeciesClause[];
 extern const u8 gText_NuzlockeCantThrowPokeBallAlreadyCaught[];
 extern const u8 gText_OneTypeChallengeCantThrowPokeBall[];
 extern const u8 gText_BattleRules_NoItems_Player[];
+extern const u8 gText_UnitSystemMetric[];   //tx_optionsPlus
+extern const u8 gText_UnitSystemImperial[]; //tx_optionsPlus
+extern const u8 gText_Var1DotVar2_Metric[];
+
+//new strings for steven
+extern const u8 gText_Corviknight[];
+extern const u8 gText_Escavalier[];
+extern const u8 gText_Tinkaton[];
+
+//new strings for olivine gym
+extern const u8 gText_Blaine[];
+extern const u8 gText_Surge[];
+
+//new strings for bugsy gift
+extern const u8 gText_WaterStone[];
+extern const u8 gText_LeafStone[];
+extern const u8 gText_ThunderStone[];
+extern const u8 gText_ShinyStone[];
+extern const u8 gText_SunStone[];
+extern const u8 gText_IceStone[];
+
+//new strings for darach caitlin
+extern const u8 gText_B2B[];
+
+
+
+//new strings for darach scroll multi menu
+extern const u8 gText_BabiriBerry1BP[];
+extern const u8 gText_ChartiBerry1BP[];
+extern const u8 gText_ChilanBerry1BP[];
+extern const u8 gText_ChopleBerry1BP[];
+extern const u8 gText_CobaBerry1BP[];
+extern const u8 gText_ColburBerry1BP[];
+extern const u8 gText_HabanBerry1BP[];
+extern const u8 gText_KasibBerry1BP[];
+extern const u8 gText_KebiaBerry1BP[];
+extern const u8 gText_OccaBerry1BP[];
+extern const u8 gText_PasshoBerry1BP[];
+extern const u8 gText_PayapaBerry1BP[];
+extern const u8 gText_RindoBerry1BP[];
+extern const u8 gText_RoseliBerry1BP[];
+
+//new strings for darach scroll multi descriptions
+extern const u8 IndigoPlateau_Text_BabiriBerryDesc[];
+extern const u8 IndigoPlateau_Text_ChartiBerryDesc[];
+extern const u8 IndigoPlateau_Text_ChilanBerryDesc[];
+extern const u8 IndigoPlateau_Text_ChopleBerryDesc[];
+extern const u8 IndigoPlateau_Text_CobaBerryDesc[];
+extern const u8 IndigoPlateau_Text_ColburBerryDesc[];
+extern const u8 IndigoPlateau_Text_HabanBerryDesc[];
+extern const u8 IndigoPlateau_Text_KasibBerryDesc[];
+extern const u8 IndigoPlateau_Text_KebiaBerryDesc[];
+extern const u8 IndigoPlateau_Text_OccaBerryDesc[];
+extern const u8 IndigoPlateau_Text_PasshoBerryDesc[];
+extern const u8 IndigoPlateau_Text_PayapaBerryDesc[];
+extern const u8 IndigoPlateau_Text_RindoBerryDesc[];
+extern const u8 IndigoPlateau_Text_RoseliBerryDesc[];
+
+//new strings for Caitlin scroll multi menu
+extern const u8 gText_ShucaBerry1BP[];
+extern const u8 gText_TangaBerry1BP[];
+extern const u8 gText_WacanBerry1BP[];
+extern const u8 gText_YacheBerry1BP[];
+extern const u8 gText_HeartScale2BP[];
+extern const u8 gText_ClearAmulet2BP[];
+extern const u8 gText_AirBalloon2BP[];
+extern const u8 gText_Snowball2BP[];
+extern const u8 gText_LuminousMoss2BP[];
+extern const u8 gText_CellBattery2BP[];
+extern const u8 gText_AbsorbBulb2BP[];
+extern const u8 gText_ExpertBelt2BP[];
+extern const u8 gText_RedCard2BP[];
+extern const u8 gText_BoosterEnergy3BP[];
+
+//new strings for Caitlin scroll multi descriptions
+extern const u8 IndigoPlateau_Text_ShucaBerryDesc[];
+extern const u8 IndigoPlateau_Text_TangaBerryDesc[];
+extern const u8 IndigoPlateau_Text_WacanBerryDesc[];
+extern const u8 IndigoPlateau_Text_YacheBerryDesc[];
+extern const u8 IndigoPlateau_Text_HeartScaleDesc[];
+extern const u8 IndigoPlateau_Text_ClearAmuletDesc[];
+extern const u8 IndigoPlateau_Text_AirBalloonDesc[];
+extern const u8 IndigoPlateau_Text_SnowballDesc[];
+extern const u8 IndigoPlateau_Text_LuminousMossDesc[];
+extern const u8 IndigoPlateau_Text_CellBatteryDesc[];
+extern const u8 IndigoPlateau_Text_AbsorbBulbDesc[];
+extern const u8 IndigoPlateau_Text_ExpertBeltDesc[];
+extern const u8 IndigoPlateau_Text_RedCardDesc[];
+extern const u8 IndigoPlateau_Text_BoosterEnergyDesc[];
+
+//new strings for dahlia scroll multi menu
+extern const u8 gText_ApicotBerry3BP[];
+extern const u8 gText_GanlonBerry3BP[];
+extern const u8 gText_LiechiBerry3BP[];
+extern const u8 gText_PetayaBerry3BP[];
+extern const u8 gText_SalacBerry3BP[];
+extern const u8 gText_JabocaBerry3BP[];
+extern const u8 gText_RowapBerry3BP[];
+extern const u8 gText_RockyHelmet5BP[];
+extern const u8 gText_Leftovers5BP[];
+extern const u8 gText_BlackSludge5BP[];
+extern const u8 gText_FireGem5BP[];
+extern const u8 gText_WaterGem5BP[];
+extern const u8 gText_ElectricGem5BP[];
+extern const u8 gText_GrassGem5BP[];
+
+//new strings for dahlia scroll multi descriptions
+
+extern const u8 IndigoPlateau_Text_OranBerryDesc[];
+extern const u8 IndigoPlateau_Text_ApicotBerryDesc[];
+extern const u8 IndigoPlateau_Text_GanlonBerryDesc[];
+extern const u8 IndigoPlateau_Text_LiechiBerryDesc[];
+extern const u8 IndigoPlateau_Text_PetayaBerryDesc[];
+extern const u8 IndigoPlateau_Text_SalacBerryDesc[];
+extern const u8 IndigoPlateau_Text_JabocaBerryDesc[];
+extern const u8 IndigoPlateau_Text_RowapBerryDesc[];
+extern const u8 IndigoPlateau_Text_RockyHelmetDesc[];
+extern const u8 IndigoPlateau_Text_LeftoversDesc[];
+extern const u8 IndigoPlateau_Text_BlackSludgeDesc[];
+extern const u8 IndigoPlateau_Text_FireGemDesc[];
+extern const u8 IndigoPlateau_Text_WaterGemDesc[];
+extern const u8 IndigoPlateau_Text_ElectricGemDesc[];
+extern const u8 IndigoPlateau_Text_GrassGemDesc[];
+
+//new strings for lucy scroll multi menu
+extern const u8 gText_IceGem5BP[];
+extern const u8 gText_FightingGem5BP[];
+extern const u8 gText_PoisonGem5BP[];
+extern const u8 gText_GroundGem5BP[];
+extern const u8 gText_FlyingGem5BP[];
+extern const u8 gText_PsychicGem5BP[];
+extern const u8 gText_BugGem5BP[];
+extern const u8 gText_RockGem5BP[];
+extern const u8 gText_GhostGem5BP[];
+extern const u8 gText_DragonGem5BP[];
+extern const u8 gText_DarkGem5BP[];
+extern const u8 gText_SteelGem5BP[];
+extern const u8 gText_NormalGem5BP[];
+extern const u8 gText_FairyGem5BP[];
+
+//new strings for lucy scroll multi descriptions
+
+extern const u8 IndigoPlateau_Text_IceGemDesc[];
+extern const u8 IndigoPlateau_Text_FightingGemDesc[];
+extern const u8 IndigoPlateau_Text_PoisonGemDesc[];
+extern const u8 IndigoPlateau_Text_GroundGemDesc[];
+extern const u8 IndigoPlateau_Text_FlyingGemDesc[];
+extern const u8 IndigoPlateau_Text_PsychicGemDesc[];
+extern const u8 IndigoPlateau_Text_BugGemDesc[];
+extern const u8 IndigoPlateau_Text_RockGemDesc[];
+extern const u8 IndigoPlateau_Text_GhostGemDesc[];
+extern const u8 IndigoPlateau_Text_DragonGemDesc[];
+extern const u8 IndigoPlateau_Text_DarkGemDesc[];
+extern const u8 IndigoPlateau_Text_SteelGemDesc[];
+extern const u8 IndigoPlateau_Text_NormalGemDesc[];
+extern const u8 IndigoPlateau_Text_FairyGemDesc[];
+
+//new strings for lucy scroll multi menu
+
+extern const u8 gText_CustapBerry6BP[];
+extern const u8 gText_CovertCloak6BP[];
+extern const u8 gText_ThroatSpray6BP[];
+extern const u8 gText_FocusSash7BP[];
+extern const u8 gText_EjectPack7BP[];
+extern const u8 gText_EjectButton7BP[];
+extern const u8 gText_AssaultVest10BP[];
+extern const u8 gText_LifeOrb10BP[];
+extern const u8 gText_WeaknessPolicy10BP[];
+extern const u8 gText_ChoiceScarf16BP[];
+extern const u8 gText_ChoiceSpecs16BP[];
+extern const u8 gText_ChoiceBand16BP[];
+
+//new strings for lucy scroll multi descriptions
+
+extern const u8 IndigoPlateau_Text_CustapBerryDesc[];
+extern const u8 IndigoPlateau_Text_CovertCloakDesc[];
+extern const u8 IndigoPlateau_Text_ThroatSprayDesc[];
+extern const u8 IndigoPlateau_Text_FocusSashDesc[];
+extern const u8 IndigoPlateau_Text_EjectPackDesc[];
+extern const u8 IndigoPlateau_Text_EjectButtonDesc[];
+extern const u8 IndigoPlateau_Text_AssaultVestDesc[];
+extern const u8 IndigoPlateau_Text_LifeOrbDesc[];
+extern const u8 IndigoPlateau_Text_WeaknessPolicyDesc[];
+extern const u8 IndigoPlateau_Text_ChoiceScarfDesc[];
+extern const u8 IndigoPlateau_Text_ChoiceSpecsDesc[];
+extern const u8 IndigoPlateau_Text_ChoiceBandDesc[];
 
 // Map name pop-up
 extern const u8 gText_AM[];

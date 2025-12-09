@@ -143,6 +143,10 @@ Route47_EventScript_Item_Stardust::
 	finditem ITEM_STARDUST
 	end
 
+Route47_EventScript_Item_LuckyPunch::
+	finditem ITEM_LUCKY_PUNCH
+	end
+
 Route47_EventScript_Chinchou::
 	lock
 	faceplayer
@@ -155,3 +159,68 @@ Route47_EventScript_Chinchou::
 
 Route47_Text_Chinchou:
 	.string "CHINCHOU: Chou!$"
+
+Route47_EventScript_Heidi::
+	trainerbattle_single TRAINER_HEIDI Route47_Text_PicnickerHeidiSeen, Route47_Text_PicnickerHeidiBeaten
+	msgbox Route47_Text_PicnickerHeidiAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route47_EventScript_Edna::
+	trainerbattle_single TRAINER_EDNA Route47_Text_PicnickerEdnaSeen, Route47_Text_PicnickerEdnaBeaten
+	msgbox Route47_Text_PicnickerEdnaAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route47_EventScript_Tim::
+	trainerbattle_single TRAINER_TIM Route47_Text_HikerTimSeen, Route47_Text_HikerTimBeaten
+	msgbox Route47_Text_HikerTimAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route47_EventScript_Sidney::
+	trainerbattle_single TRAINER_SIDNEY Route47_Text_HikerSidneySeen, Route47_Text_HikerSidneyBeaten
+	msgbox Route47_Text_HikerSidneyAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route47_Text_PicnickerHeidiSeen:
+	.string "Have you ever been to a picnic?\p"
+	.string "They're so much fun!$"
+
+Route47_Text_PicnickerHeidiBeaten:
+	.string "Ohhhh!$"
+
+Route47_Text_PicnickerHeidiAfter:
+	.string "We bake lots of goodies and share\n"
+	.string "them all around.\p"
+	.string "They're delicious!$"
+
+Route47_Text_PicnickerEdnaSeen:
+	.string "People shouldn't leave any litter\n"
+	.string "behind.$"
+
+Route47_Text_PicnickerEdnaBeaten:
+	.string "Ohh… I lost…$"
+
+Route47_Text_PicnickerEdnaAfter:
+	.string "Conserving energy is important,\n"
+	.string "but the environment is even more\l"
+	.string "vital.$"
+
+Route47_Text_HikerTimSeen:
+	.string "She'll be coming 'round MT.SILVER\n"
+	.string "when she comes…\p"
+	.string "MT.SILVER is in JOHTO, right?$"
+
+Route47_Text_HikerTimBeaten:
+	.string "I was too busy singing…$"
+
+Route47_Text_HikerTimAfter:
+	.string "Battles are about concentration.$"
+
+Route47_Text_HikerSidneySeen:
+	.string "I'll tell you a secret.\p"
+	.string "But first, we battle!$"
+
+Route47_Text_HikerSidneyBeaten:
+	.string "Oh, dang! I lost that…$"
+
+Route47_Text_HikerSidneyAfter:
+	.string "The SAFARI ZONE is just up ahead.$"

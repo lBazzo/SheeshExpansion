@@ -163,9 +163,9 @@ SSAqua_1F_Trigger_Grandpa::
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 28, SSAqua_1F_EventScript_GrandpaEnterLeft
 	call_if_eq VAR_TEMP_0, 29, SSAqua_1F_EventScript_GrandpaEnterRight
-	applymovement LOCALID_PLAYER, SSAqua_1F_Movement_PlayerSlideRight
+	applymovement OBJ_EVENT_ID_PLAYER, SSAqua_1F_Movement_PlayerSlideRight
 	waitmovement 0
-	applymovement LOCALID_SSAQUA_1F_GRANDPA, Common_Movement_WalkRight
+	applymovement LOCALID_SSAQUA_1F_GRANDPA, Common_Movement_WalkRight1
 	waitmovement 0
 	msgbox SSAqua_1F_Text_Grandpa, MSGBOX_DEFAULT
 	closemessage

@@ -3,13 +3,13 @@
   "name": "BattleTower_Outside_hns",
   "layout": "LAYOUT_BATTLE_TOWER_OUTSIDE",
   "music": "MUS_HG_B_TOWER",
-  "region_map_section": "MAPSEC_ROUTE_40",
+  "region_map_section": "MAPSEC_BATTLE_TOWER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
-  "allow_cycling": false,
+  "allow_cycling": true,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
@@ -36,7 +36,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BATTLE_GIRL",
       "x": 10,
-      "y": 16,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
@@ -123,6 +123,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BattleTower_Outside_ExchangeServiceCorner_EventScript_VitaminClerk",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ENGINEER",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BattleTower_Outside_EventScript_Engineer",
+      "flag": "FLAG_HIDE_BATTLEFRONTIER_ENGINEER"
     }
   ],
   "warp_events": [
@@ -134,7 +147,9 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+
+  ],
   "bg_events": [
     {
       "type": "sign",

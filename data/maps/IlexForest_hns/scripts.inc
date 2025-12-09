@@ -1,12 +1,13 @@
 .set LOCALID_ILEX_FOREST_FARFETCHD_1, 3
-.set LOCALID_ILEX_FOREST_FARFETCHD_2, 31
-.set LOCALID_ILEX_FOREST_FARFETCHD_3, 33
-.set LOCALID_ILEX_FOREST_FARFETCHD_4, 32
+.set LOCALID_ILEX_FOREST_FARFETCHD_2, 29
+.set LOCALID_ILEX_FOREST_FARFETCHD_3, 31
+.set LOCALID_ILEX_FOREST_FARFETCHD_4, 30
 .set LOCALID_ILEX_FOREST_CELEBI, 7
-.set LOCALID_ILEX_FOREST_KURT, 34
-.set LOCALID_ILEX_FOREST_KIMONO, 36
-.set LOCALID_ILEX_FOREST_BUTTERFREE, 37
-.set LOCALID_ILEX_FOREST_SECOND_CELEBI, 38
+.set LOCALID_ILEX_FOREST_KURT, 32
+.set LOCALID_ILEX_FOREST_KIMONO, 34
+.set LOCALID_ILEX_FOREST_BUTTERFREE, 33
+.set LOCALID_ILEX_FOREST_SECOND_CELEBI, 36
+.set LOCALID_ILEX_FOREST_BUGSY, 37
 
 IlexForest_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, IlexForest_OnTransition
@@ -16,6 +17,7 @@ IlexForest_hns_MapScripts::
 IlexForest_OnTransition: 
 	call_if_eq VAR_ILEX_FOREST_FARFETCHD, 1, IlexForest_EventScript_ReenterWhenFarfetchdLeaving
 	call_if_eq VAR_ILEX_FOREST_FARFETCHD, 2, IlexForest_EventScript_ReenterDuringCutScene
+	call_if_lt VAR_AZALEA_TOWN_STATE, 3, IlexForest_EventScript_MoveBugsy
 	callnative SetTimeBasedEncounters
 	end	
 
@@ -190,11 +192,11 @@ IlexForest_EventScript_Farfetchd_Done::
 
 IlexForest_EventScript_TriggerBot::
 	lock
-	applymovement LOCALID_PLAYER Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_WalkUp
 	waitmovement 0
 IlexForest_EventScript_Trigger::
 	lock
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox IlexForest_Text_CharcoalMasterIntro, MSGBOX_DEFAULT
 	closemessage
 	giveitem ITEM_HM_CUT
@@ -244,18 +246,18 @@ IlexForest_EventScript_Celebi_Event::
 	waitmovement 0
 	playse SE_M_PETAL_DANCE
 	applymovement LOCALID_ILEX_FOREST_CELEBI, IlexForest_Movement_Celebi2
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	waitmovement 0
 	playse SE_M_PETAL_DANCE
 	applymovement LOCALID_ILEX_FOREST_CELEBI, IlexForest_Movement_Celebi3
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	playmoncry SPECIES_CELEBI, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
 	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, IlexForest_EventScript_Shrine_Caught
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -267,7 +269,7 @@ IlexForest_EventScript_Kurt::
 	addobject LOCALID_ILEX_FOREST_KURT
 	applymovement LOCALID_ILEX_FOREST_KURT, IlexForest_Movement_Kurt1
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	msgbox IlexForest_Text_KurtCaughtCelebi, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ILEX_FOREST_KURT, IlexForest_Movement_Kurt2
@@ -296,7 +298,7 @@ IlexForest_EventScript_SecondCelebi::
 	waitmoncry
 	seteventmon SPECIES_CELEBI, 40
 	special BattleSetup_StartLegendaryBattle
-	waitstate
+waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, IlexForest_EventScript_SecondCelebiRan
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -789,3 +791,150 @@ IlexForest_Text_Kimono_Girl4:
 
 IlexForest_Text_Kimono_Girl5:
 	.string "See you.$"
+
+IlexForest_EventScript_MoveBugsy::
+	setobjectxyperm LOCALID_ILEX_FOREST_BUGSY, 17, 63
+	return
+
+IlexForest_EventScript_Bugsy::
+	lock
+	faceplayer
+	goto_if_le VAR_AZALEA_TOWN_STATE, 2, IlexForest_EventScript_BugsyPreWell
+	goto_if_unset FLAG_BUGSY_GIFT_TM, IlexForest_EventScript_BugsyGiftTM
+	goto_if_unset FLAG_BUGSY_GIFT_STONE, IlexForest_EventScript_BugsyGiftStone
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyPreWell::
+	msgbox IlexForest_Text_BugsyPreWell, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+IlexForest_EventScript_BugsyGiftTM::
+	msgbox IlexForest_Text_BugsyGiftTM, MSGBOX_DEFAULT
+	giveitem ITEM_TM_BULLET_SEED
+	setflag FLAG_BUGSY_GIFT_TM
+	goto IlexForest_EventScript_BugsyGiftStone
+
+IlexForest_EventScript_BugsyGiftStone::
+	msgbox IlexForest_Text_BugsyGiftStone, MSGBOX_DEFAULT
+	closemessage
+	delay 5
+	multichoice 20, 0, MULTI_BUGSY_STONES, FALSE
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, IlexForest_EventScript_BugsyGiftStoneDeclined
+	case 0, IlexForest_EventScript_BugsyWaterStone
+	case 1, IlexForest_EventScript_BugsyLeafStone
+	case 2, IlexForest_EventScript_BugsyThunderStone
+	case 3, IlexForest_EventScript_BugsyShinyStone
+	case 4, IlexForest_EventScript_BugsySunStone
+	case 5, IlexForest_EventScript_BugsyIceStone
+	goto IlexForest_EventScript_BugsyGiftStoneDeclined
+
+IlexForest_EventScript_BugsyGiftStoneDeclined::
+	msgbox IlexForest_Text_BugsyGiftStoneDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+IlexForest_EventScript_BugsyWaterStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_WATER_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyLeafStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_LEAF_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyThunderStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_THUNDER_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyShinyStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_MOON_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsySunStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_SUN_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyIceStone::
+	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
+	giveitem ITEM_MOON_STONE
+	setflag FLAG_BUGSY_GIFT_STONE
+	goto IlexForest_EventScript_BugsyCheckOnMisty
+
+IlexForest_EventScript_BugsyCheckOnMisty::
+	msgbox IlexForest_Text_BugsyCheckOnMisty, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+IlexForest_Text_BugsyPreWell:
+	.string "Hey there! {PLAYER}, is it? I'm BUGSY.\n"
+	.string "It's a pleasure to meet you.\p"
+	.string "I know it's rude to ask for a favour\n"
+	.string "right when you meet someone, but I\l"
+	.string "promise it's important!\p"
+	.string "TEAM ROCKET has taken over SLOWPOKE\n"
+	.string "WELL, and the new GYM LEADER in AZALEA\l"
+	.string "TOWN is away right now, so there's no\l"
+	.string "one there to stop them.\p"
+	.string "I'm worried about if they try to come to\n"
+	.string "ILEX FOREST and hurt the POKéMON here\l"
+	.string "too, so I've got to stay here and keep\l"
+	.string "them safe...\p"
+	.string "You seem like a capable trainer. Would\n"
+	.string "you be able to beat them in my place?\p"
+	.string "...\p"
+	.string "Thanks, {PLAYER}! I'm counting on you!$"
+
+IlexForest_Text_BugsyGiftTM:
+	.string "Wow, {PLAYER}, you're amazing!\p"
+	.string "I mean, I knew you could do it, but you\n"
+	.string "should still be very proud!\p"
+	.string "I know it's not much compared to what\n"
+	.string "you've done for the people and POKéMON\l"
+	.string "of AZALEA TOWN, but I want you to have\l"
+	.string "this TM.\p"
+	.string "It contains U-Turn. It lets you attack\n"
+	.string "and then reposition quickly during a\l"
+	.string "battle. I'm sure you'll use it well.$"
+
+IlexForest_Text_BugsyGiftStone:
+	.string "Say, you're probably going to challenge\n"
+	.string "the AZALEA GYM now, right?\p"
+	.string "Your POKéMON could maybe use a boost\n"
+	.string "from one of these evolution stones.\p"
+	.string "Which one would you like?$"
+
+IlexForest_Text_BugsyGiftStoneReceived:
+	.string "Okay then, here you go! Just don't tell\n"
+	.string "MISTY I gave you this, okay?$"
+
+IlexForest_Text_BugsyCheckOnMisty:
+	.string "Not that it's any of my business, but do\n"
+	.string "you know how MISTY's getting on?\p"
+	.string "The last time I was here, she was a\n"
+	.string "little down.\p"
+	.string "I tried to cheer her up by explaining to\n"
+	.string "her how awesome bug type POKéMON can\l"
+	.string "be, and I gave her my little WIMPOD for\l"
+	.string "her to keep as a friend, since it's a\l"
+	.string "water type too.\p"
+	.string "She got mad at me for it though...\p"
+	.string "I'm not upset or anything. I just hope\n"
+	.string "her and WIMPOD are getting along.$"
+
+IlexForest_Text_BugsyGiftStoneDeclined:
+	.string "Oh, you still need time to decide?\n"
+	.string "That's okay, I'll wait here for you.$"

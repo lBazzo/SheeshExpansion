@@ -1,3 +1,6 @@
+.set LOCALID_MOVE_DELETER, 1
+.set LOCALID_MOVE_RELEARNER, 2
+
 BlackthornCity_House3_hns_MapScripts::
 	.byte 0
 

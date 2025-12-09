@@ -42,7 +42,7 @@ GoldenrodCity_BillsHouse_EventScript_Bill_Eevee::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
 	givenamedmon 3
-	call Common_EventScript_GiftMonNamed
+	call Common_EventScript_GiftMon
 
     
 
@@ -98,7 +98,7 @@ BillHouse_Text_MomBeforeEcruteak:
     .string "Oh, you collect POKéMON? My son\n"
     .string "BILL is an expert.\p"
     .string "He just got called to the POKéMON\n"
-    .string "CENTER in ECRUTEAK CITY.\p"
+    .string "CENTER here in GOLDENROD CITY.\p"
     .string "My husband went off to the GAME\n"
     .string "CORNER without being called…$"
 

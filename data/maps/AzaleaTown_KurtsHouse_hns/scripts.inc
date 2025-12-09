@@ -26,12 +26,13 @@ AzaleaTown_KurtsHouse_EventScript_KurtBefore::
 	removeobject LOCALID_AZALEA_TOWN_KURT_BEFORE
 	setflag FLAG_HIDE_KURT_1
 	setflag FLAG_HIDE_AZALEA_TOWN_WELL_ROCKET
+	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 1
 	setvar VAR_AZALEA_TOWN_STATE, 2
 	release
 	end
 
 AzaleaTown_KurtsHouse_EventScript_PlayerMove::
-	applymovement LOCALID_PLAYER, AzaleaTown_KurtsHouse_Movement_Player
+	applymovement OBJ_EVENT_ID_PLAYER, AzaleaTown_KurtsHouse_Movement_Player
 	waitmovement 0
 	applymovement LOCALID_AZALEA_TOWN_KURT_BEFORE, AzaleaTown_KurtsHouse_Movement_KurtWalkDown
 	waitmovement 0
@@ -88,9 +89,9 @@ AzaleaTown_KurtsHouse_EventScript_ReturnFromWellSetup::
 
 AzaleaTown_KurtsHouse_EventScript_ReturnFromWell::
 	lock
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox KurtsHouse_Text_KurtHonoredToMakeBalls, MSGBOX_DEFAULT
-	giveitem ITEM_FAST_BALL
+	giveitem ITEM_WATER_STONE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox KurtsHouse_Text_KurtBallsFromApricorns, MSGBOX_DEFAULT
 	closemessage
@@ -325,13 +326,13 @@ AzaleaTown_KurtsHouse_EventScript_KurtGsBall::
 	waitse
 	playse SE_PIN
 	applymovement LOCALID_AZALEA_TOWN_KURT, Common_Movement_ExclamationMark
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
 	waitse
 	playse SE_M_PETAL_DANCE
 	waitse
 	applymovement LOCALID_AZALEA_TOWN_KURT, AzaleaTownKurt_Movement_Look_Around
-	applymovement LOCALID_PLAYER, AzaleaTownKurt_Movement_Look_Around
+	applymovement OBJ_EVENT_ID_PLAYER, AzaleaTownKurt_Movement_Look_Around
 	waitmovement 0
 	waitmovement 0
 AzaleaTown_KurtsHouse_EventScript_KurtGsBall2::
@@ -429,6 +430,9 @@ KurtsHouse_Text_KurtHonoredToMakeBalls:
 	.string "I like your style!\p"
 	.string "I would be honored to make\n"
 	.string "BALLS for a trainer like you.\p"
+	.string "Sadly, I haven't been able to make any\n"
+	.string "recently, though I do have something\l"
+	.string "else for you.\p"
 	.string "This is all I have now, \n"
 	.string "but take it.$"
 

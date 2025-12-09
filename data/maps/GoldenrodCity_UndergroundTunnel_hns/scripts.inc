@@ -1,4 +1,5 @@
-.set LOCALID_GOLDENROD_UNDERGROUND_KIMONO, 12
+.set LOCALID_GOLDENROD_UNDERGROUND_KIMONO, 8
+.set LOCALID_GOLDENROD_UNDERGROUND_LUCY, 9
 
 GoldenrodCity_UndergroundTunnel_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, GoldenrodCity_UndergroundTunnel_OnLoad
@@ -20,7 +21,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_KimonoTriggerBot::
 	delay 60
 	msgbox GoldenrodCity_UndergroundTunnel_Text_Kimono2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, Common_Movement_WalkUp
+	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, Common_Movement_WalkUp1
 	waitmovement 0
 	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, GoldenrodCity_UndergroundTunnel_Movement_Kimono_Leave1
 	waitmovement 0
@@ -47,7 +48,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_KimonoTriggerTop::
 	delay 60
 	msgbox GoldenrodCity_UndergroundTunnel_Text_Kimono2, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, Common_Movement_WalkDown
+	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, Common_Movement_WalkDown1
 	waitmovement 0
 	applymovement LOCALID_GOLDENROD_UNDERGROUND_KIMONO, GoldenrodCity_UndergroundTunnel_Movement_Kimono_Leave1
 	waitmovement 0
@@ -71,9 +72,9 @@ GoldenrodCity_UndergroundTunnel_Movement_Kimono_WalkToPlayerBot:
 	step_end
 
 GoldenrodCity_UndergroundTunnel_Movement_Kimono_WalkToPlayerTop:
+	walk_left
+	walk_left
 	walk_up
-	walk_left
-	walk_left
 	walk_left
 	walk_left
 	step_end
@@ -120,26 +121,6 @@ GoldenrodCity_UndergroundTunnel_Text_Kimono1:
 GoldenrodCity_UndergroundTunnel_Text_Kimono2:
 	.string "Hahaha! Never mind.\n"
 	.string "I must go now.$"
-
-GoldenrodUnderground_EventScript_Eric::
-	trainerbattle_single TRAINER_ERIC GoldenrodUnderground_Text_SupernerdEricSeen, GoldenrodUnderground_Text_SupernerdEricBeaten
-	msgbox GoldenrodUnderground_Text_SupernerdEricAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-GoldenrodUnderground_EventScript_Teru::
-	trainerbattle_single TRAINER_TERU GoldenrodUnderground_Text_SupernerdTeruSeen, GoldenrodUnderground_Text_SupernerdTeruBeaten
-	msgbox GoldenrodUnderground_Text_SupernerdTeruAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-GoldenrodUnderground_EventScript_Issac::
-	trainerbattle_single TRAINER_ISSAC GoldenrodUnderground_Text_PokemaniacIssacSeen, GoldenrodUnderground_Text_PokemaniacIssacBeaten
-	msgbox GoldenrodUnderground_Text_PokemaniacIssacAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-GoldenrodUnderground_EventScript_Donald::
-	trainerbattle_single TRAINER_DONALD GoldenrodUnderground_Text_PokemaniacDonaldSeen, GoldenrodUnderground_Text_PokemaniacDonaldBeaten
-	msgbox GoldenrodUnderground_Text_PokemaniacDonaldAfterBattle, MSGBOX_AUTOCLOSE
-	end
 
 GoldenrodUnderground_EventScript_Brother_Haircut1::
 	lock
@@ -339,7 +320,6 @@ GoldenrodUnderground_HerbShop_Text_WelcomeToHerbShop:
 	.string "Welcome to the HERB SHOP, home of\n"
 	.string "effective and inexpensive medicine!$"
 
-
 GoldenrodUnderground_Text_YoungerBrotherOffer:
     .string "Welcome to the POKéMON SALON!\p"
     .string "I'm the younger and less expensive\n"
@@ -397,55 +377,6 @@ GoldenrodUnderground_Text_OlderBrotherOnePerDay:
     .string "I do only one haircut a day.\n"
     .string "I'm done for today.$"
 
-GoldenrodUnderground_Text_SupernerdEricSeen:
-    .string "I got booted out of the GAME CORNER.\p"
-    .string "I was trying to cheat using my\n"
-    .string "POKéMON…$"
-
-GoldenrodUnderground_Text_SupernerdEricBeaten:
-    .string "…Grumble…$"
-
-GoldenrodUnderground_Text_SupernerdEricAfterBattle:
-    .string "I guess I have to do things fair and\n"
-    .string "square…$"
-
-GoldenrodUnderground_Text_SupernerdTeruSeen:
-    .string "Do you consider type alignments in\n"
-    .string "battle?\p"
-    .string "If you know your type advantages,\n"
-    .string "you'll do better in battle.$"
-
-GoldenrodUnderground_Text_SupernerdTeruBeaten:
-    .string "Ow, ow, ow!$"
-
-GoldenrodUnderground_Text_SupernerdTeruAfterBattle:
-    .string "I know my POKéMON type alignments.\p"
-    .string "But I only use one type of POKéMON.$"
-
-GoldenrodUnderground_Text_PokemaniacIssacSeen:
-    .string "My POKéMON just got a haircut!\p"
-    .string "I'll show you how strong it is!$"
-
-GoldenrodUnderground_Text_PokemaniacIssacBeaten:
-    .string "Aiyeeee!$"
-
-GoldenrodUnderground_Text_PokemaniacIssacAfterBattle:
-    .string "Your POKéMON will like you more if\n"
-    .string "you give them haircuts.$"
-
-GoldenrodUnderground_Text_PokemaniacDonaldSeen:
-    .string "I think you have some rare POKéMON\n"
-    .string "with you.\p"
-    .string "Let me see them!$"
-
-GoldenrodUnderground_Text_PokemaniacDonaldBeaten:
-    .string "Gaah! I lost! That makes me mad!$"
-
-GoldenrodUnderground_Text_PokemaniacDonaldAfterBattle:
-	.string "When I was walking near the BIKE\n"
-	.string "SHOP last night, I felt like I was\l"
-	.string "being watched from the rooftops...$"
-
 GoldenrodUnderground_Text_PokemaniacDonaldAfterBattleOld:
     .string "Are you making a POKéDEX? Here's a\n"
     .string "hot tip.\p"
@@ -465,3 +396,173 @@ GoldenrodUnderground_Text_KeyOpenedDoor:
 
 GoldenrodUnderground_Text_NoEntry:
     .string "NO ENTRY BEYOND THIS POINT$"
+
+
+
+
+
+
+
+
+
+
+GoldenrodCity_UndergroundTunnel_EventScript_Lucy::
+	lock
+	faceplayer
+	playbgm MUS_B_PIKE, TRUE
+	goto_if_set FLAG_LUCY_CHALLENGE_EXPLAINED, GoldenrodCity_UndergroundTunnel_EventScript_LucyPostIntro
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyIntro, MSGBOX_DEFAULT
+	closemessage
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPostIntro, MSGBOX_DEFAULT
+	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
+	switch VAR_RESULT
+	case 0, GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleNormal
+	case 1, GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard
+	case MULTI_B_PRESSED, GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge
+	goto GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge
+
+GoldenrodCity_UndergroundTunnel_EventScript_LucyPostIntro::
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPostIntro, MSGBOX_DEFAULT
+	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
+	switch VAR_RESULT
+	case 0, GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleNormal
+	case 1, GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard
+	case MULTI_B_PRESSED, GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge
+	goto GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge
+
+GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleNormal::
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleNormal, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, GoldenrodCity_UndergroundTunnel_Text_LucyWin
+	playbgm MUS_B_PIKE, TRUE
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyNormalAfter, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 2
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyLeaving, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 11, GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave1
+	call_if_ge VAR_TEMP_0, 12, GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave2
+	waitmovement 0
+	setflag FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY
+	removeobject LOCALID_GOLDENROD_UNDERGROUND_LUCY
+	fadedefaultbgm
+	release
+	end
+
+GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard::
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleHard, MSGBOX_DEFAULT
+	closemessage
+	@special SetRandomStatus
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, GoldenrodCity_UndergroundTunnel_Text_LucyWin
+	playbgm MUS_B_PIKE, TRUE
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyHardAfter, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 4
+	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyLeaving, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 11, GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave1
+	call_if_ge VAR_TEMP_0, 12, GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave2
+	waitmovement 0
+	setflag FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY
+	removeobject LOCALID_GOLDENROD_UNDERGROUND_LUCY
+	fadedefaultbgm
+	release
+	end
+
+GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge::
+	msgbox GoldenrodCity_UndergroundTunnel_Text_DeclineLucyChallenge, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_LUCY_CHALLENGE_EXPLAINED
+	fadedefaultbgm
+	release
+	end
+
+GoldenrodCity_UndergroundTunnel_Text_LucyIntro:
+    .string "Listen. I'm not one for chit chat.\n"
+	.string "My name is Lucy.\p"
+	.string "LUCY: The other FRONTIER heads all had\n"
+	.string "some deep, introspective reason for\l"
+	.string "challenging you, didn't they?\p"
+	.string "Sorry to disappoint. I only want to\n"
+	.string "fight you because you beat them.\p"
+	.string "If I win, that makes me the strongest...\p"
+	.string "Hm? The challenge? I suppose I could\n"
+	.string "think of one...\p"
+	.string "If you want to prove yourself, I will\n"
+	.string "afflict all your POKéMON with a random\l"
+	.string "status effect before the battle.$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyPostIntro:
+	.string "So... we doing this or what?$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleNormal:
+    .string "Think you'll take the easy win? Sorry.\n"
+	.string "Still not gonna happen.$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyWin:
+    .string "Urk...$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyNormalAfter:
+    .string "Fine. I admit you're at least passable\n"
+	.string "in skill. Take these and go.$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyLeaving:
+    .string "I'm not going to forget this...\p"
+	.string "Come to the BATTLE PYKE soon. I'll get\n"
+	.string "my revenge there.\p"
+	.string "...You'd better not keep me waiting.$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleHard:
+    .string "Hah! You're certainly confident.\n"
+	.string "Let's see why that is!$"
+
+GoldenrodCity_UndergroundTunnel_Text_LucyHardAfter:
+    .string "Fine! Have your stupid scales then.\n"
+	.string "Go on! Take them already!$"
+
+GoldenrodCity_UndergroundTunnel_Text_DeclineLucyChallenge:
+    .string "...Hurry up. I hate timewasters.$"
+
+
+
+GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave1:
+	applymovement LOCALID_GOLDENROD_UNDERGROUND_LUCY, GoldenrodCity_UndergroundTunnel_Movement_LucyLeave1
+	waitmovement 0
+	return
+
+GoldenrodCity_UndergroundTunnel_EventScript_LucyLeave2:
+	applymovement LOCALID_GOLDENROD_UNDERGROUND_LUCY, GoldenrodCity_UndergroundTunnel_Movement_LucyLeave2
+	waitmovement 0
+	return
+
+GoldenrodCity_UndergroundTunnel_Movement_LucyLeave1:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GoldenrodCity_UndergroundTunnel_Movement_LucyLeave2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+
+
+
+
+
+
+

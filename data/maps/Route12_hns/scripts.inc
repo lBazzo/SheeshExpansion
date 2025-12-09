@@ -7,16 +7,6 @@ Route12_OnTransition:
 	callnative SetTimeBasedEncounters
 	end
 
-Route12_EventScript_Martin::
-	trainerbattle_single TRAINER_MARTIN Route12_Text_FisherMartinSeen, Route12_Text_FisherMartinBeaten
-	msgbox Route12_Text_FisherMartinAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route12_EventScript_Stephen::
-	trainerbattle_single TRAINER_STEPHEN Route12_Text_FisherStephenSeen, Route12_Text_FisherStephenBeaten
-	msgbox Route12_Text_FisherStephenAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route12_EventScript_Barney::
 	trainerbattle_single TRAINER_BARNEY Route12_Text_FisherBarneySeen, Route12_Text_FisherBarneyBeaten
 	msgbox Route12_Text_FisherBarneyAfterBattle, MSGBOX_AUTOCLOSE
@@ -52,29 +42,6 @@ Route12_EventScript_Tentacruel::
 Route12_Text_NewFisher:
 	.string "Careful, something vicious lives in\n"
 	.string "these waters.$"
-
-Route12_Text_FisherMartinSeen:
-	.string "Patience is the key to both\n"
-	.string "fishing and POKéMON.$"
-
-Route12_Text_FisherMartinBeaten:
-	.string "Gwaaah!$"
-
-Route12_Text_FisherMartinAfterBattle:
-	.string "I'm too impatient for fishing…$"
-
-Route12_Text_FisherStephenSeen:
-	.string "I feel so content, fishing while\n"
-	.string "listening to some tunes on my\l"
-	.string "radio.$"
-
-Route12_Text_FisherStephenBeaten:
-	.string "My stupid radio distracted me!$"
-
-Route12_Text_FisherStephenAfterBattle:
-	.string "Have you checked out KANTO's radio\n"
-	.string "programs? We get a good variety\l"
-	.string "here.$"
 
 Route12_Text_FisherBarneySeen:
 	.string "What's most important in our\n"

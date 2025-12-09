@@ -19,13 +19,13 @@ BurnedTower_B1F_OnFrame::
 
 BurnedTower_B1F_EventScript_ReleaseBeasts::
 	lock
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_NORTH
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	delay 60
 
 	playmoncry SPECIES_ENTEI, CRY_MODE_NORMAL
@@ -100,7 +100,6 @@ BurnedTower_B1F_EventScript_ReleaseBeasts::
 	playse SE_LEDGE
 	delay 30
 	playse SE_LEDGE
-	@ delay 30
 	waitmovement 0
 	
 	setflag FLAG_HIDE_BURNED_TOWER_BEASTS
@@ -110,7 +109,7 @@ BurnedTower_B1F_EventScript_ReleaseBeasts::
 	delay 55
 
 	playse SE_EXIT
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	applymovement LOCALID_BURNEDTOWER2_EUSINE, BurnedTower_B1F_Movement_EusineEnter
 	waitmovement 0
 	msgbox BurnedTowerB1FEusineText, MSGBOX_DEFAULT
@@ -216,3 +215,4 @@ BurnedTower_B1F_EventScript_Item_Taunt::
 BurnedTower_B1F_EventScript_Item_UltraBall::
 	finditem ITEM_ULTRA_BALL
 	end
+

@@ -74,13 +74,6 @@ GoldenrodCity_FlowerShop_EventScript_AlreadyReceivedBerry::
 	release
 	end
 
-
-GoldenrodCity_FlowerShop_EventScript_Floria3::
-	msgbox GoldenrodCity_FlowerShop_Text_FloriaItWasAMon, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
 GoldenrodCity_FlowerShop_EventScript_MintOwner::
 	lock
 	faceplayer
@@ -148,6 +141,12 @@ GoldenrodCity_FlowerShop_Text_MachineMixesBerries:
 	.string "up different BERRIES and makes candies\l"
 	.string "for POKéMON.\p"
 	.string "I want some candy, too.$"
+
+GoldenrodCity_FlowerShop_EventScript_Floria3::
+	msgbox GoldenrodCity_FlowerShop_Text_FloriaItWasAMon, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 GoldenrodCity_FlowerShop_Text_Floria:
 	.string "When I told my sis about the jiggly\n"

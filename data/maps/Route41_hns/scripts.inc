@@ -4,28 +4,10 @@ Route41_hns_MapScripts::
 
 Route41_MapScript_OnTransition::
 	goto_if_eq VAR_COMPLETED_LUGIA, 4, Route41_MapScript_DoNothing
-	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_MapScript_ClearWeather
 	end
 
 Route41_MapScript_DoNothing::
 	end
-
-Route41_EventScript_Charlie::
-	trainerbattle_single TRAINER_CHARLIE, Route41_Text_SwimmermCharlieSeen, Route41_Text_SwimmermCharlieBeaten
-	msgbox Route41_Text_SwimmermCharlieAfter, MSGBOX_AUTOCLOSE
-	end
-
-Route41_Text_SwimmermCharlieSeen:
-	.string "The water's warm here.\n"
-	.string "I'm loose and limber.\p"
-	.string "Sure, I'll take you on!$"
-
-Route41_Text_SwimmermCharlieBeaten:
-	.string "Yikes! I've got prune skin!$"
-
-Route41_Text_SwimmermCharlieAfter:
-	.string "Isn't it relaxing just floating\n"
-	.string "like this?$"
 
 Route41_EventScript_George::
 	trainerbattle_single TRAINER_GEORGE, Route41_Text_SwimmermGeorgeSeen, Route41_Text_SwimmermGeorgeBeaten
@@ -65,23 +47,6 @@ Route41_Text_SwimmermBerkeAfter:
 	.string "from the islands.\p"
 	.string "It was scattering feathers\n"
 	.string "from its silver wings.$"
-
-Route41_EventScript_Kirk::
-	trainerbattle_single TRAINER_KIRK, Route41_Text_SwimmermKirkSeen, Route41_Text_SwimmermKirkBeaten
-	msgbox Route41_Text_SwimmermKirkAfter, MSGBOX_AUTOCLOSE
-	end
-
-Route41_Text_SwimmermKirkSeen:
-	.string "The waves are wild here.\p"
-	.string "They tire you out while\n"
-	.string "you swim.$"
-
-Route41_Text_SwimmermKirkBeaten:
-	.string "I'm beat!$"
-
-Route41_Text_SwimmermKirkAfter:
-	.string "The currents keep me from\n"
-	.string "reaching that island.$"
 
 Route41_EventScript_Mathew::
 	trainerbattle_single TRAINER_MATHEW, Route41_Text_SwimmermMathewSeen, Route41_Text_SwimmermMathewBeaten
@@ -138,16 +103,15 @@ Route41_EventScript_Denise::
 	end
 
 Route41_Text_SwimmerfDeniseSeen:
-	.string "The weather is so beautiful,\n"
-	.string "I'm in a daze!$"
+	.string "Isn't this weather so beautiful?\n"
+	.string "My POKéMON just love the rain!$"
 
 Route41_Text_SwimmerfDeniseBeaten:
 	.string "Ohhh!$"
 
 Route41_Text_SwimmerfDeniseAfter:
-	.string "A sunburn is the worst for skin.\p"
-	.string "But I don't use a sunblock.\p"
-	.string "I won't pollute the water.$"
+	.string "You know on second thought, it's\n"
+	.string "getting a little cold...$"
 
 Route41_EventScript_Kara::
 	trainerbattle_single TRAINER_KARA, Route41_Text_SwimmerfKaraSeen, Route41_Text_SwimmerfKaraBeaten

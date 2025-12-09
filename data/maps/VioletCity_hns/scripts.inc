@@ -1,14 +1,26 @@
 .set LOCALID_VIOLETCITY_EARL, 4
-.set LOCALID_VIOLET_KIMONO, 31
+.set LOCALID_VIOLET_KIMONO, 30
+.set LOCALID_GYM_SAGE, 31
 
 VioletCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, VioletCity_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, VioletCity_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
 	.byte 0
 
 VioletCity_OnFrame::
 	map_script_2 VAR_VIOLET_CITY_KIMONO_GIRL, 1, VioletCity_EventScript_Kimono_Girl
 	map_script_2 VAR_VIOLET_CITY_STATE, 3, VioletCity_EventScript_ElmCall_Trigger
 	.2byte 0
+
+VioletCity_OnTransition::
+	callnative SetTimeBasedEncounters
+	call_if_unset (TRAINER_FLAGS_START + TRAINER_LI), VioletCity_Set_MoveGymSage
+	end
+
+VioletCity_Set_MoveGymSage::
+	setobjectxyperm LOCALID_GYM_SAGE, 23, 37
+	return
 
 VioletCity_EventScript_Trigger::
 	@LOCAL FLAGHEAP
@@ -70,7 +82,7 @@ VioletCity_EventScript_EarlTrainerSchoolSouth::
 	applymovement LOCALID_VIOLETCITY_EARL, VioletCity_Movement_Earl_South_Adjustment
 	waitmovement 0
 	applymovement LOCALID_VIOLETCITY_EARL, VioletCity_Movement_Earl_Spin
-	applymovement LOCALID_PLAYER, VioletCity_Movement_Player_South_Adjustment
+	applymovement OBJ_EVENT_ID_PLAYER, VioletCity_Movement_Player_South_Adjustment
 	waitmovement 0
 	waitmovement 0
 	goto VioletCity_EventScript_EarlTrainerSchoolTransition
@@ -79,7 +91,7 @@ VioletCity_EventScript_EarlTrainerSchoolSouth::
 
 VioletCity_EventScript_EarlTrainerSchoolEast::
 	applymovement LOCALID_VIOLETCITY_EARL, VioletCity_Movement_Earl_East_Adjustment
-	applymovement LOCALID_PLAYER, VioletCity_Movement_Player_East_Adjustment
+	applymovement OBJ_EVENT_ID_PLAYER, VioletCity_Movement_Player_East_Adjustment
 	waitmovement 0
 	waitmovement 0
 	goto VioletCity_EventScript_EarlTrainerSchoolTransition
@@ -88,7 +100,7 @@ VioletCity_EventScript_EarlTrainerSchoolEast::
 
 VioletCity_EventScript_EarlTrainerSchoolTransition:
 	applymovement LOCALID_VIOLETCITY_EARL, VioletCity_Movement_Walk_To_School
-	applymovement LOCALID_PLAYER, VioletCity_Movement_Walk_To_School
+	applymovement OBJ_EVENT_ID_PLAYER, VioletCity_Movement_Walk_To_School
 	waitmovement 0
 	waitmovement 0
 	applymovement LOCALID_VIOLETCITY_EARL, VioletCity_Movement_Earl_Spin
@@ -215,13 +227,27 @@ VioletCity_EventScript_Kimono_Girl::
 	release
 	end
 
-
-VioletCity_EventScript_ItemRareCandy::
-	finditem ITEM_RARE_CANDY
+VioletCity_EventScript_GymSage::
+	lock
+	faceplayer
+	call_if_unset (TRAINER_FLAGS_START + TRAINER_LI), VioletCity_EventScript_GymSageTower
+	msgbox VioletCity_Text_GymSage_GymSageGym, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
-VioletCity_EventScript_ItemPechaBerry::
-	finditem ITEM_PECHA_BERRY
+VioletCity_EventScript_GymSageTower::
+	msgbox VioletCity_Text_GymSage_GymSageTower, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+VioletCity_EventScript_ShellBell::
+	finditem ITEM_SHELL_BELL
+	end
+
+VioletCity_EventScript_ItemBerryJuice::
+	finditem ITEM_BERRY_JUICE
 	end
 
 VioletCity_EventScript_ItemHyperPotion::
@@ -486,4 +512,23 @@ VioletCity_Text_Kimono_Girl3:
 VioletCity_Text_Kimono_Girl4:
 .string "I am counting on you.$"
 
+VioletCity_Text_GymSage_GymSageGym:
+.string "Ah, welcome back. I see you managed to\n"
+.string "best SAGE LI in a battle. Wonderful!\p"
+.string "Make sure you bring that same energy\n"
+.string "when you're up against FALKNER.\l"
+.string "He's not one to hold back.$"
 
+VioletCity_Text_GymSage_GymSageTower:
+.string "Looking for this city's GYM LEADER,\n"
+.string "FALKNER? I'm afraid he's out at the\l"
+.string "moment.\p"
+.string "While you wait, why not pay a visit to\n"
+.string "SPROUT TOWER? You might catch a\p"
+.string "POKéMON there that could aid you in\n"
+.string "your GYM challenge.\p"
+.string "What's that? 'Bellsprout isn't good\n"
+.string "against Flying POKéMON?'\p"
+.string "...\p"
+.string "The youth of today are sorely lacking\n"
+.string "in virtue. How sad...$"

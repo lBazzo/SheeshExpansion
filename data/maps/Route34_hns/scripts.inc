@@ -86,8 +86,8 @@ Route34_EventScript_Item_SoftSand::
 	finditem ITEM_SOFT_SAND
 	end
 
-Route34_EventScript_Item_RareCandy::
-	finditem ITEM_RARE_CANDY
+Route34_EventScript_Item_SyrupyApple::
+	finditem ITEM_ORAN_BERRY
 	end
 
 Route34_EventScript_Item_SuperPotion::

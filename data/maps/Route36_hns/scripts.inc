@@ -13,12 +13,6 @@ Route36_OnTransition:
 Route36_EventScript_RockSmashGuy::
 	lock
 	faceplayer
-	goto_if_set FLAG_HIDE_SUDOWOODO, Route36_EventScript_RockSmashGuy2
-	msgbox Route36_Text_RockSmashGuy1, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-Route36_EventScript_RockSmashGuy2::
 	goto_if_set FLAG_RECEIVED_HM_ROCK_SMASH, Route36_EventScript_RockSmashGuy3
 	msgbox Route36_Text_RockSmashGuy2, MSGBOX_DEFAULT
 	giveitem ITEM_HM_ROCK_SMASH
@@ -65,10 +59,6 @@ Route36_EventScript_Arthur::
 	end
 Route36_EventScript_ArthurYes::
 	msgbox Route36_Text_ArthurGivesGift, MSGBOX_DEFAULT
-	giveitem ITEM_HARD_STONE
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	setflag FLAG_GOT_HARD_STONE
-	msgbox Route36_Text_ArthurGaveGift, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -189,6 +179,13 @@ Route36_EventScript_Sign2::
 	release
 	end
 
+Route36_EventScript_Sign3::
+	lock
+	msgbox Route36_Text_Sign_HiddenGrottoLeft, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
 Route36_Movement_SudoWoodo:
 	face_right
 	delay_8
@@ -225,9 +222,7 @@ Route36_Text_RockSmashGuy1:
 	.string "But I couldn't! I'm a failure!$"
 
 Route36_Text_RockSmashGuy2:
-	.string "Did you clear that wretched tree?\p"
-	.string "I'm impressed!\n"
-	.string "I want you to have this.$"
+	.string "Quick! Take This!$"
 
 Route36_Text_RockSmashGuy3:
 	.string "That happens to be ROCK SMASH.\p"
@@ -283,12 +278,7 @@ Route36_Text_ArthurNope:
 	.string "Not quite!$"
 
 Route36_Text_ArthurGivesGift:
-	.string "Here. You can have this.$"
-
-Route36_Text_ArthurGaveGift:
-	.string "ARTHUR: A POKéMON that uses rock-\n"
-	.string "type moves should hold on to that.\p"
-	.string "It pumps up rock-type attacks.$"
+	.string "Yup.$"
 
 Route36_Text_ArthurThursday:
 	.string "ARTHUR: I'm ARTHUR of Thursday.\n"
@@ -315,3 +305,82 @@ Route36_Text_Tips2:
 	.string "any place.\p"
 	.string "It is convenient for exploring\n"
 	.string "caves and other landmarks.$"
+
+Route36_EventScript_Jack::
+	trainerbattle_single TRAINER_JACK Route36_Text_SchoolboyJack1_Seen, Route36_Text_SchoolboyJack1_Beaten
+	msgbox Route36_Text_SchoolboyJack_After, MSGBOX_AUTOCLOSE
+	end
+
+Route36_Text_SchoolboyJack1_Seen:
+	.string "The world of POKéMON is deep.\p"
+	.string "There are still lots of things we\n"
+	.string "don't know.\p"
+	.string "But I know more than you do!$"
+
+Route36_Text_SchoolboyJack1_Beaten:
+	.string "Wha-wha-what?$"
+
+Route36_Text_SchoolboyJack_After:
+	.string "There is a lot to learn.\p"
+	.string "For example…\p"
+	.string "There are 50 kinds of TMs.\p"
+	.string "Traded POKéMON level up faster.$"
+
+Route36_EventScript_Beverly::
+	trainerbattle_single TRAINER_BEVERLY Route36_Text_PokefanFBeverly1_Seen, Route36_Text_PokefanFBeverly1_Beaten
+	msgbox Route36_Text_PokefanFBeverly_After, MSGBOX_AUTOCLOSE
+	end
+
+Route36_EventScript_William::
+	trainerbattle_single TRAINER_WILLIAM Route36_Text_PokefanmWilliam_Seen, Route36_Text_PokefanmWilliam_Beaten
+	msgbox Route36_Text_PokefanmWilliam_After, MSGBOX_AUTOCLOSE
+	end
+
+Route36_EventScript_Krise::
+	trainerbattle_single TRAINER_KRISE Route36_Text_LassKrise_Seen, Route36_Text_LassKrise_Beaten
+	msgbox Route36_Text_LassKrise_After, MSGBOX_AUTOCLOSE
+	end
+
+Route36_Text_PokefanFBeverly1_Seen:
+	.string "My POKéMON are simply darling.\p"
+	.string "Let me tell you how proud my\n"
+	.string "darlings make me.$"
+
+Route36_Text_PokefanFBeverly1_Beaten:
+	.string "I can beat you in pride, but…$"
+
+Route36_Text_PokefanFBeverly_After:
+	.string "I must say, your POKéMON are quite\n"
+	.string "cute, too.$"
+
+Route36_Text_PokefanmWilliam_Seen:
+	.string "We adore our POKéMON, even if they\n"
+	.string "dislike us.\p"
+	.string "That's what being a FAN is about.$"
+
+Route36_Text_PokefanmWilliam_Beaten:
+	.string "M-my POKéMON!$"
+
+Route36_Text_PokefanmWilliam_After:
+	.string "I lost the battle, but my POKéMON win\n"
+	.string "the prize for being most lovely.$"
+
+Route36_Text_LassKrise_Seen:
+	.string "Hello? Why are you staring at me?\p"
+	.string "Oh, a battle?$"
+
+Route36_Text_LassKrise_Beaten:
+	.string "…Hmmm…$"
+
+Route36_Text_LassKrise_After:
+	.string "I thought you were staring at me\n"
+	.string "because I'm cute!$"
+
+Route36_Text_Sign_HiddenGrottoLeft:
+	.string "HIDDEN GROTTO ON YOUR LEFT$"
+
+
+
+
+
+

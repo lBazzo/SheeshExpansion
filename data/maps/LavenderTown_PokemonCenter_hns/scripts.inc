@@ -2,7 +2,6 @@
 
 LavenderTown_PokemonCenter_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LavenderTown_PokemonCenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 LavenderTown_PokemonCenter_OnTransition::

@@ -139,6 +139,11 @@
 #define MULTI_VERMILION_HARBOR             127
 #define MULTI_HOENN_STARTERS               128
 #define MULTI_5FLOORS                      129
+#define MULTI_STEVEN_GIFTS                 130
+#define MULTI_OLIVINE_GYM_CHALLENGE        131
+#define MULTI_BUGSY_STONES                 132
+#define MULTI_DARACH_CAITLIN               133
+#define MULTI_DAHLIACHALLENGE              134
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

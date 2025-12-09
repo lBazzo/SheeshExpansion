@@ -28,7 +28,7 @@ CeruleanCity_Gym_EventScript_RocketGrunt::
 	waitmovement 0
 	msgbox CeruleanGym_Text_GruntBye, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, CeruleanCity_Gym_Movement_PlayerSlide
+	applymovement OBJ_EVENT_ID_PLAYER, CeruleanCity_Gym_Movement_PlayerSlide
 	delay 10
 	applymovement LOCALID_CERULEAN_GYM_ROCKET, CeruleanCity_Gym_Movement_GruntLeave
 	waitmovement 0
@@ -124,7 +124,7 @@ CeruleanCity_Gym_Movement_GruntLeave:
 
 CeruleanCity_Gym_EventScript_Statue::
 	lockall
-	goto_if_set FLAG_BADGE10_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
+	goto_if_set FLAG_BADGE02_GET, CeruleanCity_Gym_EventScript_GymStatuePostVictory
 	msgbox CeruleanCity_Gym_Text_GymStatue
 	releaseall
 	end
@@ -154,7 +154,7 @@ CeruleanGym_EventScript_Parker::
 	end
 
 CeruleanCity_Gym_EventScript_GymGuy::
-	goto_if_set FLAG_DEFEATED_JOHTO_CERULEAN_GYM, CeruleanCity_Gym_EventScript_GymGuyAfter
+	goto_if_set FLAG_DEFEATED_AZALEA_TOWN_GYM, CeruleanCity_Gym_EventScript_GymGuyAfter
 	msgbox CeruleanGym_Text_GuideIntro, MSGBOX_NPC
 	end
 
@@ -163,16 +163,16 @@ CeruleanCity_Gym_EventScript_GymGuyAfter::
 	end
 
 CeruleanCity_Gym_Text_GymStatue::
-    .string "CERULEAN POKéMON GYM\n"
+    .string "AZALEA POKéMON GYM\n"
     .string "LEADER: MISTY\p"
 	.string "WINNING TRAINERS:\n"
-	.string "BLUE, RED$"
+	.string "DEEZ, DOZE$"
 
 CeruleanCity_Gym_Text_GymStatuePlayerWon::
-    .string "CERULEAN POKéMON GYM\n"
+    .string "AZALEA POKéMON GYM\n"
     .string "LEADER: MISTY\p"
     .string "WINNING TRAINERS:\n"
-	.string "BLUE, RED, {PLAYER}$"
+	.string "DEEZ, DOZE, {PLAYER}$"
 
 CeruleanGym_Text_Note:
 	.string "Sorry, I'll be out for a while.\n"
@@ -185,24 +185,46 @@ CeruleanGym_Text_Note:
 CeruleanCity_Gym_EventScript_Misty::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_JOHTO_CERULEAN_GYM, CeruleanCity_Gym_EventScript_Misty_Defeated
+	goto_if_set FLAG_DEFEATED_AZALEA_TOWN_GYM, CeruleanCity_Gym_EventScript_Misty_Defeated
 	msgbox CeruleanGym_Text_MistyIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_MISTY, CeruleanGym_Text_MistyWinLoss
-	message CeruleanGym_Text_ReceivedBadge
+	message AzaleaTown_Gym_Text_ReceivedHiveBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
-	setflag FLAG_BADGE10_GET
-	setflag FLAG_DEFEATED_JOHTO_CERULEAN_GYM
+	msgbox AzaleaTown_Gym_Text_HiveBadgeSpeechMisty, MSGBOX_DEFAULT
+	setflag FLAG_BADGE02_GET
+	setflag FLAG_DEFEATED_AZALEA_TOWN_GYM
 	addvar VAR_NUM_BADGES, 1
-	setvar VAR_0x8008, 10
+	setvar VAR_0x8008, 2
 	call Common_EventScript_SetGymTrainers
 	msgbox CeruleanGym_Text_MistyTm, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 4
 	giveitem ITEM_TM_WATER_PULSE
-	clearflag FLAG_HIDE_CAPE_MISTY
-	call_if_eq VAR_SUICUNE_ENCOUNTERS, 5, CeruleanCity_Gym_SetSuicuneScene
+	setvar VAR_AZALEA_TOWN_STATE, 5
+	closemessage
+	setflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD
+	setflag FLAG_GET_HEADBUTT
+	clearflag FLAG_HIDE_ILEX_FOREST_APPRENTICE
+	clearflag FLAG_HIDE_ILEX_FOREST_FARFETCHD_1
 	closemessage
 	release
 	end
+
+AzaleaTown_Gym_Text_ReceivedHiveBadge:
+	.string "{PLAYER} received HIVEBADGE.$"
+
+AzaleaTown_Gym_Text_HiveBadgeSpeechMisty:
+	.string "Sorry. I lost my cool there.\p"
+	.string "You know, if I get to battle strong\n"
+	.string "trainers like you, then running this gym\l"
+	.string "isn't so bad.\p"
+	.string "Do you know the benefits\n"
+	.string "of the HIVEBADGE?\p"
+	.string "If you have it, POKéMON up\n"
+	.string "to L30 will obey you,\l"
+	.string "even traded ones.\p"
+	.string "POKéMON that know CUT will be able\n"
+	.string "to use it outside of battle too.$"
 
 CeruleanCity_Gym_SetSuicuneScene::
 	setvar VAR_SUICUNE_ENCOUNTERS, 6
@@ -240,29 +262,35 @@ CeruleanGym_Text_Note1:
 	.string "too. GYM TRAINERS$"
 
 CeruleanGym_Text_MistyIntro:
-	.string "MISTY: I was expecting you, you\n"
-	.string "pest!\p"
-	.string "You may have a lot of JOHTO GYM\n"
-	.string "BADGES, but you'd better not\l"
-	.string "take me too lightly.\p"
-	.string "My WATER-type POKéMON are\n"
-	.string "tough!$"
+	.string "Let me guess. You're here for a badge?\p"
+	.string "It's true that I was asked to be the\n"
+	.string "new GYM LEADER here, but...\p"
+	.string "Ugh! They didn't say anything about all\n"
+	.string "the little pests in this place!\p"
+	.string "Bugs are one of the three most\n"
+	.string "disgusting things in the world!\p"
+	.string "Even after all the renovations to the\n"
+	.string "GYM, I always feel like there's one of\l"
+	.string "them lurking behind me...\p"
+	.string "That's it. You want to battle? Fine.\n"
+	.string "I'm going to take my anger out on you!$"
 
 CeruleanGym_Text_MistyWinLoss:
 	.string "MISTY: You really are good…\p"
 	.string "I'll admit that you are skilled…\p"
-	.string "Here you go. It's CASCADEBADGE.$"
+	.string "Here you go. It's the HIVEBADGE.$"
 
 CeruleanGym_Text_ReceivedBadge:
 	.string "{PLAYER} received CASCADEBADGE.$"
 
 CeruleanGym_Text_MistyFightDone:
-	.string "MISTY: Are there many strong\n"
-	.string "trainers in JOHTO? Like you, I\l"
-	.string "mean.\p"
-	.string "I'm going to travel one day, so\n"
-	.string "I can battle some skilled\l"
-	.string "trainers.$"
+	.string "By the way...\p"
+	.string "Did you see BUGSY on your way here?\p"
+	.string "I blew up at him the last time we met\n"
+	.string "and feel kind of bad about it.\p"
+	.string "He's a good kid...\p"
+	.string "If you see him, tell him me and\n"
+	.string "GOLISOPOD are doing just fine, alright?$"
 
 CeruleanGym_Text_MistyRematch:
 	.string "MISTY: Wow, you're the KANTO\n"
@@ -276,8 +304,7 @@ CeruleanGym_Text_MistyRematchDefeat:
 	.string "MISTY: You really are good…$"
 
 CeruleanGym_Text_SwimmerfDianaSeen:
-	.string "Sorry about being away. Let's get\n"
-	.string "on with it!$"
+	.string "Let's get on with it!$"
 
 CeruleanGym_Text_SwimmerfDianaBeaten:
 	.string "I give up! You're the winner!$"
@@ -300,7 +327,7 @@ CeruleanGym_Text_SwimmerfBrianaAfter:
 
 CeruleanGym_Text_SwimmermParkerSeen:
 	.string "Glub…\p"
-	.string "I'm first! Come and get me!$"
+	.string "Come and get me!$"
 
 CeruleanGym_Text_SwimmermParkerBeaten:
 	.string "This can't be…$"
@@ -313,8 +340,11 @@ CeruleanGym_Text_SwimmermParkerAfter:
 
 CeruleanGym_Text_GuideIntro:
 	.string "Yo! CHAMP in making!\p"
-	.string "Since MISTY was away, I went out\p"
-	.string "for some fun too. He-he-he.$"
+	.string "The new GYM LEADER here, MISTY, uses\n"
+	.string "WATER-type POKéMON.\p"
+	.string "If you have any GRASS-type or\n"
+	.string "ELECTRIC-type POKéMON, now is the time\l"
+	.string "to put them to good use!$"
 
 CeruleanGym_Text_GuideWin:
 	.string "Hoo, you showed me how tough you\n"
@@ -323,4 +353,7 @@ CeruleanGym_Text_GuideWin:
 	.string "great battle!$"
 
 CeruleanGym_Text_MistyTm:
-	.string "Here, take this too.$"
+	.string "Here, take this too.\n"
+	.string "It's just as good as Bugsy's U-Turn,\l" 
+	.string "so promise you'll use it, okay?$"
+

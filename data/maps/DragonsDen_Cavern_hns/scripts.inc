@@ -49,7 +49,7 @@ DragonsDen_Cavern_Trigger_ClairMid::
 	playse SE_PIN
 	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_ExclamationMark
 	delay 60
-	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight
+	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight1
 	call DragonsDen_Cavern_EventScript_Clair
 	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, DragonsDen_Cavern_Movement_ClairLeaveMid
 	waitmovement 0
@@ -65,9 +65,9 @@ DragonsDen_Cavern_Trigger_ClairRight::
 	playse SE_PIN
 	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_ExclamationMark
 	delay 60
-	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight
+	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight1
 	waitmovement 0
-	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight
+	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, Common_Movement_WalkRight1
 	call DragonsDen_Cavern_EventScript_Clair
 	applymovement2 LOCALID_DRAGONSDEN2_CLAIR, DragonsDen_Cavern_Movement_ClairLeaveRight
 	waitmovement 0
@@ -80,9 +80,10 @@ DragonsDen_Cavern_Trigger_ClairRight::
 
 
 DragonsDen_Cavern_EventScript_Clair::
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox DragonsDen_Cavern_Text_ClairGiveDragonclaw, MSGBOX_DEFAULT
 	giveitem ITEM_TM_DRAGON_CLAW
+	giveitem ITEM_HM_WHIRLPOOL
 	msgbox DragonsDen_Cavern_Text_ClairDescribeDragonclaw, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -131,14 +132,16 @@ DragonsDen_Cavern_Movement_ClairLeaveRight:
 DragonsDen_Cavern_Text_ClairGiveDragonclaw:
     .string "CLAIR: WAIT!\p"
 	.string "I'm sorry about this.\n"
-    .string "Here, take this as my apology.$"
+    .string "Here, take these as my apology.$"
 
 DragonsDen_Cavern_Text_ClairDescribeDragonclaw:
     .string "That contains DRAGON CLAW.\p"
     .string "No, it doesn't have anything to\n"
     .string "do with my nails.\p"
     .string "If you don't want it, you don't\n"
-    .string "have to take it.$"
+    .string "have to take it.\p"
+	.string "The other one is WHIRLPOOL. It will\n"
+	.string "allow you to cross whirlpools at sea.$"
 
 DragonsDen_Cavern_Text_ClairWhatsTheMatter:
     .string "What's the matter? Aren't\n"

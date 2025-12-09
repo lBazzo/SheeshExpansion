@@ -2,7 +2,6 @@
 
 CinnabarIsland_PokemonCenter_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CinnabarIsland_PokemonCenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 CinnabarIsland_PokemonCenter_OnTransition::
@@ -19,7 +18,7 @@ CinnabarIsland_PokemonCenter_EventScript_Fisher::
 
 CinnabarIsland_PokemonCenter1F_Text_CooltrainerF:
 	.string "CINNABAR GYM's BLAINE apparently\n"
-	.string "lives alone in the SEAFOAM ISLANDS\n"
+	.string "lives alone in the SEAFOAM ISLANDS\l"
 	.string "cave…$"
 
 CinnabarIsland_PokemonCenter1F_Text_Fisher:

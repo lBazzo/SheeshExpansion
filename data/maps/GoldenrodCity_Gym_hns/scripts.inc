@@ -1,28 +1,61 @@
+.set LOCALID_GOLDENROD_CITY_GYM_CARRIE, 2
+.set LOCALID_GOLDENROD_CITY_GYM_VICTORIA, 3
+.set LOCALID_GOLDENROD_CITY_GYM_SAMANTHA, 5
 .set LOCALID_GOLDENROD_CITY_GYM_BRIDGET, 6
+.set LOCALID_GOLDENROD_CITY_GYM_HILLARY, 7
+.set LOCALID_GOLDENROD_CITY_GYM_COLETTE, 8
 
 GoldenrodCity_Gym_hns_MapScripts::
 	.byte 0
 @Carrie, Bridget, Victoria, Samantha, gym guy
 
 
-GoldenrodCity_Gym_EventScript_Carrie::
-	trainerbattle_single TRAINER_CARRIE GoldenrodCity_Gym_Text_LassCarrieSeen, GoldenrodCity_Gym_Text_LassCarrieBeaten
-	msgbox GoldenrodCity_Gym_Text_LassCarrieAfter, MSGBOX_AUTOCLOSE
-	end
-
 GoldenrodCity_Gym_EventScript_Bridget::
-	trainerbattle_single TRAINER_BRIDGET GoldenrodCity_Gym_Text_LassBridgetSeen, GoldenrodCity_Gym_Text_LassBridgetBeaten
+	lock
+	faceplayer
 	msgbox GoldenrodCity_Gym_Text_LassBridgetAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	release
 	end
 
 GoldenrodCity_Gym_EventScript_Victoria::
-	trainerbattle_single TRAINER_VICTORIA GoldenrodCity_Gym_Text_BeautyVictoriaSeen, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
+	lock
+	faceplayer
 	msgbox GoldenrodCity_Gym_Text_BeautyVictoriaAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	release
 	end
 
 GoldenrodCity_Gym_EventScript_Samantha::
-	trainerbattle_single TRAINER_SAMANTHA GoldenrodCity_Gym_Text_BeautySamanthaSeen, GoldenrodCity_Gym_Text_BeautySamanthaBeaten
+	lock
+	faceplayer
 	msgbox GoldenrodCity_Gym_Text_BeautySamanthaAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	release
+	end
+
+GoldenrodCity_Gym_EventScript_Carrie::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Gym_Text_LassCarrieAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	release
+	end
+
+GoldenrodCity_Gym_EventScript_Colette::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Gym_Text_TeacherColetteAfterBattle, MSGBOX_AUTOCLOSE
+	closemessage
+	release
+	end
+
+GoldenrodCity_Gym_EventScript_Hillary::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Gym_Text_TeacherHillaryAfterBattle, MSGBOX_AUTOCLOSE
+	closemessage
+	release
 	end
 
 GoldenrodCity_Gym_EventScript_Gym_Guy::
@@ -76,6 +109,7 @@ GoldenrodCity_Gym_EventScript_WhitneyBadge::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
+	giveitem ITEM_HEART_SCALE, 4
 	giveitem ITEM_TM_ATTRACT
 	msgbox GoldenrodCity_Gym_Text_WhitneyAttract, MSGBOX_DEFAULT
 	setvar VAR_GOLDENROD_CITY_STATE, 5
@@ -94,7 +128,7 @@ GoldenrodCity_Gym_EventScript_WhitneyDefeated::
 GoldenrodCity_Gym_EventScript_Trigger::	
 	turnobject LOCALID_GOLDENROD_CITY_GYM_BRIDGET DIR_WEST
 	msgbox GoldenrodCity_Gym_Text_BridgetWhitneyCries, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	setvar VAR_GOLDENROD_CITY_STATE, 4
 	closemessage
@@ -247,3 +281,90 @@ GoldenrodCity_Gym_Text_GymGuideWin:
     .string "You won? Great! I was busy admiring\n"
     .string "the ladies here.$"
 
+GoldenrodCity_Gym_Text_TeacherColetteSeen:
+	.string "Have you forgotten anything?$"
+
+GoldenrodCity_Gym_Text_TeacherColetteBeaten:
+	.string "Kyaaah!$"
+
+GoldenrodCity_Gym_Text_TeacherColetteAfterBattle:
+	.string "Before I became a teacher, I used\n"
+	.string "to forget a lot of things.$"
+
+GoldenrodCity_Gym_Text_TeacherHillarySeen:
+	.string "On sunny days, I think that the\n"
+	.string "kids would rather be playing in the\l"
+	.string "schoolyard than studying in class.$"
+
+GoldenrodCity_Gym_Text_TeacherHillaryBeaten:
+	.string "I didn't want to lose…$"
+
+GoldenrodCity_Gym_Text_TeacherHillaryAfterBattle:
+	.string "Studying is important, but\n"
+	.string "exercise is just as vital.$"
+
+GoldenrodCity_Gym_EventScript_B2B1::
+	lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_SAMANTHA, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_BeautySamanthaSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SAMANTHA, GoldenrodCity_Gym_Text_BeautySamanthaBeaten
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_CARRIE, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_LassCarrieSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_CARRIE, GoldenrodCity_Gym_Text_LassCarrieBeaten
+	setvar VAR_WHITNEY_GYM_B2B_STATE, 2
+	release
+	end
+
+GoldenrodCity_Gym_EventScript_B2B2::
+	lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_HILLARY, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_TeacherHillarySeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_HILLARY, GoldenrodCity_Gym_Text_TeacherHillaryBeaten
+	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_COLETTE, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_TeacherColetteSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_COLETTE, GoldenrodCity_Gym_Text_TeacherColetteBeaten
+	setvar VAR_WHITNEY_GYM_B2B_STATE, 3
+	release
+	end
+
+GoldenrodCity_Gym_EventScript_B2B3::
+	lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_VICTORIA, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_BeautyVictoriaSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_VICTORIA, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
+	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_BRIDGET, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0 
+	msgbox GoldenrodCity_Gym_Text_LassBridgetSeen, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BRIDGET, GoldenrodCity_Gym_Text_LassBridgetBeaten
+	setvar VAR_WHITNEY_GYM_B2B_STATE, 4
+	release
+	end

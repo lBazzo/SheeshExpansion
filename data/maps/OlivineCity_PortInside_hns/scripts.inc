@@ -31,7 +31,7 @@ OlivineCity_PortInside_EventScript_Oak::
 	delay 60
 	msgbox OlivineCity_PortInside_Text_Nationaldex4, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PLAYER, OlivineCity_PortInside_Movement_PlayerMoveOver
+	applymovement OBJ_EVENT_ID_PLAYER, OlivineCity_PortInside_Movement_PlayerMoveOver
 	waitmovement 0
 	applymovement LOCALID_OLIVINEPORT_OAK, OlivineCity_PortInside_Movement_OakLeave
 	waitmovement 0
@@ -197,11 +197,11 @@ OlivinePort_EventScript_EnterShip::
 	applymovement LOCALID_OLIVINEPORT_SAILOR, OlivinePort_Movement_SailorEnterBoat
 	waitmovement 0
 	playse SE_EXIT
-	applymovement LOCALID_PLAYER, OlivinePort_Movement_PlayerEnterBoat
+	applymovement OBJ_EVENT_ID_PLAYER, OlivinePort_Movement_PlayerEnterBoat
 	waitmovement 0
 	special SpawnCameraObject
 	playse SE_EXIT
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	delay 60
 	applymovement LOCALID_OLIVINEPORT_SAILOR, OlivinePort_Movement_BoatLeave
 	applymovement LOCALID_OLIVINEPORT_BOAT, OlivinePort_Movement_BoatLeave

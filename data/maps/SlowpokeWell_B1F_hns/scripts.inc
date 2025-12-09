@@ -1,4 +1,6 @@
 .set LOCALID_WELL_KURT, 19
+.set LOCALID_WELL_B2BGRUNT23, 23
+.set LOCALID_WELL_B2BGRUNT24, 24
 
 SlowpokeWell_B1F_hns_MapScripts::
 	.byte 0
@@ -25,6 +27,72 @@ SlowpokeWell_B1F_EventScript_Kurt::
 	closemessage
 	end
 
+SlowpokeWell_B1F_EventScript_B2B::
+	lock
+	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playse SE_PIN
+	applymovement LOCALID_WELL_B2BGRUNT23, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0 
+	msgbox SlowpokeWell_B1F_Text_Grunt23PreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt23Beaten
+	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playse SE_PIN
+	applymovement LOCALID_WELL_B2BGRUNT24, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+	msgbox SlowpokeWell_B1F_Text_Grunt24PreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt24Beaten
+	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 2
+	release
+	end
+
+
+
+
+
+SlowpokeWell_B1F_Text_Grunt23PreFight:
+	.string "You may think you're strong, kid, but\n"
+	.string "you're all alone.\p"
+	.string "There's no way you stand a chance\n"
+	.string "against both of us.\p"
+	.string "You're going down!$"
+
+SlowpokeWell_B1F_Text_Grunt23Beaten:
+	.string "Geez, okay, okay!\n"
+	.string "What's with you!?$"
+
+SlowpokeWell_B1F_Text_Grunt24PreFight:
+	.string "Nyeh heh heh! Just as we planned!\p"
+	.string "Now you're all weak and scared, I'm\n"
+	.string "going to finish you off!$"
+
+SlowpokeWell_B1F_Text_Grunt24Beaten:
+	.string "What!? Unbelievable!$"
+
+SlowpokeWell_B1F_EventScript_Grunt23::
+	lock
+	msgbox SlowpokeWell_B1F_Text_Grunt23, MSGBOX_DEFAULT
+	closemessage
+	end
+
+SlowpokeWell_B1F_EventScript_Grunt24::
+	lock
+	msgbox SlowpokeWell_B1F_Text_Grunt24, MSGBOX_DEFAULT
+	closemessage
+	end
+
+SlowpokeWell_B1F_Text_Grunt24:
+	.string "Losing two on one to a child...\p"
+	.string "Where did I go wrong with my life to end\n"
+	.string "up here...?$"
+
+SlowpokeWell_B1F_Text_Grunt23:
+	.string "You may have beaten us, but there's no\n"
+	.string "way you'll get past PROTON!$"
+
 SlowpokeWell_B1F_EventScript_Grunt21::
 	trainerbattle_single TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_GruntM29Seen, SlowpokeWell_B1F_Text_GruntM29Beaten
 	msgbox SlowpokeWell_B1F_Text_GruntM29After, MSGBOX_AUTOCLOSE
@@ -38,6 +106,11 @@ SlowpokeWell_B1F_EventScript_Grunt22F::
 SlowpokeWell_B1F_EventScript_Eto::
 	trainerbattle_single TRAINER_ETO, SlowpokeWell_B1F_Text_GruntM2Seen, SlowpokeWell_B1F_Text_GruntM2Beaten
 	msgbox SlowpokeWell_B1F_Text_GruntM2After, MSGBOX_AUTOCLOSE
+	end
+
+SlowpokeWell_B1F_EventScript_Joey::
+	trainerbattle_single TRAINER_JOEY, SlowpokeWell_B1F_Text_JoeySeen, SlowpokeWell_B1F_Text_JoeyBeaten
+	msgbox SlowpokeWell_B1F_Text_JoeyAfter, MSGBOX_AUTOCLOSE
 	end
 
 SlowpokeWell_B1F_EventScript_Proton::
@@ -58,7 +131,7 @@ SlowpokeWell_B1F_EventScript_Proton::
 	delay 120
 	fadescreen FADE_FROM_BLACK
 	special DrawWholeMapView
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	applymovement LOCALID_WELL_KURT, SlowpokeWell_B1F_Movement_Kurt
 	waitmovement 0
 	msgbox SlowpokeWell_B1F_Text_KurtAfter, MSGBOX_DEFAULT
@@ -157,6 +230,18 @@ SlowpokeWell_B1F_Text_GruntM2After:
 	.string "We need the money,\n"
 	.string "but selling SLOWPOKETAILS?\p"
 	.string "It's tough being a ROCKET GRUNT!$"
+
+SlowpokeWell_B1F_Text_JoeySeen:
+	.string "Wrahhhh! Feel Team Rocket's Wrath!$"
+
+SlowpokeWell_B1F_Text_JoeyBeaten:
+	.string "I'm out of wrath…$"
+
+SlowpokeWell_B1F_Text_JoeyAfter:
+	.string "I though getting myself worked up\n"
+	.string "would help me battle better, but I was\l"
+	.string "too focused on getting hyped to see\l"
+	.string "that I was losing.$"
 
 SlowpokeWell_B1F_Text_GruntF1Seen:
 	.string "Stop taking TAILS?\p"

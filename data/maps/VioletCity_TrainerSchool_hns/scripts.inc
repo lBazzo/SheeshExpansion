@@ -1,3 +1,6 @@
+.set LOCALID_TRAINERSCHOOL_GBA_KID1, 1
+.set LOCALID_TRAINERSCHOOL_GBA_KID2, 2
+
 VioletCity_TrainerSchool_hns_MapScripts::
 	.byte 0
 
@@ -17,10 +20,21 @@ VioletCity_TrainerSchool_EventScript_Teacher::
 	release
 	end
 
+
+
 VioletCity_TrainerSchool_EventScript_Boy1::
 	lock
 	faceplayer
+	goto_if_set FLAG_RECEIVED_MUSCLE_BAND, VioletCity_TrainerSchool_EventScript_Boy1Given
 	msgbox VioletCity_TrainerSchool_Text_GameboyKid1, MSGBOX_DEFAULT
+	@giveitem ITEM_MUSCLE_BAND
+	setflag FLAG_RECEIVED_MUSCLE_BAND
+	closemessage
+	release
+	end
+
+VioletCity_TrainerSchool_EventScript_Boy1Given::
+	msgbox VioletCity_TrainerSchool_Text_GameboyKid1Given, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -28,7 +42,16 @@ VioletCity_TrainerSchool_EventScript_Boy1::
 VioletCity_TrainerSchool_EventScript_Boy2::
 	lock
 	faceplayer
+	goto_if_set FLAG_RECEIVED_WISE_GLASSES, VioletCity_TrainerSchool_EventScript_Boy2Given
 	msgbox VioletCity_TrainerSchool_Text_GameboyKid2, MSGBOX_DEFAULT
+	@giveitem ITEM_WISE_GLASSES
+	setflag FLAG_RECEIVED_WISE_GLASSES
+	closemessage
+	release
+	end
+
+VioletCity_TrainerSchool_EventScript_Boy2Given::
+	msgbox VioletCity_TrainerSchool_Text_GameboyKid2Given, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -137,23 +160,29 @@ VioletCity_TrainerSchool_Text_Youngster1:
 	.string "while holding and leveling up.$"
 
 VioletCity_TrainerSchool_Text_GameboyKid1:
-	.string "Notable POKéMON available in an\n"
-	.string "area can be seen in the overworld!\p"
-	.string "But make sure to check routes\n"
-	.string "at DAY and NIGHT!$"
+	.string "Hey, you like physical moves right? Try\n"
+	.string "giving this to your POKéMON.$"
+
+VioletCity_TrainerSchool_Text_GameboyKid1Given:
+	.string "That's the Muscle Band. It'll make\n"
+	.string "physical hits even stronger.\p"
+	.string "Just don't talk to that lame special\n"
+	.string "loving kid next to me...$"
 
 VioletCity_TrainerSchool_Text_GameboyKid2:
-	.string "Berries in the JOHTO region are\n"
-	.string "good for healing and making balls.\p"
-	.string "Berries in KANTO are good for\n"
-	.string "reducing a POKéMON's stats.\p"
-	.string "The DOJO in KANTO helps POKéMON\n"
-	.string "perfect individual stats.$"
+	.string "Special moves are just so cool! Try this\n"
+	.string "out and see for yourself!$"
+
+VioletCity_TrainerSchool_Text_GameboyKid2Given:
+	.string "With these Wise Glasses, your special\n"
+	.string "attackers will be unstoppable!\p"
+	.string "Way cooler than this other dude's\n"
+	.string "Muscle Band, don't you think?$"
 
 VioletCity_TrainerSchool_Text_Youngster2:
 	.string "Be aware that your opponents\n"
 	.string "now use teams with better type\l"
-	.string "coverage,so expect a much\l"
+	.string "coverage, so expect a much\l"
 	.string "more challenging journey ahead.$"
 
 VioletCity_TrainerSchool_Text_Blackboard:

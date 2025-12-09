@@ -1,3 +1,6 @@
+.set LOCALID_BLACKTHORNGYM_IRIS, 13
+.set LOCALID_BLACKTHORNGYM_DRAYDEN, 14
+
 BlackthornCity_Gym_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, BlackthornGym_OnLoad
 	.byte 0
@@ -425,3 +428,160 @@ BlackthornGym_Text_GymStatueCertified:
 	.string "BLACKTHORN CITY POKéMON GYM\p"
 	.string "CLAIR'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
+
+
+
+
+
+
+
+
+
+BlackthornGym_EventScript_B2B::
+    lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+    playse SE_PIN
+	applymovement LOCALID_BLACKTHORNGYM_IRIS, Common_Movement_ExclamationMark
+	delay 60
+    getplayerxy VAR_TEMP_0, VAR_TEMP_1
+    call_if_eq VAR_TEMP_1, 27, BlackthornGym_EventScript_AdjustIris1
+	call_if_eq VAR_TEMP_1, 28, BlackthornGym_EventScript_AdjustIris2
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0 
+	msgbox BlackthornGym_Text_IrisSeen, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_SPENCER, BlackthornGym_Text_IrisBeaten
+    playbgm MUS_ENCOUNTER_RICH, TRUE
+    playse SE_PIN
+	applymovement LOCALID_BLACKTHORNGYM_DRAYDEN, Common_Movement_ExclamationMark
+	delay 60
+    getplayerxy VAR_TEMP_0, VAR_TEMP_1
+    call_if_eq VAR_TEMP_1, 27, BlackthornGym_EventScript_AdjustDrayden1
+	call_if_eq VAR_TEMP_1, 26, BlackthornGym_EventScript_AdjustDrayden2
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+    msgbox BlackthornGym_Text_DraydenSeen1, MSGBOX_DEFAULT
+	closemessage
+	msgbox BlackthornGym_Text_DraydenSeen2, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_RON, BlackthornGym_Text_DraydenBeaten
+    setvar VAR_ALL_B2B_STATE, 11
+    release
+    end
+
+BlackthornGym_EventScript_AdjustIris1::
+    applymovement LOCALID_BLACKTHORNGYM_IRIS, Common_Movement_WalkDown1
+    waitmovement 0
+    return
+
+BlackthornGym_EventScript_AdjustIris2::
+    applymovement LOCALID_BLACKTHORNGYM_IRIS, BlackthornGym_Movement_AdjustIris2
+    waitmovement 0
+    return
+
+BlackthornGym_EventScript_AdjustDrayden1::
+    applymovement LOCALID_BLACKTHORNGYM_DRAYDEN, Common_Movement_WalkUp1
+    waitmovement 0
+    return
+
+BlackthornGym_EventScript_AdjustDrayden2::
+    applymovement LOCALID_BLACKTHORNGYM_DRAYDEN, BlackthornGym_Movement_AdjustDrayden2
+    waitmovement 0
+    return
+
+BlackthornGym_Movement_AdjustIris2:
+	walk_down
+	walk_down
+	step_end
+
+BlackthornGym_Movement_AdjustDrayden2:
+	walk_up
+	walk_up
+	step_end
+
+BlackthornGym_EventScript_Iris::
+	lock
+	faceplayer
+	msgbox BlackthornGym_Text_IrisAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_BLACKTHORNGYM_IRIS, Common_Movement_ExclamationMark
+	delay 40
+	msgbox BlackthornGym_Text_IrisAfter2, MSGBOX_AUTOCLOSE
+	closemessage
+	release
+	end
+
+BlackthornGym_EventScript_Drayden::
+	lock
+	faceplayer
+	msgbox BlackthornGym_Text_DraydenAfter, MSGBOX_AUTOCLOSE
+	closemessage
+	release
+	end
+
+BlackthornGym_Text_IrisSeen:
+    .string "IRIS: Man, I'm peeved!\p"
+    .string "How is it that CLAIR starts bossing us\n"
+	.string "around after WE were the ones offering\l"
+	.string "to help HER out by filling in as GYM\l"
+	.string "trainers?\p"
+	.string "Just who does she think she is?\p"
+	.string "Doesn't she know I used to be a GYM\n"
+	.string "LEADER too?\p"
+	.string "You believe me, right?\p"
+	.string "Here, I'll show you. She did ask us to\n"
+	.string "battle any challengers, after all!$"
+
+BlackthornGym_Text_IrisBeaten:
+    .string "Wow! JOHTO trainers are super strong!$"
+
+BlackthornGym_Text_IrisAfter:
+    .string "Hey, do me a favour, would you?\p"
+    .string "Wipe the floor with CLAIR when you two\n"
+	.string "battle.\p"
+	.string "I'll be cheering you on from over here!\p"
+	.string "I'll bet you anything she's a sore\n"
+	.string "loser...$"
+
+BlackthornGym_Text_IrisAfter2:
+	.string "Eek!\p"
+	.string "Don't tell grandpa I said that\n"
+	.string "though, or he'll chew me out...$"
+
+BlackthornGym_Text_DraydenSeen1:
+    .string "DRAYDEN: Welcome. Thank you for coming\n"
+    .string "to the GYM.\p"
+    .string "Your POKéMON are injured, are they not?\p"
+    .string "Please, allow me to heal them for you\n"
+	.string "before we fight.$"
+
+BlackthornGym_Text_DraydenSeen2:
+    .string "Now then. I hope you'll show me a battle\n"
+    .string "exciting enough to get this old man's\l"
+    .string "blood pumping again!$"
+
+BlackthornGym_Text_DraydenBeaten:
+    .string "Marvellous! Though the sting of defeat\n"
+	.string "is raw as ever, it was a treat watching\l"
+	.string "your strategy play out!$"
+
+BlackthornGym_Text_DraydenAfter:
+    .string "Oh, still interested in chatting, are\n"
+    .string "you?\p"
+    .string "I appreciate your efforts to humour me.\p"
+    .string "Us dragon tamer's like to keep tabs on\n"
+	.string "each other, you know.\p"
+	.string "It's a more tightly knit community than\n"
+	.string "you might think.\p"
+	.string "That being said, I'd appreciate if you\n"
+	.string "didn't share this with IRIS, but...\p"
+	.string "I believe she has a point about this\n"
+	.string "city's GYM LEADER.\p"
+	.string "She has the talent, but her attitude\n"
+	.string "leaves a lot to be desired, in my humble\l"
+	.string "opinion.\p"
+	.string "LANCE is supposed to be her mentor, is\n"
+	.string "he not?\p"
+	.string "You have to wonder what sorts of\n"
+	.string "things he's been teaching her...$"
+
+

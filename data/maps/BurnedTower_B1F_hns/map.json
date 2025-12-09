@@ -3,16 +3,16 @@
   "name": "BurnedTower_B1F_hns",
   "layout": "LAYOUT_BURNED_TOWER_B1F",
   "music": "MUS_HG_BURNED_TOWER",
-  "region_map_section": "MAPSEC_BURNED_TOWER",
+  "region_map_section": "MAPSEC_ASHEN_CRYPT",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": false,
   "allow_escaping": true,
-  "allow_running": false,
-  "show_map_name": false,
+  "allow_running": true,
+  "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ENTEI)",
@@ -54,7 +54,7 @@
       "flag": "FLAG_HIDE_BURNED_TOWER_BEASTS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 6,
       "y": 9,
       "elevation": 0,
@@ -62,21 +62,21 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BurnedTower_B1F_EventScript_Item_UltraBall",
       "flag": "FLAG_ITEM_BURNED_TOWER_B1F_ULTRA_BALL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 5,
-      "y": 15,
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 27,
+      "y": -6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_TAUNT",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BurnedTower_B1F_EventScript_Item_Taunt",
       "flag": "FLAG_ITEM_BURNED_TOWER_B1F_TM_TAUNT"
     },
     {
@@ -174,6 +174,10 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

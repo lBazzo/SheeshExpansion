@@ -37,11 +37,6 @@ Route44_EventScript_Allen::
 	msgbox Route44_Text_CooltrainermAllenAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route44_EventScript_Cybil::
-	trainerbattle_single TRAINER_CYBIL Route44_Text_CooltrainerfCybilSeen, Route44_Text_CooltrainerfCybilBeaten
-	msgbox Route44_Text_CooltrainerfCybilAfter, MSGBOX_AUTOCLOSE
-	end
-
 Route44_EventScript_Sign1::
 	msgbox Route44_Text_Sign1, MSGBOX_SIGN
 	end
@@ -140,20 +135,6 @@ Route44_Text_CooltrainermAllenAfter:
     .string "I wonder if ECRUTEAK GYM's MORTY\n"
     .string "is still in training?\p"
     .string "He really hammered me.$"
-
-Route44_Text_CooltrainerfCybilSeen:
-    .string "You look strong.\p"
-    .string "Good trainers seek tough\n"
-    .string "opponents instinctively.$"
-
-Route44_Text_CooltrainerfCybilBeaten:
-    .string "Nope! This won't do at all.$"
-
-Route44_Text_CooltrainerfCybilAfter:
-    .string "We all get better by experiencing\n"
-    .string "many battles.\p"
-    .string "I battled a lot to become what I\n"
-    .string "am today--an elite.$"
 
 Route44_Text_Sign1:
     .string "ROUTE 44\n"

@@ -2,7 +2,6 @@
 
 ViridianCity_PokemonCenter_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ViridianCity_PokemonCenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 ViridianCity_PokemonCenter_OnTransition::

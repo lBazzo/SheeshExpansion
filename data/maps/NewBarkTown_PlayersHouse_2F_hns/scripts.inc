@@ -1,13 +1,15 @@
 NewBarkTown_PlayersHouse_2F_hns_MapScripts::
 	.byte 0
 
+
+
 NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1::
     lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-    applymovement LOCALID_PLAYER, NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock1
+    applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock1
 	waitmovement 0
     msgbox NewBarkTown_PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call NewBarkTown_PlayersHouse_2F_EventScript_SetWallClock
@@ -20,10 +22,10 @@ NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1::
 NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger2::
     lock
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 60
-    applymovement LOCALID_PLAYER, NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2
+    applymovement OBJ_EVENT_ID_PLAYER, NewBarkTown_PlayersHouse_2F_Movement_PlayerWalkToClock2
     msgbox NewBarkTown_PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call NewBarkTown_PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
@@ -101,4 +103,28 @@ NewBarkTown_PlayersHouse_2F_EventScript_WallClock::
 	delay 30
 	setflag FLAG_SET_WALL_CLOCK
 	releaseall
+	end
+
+@ HnS
+Common_Text_ReceivedMon::
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+Common_Text_PartyIsFull::
+	.string "Whoa, wait. You can't carry any\n"
+	.string "more POKéMON.$"	
+
+Common_Text_LookCloserAtMap::
+	.string "{PLAYER} took a closer look at the\n"
+	.string "Region Map.$"
+
+LilycoveCity_ContestLobby_Text_PleaseDecideLinkLeader:
+	.string "Please decide which of you will\n"
+	.string "become the GROUP LEADER.\p"
+	.string "The other players must then choose\n"
+	.string "“JOIN GROUP.”$"
+
+TrainerHill_1F_EventScript_Lost::
+	trainerhill_settrainerflags
+	trainerhill_lost
+	setvar VAR_TEMP_1, 1
 	end

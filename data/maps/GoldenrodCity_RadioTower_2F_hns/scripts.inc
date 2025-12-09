@@ -1,3 +1,6 @@
+.set LOCALID_RADIOTOWER_B2BGRUNTTOP, 12
+.set LOCALID_RADIOTOWER_B2BGRUNTBOT, 13
+
 GoldenrodCity_RadioTower_2F_hns_MapScripts::
 	.byte 0
 
@@ -192,3 +195,105 @@ GoldenrodCity_RadioTower_2F_Text_OakTalkSign:
 
 GoldenrodCity_RadioTower_2F_Text_PokemonRadioSign:
 	.string "Anywhere, Anytime POKéMON Radio$"
+
+GoldenrodCity_RadioTower_2F_EventScript_Eric::
+	trainerbattle_single TRAINER_ERIC GoldenrodCity_RadioTower_2F_Text_SupernerdEricSeen, GoldenrodCity_RadioTower_2F_Text_SupernerdEricBeaten
+	msgbox GoldenrodCity_RadioTower_2F_Text_SupernerdEricAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+GoldenrodCity_RadioTower_2F_EventScript_Donald::
+	trainerbattle_single TRAINER_DONALD GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldSeen, GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldBeaten
+	msgbox GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+GoldenrodCity_RadioTower_2F_Text_SupernerdEricSeen:
+    .string "Prepare for trouble!$"
+
+GoldenrodCity_RadioTower_2F_Text_SupernerdEricBeaten:
+    .string "Eeeek! You didn't let us finish!$"
+
+GoldenrodCity_RadioTower_2F_Text_SupernerdEricAfterBattle:
+    .string "We spent all day working on that\n"
+    .string "routine and we didn't even get to do it\l"
+	.string "properly.\p"
+	.string "I don't know how you can live with\n"
+	.string "yourself, you mean little devil.$"
+
+GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldSeen:
+    .string "Make it double!$"
+
+GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldBeaten:
+    .string "Uh, I forgot the next line.$"
+
+GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldAfterBattle:
+	.string "Sometimes I think my partner here gets\n"
+	.string "too invested in her job, but I don't\l"
+	.string "have the heart to tell her.\p"
+	.string "Being a grunt is a pretty soul crushing\n"
+	.string "reality when you think about it...$"
+
+
+
+
+
+GoldenrodCity_RadioTower_2F_EventScript_B2B::
+	lock
+	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playse SE_PIN
+	applymovement LOCALID_RADIOTOWER_B2BGRUNTTOP, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0 
+	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntTopPreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntTopBeaten
+	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playse SE_PIN
+	applymovement LOCALID_RADIOTOWER_B2BGRUNTBOT, Common_Movement_ExclamationMark
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0 
+	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntBotPreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten
+	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
+	setvar VAR_ALL_B2B_STATE, 5
+	release
+	end
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntTopPreFight:
+	.string "Oh great...\p"
+	.string "I finally get the post where I'm allowed\n"
+	.string "to sit down during my shift, and now you\l"
+	.string "have to come along and ruin it.$"
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntTopBeaten:
+	.string "That was hardly worth getting up for...$"
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntBotPreFight:
+	.string "Ouch! Man this plant is prickly!$"
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten:
+	.string "This day just keeps getting worse...$"
+
+GoldenrodCity_RadioTower_2F_EventScript_B2BGruntTop::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntTopAfter, MSGBOX_DEFAULT
+	closemessage
+	end
+
+GoldenrodCity_RadioTower_2F_EventScript_B2BGruntBot::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntBotAfter, MSGBOX_DEFAULT
+	closemessage
+	end
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntBotAfter:
+	.string "Beating up an injured man, huh?\p"
+	.string "Why, you're even more evil than TEAM\n"
+	.string "ROCKET!$"
+
+GoldenrodCity_RadioTower_2F_Text_B2BGruntTopAfter:
+	.string "I'm surprised you even have the energy\n"
+	.string "to storm this place. So many stairs...$"
+

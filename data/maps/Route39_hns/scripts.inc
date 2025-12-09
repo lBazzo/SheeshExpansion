@@ -29,9 +29,9 @@ Route39_EventScript_LegendaryTrigger::
 	removeobject LOCALID_R39_SHADOW
 	playse SE_PIN
 	applymovement LOCALID_R39_BAOBA, Common_Movement_QuestionMark
-	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	turnobject LOCALID_R39_BAOBA DIR_SOUTH
-	turnobject LOCALID_PLAYER DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER DIR_SOUTH
 	delay 60
 
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -42,7 +42,8 @@ Route39_EventScript_LegendaryTrigger::
 	call_if_eq VAR_TEMP_1, 23, Route39_EventScript_BaobaMovement4
 
 	turnobject LOCALID_R39_BAOBA DIR_EAST
-	turnobject LOCALID_PLAYER DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER DIR_WEST
+
 Route39_EventScript_ChooseLegend::
 	msgbox Route39_Text_ChooseLegend, MSGBOX_DEFAULT
 	multichoice 20, 8, MULTI_GOLDSILVER, FALSE
@@ -114,8 +115,8 @@ Route39_Movement_Baoba4:
 	step_end
 
 Route39_EventScript_LegendaryTriggerGold::
-	setvar VAR_LUGIA_OR_HOOH, 2
-	goto Route39_EventScript_BaobaIntro
+	msgbox Route39_Text_BaobaReadTheGameTitle, MSGBOX_DEFAULT
+	goto Route39_EventScript_ChooseLegend
 
 Route39_EventScript_LegendaryTriggerSilver::
 	setvar VAR_LUGIA_OR_HOOH, 1
@@ -140,6 +141,14 @@ Route39_Text_ChooseLegend::
 	.string "shadow belong to a POKéMON?\p"
 	.string "Did you get a good look at it?\n"
 	.string "I can't tell what color it was...$"
+
+Route39_Text_BaobaReadTheGameTitle::
+	.string "...\p"
+	.string "Really...?\p"
+	.string "The game is called 'Sheesh Silver', and\n"
+	.string "you think you just saw Ho-Oh fly by?\p"
+	.string "How did you even manage to figure out\n"
+	.string "how to download this game?$"	
 
 Route39_Text_BaobaIntro::
 	.string "How strange...\p"
@@ -372,3 +381,122 @@ Route39_Text_TrainerTips:
 	.string "drop out of trees.\p"
 	.string "Use HEADBUTT on any tree\n"
 	.string "you see!$"
+
+Route39_EventScript_Jo::
+	trainerbattle_double TRAINER_JO_AND_ZOE, Route39_Text_TwinsJoAndZoe1Seen, Route39_Text_TwinsJoAndZoe1Beaten, Route104_Text_GinaNotEnoughMons
+	special GetPlayerBigGuyGirlString
+	msgbox Route39_Text_TwinsJoAndZoe1After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_EventScript_Zoe::
+	trainerbattle_double TRAINER_JO_AND_ZOE, Route39_Text_TwinsJoAndZoe2Seen, Route39_Text_TwinsJoAndZoe2Beaten, Route104_Text_GinaNotEnoughMons
+	msgbox Route39_Text_TwinsJoAndZoe2After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_Text_TwinsJoAndZoe1Seen:
+	.string "We'll show you POKéMON moves that\n"
+	.string "will blow you away!$"
+
+Route39_Text_TwinsJoAndZoe1Beaten:
+	.string "Oh… We lost…$"
+
+Route39_Text_TwinsJoAndZoe1After:
+	.string "We'll get you back for this...$"
+
+Route39_Text_TwinsJoAndZoe2Seen:
+	.string "Watch this!$"
+
+Route39_Text_TwinsJoAndZoe2Beaten:
+	.string "We couldn't win…$"
+
+Route39_Text_TwinsJoAndZoe2After:
+	.string "Aw man... I wanted to win...$"
+
+Route39_EventScript_FisherRalph::
+	trainerbattle_single TRAINER_RALPH Route39_Text_FisherRalph1_Seen, Route39_Text_FisherRalph1_Beaten
+	msgbox Route39_Text_FisherRalph1_After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_EventScript_YoungsterGordon::
+	trainerbattle_single TRAINER_GORDON Route39_Text_YoungsterGordon_Seen, Route39_Text_YoungsterGordon_Beaten
+	msgbox Route39_Text_YoungsterGordon_After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_EventScript_CamperRoland::
+	trainerbattle_single TRAINER_ROLAND Route39_Text_CamperRoland_Seen, Route39_Text_CamperRoland_Beaten
+	msgbox Route39_Text_CamperRoland_After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_EventScript_BirdkeeperPeter::
+	trainerbattle_single TRAINER_PETER Route39_Text_BirdKeeperPeter_Seen, Route39_Text_BirdKeeperPeter_Beaten
+	msgbox Route39_Text_BirdKeeperPeter_After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_Text_FisherRalph1_Seen:
+	.string "I'm really good at both\n"
+	.string "fishing and POKéMON.\p"
+	.string "I'm not about to lose to any kid!$"
+
+Route39_Text_FisherRalph1_Beaten:
+	.string "Tch! I tried to rush\n"
+	.string "things…$"
+
+Route39_Text_FisherRalph1_After:
+	.string "Fishing is a lifelong\n"
+	.string "passion.\p"
+	.string "POKéMON are lifelong friends!$"
+
+Route39_Text_YoungsterGordon_Seen:
+	.string "I found some good POKéMON\n"
+	.string "in the grass!\p"
+	.string "I think they'll do it for me!$"
+
+Route39_Text_YoungsterGordon_Beaten:
+	.string "Darn. I thought I could win.$"
+
+Route39_Text_YoungsterGordon_After:
+	.string "The grass is full of\n"
+	.string "clingy things.$"
+
+Route39_Text_CamperRoland_Seen:
+	.string "That glance… It's intriguing.$"
+
+Route39_Text_CamperRoland_Beaten:
+	.string "Hmmm. This is disappointing.$"
+
+Route39_Text_CamperRoland_After:
+	.string "If you don't want to battle,\n"
+	.string "just avoid eye contact.$"
+
+Route39_Text_BirdKeeperPeter_Seen:
+	.string "That BADGE! It's from ECRUTEAK CITY!\n"
+	.string "You beat ERIKA?$"
+
+Route39_Text_BirdKeeperPeter_Beaten:
+	.string "I know what my weaknesses are.$"
+
+Route39_Text_BirdKeeperPeter_After:
+	.string "I should train again at the\n"
+	.string "GYM in ECRUTEAK CITY.$"
+
+Route39_EventScript_Raticate::
+	lock
+	faceplayer
+	msgbox Route39_Text_Raticate, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route39_Text_Raticate:
+	.string "RATICATE: RrrrrrrRAT! RATI!$"
+
+Route39_EventScript_Furret::
+	lock
+	faceplayer
+	msgbox Route39_Text_Furret MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route39_Text_Furret:
+	.string "FURRET: Furret!$"

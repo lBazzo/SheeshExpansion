@@ -1,13 +1,100 @@
 .set LOCALID_NURSE, 1
+.set LOCALID_ECRUTEAK_BILL, 7
 
 GoldenrodCity_PokemonCenter_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, GoldenrodCity_PokemonCenter_OnTransition
-    map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
 
 GoldenrodCity_PokemonCenter_OnTransition::
 	setrespawn HEAL_LOCATION_GOLDENROD_CITY
 	end
+
+EcruteakCity_PokemonCenter_EventScript_Bill::
+	lock
+	delay 30
+	playse SE_PC_OFF
+	delay 55
+	faceplayer
+	msgbox EcruteakCity_PokemonCenter1F_Text_Bill1, MSGBOX_DEFAULT
+	msgbox EcruteakCity_PokemonCenter1F_Text_Bill2, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_FACING, DIR_NORTH, EcruteakCity_PokemonCenter_EventScript_BillLeaveBot
+	call_if_eq VAR_FACING, DIR_WEST, EcruteakCity_PokemonCenter_EventScript_BillLeaveTop
+	playse SE_EXIT
+	setflag FLAG_HIDE_ECRUTEAK_BILL
+	removeobject LOCALID_ECRUTEAK_BILL
+	setflag FLAG_SYS_PC_BILL
+	clearflag FLAG_HIDE_GOLDENROD_BILL
+	release
+	end
+
+EcruteakCity_PokemonCenter_EventScript_BillFaceDown::
+	turnobject LOCALID_ECRUTEAK_BILL, DIR_SOUTH
+	return
+
+EcruteakCity_PokemonCenter_EventScript_BillFaceRight::
+	turnobject LOCALID_ECRUTEAK_BILL, DIR_EAST
+	return
+
+EcruteakCity_PokemonCenter_EventScript_BillLeaveTop::
+	applymovement LOCALID_ECRUTEAK_BILL, EcruteakCity_PokemonCenter_Movement_BillTop
+	waitmovement 0
+	return
+
+EcruteakCity_PokemonCenter_EventScript_BillLeaveBot::
+	applymovement LOCALID_ECRUTEAK_BILL, EcruteakCity_PokemonCenter_Movement_BillBot
+	waitmovement 0
+	return
+
+EcruteakCity_PokemonCenter_Movement_BillTop:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+EcruteakCity_PokemonCenter_Movement_BillBot:
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+
+EcruteakCity_PokemonCenter1F_Text_Bill1:
+	.string "Hi, I'm BILL. And who are you?\p"
+	.string "Hmm, {PLAYER}, huh?\n"
+	.string "You've come at the right time.$"
+
+EcruteakCity_PokemonCenter1F_Text_Bill2:
+	.string "I just finished adjustments on my\n"
+	.string "POKéMON STORAGE SYSTEM.\p"
+	.string "You know that PC you use to store\n"
+	.string "all your POKéMON?\p"
+	.string "I developed that myself!\p"
+	.string "Now that I've installed this one,\n"
+	.string "my PC is running at all\l"
+	.string "POKéMON CENTERS in JOHTO and KANTO.\p"
+	.string "I have to hurry on back home to see my\n"
+	.string "folks.\p"
+	.string "Feel free to visit my place anytime!\n"
+    .string "Just go up from the POKéMON CENTER and\l"
+    .string "take the first left. You can't miss it.\p"
+	.string "Buh-bye!$"
 
 GoldenrodCity_PokemonCenter_EventScript_GbaKid1::
 	lock

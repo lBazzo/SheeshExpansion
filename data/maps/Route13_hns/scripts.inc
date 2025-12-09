@@ -17,21 +17,6 @@ Route13_EventScript_Joshua::
 	msgbox Route13_Text_PokefanmJoshuaAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route13_EventScript_Perry::
-	trainerbattle_single TRAINER_PERRY Route13_Text_BirdKeeperPerrySeen, Route13_Text_BirdKeeperPerryBeaten
-	msgbox Route13_Text_BirdKeeperPerryAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route13_EventScript_Bret::
-	trainerbattle_single TRAINER_BRET Route13_Text_BirdKeeperBretSeen, Route13_Text_BirdKeeperBretBeaten
-	msgbox Route13_Text_BirdKeeperBretAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route13_EventScript_Kenny::
-	trainerbattle_single TRAINER_KENNY Route13_Text_HikerKennySeen, Route13_Text_HikerKennyBeaten
-	msgbox Route13_Text_HikerKennyAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route13_EventScript_TrainerTips::
 	msgbox Route13_Text_TrainerTips, MSGBOX_SIGN
 	end
@@ -65,42 +50,6 @@ Route13_Text_PokefanmJoshuaAfterBattle:
 	.string "You look like you have many\n"
 	.string "POKéMON,\p"
 	.string "but PIKACHU is still the best.$"
-
-Route13_Text_BirdKeeperPerrySeen:
-	.string "Agility is the key attribute of\n"
-	.string "bird POKéMON.$"
-
-Route13_Text_BirdKeeperPerryBeaten:
-	.string "You beat me with your speed…$"
-
-Route13_Text_BirdKeeperPerryAfterBattle:
-	.string "Your POKéMON are remarkably well-\n"
-	.string "trained.$"
-
-Route13_Text_BirdKeeperBretSeen:
-	.string "Check out my POKéMON. Just look\n"
-	.string "at their coloring and their\n"
-	.string "plumage.$"
-
-Route13_Text_BirdKeeperBretBeaten:
-	.string "Shoot! Not good enough!$"
-
-Route13_Text_BirdKeeperBretAfterBattle:
-	.string "If you groom them, POKéMON get\n"
-	.string "happy.$"
-
-Route13_Text_HikerKennySeen:
-	.string "I should go to ROCK TUNNEL to get\n"
-	.string "myself an ONIX.$"
-
-Route13_Text_HikerKennyBeaten:
-	.string "I lost…$"
-
-Route13_Text_HikerKennyAfterBattle:
-	.string "Geological features don't appear\n"
-	.string "to change.\p"
-	.string "But they actually change, little\n"
-	.string "by little.$"
 
 Route13_Text_TrainerTips:
 	.string "TRAINER TIPS\p"

@@ -12,6 +12,45 @@ Route31_EventScript_Bugcatcher_Wade::
 	msgbox Route31_Text_BugCatcherWade1_After, MSGBOX_AUTOCLOSE
 	end
 
+Route31_EventScript_Youngster_Joey::
+	trainerbattle_single TRAINER_JOEY, Route31_Text_YoungsterJoey1Seen, Route31_Text_YoungsterJoey1Beaten
+	msgbox Route31_Text_YoungsterJoey1After, MSGBOX_AUTOCLOSE
+	end
+
+Route31_Text_YoungsterJoey1Seen:
+	.string "I just lost, so I'm trying to\n"
+	.string "find more POKéMON.\p"
+	.string "Wait! You look weak! Come on,\n"
+	.string "let's battle!$"
+
+Route31_Text_YoungsterJoey1Beaten:
+	.string "Ack! I lost again!\n"
+	.string "Doggone it!$"
+
+Route31_Text_YoungsterJoey1After:
+	.string "Do I have to have more POKéMON\n"
+	.string "in order to battle better?\p"
+	.string "No! I'm sticking with this one\n"
+	.string "no matter what!$"
+
+Route31_EventScript_Bugcatcher_Don::
+	trainerbattle_single TRAINER_DON, Route31_Text_BugCatcherDonSeen, Route31_Text_BugCatcherDonBeaten
+	msgbox Route31_Text_BugCatcherDonAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route31_Text_BugCatcherDonSeen:
+	.string "Instead of a bug POKéMON,\n"
+	.string "I found a trainer!$"
+
+Route31_Text_BugCatcherDonBeaten:
+	.string "Argh! You're too strong!$"
+
+Route31_Text_BugCatcherDonAfter:
+	.string "I ran out of POKé BALLS while\n"
+	.string "I was catching POKéMON.\p"
+	.string "I should've bought some more…$"
+
+
 Route31_EventScript_Youngster::
 	lock
 	faceplayer

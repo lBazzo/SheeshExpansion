@@ -126,10 +126,10 @@ RuinsOfAlph_PuzzleAndRewardChambers_MapScript_KabutoSuccess::
 	delay 30
 	clearflag FLAG_ITEM_DOME_FOSSIL
 	setvar VAR_RUINSOFALPH_STATE, 1
-	applymovement LOCALID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
+	applymovement OBJ_EVENT_ID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
 	delay 30
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_FALL
 	delay 60
 	warphole MAP_RUINS_OF_ALPH_B1F
@@ -171,10 +171,10 @@ RuinsOfAlph_PuzzleAndRewardChambers_MapScript_OmanyteSuccess::
 	special DrawWholeMapView
 	delay 30
 	clearflag FLAG_ITEM_HELIX_FOSSIL
-	applymovement LOCALID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
+	applymovement OBJ_EVENT_ID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
 	delay 30
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_FALL
 	delay 60
 	warphole MAP_RUINS_OF_ALPH_B1F
@@ -210,10 +210,10 @@ RuinsOfAlph_PuzzleAndRewardChambers_MapScript_AerodactylSuccess::
 	special DrawWholeMapView
 	delay 30
 	clearflag FLAG_ITEM_OLD_AMBER
-	applymovement LOCALID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
+	applymovement OBJ_EVENT_ID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
 	delay 30
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_FALL
 	delay 60
 	warphole MAP_RUINS_OF_ALPH_B1F
@@ -249,10 +249,10 @@ RuinsOfAlph_PuzzleAndRewardChambers_MapScript_HoohSuccess::
 	special DrawWholeMapView
 	delay 30
 	clearflag FLAG_ITEM_GS_BALL
-	applymovement LOCALID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
+	applymovement OBJ_EVENT_ID_PLAYER, RuinsOfAlph_PuzzleAndRewardChambers_Movement_Fall
 	delay 30
 	special SpawnCameraObject
-	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_PLAYER
 	playse SE_FALL
 	delay 60
 	warphole MAP_RUINS_OF_ALPH_B1F

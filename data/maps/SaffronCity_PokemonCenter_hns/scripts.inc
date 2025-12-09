@@ -1,8 +1,7 @@
 .set LOCALID_NURSE, 1
 
 SaffronCity_PokemonCenter_hns_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, SaffronCity_PokemonCenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+map_script MAP_SCRIPT_ON_TRANSITION, SaffronCity_PokemonCenter_OnTransition
 	.byte 0
 
 SaffronCity_PokemonCenter_OnTransition::

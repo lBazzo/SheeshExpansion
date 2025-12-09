@@ -21,12 +21,12 @@ MtMoon_Cave_EventScript_Silver::
 	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
 	playse SE_PIN
 	applymovement2 LOCALID_MTMOON_SILVER, Common_Movement_ExclamationMark
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 60
 	applymovement2 LOCALID_MTMOON_SILVER MtMoon_Cave_Movement_WalkToPlayer
-	applymovement2 LOCALID_PLAYER Common_Movement_WalkRight
+	applymovement2 OBJ_EVENT_ID_PLAYER Common_Movement_WalkRight1
 	waitmovement LOCALID_MTMOON_SILVER
-	waitmovement LOCALID_PLAYER
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox MtMoon_Cave_Text_Rival_Before, MSGBOX_DEFAULT
 	goto_if_eq VAR_STARTER_MON, 0, MtMoon_Cave_EventScript_Silver_Battle_Cyndaquil
 	goto_if_eq VAR_STARTER_MON, 1, MtMoon_Cave_EventScript_Silver_Battle_Totodile
@@ -56,7 +56,7 @@ MtMoon_Cave_EventScript_SilverAfterBattle::
 	setflag FLAG_HIDE_MTMOON_SILVER
 	clearflag FLAG_HIDE_INDIGO_PLATEAU_SILVER
 	setvar VAR_PEWTER_CITY_STATE, 2
-	fadedefaultbgm
+		fadedefaultbgm
 	release
 	end
 

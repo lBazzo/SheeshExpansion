@@ -27,14 +27,14 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
-      "x": 19,
-      "y": 40,
+      "x": 28,
+      "y": 45,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 7,
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "7",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "Route26_EventScript_Richard",
       "flag": "0"
     },
@@ -209,8 +209,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
-      "x": 19,
-      "y": 13,
+      "x": 1,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 7,
@@ -229,8 +229,34 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ORAN_1",
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_SITRUS_1",
       "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+      "x": 20,
+      "y": 63,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 6,
+      "movement_range_y": 6,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "7",
+      "script": "Route26_EventScript_Lola",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
+      "x": 20,
+      "y": 67,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 6,
+      "movement_range_y": 6,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "7",
+      "script": "Route26_EventScript_Mike",
       "flag": "0"
     }
   ],
@@ -257,6 +283,36 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 64,
+      "elevation": 0,
+      "var": "VAR_ALL_B2B_STATE",
+      "var_value": "12",
+      "script": "Route26_EventScript_B2B"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 65,
+      "elevation": 0,
+      "var": "VAR_ALL_B2B_STATE",
+      "var_value": "12",
+      "script": "Route26_EventScript_B2B"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 66,
+      "elevation": 0,
+      "var": "VAR_ALL_B2B_STATE",
+      "var_value": "12",
+      "script": "Route26_EventScript_B2B"
+    }
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -35,9 +35,9 @@ TohjoFalls_EventScript_GiovanniSceneRight::
 	specialvar VAR_RESULT, CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, TohjoFalls_GiovanniRoom_CancelScene
 	lock
-	applymovement2 LOCALID_PLAYER, Common_Movement_WalkLeft
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
 	waitmovement 0
-	applymovement2 LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	goto TohjoFalls_EventScript_GiovanniScene
 
@@ -45,9 +45,9 @@ TohjoFalls_EventScript_GiovanniSceneLeft::
 	specialvar VAR_RESULT, CheckCelebi
 	goto_if_eq VAR_RESULT, FALSE, TohjoFalls_GiovanniRoom_CancelScene
 	lock
-	applymovement2 LOCALID_PLAYER, Common_Movement_WalkRight
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	waitmovement 0
-	applymovement2 LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	goto TohjoFalls_EventScript_GiovanniScene
 
@@ -62,12 +62,12 @@ TohjoFalls_EventScript_GiovanniScene::
 	waitse
 	waitmovement 0
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	delay 20
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_QuestionMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	delay 60
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, TohjoFalls_Movement_CelebiSpin
 	playse SE_LEDGE
@@ -92,11 +92,11 @@ TohjoFalls_EventScript_GiovanniScene::
 	playbgm MUS_HG_RADIO_ROCKET, TRUE
 	fadescreen FADE_FROM_WHITE
 	delay 50
-	turnobject  LOCALID_PLAYER, DIR_NORTH
+	turnobject  OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox TohjoFalls_GiovanniRoom_Text_Radio, MSGBOX_DEFAULT
 	closemessage
-	applymovement2 LOCALID_PLAYER, Common_Movement_WalkUp
-	applymovement2 OBJ_EVENT_ID_FOLLOWER, Common_Movement_WalkUp
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
+	applymovement2 OBJ_EVENT_ID_FOLLOWER, Common_Movement_WalkUp1
 	waitmovement 0
 	waitmovement OBJ_EVENT_ID_FOLLOWER
 	playse SE_PIN
@@ -104,7 +104,7 @@ TohjoFalls_EventScript_GiovanniScene::
 	delay 60
 	turnobject LOCALID_TOHJOFALLS_GIOVANNI, DIR_SOUTH
 	msgbox TohjoFalls_GiovanniRoom_Text_GiovanniIntro, MSGBOX_DEFAULT
-	applymovement2 LOCALID_TOHJOFALLS_GIOVANNI, Common_Movement_WalkDown
+	applymovement2 LOCALID_TOHJOFALLS_GIOVANNI, Common_Movement_WalkDown1
 	waitmovement 0
 	msgbox TohjoFalls_GiovanniRoom_Text_GiovanniBeforeBattle, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GIOVANNI, TohjoFalls_GiovanniRoom_Text_GiovanniDefeat
@@ -128,12 +128,12 @@ TohjoFalls_EventScript_GiovanniScene::
 	waitse
 	waitmovement 0
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
 	delay 60
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	delay 20
 	playse SE_PIN
-	applymovement2 LOCALID_PLAYER, Common_Movement_QuestionMark
+	applymovement2 OBJ_EVENT_ID_PLAYER, Common_Movement_QuestionMark
 	delay 60
 	applymovement2 OBJ_EVENT_ID_FOLLOWER, TohjoFalls_Movement_CelebiSpin
 	playse SE_LEDGE

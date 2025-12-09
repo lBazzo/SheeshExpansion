@@ -1,10 +1,10 @@
 .set LOCALID_ROCKETHIDEOUT3_LANCE, 3
 .set LOCALID_ROCKETHIDEOUT3_DRAGONITE, 2
 .set LOCALID_ROCKETHIDEOUT3_SILVER, 5
-.set LOCALID_ROCKETHIDEOUT3_GIOVANNI, 16
-.set LOCALID_ROCKETHIDEOUT3_PETREL, 15
-.set LOCALID_ROCKETHIDEOUT3_MURKROW, 14
-.set LOCALID_ROCKETHIDEOUT3_MURKROWSTAIRS, 17
+.set LOCALID_ROCKETHIDEOUT3_GIOVANNI, 14
+.set LOCALID_ROCKETHIDEOUT3_PETREL, 13
+.set LOCALID_ROCKETHIDEOUT3_MURKROW, 12
+.set LOCALID_ROCKETHIDEOUT3_MURKROWSTAIRS, 15
 
 RocketHideout_B3F_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RocketHideout_B3F_OnFrame
@@ -39,7 +39,7 @@ RocketHideout_B3F_EventScript_LancePassword::
 	playse SE_PIN
 	applymovement LOCALID_ROCKETHIDEOUT3_LANCE, Common_Movement_ExclamationMark
 	delay 20
-	applymovement LOCALID_ROCKETHIDEOUT3_LANCE, Common_Movement_WalkRight
+	applymovement LOCALID_ROCKETHIDEOUT3_LANCE, Common_Movement_WalkRight1
 	msgbox RocketHideout_B3F_Text_LanceGetPassword, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ROCKETHIDEOUT3_LANCE, RocketHideout_B3F_Movement_LanceLeave
@@ -76,8 +76,6 @@ RocketHideout_B3F_Movement_DragoniteLeave:
 	delay_8
 	delay_8
 	walk_down
-	walk_left
-	walk_left
 	walk_left
 	walk_left
 	walk_left
@@ -156,8 +154,14 @@ RocketHideout_B3F_Trigger_Silver::
 	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
 	applymovement LOCALID_ROCKETHIDEOUT3_SILVER, RocketHideout_B3F_Movement_SilverEnter
 	waitmovement 0
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox RocketHideout_B3F_Text_Rival, MSGBOX_DEFAULT
+	closemessage
+	call_if_eq VAR_STARTER_MON, 0, RocketHideout_Silver_Battle_Cyndaquil
+	call_if_eq VAR_STARTER_MON, 1, RocketHideout_Silver_Battle_Totodile
+	call_if_eq VAR_STARTER_MON, 2, RocketHideout_Silver_Battle_Chikorita
+	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
+	msgbox RocketHideout_Text_RivalAfter, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_ROCKETHIDEOUT3_SILVER, RocketHideout_B3F_Movement_SilverLeave
 	waitmovement 0
@@ -167,6 +171,38 @@ RocketHideout_B3F_Trigger_Silver::
 	fadedefaultbgm
 	release
 	end
+
+RocketHideout_Silver_Battle_Cyndaquil::
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_3, RocketHideout_Text_RivalWin
+	return
+
+RocketHideout_Silver_Battle_Totodile::
+	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_3, RocketHideout_Text_RivalWin
+	return
+
+RocketHideout_Silver_Battle_Chikorita::
+	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_3, RocketHideout_Text_RivalWin
+	return
+
+RocketHideout_Text_RivalWin:
+	.string "...$"
+
+RocketHideout_Text_RivalAfter:
+    .string ".....................................\p"
+    .string "This doesn't prove anything.\p"
+    .string "That-\p"
+	.string "It was just a fluke. How could it\n"
+    .string "be anything else?\p"
+    .string "Don't think I'm going to forget this\n"
+    .string "though. I will get my revenge.\p"
+    .string "Next time we meet, I swear you're going\n"
+    .string "down.\p"
+    .string "Don't you dare lose to anyone\n"
+    .string "else until then, you hear me?$"
+
+RocketHideout_Text_RivalLoss:
+	.string "I knew it. Bleeding hearts like you are\p"
+	.string "weak after all.$"
 
 RocketHideout_B3F_Movement_SilverEnter:
 	walk_down
@@ -245,16 +281,6 @@ RocketHideout_B3F_EventScript_IncrementPasswordEto::
 	setflag FLAG_GOT_PASSWORD_FROM_ETO
 	end
 
-RocketHideout_B3F_EventScript_Ross::
-	trainerbattle_single TRAINER_ROSS RocketHideout_B3F_Text_ScientistRossSeen, RocketHideout_B3F_Text_ScientistRossBeaten
-	msgbox RocketHideout_B3F_Text_ScientistRossAfter, MSGBOX_AUTOCLOSE
-	end
-
-RocketHideout_B3F_EventScript_Mitch::
-	trainerbattle_single TRAINER_MITCH RocketHideout_B3F_Text_ScientistMitchSeen, RocketHideout_B3F_Text_ScientistMitchBeaten
-	msgbox RocketHideout_B3F_Text_ScientistMitchAfter, MSGBOX_AUTOCLOSE
-	end
-
 RocketHideout_B3F_EventScript_Item_IceHeal::
 	finditem ITEM_ICE_HEAL
 	end
@@ -303,7 +329,10 @@ RocketHideout_B3F_Text_Rival:
     .string "Is there something I'm doing\n"
     .string "wrong?\p"
     .string "Could it be that love made his\n"
-    .string "team so powerful?$"
+    .string "team so powerful?\p"
+	.string "I need to know. You're going to help me\n"
+	.string "find out. Now.$"
+
 
 @=======[PETREL]==============================================================================================================================
 
@@ -344,7 +373,7 @@ RocketHideout_B3F_EventScript_Giovanni::
 	call_if_eq VAR_FACING, DIR_EAST, RocketHideout_B3F_EventScript_FacingEastMurkrow
 	call_if_eq VAR_FACING, DIR_WEST, RocketHideout_B3F_EventScript_FacingWestMurkrow
 
-	turnobject LOCALID_PLAYER, DIR_SOUTH
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
 	waitmovement LOCALID_ROCKETHIDEOUT3_MURKROW
 	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
 	msgbox RocketHideout_B3F_Text_MurkrowSpeak1, MSGBOX_DEFAULT
@@ -366,17 +395,17 @@ RocketHideout_B3F_EventScript_Giovanni::
 	end
 
 RocketHideout_B3F_EventScript_FacingEastMurkrow::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
-	waitmovement LOCALID_PLAYER
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-	waitmovement LOCALID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
+	waitmovement OBJ_EVENT_ID_PLAYER
 	return
 
 RocketHideout_B3F_EventScript_FacingWestMurkrow::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-	waitmovement LOCALID_PLAYER
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-	waitmovement LOCALID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkLeft1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
+	waitmovement OBJ_EVENT_ID_PLAYER
 	return
 
 RocketHideout_B3F_EventScript_FacingEast::
@@ -658,8 +687,8 @@ RocketHideout_B3F_Text_GruntM28Seen:
     .string "Hah! You're nuts, but you have\n"
     .string "guts!\p"
     .string "I'll warn you, I got better!\p"
-    .string "If you can beat me, I'll tell\l"
-    .string "you a password to the boss's\n"
+    .string "If you can beat me, I'll tell\n"
+    .string "you a password to the boss's\l"
     .string "room!$"
 
 RocketHideout_B3F_Text_GruntM28Beaten:
@@ -669,34 +698,3 @@ RocketHideout_B3F_Text_GruntM28After:
     .string "Hyuck-hyuck-hyuck!\p"
     .string "The password to the boss's room…\p"
     .string "Uh…, I think it is RATICATE TAIL.$"
-
-RocketHideout_B3F_Text_ScientistRossSeen:
-    .string "I used to work for SILPH, but now\n"
-    .string "I run research for TEAM ROCKET.\p"
-    .string "A meddlesome child like you needs\n"
-    .string "to be punished.$"
-
-RocketHideout_B3F_Text_ScientistRossBeaten:
-    .string "A mere tactical error cost me…$"
-
-RocketHideout_B3F_Text_ScientistRossAfter:
-    .string "A radio signal that drives\n"
-    .string "POKéMON mad…\p"
-    .string "My experiment is a complete\n"
-    .string "success.\p"
-    .string "My promotion is assured. This\n"
-    .string "loss means absolutely nothing.$"
-
-RocketHideout_B3F_Text_ScientistMitchSeen:
-    .string "I don't care that POKéMON are hurt\n"
-    .string "by our experiment.$"
-
-RocketHideout_B3F_Text_ScientistMitchBeaten:
-    .string "Thinking is my strong suit, not\n"
-    .string "battling.$"
-
-RocketHideout_B3F_Text_ScientistMitchAfter:
-    .string "If we turn up the power of our\n"
-    .string "radio signal for broadcast\l"
-    .string "nationwide…\p"
-    .string "The very thought excites me!$"

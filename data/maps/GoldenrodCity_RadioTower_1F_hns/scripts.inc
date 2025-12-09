@@ -1,6 +1,6 @@
 .set LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, 6
 .set LOCALID_GOLDENROD_RADIOTOWER_GRUNT, 3
-@ .set LOCALID_LOTTERY_CLERK, 2
+.set LOCALID_LOTTERY_CLERK, 2
 
 GoldenrodCity_RadioTower_1F_hns_MapScripts::
 	.byte 0
@@ -17,6 +17,10 @@ RadioTower1F_EventScript_Grunt::
 	playse SE_EXIT
 	removeobject LOCALID_GOLDENROD_RADIOTOWER_GRUNT
 	setflag FLAG_HIDE_ROCKET_GOLDENROD_RADIOTOWER_1
+	setvar VAR_ALL_B2B_STATE, 4
+	clearflag FLAG_HIDE_3F_BLOCKING_ROCKET
+	clearflag FLAG_LUCY_CHALLENGE_EXPLAINED
+	setflag FLAG_HIDE_3F_B2B2B_ROCKETS
 	release
 	end
 
@@ -135,7 +139,7 @@ RadioTower1F_EventScript_ReceptionGiveRadio::
 	delay 60
 	turnobject LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, DIR_EAST
 	delay 20
-	turnobject LOCALID_PLAYER, DIR_WEST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox RadioTower1F_Text_Whitney2, MSGBOX_DEFAULT
 	closemessage
 	applymovement2 LOCALID_GOLDENROD_RADIOTOWER_WHITNEY, GoldenrodCity_RadioTower_4F_Movement_WhitneyLeave
@@ -144,6 +148,8 @@ RadioTower1F_EventScript_ReceptionGiveRadio::
 	removeobject LOCALID_GOLDENROD_RADIOTOWER_WHITNEY
 	setflag FLAG_ENABLE_RADIO
 	setflag FLAG_HIDE_GOLDENROD_BEAUTY
+	setflag FLAG_HIDE_GOLDENROD_CITY_LITTLEGIRL
+	setflag FLAG_HIDE_GOLDENROD_CITY_AZURILL
 	setvar VAR_GOLDENROD_CITY_STATE, 2
 	release
 	end
@@ -446,3 +452,5 @@ GoldenrodCity_RadioTower_1F_Text_PrizeWeveBeenHolding:
 
 GoldenrodCity_RadioTower_1F_Text_PleaseVisitAgain2:
 	.string "Please do visit again.$"
+
+

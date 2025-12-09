@@ -78,7 +78,7 @@ Route10_PowerPlantEntrance_Trigger_Cop::
 	msgbox Route10_PowerPlantEntrance_Text_Officer1CeruleanShadyCharacter, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_POWERPLANT_COP, DIR_WEST
-	turnobject LOCALID_PLAYER, DIR_EAST
+	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	delay 30
 	msgbox Route10_PowerPlantEntrance_Text_Officer1CouldIAskForYourCooperation, MSGBOX_DEFAULT
 	closemessage
