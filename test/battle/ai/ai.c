@@ -1008,6 +1008,8 @@ AI_SINGLE_BATTLE_TEST("AI will use recovery move if it outheals your damage and 
     }
 }
 
+//Bazzo note: this is ass anyway + recovery ai changed
+/*
 AI_SINGLE_BATTLE_TEST("AI will use recovery move if is in no immediate danger beneath an HP threshold")
 {
     KNOWN_FAILING; // Bazzo note: changed recovery ai
@@ -1020,6 +1022,7 @@ AI_SINGLE_BATTLE_TEST("AI will use recovery move if is in no immediate danger be
         TURN { MOVE(player, MOVE_TACKLE); EXPECT_MOVE(opponent, MOVE_RECOVER); }
     }
 }
+*/
 
 AI_SINGLE_BATTLE_TEST("AI has a chance to prioritize last chance priority damage over slow KO")
 {
@@ -1054,13 +1057,15 @@ AI_SINGLE_BATTLE_TEST("AI scores strength sap and general recovery moves correct
     u32 opponentSpeed;
     u32 playerAbility; 
     u32 playerMove;
+    u32 status1;
 
-    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_HYPER_CUTTER; playerMove = MOVE_SPLASH; }
-    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; }
-    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; }
-    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
-    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
-    PARAMETRIZE { opponentCurrentHP = 65; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_HYPER_CUTTER; playerMove = MOVE_SPLASH; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 65; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; status1 = STATUS1_NONE; }
+    PARAMETRIZE { opponentCurrentHP = 65; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; status1 = STATUS1_TOXIC_POISON; }
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_STRENGTH_SAP) == EFFECT_STRENGTH_SAP);
@@ -1102,6 +1107,12 @@ AI_SINGLE_BATTLE_TEST("AI scores strength sap and general recovery moves correct
         {
             TURN {
                 MOVE(player, playerMove); SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 107);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 90 && opponentCurrentHP == 65 && playerMove == MOVE_TACKLE && status1 == STATUS1_TOXIC_POISON)
+        {
+            TURN {
+                MOVE(player, playerMove); SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 106);
             }
         }
     }

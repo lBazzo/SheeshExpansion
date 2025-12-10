@@ -4469,6 +4469,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
             if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
                 ADJUST_SCORE(+1);
+            if (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
+                ADJUST_SCORE(-1);
         }
         break;
     }
@@ -4724,7 +4726,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             }
 
             if (ShouldRecover(battlerAtk, battlerDef, move, healPercent))
-                ADJUST_SCORE(DECENT_EFFECT);
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
+                ADJUST_SCORE(+1);
+            if (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
+                ADJUST_SCORE(-1);
         }
         break;
     case EFFECT_RESTORE_HP:
@@ -4734,13 +4740,21 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_SYNTHESIS:
     case EFFECT_MOONLIGHT:
         if (ShouldRecover(battlerAtk, battlerDef, move, 50))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
+            ADJUST_SCORE(+1);
+        if (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
+            ADJUST_SCORE(-1);
         break;
     case EFFECT_LIFE_DEW:
         if (ShouldRecover(battlerAtk, battlerDef, move, 25))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         if (ShouldRecover(BATTLE_PARTNER(battlerAtk), battlerDef, move, 25))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
+            ADJUST_SCORE(+1);
+        if (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
+            ADJUST_SCORE(-1);
         break;
     case EFFECT_LIGHT_SCREEN:
     case EFFECT_REFLECT:
