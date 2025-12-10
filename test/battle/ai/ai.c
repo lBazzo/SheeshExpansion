@@ -1010,6 +1010,7 @@ AI_SINGLE_BATTLE_TEST("AI will use recovery move if it outheals your damage and 
 
 AI_SINGLE_BATTLE_TEST("AI will use recovery move if is in no immediate danger beneath an HP threshold")
 {
+    KNOWN_FAILING; // Bazzo note: changed recovery ai
     PASSES_RANDOMLY(SHOULD_RECOVER_CHANCE, 100, RNG_AI_SHOULD_RECOVER);
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT);
@@ -1044,5 +1045,64 @@ AI_DOUBLE_BATTLE_TEST("AI won't be confused by player's previous priority moves 
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_DETECT); MOVE(playerRight, MOVE_DETECT); EXPECT_MOVE(opponentLeft, MOVE_POWER_GEM, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_CELEBRATE); }
         TURN { MOVE(playerLeft, MOVE_DETECT); MOVE(playerRight, MOVE_DETECT); EXPECT_MOVE(opponentLeft, MOVE_POWER_GEM, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_CELEBRATE); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores strength sap and general recovery moves correctly with updated AI")
+{
+    u32 opponentCurrentHP;
+    u32 opponentSpeed;
+    u32 playerAbility; 
+    u32 playerMove;
+
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_HYPER_CUTTER; playerMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentCurrentHP = 55; opponentSpeed = 110; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
+    PARAMETRIZE { opponentCurrentHP = 80; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
+    PARAMETRIZE { opponentCurrentHP = 65; opponentSpeed = 90; playerAbility = ABILITY_BLAZE; playerMove = MOVE_TACKLE; }
+
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_STRENGTH_SAP) == EFFECT_STRENGTH_SAP);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE, playerMove); Ability(playerAbility); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); HP(opponentCurrentHP); MaxHP(100); Moves(MOVE_STRENGTH_SAP, MOVE_CELEBRATE); }
+    } WHEN {
+        if (playerAbility == ABILITY_HYPER_CUTTER)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 80);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 110 && opponentCurrentHP == 80)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 100);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 110 && opponentCurrentHP == 55 && playerMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 106);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 110 && opponentCurrentHP == 55 && playerMove == MOVE_TACKLE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 107);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 90 && opponentCurrentHP == 80 && playerMove == MOVE_TACKLE)
+        {
+            TURN {
+                MOVE(player, playerMove); SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 100);
+            }
+        }
+        else if (playerAbility == ABILITY_BLAZE && opponentSpeed == 90 && opponentCurrentHP == 65 && playerMove == MOVE_TACKLE)
+        {
+            TURN {
+                MOVE(player, playerMove); SCORE_EQ_VAL(opponent, MOVE_STRENGTH_SAP, 107);
+            }
+        }
     }
 }

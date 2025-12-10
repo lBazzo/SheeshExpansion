@@ -4386,7 +4386,6 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
     u32 movesetIndex = gAiThinkingStruct->movesetIndex;
     uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
-
     s32 score = 0;
     u32 predictedMove = GetIncomingMove(battlerAtk, battlerDef, aiData);
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, aiData);
@@ -4422,7 +4421,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
 
     // check guaranteed flinch, a la Fake Out Bazzo note: hoping this also includes fling with king's rock???
     if (IsFlinchGuaranteed(battlerAtk, battlerDef, move))
-        ADJUST_SCORE(GOOD_EFFECT); //Bazzo TODO: check if this is actually applying to king's rock fling or not at some point
+        ADJUST_SCORE(GOOD_EFFECT); //Bazzo TODO: check if this is actually applying to king's rock fling or not at some point, +9
 
     // Non-volatile statuses
     switch(GetMoveNonVolatileStatus(move))
@@ -4447,14 +4446,16 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_YAWN:
         IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
+    /*
     case EFFECT_ABSORB:
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT && effectiveness >= UQ_4_12(1.0))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_DREAM_EATER:
+    */
     case EFFECT_AQUA_RING:
-        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
-            ADJUST_SCORE(DECENT_EFFECT);
+        // if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_STRENGTH_SAP:
     {
@@ -4465,9 +4466,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         u32 healPercent = atkStat * 100 / gBattleMons[battlerAtk].maxHP;
         if (ShouldRecover(battlerAtk, battlerDef, move, healPercent))
         {
-            ADJUST_SCORE(GOOD_EFFECT);
-            if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
-                ADJUST_SCORE(WEAK_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
+                ADJUST_SCORE(+1);
         }
         break;
     }

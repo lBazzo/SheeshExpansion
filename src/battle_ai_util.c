@@ -4083,6 +4083,8 @@ bool32 ShouldAbsorb(u32 battlerAtk, u32 battlerDef, u32 move, s32 damage)
     return FALSE;
 }
 
+//Bazzo note: old should recover function (way too complicated for what it's doing)
+/*
 bool32 ShouldRecover(u32 battlerAtk, u32 battlerDef, u32 move, u32 healPercent)
 {
     u32 maxHP = gBattleMons[battlerAtk].maxHP;
@@ -4110,6 +4112,25 @@ bool32 ShouldRecover(u32 battlerAtk, u32 battlerDef, u32 move, u32 healPercent)
             return TRUE;    // target can't faint attacker at all, generally safe
     }
     return FALSE;
+}
+*/
+
+bool32 ShouldRecover(u32 battlerAtk, u32 battlerDef, u32 move, u32 healPercent)
+{
+    //u32 maxHP = gBattleMons[battlerAtk].maxHP;
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
+    struct AiLogicData *aiData = gAiLogicData;
+
+    if (gBattleMons[battlerAtk].volatiles.healBlock)
+        return FALSE; // Bazzo note: why can it even recover if it has heal block on? lol
+    else if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && aiData ->hpPercents[battlerAtk] <= 60)
+        return TRUE;
+    else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && aiData ->hpPercents[battlerAtk] <= 75)
+        return TRUE;
+    else
+        return FALSE;
 }
 
 bool32 ShouldSetScreen(u32 battlerAtk, u32 battlerDef, enum BattleMoveEffects moveEffect)
