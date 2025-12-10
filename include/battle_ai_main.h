@@ -58,9 +58,9 @@ enum MoveComparisonResult
 };
 
 // AI_TryToFaint
-#define FAST_KILL      6 // AI is faster and faints target
+#define FAST_KILL      7 // AI is faster and faints target
 #define SLOW_KILL      4 // AI is slower and faints target
-#define LAST_CHANCE    2 // AI faints to target. It should try and do damage with a priority move
+#define LAST_CHANCE    12 // AI faints to target. It should try and do damage with a priority move
 
 // AI_Risky
 #define STRONG_RISKY_EFFECT     3

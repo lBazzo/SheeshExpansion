@@ -3234,7 +3234,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                  && AI_IsSlower(battlerAtk, RIGHT_FOE(battlerAtk), move, predictedMove, DONT_CONSIDER_PRIORITY))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2); // Bazzo note: this should make it score the same as last chance ai
 
-                if (ownHitsToKOFoe1 > partnerHitsToKOFoe1 && partnerHitsToKOFoe1 > 1
+                else if (ownHitsToKOFoe1 > partnerHitsToKOFoe1 && partnerHitsToKOFoe1 > 1
                  && ownHitsToKOFoe2 > partnerHitsToKOFoe2 && partnerHitsToKOFoe2 > 1)
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + 1);
 
@@ -3247,7 +3247,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                  && AI_IsSlower(battlerAtk, LEFT_FOE(battlerAtk), move, predictedMove, DONT_CONSIDER_PRIORITY))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2);
 
-                if (ownHitsToKOFoe1 > partnerHitsToKOFoe1 && partnerHitsToKOFoe1 > 1)
+                else if (ownHitsToKOFoe1 > partnerHitsToKOFoe1 && partnerHitsToKOFoe1 > 1)
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + 1);
 
                 else ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -3259,7 +3259,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                  && AI_IsSlower(battlerAtk, RIGHT_FOE(battlerAtk), move, predictedMove, DONT_CONSIDER_PRIORITY))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2);
 
-                if (ownHitsToKOFoe2 > partnerHitsToKOFoe2 && partnerHitsToKOFoe2 > 1)
+                else if (ownHitsToKOFoe2 > partnerHitsToKOFoe2 && partnerHitsToKOFoe2 > 1)
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + 1);
 
                 else ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -4386,8 +4386,6 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
     u32 movesetIndex = gAiThinkingStruct->movesetIndex;
     uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
-
-    u32 *atkBestMoves = {0};
 
     s32 score = 0;
     u32 predictedMove = GetIncomingMove(battlerAtk, battlerDef, aiData);

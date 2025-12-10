@@ -65,6 +65,6 @@ AI_SINGLE_BATTLE_TEST("AI avoids hypnosis when it can not put target to sleep")
         PLAYER(species) { Ability(ability); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_HYPNOSIS); }
     } WHEN {
-        TURN { SCORE_EQ(opponent, MOVE_CELEBRATE, MOVE_HYPNOSIS); } // Both get -10
+        TURN { SCORE_EQ_VAL(opponent, MOVE_HYPNOSIS, 80); } // Both get -10
     }
 }

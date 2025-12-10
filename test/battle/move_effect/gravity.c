@@ -49,7 +49,7 @@ DOUBLE_BATTLE_TEST("Gravity cancels fly and sky drop if they are in the air")
 AI_DOUBLE_BATTLE_TEST("AI uses Gravity")
 {
     u32 move, friendItem, foeItem;
-    u64 aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT;
+    u64 aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE;
 
     PARAMETRIZE { move = MOVE_THUNDER; friendItem = ITEM_NONE; foeItem = ITEM_NONE; }
     PARAMETRIZE { move = MOVE_HEADBUTT; friendItem = ITEM_AIR_BALLOON; foeItem = ITEM_NONE; }
