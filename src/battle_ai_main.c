@@ -4474,8 +4474,31 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
     }
+    // Bazzo note: TODO need to be able to test this boom ai somehow
     case EFFECT_EXPLOSION:
     case EFFECT_MISTY_EXPLOSION:
+    {
+        if (aiData ->hpPercents[battlerAtk] >= 70)
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT);
+            }
+        else if (aiData ->hpPercents[battlerAtk] >= 40
+            && aiData ->hpPercents[battlerAtk] < 70)
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_THIRTY_PERCENT, CUSTOM_AI_THIRTY_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT);
+            }
+        else if (aiData ->hpPercents[battlerAtk] >= 10
+            && aiData ->hpPercents[battlerAtk] < 40)
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT);
+            }
+        else
+            ADJUST_SCORE(GOOD_EFFECT);
+        break;
+    }
     case EFFECT_MEMENTO:
         if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_WILL_SUICIDE && gBattleMons[battlerDef].statStages[STAT_EVASION] < 7)
         {
