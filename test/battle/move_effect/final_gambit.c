@@ -86,3 +86,48 @@ TO_DO_BATTLE_TEST("Final Gambit triggers the target's Sturdy")
 TO_DO_BATTLE_TEST("Final Gambit triggers the target's Endure")
 TO_DO_BATTLE_TEST("Final Gambit fails in Max Raids")
 TO_DO_BATTLE_TEST("Final Gambit fails in Tera Raids")
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores Final Gambit")
+{
+    u32 opponentCurrentHP;
+    u32 opponentSpeed;
+    u32 playerMove;
+
+    PARAMETRIZE { opponentCurrentHP = 30; opponentSpeed = 110; playerMove = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { opponentCurrentHP = 20; opponentSpeed = 110; playerMove = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { opponentCurrentHP = 20; opponentSpeed = 110; playerMove = MOVE_GROWL; }
+    PARAMETRIZE { opponentCurrentHP = 20; opponentSpeed = 90; playerMove = MOVE_DRAGON_RAGE; }
+
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_FINAL_GAMBIT) == EFFECT_FINAL_GAMBIT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); HP(25); Moves(MOVE_CELEBRATE, playerMove); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); HP(opponentCurrentHP); Moves(MOVE_FINAL_GAMBIT, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_LINOONE) { Speed(1); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        if (opponentCurrentHP == 30)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FINAL_GAMBIT, 108);
+            }
+        }
+        else if (opponentCurrentHP == 20 && opponentSpeed == 110 && playerMove == MOVE_DRAGON_RAGE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FINAL_GAMBIT, 107);
+            }
+        }
+        else if (opponentCurrentHP == 20 && playerMove == MOVE_GROWL)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FINAL_GAMBIT, 106);
+            }
+        }
+        else if (opponentCurrentHP == 20 && opponentSpeed == 90)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FINAL_GAMBIT, 106);
+            }
+        }
+    }
+}

@@ -3112,7 +3112,7 @@ static s32 AI_TryToFaint(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
     enum BattleMoveEffects effect = GetMoveEffect(move);
     if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING)
-        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION)
+        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION && effect != EFFECT_FINAL_GAMBIT)
     {
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY))
             ADJUST_SCORE(FAST_KILL);
@@ -4500,15 +4500,40 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     }
     case EFFECT_MEMENTO:
+    {
+        if (RandomPercentage(RNG_AI_CUSTOM_AI_NINETY_PERCENT, CUSTOM_AI_NINETY_PERCENT))
+            ADJUST_SCORE(NO_INCREASE);
+        else 
+            ADJUST_SCORE(+100);
+        break;
+    }
+    //Bazzo note: Old boom/memento AI - should'nt apply without risky flag but removing for safety anyway
+        /*
         if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_WILL_SUICIDE && gBattleMons[battlerDef].statStages[STAT_EVASION] < 7)
         {
             if (aiData->hpPercents[battlerAtk] < 50 && AI_RandLessThan(128))
                 ADJUST_SCORE(DECENT_EFFECT);
         }
         break;
+        */
     case EFFECT_FINAL_GAMBIT:
+    //Bazzo note: hopefully doesn't matter, sui flag only
+    /*
+    {
         if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_WILL_SUICIDE)
             ADJUST_SCORE(DECENT_EFFECT);
+    }
+            */
+    {
+        if (gBattleMons[battlerAtk].hp >= gBattleMons[battlerDef].hp
+            && AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+            ADJUST_SCORE(DECENT_EFFECT);
+        else if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+            && CanTargetFaintAi(battlerDef, battlerAtk))
+            ADJUST_SCORE(WEAK_EFFECT);
+        else
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+    }
         break;
     case EFFECT_MIRROR_MOVE:
         if (predictedMove && GetMoveEffect(predictedMove) != GetMoveEffect(move))
@@ -6324,8 +6349,14 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS); // No point in checking the move further so return early
         else
         {
+            enum BattleMoveEffects effect = GetMoveEffect(move);
             if (gAiThinkingStruct->aiFlags[battlerAtk] & (AI_FLAG_RISKY | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE) 
-                    && IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                    && IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && effect != EFFECT_FINAL_GAMBIT
+                    && effect != EFFECT_EXPLOSION
+                    && effect != EFFECT_MISTY_EXPLOSION
+                    && effect != EFFECT_HIT_ESCAPE
+                    && effect != EFFECT_FUTURE_SIGHT)
             {
                 ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)) // newly added rnb +2
