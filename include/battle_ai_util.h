@@ -219,6 +219,7 @@ bool32 IsUngroundingEffect(enum BattleMoveEffects effect);
 bool32 HasMoveWithFlag(u32 battler, MoveFlag getFlag);
 bool32 IsHazardClearingMove(u32 move);
 bool32 IsSubstituteEffect(enum BattleMoveEffects effect);
+bool32 BestDmgMoveHasCategory(u32 *bestMoves, enum DamageCategory damageCategory);
 
 // status checks
 bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability ability);

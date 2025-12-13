@@ -4947,7 +4947,17 @@ static bool32 HasMoveThatChangesKOThreshold(u32 battlerId, u32 noOfHitsToFaint, 
     return FALSE;
 }
 
-
+bool32 BestDmgMoveHasCategory(u32 *bestMoves, enum DamageCategory damageCategory)
+{
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (bestMoves[i] == MOVE_NONE)
+            break;
+        if (GetBattleMoveCategory(bestMoves[i]) == damageCategory)
+            return TRUE;
+    }
+    return FALSE;
+}
 
 static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, bool32 considerContrary)
 {
@@ -4959,6 +4969,13 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
     u32 i;
     enum Stat statId = GetStatBeingChanged(statChange);
     u32 stages = GetStagesOfStatChange(statChange);
+
+    u32 bestMoves[MAX_MON_MOVES] = {0};
+    GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING, bestMoves);
+    
+    //DebugPrintf("should set up %d", shouldSetUp);
+    //DebugPrintf("stat id %d", statId);
+    //DebugPrintf("stages %d", stages);
 
     if (considerContrary && gAiLogicData->abilities[battlerAtk] == ABILITY_CONTRARY)
         return NO_INCREASE;
@@ -5039,10 +5056,28 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL) && shouldSetUp)
             {
             if (stages == 1)
-                tempScore += BEST_DAMAGE_MOVE;
-            else
-                tempScore += BEST_DAMAGE_MOVE;
-        }
+            {
+                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL) 
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) > gBattleMons[battlerDef].hp / 1.5
+                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                    tempScore += DECENT_EFFECT;
+                else if (noOfHitsToFaint > 3)
+                    tempScore += WEAK_EFFECT;
+                else
+                    tempScore += BEST_DAMAGE_MOVE;
+            }
+            else if (stages == 2)
+            {
+                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL)
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) > gBattleMons[battlerDef].hp / 2
+                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                    tempScore += DECENT_EFFECT;
+                else if (noOfHitsToFaint > 3)
+                    tempScore += WEAK_EFFECT;
+                else
+                    tempScore += BEST_DAMAGE_MOVE;
+            }
+            }
         break;
     case STAT_DEF:
         if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL) || !HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))

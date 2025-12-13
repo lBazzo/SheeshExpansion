@@ -52,9 +52,50 @@ AI_DOUBLE_BATTLE_TEST("AI will not target the same slot as its partner when it s
     }
 }
 
+// Bazzo note: TODO having hammer arm here instead of crosschop causes test to fail for some reason - possibly because of the stat change/stat id getting mixed up as 3 to speed?
+// Even Ice Hammer works when Hammer Arm doesn't, who fucking knows lol
+AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different circumstances")
+{
+    u32 opponentSetUpMove;
+    u32 opponentAttack;
+    u32 playerAttack;
 
+    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FIRE_PUNCH; playerAttack = MOVE_TACKLE; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_TACKLE; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_ICE_HAMMER; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_SWORDS_DANCE; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_ICE_HAMMER; }
 
-
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(1); Moves(playerAttack, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_URSARING) { Attack(313); HP(321); Defense(186); Speed(10); Moves(MOVE_CELEBRATE, opponentSetUpMove, opponentAttack); }
+    } WHEN {
+        if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FIRE_PUNCH && playerAttack == MOVE_TACKLE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, opponentSetUpMove, 108);
+            }
+        }
+        else if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_TACKLE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, opponentSetUpMove, 107);
+            }
+        }
+        else if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_ICE_HAMMER)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, opponentSetUpMove, 106);
+            }
+        }
+        else if (opponentSetUpMove == MOVE_SWORDS_DANCE && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_ICE_HAMMER)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, opponentSetUpMove, 108);
+            }
+        }
+    }
+}
 
 
 
