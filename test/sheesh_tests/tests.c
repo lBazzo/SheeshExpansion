@@ -97,8 +97,49 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different
     }
 }
 
+AI_SINGLE_BATTLE_TEST("AI correctly scores defensive setup moves under different circumstances")
+{
+    u32 opponentMaybeBodyPress;
+    u32 playerCategoryMove;
+    u32 playerDamageTestMove;
 
+    PARAMETRIZE { opponentMaybeBodyPress = MOVE_BODY_PRESS; playerCategoryMove = MOVE_WATER_GUN; playerDamageTestMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentMaybeBodyPress = MOVE_BODY_PRESS; playerCategoryMove = MOVE_TACKLE; playerDamageTestMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentMaybeBodyPress = MOVE_BODY_PRESS; playerCategoryMove = MOVE_TACKLE; playerDamageTestMove = MOVE_CROSS_CHOP; }
+    PARAMETRIZE { opponentMaybeBodyPress = MOVE_SCRATCH; playerCategoryMove = MOVE_TACKLE; playerDamageTestMove = MOVE_CROSS_CHOP; }
 
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(1); Moves(playerCategoryMove, playerDamageTestMove, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_URSARING) { Attack(313); HP(321); Defense(186); Speed(10); Moves(MOVE_CELEBRATE, MOVE_HARDEN, opponentMaybeBodyPress); }
+    } WHEN {
+        if (opponentMaybeBodyPress == MOVE_BODY_PRESS && playerCategoryMove == MOVE_WATER_GUN && playerDamageTestMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_HARDEN, 100);
+            }
+        }
+        if (opponentMaybeBodyPress == MOVE_BODY_PRESS && playerCategoryMove == MOVE_TACKLE && playerDamageTestMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_HARDEN, 108);
+            }
+        }
+        if (opponentMaybeBodyPress == MOVE_BODY_PRESS && playerCategoryMove == MOVE_TACKLE && playerDamageTestMove == MOVE_CROSS_CHOP)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_HARDEN, 107);
+            }
+        }
+        if (opponentMaybeBodyPress == MOVE_SCRATCH && playerCategoryMove == MOVE_TACKLE && playerDamageTestMove == MOVE_CROSS_CHOP)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_HARDEN, 106);
+            }
+        }
+    }
+
+}
 
 
 
