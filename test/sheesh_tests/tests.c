@@ -141,5 +141,45 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores defensive setup moves under different
 
 }
 
+AI_SINGLE_BATTLE_TEST("AI correctly scores speed setup moves under different circumstances")
+{
+    u32 opponentSpeed;
+    u32 player3HKOCheckMove;
+    u32 speedBoostingMove;
+    
+    PARAMETRIZE { opponentSpeed = 70; speedBoostingMove = MOVE_TRAILBLAZE; player3HKOCheckMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentSpeed = 40; speedBoostingMove = MOVE_TRAILBLAZE; player3HKOCheckMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentSpeed = 40; speedBoostingMove = MOVE_AGILITY; player3HKOCheckMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentSpeed = 40; speedBoostingMove = MOVE_AGILITY; player3HKOCheckMove = MOVE_CROSS_CHOP; }
 
-
+    GIVEN {
+       AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+       PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(100); Moves(MOVE_CELEBRATE, player3HKOCheckMove); } 
+       OPPONENT(SPECIES_URSARING) { Attack(313); HP(321); Defense(186); Speed(opponentSpeed); Moves(MOVE_CELEBRATE, speedBoostingMove, MOVE_LEAF_BLADE); }
+    } WHEN {
+        if (opponentSpeed == 70 && speedBoostingMove == MOVE_TRAILBLAZE && player3HKOCheckMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedBoostingMove, 107);
+            }
+        }
+        else if (opponentSpeed == 40 && speedBoostingMove == MOVE_TRAILBLAZE && player3HKOCheckMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedBoostingMove, 106);
+            }
+        }
+        else if (opponentSpeed == 40 && speedBoostingMove == MOVE_AGILITY && player3HKOCheckMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedBoostingMove, 106);
+            }
+        }
+        else if (opponentSpeed == 40 && speedBoostingMove == MOVE_AGILITY && player3HKOCheckMove == MOVE_CROSS_CHOP)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedBoostingMove, 100);
+            }
+        }
+    }
+}

@@ -5059,9 +5059,9 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 >= gBattleMons[battlerDef].hp 
-                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3)
+                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5070,9 +5070,9 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL)
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 >= gBattleMons[battlerDef].hp 
-                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3)
+                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5088,7 +5088,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
                 tempScore += BEST_DAMAGE_MOVE;
             if (HasMoveWithEffect(battlerAtk, EFFECT_BODY_PRESS))
                 tempScore += 1;
-            if (noOfHitsToFaint > 3)
+            if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                 tempScore += WEAK_EFFECT;
             else
                 tempScore += BEST_DAMAGE_MOVE;
@@ -5098,9 +5098,25 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         if ((noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
         {
             if (stages == 1)
-                tempScore += BEST_DAMAGE_MOVE;
-            else
-                tempScore += BEST_DAMAGE_MOVE;
+            {
+                if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
+                && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef]))
+                    tempScore += WEAK_EFFECT;
+                else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
+                    tempScore += BEST_DAMAGE_MOVE;
+                else
+                    tempScore += NO_INCREASE;
+            }
+            if (stages == 2)
+            {
+                if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
+                && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef]))
+                    tempScore += WEAK_EFFECT;
+                else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
+                    tempScore += BEST_DAMAGE_MOVE;
+                else
+                    tempScore += NO_INCREASE;
+            }
         }
         break;
     case STAT_SPATK:
@@ -5110,9 +5126,9 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 >= gBattleMons[battlerDef].hp
-                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3)
+                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5121,9 +5137,9 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 >= gBattleMons[battlerDef].hp
-                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3)
+                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5132,9 +5148,9 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2.5 >= gBattleMons[battlerDef].hp
-                && gBattleMons[battlerAtk].speed >= gBattleMons[battlerDef].speed)
+                && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3)
+                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5148,7 +5164,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         {
             if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL)
                 tempScore += WEAK_EFFECT;
-            if (noOfHitsToFaint > 3)
+            if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS) 
                 tempScore += WEAK_EFFECT;
             else
                 tempScore += BEST_DAMAGE_MOVE;
@@ -5160,17 +5176,18 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
         break;
     case STAT_EVASION:
         if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
-            tempScore += GOOD_EFFECT;
+            tempScore += WEAK_EFFECT;
         else
-            tempScore += DECENT_EFFECT;
+            tempScore += BEST_DAMAGE_MOVE;
         break;
     default:
         break;
     }
 
         // if already inclined to boost, be slightly more likely to if boost levels matter
-    if (tempScore > 0 && HasMoveWithEffect(battlerAtk, EFFECT_STORED_POWER))
-        tempScore += WEAK_EFFECT;
+        //Bazzo note: this is dumb lol
+    //if (tempScore > 0 && HasMoveWithEffect(battlerAtk, EFFECT_STORED_POWER))
+    //    tempScore += WEAK_EFFECT;
 
     return tempScore;
 }

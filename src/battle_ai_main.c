@@ -6085,24 +6085,36 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 case MOVE_EFFECT_SPD_PLUS_1:
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
                 case MOVE_EFFECT_SP_DEF_PLUS_1:
-                    StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
-                    ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId));
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)) //Bazzo note: should stop moves from gaining setup scores and best damage move scores
+                        {
+                        StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
+                        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId));
+                        }
                     break;
                 case MOVE_EFFECT_ATK_PLUS_2:
                 case MOVE_EFFECT_DEF_PLUS_2:
                 case MOVE_EFFECT_SPD_PLUS_2:
                 case MOVE_EFFECT_SP_ATK_PLUS_2:
                 case MOVE_EFFECT_SP_DEF_PLUS_2:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                        {
                     StageStatId = STAT_CHANGE_ATK_2 + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
                     ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId));
+                        }
                     break;
                 case MOVE_EFFECT_ACC_PLUS_1:
                 case MOVE_EFFECT_ACC_PLUS_2:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                        {
                     ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ACC));
+                        }
                     break;
                 case MOVE_EFFECT_EVS_PLUS_1:
                 case MOVE_EFFECT_EVS_PLUS_2:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                        {
                     ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_EVASION));
+                        }
                     break;
                 default:
                     break;
