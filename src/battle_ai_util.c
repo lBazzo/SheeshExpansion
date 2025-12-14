@@ -2357,6 +2357,8 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     u32 tempScore = NO_INCREASE;
     u32 statId = GetStatBeingChanged(statChange);
 
+    u32 noOfHitsToFaint = NoOfHitsForTargetToFaintBattler(battlerAtk, battlerDef);
+
     // Don't increase score if target is already -3 stat stage
     // if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] <= DEFAULT_STAT_STAGE - 3)
         // return NO_INCREASE;
@@ -2386,17 +2388,24 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     case STAT_CHANGE_ATK:
     case STAT_CHANGE_ATK_2:
     case STAT_CHANGE_ATK_3:
-        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
-            tempScore += DECENT_EFFECT;
+        if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)
+        && RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+            tempScore += WEAK_EFFECT;
+        else
+            tempScore += NO_INCREASE;
         break;
     case STAT_CHANGE_DEF:
     case STAT_CHANGE_DEF_2:
     case STAT_CHANGE_DEF_3:
-        if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)
+        if ((noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+        && (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL))
+        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
+            tempScore += WEAK_EFFECT;    
+        else if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)
         && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
             tempScore += BEST_DAMAGE_MOVE;
-        else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        ||  (!HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)))
+        else
             tempScore += NO_INCREASE;
         break;
     // Bazzo note Currently: gives +7 if ai is slower but would be faster after using move, +6 if ai is slower and wouldn't be faster after using move, +5 if ai is faster already
@@ -2444,16 +2453,30 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     case STAT_CHANGE_SPATK:
     case STAT_CHANGE_SPATK_2:
     case STAT_CHANGE_SPATK_3:
-        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))
-            tempScore += DECENT_EFFECT;
+        if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL)
+        && RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+            tempScore += WEAK_EFFECT;
+        else if (IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+            tempScore += NO_INCREASE;
+        else
+            tempScore += BEST_DAMAGE_MOVE - 1;
         break;
     case STAT_CHANGE_SPDEF:
     case STAT_CHANGE_SPDEF_2:
     case STAT_CHANGE_SPDEF_3:
-        if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL))
-            tempScore += DECENT_EFFECT;
+        if ((noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+        && (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL))
+        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
+            tempScore += WEAK_EFFECT;    
+        else if (HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL)
+        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
+            tempScore += BEST_DAMAGE_MOVE;
+        else
+            tempScore += NO_INCREASE;
         break;
     case STAT_CHANGE_ACC:
+    /*
         if (gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY)
             tempScore += WEAK_EFFECT;
         if (gBattleMons[battlerDef].volatiles.leechSeed)
@@ -2462,8 +2485,12 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
             tempScore += WEAK_EFFECT;
         if (gBattleMons[battlerDef].volatiles.cursed)
             tempScore += WEAK_EFFECT;
+    */
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+            tempScore += BEST_DAMAGE_MOVE;
         break;
     case STAT_CHANGE_EVASION:
+        /*
         if (gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY)
             tempScore += WEAK_EFFECT;
         if (gBattleMons[battlerDef].volatiles.leechSeed)
@@ -2472,9 +2499,10 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
             tempScore += WEAK_EFFECT;
         if (gBattleMons[battlerDef].volatiles.cursed)
             tempScore += WEAK_EFFECT;
+    */
         break;
     }
-
+    //Bazzo note: this should never actually do anything so just leaving it in
     return (tempScore > BEST_EFFECT) ? BEST_EFFECT : tempScore; // don't inflate score so only max +4
 }
 
@@ -4957,6 +4985,77 @@ bool32 BestDmgMoveHasCategory(u32 *bestMoves, enum DamageCategory damageCategory
             return TRUE;
     }
     return FALSE;
+}
+
+u32 AI_GetDamageWithStatChanges(u32 battlerAtk, u32 battlerDef, u32 moveIndex, s16 atkStatChanges[NUM_STATS], s16 defStatChanges[NUM_STATS])
+{
+    struct BattlePokemon *savedBattleMons = AllocSaveBattleMons();
+    
+    for (u32 i = 0; i < NUM_STATS; i++)
+    {
+        if (atkStatChanges[i] != 0)
+        {
+            gBattleMons[battlerAtk].statStages[i] += atkStatChanges[i];
+            
+            if (gBattleMons[battlerAtk].statStages[i] > MAX_STAT_STAGE)
+                gBattleMons[battlerAtk].statStages[i] = MAX_STAT_STAGE;
+            if (gBattleMons[battlerAtk].statStages[i] < MIN_STAT_STAGE)
+                gBattleMons[battlerAtk].statStages[i] = MIN_STAT_STAGE;
+        }
+        if (defStatChanges[i] != 0)
+        {
+            gBattleMons[battlerDef].statStages[i] += defStatChanges[i];
+            
+            if (gBattleMons[battlerDef].statStages[i] > MAX_STAT_STAGE)
+                gBattleMons[battlerDef].statStages[i] = MAX_STAT_STAGE;
+            if (gBattleMons[battlerDef].statStages[i] < MIN_STAT_STAGE)
+                gBattleMons[battlerDef].statStages[i] = MIN_STAT_STAGE;
+        }
+    }
+    
+    u32 damage = AI_GetDamage(battlerAtk, battlerDef, moveIndex, AI_ATTACKING, gAiLogicData);
+    
+    FreeRestoreBattleMons(savedBattleMons);
+    
+    return damage;
+}
+
+enum ShouldChangeStats BattlerShouldChangeStats(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcContext context, s16 atkAtkChange, s16 defAtkChange, s16 atkDefChange, s16 defDefChange, s16 atkSpAtkChange, s16 defSpAtkChange, s16 atkSpDefChange, s16 defSpDefChange, s16 atkSpeChange, s16 defSpeChange)
+{
+    s16 atkStatChanges[NUM_STATS] = {0};
+    s16 defStatChanges[NUM_STATS] = {0};
+
+    // Set stat changes to be made
+    atkStatChanges[STAT_ATK] = atkAtkChange;
+    atkStatChanges[STAT_DEF] = atkDefChange;
+    atkStatChanges[STAT_SPATK] = atkSpAtkChange;
+    atkStatChanges[STAT_SPDEF] = atkSpDefChange;
+    atkStatChanges[STAT_SPEED] = atkSpeChange;
+    defStatChanges[STAT_ATK] = defAtkChange;
+    defStatChanges[STAT_DEF] = defDefChange;
+    defStatChanges[STAT_SPATK] = defSpAtkChange;
+    defStatChanges[STAT_SPDEF] = defSpDefChange;
+    defStatChanges[STAT_SPEED] = defSpeChange;
+
+    switch (context)
+    {
+    case AI_ATTACKING:
+        // If KOs with the change but not without the change
+        if ((AI_GetDamageWithStatChanges(battlerAtk, battlerDef, moveIndex, atkStatChanges, defStatChanges) >= gBattleMons[battlerDef].hp)
+         && !(AI_GetDamage(battlerAtk, battlerDef, moveIndex, AI_ATTACKING, gAiLogicData) >= gBattleMons[battlerDef].hp))
+            return SHOULD_CHANGE_STATS;
+        else
+            return DONT_CHANGE_STATS;
+    case AI_DEFENDING:
+        // If KOed without the change but not with the change
+        if (!(AI_GetDamageWithStatChanges(battlerDef, battlerAtk, moveIndex, defStatChanges, atkStatChanges) >= gBattleMons[battlerAtk].hp)
+         && (AI_GetDamage(battlerDef, battlerAtk, moveIndex, AI_DEFENDING, gAiLogicData) >= gBattleMons[battlerAtk].hp))
+            return SHOULD_CHANGE_STATS;
+        else
+            return DONT_CHANGE_STATS;
+    default:
+        return DONT_CHANGE_STATS;
+    }
 }
 
 static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, bool32 considerContrary)

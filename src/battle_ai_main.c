@@ -4504,7 +4504,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (RandomPercentage(RNG_AI_CUSTOM_AI_NINETY_PERCENT, CUSTOM_AI_NINETY_PERCENT))
             ADJUST_SCORE(NO_INCREASE);
         else 
-            ADJUST_SCORE(+100);
+            ADJUST_SCORE(+10);
         break;
     }
     //Bazzo note: Old boom/memento AI - should'nt apply without risky flag but removing for safety anyway

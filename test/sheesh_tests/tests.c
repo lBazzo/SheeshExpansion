@@ -183,3 +183,38 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores speed setup moves under different cir
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores defence dropping moves under different circumstances")
+{
+    u32 opponent3HKOCheckMove;
+    u32 opponentMaybeHighestDamageMove;
+
+    PARAMETRIZE { opponent3HKOCheckMove = MOVE_SPLASH; opponentMaybeHighestDamageMove = MOVE_FLAME_WHEEL; }
+    PARAMETRIZE { opponent3HKOCheckMove = MOVE_SPLASH; opponentMaybeHighestDamageMove = MOVE_SACRED_FIRE; }
+    PARAMETRIZE { opponent3HKOCheckMove = MOVE_EARTHQUAKE; opponentMaybeHighestDamageMove = MOVE_SACRED_FIRE; }
+
+    GIVEN {
+       AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+       PLAYER(SPECIES_ARCANINE) { HP(321); Defense(196); Moves(MOVE_CELEBRATE); } 
+       OPPONENT(SPECIES_URSARING) { Attack(313); Moves(MOVE_CELEBRATE, opponent3HKOCheckMove, MOVE_FIRE_LASH, opponentMaybeHighestDamageMove); }
+    } WHEN {
+        if (opponent3HKOCheckMove == MOVE_SPLASH && opponentMaybeHighestDamageMove == MOVE_FLAME_WHEEL)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FIRE_LASH, 108);
+            }
+        }
+        else if (opponent3HKOCheckMove == MOVE_SPLASH && opponentMaybeHighestDamageMove == MOVE_SACRED_FIRE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FIRE_LASH, 107);
+            }
+        }
+        else if (opponent3HKOCheckMove == MOVE_EARTHQUAKE && opponentMaybeHighestDamageMove == MOVE_SACRED_FIRE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_FIRE_LASH, 106);
+            }
+        }
+    }
+}

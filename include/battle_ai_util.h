@@ -69,6 +69,12 @@ static inline bool32 IsMoveUnusable(u32 moveIndex, u32 move, u32 moveLimitations
 
 typedef bool32 (*MoveFlag)(u32 move);
 
+enum ShouldChangeStats
+{
+    DONT_CHANGE_STATS,
+    SHOULD_CHANGE_STATS,
+};
+
 bool32 AI_IsFaster(u32 battlerAi, u32 battlerDef, u32 aiMove, u32 playerMove, enum ConsiderPriority considerPriority);
 bool32 AI_IsSlower(u32 battlerAi, u32 battlerDef, u32 aiMove, u32 playerMove, enum ConsiderPriority considerPriority);
 bool32 AI_IsPartyMonFaster(u32 battlerAi, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 aiMove, u32 playerMove, enum ConsiderPriority considerPriority);
@@ -152,6 +158,9 @@ bool32 BattlerStatCanRise(u32 battler, enum Ability battlerAbility, enum Stat st
 bool32 AreBattlersStatsMaxed(u32 battler);
 u32 CountPositiveStatStages(u32 battlerId);
 u32 CountNegativeStatStages(u32 battlerId);
+u32 AI_GetDamageWithStatChanges(u32 battlerAtk, u32 battlerDef, u32 moveIndex, s16 atkStatChanges[NUM_STATS], s16 defStatChanges[NUM_STATS]);
+enum ShouldChangeStats BattlerShouldChangeStats(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcContext context, s16 atkAtkChange, s16 defAtkChange, s16 atkDefChange, s16 defDefChange, s16 atkSpAtkChange, s16 defSpAtkChange, s16 atkSpDefChange, s16 defSpDefChange, s16 atkSpeChange, s16 defSpeChange);
+
 
 // move checks
 bool32 Ai_IsPriorityBlocked(u32 battlerAtk, u32 battlerDef, u32 move, struct AiLogicData *aiData);
