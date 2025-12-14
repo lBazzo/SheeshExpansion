@@ -2518,7 +2518,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SCALE_ATTENDANT:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 9;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2528,7 +2528,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SCALE_ATTENDANT_ADJUST_IVS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 20;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2538,7 +2538,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SCALE_ATTENDANT_APPLY_STATUS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 8;
-        task->tLeft = 14;
+        task->tLeft = 22;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2548,9 +2548,9 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_2_OR_3:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 12;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
-        task->tWidth = 15;
+        task->tWidth = 10;
         task->tHeight = 12;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
@@ -2558,9 +2558,9 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_4:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
-        task->tWidth = 15;
+        task->tWidth = 10;
         task->tHeight = 12;
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
@@ -2568,7 +2568,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_MAIN_MENU:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 22;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2578,7 +2578,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_FALKNER_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2588,7 +2588,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_MISTY_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2598,7 +2598,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 10;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2608,7 +2608,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_ERIKA_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 13;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2618,7 +2618,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_CHUCK_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 15;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2628,7 +2628,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TM_CLERK_POST_PRYCE_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 10;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2638,7 +2638,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_PUNCH_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2648,7 +2648,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_SPEED_DROP_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 20;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2658,7 +2658,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_NEVER_MISS_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 14;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2668,7 +2668,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_FANG_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 8;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2678,7 +2678,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_TRAPPING_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 6;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2688,7 +2688,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_ELEMENTAL_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2698,7 +2698,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_MULTIHIT_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 8;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2708,7 +2708,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_HIGH_CRIT_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 11;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -2718,7 +2718,7 @@ void ShowScrollableMultichoice(void)
     case SCROLL_MULTI_BUGSY_STONES:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
         task->tNumItems = 7;
-        task->tLeft = 14;
+        task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
         task->tHeight = 12;
@@ -5783,4 +5783,117 @@ void CheckIsSheeshSilverStarter(void)
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
+}
+
+void BufferPokemonNicknameAndIVNumberLower(void)
+{
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    ConvertIntToDecimalStringN(gStringVar2, gSpecialVar_Result, STR_CONV_MODE_LEFT_ALIGN, 2);
+
+}
+
+void BufferPokemonNicknameAndIVNumberHigher(void)
+{
+    GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    u32 newIVNumber = gSpecialVar_Result + 19;
+    ConvertIntToDecimalStringN(gStringVar2, newIVNumber, STR_CONV_MODE_LEFT_ALIGN, 2);
+
+}
+
+void SetPokemonHPIV(void)
+{
+    u32 newHPIV;
+    newHPIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &newHPIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonAttackIV(void)
+{
+    u32 newAttackIV;
+    newAttackIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &newAttackIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonDefenseIV(void)
+{
+    u32 newDefenseIV;
+    newDefenseIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &newDefenseIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpecialAttackIV(void)
+{
+    u32 newSpecialAttackIV;
+    newSpecialAttackIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &newSpecialAttackIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpecialDefenseIV(void)
+{
+    u32 newSpecialDefenseIV;
+    newSpecialDefenseIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &newSpecialDefenseIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpeedIV(void)
+{
+    u32 newSpeedIV;
+    newSpeedIV = gSpecialVar_0x8005;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &newSpeedIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonHPIVHigher(void)
+{
+    u32 newHPIV;
+    newHPIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV, &newHPIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonAttackIVHigher(void)
+{
+    u32 newAttackIV;
+    newAttackIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV, &newAttackIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonDefenseIVHigher(void)
+{
+    u32 newDefenseIV;
+    newDefenseIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_DEF_IV, &newDefenseIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpecialAttackIVHigher(void)
+{
+    u32 newSpecialAttackIV;
+    newSpecialAttackIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPATK_IV, &newSpecialAttackIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpecialDefenseIVHigher(void)
+{
+    u32 newSpecialDefenseIV;
+    newSpecialDefenseIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPDEF_IV, &newSpecialDefenseIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
+}
+
+void SetPokemonSpeedIVHigher(void)
+{
+    u32 newSpeedIV;
+    newSpeedIV = gSpecialVar_0x8005 + 19;
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &newSpeedIV);
+    CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }

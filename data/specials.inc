@@ -630,3 +630,18 @@ gSpecials::
 	def_special CheckIsSheeshSilverStarter
 	def_special HealNoneFaintedPartyMons
 	def_special SetRandomStatus
+	def_special SetPokemonHPIV
+	def_special SetPokemonAttackIV
+	def_special SetPokemonDefenseIV
+	def_special SetPokemonSpecialAttackIV
+	def_special SetPokemonSpecialDefenseIV
+	def_special SetPokemonSpeedIV
+	def_special BufferPokemonNicknameAndIVNumberLower
+	def_special BufferPokemonNicknameAndIVNumberHigher
+	def_special SetPokemonHPIVHigher
+	def_special SetPokemonAttackIVHigher
+	def_special SetPokemonDefenseIVHigher
+	def_special SetPokemonSpecialAttackIVHigher
+	def_special SetPokemonSpecialDefenseIVHigher
+	def_special SetPokemonSpeedIVHigher
+	

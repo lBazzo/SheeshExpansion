@@ -509,12 +509,8 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantAdjustIVLower::
 	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantTryAdjustIVLower::
-	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIVLower, MSGBOX_DEFAULT
-	special ChoosePartyMon
-	waitstate
-	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
-	special IsSelectedMonEgg
-	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIVLower
+	checkitem ITEM_HEART_SCALE
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_ScaleAttendantComeBackWithHeartScale
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichIVShouldBeAdjusted, MSGBOX_DEFAULT
 	waitmessage
 	setvar VAR_0x8004, SCROLL_MULTI_SCALE_ATTENDANT_ADJUST_IVS
@@ -532,27 +528,394 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantTryAdjustIVLower::
 	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeHPIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmHPIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonHPIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeAttackIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmAttackIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonAttackIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeDefenseIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmDefenseIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonDefenseIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialAttackIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialAttackIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpecialAttackIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialDefenseIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialDefenseIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpecialDefenseIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpeedIVsLower::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_0, 0
+	dynmultipush CherryGrove_Pokecenter_Text_1, 1
+	dynmultipush CherryGrove_Pokecenter_Text_2, 2
+	dynmultipush CherryGrove_Pokecenter_Text_3, 3
+	dynmultipush CherryGrove_Pokecenter_Text_4, 4
+	dynmultipush CherryGrove_Pokecenter_Text_5, 5
+	dynmultipush CherryGrove_Pokecenter_Text_6, 6
+	dynmultipush CherryGrove_Pokecenter_Text_7, 7
+	dynmultipush CherryGrove_Pokecenter_Text_8, 8
+	dynmultipush CherryGrove_Pokecenter_Text_9, 9
+	dynmultipush CherryGrove_Pokecenter_Text_10, 10
+	dynmultipush CherryGrove_Pokecenter_Text_11, 11
+	dynmultipush CherryGrove_Pokecenter_Text_12, 12
+	dynmultipush CherryGrove_Pokecenter_Text_13, 13
+	dynmultipush CherryGrove_Pokecenter_Text_14, 14
+	dynmultipush CherryGrove_Pokecenter_Text_15, 15
+	dynmultipush CherryGrove_Pokecenter_Text_16, 16
+	dynmultipush CherryGrove_Pokecenter_Text_17, 17
+	dynmultipush CherryGrove_Pokecenter_Text_18, 18
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberLower
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpeedIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpeedIV
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
-CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIVLower::
+CherryGrove_Pokecenter_Text_0:
+	.string "0$"
+CherryGrove_Pokecenter_Text_1:
+	.string "1$"
+CherryGrove_Pokecenter_Text_2:
+	.string "2$"
+CherryGrove_Pokecenter_Text_3:
+	.string "3$"
+CherryGrove_Pokecenter_Text_4:
+	.string "4$"
+CherryGrove_Pokecenter_Text_5:
+	.string "5$"
+CherryGrove_Pokecenter_Text_6:
+	.string "6$"
+CherryGrove_Pokecenter_Text_7:
+	.string "7$"
+CherryGrove_Pokecenter_Text_8:
+	.string "8$"
+CherryGrove_Pokecenter_Text_9:
+	.string "9$"
+CherryGrove_Pokecenter_Text_10:
+	.string "10$"
+CherryGrove_Pokecenter_Text_11:
+	.string "11$"
+CherryGrove_Pokecenter_Text_12:
+	.string "12$"
+CherryGrove_Pokecenter_Text_13:
+	.string "13$"
+CherryGrove_Pokecenter_Text_14:
+	.string "14$"
+CherryGrove_Pokecenter_Text_15:
+	.string "15$"
+CherryGrove_Pokecenter_Text_16:
+	.string "16$"
+CherryGrove_Pokecenter_Text_17:
+	.string "17$"
+CherryGrove_Pokecenter_Text_18:
+	.string "18$"
+CherryGrove_Pokecenter_Text_19:
+	.string "19$"
+CherryGrove_Pokecenter_Text_20:
+	.string "20$"
+CherryGrove_Pokecenter_Text_21:
+	.string "21$"
+CherryGrove_Pokecenter_Text_22:
+	.string "22$"
+CherryGrove_Pokecenter_Text_23:
+	.string "23$"
+CherryGrove_Pokecenter_Text_24:
+	.string "24$"
+CherryGrove_Pokecenter_Text_25:
+	.string "25$"
+CherryGrove_Pokecenter_Text_26:
+	.string "26$"
+CherryGrove_Pokecenter_Text_27:
+	.string "27$"
+CherryGrove_Pokecenter_Text_28:
+	.string "28$"
+CherryGrove_Pokecenter_Text_29:
+	.string "29$"
+CherryGrove_Pokecenter_Text_30:
+	.string "30$"
+CherryGrove_Pokecenter_Text_31:
+	.string "31$"
 
+CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantCantAdjustIVsForEgg, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
-
+CherryGrove_Pokecenter_Text_ScaleAttendantCantAdjustIVsForEgg::
+	.string "Oh, dear me. I'm afraid that an EGG\n"
+	.string "does not have any IVs.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantAdjustIVLowerConfirmIVRange::
+	.string "It costs one Heart Scale to change an\n"
+	.string "IV to a number from 0-18. Is that OK?$"
 
-CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIVLower::
+CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV::
+	.string "I see. and who should have their IVs\n"
+	.string "adjusted?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantWhichIVShouldBeAdjusted::
+	.string "In that case, which stat's IV would\n"
+	.string "you like to adjust?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe::
+	.string "Certainly. And what would you like the\n"
+	.string "new IV to be?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged::
+	.string "Well, there we are. The selected IV has\n"
+	.string "been changed.$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmHPIVChange::
+	.string "You want {STR_VAR_1}'s HP IV changed\n"
+	.string "to {STR_VAR_2}, is that right?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmAttackIVChange::
+	.string "You want {STR_VAR_1}'s Attack IV\n"
+	.string "changed to {STR_VAR_2}, is that right?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmDefenseIVChange::
+	.string "You want {STR_VAR_1}'s Defense IV\n"
+	.string "changed to {STR_VAR_2}, is that right?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialAttackIVChange::
+	.string "You want {STR_VAR_1}'s SpAtk IV\n"
+	.string "changed to {STR_VAR_2}, is that right?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialDefenseIVChange::
+	.string "You want {STR_VAR_1}'s SpDef IV\n"
+	.string "changed to {STR_VAR_2}, is that right?$"
+
+CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpeedIVChange::
+	.string "You want {STR_VAR_1}'s Speed IV changed\n"
+	.string "changed to {STR_VAR_2}, is that right?$"
+
+
+
+
+
+
+
 
 
 
@@ -560,7 +923,257 @@ CherryGrove_Pokecenter_Text_ScaleAttendantWhichIVShouldBeAdjusted::
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 CherryGrove_Pokecenter_EventScript_ScaleAttendantAdjustIVHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantAdjustIVHigherConfirmIVRange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case YES, CherryGrove_Pokecenter_EventScript_ScaleAttendantTryAdjustIVHigher
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	releaseall
+	end
 
+CherryGrove_Pokecenter_EventScript_ScaleAttendantTryAdjustIVHigher::
+	checkitem ITEM_HEART_SCALE, 2
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_ScaleAttendantNotEnoughHeartScales
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichIVShouldBeAdjusted, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_SCALE_ATTENDANT_ADJUST_IVS
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeHPIVsHigher
+	case 1, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeAttackIVsHigher
+	case 2, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeDefenseIVsHigher
+	case 3, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialAttackIVsHigher
+	case 4, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialDefenseIVsHigher
+	case 5, CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpeedIVsHigher
+	case 6, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeHPIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmHPIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonHPIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeAttackIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmAttackIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonAttackIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeDefenseIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmDefenseIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonDefenseIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialAttackIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialAttackIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpecialAttackIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialDefenseIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialDefenseIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpecialDefenseIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpeedIVsHigher::
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldAdjustIV, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantWhatShouldNewIVBe, MSGBOX_DEFAULT
+	dynmultipush CherryGrove_Pokecenter_Text_19, 0
+	dynmultipush CherryGrove_Pokecenter_Text_20, 1
+	dynmultipush CherryGrove_Pokecenter_Text_21, 2
+	dynmultipush CherryGrove_Pokecenter_Text_22, 3
+	dynmultipush CherryGrove_Pokecenter_Text_23, 4
+	dynmultipush CherryGrove_Pokecenter_Text_24, 5
+	dynmultipush CherryGrove_Pokecenter_Text_25, 6
+	dynmultipush CherryGrove_Pokecenter_Text_26, 7
+	dynmultipush CherryGrove_Pokecenter_Text_27, 8
+	dynmultipush CherryGrove_Pokecenter_Text_28, 9
+	dynmultipush CherryGrove_Pokecenter_Text_29, 10
+	dynmultipush CherryGrove_Pokecenter_Text_30, 11
+	dynmultipush CherryGrove_Pokecenter_Text_31, 12
+	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	switch VAR_RESULT
+	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	copyvar VAR_0x8005, VAR_RESULT
+	special BufferPokemonNicknameAndIVNumberHigher
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpeedIVChange, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
+	special SetPokemonSpeedIVHigher
+	removeitem ITEM_HEART_SCALE, 2
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantIVHasBeenChanged, MSGBOX_DEFAULT
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales, MSGBOX_DEFAULT
+	release
+	end
+
+CherryGrove_Pokecenter_Text_ScaleAttendantAdjustIVHigherConfirmIVRange::
+	.string "It costs two Heart Scales to change an\n"
+	.string "IV to a number from 19-31. Is that OK?$"
 
 
 @MINT 2/3 MINT COST PATH

@@ -2335,30 +2335,30 @@ const u8 gText_Frostbite[]        = _("Frostbite");
 
 // Scale Attendant Mint 2 or 3 terms
 
-const u8 gText_SeriousMint[]        = _("Serious Mint {CLEAR_TO 0x5F}(2)");
-const u8 gText_BoldMint[]        = _("Bold Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_ImpishMint[]        = _("Impish Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_LaxMint[]        = _("Lax Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_RelaxedMint[]        = _("Relaxed Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_CalmMint[]        = _("Calm Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_GentleMint[]        = _("Gentle Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_CarefulMint[]        = _("Careful Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_SassyMint[]        = _("Sassy Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_BraveMint[]        = _("Brave Mint {CLEAR_TO 0x5F}(3)");
-const u8 gText_QuietMint[]        = _("Quiet Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_SeriousMint[]        = _("Serious Mint {CLEAR_TO 0x48}(2)");
+const u8 gText_BoldMint[]        = _("Bold Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_ImpishMint[]        = _("Impish Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_LaxMint[]        = _("Lax Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_RelaxedMint[]        = _("Relaxed Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_CalmMint[]        = _("Calm Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_GentleMint[]        = _("Gentle Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_CarefulMint[]        = _("Careful Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_SassyMint[]        = _("Sassy Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_BraveMint[]        = _("Brave Mint {CLEAR_TO 0x48}(3)");
+const u8 gText_QuietMint[]        = _("Quiet Mint {CLEAR_TO 0x48}(3)");
 
 // Scale Attendant Mint 4 terms
 
-const u8 gText_LonelyMint[]        = _("Lonely Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_AdamantMint[]        = _("Adamant Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_NaughtyMint[]        = _("Naughty Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_ModestMint[]        = _("Modest Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_MildMint[]        = _("Mild Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_RashMint[]        = _("Rash Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_TimidMint[]        = _("Timid Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_HastyMint[]        = _("Hasty Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_JollyMint[]        = _("Jolly Mint {CLEAR_TO 0x5F}(4)");
-const u8 gText_NaiveMint[]        = _("Naive Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_LonelyMint[]         = _("Lonely Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_AdamantMint[]        = _("Adamant Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_NaughtyMint[]        = _("Naughty Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_ModestMint[]         = _("Modest Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_MildMint[]           = _("Mild Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_RashMint[]           = _("Rash Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_TimidMint[]          = _("Timid Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_HastyMint[]          = _("Hasty Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_JollyMint[]          = _("Jolly Mint {CLEAR_TO 0x48}(4)");
+const u8 gText_NaiveMint[]          = _("Naive Mint {CLEAR_TO 0x48}(4)");
 
 // TM Clerk Badge menu
 
