@@ -4869,36 +4869,37 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         {
             break;
         }
-        else if (ShouldRecover(battlerAtk, battlerDef, move, 100))
+        if (ShouldRecover(battlerAtk, battlerDef, move, 100))
         {
-            if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_SLP
-              || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_STATUS
-              || HasMoveWithEffect(battlerAtk, EFFECT_SLEEP_TALK)
-              || HasMoveWithEffect(battlerAtk, EFFECT_SNORE)
-              || aiData->abilities[battlerAtk] == ABILITY_SHED_SKIN
-              || aiData->abilities[battlerAtk] == ABILITY_EARLY_BIRD
-              || (AI_GetWeather() & B_WEATHER_RAIN && gWishFutureKnock.weatherDuration != 1 && aiData->abilities[battlerAtk] == ABILITY_HYDRATION && aiData->holdEffects[battlerAtk] != HOLD_EFFECT_UTILITY_UMBRELLA))
-                ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_SLP
+                  || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_CURE_STATUS)
+                    ADJUST_SCORE(+1);
         }
         break;
     case EFFECT_OHKO:
     case EFFECT_SHEER_COLD:
         if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
             break;
+        /*
         else if (gBattleMons[battlerAtk].volatiles.lockOn)
             ADJUST_SCORE(BEST_EFFECT);
         break;
+        */
+        if (aiData->hpPercents[battlerAtk] < 50
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+            ADJUST_SCORE(GOOD_EFFECT);
+        else 
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        break;
     case EFFECT_MEAN_LOOK:
         if (ShouldTrap(battlerAtk, battlerDef, move))
-            ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_LASER_FOCUS:
-        if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
-         || aiData->abilities[battlerAtk] == ABILITY_SNIPER
-         || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
-         || HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))
-            ADJUST_SCORE(GOOD_EFFECT);
+        if (!(gBattleMons[battlerAtk].volatiles.dragonCheer || gBattleMons[battlerAtk].volatiles.focusEnergy))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_CONFUSE:
         IncreaseConfusionScore(battlerAtk, battlerDef, move, &score);

@@ -3949,8 +3949,8 @@ bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef, u32 move)
     if (IsBattlerTrapped(battlerAtk, battlerDef))
         return FALSE;
 
-    if (BattlerWillFaintFromSecondaryDamage(battlerDef, gAiLogicData->abilities[battlerDef]))
-        return TRUE;    // battler is taking secondary damage with low HP
+    //if (BattlerWillFaintFromSecondaryDamage(battlerDef, gAiLogicData->abilities[battlerDef]))
+    //    return TRUE;    // battler is taking secondary damage with low HP
 
     if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL)
     {
@@ -5470,20 +5470,22 @@ void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 
 void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 {
-    if (((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
-            || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_CONFUSION || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_STATUS)
-        return;
+    //if (((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+    //        || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_CONFUSION || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_STATUS)
+    //    return;
 
-    if (AI_CanConfuse(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, gAiLogicData->partnerMove)
-      && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CURE_CONFUSION
-      && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CURE_STATUS)
-    {
+    if (AI_CanConfuse(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, gAiLogicData->partnerMove))
+    //  && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CURE_CONFUSION
+    //  && gAiLogicData->holdEffects[battlerDef] != HOLD_EFFECT_CURE_STATUS)
+    {   
+        ADJUST_SCORE_PTR(BEST_DAMAGE_MOVE);
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
-          || gBattleMons[battlerDef].volatiles.infatuation
-          || (gAiLogicData->abilities[battlerAtk] == ABILITY_SERENE_GRACE && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
-            ADJUST_SCORE_PTR(GOOD_EFFECT);
+          //|| gBattleMons[battlerDef].volatiles.infatuation
+          //|| (gAiLogicData->abilities[battlerAtk] == ABILITY_SERENE_GRACE && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
+          && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+            ADJUST_SCORE_PTR(+2);
         else
-            ADJUST_SCORE_PTR(DECENT_EFFECT);
+            ADJUST_SCORE_PTR(NO_INCREASE);
     }
 }
 
@@ -6068,6 +6070,8 @@ bool32 AI_ShouldSpicyExtract(u32 battlerAtk, u32 battlerAtkPartner, u32 move, st
          && HasMoveWithCategory(battlerAtkPartner, DAMAGE_CATEGORY_PHYSICAL));
 }
 
+//Bazzo note: old IncreaseSubstituteMoveScore function
+/*
 u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
@@ -6105,6 +6109,48 @@ u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
 
     if (gAiLogicData->hpPercents[battlerAtk] > 70)
         scoreIncrease += WEAK_EFFECT;
+    return scoreIncrease;
+}
+*/
+
+u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
+{
+    enum BattleMoveEffects effect = GetMoveEffect(move);
+    u32 scoreIncrease = 0;
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
+    struct AiLogicData *aiData = gAiLogicData;
+    
+    if (effect == EFFECT_SUBSTITUTE) // Substitute specific
+    {
+        if (!(gBattleMons[battlerAtk].volatiles.substitute || aiData->abilities[battlerDef] == ABILITY_INFILTRATOR)
+        && (aiData->hpPercents[battlerAtk] > 25)
+        && (!(HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))))
+        {
+                scoreIncrease += BEST_DAMAGE_MOVE; 
+            if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
+            || (gBattleMons[battlerDef].status1 & STATUS1_POISON)
+            || (gBattleMons[battlerDef].status1 & STATUS1_TOXIC_POISON)
+            || (gBattleMons[battlerDef].status1 & STATUS1_FREEZE)
+            || (gBattleMons[battlerDef].status1 & STATUS1_BURN)
+            || (gBattleMons[battlerDef].volatiles.leechSeed))
+                scoreIncrease += 1;
+            
+            if (HasMoveWithEffect(battlerAtk, EFFECT_FOCUS_PUNCH)
+                && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                scoreIncrease += 2;
+        }
+    }
+    else if (effect == EFFECT_SHED_TAIL) // Shed Tail specific
+    {
+        if (CountUsablePartyMons(battlerAtk) > 0
+        && (aiData->hpPercents[battlerAtk] > 50))
+            {
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+                scoreIncrease += WEAK_EFFECT;
+            else 
+                scoreIncrease += BEST_DAMAGE_MOVE;
+            }
+    }
     return scoreIncrease;
 }
 

@@ -246,3 +246,65 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Reflect")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores Substitute and Shed Tail")
+{
+    u32 subOrShedTail;
+    u32 opponentSpeed;
+    u32 maybeFocusPunch;
+    u32 playerStatus;
+    u32 maybeSoundMove;
+    u32 opponentHP;
+
+    PARAMETRIZE { subOrShedTail = MOVE_SUBSTITUTE; opponentSpeed = 110; maybeFocusPunch = MOVE_SPLASH; playerStatus = STATUS1_NONE; maybeSoundMove = MOVE_SCREECH; opponentHP = 55; }
+    PARAMETRIZE { subOrShedTail = MOVE_SUBSTITUTE; opponentSpeed = 110; maybeFocusPunch = MOVE_SPLASH; playerStatus = STATUS1_NONE; maybeSoundMove = MOVE_SCRATCH; opponentHP = 55; }
+    PARAMETRIZE { subOrShedTail = MOVE_SUBSTITUTE; opponentSpeed = 110; maybeFocusPunch = MOVE_FOCUS_PUNCH; playerStatus = STATUS1_BURN; maybeSoundMove = MOVE_SCRATCH; opponentHP = 55; }
+    PARAMETRIZE { subOrShedTail = MOVE_SHED_TAIL; opponentSpeed = 110; maybeFocusPunch = MOVE_FOCUS_PUNCH; playerStatus = STATUS1_BURN; maybeSoundMove = MOVE_SCRATCH; opponentHP = 55; }
+    PARAMETRIZE { subOrShedTail = MOVE_SHED_TAIL; opponentSpeed = 90; maybeFocusPunch = MOVE_FOCUS_PUNCH; playerStatus = STATUS1_BURN; maybeSoundMove = MOVE_SCREECH; opponentHP = 55; }
+    PARAMETRIZE { subOrShedTail = MOVE_SHED_TAIL; opponentSpeed = 110; maybeFocusPunch = MOVE_FOCUS_PUNCH; playerStatus = STATUS1_BURN; maybeSoundMove = MOVE_SCREECH; opponentHP = 45; }
+
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Status1(playerStatus); Moves(MOVE_CELEBRATE, maybeSoundMove); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); Moves(MOVE_CELEBRATE, maybeFocusPunch, subOrShedTail); MaxHP(100); HP(opponentHP); }
+        OPPONENT(SPECIES_LINOONE) { Speed(1); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        if (subOrShedTail == MOVE_SUBSTITUTE && playerStatus == STATUS1_NONE && maybeFocusPunch == MOVE_SPLASH && maybeSoundMove == MOVE_SCREECH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 80);
+            }
+        }
+        else if (subOrShedTail == MOVE_SUBSTITUTE && playerStatus == STATUS1_NONE && maybeFocusPunch == MOVE_SPLASH && maybeSoundMove == MOVE_SCRATCH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 106);
+            }
+        }
+        else if (subOrShedTail == MOVE_SUBSTITUTE && playerStatus == STATUS1_BURN && maybeFocusPunch == MOVE_FOCUS_PUNCH && maybeSoundMove == MOVE_SCRATCH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 109);
+            }
+        }
+        else if (subOrShedTail == MOVE_SHED_TAIL && playerStatus == STATUS1_BURN && maybeFocusPunch == MOVE_FOCUS_PUNCH && maybeSoundMove == MOVE_SCRATCH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 107);
+            }
+        }
+        else if (opponentSpeed == 90)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 106);
+            }
+        }
+        else if (opponentHP == 45)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, subOrShedTail, 80);
+            }
+        }
+    }
+}
