@@ -160,6 +160,7 @@ u32 CountPositiveStatStages(u32 battlerId);
 u32 CountNegativeStatStages(u32 battlerId);
 u32 AI_GetDamageWithStatChanges(u32 battlerAtk, u32 battlerDef, u32 moveIndex, s16 atkStatChanges[NUM_STATS], s16 defStatChanges[NUM_STATS]);
 enum ShouldChangeStats BattlerShouldChangeStats(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcContext context, s16 atkAtkChange, s16 defAtkChange, s16 atkDefChange, s16 defDefChange, s16 atkSpAtkChange, s16 defSpAtkChange, s16 atkSpDefChange, s16 defSpDefChange, s16 atkSpeChange, s16 defSpeChange);
+bool32 AnyStatIsLowered(u32 battlerId);
 
 
 // move checks

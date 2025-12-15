@@ -218,3 +218,31 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores defence dropping moves under differen
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores Reflect")
+{
+    u32 opponentItem;
+    u32 playerCategoryMove;
+
+    PARAMETRIZE { opponentItem = ITEM_ORAN_BERRY; playerCategoryMove = MOVE_SPLASH; }
+    PARAMETRIZE { opponentItem = ITEM_LIGHT_CLAY; playerCategoryMove = MOVE_TACKLE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerCategoryMove); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_REFLECT); Item(opponentItem); }
+    } WHEN {
+        if (opponentItem == ITEM_ORAN_BERRY)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_REFLECT, 106);
+            }
+        }
+        else if (opponentItem == ITEM_LIGHT_CLAY)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_REFLECT, 108);
+            }
+        }
+    }
+}

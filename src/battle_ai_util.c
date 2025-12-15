@@ -2537,6 +2537,18 @@ bool32 AnyStatIsRaised(u32 battlerId)
     return FALSE;
 }
 
+bool32 AnyStatIsLowered(u32 battlerId)
+{
+    enum Stat i;
+
+    for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
+    {
+        if (gBattleMons[battlerId].statStages[i] < DEFAULT_STAT_STAGE)
+            return TRUE;
+    }
+    return FALSE;
+}
+
 u32 CountPositiveStatStages(u32 battlerId)
 {
     u32 count = 0;
