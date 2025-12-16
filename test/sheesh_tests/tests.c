@@ -308,3 +308,55 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Substitute and Shed Tail")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores Pivot moves such as U-Turn")
+{
+    u32 pivotMove;
+    u32 otherMoveDamageChecker;
+    u32 opponentSpeed;
+    u32 playerKillingMoveChecker;
+
+    PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 110; playerKillingMoveChecker = MOVE_SPLASH;}
+    // PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 90; playerKillingMoveChecker = MOVE_SPLASH;}
+    PARAMETRIZE { pivotMove = MOVE_FLIP_TURN; otherMoveDamageChecker = MOVE_BUG_BITE; opponentSpeed = 110; playerKillingMoveChecker = MOVE_THUNDERBOLT;}
+    PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 110; playerKillingMoveChecker = MOVE_DISCHARGE;}
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_CAMERUPT) { HP(281); Defense(176); SpAttack(246); Speed(100); Moves(MOVE_CELEBRATE, playerKillingMoveChecker); }
+        OPPONENT(SPECIES_FERALIGATR) { HP(158); SpDefense(202); Attack(246); Speed(opponentSpeed); Moves(MOVE_CELEBRATE, pivotMove, otherMoveDamageChecker); }
+        OPPONENT(SPECIES_LINOONE) { Speed(1); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        // Scores applied: -1 from resist, -2 from AI being faster and outdamaging player with another move
+        if (pivotMove == MOVE_U_TURN && otherMoveDamageChecker == MOVE_X_SCISSOR && opponentSpeed == 110 && playerKillingMoveChecker == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, pivotMove, 103);
+            }
+        }
+        //Bazzo note: second test checked conditions if ai had no other mons left, but need to give it an extra mon for first test to work
+        /*
+        // Ignores all other scores since there are no other mons in back and it deals more with another move
+        else if (pivotMove == MOVE_U_TURN && otherMoveDamageChecker == MOVE_X_SCISSOR && opponentSpeed == 90 && playerKillingMoveChecker == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, pivotMove, 80);
+            }
+        }
+        */
+        // Scores applied: +1 faster and player kills AI, +2 kill with move, +1 super effective (and an extra +7 from fast kill)
+        if (pivotMove == MOVE_FLIP_TURN && otherMoveDamageChecker == MOVE_BUG_BITE && opponentSpeed == 110 && playerKillingMoveChecker == MOVE_THUNDERBOLT)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, pivotMove, 117);
+            }
+        }
+        // Scores applied: -1 from resist, +1 (50%) from Player dealing more damage than AI
+        if (pivotMove == MOVE_U_TURN && otherMoveDamageChecker == MOVE_X_SCISSOR && opponentSpeed == 110 && playerKillingMoveChecker == MOVE_DISCHARGE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, pivotMove, 106);
+            }
+        }
+    }
+}

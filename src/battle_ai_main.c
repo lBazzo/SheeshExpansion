@@ -4918,31 +4918,68 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_LEECH_SEED:
         if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)
-          || gBattleMons[battlerDef].volatiles.leechSeed
-          || HasMoveWithEffect(battlerDef, EFFECT_RAPID_SPIN)
-          || aiData->abilities[battlerDef] == ABILITY_LIQUID_OOZE
-          || aiData->abilities[battlerDef] == ABILITY_MAGIC_GUARD)
+          || gBattleMons[battlerDef].volatiles.leechSeed)
+        //  || HasMoveWithEffect(battlerDef, EFFECT_RAPID_SPIN)
+        //  || aiData->abilities[battlerDef] == ABILITY_LIQUID_OOZE
+        //  || aiData->abilities[battlerDef] == ABILITY_MAGIC_GUARD)
             break;
+        /*
         ADJUST_SCORE(GOOD_EFFECT);
         if (!HasDamagingMove(battlerDef)
             || IsBattlerTrapped(battlerAtk, battlerDef)
             || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_BIG_ROOT)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
+        */
     case EFFECT_DO_NOTHING:
     case EFFECT_HOLD_HANDS:
     case EFFECT_CELEBRATE:
     case EFFECT_HAPPY_HOUR:
         //todo - check z splash, z celebrate, z happy hour (lol)
+        // Bazzo TODO: figure out how to 
     case EFFECT_LAST_RESORT:
         if (IsConsideringZMove(battlerAtk, battlerDef, move))
             ADJUST_SCORE(BEST_EFFECT);
         break;
     case EFFECT_TELEPORT: // Either remove or add better logic
         if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || !IsOnPlayerSide(battlerAtk))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
             break;
         //fallthrough
     case EFFECT_HIT_ESCAPE:
+    //uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
+
+        if (CountUsablePartyMons(battlerAtk) == 0
+        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
+        {
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+        }    
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        if (effectiveness < UQ_4_12(1.0))
+            ADJUST_SCORE(-1);
+        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        && (GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING)))
+            ADJUST_SCORE(-2);
+        {
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+            && (CanTargetFaintAi(battlerDef, battlerAtk)))
+                ADJUST_SCORE(+1);
+            else if (GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) < GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING)
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(+1);
+        }
+        if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING))
+        {
+            ADJUST_SCORE(+2);
+            if (effectiveness > UQ_4_12(1.0)
+            && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
+            ADJUST_SCORE(+1);
+        }
+        if (AnyStatIsLowered(battlerAtk)
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+            ADJUST_SCORE(+1);
+            break;
     case EFFECT_PARTING_SHOT:
     case EFFECT_CHILLY_RECEPTION:
         if (!hasPartner)
