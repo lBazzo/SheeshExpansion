@@ -360,3 +360,76 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Pivot moves such as U-Turn")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Paralysis moves correctly")
+{
+    u32 opponentSpeed;
+    u32 maybeElectroBall;
+
+    PARAMETRIZE { opponentSpeed = 110; maybeElectroBall = MOVE_SPLASH; }
+    PARAMETRIZE { opponentSpeed = 30; maybeElectroBall = MOVE_ELECTRO_BALL; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); Moves(MOVE_CELEBRATE, MOVE_THUNDER_WAVE, maybeElectroBall); }
+    } WHEN {
+        if (opponentSpeed == 110)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_THUNDER_WAVE, 106);
+            }
+        }
+        else if (opponentSpeed == 30)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_THUNDER_WAVE, 108);
+            }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Parting Shot correctly")
+{
+    u32 playerMaybeKillingMove;
+    u32 playerAbility;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { playerMaybeKillingMove = MOVE_DRAGON_RAGE; playerAbility = ABILITY_ADAPTABILITY; opponentSpeed = 110; }
+    PARAMETRIZE { playerMaybeKillingMove = MOVE_DRAGON_RAGE; playerAbility = ABILITY_HYPER_CUTTER; opponentSpeed = 110; }
+    PARAMETRIZE { playerMaybeKillingMove = MOVE_SPLASH; playerAbility = ABILITY_ADAPTABILITY; opponentSpeed = 110; }
+    PARAMETRIZE { playerMaybeKillingMove = MOVE_DRAGON_RAGE; playerAbility = ABILITY_ADAPTABILITY; opponentSpeed = 90; }
+
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE, playerMaybeKillingMove); Ability(playerAbility); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); HP(30); Moves(MOVE_CELEBRATE, MOVE_PARTING_SHOT); }
+        OPPONENT(SPECIES_LINOONE) { Speed(1); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        if (playerMaybeKillingMove == MOVE_DRAGON_RAGE && playerAbility == ABILITY_ADAPTABILITY && opponentSpeed == 110)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 107);
+            }
+        }
+        else if (playerAbility == ABILITY_HYPER_CUTTER)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 105);
+            }
+        }
+        else if (playerMaybeKillingMove == MOVE_SPLASH)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 106);
+            }
+        }
+        else if (opponentSpeed == 90)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 106);
+            }
+        }
+    }
+}

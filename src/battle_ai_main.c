@@ -4432,16 +4432,25 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     {
     case MOVE_EFFECT_POISON:
     case MOVE_EFFECT_TOXIC:
-        IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        {
+            IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+        }
         break;
     case MOVE_EFFECT_SLEEP:
         IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
     case MOVE_EFFECT_PARALYSIS:
-        IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        {
+            IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
+        }
         break;
     case MOVE_EFFECT_BURN:
-        IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        {
+            IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+        }
         break;
     }
     // move effect checks
@@ -4981,6 +4990,17 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(+1);
             break;
     case EFFECT_PARTING_SHOT:
+        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (CanTargetFaintAi(battlerDef, battlerAtk))
+        && (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
+        && (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK)))
+            ADJUST_SCORE(WEAK_EFFECT);
+        else if ((!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
+        || (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK)))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+        else
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        break;
     case EFFECT_CHILLY_RECEPTION:
         if (!hasPartner)
         {
