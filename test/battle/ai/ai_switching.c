@@ -1095,7 +1095,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch out if Yawn'd wi
 
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI won't switch in ace mon after U-Turn if other options available")
 {
-    KNOWN_FAILING; //Bazzo note: fails due to pivot moves like uturn no longer being scored for highest damage
+    //KNOWN_FAILING; //Bazzo note: fails due to pivot moves like uturn no longer being scored for highest damage, apparently is fine now idk
     u32 aceFlag;
     PARAMETRIZE{ aceFlag = 0; }
     PARAMETRIZE{ aceFlag = AI_FLAG_ACE_POKEMON; }
