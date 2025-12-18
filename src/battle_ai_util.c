@@ -4014,14 +4014,14 @@ bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef, u32 move)
 
     //if (BattlerWillFaintFromSecondaryDamage(battlerDef, gAiLogicData->abilities[battlerDef]))
     //    return TRUE;    // battler is taking secondary damage with low HP
-
+    /*
     if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL)
     {
         if (!CanTargetFaintAi(battlerDef, battlerAtk))
             return TRUE;    // attacker goes first and opponent can't kill us
     }
-
-    return FALSE;
+    */
+    return TRUE;
 }
 
 bool32 IsFlinchGuaranteed(u32 battlerAtk, u32 battlerDef, u32 move)

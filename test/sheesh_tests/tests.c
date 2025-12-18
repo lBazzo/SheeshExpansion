@@ -433,3 +433,82 @@ AI_SINGLE_BATTLE_TEST("AI scores Parting Shot correctly")
         }
     }
 }
+
+// Bazzo note: this test changes celebrate to mean look to prove that trapping is passed via baton pass
+AI_SINGLE_BATTLE_TEST("Test to check how Baton Pass deals with trapping opponent")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        ASSUME(GetMoveEffect(MOVE_SKY_ATTACK) == EFFECT_TWO_TURNS_ATTACK);
+        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_SHADOW_TAG); Moves(MOVE_MEAN_LOOK, MOVE_CELEBRATE, MOVE_BATON_PASS); }
+        PLAYER(SPECIES_SWELLOW) { Moves(MOVE_SKY_ATTACK); }
+        OPPONENT(SPECIES_ARBOK) { Moves(MOVE_LAST_RESORT); }
+        OPPONENT(SPECIES_LAIRON) { Moves(MOVE_ROCK_SLIDE); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_LAST_RESORT); }
+        TURN { MOVE(player, MOVE_BATON_PASS); SEND_OUT(player, 1); EXPECT_MOVE(opponent, MOVE_LAST_RESORT); }
+        TURN { MOVE(player, MOVE_SKY_ATTACK); EXPECT_SWITCH(opponent, 1); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Baton Pass correctly")
+{
+    u32 opponentSetUpOrTrapMove;
+
+    PARAMETRIZE { opponentSetUpOrTrapMove = MOVE_MEAN_LOOK; }
+    PARAMETRIZE { opponentSetUpOrTrapMove = MOVE_SHARPEN; }
+    PARAMETRIZE { opponentSetUpOrTrapMove = MOVE_SWORDS_DANCE; }
+    PARAMETRIZE { opponentSetUpOrTrapMove = MOVE_SUBSTITUTE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ARBOK) { Moves(MOVE_CELEBRATE); Ability(ABILITY_SHED_SKIN); }
+        PLAYER(SPECIES_ARBOK) {Ability(ABILITY_SHED_SKIN); } ;
+        OPPONENT(SPECIES_ARBOK) { Moves(opponentSetUpOrTrapMove, MOVE_BATON_PASS, MOVE_CELEBRATE, MOVE_LAST_RESORT); Ability(ABILITY_SHED_SKIN); }
+        OPPONENT(SPECIES_ARBOK) { Moves(MOVE_CELEBRATE); Ability(ABILITY_SHED_SKIN); }
+        ASSUME(GetMoveEffect(MOVE_BATON_PASS) == EFFECT_BATON_PASS);
+        ASSUME(GetMoveEffect(MOVE_MEAN_LOOK) == EFFECT_MEAN_LOOK);
+        ASSUME(GetMoveEffect(MOVE_SHARPEN) == EFFECT_ATTACK_UP);
+        ASSUME(GetMoveEffect(MOVE_SWORDS_DANCE) == EFFECT_ATTACK_UP_2);
+        ASSUME(GetMoveEffect(MOVE_SUBSTITUTE) == EFFECT_SUBSTITUTE);
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, opponentSetUpOrTrapMove); }
+        if (opponentSetUpOrTrapMove == MOVE_MEAN_LOOK)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 109);
+            }
+        }
+        else if (opponentSetUpOrTrapMove == MOVE_SHARPEN)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 109);
+            }
+        }
+        else if (opponentSetUpOrTrapMove == MOVE_SWORDS_DANCE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 111);
+            }
+        }
+        else if (opponentSetUpOrTrapMove == MOVE_SUBSTITUTE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 111);
+            }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Baton Pass correctly on the first turn")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ARBOK) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_ARBOK) { Moves(MOVE_TACKLE, MOVE_BATON_PASS, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_ARBOK) { Moves(MOVE_BATON_PASS, MOVE_CELEBRATE); }
+    } WHEN {
+        TURN { SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 105); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_TACKLE); }
+        TURN { SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 106); }
+    }
+}

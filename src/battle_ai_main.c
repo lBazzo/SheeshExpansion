@@ -2027,6 +2027,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_BATON_PASS:
             if (CountUsablePartyMons(battlerAtk) == 0)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            /*
             else if (gBattleMons[battlerAtk].volatiles.substitute
                   || gBattleMons[battlerAtk].volatiles.powerTrick
                   || gBattleMons[battlerAtk].volatiles.magnetRise
@@ -2036,6 +2037,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             else
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            */
             break;
         case EFFECT_HIT_ESCAPE:
             break;
@@ -5030,8 +5032,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
     */
-    //TODO: decide if doing this baton pass change is worth it for one fight
+    
     case EFFECT_BATON_PASS:
+    /*
         if ((aiData->shouldSwitch & (1u << battlerAtk)) && (gBattleMons[battlerAtk].volatiles.substitute
           || gBattleMons[battlerAtk].volatiles.powerTrick
           || gBattleMons[battlerAtk].volatiles.magnetRise
@@ -5039,6 +5042,43 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
           || gBattleMons[battlerAtk].volatiles.root
           || AnyStatIsRaised(battlerAtk)))
             ADJUST_SCORE(BEST_EFFECT);
+        break;
+    */
+        if (gBattleMons[battlerDef].volatiles.escapePrevention
+        || gBattleMons[battlerAtk].statStages[STAT_ATK] == (DEFAULT_STAT_STAGE + 1)
+        || gBattleMons[battlerAtk].statStages[STAT_DEF] == (DEFAULT_STAT_STAGE + 1)
+        || gBattleMons[battlerAtk].statStages[STAT_SPATK] == (DEFAULT_STAT_STAGE + 1)
+        || gBattleMons[battlerAtk].statStages[STAT_SPDEF] == (DEFAULT_STAT_STAGE + 1)
+        || gBattleMons[battlerAtk].statStages[STAT_SPEED] == (DEFAULT_STAT_STAGE + 1)
+        || gBattleMons[battlerAtk].statStages[STAT_EVASION] == (DEFAULT_STAT_STAGE + 1))
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT);
+                else
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+            }
+        else if (gBattleMons[battlerAtk].volatiles.substitute
+        || (gBattleMons[battlerAtk].statStages[STAT_ATK] >= DEFAULT_STAT_STAGE + 2)
+        || (gBattleMons[battlerAtk].statStages[STAT_DEF] >= DEFAULT_STAT_STAGE + 2)
+        || (gBattleMons[battlerAtk].statStages[STAT_SPATK] >= DEFAULT_STAT_STAGE + 2)
+        || (gBattleMons[battlerAtk].statStages[STAT_SPDEF] >= DEFAULT_STAT_STAGE + 2)
+        || (gBattleMons[battlerAtk].statStages[STAT_SPEED] >= DEFAULT_STAT_STAGE + 2)
+        || (gBattleMons[battlerAtk].statStages[STAT_EVASION] >= DEFAULT_STAT_STAGE + 2))
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT + 2);
+                else
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+            }
+        else if (!gDisableStructs[battlerAtk].isFirstTurn)
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                else
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+            }
+        else
+            ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
         break;
     case EFFECT_DISABLE:
         if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
