@@ -512,3 +512,37 @@ AI_SINGLE_BATTLE_TEST("AI scores Baton Pass correctly on the first turn")
         TURN { SCORE_EQ_VAL(opponent, MOVE_BATON_PASS, 106); }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Hazard setting moves correctly")
+{
+    u32 hazardSettingMove;
+    u32 opponentMaybeHighestDamageMove;
+
+    PARAMETRIZE { hazardSettingMove = MOVE_SPIKES; opponentMaybeHighestDamageMove = MOVE_SPLASH; }
+    PARAMETRIZE { hazardSettingMove = MOVE_CEASELESS_EDGE; opponentMaybeHighestDamageMove = MOVE_SPLASH; }
+    PARAMETRIZE { hazardSettingMove = MOVE_CEASELESS_EDGE; opponentMaybeHighestDamageMove = MOVE_CRUNCH; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(hazardSettingMove, MOVE_CELEBRATE, opponentMaybeHighestDamageMove); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        if (hazardSettingMove == MOVE_SPIKES && opponentMaybeHighestDamageMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 110); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, hazardSettingMove); }
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 88); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_CELEBRATE); }
+        }
+        else if (hazardSettingMove == MOVE_CEASELESS_EDGE && opponentMaybeHighestDamageMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 112); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, hazardSettingMove); }
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 108); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, hazardSettingMove); }
+        }
+        else if (hazardSettingMove == MOVE_CEASELESS_EDGE && opponentMaybeHighestDamageMove == MOVE_CRUNCH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 110); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, hazardSettingMove); }
+            TURN { SCORE_EQ_VAL(opponent, hazardSettingMove, 100); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, opponentMaybeHighestDamageMove); }
+        }
+    }
+}

@@ -1923,7 +1923,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             }
             break;
         case EFFECT_SPIKES:
-            if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount >= 3)
+            if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount >= 1)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             else if (PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)
               && gSideTimers[GetBattlerSide(battlerDef)].spikesAmount == 2)
@@ -1935,7 +1935,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
         case EFFECT_TOXIC_SPIKES:
-            if (gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount >= 2)
+            if (gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount >= 1)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             else if (PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove) && gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount == 1)
                 ADJUST_SCORE(-10); // only one mon needs to set up the last layer of Toxic Spikes - Bazzo note: this won't apply with above score changed to one layer
@@ -5199,7 +5199,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(ProtectChecks(battlerAtk, battlerDef, move, predictedMove));
             break;
         case PROTECT_MAT_BLOCK:
-            if (gDisableStructs[battlerAtk].isFirstTurn && predictedMove != MOVE_NONE)
+            if (gDisableStructs[battlerAtk].isFirstTurn)
             //  && !IsBattleMoveStatus(predictedMove) && !(GetBattlerMoveTargetType(battlerDef, predictedMove) & MOVE_TARGET_USER))
             //    ADJUST_SCORE(ProtectChecks(battlerAtk, battlerDef, move, predictedMove));
                 ADJUST_SCORE(+13);
@@ -5239,19 +5239,74 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
     */
-        if (HasDamagingMove(battlerDef))
+        if (CanTargetFaintAi(battlerDef, battlerAtk))
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
-    case EFFECT_CEASELESS_EDGE:
     case EFFECT_SPIKES:
     case EFFECT_STEALTH_ROCK:
     case EFFECT_STICKY_WEB:
-    case EFFECT_STONE_AXE:
     case EFFECT_TOXIC_SPIKES:
+    /*
         if (AI_ShouldSetUpHazards(battlerAtk, battlerDef, move, aiData))
         {
             if (gDisableStructs[battlerAtk].isFirstTurn)
                 ADJUST_SCORE(BEST_EFFECT);
+            else
+                ADJUST_SCORE(DECENT_EFFECT);
+        }
+        break;
+    */
+        if (CountUsablePartyMons(battlerDef) == 0
+        || CountUsablePartyMons(battlerAtk) == 0)
+            ADJUST_SCORE(NO_INCREASE);
+        else if (gDisableStructs[battlerAtk].isFirstTurn
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+            ADJUST_SCORE(DECENT_EFFECT + 2);
+        else
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
+    case EFFECT_STONE_AXE:
+        if (CountUsablePartyMons(battlerDef) == 0
+        || CountUsablePartyMons(battlerAtk) == 0)
+            ADJUST_SCORE(NO_INCREASE);
+        else if (IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+    && (!IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK)))
+        {
+            if (gDisableStructs[battlerAtk].isFirstTurn
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(+4);
+            else
+                ADJUST_SCORE(+2);
+        }   
+        else if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+    && (!IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK)))
+        {
+            if (gDisableStructs[battlerAtk].isFirstTurn
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(DECENT_EFFECT + 2);
+            else
+                ADJUST_SCORE(DECENT_EFFECT);
+        }
+        break;
+    case EFFECT_CEASELESS_EDGE:
+        if (CountUsablePartyMons(battlerDef) == 0
+        || CountUsablePartyMons(battlerAtk) == 0)
+            ADJUST_SCORE(NO_INCREASE);
+        else if (IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+    && (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount == 0))
+        {
+            if (gDisableStructs[battlerAtk].isFirstTurn
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(+4);
+            else
+                ADJUST_SCORE(+2);
+        }   
+        else if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+    && (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount == 0))
+        {
+            if (gDisableStructs[battlerAtk].isFirstTurn
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(DECENT_EFFECT + 2);
             else
                 ADJUST_SCORE(DECENT_EFFECT);
         }
@@ -5271,8 +5326,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_PERISH_SONG:
-        if (IsBattlerTrapped(battlerAtk, battlerDef))
-            ADJUST_SCORE(GOOD_EFFECT);
+        //if (IsBattlerTrapped(battlerAtk, battlerDef))
+        //    ADJUST_SCORE(GOOD_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_SANDSTORM:
         if (ShouldSetWeather(battlerAtk, B_WEATHER_SANDSTORM))
