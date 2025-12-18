@@ -546,3 +546,42 @@ AI_SINGLE_BATTLE_TEST("AI scores Hazard setting moves correctly")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Belly Drum correctly")
+{
+    u32 opponentItem;
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentItem = ITEM_SITRUS_BERRY; opponentHP = 70; }
+    PARAMETRIZE { opponentItem = ITEM_SITRUS_BERRY; opponentHP = 60; }
+    PARAMETRIZE { opponentItem = ITEM_IAPAPA_BERRY; opponentHP = 60; }
+    PARAMETRIZE { opponentItem = ITEM_NONE; opponentHP = 80; }
+    PARAMETRIZE { opponentItem = ITEM_NONE; opponentHP = 95; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_DRAGON_RAGE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_LINOONE) { MaxHP(100); HP(opponentHP);  Moves(MOVE_BELLY_DRUM, MOVE_CELEBRATE); Ability(ABILITY_GLUTTONY); Item(opponentItem); }
+    } WHEN {
+        if (opponentItem == ITEM_SITRUS_BERRY && opponentHP == 70)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_BELLY_DRUM, 108); }
+        }
+        else if (opponentItem == ITEM_SITRUS_BERRY && opponentHP == 60)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_BELLY_DRUM, 100); }
+        }
+        else if (opponentItem == ITEM_IAPAPA_BERRY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_BELLY_DRUM, 108); }
+        }
+        else if (opponentItem == ITEM_NONE && opponentHP == 80)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_BELLY_DRUM, 100); }
+        }
+        else if (opponentItem == ITEM_NONE && opponentHP == 95)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_BELLY_DRUM, 108); }
+        }
+    }
+}

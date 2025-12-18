@@ -5444,11 +5444,42 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(BEST_EFFECT);
         break;
     case EFFECT_BELLY_DRUM:
+    /*
         if (!CanTargetFaintAi(battlerDef, battlerAtk)
         && gBattleMons[battlerAtk].statStages[STAT_ATK] < MAX_STAT_STAGE - 2
         && HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_PHYSICAL)
         && aiData->abilities[battlerAtk] != ABILITY_CONTRARY)
             ADJUST_SCORE(BEST_EFFECT);
+        break;
+    */
+        if (!CanTargetFaintAi(battlerDef, battlerAtk))
+        {
+            if (aiData->items[battlerAtk] == ITEM_SITRUS_BERRY)
+            {
+                if (gBattleMons[battlerAtk].hp + (gBattleMons[battlerAtk].maxHP / 4) > (gBattleMons[battlerAtk].maxHP / 2) + GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING))
+                    ADJUST_SCORE(DECENT_EFFECT);
+                else 
+                    ADJUST_SCORE(NO_INCREASE);
+            }
+            else if (aiData->items[battlerAtk] == ITEM_IAPAPA_BERRY
+                  || aiData->items[battlerAtk] == ITEM_FIGY_BERRY
+                  || aiData->items[battlerAtk] == ITEM_WIKI_BERRY
+                  || aiData->items[battlerAtk] == ITEM_MAGO_BERRY
+                  || aiData->items[battlerAtk] == ITEM_AGUAV_BERRY)
+            {
+                    if (gBattleMons[battlerAtk].hp > GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING))
+                            ADJUST_SCORE(DECENT_EFFECT);
+                        else 
+                            ADJUST_SCORE(NO_INCREASE);
+            }
+            else if (aiData->items[battlerAtk] == ITEM_NONE)
+            {
+                    if (gBattleMons[battlerAtk].hp > (gBattleMons[battlerAtk].maxHP / 2) + GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING))
+                        ADJUST_SCORE(DECENT_EFFECT);
+                    else 
+                        ADJUST_SCORE(NO_INCREASE);
+            }
+        }
         break;
     case EFFECT_PSYCH_UP:
         score += AI_ShouldCopyStatChanges(battlerAtk, battlerDef);
