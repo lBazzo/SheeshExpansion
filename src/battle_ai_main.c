@@ -5651,12 +5651,41 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
         break;
     case EFFECT_TAUNT:
-        if (IsBattleMoveStatus(predictedMove))
-            ADJUST_SCORE(GOOD_EFFECT);
-        else if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_STATUS))
-            ADJUST_SCORE(DECENT_EFFECT);
+        //if (IsBattleMoveStatus(predictedMove))
+        //    ADJUST_SCORE(GOOD_EFFECT);
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_STATUS))
+        {
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                ADJUST_SCORE(+12);
+            else 
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        }
+        else
+            ADJUST_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_TRICK:
+        if (aiData->items[battlerDef] == ITEM_NONE
+        || aiData->items[battlerAtk] == ITEM_NONE)
+            ADJUST_SCORE(NO_DAMAGE_OR_FAILS);
+        else
+            switch (aiData->holdEffects[battlerAtk])
+            {
+                case HOLD_EFFECT_TOXIC_ORB:
+                    if (AI_CanPoison(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], move, gAiLogicData->partnerMove))
+                    {
+                        IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+                    }
+                break;
+                case HOLD_EFFECT_FLAME_ORB:
+                    if (AI_CanBurn(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, gAiLogicData->partnerMove))
+                    {
+                        IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+                    }
+                break;
+                default:
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            }
+            break;
     case EFFECT_BESTOW:
         switch (aiData->holdEffects[battlerAtk])
         {

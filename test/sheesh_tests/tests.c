@@ -643,3 +643,36 @@ AI_DOUBLE_BATTLE_TEST("AI scores Follow Me correctly")
     }
 }
 
+AI_SINGLE_BATTLE_TEST("AI scores Trick correctly with different items")
+{
+    u32 opponentItem; 
+    u32 playerItem;
+
+    PARAMETRIZE { opponentItem = ITEM_FLAME_ORB; playerItem = ITEM_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_FLAME_ORB; playerItem = ITEM_ORAN_BERRY; }
+    PARAMETRIZE { opponentItem = ITEM_TOXIC_ORB; playerItem = ITEM_ORAN_BERRY; }
+    PARAMETRIZE { opponentItem = ITEM_FLOAT_STONE; playerItem = ITEM_ORAN_BERRY; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, MOVE_FLARE_BLITZ); Item(playerItem); }
+        OPPONENT(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, MOVE_TRICK, MOVE_HEX); Item(opponentItem); }
+    } WHEN {
+        if (opponentItem == ITEM_FLAME_ORB && playerItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TRICK, 80); }
+        }
+        else if (opponentItem == ITEM_FLAME_ORB && playerItem == ITEM_ORAN_BERRY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TRICK, 108); }
+        }
+        else if (opponentItem == ITEM_TOXIC_ORB && playerItem == ITEM_ORAN_BERRY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TRICK, 107); }
+        }
+        else if (opponentItem == ITEM_FLOAT_STONE && playerItem == ITEM_ORAN_BERRY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TRICK, 106); }
+        }
+    }
+}
