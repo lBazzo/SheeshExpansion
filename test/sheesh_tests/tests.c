@@ -676,3 +676,52 @@ AI_SINGLE_BATTLE_TEST("AI scores Trick correctly with different items")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Skill Swap in singles correctly")
+{
+    u32 opponentAbility;
+
+    PARAMETRIZE { opponentAbility = ABILITY_TRUANT; }
+    PARAMETRIZE { opponentAbility = ABILITY_ADAPTABILITY; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, MOVE_SKILL_SWAP); Ability(opponentAbility); }
+    } WHEN {
+        if (opponentAbility == ABILITY_TRUANT)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SKILL_SWAP, 106); }
+        }
+        if (opponentAbility == ABILITY_ADAPTABILITY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SKILL_SWAP, 100); }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Skill Swap in doubles correctly")
+{
+    u32 opponentAbility;
+
+    PARAMETRIZE { opponentAbility = ABILITY_SAP_SIPPER; }
+    PARAMETRIZE { opponentAbility = ABILITY_ADAPTABILITY; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE );
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE); }
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_FARIGIRAF) { Moves(MOVE_CELEBRATE, MOVE_SKILL_SWAP); Ability(opponentAbility); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Ability(ABILITY_ADAPTABILITY); }
+        ASSUME(GetMoveEffect(MOVE_SKILL_SWAP) == EFFECT_SKILL_SWAP);
+    } WHEN {
+        if (opponentAbility == ABILITY_SAP_SIPPER)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_SKILL_SWAP, 109, target:opponentRight); }
+        }
+        else if (opponentAbility == ABILITY_ADAPTABILITY)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_SKILL_SWAP, 90, target:opponentRight); }
+        }
+    }
+}

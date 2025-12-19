@@ -3310,6 +3310,13 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             ADJUST_SCORE(IncreaseStatUpScore(battlerAtkPartner, BATTLE_OPPOSITE(battlerAtkPartner), STAT_CHANGE_DEF));
         }
         break;
+    case EFFECT_SKILL_SWAP:
+        if (IsTargetingPartner(battlerAtk, battlerDef))
+            {
+            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER)
+                ADJUST_SCORE(GOOD_EFFECT);
+            }
+        break;
     default:
         break;
     } // our effect relative to partner
@@ -3900,7 +3907,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_ENTRAINMENT:
             case EFFECT_GASTRO_ACID:
             case EFFECT_ROLE_PLAY:
-            case EFFECT_SKILL_SWAP:
+            //case EFFECT_SKILL_SWAP:
             case EFFECT_OVERWRITE_ABILITY:
                 AbilityChangeScore(battlerAtk, battlerAtkPartner, move, &score, aiData);
                 return score;
@@ -4403,7 +4410,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     u32 i;
     u32 atkSide = GetBattlerSide(battlerAtk);
     u32 battlerPartnerAtk = BATTLE_PARTNER(battlerAtk);
-    u32 battlerPartnerDef = BATTLE_PARTNER(battlerDef);
+    //u32 battlerPartnerDef = BATTLE_PARTNER(battlerDef);
 
     // The AI should understand that while Dynamaxed, status moves function like Protect.
     if (GetActiveGimmick(battlerAtk) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
@@ -5686,6 +5693,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
             }
             break;
+            // Bazzo note: used to include trick here in bestow ai
     case EFFECT_BESTOW:
         switch (aiData->holdEffects[battlerAtk])
         {
@@ -5781,6 +5789,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_CORROSIVE_GAS:
         if (CanKnockOffItem(battlerDef, aiData->items[battlerDef]))
         {
+            /*
             switch (aiData->holdEffects[battlerDef])
             {
             case HOLD_EFFECT_IRON_BALL:
@@ -5791,9 +5800,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             case HOLD_EFFECT_STICKY_BARB:
                 break;
             default:
-                ADJUST_SCORE(DECENT_EFFECT);
+            */
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
                 break;
-            }
+            //}
         }
         break;
     case EFFECT_INGRAIN:
@@ -5802,8 +5812,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_MAGIC_COAT:
-        if (IsBattleMoveStatus(predictedMove) && GetBattlerMoveTargetType(battlerDef, predictedMove) & (MOVE_TARGET_SELECTED | MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_BOTH))
-            ADJUST_SCORE(GOOD_EFFECT);
+        //if (IsBattleMoveStatus(predictedMove) && GetBattlerMoveTargetType(battlerDef, predictedMove) & (MOVE_TARGET_SELECTED | MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_BOTH))
+        if (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_STATUS))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_RECYCLE:
         if (GetBattlerPartyState(battlerAtk)->usedHeldItem != ITEM_NONE)
@@ -5823,6 +5834,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(WEAK_EFFECT);    // Recycle healing berry if we can't otherwise faint the target and the target wont kill us after we activate the berry
         }
         break;
+        /*
     case EFFECT_RAGING_BULL:
     case EFFECT_BRICK_BREAK:
         if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_REFLECT)
@@ -5832,14 +5844,24 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_AURORA_VEIL)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
+        */
     case EFFECT_DOODLE:
     case EFFECT_ENTRAINMENT:
     case EFFECT_GASTRO_ACID:
     case EFFECT_ROLE_PLAY:
-    case EFFECT_SKILL_SWAP:
     case EFFECT_OVERWRITE_ABILITY:
         AbilityChangeScore(battlerAtk, battlerDef, move, &score, aiData);
         return score;
+    case EFFECT_SKILL_SWAP:
+        if (IsTargetingPartner(battlerAtk, battlerDef))
+            {
+            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER)
+                ADJUST_SCORE(GOOD_EFFECT);
+            }
+        else if (aiData->abilities[battlerAtk] == ABILITY_TRUANT
+              || aiData->abilities[battlerAtk] == ABILITY_SLOW_START)
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        break;
     case EFFECT_IMPRISON:
         if (predictedMove != MOVE_NONE && HasMove(battlerAtk, predictedMove))
             ADJUST_SCORE(DECENT_EFFECT);
