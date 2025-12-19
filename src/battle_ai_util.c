@@ -5545,7 +5545,7 @@ void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
         if (gBattleMons[battlerDef].status1 & STATUS1_PARALYSIS
           //|| gBattleMons[battlerDef].volatiles.infatuation
           //|| (gAiLogicData->abilities[battlerAtk] == ABILITY_SERENE_GRACE && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
-          && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+          && (RandomPercentage(RNG_AI_CUSTOM_AI_NINETY_PERCENT, CUSTOM_AI_NINETY_PERCENT)))
             ADJUST_SCORE_PTR(+2);
         else
             ADJUST_SCORE_PTR(NO_INCREASE);

@@ -60,9 +60,9 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different
     u32 opponentAttack;
     u32 playerAttack;
 
-    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FIRE_PUNCH; playerAttack = MOVE_TACKLE; }
-    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_TACKLE; }
-    PARAMETRIZE { opponentSetUpMove = MOVE_HOWL; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_ICE_HAMMER; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_SHARPEN; opponentAttack = MOVE_FIRE_PUNCH; playerAttack = MOVE_TACKLE; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_SHARPEN; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_TACKLE; }
+    PARAMETRIZE { opponentSetUpMove = MOVE_SHARPEN; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_ICE_HAMMER; }
     PARAMETRIZE { opponentSetUpMove = MOVE_SWORDS_DANCE; opponentAttack = MOVE_FLAME_CHARGE; playerAttack = MOVE_ICE_HAMMER; }
 
     GIVEN {
@@ -70,19 +70,19 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different
         PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(1); Moves(playerAttack, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_URSARING) { Attack(313); HP(321); Defense(186); Speed(10); Moves(MOVE_CELEBRATE, opponentSetUpMove, opponentAttack); }
     } WHEN {
-        if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FIRE_PUNCH && playerAttack == MOVE_TACKLE)
+        if (opponentSetUpMove == MOVE_SHARPEN && opponentAttack == MOVE_FIRE_PUNCH && playerAttack == MOVE_TACKLE)
         {
             TURN {
                 SCORE_EQ_VAL(opponent, opponentSetUpMove, 108);
             }
         }
-        else if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_TACKLE)
+        else if (opponentSetUpMove == MOVE_SHARPEN && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_TACKLE)
         {
             TURN {
                 SCORE_EQ_VAL(opponent, opponentSetUpMove, 107);
             }
         }
-        else if (opponentSetUpMove == MOVE_HOWL && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_ICE_HAMMER)
+        else if (opponentSetUpMove == MOVE_SHARPEN && opponentAttack == MOVE_FLAME_CHARGE && playerAttack == MOVE_ICE_HAMMER)
         {
             TURN {
                 SCORE_EQ_VAL(opponent, opponentSetUpMove, 106);
@@ -585,3 +585,61 @@ AI_SINGLE_BATTLE_TEST("AI scores Belly Drum correctly")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Swagger correctly")
+{
+    u32 opponentItem;
+    u32 playerStatus;
+
+    PARAMETRIZE { opponentItem = ITEM_NONE; playerStatus = STATUS1_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_MIRROR_HERB; playerStatus = STATUS1_PARALYSIS; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Status1(playerStatus); }
+        OPPONENT(SPECIES_LINOONE) { Moves(MOVE_CELEBRATE, MOVE_SWAGGER); Item(opponentItem); }
+    } WHEN {
+        if (opponentItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 106); }
+        }
+        if (opponentItem == ITEM_MIRROR_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 109); }
+        }
+    }
+}
+
+// I have no idea where this -10 comes from when it doesn't apply, but 
+AI_DOUBLE_BATTLE_TEST("AI scores Follow Me correctly")
+{
+    u32 playerMaybeDragonRage;
+    u32 playerPartnerMaybeDragonRage;
+
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_SPLASH; playerPartnerMaybeDragonRage = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_DRAGON_RAGE; playerPartnerMaybeDragonRage = MOVE_SPLASH; }
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_SPLASH; playerPartnerMaybeDragonRage = MOVE_SPLASH; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, playerMaybeDragonRage); }
+        PLAYER(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, playerPartnerMaybeDragonRage); }
+        OPPONENT(SPECIES_ABSOL) { Moves(MOVE_FOLLOW_ME, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_ABSOL) { Moves (MOVE_CELEBRATE, MOVE_TACKLE); HP(40); }
+        ASSUME(GetMoveEffect(MOVE_FOLLOW_ME) == EFFECT_FOLLOW_ME);
+    } WHEN {
+        if (playerMaybeDragonRage == MOVE_SPLASH && playerPartnerMaybeDragonRage == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 112, target:playerRight); }
+        }
+        if (playerMaybeDragonRage == MOVE_DRAGON_RAGE && playerPartnerMaybeDragonRage == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 112, target:playerLeft); }
+        }
+        if (playerMaybeDragonRage == MOVE_SPLASH && playerPartnerMaybeDragonRage == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 90, target:opponentRight); }
+        }
+    }
+}
+

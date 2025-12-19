@@ -432,6 +432,7 @@ AI_SINGLE_BATTLE_TEST("AI will choose either Rock Tomb or Bulldoze if Stat drop 
 
 AI_SINGLE_BATTLE_TEST("First Impression is preferred on the first turn of the species if it's the best dmg move")
 {
+    KNOWN_FAILING; // Bazzo note: removed first turn only AI
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FIRST_IMPRESSION) == EFFECT_FIRST_TURN_ONLY);
         ASSUME(GetMovePower(MOVE_FIRST_IMPRESSION) == 90);
