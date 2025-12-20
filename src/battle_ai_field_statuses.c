@@ -474,6 +474,8 @@ static enum FieldEffectOutcome BenefitsFromTrickRoom(u32 battler)
     }
 
     // First checking if we have enough priority for one pokemon to disregard Trick Room entirely.
+    // Bazzo note: this seems silly, taking it out
+    /*
     if (!(gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN))
     {
         u16* aiMoves = GetMovesArray(battler);
@@ -486,7 +488,7 @@ static enum FieldEffectOutcome BenefitsFromTrickRoom(u32 battler)
             }
         }
     }
-
+    */
     // If we are faster or tie, we don't want trick room.
     if ((gAiLogicData->speedStats[battler] >= gAiLogicData->speedStats[LEFT_FOE(battler)]) || (gAiLogicData->speedStats[battler] >= gAiLogicData->speedStats[RIGHT_FOE(battler)]))
         return FIELD_EFFECT_NEGATIVE;
