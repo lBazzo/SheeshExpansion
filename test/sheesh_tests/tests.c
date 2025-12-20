@@ -851,3 +851,46 @@ AI_SINGLE_BATTLE_TEST("AI scores Guard Split correctly")
         TURN { SCORE_EQ_VAL(opponent, MOVE_GUARD_SPLIT, 80); }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
+{
+    u32 opponentItem;
+    u32 maybeFakeOut;
+    u32 playerStatus;
+
+    PARAMETRIZE { opponentItem = ITEM_LIGHT_BALL; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_FLAME_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_TOXIC_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_BURN; }
+    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_FAKE_OUT; playerStatus = STATUS1_NONE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Status1(playerStatus); Speed(10); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FLING, maybeFakeOut); Item(opponentItem); Speed(30); }
+        ASSUME(gItemsInfo[ITEM_KINGS_ROCK].holdEffect == HOLD_EFFECT_FLINCH);
+    } WHEN {
+        if (opponentItem == ITEM_LIGHT_BALL)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 106); }
+        }
+        else if (opponentItem == ITEM_FLAME_ORB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 106); }
+        }
+        else if (opponentItem == ITEM_TOXIC_ORB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 100); }
+        }
+        else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 109); }
+        }
+        else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 108); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, maybeFakeOut); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 109); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_FLING); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); }
+        }
+    }
+} 

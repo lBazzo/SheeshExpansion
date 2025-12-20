@@ -5764,6 +5764,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(DECENT_EFFECT); // Force 'em out next turn
             break;
         default:
+        /*
             if (GetMoveEffect(move) != EFFECT_BESTOW && aiData->items[battlerAtk] == ITEM_NONE && aiData->items[battlerDef] != ITEM_NONE)
             {
                 switch (aiData->holdEffects[battlerDef])
@@ -5792,8 +5793,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 default:
                     ADJUST_SCORE(WEAK_EFFECT);    //other hold effects generally universally good
                     break;
+                    
+                    break;
                 }
             }
+            */
+        break;
         }
         break;
     case EFFECT_CORROSIVE_GAS:
@@ -6195,6 +6200,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_GRAVITY:
+        /*
         if (!(gFieldStatuses & STATUS_FIELD_GRAVITY || ShouldClearFieldStatus(battlerAtk, STATUS_FIELD_GRAVITY)))
         {
             // improve accuracy of Hypnosis
@@ -6207,6 +6213,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             if (ShouldSetFieldStatus(battlerAtk, STATUS_FIELD_GRAVITY))
                 ADJUST_SCORE(DECENT_EFFECT);
         }
+        break;
+        */
+        if (!(gFieldStatuses & STATUS_FIELD_GRAVITY))
+            ADJUST_SCORE(+13);
         break;
     case EFFECT_ION_DELUGE:
         if ((aiData->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
@@ -6237,6 +6247,32 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(GOOD_EFFECT);
             break;
         }*/
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_TOXIC_ORB)
+        {
+                IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+        }
+        else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_FLAME_ORB)
+        {
+                IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+        }
+        else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_LIGHT_BALL)
+        {
+                IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
+        }
+        else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_FLINCH)
+        {
+            if (!(gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST) 
+            && (!(gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS))
+            //&& (DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
+            && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
+                {
+                    if (gDisableStructs[battlerAtk].isFirstTurn
+                    && (HasMoveWithEffect(battlerAtk, EFFECT_FIRST_TURN_ONLY)))
+                        ADJUST_SCORE(DECENT_EFFECT);
+                    else 
+                        ADJUST_SCORE(GOOD_EFFECT);
+                }
+        }
         break;
     case EFFECT_EMBARGO:
         if (aiData->holdEffects[battlerDef] != HOLD_EFFECT_NONE)
@@ -6825,7 +6861,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
                     && effect != EFFECT_EXPLOSION
                     && effect != EFFECT_MISTY_EXPLOSION
                     && effect != EFFECT_HIT_ESCAPE
-                    && effect != EFFECT_FUTURE_SIGHT)
+                    && effect != EFFECT_FUTURE_SIGHT
+                    && effect != EFFECT_FLING)
             {
                 ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)) // newly added rnb +2
