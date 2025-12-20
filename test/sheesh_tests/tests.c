@@ -725,3 +725,105 @@ AI_DOUBLE_BATTLE_TEST("AI scores Skill Swap in doubles correctly")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Grudge correctly")
+{
+    u32 opponentHP;
+    u32 opponentAbility;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { opponentHP = 40; opponentAbility = ABILITY_PRANKSTER; opponentSpeed = 90; }
+    PARAMETRIZE { opponentHP = 40; opponentAbility = ABILITY_ADAPTABILITY; opponentSpeed = 110; }
+    PARAMETRIZE { opponentHP = 40; opponentAbility = ABILITY_ADAPTABILITY; opponentSpeed = 90; }
+    PARAMETRIZE { opponentHP = 50; opponentAbility = ABILITY_PRANKSTER; opponentSpeed = 110; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DRAGON_RAGE); Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_GRUDGE); Ability(opponentAbility); Speed(opponentSpeed); HP(opponentHP); }
+    } WHEN {
+        if (opponentAbility == ABILITY_PRANKSTER && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GRUDGE, 106); }
+        }
+        else if (opponentAbility == ABILITY_ADAPTABILITY && opponentSpeed == 110)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GRUDGE, 106); }
+        }
+        else if (opponentAbility == ABILITY_ADAPTABILITY && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GRUDGE, 100); }
+        }
+        else if (opponentHP == 50)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GRUDGE, 100); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Cosmic Power correctly")
+{
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentHP = 40; }
+    PARAMETRIZE { opponentHP = 90; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DRAGON_RAGE); Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_COSMIC_POWER); Speed(110); HP(opponentHP); }
+        ASSUME(GetMoveEffect(MOVE_COSMIC_POWER) == EFFECT_COSMIC_POWER);
+    } WHEN {
+        if (opponentHP == 40)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_COSMIC_POWER, 80); }
+        }
+        if (opponentHP == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_COSMIC_POWER, 107); EXPECT_MOVE(opponent, MOVE_COSMIC_POWER); MOVE(player, MOVE_DRAGON_RAGE); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_COSMIC_POWER, 106); EXPECT_MOVE(opponent, MOVE_COSMIC_POWER); MOVE(player, MOVE_DRAGON_RAGE); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Shell Smash correctly")
+{
+    u32 opponentSpeed;
+    u32 opponentItem;
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentSpeed = 110; opponentItem = ITEM_NONE; opponentHP = 321; }
+    PARAMETRIZE { opponentSpeed = 110; opponentItem = ITEM_WHITE_HERB; opponentHP = 321; }
+    PARAMETRIZE { opponentSpeed = 90; opponentItem = ITEM_NONE; opponentHP = 321; }
+    PARAMETRIZE { opponentSpeed = 90; opponentItem = ITEM_WHITE_HERB; opponentHP = 321; }
+    PARAMETRIZE { opponentSpeed = 50; opponentItem = ITEM_NONE; opponentHP = 999; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_CAMERUPT) { Moves(MOVE_CELEBRATE, MOVE_EMBER); Speed(100); SpAttack(220); }
+        OPPONENT(SPECIES_ABOMASNOW) { Moves(MOVE_CELEBRATE, MOVE_SHELL_SMASH); Speed(opponentSpeed); Item(opponentItem); HP(opponentHP); SpDefense(206); }
+        ASSUME(GetMoveEffect(MOVE_SHELL_SMASH) == EFFECT_SHELL_SMASH);
+    } WHEN {
+        if (opponentSpeed == 110 && opponentItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 80); }
+        }
+        else if (opponentSpeed == 110 && opponentItem == ITEM_WHITE_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 108); }
+        }
+        else if (opponentSpeed == 90 && opponentItem == ITEM_WHITE_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 108); }
+        }
+        else if (opponentSpeed == 90 && opponentItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 108); }
+        }
+        else if (opponentHP == 999)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 108); MOVE(player, MOVE_EMBER); EXPECT_MOVE(opponent, MOVE_SHELL_SMASH); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SHELL_SMASH, 80); }
+        }
+    }
+}
