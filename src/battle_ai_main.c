@@ -3147,6 +3147,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     u32 moveTarget = GetBattlerMoveTargetType(battlerAtk, move);
     // ally data
     u32 battlerAtkPartner = BATTLE_PARTNER(battlerAtk);
+    //u32 battlerDefPartner = BATTLE_PARTNER(battlerDef);
     struct AiLogicData *aiData = gAiLogicData;
     u32 atkPartnerAbility = aiData->abilities[BATTLE_PARTNER(battlerAtk)];
     u32 atkPartnerHoldEffect = aiData->holdEffects[BATTLE_PARTNER(battlerAtk)];
@@ -4092,6 +4093,24 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(WORST_EFFECT);
                 break;
             }
+            case EFFECT_TELEKINESIS:
+                if (AI_IsBattlerGrounded(BATTLE_PARTNER(battlerAtk)) 
+                && (AI_GetMoveEffectiveness(MOVE_EARTHQUAKE, battlerAtk, BATTLE_PARTNER(battlerAtk)) >= UQ_4_12(2.0))
+                && (HasDamagingMoveOfType(BATTLE_OPPOSITE(battlerAtk), TYPE_GROUND)
+                     || HasDamagingMoveOfType(BATTLE_OPPOSITE(battlerAtkPartner), TYPE_GROUND)))
+                {
+                    //if (HasDamagingMoveOfType(BATTLE_OPPOSITE(battlerAtk), TYPE_GROUND)
+                    // || HasDamagingMoveOfType(BATTLE_OPPOSITE(battlerAtkPartner), TYPE_GROUND))
+                    {
+                        if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                            ADJUST_SCORE(GOOD_EFFECT + 1);
+                        else
+                            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                    }
+                }
+                else
+                    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+                break;
             default:
                 break;
             } // attacker move effects
@@ -6279,13 +6298,13 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_POWDER:
-        if (predictedMove != MOVE_NONE && !IsBattleMoveStatus(predictedMove) && predictedType == TYPE_FIRE)
-            ADJUST_SCORE(DECENT_EFFECT);
+        if (HasMoveWithType(battlerDef, TYPE_FIRE))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
-    case EFFECT_TELEKINESIS:
-        if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 90, FALSE) || !AI_IsBattlerGrounded(battlerDef))
-            ADJUST_SCORE(DECENT_EFFECT);
-        break;
+    //case EFFECT_TELEKINESIS:
+    //    if (HasMoveWithLowAccuracy(battlerAtk, battlerDef, 90, FALSE) || !AI_IsBattlerGrounded(battlerDef))
+    //        ADJUST_SCORE(DECENT_EFFECT);
+    //    break;
     case EFFECT_HEAL_BLOCK:
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY) && predictedMove != MOVE_NONE && IsHealingMove(predictedMove))
             ADJUST_SCORE(DECENT_EFFECT); // Try to cancel healing move

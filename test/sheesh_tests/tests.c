@@ -894,3 +894,42 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
         }
     }
 } 
+
+AI_DOUBLE_BATTLE_TEST("AI scores Telekinesis correctly on its partner")
+{
+    u32 playerMaybeGroundMove;
+    u32 playerPartnerMaybeGroundMove;
+    u32 opponentPartnerSpecies;
+
+    PARAMETRIZE { playerMaybeGroundMove = MOVE_SPLASH; playerPartnerMaybeGroundMove = MOVE_SPLASH; opponentPartnerSpecies = SPECIES_ARBOK; }
+    PARAMETRIZE { playerMaybeGroundMove = MOVE_EARTHQUAKE; playerPartnerMaybeGroundMove = MOVE_SPLASH; opponentPartnerSpecies = SPECIES_ARBOK; }
+    PARAMETRIZE { playerMaybeGroundMove = MOVE_SPLASH; playerPartnerMaybeGroundMove = MOVE_EARTHQUAKE; opponentPartnerSpecies = SPECIES_ARBOK; }
+    PARAMETRIZE { playerMaybeGroundMove = MOVE_SPLASH; playerPartnerMaybeGroundMove = MOVE_EARTHQUAKE; opponentPartnerSpecies = SPECIES_WOBBUFFET; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerMaybeGroundMove); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerPartnerMaybeGroundMove); }
+        OPPONENT(SPECIES_RIBOMBEE) { Moves(MOVE_CELEBRATE, MOVE_TELEKINESIS); }
+        OPPONENT(opponentPartnerSpecies) { Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        if (playerMaybeGroundMove == MOVE_SPLASH && playerPartnerMaybeGroundMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 80, target:opponentRight); }
+        }
+        else if (playerMaybeGroundMove == MOVE_EARTHQUAKE && opponentPartnerSpecies == SPECIES_ARBOK)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 110, target:opponentRight); MOVE(playerLeft, MOVE_EARTHQUAKE); MOVE(playerRight, MOVE_CELEBRATE); EXPECT_MOVE (opponentLeft, MOVE_TELEKINESIS); EXPECT_MOVE (opponentRight, MOVE_CELEBRATE); }
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 80, target:opponentRight); }
+        }
+        else if (playerPartnerMaybeGroundMove == MOVE_EARTHQUAKE && opponentPartnerSpecies == SPECIES_ARBOK)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 110, target:opponentRight); MOVE(playerLeft, MOVE_CELEBRATE); MOVE(playerRight, MOVE_EARTHQUAKE); EXPECT_MOVE (opponentLeft, MOVE_TELEKINESIS); EXPECT_MOVE (opponentRight, MOVE_CELEBRATE); }
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 80, target:opponentRight); }
+        }
+        else if (opponentPartnerSpecies == SPECIES_WOBBUFFET)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TELEKINESIS, 80, target:opponentRight); }
+        }
+    }
+}
