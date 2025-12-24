@@ -2549,7 +2549,8 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
         if (gBattleMons[battlerDef].volatiles.cursed)
             tempScore += WEAK_EFFECT;
     */
-        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+        && (gBattleMons[battlerAtk].statStages[STAT_ACC] < MAX_STAT_STAGE))
             tempScore += BEST_DAMAGE_MOVE;
         break;
     case STAT_CHANGE_EVASION:

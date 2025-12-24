@@ -933,3 +933,259 @@ AI_DOUBLE_BATTLE_TEST("AI scores Telekinesis correctly on its partner")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Magic Powder correctly")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_RIBOMBEE) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_MAGIC_POWDER); }
+    } WHEN {
+        TURN { SCORE_EQ_VAL(opponent, MOVE_MAGIC_POWDER, 106); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_MAGIC_POWDER); }
+        TURN { SCORE_EQ_VAL(opponent, MOVE_MAGIC_POWDER, 80); }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Topsy Turvy correctly")
+{
+    u32 opponentPartnerMaybeStatDropMove;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { opponentPartnerMaybeStatDropMove = MOVE_SPLASH; opponentSpeed = 90; }
+    PARAMETRIZE { opponentPartnerMaybeStatDropMove = MOVE_CLOSE_COMBAT; opponentSpeed = 110; }
+    PARAMETRIZE { opponentPartnerMaybeStatDropMove = MOVE_CLOSE_COMBAT; opponentSpeed = 90; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(100); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, opponentPartnerMaybeStatDropMove); Speed(100); } 
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TOPSY_TURVY); Speed(opponentSpeed); }
+        ASSUME(MoveHasAdditionalEffectSelf(MOVE_CLOSE_COMBAT, MOVE_EFFECT_DEF_SPDEF_DOWN));
+        ASSUME(GetMoveEffect(MOVE_TOPSY_TURVY) == EFFECT_TOPSY_TURVY);
+    } WHEN {
+        if (opponentPartnerMaybeStatDropMove == MOVE_SPLASH && opponentSpeed == 90)
+        {
+            TURN { DebugPrintf("%d", i); SCORE_EQ_VAL(opponentRight, MOVE_TOPSY_TURVY, 90, target:opponentLeft); }
+        }
+        else if (opponentPartnerMaybeStatDropMove == MOVE_CLOSE_COMBAT && opponentSpeed == 110)
+        {
+            TURN { 
+                DebugPrintf("%d", i); 
+                SCORE_EQ_VAL(opponentRight, MOVE_TOPSY_TURVY, 80, target:opponentLeft);
+                MOVE(playerLeft, MOVE_CELEBRATE);
+                MOVE(playerRight, MOVE_CELEBRATE); 
+                EXPECT_MOVE(opponentRight, MOVE_CELEBRATE);
+                EXPECT_MOVE(opponentLeft, opponentPartnerMaybeStatDropMove, target:playerLeft);
+            }
+            TURN { 
+                DebugPrintf("%d", i); 
+                SCORE_EQ_VAL(opponentRight, MOVE_TOPSY_TURVY, 108, target:opponentLeft); 
+            }
+        }
+        else if (opponentPartnerMaybeStatDropMove == MOVE_CLOSE_COMBAT && opponentSpeed == 90)
+        {
+            TURN { DebugPrintf("%d", i); 
+                MOVE(playerLeft, MOVE_CELEBRATE);
+                MOVE(playerRight, MOVE_CELEBRATE);
+                EXPECT_MOVE(opponentLeft, opponentPartnerMaybeStatDropMove, target:playerLeft);
+                EXPECT_MOVE(opponentRight, MOVE_TOPSY_TURVY);
+                SCORE_EQ_VAL(opponentRight, MOVE_TOPSY_TURVY, 108, target:opponentLeft);
+             }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Quash correctly")
+{
+    u32 opponentSpeed;
+    u32 player1MaybeDragonRage;
+    u32 player2MaybeDragonRage;
+
+    PARAMETRIZE { opponentSpeed = 110; player1MaybeDragonRage = MOVE_DRAGON_RAGE; player2MaybeDragonRage = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { opponentSpeed = 110; player1MaybeDragonRage = MOVE_SPLASH; player2MaybeDragonRage = MOVE_DRAGON_RAGE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, player1MaybeDragonRage); Speed(100); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, player2MaybeDragonRage); Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TACKLE, MOVE_QUASH); Speed(100); } 
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(40); Speed(opponentSpeed); }
+    } WHEN {
+        if (opponentSpeed == 110)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_QUASH, 80, target:playerLeft); }
+        }
+        else if (opponentSpeed == 90 && player1MaybeDragonRage == MOVE_SPLASH && player2MaybeDragonRage == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_QUASH, 80, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_QUASH, 107, target:playerRight); }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Tailwind correctly in doubles")
+{
+    u32 opponentSpeed;
+    u32 opponentPartnerSpeed;
+    u32 player1Speed;
+    u32 player2Speed;
+
+    PARAMETRIZE { opponentSpeed = 5; opponentPartnerSpeed = 5; player1Speed = 8; player2Speed = 3; }
+    PARAMETRIZE { opponentSpeed = 6; opponentPartnerSpeed = 6; player1Speed = 4; player2Speed = 9; }
+    PARAMETRIZE { opponentSpeed = 7; opponentPartnerSpeed = 7; player1Speed = 8; player2Speed = 3; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(player1Speed); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(player2Speed); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FAKE_OUT, MOVE_TAILWIND); Speed(opponentSpeed); } 
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(opponentPartnerSpeed); }
+    } WHEN {
+        if (opponentSpeed == 5)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TAILWIND, 110, target:opponentRight); }
+        }
+        else if (opponentSpeed == 6)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TAILWIND, 110, target:opponentRight); }
+        }
+        else if (opponentSpeed == 7)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_TAILWIND, 90, target:opponentRight); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Tailwind correctly in singles")
+{
+    u32 opponentSpeed;
+    u32 player1Speed;
+
+    PARAMETRIZE { opponentSpeed = 5; player1Speed = 8; }
+    PARAMETRIZE { opponentSpeed = 6; player1Speed = 4; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(player1Speed); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FAKE_OUT, MOVE_TAILWIND); Speed(opponentSpeed); } 
+    } WHEN {
+        if (opponentSpeed == 5)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TAILWIND, 110); }
+        }
+        else if (opponentSpeed == 6)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TAILWIND, 100); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores No Retreat correctly")
+{
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentHP = 40; }
+    PARAMETRIZE { opponentHP = 50; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_NO_RETREAT); HP(opponentHP); } 
+    } WHEN {
+        if (opponentHP == 40)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_NO_RETREAT, 80); }
+        }
+        else if (opponentHP == 50)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_NO_RETREAT, 112); EXPECT_MOVE(opponent, MOVE_NO_RETREAT); MOVE(player, MOVE_CELEBRATE); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_NO_RETREAT, 80); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Knock Off correctly")
+{
+    u32 playerAbility;
+    u32 opponentMaybeHighestDamageMove;
+    u32 player2HKOCheckMove;
+    u32 playerItem;
+
+    PARAMETRIZE { playerAbility = ABILITY_STICKY_HOLD; opponentMaybeHighestDamageMove = MOVE_SPLASH; player2HKOCheckMove = MOVE_SPLASH; playerItem = ITEM_PECHA_BERRY; }
+    PARAMETRIZE { playerAbility = ABILITY_STICKY_HOLD; opponentMaybeHighestDamageMove = MOVE_TACKLE; player2HKOCheckMove = MOVE_SPLASH; playerItem = ITEM_PECHA_BERRY; }
+    PARAMETRIZE { playerAbility = ABILITY_ADAPTABILITY; opponentMaybeHighestDamageMove = MOVE_TACKLE; player2HKOCheckMove = MOVE_SPLASH; playerItem = ITEM_PECHA_BERRY; }   
+    PARAMETRIZE { playerAbility = ABILITY_ADAPTABILITY; opponentMaybeHighestDamageMove = MOVE_TACKLE; player2HKOCheckMove = MOVE_SPLASH; playerItem = ITEM_NONE; } 
+    PARAMETRIZE { playerAbility = ABILITY_ADAPTABILITY; opponentMaybeHighestDamageMove = MOVE_TACKLE; player2HKOCheckMove = MOVE_DRAGON_RAGE; playerItem = ITEM_PECHA_BERRY; } 
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_SCRAFTY) { Moves(MOVE_CELEBRATE, player2HKOCheckMove); HP(70); Ability(playerAbility); Item(playerItem); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_KNOCK_OFF, opponentMaybeHighestDamageMove); HP(70); } 
+    } WHEN {
+        if (playerAbility == ABILITY_STICKY_HOLD && opponentMaybeHighestDamageMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_KNOCK_OFF, 108); }
+        }
+        else if (playerAbility == ABILITY_STICKY_HOLD && opponentMaybeHighestDamageMove == MOVE_TACKLE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_KNOCK_OFF, 100); }
+        }
+        else if (playerAbility == ABILITY_ADAPTABILITY && opponentMaybeHighestDamageMove == MOVE_TACKLE && playerItem == ITEM_PECHA_BERRY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_KNOCK_OFF, 106); }
+        }
+        else if (playerItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_KNOCK_OFF, 100); }
+        }
+        else if (player2HKOCheckMove == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_KNOCK_OFF, 100); }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Coaching correctly on its partner")
+{
+    u32 playerLeftOHKOCheck;
+    u32 playerRightOHKOCheck;
+
+    PARAMETRIZE { playerLeftOHKOCheck = MOVE_DRAGON_RAGE; playerRightOHKOCheck = MOVE_SPLASH; }
+    PARAMETRIZE { playerLeftOHKOCheck = MOVE_SPLASH; playerRightOHKOCheck = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { playerLeftOHKOCheck = MOVE_SPLASH; playerRightOHKOCheck = MOVE_SPLASH; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerLeftOHKOCheck); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerRightOHKOCheck); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_COACHING);  } 
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TACKLE); HP(40); }
+    } WHEN {
+        if (playerLeftOHKOCheck == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_COACHING, 80, target:opponentRight); }
+        }
+        else if (playerRightOHKOCheck == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_COACHING, 80, target:opponentRight); }
+        }
+        else if (playerLeftOHKOCheck == MOVE_SPLASH && playerRightOHKOCheck == MOVE_SPLASH)
+        {
+            TURN { 
+                SCORE_EQ_VAL(opponentLeft, MOVE_COACHING, 107, target:opponentRight); 
+                MOVE(playerLeft, MOVE_CELEBRATE);
+                MOVE(playerRight, MOVE_CELEBRATE);
+                EXPECT_MOVE(opponentLeft, MOVE_COACHING, target:opponentRight);
+                EXPECT_MOVE(opponentRight, MOVE_TACKLE, target:playerLeft);
+            }
+            TURN { 
+                SCORE_EQ_VAL(opponentLeft, MOVE_COACHING, 107, target:opponentRight); 
+                MOVE(playerLeft, MOVE_CELEBRATE);
+                MOVE(playerRight, MOVE_CELEBRATE);
+                EXPECT_MOVE(opponentLeft, MOVE_COACHING, target:opponentRight);
+                EXPECT_MOVE(opponentRight, MOVE_TACKLE, target:playerLeft);
+            }
+            TURN {SCORE_EQ_VAL(opponentLeft, MOVE_COACHING, 80, target:opponentRight); }
+        }
+    }
+}
