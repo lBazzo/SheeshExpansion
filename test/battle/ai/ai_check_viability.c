@@ -261,7 +261,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses moves that cure inactive party members")
 
 AI_SINGLE_BATTLE_TEST("AI prioritizes Pursuit if it would KO opponent")
 {
-    KNOWN_FAILING; //Bazzo note: this fails because the pursuit check is in the old compare move function no longer being used. will probably be known fail when pursuit ai is in
+    //KNOWN_FAILING; //Bazzo note: this fails because the pursuit check is in the old compare move function no longer being used. will probably be known fail when pursuit ai is in
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_PURSUIT) == EFFECT_PURSUIT);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);

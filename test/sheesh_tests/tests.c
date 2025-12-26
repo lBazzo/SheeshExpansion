@@ -1189,3 +1189,103 @@ AI_DOUBLE_BATTLE_TEST("AI scores Coaching correctly on its partner")
         }
     }
 }
+
+//Bazzo note: this test is actually scoring correctly, but 1) reads test assigned scores as negative past 128... will need to look into this later - who fucking knows man
+AI_SINGLE_BATTLE_TEST("AI Scores Pursuit correctly")
+{
+    u32 playerHP;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { playerHP = 200; opponentSpeed = 90; }
+    PARAMETRIZE { playerHP = 80; opponentSpeed = 90; }
+    PARAMETRIZE { playerHP = 40; opponentSpeed = 90; }
+    PARAMETRIZE { playerHP = 30; opponentSpeed = 110; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(100); HP(playerHP); Level(100); Defense(152); Ability(ABILITY_ADAPTABILITY); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_PURSUIT, MOVE_ROCK_CLIMB); Speed(opponentSpeed); Level(100); Attack(102); }
+        //ASSUME(GetMoveEffect(MOVE_PURSUIT) == EFFECT_HIT);
+    } WHEN {
+        if (playerHP == 200 && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 100); }
+        }
+        else if (playerHP == 80 && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 120); }
+        }
+        else if (playerHP == 40 && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 132); SEND_OUT(player, 1); }
+        }
+        else if (playerHP == 30 && opponentSpeed == 110)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 145); SEND_OUT(player, 1); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("Testing if AI sees future sight killing rolls")
+{
+    u32 playerHP;
+    u32 opponentSpeed;
+
+    PARAMETRIZE { playerHP = 60; opponentSpeed = 90; }
+    PARAMETRIZE { playerHP = 40; opponentSpeed = 90; }
+    PARAMETRIZE { playerHP = 40; opponentSpeed = 110; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(100); HP(playerHP); SpDefense(152); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FUTURE_SIGHT); Speed(opponentSpeed); Level(100); SpAttack(102); }
+    } WHEN {
+        if (playerHP == 60)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FUTURE_SIGHT, 107); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_FUTURE_SIGHT); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FUTURE_SIGHT, 80); }
+        }
+        else if (playerHP == 40 && opponentSpeed == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FUTURE_SIGHT, 111); }
+        }
+        else if (playerHP == 40 && opponentSpeed == 110)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FUTURE_SIGHT, 114); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Two Turn Attack moves correctly")
+{
+    u32 playerMaybeDragonRage;
+    u32 opponentTwoTurnMove;
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentTwoTurnMove = MOVE_SOLARBEAM; playerMaybeDragonRage = MOVE_SPLASH; opponentHP = 80; }
+    PARAMETRIZE { opponentTwoTurnMove = MOVE_METEOR_BEAM; playerMaybeDragonRage = MOVE_DRAGON_RAGE; opponentHP = 80; }
+    PARAMETRIZE { opponentTwoTurnMove = MOVE_METEOR_BEAM; playerMaybeDragonRage = MOVE_DRAGON_RAGE; opponentHP = 100; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerMaybeDragonRage); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, opponentTwoTurnMove); HP(opponentHP); Item(ITEM_POWER_HERB); }
+    } WHEN {
+        if (opponentTwoTurnMove == MOVE_SOLARBEAM && playerMaybeDragonRage == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 88); }
+        }
+        else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 80)
+        {
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 88); }
+        }
+        else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 100)
+        {
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); }
+        }
+    }
+}

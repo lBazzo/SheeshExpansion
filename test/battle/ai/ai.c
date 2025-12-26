@@ -545,6 +545,7 @@ AI_SINGLE_BATTLE_TEST("AI will choose Scratch over Power-up Punch with Contrary"
 
 AI_SINGLE_BATTLE_TEST("AI will choose Superpower over Outrage with Contrary")
 {
+    //KNOWN_FAILING; //Bazzo note: stopped this happening with contrary as it'd be too complicated on ai scoring + not worth it + bs
     u32 ability;
 
     PARAMETRIZE {ability = ABILITY_SUCTION_CUPS; }
