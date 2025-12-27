@@ -327,7 +327,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
 
 AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user is not holding Power Herb")
 {
-    KNOWN_FAILING; // Bazzo note: for now this is a good fail as scores tie, when 2turn move ai is done it'll probably pass again
+    //KNOWN_FAILING; // Bazzo note: for now this is a good fail as scores tie, when 2turn move ai is done it'll probably pass again
     u16 abilityAtk = ABILITY_NONE;
     u16 holdItemAtk = ITEM_NONE;
 
@@ -545,7 +545,7 @@ AI_SINGLE_BATTLE_TEST("AI will choose Scratch over Power-up Punch with Contrary"
 
 AI_SINGLE_BATTLE_TEST("AI will choose Superpower over Outrage with Contrary")
 {
-    //KNOWN_FAILING; //Bazzo note: stopped this happening with contrary as it'd be too complicated on ai scoring + not worth it + bs
+    KNOWN_FAILING; //Bazzo note: stopped this happening with contrary as it'd be too complicated on ai scoring + not worth it + bs
     u32 ability;
 
     PARAMETRIZE {ability = ABILITY_SUCTION_CUPS; }

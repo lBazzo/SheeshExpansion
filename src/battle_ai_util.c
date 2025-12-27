@@ -905,6 +905,10 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     //if (moveEffect == EFFECT_PURSUIT)
     //    moveEffect = EFFECT_HIT;
 
+    if (moveEffect == EFFECT_HIT_ENEMY_HEAL_ALLY
+     && battlerDef == BATTLE_PARTNER(battlerAtk))
+        return simDamage;
+
     if (moveEffect == EFFECT_NATURE_POWER)
         move = GetNaturePowerMove(battlerAtk);
 
@@ -2424,6 +2428,8 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     u32 statId = GetStatBeingChanged(statChange);
 
     u32 noOfHitsToFaint = NoOfHitsForTargetToFaintBattler(battlerAtk, battlerDef);
+    u32 statDownMoveDamage;
+    statDownMoveDamage = gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, move)].maximum;
 
     // Don't increase score if target is already -3 stat stage
     // if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] <= DEFAULT_STAT_STAGE - 3)
@@ -2480,6 +2486,11 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     {
         u32 predictedMoveSpeedCheck = MOVE_TACKLE;
         if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
+        && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])
+        && (statDownMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp)))
+            tempScore += DECENT_EFFECT;
+        else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
         && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])))
             tempScore += WEAK_EFFECT;

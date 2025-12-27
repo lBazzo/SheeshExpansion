@@ -1289,3 +1289,170 @@ AI_SINGLE_BATTLE_TEST("AI scores Two Turn Attack moves correctly")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores switch out moves like Dragon Tail correctly")
+{
+    u32 playerMaybeDragonRage;
+    u32 playerMaybeOutdamage;
+    u32 opponentMaybeHighestDamageMove;
+    u32 playerSpeed;
+
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_SPLASH; opponentMaybeHighestDamageMove = MOVE_DRAGON_CLAW; playerSpeed = 110; playerMaybeOutdamage = MOVE_TACKLE; }
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_DRAGON_RAGE; opponentMaybeHighestDamageMove = MOVE_DRAGON_CLAW; playerSpeed = 110; playerMaybeOutdamage = MOVE_DRAGON_HAMMER; }
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_DRAGON_RAGE; opponentMaybeHighestDamageMove = MOVE_DRAGON_CLAW; playerSpeed = 90; playerMaybeOutdamage = MOVE_DRAGON_HAMMER; }
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_SPLASH; opponentMaybeHighestDamageMove = MOVE_DRAGON_CLAW; playerSpeed = 110; playerMaybeOutdamage = MOVE_DRAGON_HAMMER; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_AGGRON) { Moves(MOVE_CELEBRATE, playerMaybeDragonRage, playerMaybeOutdamage); Speed(playerSpeed); HP(80); MaxHP(281); Attack(256); Defense(396); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_AGGRON) { Moves(MOVE_CELEBRATE, MOVE_STEALTH_ROCK, MOVE_DRAGON_TAIL, opponentMaybeHighestDamageMove); Speed(100); HP(80); MaxHP(281); Attack(256); Defense(396); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+    } WHEN {
+        if (playerMaybeDragonRage == MOVE_SPLASH && opponentMaybeHighestDamageMove == MOVE_DRAGON_CLAW && playerSpeed == 110 && playerMaybeOutdamage == MOVE_TACKLE)
+        {
+            TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_STEALTH_ROCK); SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+        }
+        else if (playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentMaybeHighestDamageMove == MOVE_DRAGON_CLAW && playerSpeed == 110 && playerMaybeOutdamage == MOVE_DRAGON_HAMMER)
+        {
+            TURN { MOVE(player, playerMaybeDragonRage); EXPECT_MOVE(opponent, MOVE_STEALTH_ROCK); SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+        }
+        else if (playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentMaybeHighestDamageMove == MOVE_DRAGON_CLAW && playerSpeed == 90 && playerMaybeOutdamage == MOVE_DRAGON_HAMMER)
+        {
+            TURN { MOVE(player, playerMaybeDragonRage); EXPECT_MOVE(opponent, MOVE_STEALTH_ROCK); SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 80); }
+        }
+        else if (playerMaybeDragonRage == MOVE_SPLASH && opponentMaybeHighestDamageMove == MOVE_DRAGON_CLAW && playerSpeed == 110 && playerMaybeOutdamage == MOVE_DRAGON_HAMMER)
+        {
+            TURN { MOVE(player, playerMaybeOutdamage); EXPECT_MOVE(opponent, MOVE_STEALTH_ROCK); SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 106); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI DRAGON TAIL DEBUGGING")
+{
+    u32 playerMaybeDragonRage;
+    u32 playerMaybeOutdamage;
+    u32 opponentMaybeHighestDamageMove;
+    u32 playerSpeed;
+
+    PARAMETRIZE { playerMaybeDragonRage = MOVE_DRAGON_RAGE; opponentMaybeHighestDamageMove = MOVE_DRAGON_CLAW; playerSpeed = 110; playerMaybeOutdamage = MOVE_DRAGON_HAMMER; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_AGGRON) { Moves(MOVE_CELEBRATE, playerMaybeDragonRage, playerMaybeOutdamage); Speed(playerSpeed); HP(80); MaxHP(281); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_AGGRON) { Moves(MOVE_CELEBRATE, MOVE_STEALTH_ROCK, MOVE_DRAGON_TAIL, opponentMaybeHighestDamageMove); Speed(100); HP(90); MaxHP(281); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); } 
+    } WHEN {
+        if (playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentMaybeHighestDamageMove == MOVE_DRAGON_CLAW && playerSpeed == 110 && playerMaybeOutdamage == MOVE_DRAGON_HAMMER)
+        {
+            TURN { MOVE(player, playerMaybeOutdamage); EXPECT_MOVE(opponent, MOVE_STEALTH_ROCK); SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DRAGON_TAIL, 106); }
+        }
+    }
+}
+
+//Bazzo note: apparently 
+AI_DOUBLE_BATTLE_TEST("AI Scores Pollen Puff on Partner correctly")
+{
+    u32 partnerHP;
+
+    PARAMETRIZE { partnerHP = 100; }
+    PARAMETRIZE { partnerHP = 60; }
+    PARAMETRIZE { partnerHP = 40; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_POLLEN_PUFF); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(partnerHP); MaxHP(100); }
+        ASSUME(GetMoveEffect(MOVE_POLLEN_PUFF) == EFFECT_HIT_ENEMY_HEAL_ALLY);
+    } WHEN {
+        if (partnerHP == 100)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_POLLEN_PUFF, 80, target:opponentRight); }
+        }
+        else if (partnerHP == 60)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_POLLEN_PUFF, 106, target:opponentRight); }
+        }
+        else if (partnerHP == 40)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_POLLEN_PUFF, 107, target:opponentRight); }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI Targets correctly like Lucid")
+{
+    u32 playerLeftHP;
+    u32 playerRightHP;
+
+    PARAMETRIZE { playerLeftHP = 150; playerRightHP = 150; }
+    PARAMETRIZE { playerLeftHP = 150; playerRightHP = 100; }
+    PARAMETRIZE { playerLeftHP = 100; playerRightHP = 150; }
+    PARAMETRIZE { playerLeftHP = 40; playerRightHP = 150; }
+    PARAMETRIZE { playerLeftHP = 100; playerRightHP = 40; }
+    PARAMETRIZE { playerLeftHP = 40; playerRightHP = 40; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(playerLeftHP); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(playerRightHP); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_NIGHT_SHADE); Level(100); }
+    } WHEN {
+        if (playerLeftHP == 150 && playerRightHP == 150)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerLeft); }
+        }
+        else if (playerLeftHP == 150 && playerRightHP == 100)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerRight); }
+        }
+        else if (playerLeftHP == 100 && playerRightHP == 150)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerRight); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerLeft); }
+        }
+        else if (playerLeftHP == 40 && playerRightHP == 150)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerRight); }
+        }
+        else if (playerLeftHP == 100 && playerRightHP == 40)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerRight); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerLeft); }
+        }
+        else if (playerLeftHP == 40 && playerRightHP == 40)
+        {
+            TURN { EXPECT_MOVE(opponentLeft, MOVE_DRAGON_RAGE, target:playerLeft); EXPECT_MOVE(opponentRight, MOVE_NIGHT_SHADE, target:playerRight); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores first condition of speed drop AI")
+{
+    u32 playerHP;
+
+    PARAMETRIZE { playerHP = 87; }
+    PARAMETRIZE { playerHP = 187; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(playerHP); Speed(20); Defense(152); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_ROCK_TOMB, MOVE_FEINT_ATTACK); Speed(15); Attack(102); }
+    } WHEN {
+        if (playerHP == 87)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 108); }
+        }
+        else if (playerHP == 187)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 107); }
+        }
+    }
+}

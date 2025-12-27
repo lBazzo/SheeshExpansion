@@ -2232,13 +2232,17 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
         case EFFECT_HIT_SWITCH_TARGET:
-            if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS); // don't scare away pokemon twice
-            else if (aiData->hpPercents[battlerDef] < 10 && GetBattlerSecondaryDamage(battlerDef))
-                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);    // don't blow away mon that will faint soon
-            else if (gBattleMons[battlerDef].volatiles.perishSong)
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+            && (CanTargetFaintAi(battlerDef, battlerAtk)))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
+        //    if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
+        //        ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS); // don't scare away pokemon twice
+        //    else if (aiData->hpPercents[battlerDef] < 10 && GetBattlerSecondaryDamage(battlerDef))
+        //        ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);    // don't blow away mon that will faint soon
+        //    else if (gBattleMons[battlerDef].volatiles.perishSong)
+        //        ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+        //    break;
         case EFFECT_CONVERSION:
             //Check first move type
             if (IS_BATTLER_OF_TYPE(battlerAtk, GetMoveType(gBattleMons[battlerAtk].moves[0])))
@@ -2833,17 +2837,18 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
                 break;
             }
+            break;
             // fallthrough
         case EFFECT_HIT_ENEMY_HEAL_ALLY:    // pollen puff
-            if (IsTargetingPartner(battlerAtk, battlerDef))
-            {
-                if (gBattleMons[battlerDef].volatiles.healBlock)
-                    return 0; // cannot even select
-                if (AI_BattlerAtMaxHp(battlerDef))
-                    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
-                else if (gBattleMons[battlerDef].hp > gBattleMons[battlerDef].maxHP / 2)
-                    ADJUST_SCORE(NO_INCREASE);
-            }
+            //if (IsTargetingPartner(battlerAtk, battlerDef))
+            //{
+            //    if (gBattleMons[battlerDef].volatiles.healBlock)
+            //        return 0; // cannot even select
+                //if (AI_BattlerAtMaxHp(battlerDef))
+                //    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+                //else if (gBattleMons[battlerDef].hp > gBattleMons[battlerDef].maxHP / 2)
+                //    ADJUST_SCORE(NO_INCREASE);
+            //}
             break;
         case EFFECT_ELECTRIFY:
             if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)
@@ -4090,12 +4095,20 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 break;
             case EFFECT_HEAL_PULSE:
             case EFFECT_HIT_ENEMY_HEAL_ALLY:
-                if ( /* AI_IsFaster(battlerAtk, FOE(battlerAtk), move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)
+                if (/* AI_IsFaster(battlerAtk, FOE(battlerAtk), move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)
                  && AI_IsFaster(battlerAtk, BATTLE_PARTNER(FOE(battlerAtk)), move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)
-                 && */ gBattleMons[battlerAtkPartner].hp < gBattleMons[battlerAtkPartner].maxHP / 2)
-                    RETURN_SCORE_PLUS(WEAK_EFFECT);
-                if (gBattleMons[battlerAtkPartner].hp < gBattleMons[battlerAtkPartner].maxHP)
-                    RETURN_SCORE_PLUS(BEST_DAMAGE_MOVE);
+                 && */gBattleMons[battlerAtkPartner].hp < gBattleMons[battlerAtkPartner].maxHP / 2) 
+                {
+                    ADJUST_SCORE(WEAK_EFFECT);
+                }
+                else if (gBattleMons[battlerAtkPartner].hp < gBattleMons[battlerAtkPartner].maxHP)
+                {
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                }
+                else
+                {
+                    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+                }
                 break;
             case EFFECT_SPEED_SWAP:
                 break;
@@ -4879,9 +4892,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         else if (!CanTargetFaintAi(battlerDef, battlerAtk))
         {
                 ADJUST_SCORE(BEST_DAMAGE_MOVE);
-            if(gSideTimers[GetBattlerSide(battlerDef)].spikesAmount != 0
-            || gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount != 0
-            || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK))
+            if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount != 0
+             || gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount != 0
+             || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK))
                 ADJUST_SCORE(+1);
         }
         break;
@@ -5108,13 +5121,13 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(-1);
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
         && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) / gBattleMons[battlerDef].maxHP) * 100 >= (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING / gBattleMons[battlerAtk].maxHP)) * 100))
+        && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) >= (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp)))
             ADJUST_SCORE(-2);
         {
             if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
             && (CanTargetFaintAi(battlerDef, battlerAtk)))
                 ADJUST_SCORE(+1);
-            else if ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) / gBattleMons[battlerDef].maxHP) * 100 < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING / gBattleMons[battlerAtk].maxHP)) * 100
+            else if (((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
             && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
                 ADJUST_SCORE(+1);
         }
@@ -6092,6 +6105,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_SHELL_SMASH:
         if (CanTargetFaintAi(battlerDef, battlerAtk))
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+        else if (AnyStatIsRaised(battlerAtk))
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_WHITE_HERB)
             {
                 if (!CanTargetFaintAi(battlerDef, battlerAtk))
@@ -6104,8 +6119,6 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             else 
                 ADJUST_SCORE(DECENT_EFFECT); 
         }   
-        else if (AnyStatIsRaised(battlerAtk))
-            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         else 
             ADJUST_SCORE(DECENT_EFFECT);
         //ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED));
@@ -6398,7 +6411,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_EMBARGO:
         if (aiData->holdEffects[battlerDef] != HOLD_EFFECT_NONE)
-            ADJUST_SCORE(DECENT_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_POWDER:
         if (HasMoveWithType(battlerDef, TYPE_FIRE))
@@ -6789,6 +6802,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             else
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         }
+        break;
+    case EFFECT_HIT_SWITCH_TARGET:
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+        && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
+        && (CountUsablePartyMons(battlerDef) != 0)
+        && (!(CanTargetFaintAi(battlerDef, battlerAtk))))
+        { DebugPrintf("print going in");
+            if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount != 0
+             || gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount != 0
+             || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK))
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        } DebugPrintf("print going out");
         break;
     default:
         break;
