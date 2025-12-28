@@ -1456,3 +1456,35 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores first condition of speed drop AI")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI makes use of the Tag Partner flag correctly")
+{
+    u32 opponentTestedMove;
+    u32 playerTestMove1;
+    u32 playerSpeed;
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentTestedMove = MOVE_RAPID_SPIN; playerTestMove1 = MOVE_SPIKES; playerSpeed = 10; opponentHP = 100; }
+    PARAMETRIZE { opponentTestedMove = MOVE_PROTECT; playerTestMove1 = MOVE_SPLASH; playerSpeed = 20; opponentHP = 80; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_TAG_PARTNER);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerTestMove1, MOVE_DRAGON_RAGE); Speed(playerSpeed); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(1); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, opponentTestedMove, MOVE_FEINT_ATTACK); Speed(15); HP(opponentHP); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+    } WHEN {
+        if (opponentTestedMove == MOVE_RAPID_SPIN)
+        {
+            TURN { MOVE(player, playerTestMove1); EXPECT_MOVE(opponent, MOVE_FEINT_ATTACK); }
+            TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTestedMove); SCORE_EQ_VAL(opponent, opponentTestedMove, 109); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTestedMove, 100); }
+        }
+        else if (opponentTestedMove == MOVE_PROTECT)
+        {
+            TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, MOVE_FEINT_ATTACK); }
+            TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTestedMove); SCORE_EQ_VAL(opponent, opponentTestedMove, 113); }
+            TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, MOVE_FEINT_ATTACK); SCORE_EQ_VAL(opponent, opponentTestedMove, 80); }
+        }
+    }
+}

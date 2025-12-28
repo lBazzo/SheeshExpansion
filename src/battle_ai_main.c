@@ -66,6 +66,7 @@ static s32 AI_DynamicFunc(u32 battlerAtk, u32 battlerDef, u32 move, s32 score);
 static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score);
 static s32 AI_CheckPpStall(u32 battlerAtk, u32 battlerDef, u32 move, s32 score);
 static s32 AI_SmartTargeting(u32 battlerAtk, u32 battlerDef, u32 move, s32 score);
+static s32 AI_TagPartner(u32 battlerAtk, u32 battlerDef, u32 move, s32 score);
 
 static s32 (*const sBattleAiFuncTable[])(u32, u32, u32, s32) =
 {
@@ -102,7 +103,7 @@ static s32 (*const sBattleAiFuncTable[])(u32, u32, u32, s32) =
     [30] = AI_AttacksPartner,        // AI_FLAG_ATTACKS_PARTNER
     [31] = NULL,                     // Unused
     [32] = AI_SmartTargeting,        // AI_FLAG_SMART_TARGETING
-    [33] = NULL,                     // Unused
+    [33] = AI_TagPartner,            // AI_FLAG_TAG_PARTNER
     [34] = NULL,                     // Unused
     [35] = NULL,                     // Unused
     [36] = NULL,                     // Unused
@@ -3241,7 +3242,6 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (IsAttackBoostMoveEffect(effect))
                 ADJUST_SCORE(-3);
             // encourage moves hitting multiple opponents 
-            // Bazzo note: this might be good for spread move boost score in doubles bazzospreaddoubles
             if (!IsBattleMoveStatus(move) && (moveTarget & (MOVE_TARGET_BOTH | MOVE_TARGET_FOES_AND_ALLY)))
                 ADJUST_SCORE(GOOD_EFFECT);
         }
@@ -5372,7 +5372,20 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             break;
             //fallthrough
         default: // protect
-            ADJUST_SCORE(ProtectChecks(battlerAtk, battlerDef, move, predictedMove));
+        //u32 uses = gDisableStructs[battlerAtk].protectUses;
+            if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TAG_PARTNER)
+            {
+                //if (uses > 0)
+                //    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+                //else if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+                //     && (CanTargetFaintAi(battlerDef, battlerAtk)))
+                //    ADJUST_SCORE(BEST_DAMAGE_MOVE + FAST_KILL); //+13
+                //else
+                //    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+                break; // handled in AI_TagPartner
+            }
+            else
+                ADJUST_SCORE(ProtectChecks(battlerAtk, battlerDef, move, predictedMove));
             break;
 
         }
@@ -8190,4 +8203,37 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
     {
         return score;
     }
+}
+
+static s32 AI_TagPartner(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
+{
+    u32 uses = gDisableStructs[battlerAtk].protectUses;
+    enum BattleMoveEffects moveEffect = GetMoveEffect(move);
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
+
+    switch (moveEffect)
+    {
+        case EFFECT_PROTECT:
+        {
+            if (uses > 0)
+                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            else if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+                 && (CanTargetFaintAi(battlerDef, battlerAtk)))
+                ADJUST_SCORE(BEST_DAMAGE_MOVE + FAST_KILL); //+13
+            else
+                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            break;
+        }
+        case EFFECT_RAPID_SPIN:
+        {
+            if (gSideTimers[GetBattlerSide(battlerAtk)].spikesAmount >= 1)
+            //&& (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
+                ADJUST_SCORE(GOOD_EFFECT);
+            else
+            break;
+        }
+        default:
+            break;
+    }
+    return score;
 }
