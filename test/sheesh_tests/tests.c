@@ -372,18 +372,18 @@ AI_SINGLE_BATTLE_TEST("AI scores Paralysis moves correctly")
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); Moves(MOVE_CELEBRATE, MOVE_THUNDER_WAVE, maybeElectroBall); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(opponentSpeed); Moves(MOVE_CELEBRATE, MOVE_NUZZLE, maybeElectroBall, MOVE_THUNDER_SHOCK); }
     } WHEN {
         if (opponentSpeed == 110)
         {
             TURN {
-                SCORE_EQ_VAL(opponent, MOVE_THUNDER_WAVE, 106);
+                SCORE_EQ_VAL(opponent, MOVE_NUZZLE, 106);
             }
         }
         else if (opponentSpeed == 30)
         {
             TURN {
-                SCORE_EQ_VAL(opponent, MOVE_THUNDER_WAVE, 108);
+                SCORE_EQ_VAL(opponent, MOVE_NUZZLE, 108);
             }
         }
     }
@@ -857,16 +857,18 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
     u32 opponentItem;
     u32 maybeFakeOut;
     u32 playerStatus;
+    u32 playerAbility;
 
-    PARAMETRIZE { opponentItem = ITEM_LIGHT_BALL; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
-    PARAMETRIZE { opponentItem = ITEM_FLAME_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
-    PARAMETRIZE { opponentItem = ITEM_TOXIC_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_BURN; }
-    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; }
-    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_FAKE_OUT; playerStatus = STATUS1_NONE; }
+    PARAMETRIZE { opponentItem = ITEM_LIGHT_BALL; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; playerAbility = ABILITY_ADAPTABILITY; }
+    PARAMETRIZE { opponentItem = ITEM_FLAME_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; playerAbility = ABILITY_ADAPTABILITY; }
+    PARAMETRIZE { opponentItem = ITEM_TOXIC_ORB; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_BURN; playerAbility = ABILITY_ADAPTABILITY; }
+    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_SPLASH; playerStatus = STATUS1_NONE; playerAbility = ABILITY_ADAPTABILITY; }
+    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_FAKE_OUT; playerStatus = STATUS1_NONE; playerAbility = ABILITY_ADAPTABILITY; }
+    PARAMETRIZE { opponentItem = ITEM_KINGS_ROCK; maybeFakeOut = MOVE_FAKE_OUT; playerStatus = STATUS1_NONE; playerAbility = ABILITY_SHIELD_DUST; }
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
-        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Status1(playerStatus); Speed(10); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Status1(playerStatus); Speed(10); Ability(playerAbility); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FLING, maybeFakeOut); Item(opponentItem); Speed(30); }
         ASSUME(gItemsInfo[ITEM_KINGS_ROCK].holdEffect == HOLD_EFFECT_FLINCH);
     } WHEN {
@@ -886,11 +888,15 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
         {
             TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 109); }
         }
-        else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT)
+        else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT && playerAbility == ABILITY_ADAPTABILITY)
         {
             TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 108); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, maybeFakeOut); }
             TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 109); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_FLING); }
             TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); }
+        }
+        else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT && playerAbility == ABILITY_SHIELD_DUST)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); SCORE_EQ_VAL(opponent, maybeFakeOut, 100); }
         }
     }
 } 
@@ -1486,5 +1492,249 @@ AI_SINGLE_BATTLE_TEST("AI makes use of the Tag Partner flag correctly")
             TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTestedMove); SCORE_EQ_VAL(opponent, opponentTestedMove, 113); }
             TURN { MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, MOVE_FEINT_ATTACK); SCORE_EQ_VAL(opponent, opponentTestedMove, 80); }
         }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly scores first condition of speed boost AI")
+{
+    u32 playerHP;
+
+    PARAMETRIZE { playerHP = 83; }
+    PARAMETRIZE { playerHP = 187; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(playerHP); Speed(20); Defense(152); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FLAME_CHARGE, MOVE_FEINT_ATTACK); Speed(15); Attack(102); }
+    } WHEN {
+        if (playerHP == 83)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLAME_CHARGE, 108); }
+        }
+        else if (playerHP == 187)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLAME_CHARGE, 107); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI Correctly scores Wrap Effect moves")
+{
+    u32 playerItem;
+    u32 player2HKOCheck;
+
+    PARAMETRIZE { playerItem = ITEM_SHED_SHELL; player2HKOCheck = MOVE_SPLASH; }
+    PARAMETRIZE { playerItem = ITEM_NONE; player2HKOCheck = MOVE_DRAGON_RAGE; }
+    PARAMETRIZE { playerItem = ITEM_NONE; player2HKOCheck = MOVE_SPLASH; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE, player2HKOCheck); Item(playerItem); Ability(ABILITY_INTIMIDATE); }
+        PLAYER(SPECIES_GYARADOS);
+        OPPONENT(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE, MOVE_WHIRLPOOL, MOVE_SURF); HP(80); Ability(ABILITY_INTIMIDATE); } 
+        OPPONENT(SPECIES_GYARADOS);
+    } WHEN {
+        if (playerItem == ITEM_SHED_SHELL)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_WHIRLPOOL, 100); }
+        }
+        else if (playerItem == ITEM_NONE && player2HKOCheck == MOVE_DRAGON_RAGE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_WHIRLPOOL, 106); }
+        }
+        else if (playerItem == ITEM_NONE && player2HKOCheck == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_WHIRLPOOL, 107); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores attack drop damaging moves correctly")
+{
+    u32 maybePhysicalMovePlayer;
+    u32 sometimesLeafBlade;
+
+    PARAMETRIZE { maybePhysicalMovePlayer = MOVE_WATER_GUN; sometimesLeafBlade = MOVE_LEAF_BLADE; }
+    PARAMETRIZE { maybePhysicalMovePlayer = MOVE_WATERFALL; sometimesLeafBlade = MOVE_LEAF_BLADE; }
+    PARAMETRIZE { maybePhysicalMovePlayer = MOVE_JET_PUNCH; sometimesLeafBlade = MOVE_VINE_WHIP; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, maybePhysicalMovePlayer); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TROP_KICK, sometimesLeafBlade); }
+    } WHEN {
+        if (maybePhysicalMovePlayer == MOVE_WATER_GUN)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TROP_KICK, 100); }
+        }
+        else if (maybePhysicalMovePlayer == MOVE_WATERFALL)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TROP_KICK, 107); }
+        }
+        else if (maybePhysicalMovePlayer == MOVE_JET_PUNCH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_TROP_KICK, 108); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores evasion boosting moves correctly")
+{
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentHP = 100; }
+    PARAMETRIZE { opponentHP = 150; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DRAGON_RAGE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_DOUBLE_TEAM); HP(opponentHP); }
+    } WHEN {
+        if (opponentHP == 100)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DOUBLE_TEAM, 106); }
+        }
+        else if (opponentHP == 150)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_DOUBLE_TEAM, 107); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores weather setting moves correctly")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_CHILLY_RECEPTION); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_CHILLY_RECEPTION); } 
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_CHILLY_RECEPTION); SCORE_EQ_VAL(opponent, MOVE_CHILLY_RECEPTION, 107); }
+        TURN { SCORE_EQ_VAL(opponent, MOVE_CHILLY_RECEPTION, 80); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores OHKO moves correctly")
+{
+    u32 opponentHP;
+
+    PARAMETRIZE { opponentHP = 60; }
+    PARAMETRIZE { opponentHP = 40; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_HORN_DRILL); HP(opponentHP); MaxHP(100); }
+    } WHEN {
+        if (opponentHP == 60)
+        {
+            TURN {SCORE_EQ_VAL (opponent, MOVE_HORN_DRILL, 106); }
+        }
+        else if (opponentHP == 40)
+        {
+            TURN {SCORE_EQ_VAL (opponent, MOVE_HORN_DRILL, 109); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Mean Look correctly")
+{
+    u32 playerItem;
+    u32 playerSpecies;
+
+    PARAMETRIZE { playerItem = ITEM_NONE; playerSpecies = SPECIES_GASTLY; }
+    PARAMETRIZE { playerItem = ITEM_SHED_SHELL; playerSpecies = SPECIES_GYARADOS; }
+    PARAMETRIZE { playerItem = ITEM_NONE; playerSpecies = SPECIES_GYARADOS; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(playerSpecies) { Moves(MOVE_CELEBRATE); Item(playerItem); }
+        PLAYER(SPECIES_GYARADOS);
+        OPPONENT(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE, MOVE_MEAN_LOOK); }
+    } WHEN {
+        if (playerSpecies == SPECIES_GASTLY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_MEAN_LOOK, 80); }
+        }
+        else if (playerItem == ITEM_SHED_SHELL)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_MEAN_LOOK, 80); }
+        }
+        else if (playerItem == ITEM_NONE && playerSpecies == SPECIES_GYARADOS)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_MEAN_LOOK, 106); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_MEAN_LOOK); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_MEAN_LOOK, 80); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Smack Down correctly")
+{
+    u32 playerAbility;
+    u32 groundMoveCheck;
+
+    PARAMETRIZE { playerAbility = ABILITY_LEVITATE; groundMoveCheck = MOVE_SPLASH; }
+    PARAMETRIZE { playerAbility = ABILITY_ADAPTABILITY; groundMoveCheck = MOVE_FISSURE; }
+    PARAMETRIZE { playerAbility = ABILITY_LEVITATE; groundMoveCheck = MOVE_FISSURE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Ability(playerAbility); }
+        OPPONENT(SPECIES_GYARADOS) { Moves(MOVE_CELEBRATE, MOVE_SMACK_DOWN, MOVE_STONE_EDGE, groundMoveCheck); }
+    } WHEN {
+        if (groundMoveCheck == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SMACK_DOWN, 100); }
+        }
+        else if (playerAbility == ABILITY_ADAPTABILITY)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SMACK_DOWN, 100); }
+        }
+        else if (playerAbility == ABILITY_LEVITATE && groundMoveCheck == MOVE_FISSURE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SMACK_DOWN, 106); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI scores Item removing moves correctly")
+{
+    u32 playerItem;
+    u32 itemRemovingMove;
+
+    PARAMETRIZE { playerItem = ITEM_ORAN_BERRY; itemRemovingMove = MOVE_BUG_BITE; }
+    PARAMETRIZE { playerItem = ITEM_FIRE_GEM; itemRemovingMove = MOVE_BUG_BITE; }
+    PARAMETRIZE { playerItem = ITEM_FIRE_GEM; itemRemovingMove = MOVE_INCINERATE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Item(playerItem); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, itemRemovingMove, MOVE_FLAMETHROWER, MOVE_X_SCISSOR); }
+    } WHEN {
+        if (playerItem == ITEM_ORAN_BERRY && itemRemovingMove == MOVE_BUG_BITE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, itemRemovingMove, 106); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_X_SCISSOR); }
+            TURN { SCORE_EQ_VAL(opponent, itemRemovingMove, 100); }
+        }
+        else if (playerItem == ITEM_FIRE_GEM && itemRemovingMove == MOVE_BUG_BITE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, itemRemovingMove, 100); }
+        }
+        else if (playerItem == ITEM_FIRE_GEM && itemRemovingMove == MOVE_INCINERATE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, itemRemovingMove, 106); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI knows item has been used for Incinerate AI")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_EMBER); Item(ITEM_FIRE_GEM); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_INCINERATE, MOVE_FLAMETHROWER); }
+    } WHEN {
+        TURN { SCORE_EQ_VAL(opponent, MOVE_INCINERATE, 106); MOVE(player, MOVE_EMBER); EXPECT_MOVE(opponent, MOVE_FLAMETHROWER); }
+        TURN { SCORE_EQ_VAL(opponent, MOVE_INCINERATE, 100); }
     }
 }

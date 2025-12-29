@@ -2127,7 +2127,8 @@ bool32 ShouldSetWeather(u32 battler, u32 weather)
         if (AI_GetWeather() & weather)
         return FALSE;
 
-    return WeatherChecker(battler, weather, FIELD_EFFECT_POSITIVE);
+    //return WeatherChecker(battler, weather, FIELD_EFFECT_POSITIVE);
+    return TRUE;
 }
 
 bool32 ShouldClearWeather(u32 battler, u32 weather)
@@ -2580,7 +2581,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     */
         break;
     }
-    //Bazzo note: this should never actually do anything so just leaving it in
+    //Bazzo note: this should never actually do anything since BEST_EFFECT is some mickey score now, so just leaving it in
     return (tempScore > BEST_EFFECT) ? BEST_EFFECT : tempScore; // don't inflate score so only max +4
 }
 
@@ -5148,9 +5149,11 @@ enum ShouldChangeStats BattlerShouldChangeStats(u32 battlerAtk, u32 battlerDef, 
     }
 }
 
-static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, bool32 considerContrary)
+//static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, bool32 considerContrary, u32 move)
+u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, u32 move)
 {
-    enum AIScore tempScore = NO_INCREASE;
+    //enum AIScore tempScore = NO_INCREASE;
+    u32 tempScore = NO_INCREASE;
     u32 noOfHitsToFaint = NoOfHitsForTargetToFaintBattler(battlerDef, battlerAtk);
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
     u32 aiIsFaster = AI_IsFaster(battlerAtk, battlerDef, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY); // Don't care about the priority of our setup move, care about outspeeding otherwise
@@ -5161,15 +5164,17 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
 
     u32 bestMoves[MAX_MON_MOVES] = {0};
     GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING, bestMoves);
+    u32 statUpMoveDamage;
+    statUpMoveDamage = gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, move)].maximum;
     
     //DebugPrintf("should set up %d", shouldSetUp);
     //DebugPrintf("stat id %d", statId);
     //DebugPrintf("stages %d", stages);
 
-    if (considerContrary && gAiLogicData->abilities[battlerAtk] == ABILITY_CONTRARY)
-        return NO_INCREASE;
+    //if (considerContrary && gAiLogicData->abilities[battlerAtk] == ABILITY_CONTRARY)
+    //    return NO_INCREASE;
 
-        if (!ShouldRaiseAnyStat(battlerAtk, battlerDef))
+    if (!ShouldRaiseAnyStat(battlerAtk, battlerDef))
         return NO_INCREASE;
 
         /*
@@ -5211,8 +5216,6 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
     if (CanBattlerKOTargetIgnoringSturdy(battlerAtk, battlerDef))
         return NO_INCREASE;
 
-// hi u were here :) bookmark
-
     // Don't increase stats if player has a move that can change the KO threshold
     if (HasMoveThatChangesKOThreshold(battlerDef, noOfHitsToFaint, aiIsFaster))
         return NO_INCREASE;
@@ -5247,7 +5250,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             if (stages == 1)
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL) 
-                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 >= gBattleMons[battlerDef].hp 
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp 
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
                 else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
@@ -5258,7 +5261,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             else if (stages == 2)
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL)
-                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 >= gBattleMons[battlerDef].hp 
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 + statUpMoveDamage >= gBattleMons[battlerDef].hp 
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
                 else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
@@ -5289,6 +5292,10 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             if (stages == 1)
             {
                 if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
+                && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])
+                && (statUpMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp))
+                    tempScore += DECENT_EFFECT;
+                else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
                 && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef]))
                     tempScore += WEAK_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
@@ -5299,6 +5306,10 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             if (stages == 2)
             {
                 if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
+                && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef])
+                && (statUpMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp))
+                    tempScore += DECENT_EFFECT;
+                else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
                 && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef]))
                     tempScore += WEAK_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
@@ -5314,7 +5325,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             if (stages == 1)
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
-                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 >= gBattleMons[battlerDef].hp
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
                 else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
@@ -5325,7 +5336,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             else if (stages == 2)
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
-                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 >= gBattleMons[battlerDef].hp
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
                 else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
@@ -5336,7 +5347,7 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
             else if (stages == 3)
             {
                 if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
-                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2.5 >= gBattleMons[battlerDef].hp
+                && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
                 else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
@@ -5381,15 +5392,18 @@ static enum AIScore IncreaseStatUpScoreInternal(u32 battlerAtk, u32 battlerDef, 
     return tempScore;
 }
 
-u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChange)
+//Bazzo Note: this contrary shit can fuck off
+/*
+u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, u32 move)
 {
-    return IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statChange, TRUE);
+    return IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statChange, TRUE, move);
 }
 
 u32 IncreaseStatUpScoreContrary(u32 battlerAtk, u32 battlerDef, enum StatChange statChange)
 {
-    return IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statChange, FALSE);
+    return IncreaseStatUpScoreInternal(battlerAtk, battlerDef, statChange, FALSE, move);
 }
+*/
 
 void IncreasePoisonScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 {
@@ -5729,7 +5743,7 @@ bool32 ShouldUseZMove(u32 battlerAtk, u32 battlerDef, u32 chosenMove)
                 return FALSE;
             }
 
-            if (statChange != 0 && (isEager || IncreaseStatUpScore(battlerAtk, battlerDef, statChange) > 0))
+            if (statChange != 0 && (isEager || IncreaseStatUpScore(battlerAtk, battlerDef, statChange, NULL) > 0))
                 return TRUE;
 
         }
