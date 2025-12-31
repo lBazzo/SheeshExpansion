@@ -2216,19 +2216,19 @@ s32 ProtectChecks(u32 battlerAtk, u32 battlerDef, u32 move, u32 predictedMove)
     u32 uses = gDisableStructs[battlerAtk].protectUses;
 
     if (uses == 0)
-    {
+    {   DebugPrintf("print uses 0");
         score += BEST_DAMAGE_MOVE;
 
             if (gBattleMons[battlerDef].status1 & STATUS1_POISON
             || (gBattleMons[battlerDef].status1 & STATUS1_TOXIC_POISON)
-            || (gBattleMons[battlerDef].status1 & STATUS1_FREEZE)
+            || (gBattleMons[battlerDef].status1 & STATUS1_FROSTBITE)
             || (gBattleMons[battlerDef].status1 & STATUS1_BURN)
             || (gBattleMons[battlerDef].volatiles.leechSeed))
                 score += 2;
                     
             if (gBattleMons[battlerAtk].status1 & STATUS1_POISON
             || (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
-            || (gBattleMons[battlerAtk].status1 & STATUS1_FREEZE)
+            || (gBattleMons[battlerDef].status1 & STATUS1_FROSTBITE)
             || (gBattleMons[battlerAtk].status1 & STATUS1_BURN)
             || (gBattleMons[battlerAtk].volatiles.leechSeed))
                 score -= 1;
@@ -2238,7 +2238,7 @@ s32 ProtectChecks(u32 battlerAtk, u32 battlerDef, u32 move, u32 predictedMove)
         //    score += WEAK_EFFECT;
     }
     else if (uses == 1)
-    {
+    { DebugPrintf("print uses 1");
         if (!IsBattle1v1())
         {
                 score -= 20;
@@ -2249,24 +2249,24 @@ s32 ProtectChecks(u32 battlerAtk, u32 battlerDef, u32 move, u32 predictedMove)
 
                     if (gBattleMons[battlerDef].status1 & STATUS1_POISON
                     || (gBattleMons[battlerDef].status1 & STATUS1_TOXIC_POISON)
-                    || (gBattleMons[battlerDef].status1 & STATUS1_FREEZE)
+                    || (gBattleMons[battlerDef].status1 & STATUS1_FROSTBITE)
                     || (gBattleMons[battlerDef].status1 & STATUS1_BURN)
                     || (gBattleMons[battlerDef].volatiles.leechSeed))
                         score += 2;
                             
                     if (gBattleMons[battlerAtk].status1 & STATUS1_POISON
                     || (gBattleMons[battlerAtk].status1 & STATUS1_TOXIC_POISON)
-                    || (gBattleMons[battlerAtk].status1 & STATUS1_FREEZE)
+                    || (gBattleMons[battlerDef].status1 & STATUS1_FROSTBITE)
                     || (gBattleMons[battlerAtk].status1 & STATUS1_BURN)
                     || (gBattleMons[battlerAtk].volatiles.leechSeed))
                         score -= 1;
         }
     }
 
-    else if (uses == 2)
-        {
+    else if (uses > 1)
+    { DebugPrintf("print uses 2");
             score -= 20;
-        }
+    }
 
     return score;
 }

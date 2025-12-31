@@ -6199,7 +6199,8 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum Ability abil
     {
         battleScript = BattleScript_SafeguardProtected;
     }
-    else if (gBattleMons[battlerDef].status1 & STATUS1_ANY)
+    else if (gBattleMons[battlerDef].status1 & STATUS1_ANY 
+    && !(battlerAtk == battlerDef && effect == MOVE_EFFECT_SLEEP))
     {
         battleScript = BattleScript_ButItFailed;
     }
