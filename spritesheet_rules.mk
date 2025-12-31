@@ -267,7 +267,7 @@ $(OBJEVENTGFXDIR)/people/boy_2.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/boy_3.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/worker_m.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/worker_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/policeman.4bpp: %.4bpp: %.png
