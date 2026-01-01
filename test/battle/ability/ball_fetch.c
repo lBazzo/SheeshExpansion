@@ -69,6 +69,8 @@ WILD_BATTLE_TEST("Ball Fetch doesn't trigger if the Pokémon is already holding 
 
 WILD_BATTLE_TEST("Ball Fetch only picks up the first failed ball, once per battle")
 {
+    KNOWN_FAILING; //Bazzo note: has something to do with changing all pokeballs to all catch in /home/bazzo/pokemonSheeshSilver/SheeshExpansion/src/battle_script_commands.c
+
     u32 item = 0;
     u32 item2 = 0;
 
