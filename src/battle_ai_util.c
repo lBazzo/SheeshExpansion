@@ -5537,12 +5537,13 @@ void IncreaseParalyzeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 {
     u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battlerAtk, battlerDef, gAiLogicData);
+    u32 i;
 
     if (((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0)))
     {
         u32 bestMoves[MAX_MON_MOVES] = {0};
         GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING, bestMoves);
-        for (u32 i; i < MAX_MON_MOVES; i++)
+        for (i = 0; i < MAX_MON_MOVES; i++)
         {
             if (GetMoveEffect(bestMoves[i]) == EFFECT_FOCUS_PUNCH)
                 return;

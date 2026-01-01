@@ -3,6 +3,7 @@
 
 WILD_BATTLE_TEST("Ball Fetch causes the Pokémon to pick up the last failed Ball at the end of the turn")
 {
+    KNOWN_FAILING; //Bazzo note: has something to do with changing all pokeballs to all catch in /home/bazzo/pokemonSheeshSilver/SheeshExpansion/src/battle_script_commands.c
     u32 item = 0;
 
     PARAMETRIZE { item = ITEM_POKE_BALL; }
@@ -32,6 +33,7 @@ WILD_BATTLE_TEST("Ball Fetch causes the Pokémon to pick up the last failed Ball
 
 WILD_BATTLE_TEST("Ball Fetch doesn't trigger if the Pokémon is already holding an item")
 {
+    KNOWN_FAILING; //Bazzo note: has something to do with changing all pokeballs to all catch in /home/bazzo/pokemonSheeshSilver/SheeshExpansion/src/battle_script_commands.c
     u32 item = 0;
 
     PARAMETRIZE { item = ITEM_NONE; }
