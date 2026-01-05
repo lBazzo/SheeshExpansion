@@ -2302,3 +2302,60 @@ const u8 gText_WeaknessPolicy10BP[] = _("WEAKNESS POLICY{CLEAR_TO 0x5E}10BP");
 const u8 gText_ChoiceScarf16BP[] = _("CHOICE SCARF{CLEAR_TO 0x5E}16BP");
 const u8 gText_ChoiceSpecs16BP[] = _("CHOICE SPECS{CLEAR_TO 0x5E}16BP");
 const u8 gText_ChoiceBand16BP[] = _("CHOICE BAND{CLEAR_TO 0x5E}16BP");
+
+// Scale Attendant terms
+
+const u8 gText_ChangeNickname[] = _("Change nickname");
+const u8 gText_ApplyAStatus[]   = _("Apply a status");
+const u8 gText_ForgetAMove[]    = _("Forget a move");
+const u8 gText_RelearnAMove[]   = _("Relearn a move");
+const u8 gText_LowIVChange[]    = _("Low IV change");
+const u8 gText_HighIVChange[]   = _("High IV change");
+const u8 gText_BuyAMint2Or3[]   = _("Buy a Mint (2/3)");
+const u8 gText_BuyAMint4[]      = _("Buy a Mint (4)");
+
+// Scale Attendant IV Change terms
+
+const u8 gText_HPIV[]           = _("HP IV");
+const u8 gText_AttackIV[]       = _("Attack IV");
+const u8 gText_DefenseIV[]      = _("Defense IV");
+const u8 gText_SpAttackIV[]     = _("SpAttack IV");
+const u8 gText_SpDefenseIV[]    = _("SpDefense IV");
+const u8 gText_SpeedIV[]        = _("Speed IV");
+
+// Scale Attendant Apply Status terms
+
+const u8 gText_Poison7[]          = _("Poison");
+const u8 gText_Toxic[]            = _("Toxic");
+const u8 gText_Paralysis7[]       = _("Paralysis");
+const u8 gText_Sleep7[]           = _("Sleep");
+const u8 gText_Burn7[]            = _("Burn");
+const u8 gText_Freeze[]           = _("Freeze");
+const u8 gText_Frostbite[]        = _("Frostbite");
+
+// Scale Attendant Mint 2 or 3 terms
+
+const u8 gText_SeriousMint[]        = _("Serious Mint {CLEAR_TO 0x5F}(2)");
+const u8 gText_BoldMint[]        = _("Bold Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_ImpishMint[]        = _("Impish Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_LaxMint[]        = _("Lax Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_RelaxedMint[]        = _("Relaxed Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_CalmMint[]        = _("Calm Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_GentleMint[]        = _("Gentle Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_CarefulMint[]        = _("Careful Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_SassyMint[]        = _("Sassy Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_BraveMint[]        = _("Brave Mint {CLEAR_TO 0x5F}(3)");
+const u8 gText_QuietMint[]        = _("Quiet Mint {CLEAR_TO 0x5F}(3)");
+
+// Scale Attendant Mint 4 terms
+
+const u8 gText_LonelyMint[]        = _("Lonely Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_AdamantMint[]        = _("Adamant Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_NaughtyMint[]        = _("Naughty Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_ModestMint[]        = _("Modest Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_MildMint[]        = _("Mild Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_RashMint[]        = _("Rash Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_TimidMint[]        = _("Timid Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_HastyMint[]        = _("Hasty Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_JollyMint[]        = _("Jolly Mint {CLEAR_TO 0x5F}(4)");
+const u8 gText_NaiveMint[]        = _("Naive Mint {CLEAR_TO 0x5F}(4)");

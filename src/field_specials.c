@@ -2515,6 +2515,56 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_SCALE_ATTENDANT:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 9;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SCALE_ATTENDANT_ADJUST_IVS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SCALE_ATTENDANT_APPLY_STATUS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_2_OR_3:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 12;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_4:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2682,7 +2732,162 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Underpowered,
         gText_WhenInDanger,
         gText_Exit
-    }
+    },
+    [SCROLL_MULTI_E4_ITEMS_DARACH] =
+    {
+        gText_BabiriBerry1BP,
+        gText_ChartiBerry1BP,
+        gText_ChilanBerry1BP,
+        gText_ChopleBerry1BP,
+        gText_CobaBerry1BP,
+        gText_ColburBerry1BP,
+        gText_HabanBerry1BP,
+        gText_KasibBerry1BP,
+        gText_KebiaBerry1BP,
+        gText_OccaBerry1BP,
+        gText_PasshoBerry1BP,
+        gText_PayapaBerry1BP,
+        gText_RindoBerry1BP,
+        gText_RoseliBerry1BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_E4_ITEMS_CAITLIN] =
+    {
+        gText_ShucaBerry1BP,
+        gText_TangaBerry1BP,
+        gText_WacanBerry1BP,
+        gText_YacheBerry1BP,
+        gText_HeartScale2BP,
+        gText_ClearAmulet2BP,
+        gText_AirBalloon2BP,
+        gText_Snowball2BP,
+        gText_LuminousMoss2BP,
+        gText_CellBattery2BP,
+        gText_AbsorbBulb2BP,
+        gText_ExpertBelt2BP,
+        gText_RedCard2BP,
+        gText_BoosterEnergy3BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_E4_ITEMS_DAHLIA] =
+    {
+        gText_ApicotBerry3BP,
+        gText_GanlonBerry3BP,
+        gText_LiechiBerry3BP,
+        gText_PetayaBerry3BP,
+        gText_SalacBerry3BP,
+        gText_JabocaBerry3BP,
+        gText_RowapBerry3BP,
+        gText_RockyHelmet5BP,
+        gText_Leftovers5BP,
+        gText_BlackSludge5BP,
+        gText_FireGem5BP,
+        gText_WaterGem5BP,
+        gText_ElectricGem5BP,
+        gText_GrassGem5BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_E4_ITEMS_LUCY] =
+    {
+        gText_IceGem5BP,
+        gText_FightingGem5BP,
+        gText_PoisonGem5BP,
+        gText_GroundGem5BP,
+        gText_FlyingGem5BP,
+        gText_PsychicGem5BP,
+        gText_BugGem5BP,
+        gText_RockGem5BP,
+        gText_GhostGem5BP,
+        gText_DragonGem5BP,
+        gText_DarkGem5BP,
+        gText_SteelGem5BP,
+        gText_NormalGem5BP,
+        gText_FairyGem5BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_E4_ITEMS_THORTON] =
+    {
+        gText_CustapBerry6BP,
+        gText_CovertCloak6BP,
+        gText_ThroatSpray6BP,
+        gText_FocusSash7BP,
+        gText_EjectPack7BP,
+        gText_EjectButton7BP,
+        gText_AssaultVest10BP,
+        gText_LifeOrb10BP,
+        gText_WeaknessPolicy10BP,
+        gText_ChoiceScarf16BP,
+        gText_ChoiceSpecs16BP,
+        gText_ChoiceBand16BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TEST123] =
+    {
+        gText_Leftovers5BP,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SCALE_ATTENDANT] =
+    {
+        gText_ChangeNickname,
+        gText_ApplyAStatus,
+        gText_ForgetAMove,
+        gText_RelearnAMove,
+        gText_LowIVChange,
+        gText_HighIVChange,
+        gText_BuyAMint2Or3,
+        gText_BuyAMint4,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SCALE_ATTENDANT_ADJUST_IVS] =
+    {
+        gText_HPIV,
+        gText_AttackIV,
+        gText_DefenseIV,
+        gText_SpAttackIV,
+        gText_SpDefenseIV,
+        gText_SpeedIV,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SCALE_ATTENDANT_APPLY_STATUS] =
+    {
+        gText_Poison7,
+        gText_Toxic,
+        gText_Paralysis7,
+        gText_Sleep7,
+        gText_Burn7,
+        gText_Freeze,
+        gText_Frostbite,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_2_OR_3] =
+    {
+        gText_SeriousMint,
+        gText_BoldMint,
+        gText_ImpishMint,
+        gText_LaxMint,
+        gText_RelaxedMint,
+        gText_CalmMint,
+        gText_GentleMint,
+        gText_CarefulMint,
+        gText_SassyMint,
+        gText_BraveMint,
+        gText_QuietMint,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SCALE_ATTENDANT_BUY_A_MINT_4] =
+    {
+        gText_LonelyMint,
+        gText_AdamantMint,
+        gText_NaughtyMint,
+        gText_ModestMint,
+        gText_MildMint,
+        gText_RashMint,
+        gText_TimidMint,
+        gText_HastyMint,
+        gText_JollyMint,
+        gText_NaiveMint,
+        gText_Exit
+    },
 };
 
 static void Task_ShowScrollableMultichoice(u8 taskId)
@@ -5094,4 +5299,113 @@ void CustomGiveBattlePoints(u32 points)
     gSaveBlock2Ptr->frontier.battlePoints = MAX_BATTLE_FRONTIER_POINTS;
     else 
     gSaveBlock2Ptr->frontier.battlePoints += points;
+}
+
+void CheckPoisonIsLegal(void)
+{
+    u16 species;
+    u32 ability;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    ability = GetMonAbility(&gPlayerParty[gSpecialVar_0x8004]);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) != 0)
+        {
+            if (GetSpeciesType(species, 0) == TYPE_STEEL || GetSpeciesType(species, 0) == TYPE_POISON
+            || GetSpeciesType(species, 1) == TYPE_STEEL || GetSpeciesType(species, 1) == TYPE_POISON)
+                gSpecialVar_Result = FALSE;
+            else if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+                gSpecialVar_Result = FALSE;
+            else
+                gSpecialVar_Result = TRUE;
+        } 
+        else
+            gSpecialVar_Result = FALSE;
+}
+
+void CheckParalysisIsLegal(void)
+{
+    u16 species;
+    u32 ability;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    ability = GetMonAbility(&gPlayerParty[gSpecialVar_0x8004]);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) != 0)
+        {   if (GetSpeciesType(species, 0) == TYPE_ELECTRIC
+            || GetSpeciesType(species, 1) == TYPE_ELECTRIC)
+                gSpecialVar_Result = FALSE;
+            else if (ability == ABILITY_LIMBER)
+                gSpecialVar_Result = FALSE;
+            else
+                gSpecialVar_Result = TRUE;
+        } 
+        else
+            gSpecialVar_Result = FALSE;
+}
+
+void CheckSleepIsLegal(void)
+{
+    u16 species;
+    u32 ability;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    ability = GetMonAbility(&gPlayerParty[gSpecialVar_0x8004]);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) != 0)
+        {
+            if (ability == ABILITY_INSOMNIA || ability == ABILITY_VITAL_SPIRIT)
+                gSpecialVar_Result = FALSE;
+            else
+                gSpecialVar_Result = TRUE;
+        } 
+        else
+            gSpecialVar_Result = FALSE;
+}
+
+void CheckBurnIsLegal(void)
+{
+    u16 species;
+    u32 ability;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    ability = GetMonAbility(&gPlayerParty[gSpecialVar_0x8004]);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) != 0)
+        {
+            if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
+                gSpecialVar_Result = FALSE;
+            else if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
+                gSpecialVar_Result = FALSE;
+            else
+                gSpecialVar_Result = TRUE;
+        } 
+        else
+            gSpecialVar_Result = FALSE;
+}
+
+void CheckFreezeIsLegal(void)
+{
+    u16 species;
+    u32 ability;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+    ability = GetMonAbility(&gPlayerParty[gSpecialVar_0x8004]);
+
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP) != 0)
+        {
+            if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE)
+                gSpecialVar_Result = FALSE;
+            else if (ability == ABILITY_MAGMA_ARMOR)
+                gSpecialVar_Result = FALSE;
+            else
+                gSpecialVar_Result = TRUE;
+        } 
+        else
+            gSpecialVar_Result = FALSE;
 }

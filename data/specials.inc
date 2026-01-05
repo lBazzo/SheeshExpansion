@@ -622,3 +622,8 @@ gSpecials::
 	def_special TeleportCamera
 	def_special MoveCameraAndRedrawMap
 	def_special CustomGiveBattlePoints
+	def_special CheckPoisonIsLegal
+	def_special CheckParalysisIsLegal
+	def_special CheckSleepIsLegal
+	def_special CheckBurnIsLegal
+	def_special CheckFreezeIsLegal

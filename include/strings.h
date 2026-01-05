@@ -2583,6 +2583,58 @@ extern const u8 IndigoPlateau_Text_ChoiceScarfDesc[];
 extern const u8 IndigoPlateau_Text_ChoiceSpecsDesc[];
 extern const u8 IndigoPlateau_Text_ChoiceBandDesc[];
 
+// Scale Attendant
+extern const u8 gText_ChangeNickname[];
+extern const u8 gText_ApplyAStatus[];
+extern const u8 gText_ForgetAMove[];
+extern const u8 gText_RelearnAMove[];
+extern const u8 gText_LowIVChange[];
+extern const u8 gText_HighIVChange[];
+extern const u8 gText_BuyAMint2Or3[];
+extern const u8 gText_BuyAMint4[];
+
+// Scale Attendant IV Multi
+extern const u8 gText_HPIV[];
+extern const u8 gText_AttackIV[];
+extern const u8 gText_DefenseIV[];
+extern const u8 gText_SpAttackIV[];
+extern const u8 gText_SpDefenseIV[];
+extern const u8 gText_SpeedIV[];
+
+// Scale Attendant Statuses
+extern const u8 gText_Poison7[];
+extern const u8 gText_Toxic[];
+extern const u8 gText_Paralysis7[];
+extern const u8 gText_Sleep7[];
+extern const u8 gText_Burn7[];
+extern const u8 gText_Freeze[];
+extern const u8 gText_Frostbite[];
+
+// Scale Attendant 2 or 3 Mints
+extern const u8 gText_SeriousMint[];
+extern const u8 gText_BoldMint[];
+extern const u8 gText_ImpishMint[];
+extern const u8 gText_LaxMint[];
+extern const u8 gText_RelaxedMint[];
+extern const u8 gText_CalmMint[];
+extern const u8 gText_GentleMint[];
+extern const u8 gText_CarefulMint[];
+extern const u8 gText_SassyMint[];
+extern const u8 gText_BraveMint[];
+extern const u8 gText_QuietMint[];
+
+// Scale Attendant 4 Mints
+extern const u8 gText_LonelyMint[];
+extern const u8 gText_AdamantMint[];
+extern const u8 gText_NaughtyMint[];
+extern const u8 gText_ModestMint[];
+extern const u8 gText_MildMint[];
+extern const u8 gText_RashMint[];
+extern const u8 gText_TimidMint[];
+extern const u8 gText_HastyMint[];
+extern const u8 gText_JollyMint[];
+extern const u8 gText_NaiveMint[];
+
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
