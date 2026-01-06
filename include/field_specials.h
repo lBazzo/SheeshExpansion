@@ -41,5 +41,6 @@ void CheckParalysisIsLegal(void);
 void CheckSleepIsLegal(void);
 void CheckBurnIsLegal(void);
 void CheckFreezeIsLegal(void);
+void CheckIsSheeshSilverStarter(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

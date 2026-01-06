@@ -627,3 +627,4 @@ gSpecials::
 	def_special CheckSleepIsLegal
 	def_special CheckBurnIsLegal
 	def_special CheckFreezeIsLegal
+	def_special CheckIsSheeshSilverStarter

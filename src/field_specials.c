@@ -5409,3 +5409,22 @@ void CheckFreezeIsLegal(void)
         else
             gSpecialVar_Result = FALSE;
 }
+
+void CheckIsSheeshSilverStarter(void)
+{
+    u16 species;
+    species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
+
+        if (species == SPECIES_CHESPIN
+         || species == SPECIES_QUILLADIN
+         || species == SPECIES_CHESNAUGHT
+         || species == SPECIES_FENNEKIN
+         || species == SPECIES_BRAIXEN
+         || species == SPECIES_DELPHOX
+         || species == SPECIES_FROAKIE
+         || species == SPECIES_FROGADIER
+         || species == SPECIES_GRENINJA)
+            gSpecialVar_Result = TRUE;
+        else
+            gSpecialVar_Result = FALSE;
+}
