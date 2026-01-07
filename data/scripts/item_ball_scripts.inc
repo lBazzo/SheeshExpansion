@@ -64,7 +64,7 @@ Route110_EventScript_ItemElixir::
 	end
 
 Route111_EventScript_ItemTMSandstorm::
-	finditem ITEM_TM_SANDSTORM
+	@finditem ITEM_TM_SANDSTORM
 	end
 
 Route111_EventScript_ItemStardust::
@@ -460,11 +460,11 @@ AbandonedShip_HiddenFloorRooms_EventScript_ItemWaterStone::
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemTMRainDance::
-	finditem ITEM_TM_RAIN_DANCE
+	@finditem ITEM_TM_RAIN_DANCE
 	end
 
 ScorchedSlab_EventScript_ItemTMSunnyDay::
-	finditem ITEM_TM_SUNNY_DAY
+	@finditem ITEM_TM_SUNNY_DAY
 	end
 
 SafariZone_Northwest_EventScript_ItemTMSolarBeam::
@@ -512,7 +512,7 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 	end
 
 MtPyre_Exterior_EventScript_ItemTMSkillSwap::
-	finditem ITEM_TM_SKILL_SWAP
+	@finditem ITEM_TM_SKILL_SWAP
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
@@ -560,7 +560,7 @@ ShoalCave_LowTideStairsRoom_EventScript_ItemIceHeal::
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemTMHail::
-	finditem ITEM_TM_HAIL
+	@finditem ITEM_TM_HAIL
 	end
 
 ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::

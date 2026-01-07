@@ -110,7 +110,7 @@ GoldenrodCity_Gym_EventScript_WhitneyBadge::
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
 	giveitem ITEM_HEART_SCALE, 4
-	giveitem ITEM_TM_ATTRACT
+	@giveitem ITEM_TM_ATTRACT
 	msgbox GoldenrodCity_Gym_Text_WhitneyAttract, MSGBOX_DEFAULT
 	setvar VAR_GOLDENROD_CITY_STATE, 5
 	closemessage

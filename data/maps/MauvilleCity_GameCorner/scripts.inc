@@ -469,8 +469,8 @@ MauvilleCity_GameCorner_EventScript_ChooseTMPrize::
 
 MauvilleCity_GameCorner_EventScript_TMDoubleTeam::
 	setvar VAR_TEMP_1, 1
-	bufferitemname STR_VAR_1, ITEM_TM_DOUBLE_TEAM
-	setvar VAR_0x8004, ITEM_TM_DOUBLE_TEAM
+	bufferitemname STR_VAR_1, ITEM_TM_WILL_O_WISP
+	setvar VAR_0x8004, ITEM_TM_WILL_O_WISP
 	goto MauvilleCity_GameCorner_EventScript_ConfirmTMPrize
 
 MauvilleCity_GameCorner_EventScript_TMPsychic::
@@ -522,10 +522,10 @@ MauvilleCity_GameCorner_EventScript_ConfirmTMPrizeInfinite::
 MauvilleCity_GameCorner_EventScript_BuyTM32InfiniteDoubleTeam::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, TM_DOUBLE_TEAM_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitem ITEM_TM_DOUBLE_TEAM, 1
+	@checkitem ITEM_TM_DOUBLE_TEAM, 1
     goto_if_eq VAR_RESULT, TRUE, MauvilleCity_GameCorner_EventScript_YouAlreadyHaveThis
 	removecoins TM_DOUBLE_TEAM_COINS
-	additem ITEM_TM_DOUBLE_TEAM
+	@additem ITEM_TM_DOUBLE_TEAM
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -587,10 +587,10 @@ MauvilleCity_GameCorner_EventScript_BuyTM13InfiniteIceBeam::
 MauvilleCity_GameCorner_EventScript_BuyTMDoubleTeam::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, TM_DOUBLE_TEAM_COINS, MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForTM
-	checkitemspace ITEM_TM_DOUBLE_TEAM
+	@checkitemspace ITEM_TM_DOUBLE_TEAM
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_GameCorner_EventScript_NoRoomForTM
 	removecoins TM_DOUBLE_TEAM_COINS
-	additem ITEM_TM_DOUBLE_TEAM
+	@additem ITEM_TM_DOUBLE_TEAM
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT

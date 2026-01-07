@@ -1140,3 +1140,27 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantExit::
 CherryGrove_Pokecenter_Text_ScaleAttendantExit::
 	.string "I see. I bid you farewell, {PLAYER}. Do\n"
 	.string "let me know if I can be of service, OK?$"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CherryGrove_Pokecenter_EventScript_TMClerk::
+	lock
+	faceplayer
+	giveitem ITEM_TM52
+	release
+	end
+
+
+
+

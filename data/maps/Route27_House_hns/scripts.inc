@@ -31,7 +31,7 @@ Route27_House_EventScript_WomanHighFriendship::
 	applymovement OBJ_EVENT_ID_FOLLOWER ContestHall_Movement_Heart
 	waitmovement 0
 	msgbox SandstormHouse_Text_LoyalMon, MSGBOX_DEFAULT
-	giveitem ITEM_TM_SANDSTORM
+	@giveitem ITEM_TM_SANDSTORM
 	setflag FLAG_GOT_TM_SANDSTORM
 	msgbox SandstormHouse_Text_TM37Description, MSGBOX_DEFAULT
 	closemessage

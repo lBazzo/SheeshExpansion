@@ -504,7 +504,7 @@ OlivineCity_EventScript_LighthouseSign::
 	end
 
 OlivineCity_EventScript_Item_Shockwave::
-	finditem ITEM_TM_SHOCK_WAVE
+	finditem ITEM_TM_WILL_O_WISP
 	end
 
 OlivineCity_EventScript_EonTicketWoman::

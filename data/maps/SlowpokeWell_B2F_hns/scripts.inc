@@ -35,7 +35,7 @@ SlowpokeWell_EventScript_Slowking::
 	setweather WEATHER_RAIN
 	doweather
 	waitmoncry
-	giveitem ITEM_TM_RAIN_DANCE
+	@giveitem ITEM_TM_RAIN_DANCE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	setflag FLAG_ITEM_SLOWPOKE_WELL_RAIN_DANCE
 	release

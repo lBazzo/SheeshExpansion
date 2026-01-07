@@ -57,7 +57,7 @@ GoldenrodCity_UndergroundStorage_EventScript_Eto::
 	end
 
 GoldenrodCity_UndergroundStorage_EventScript_Item_TM_CALM_MIND::
-    finditem ITEM_TM_CALM_MIND
+    @finditem ITEM_TM_CALM_MIND
     end
 
 GoldenrodCity_UndergroundStorage_EventScript_Item_UltraBall::

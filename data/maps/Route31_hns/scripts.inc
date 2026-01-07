@@ -83,7 +83,7 @@ Route31_EventScript_SleepyMan_GiveKenya::
 	delay 55
 	callnative UpdateFollowingPokemon
 	msgbox Route31_Text_ReadingMail, MSGBOX_DEFAULT
-	giveitem ITEM_TM_TORMENT
+	@giveitem ITEM_TM_TORMENT
 	msgbox Route31_Text_DescribeNightmare, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_KENYA, 2

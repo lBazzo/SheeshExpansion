@@ -26,7 +26,7 @@ OlivineLighthouse_EventScript_Item_RareCandy::
     end
 
 OlivineLighthouse_EventScript_Item_TMBulkUp::
-    finditem ITEM_TM_BULK_UP
+    @finditem ITEM_TM_BULK_UP
     end
 
 OlivineLighthouse_EventScript_Item_HyperPotion::

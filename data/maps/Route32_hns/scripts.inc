@@ -34,10 +34,10 @@ Route32_EventScript_PicnickerLiz::
 Route32_EventScript_Roar::
 	lock
 	faceplayer
-	checkitem ITEM_TM_ROAR
+	@checkitem ITEM_TM_ROAR
 	goto_if_eq VAR_RESULT, TRUE, Route32_EventScript_Roar2
 	msgbox Route32_Text_RoarIntro, MSGBOX_DEFAULT
-	giveitem ITEM_TM_ROAR
+	@giveitem ITEM_TM_ROAR
 	msgbox Route32_Text_RoarOutro, MSGBOX_DEFAULT
 	closemessage
 	release

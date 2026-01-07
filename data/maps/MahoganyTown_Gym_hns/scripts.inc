@@ -83,7 +83,7 @@ MahoganyTown_Gym_EventScript_PryceVictory::
     addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 7
 	call Common_EventScript_SetGymTrainers
-	giveitem ITEM_TM_HAIL
+	@giveitem ITEM_TM_HAIL
 	msgbox MahoganyTown_Gym_Text_HailSpeech, MSGBOX_DEFAULT
     setvar VAR_SAFARI_ZONE_GATE_STATE, 1
     setflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS

@@ -82,8 +82,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MYSTERY_GIFT_MAN",
-      "x": 12,
-      "y": 2,
+      "x": 2,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -91,6 +91,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CherryGrove_Pokecenter_EventScript_ScaleAttendant",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CLERK",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CherryGrove_Pokecenter_EventScript_TMClerk",
       "flag": "0"
     }
   ],

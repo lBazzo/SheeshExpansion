@@ -41,7 +41,7 @@ VioletCity_Gym_EventScript_Falkner::
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	giveitem ITEM_HEART_SCALE, 4
-	giveitem ITEM_TM_DOUBLE_TEAM
+	@giveitem ITEM_TM_DOUBLE_TEAM
 	msgbox VioletGym_Text_Falkner_TMExplain, MSGBOX_DEFAULT
 	setvar VAR_VIOLET_CITY_STATE, 3
 	setrespawn HEAL_LOCATION_VIOLET_CITY

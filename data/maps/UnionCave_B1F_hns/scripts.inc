@@ -22,7 +22,7 @@ UnionCave_B1F_EventScript_PokemaniacCalvin::
 	end
 
 UnionCave_B1F_EventScript_Item_SecretPower::
-	finditem ITEM_TM_SECRET_POWER
+	@finditem ITEM_TM_SECRET_POWER
 	end
 
 UnionCave_B1F_EventScript_Item_Xdefend::

@@ -380,7 +380,7 @@ IlexForest_EventScript_FullHeal::
 	end
 
 IlexForest_EventScript_SunnyDay::
-	finditem ITEM_TM_SUNNY_DAY
+	@finditem ITEM_TM_SUNNY_DAY
 	end
 
 IlexForest_Movement_Kimono_Girl1:
@@ -812,7 +812,7 @@ IlexForest_EventScript_BugsyPreWell::
 
 IlexForest_EventScript_BugsyGiftTM::
 	msgbox IlexForest_Text_BugsyGiftTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_BULLET_SEED
+	@giveitem ITEM_TM_BULLET_SEED
 	setflag FLAG_BUGSY_GIFT_TM
 	goto IlexForest_EventScript_BugsyGiftStone
 

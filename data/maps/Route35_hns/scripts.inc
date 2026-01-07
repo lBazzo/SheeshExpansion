@@ -62,7 +62,7 @@ Route35_EventScript_Sign2::
 	end
 
 Route35_EventScript_Item_RockTomb::
-	finditem ITEM_TM_ROCK_TOMB
+	finditem ITEM_TM_WILL_O_WISP
 	end
 
 Route35_EventScript_Item_Nugget::

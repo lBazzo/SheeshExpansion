@@ -743,7 +743,7 @@ RocketHideout_B2F_Text_B2FDeactivateTransmitter:
 @===========================================================================================================================================
 
 RocketHideout_EventScript_Item_Thief::
-	finditem ITEM_TM_THIEF
+	@finditem ITEM_TM_THIEF
 	end
 
 RocketHideout_B2F_EventScript_LanceTriggerLeft::

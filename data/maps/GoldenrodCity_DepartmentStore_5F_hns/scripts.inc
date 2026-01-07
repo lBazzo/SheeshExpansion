@@ -52,7 +52,7 @@ GoldenrodDeptStore5_EventScript_Receptionist_GiveReturn::
 	return
 
 GoldenrodDeptStore5_EventScript_Receptionist_GiveFrustration::
-	giveitem ITEM_TM_FRUSTRATION
+	@giveitem ITEM_TM_FRUSTRATION
 	setflag FLAG_GOT_FRUSTRATION
 	return
 
@@ -97,7 +97,7 @@ GoldenrodDeptStore_5F_EventScript_ClerkRight::
 	.align 2
 GoldenrodDeptStore_5F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_PROTECT
-	.2byte ITEM_TM_SAFEGUARD
+	@.2byte ITEM_TM_SAFEGUARD
 	.2byte ITEM_TM_REFLECT
 	.2byte ITEM_TM_LIGHT_SCREEN
 	pokemartlistend

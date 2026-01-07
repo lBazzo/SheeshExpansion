@@ -209,7 +209,7 @@ BurnedTowerB1FEusineText:
 
 
 BurnedTower_B1F_EventScript_Item_Taunt::
-	finditem ITEM_TM_TAUNT
+	@finditem ITEM_TM_TAUNT
 	end
 
 BurnedTower_B1F_EventScript_Item_UltraBall::

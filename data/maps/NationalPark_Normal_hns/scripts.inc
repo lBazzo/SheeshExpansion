@@ -107,7 +107,7 @@ NationalPark_Normal_Text_Persian:
 	.string "PERSIAN: Fufushaa!$"
 
 NationalPark_Normal_EventScript_TM_Dig::
-	finditem ITEM_TM_DIG
+	@finditem ITEM_TM_DIG
 	end
 
 NationalPark_Normal_EventScript_Item_Soothe_Bell::
