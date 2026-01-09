@@ -2359,3 +2359,89 @@ const u8 gText_TimidMint[]        = _("Timid Mint {CLEAR_TO 0x5F}(4)");
 const u8 gText_HastyMint[]        = _("Hasty Mint {CLEAR_TO 0x5F}(4)");
 const u8 gText_JollyMint[]        = _("Jolly Mint {CLEAR_TO 0x5F}(4)");
 const u8 gText_NaiveMint[]        = _("Naive Mint {CLEAR_TO 0x5F}(4)");
+
+// TM Clerk Badge menu
+
+const u8 gText_ZephyrBadge[]       = _("Zephyr Badge");
+const u8 gText_HiveBadge[]       = _("Hive Badge");
+const u8 gText_PlainBadge[]       = _("Plain Badge");
+const u8 gText_FogBadge[]      = _("Fog Badge");
+const u8 gText_StormBadge[]       = _("Storm Badge");
+const u8 gText_GlacierBadge[]       = _("Glacier Badge");
+
+// Zephyr Badge TMs
+
+const u8 gText_GrassKnot[]       = _("Grass Knot");
+const u8 gText_NightShade[]       = _("Night Shade");
+const u8 gText_SeismicToss[]       = _("Seismic Toss");
+const u8 gText_WaterPulse[]       = _("Water Pulse");
+const u8 gText_Pluck[]       = _("Pluck");
+const u8 gText_DualWingbeat[]       = _("Dual Wingbeat");
+
+// Hive Badge TMs
+
+const u8 gText_Protect[]       = _("Protect");
+const u8 gText_WillOWisp[]       = _("Will-O-Wisp");
+const u8 gText_ThunderWave[]       = _("Thunder Wave");
+const u8 gText_SteelWing[]       = _("Steel Wing");
+const u8 gText_Defog[]       = _("Defog");
+const u8 gText_UTurn[]       = _("U-Turn");
+const u8 gText_Reflect[]       = _("Reflect");
+const u8 gText_LightScreen[]       = _("Light Screen");
+const u8 gText_FlipTurn[]       = _("Flip Turn");
+
+// Plain Badge TMs
+
+const u8 gText_XScissor[]       = _("X-Scissor");
+const u8 gText_FlashCannon[]       = _("Flash Cannon");
+const u8 gText_DarkPulse[]       = _("Dark Pulse");
+const u8 gText_ShadowBall[]       = _("Shadow Ball");
+const u8 gText_DragonClaw[]       = _("Dragon Claw");
+const u8 gText_PsychicFangs[]       = _("Psychic Fangs");
+const u8 gText_LowKick[]       = _("Low Kick");
+const u8 gText_Return[]       = _("Return");
+const u8 gText_Facade[]       = _("Facade");
+
+// Fog Badge TMs
+
+const u8 gText_EnergyBall[]       = _("Energy Ball");
+const u8 gText_SludgeBomb[]       = _("Sludge Bomb");
+const u8 gText_Flamethrower[]       = _("Flamethrower");
+const u8 gText_Thunderbolt[]       = _("Thunderbolt");
+const u8 gText_IceBeam[]       = _("Ice Beam");
+const u8 gText_Psychic[]       = _("Psychic");
+const u8 gText_Moonblast[]       = _("Moonblast");
+const u8 gText_PlayRough[]      = _("Play Rough");
+const u8 gText_EarthPower[]       = _("Earth Power");
+const u8 gText_HyperVoice[]       = _("Hyper Voice");
+const u8 gText_Payback[]       = _("Payback");
+const u8 gText_GigaDrain[]       = _("Giga Drain");
+
+// Storm Badge TMs
+
+const u8 gText_StoneEdge[]       = _("Stone Edge");
+const u8 gText_RockSlide[]       = _("Rock Slide");
+const u8 gText_Earthquake[]       = _("Earthquake");
+const u8 gText_IronTail[]       = _("Iron Tail");
+const u8 gText_FocusBlast[]       = _("Focus Blast");
+const u8 gText_SolarBeam[]       = _("Solar Beam");
+const u8 gText_SolarBlade[]       = _("Solar Blade");
+const u8 gText_HyperBeam[]       = _("Hyper Beam");
+const u8 gText_GigaImpact[]       = _("Giga Impact");
+const u8 gText_DragonPulse[]       = _("Dragon Pulse");
+const u8 gText_VoltSwitch[]       = _("Volt Switch");
+const u8 gText_DrainingKiss[]       = _("Draining Kiss");
+const u8 gText_DazzlingGleam[]       = _("Dazzling Gleam");
+const u8 gText_DrainPunch[]       = _("Drain Punch");
+
+// Glacier Badge TMs
+
+const u8 gText_SleepTalk[]       = _("Sleep Talk");
+const u8 gText_Roost[]       = _("Roost");
+const u8 gText_Explosion[]       = _("Explosion");
+const u8 gText_MistyExplosion[]       = _("Misty Explosion");
+const u8 gText_FocusPunch[]       = _("Focus Punch");
+const u8 gText_BodyPress[]       = _("Body Press");
+const u8 gText_WeatherBall[]      = _("Weather Ball");
+const u8 gText_TripleAxel[]       = _("Triple Axel");
+

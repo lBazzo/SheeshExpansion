@@ -194,6 +194,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	msgbox AzaleaTown_Gym_Text_HiveBadgeSpeechMisty, MSGBOX_DEFAULT
 	setflag FLAG_BADGE02_GET
 	setflag FLAG_DEFEATED_AZALEA_TOWN_GYM
+	setflag FLAG_TM_CLERK_COLLECTION_POST_MISTY
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 2
 	call Common_EventScript_SetGymTrainers

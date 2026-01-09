@@ -1626,13 +1626,13 @@
 #define FLAG_TALKED_E4_SPENCER                      (SYSTEM_FLAGS + 0x9A) // Unused Flag
 #define FLAG_TALKED_SCALE_ATTENDANT                 (SYSTEM_FLAGS + 0x9B) // Unused Flag
 #define FLAG_TALKED_STARTER_FREE_TUTOR              (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
+#define FLAG_TALKED_TM_CLERK                        (SYSTEM_FLAGS + 0x9D) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_FALKNER       (SYSTEM_FLAGS + 0x9E) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_MISTY         (SYSTEM_FLAGS + 0x9F) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_WHITNEY       (SYSTEM_FLAGS + 0xA0) // Unused Flag 900???
+#define FLAG_TM_CLERK_COLLECTION_POST_ERIKA         (SYSTEM_FLAGS + 0xA1) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_CHUCK         (SYSTEM_FLAGS + 0xA2) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_PRYCE         (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
 #define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag

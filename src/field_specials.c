@@ -2565,6 +2565,76 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_TM_CLERK_MAIN_MENU:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_FALKNER_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_MISTY_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_ERIKA_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 13;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_CHUCK_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 15;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TM_CLERK_POST_PRYCE_TMS:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 10;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2886,6 +2956,100 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_HastyMint,
         gText_JollyMint,
         gText_NaiveMint,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_MAIN_MENU] =
+    {
+        gText_ZephyrBadge,
+        gText_HiveBadge,
+        gText_PlainBadge,
+        gText_FogBadge,
+        gText_StormBadge,
+        gText_GlacierBadge,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_FALKNER_TMS] =
+    {
+        gText_GrassKnot,
+        gText_NightShade,
+        gText_SeismicToss,
+        gText_WaterPulse,
+        gText_Pluck,
+        gText_DualWingbeat,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_MISTY_TMS] =
+    {
+        gText_Protect,
+        gText_WillOWisp,
+        gText_Toxic,
+        gText_ThunderWave,
+        gText_SteelWing,
+        gText_Defog,
+        gText_UTurn,
+        gText_Reflect,
+        gText_LightScreen,
+        gText_FlipTurn,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS] =
+    {
+        gText_XScissor,
+        gText_FlashCannon,
+        gText_DarkPulse,
+        gText_ShadowBall,
+        gText_DragonClaw,
+        gText_PsychicFangs,
+        gText_LowKick,
+        gText_Return,
+        gText_Facade,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_ERIKA_TMS] =
+    {
+        gText_EnergyBall,
+        gText_SludgeBomb,
+        gText_Flamethrower,
+        gText_Thunderbolt,
+        gText_IceBeam,
+        gText_Psychic,
+        gText_Moonblast,
+        gText_PlayRough,
+        gText_EarthPower,
+        gText_HyperVoice,
+        gText_Payback,
+        gText_GigaDrain,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_CHUCK_TMS] =
+    {
+        gText_StoneEdge,
+        gText_RockSlide,
+        gText_Earthquake,
+        gText_IronTail,
+        gText_FocusBlast,
+        gText_SolarBeam,
+        gText_SolarBlade,
+        gText_HyperBeam,
+        gText_GigaImpact,
+        gText_DragonPulse,
+        gText_VoltSwitch,
+        gText_DrainingKiss,
+        gText_DazzlingGleam,
+        gText_DrainPunch,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TM_CLERK_POST_PRYCE_TMS] =
+    {
+        gText_Rest,
+        gText_SleepTalk,
+        gText_Roost,
+        gText_Explosion,
+        gText_MistyExplosion,
+        gText_FocusPunch,
+        gText_BodyPress,
+        gText_WeatherBall,
+        gText_TripleAxel,
         gText_Exit
     },
 };

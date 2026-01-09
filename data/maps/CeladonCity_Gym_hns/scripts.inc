@@ -16,6 +16,7 @@ CeladonCity_Gym_EventScript_Erika::
 	setvar VAR_ECRUTEAK_CITY_STATE, 5
 	setflag FLAG_BADGE04_GET
 	setflag FLAG_DEFEATED_ECRUTEAK_CITY_GYM
+	setflag FLAG_TM_CLERK_COLLECTION_POST_ERIKA
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 4
 	call Common_EventScript_SetGymTrainers

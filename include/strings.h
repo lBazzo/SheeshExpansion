@@ -2635,6 +2635,92 @@ extern const u8 gText_HastyMint[];
 extern const u8 gText_JollyMint[];
 extern const u8 gText_NaiveMint[];
 
+// TM Clerk Badge menu
+// extern const u8 gText_[];
+
+extern const u8 gText_ZephyrBadge[];
+extern const u8 gText_HiveBadge[];
+extern const u8 gText_PlainBadge[];
+extern const u8 gText_FogBadge[];
+extern const u8 gText_StormBadge[];
+extern const u8 gText_GlacierBadge[];
+
+// Zephyr Badge TMs
+
+extern const u8 gText_GrassKnot[];
+extern const u8 gText_NightShade[];
+extern const u8 gText_SeismicToss[];
+extern const u8 gText_WaterPulse[];
+extern const u8 gText_Pluck[];
+extern const u8 gText_DualWingbeat[];
+
+// Hive Badge TMs
+
+extern const u8 gText_Protect[];
+extern const u8 gText_WillOWisp[];
+extern const u8 gText_ThunderWave[];
+extern const u8 gText_SteelWing[];
+extern const u8 gText_Defog[];
+extern const u8 gText_UTurn[];
+extern const u8 gText_Reflect[];
+extern const u8 gText_LightScreen[];
+extern const u8 gText_FlipTurn[];
+
+// Plain Badge TMs
+
+extern const u8 gText_XScissor[];
+extern const u8 gText_FlashCannon[];
+extern const u8 gText_DarkPulse[];
+extern const u8 gText_ShadowBall[];
+extern const u8 gText_DragonClaw[];
+extern const u8 gText_PsychicFangs[];
+extern const u8 gText_LowKick[];
+extern const u8 gText_Return[];
+extern const u8 gText_Facade[];
+
+// Fog Badge TMs
+
+extern const u8 gText_EnergyBall[];
+extern const u8 gText_SludgeBomb[];
+extern const u8 gText_Flamethrower[];
+extern const u8 gText_Thunderbolt[];
+extern const u8 gText_IceBeam[];
+extern const u8 gText_Psychic[];
+extern const u8 gText_Moonblast[];
+extern const u8 gText_PlayRough[];
+extern const u8 gText_EarthPower[];
+extern const u8 gText_HyperVoice[];
+extern const u8 gText_Payback[];
+extern const u8 gText_GigaDrain[];
+
+// Storm Badge TMs
+
+extern const u8 gText_StoneEdge[];
+extern const u8 gText_RockSlide[];
+extern const u8 gText_Earthquake[];
+extern const u8 gText_IronTail[];
+extern const u8 gText_FocusBlast[];
+extern const u8 gText_SolarBeam[];
+extern const u8 gText_SolarBlade[];
+extern const u8 gText_HyperBeam[];
+extern const u8 gText_GigaImpact[];
+extern const u8 gText_DragonPulse[];
+extern const u8 gText_VoltSwitch[];
+extern const u8 gText_DrainingKiss[];
+extern const u8 gText_DazzlingGleam[];
+extern const u8 gText_DrainPunch[];
+
+// Glacier Badge TMs
+
+extern const u8 gText_SleepTalk[];
+extern const u8 gText_Roost[];
+extern const u8 gText_Explosion[];
+extern const u8 gText_MistyExplosion[];
+extern const u8 gText_FocusPunch[];
+extern const u8 gText_BodyPress[];
+extern const u8 gText_WeatherBall[];
+extern const u8 gText_TripleAxel[];
+
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
