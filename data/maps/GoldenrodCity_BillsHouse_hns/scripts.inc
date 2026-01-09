@@ -36,28 +36,50 @@ GoldenrodCity_BillsHouse_EventScript_Bill::
 GoldenrodCity_BillsHouse_EventScript_Bill_Eevee::
 	msgbox BillHouse_Text_TakeThisEevee, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_BillsHouse_EventScript_Bill_Refused
+    getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, GoldenrodCity_BillsHouse_EventScript_Bill_EeveeFullParty
 	msgbox BillHouse_Text_CountingOnYou, MSGBOX_DEFAULT
 
 	@HnS named gift pokemon setup
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE
+	@setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_EEVEE
 	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
-	givenamedmon 3
-	call Common_EventScript_GiftMon
-
+	givemon SPECIES_EEVEE, 20
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_EEVEE
+	message GoldenrodCity_BillsHouse_Text_ReceivedEevee
+	waitfanfare
+    msgbox GoldenrodCity_BillsHouse_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, GoldenrodCity_BillsHouse_EventScript_NicknameEevee
     
-
 	setflag FLAG_GOT_EEVEE
 	msgbox BillHouse_Text_EeveeMayEvolve, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
+GoldenrodCity_BillsHouse_EventScript_Bill_EeveeFullParty::
+	.string "Oh, no. You can't carry any more\n"
+	.string "POKéMON with you.\p"
+	.string "I'll wait here while you make\n"
+	.string "room for it.$"
+
+GoldenrodCity_BillsHouse_EventScript_NicknameEevee::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMonFull
+	return
 
 GoldenrodCity_BillsHouse_EventScript_Bill_Refused::
 	msgbox BillHouse_Text_NoEevee, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
+
+GoldenrodCity_BillsHouse_Text_ReceivedEevee:
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+GoldenrodCity_BillsHouse_Text_Nickname:
+	.string "Would you like to give your\n"
+	.string "{STR_VAR_1} a nickname?$"
 
 BillHouse_Text_TakeThisEevee:
     .string "BILL: Hi, {PLAYER}! Do us a favor and\n"

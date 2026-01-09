@@ -961,7 +961,7 @@
 #define FLAG_DELIVERED_EGG                                          0x376
 #define FLAG_HIDE_MRPOKEMON                                         0x377
 #define FLAG_HIDE_BATTLE_TOWER_OPPONENT                             0x378
-#define FLAG_RECEIVED_TOGEPI_EGG                                    0x379
+#define FLAG_RECEIVED_SPINDA                                        0x379
 #define FLAG_HIDE_VIOLET_CITY_AIDE                                  0x37A
 #define FLAG_HIDE_SPROUT_TOWER_SILVER                               0x37B
 #define FLAG_HIDE_JOHTO_GYM_LEADERS                                 0x37C

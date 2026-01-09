@@ -71,7 +71,7 @@ OlivineCity_EventScript_DeclineStevenGift::
 
 OlivineLighthouse_EventScript_StevenPostIntroGift::
 	msgbox OlivineCity_Text_StevenPostIntroReadyToGift, MSGBOX_DEFAULT
-	multichoice 20, 6, MULTI_STEVEN_GIFTS, FALSE 
+	multichoice 20, 0, MULTI_STEVEN_GIFTS, FALSE 
 	switch VAR_RESULT
 	case 0, OlivineLighthourse_EventScript_GiveCorviknight
 	case 1, OlivineLighthourse_EventScript_GiveEscavalier
@@ -81,10 +81,19 @@ OlivineLighthouse_EventScript_StevenPostIntroGift::
 
 OlivineLighthourse_EventScript_GiveCorviknight::
 	@HnS named gift pokemon setup
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIDGEY
-	bufferspeciesname STR_VAR_1, SPECIES_PIDGEY
-	givenamedmon 5
-	call Common_EventScript_GiftMon
+	@setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PIDGEY
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OlivineLighthouse_EventScript_FullParty
+	msgbox OlivineCity_Text_StevenGivingGift, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_CORVIKNIGHT
+	givemon SPECIES_CORVIKNIGHT, 74
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_CORVIKNIGHT
+	message OlivineLighthouse_Text_ReceivedPokemon
+	waitfanfare
+	msgbox OlivineLighthouse_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, OlivineLighthouse_EventScript_NicknameGift
+
 	msgbox OlivineCity_Text_StevenAfterGift, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -99,11 +108,18 @@ OlivineLighthourse_EventScript_GiveCorviknight::
 	end
 
 OlivineLighthourse_EventScript_GiveEscavalier::
-	@HnS named gift pokemon setup
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CATERPIE
-	bufferspeciesname STR_VAR_1, SPECIES_CATERPIE
-	givenamedmon 6
-	call Common_EventScript_GiftMon
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OlivineLighthouse_EventScript_FullParty
+	msgbox OlivineCity_Text_StevenGivingGift, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_ESCAVALIER
+	givemon SPECIES_ESCAVALIER, 74
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_ESCAVALIER
+	message OlivineLighthouse_Text_ReceivedPokemon
+	waitfanfare
+	msgbox OlivineLighthouse_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, OlivineLighthouse_EventScript_NicknameGift
+
 	msgbox OlivineCity_Text_StevenAfterGift, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -118,11 +134,18 @@ OlivineLighthourse_EventScript_GiveEscavalier::
 	end
 
 OlivineLighthourse_EventScript_GiveTinkaton::
-	@HnS named gift pokemon setup
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CLEFAIRY
-	bufferspeciesname STR_VAR_1, SPECIES_CLEFAIRY
-	givenamedmon 7
-	call Common_EventScript_GiftMon
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OlivineLighthouse_EventScript_FullParty
+	msgbox OlivineCity_Text_StevenGivingGift, MSGBOX_DEFAULT
+	bufferspeciesname STR_VAR_1, SPECIES_TINKATON
+	givemon SPECIES_TINKATON, 74
+	playfanfare MUS_OBTAIN_ITEM
+	bufferspeciesname STR_VAR_1, SPECIES_TINKATON
+	message OlivineLighthouse_Text_ReceivedPokemon
+	waitfanfare
+	msgbox OlivineLighthouse_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, OlivineLighthouse_EventScript_NicknameGift
+
 	msgbox OlivineCity_Text_StevenAfterGift, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -135,6 +158,35 @@ OlivineLighthourse_EventScript_GiveTinkaton::
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 1
 	release
 	end
+
+OlivineLighthouse_EventScript_NicknameGift:
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMonFull
+	return
+
+OlivineLighthouse_EventScript_FullParty::
+	msgbox OlivineLighthouse_Text_FullParty, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_STEVEN_INTRO_DONE
+	release
+	end
+
+OlivineCity_Text_StevenGivingGift:
+	.string "I thought you'd make that choice.\n"
+	.string "Please take good care of it.$"
+
+OlivineLighthouse_Text_FullParty:
+	.string "Oh, no. You can't carry any more\n"
+	.string "POKéMON with you.\p"
+	.string "I'll wait here while you make\n"
+	.string "room for it.$"
+
+OlivineLighthouse_Text_ReceivedPokemon:
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+OlivineLighthouse_Text_Nickname:
+	.string "Would you like to give your\n"
+	.string "{STR_VAR_1} a nickname?$"
 
 OlivineCity_Text_StevenPostIntroReadyToGift:
 	.string "So, I have CORVIKNIGHT, ESCAVALIER and\n"
@@ -155,7 +207,7 @@ OlivineCity_Text_DeclineStevenGift:
 	.string "me. Let me know when you're ready.$"
 
 OlivineCity_Text_StevenBlockingLighthouse:
-	.string "Hi there. Sorry for the brisk\n"
+	.string "Hello there. Sorry for the brisk\n"
 	.string "introduction, but I'm going to have to\l"
 	.string "ask you to leave for the time being.\p"
 	.string "This city's old GYM LEADER, JASMINE, is\n"

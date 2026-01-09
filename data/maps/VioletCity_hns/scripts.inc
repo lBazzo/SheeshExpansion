@@ -24,7 +24,7 @@ VioletCity_Set_MoveGymSage::
 
 VioletCity_EventScript_Trigger::
 	@LOCAL FLAGHEAP
-	clearflag FLAG_RECEIVED_TOGEPI_EGG
+	clearflag FLAG_RECEIVED_SPINDA
 	clearflag FLAG_VIOLET_NPC_TRADE_COMPLETED
 	clearflag FLAG_HIDE_SPROUT_TOWER_SILVER
 	clearflag FLAG_HIDE_JOHTO_GYM_LEADERS

@@ -3518,6 +3518,42 @@ bool8 ScrCmd_givenamedmon(struct ScriptContext *ctx)
         otId = gSaveBlock2Ptr->playerTrainerId[0];
         personality = 0x00000003; 
         break;
+    case 5: // CORVIKNIGHT
+        species = SPECIES_CORVIKNIGHT;
+        level = 74;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = gSaveBlock2Ptr->playerName;
+        otId = gSaveBlock2Ptr->playerTrainerId[0];
+        personality = Random32();
+        break;
+    case 6: // ESCAVALIER
+        species = SPECIES_ESCAVALIER;
+        level = 74;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = gSaveBlock2Ptr->playerName;
+        otId = gSaveBlock2Ptr->playerTrainerId[0];
+        personality = Random32();
+        break;
+    case 7: // TINKATON
+        species = SPECIES_TINKATON;
+        level = 74;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = gSaveBlock2Ptr->playerName;
+        otId = gSaveBlock2Ptr->playerTrainerId[0];
+        personality = Random32();
+        break;
+    case 8: // SPINDA
+        species = SPECIES_SPINDA;
+        level = 5;
+        item = ITEM_NONE;
+        nickname = NULL;
+        otName = gSaveBlock2Ptr->playerName;
+        otId = gSaveBlock2Ptr->playerTrainerId[0];
+        personality = Random32();
+        break;    
     default:
         gSpecialVar_Result = MON_CANT_GIVE;
         return FALSE;

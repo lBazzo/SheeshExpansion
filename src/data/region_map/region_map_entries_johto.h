@@ -125,6 +125,7 @@ static const u8 sJMapName_ASHEN_CRYPT[] = _("ASHEN CRYPT");
 static const u8 sJMapName_BATTLE_TOWER[] = _("BATTLE TOWER");
 static const u8 sJMapName_RADIO_ROOM[] = _("RADIO ROOM");
 static const u8 sJMapName_PROF_ELMS_LAB[] = _("PROF ELMS LAB");
+static const u8 sJMapName_VIOLET_POKEMON_CENTER[] = _("VIOLET POKEMON CENTER");
 
 const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_VIOLET_CITY] = {
@@ -1008,6 +1009,13 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .width = 1,
         .height = 1,
         .name = sJMapName_PROF_ELMS_LAB,
+    },
+    [MAPSEC_VIOLET_PCENTER] = {
+        .x = 0,
+        .y = 0,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_VIOLET_POKEMON_CENTER,
     },
 };
 

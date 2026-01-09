@@ -211,7 +211,7 @@ Route32_EventScript_BaldingManTriggerRight::
 Route32_EventScript_BaldingManCheck::
 	goto_if_unset (TRAINER_FLAGS_START + TRAINER_LI), Route32_EventScript_BaldingManTower
 	goto_if_unset FLAG_DEFEATED_VIOLET_GYM, Route32_EventScript_BaldingManGym
-	goto_if_unset FLAG_RECEIVED_TOGEPI_EGG, Route32_EventScript_BaldingManEgg
+	goto_if_unset FLAG_RECEIVED_SPINDA, Route32_EventScript_BaldingManEgg
 	msgbox Route32_Text_CooltrainerM_HaveThisSeed, MSGBOX_DEFAULT
 	giveitem ITEM_MIRACLE_SEED
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull

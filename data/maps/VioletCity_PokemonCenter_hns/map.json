@@ -3,7 +3,7 @@
   "name": "VioletCity_PokemonCenter_hns",
   "layout": "LAYOUT_VIOLET_CITY_POKEMON_CENTER",
   "music": "MUS_HG_POKE_CENTER",
-  "region_map_section": "MAPSEC_VIOLET_CITY",
+  "region_map_section": "MAPSEC_VIOLET_PCENTER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_VIOLET_CITY_NURSE",
@@ -116,9 +116,7 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
