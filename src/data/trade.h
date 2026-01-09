@@ -1015,7 +1015,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("ROCKY"),
         .species = SPECIES_ONIX,
-        .ivs = {4, 4, 4, 5, 5, 4},
+        .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 1,
         .otId = 48926,
         .conditions = {5, 5, 30, 5, 5},
@@ -1025,7 +1025,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("RUDY"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BELLSPROUT
+        .requestedSpecies = SPECIES_ODDISH
     },
     [INGAME_TRADE_HORSEA] =
     {
@@ -1063,7 +1063,7 @@ static const struct InGameTrade sIngameTrades[] =
     {
         .nickname = _("MUSCLE"),
         .species = SPECIES_MACHOP,
-        .ivs = {4, 4, 4, 5, 5, 4},
+        .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 0,
         .otId = 44312,
         .conditions = {5, 5, 30, 5, 5},
@@ -1073,13 +1073,13 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("JOSE"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_DROWZEE
+        .requestedSpecies = SPECIES_FURRET
     },
     [INGAME_TRADE_VOLTORB] =
     {
-        .nickname = _("BILLY"),
+        .nickname = _("VOLTY"),
         .species = SPECIES_VOLTORB,
-        .ivs = {4, 4, 4, 5, 5, 4},
+        .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 1,
         .otId = 29189,
         .conditions = {5, 5, 30, 5, 5},
@@ -1089,7 +1089,7 @@ static const struct InGameTrade sIngameTrades[] =
         .otName = _("TIM"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_KRABBY
+        .requestedSpecies = SPECIES_CORSOLA
     },
     [INGAME_TRADE_MR_MIME] =
     {
