@@ -27,7 +27,7 @@ VioletCity_TrainerSchool_EventScript_Boy1::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_MUSCLE_BAND, VioletCity_TrainerSchool_EventScript_Boy1Given
 	msgbox VioletCity_TrainerSchool_Text_GameboyKid1, MSGBOX_DEFAULT
-	@giveitem ITEM_MUSCLE_BAND
+	giveitem ITEM_MUSCLE_BAND
 	setflag FLAG_RECEIVED_MUSCLE_BAND
 	closemessage
 	release
@@ -44,7 +44,7 @@ VioletCity_TrainerSchool_EventScript_Boy2::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_WISE_GLASSES, VioletCity_TrainerSchool_EventScript_Boy2Given
 	msgbox VioletCity_TrainerSchool_Text_GameboyKid2, MSGBOX_DEFAULT
-	@giveitem ITEM_WISE_GLASSES
+	giveitem ITEM_WISE_GLASSES
 	setflag FLAG_RECEIVED_WISE_GLASSES
 	closemessage
 	release
