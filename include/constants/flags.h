@@ -1634,7 +1634,7 @@
 #define FLAG_TM_CLERK_COLLECTION_POST_CHUCK         (SYSTEM_FLAGS + 0xA2) // Unused Flag
 #define FLAG_TM_CLERK_COLLECTION_POST_PRYCE         (SYSTEM_FLAGS + 0xA3) // Unused Flag
 #define FLAG_TALKED_HP_TUTOR                        (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
+#define FLAG_TALKED_WELL_TUTOR                      (SYSTEM_FLAGS + 0xA5) // Unused Flag
 #define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
 #define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
 #define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag

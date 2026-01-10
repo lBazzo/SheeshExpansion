@@ -2445,3 +2445,7 @@ const u8 gText_BodyPress[]       = _("Body Press");
 const u8 gText_WeatherBall[]      = _("Weather Ball");
 const u8 gText_TripleAxel[]       = _("Triple Axel");
 
+// Well tutor
+
+const u8 gText_Screech[]         = _("Screech");
+const u8 gText_FakeTears[]       = _("Fake Tears");

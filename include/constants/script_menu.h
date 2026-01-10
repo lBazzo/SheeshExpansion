@@ -144,6 +144,7 @@
 #define MULTI_BUGSY_STONES                 132
 #define MULTI_DARACH_CAITLIN               133
 #define MULTI_DAHLIACHALLENGE              134
+#define MULTI_WELL_TUTOR                   135
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

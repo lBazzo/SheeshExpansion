@@ -902,6 +902,13 @@ static const struct MenuAction MultichoiceList_DarachCaitlin[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_WellTutor[] = 
+{
+    {gText_Screech},
+    {gText_FakeTears},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_ElderQuiz1[] = 
 {
     {gText_Pal},
@@ -1102,6 +1109,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_OLIVINE_GYM_CHALLENGE]      = MULTICHOICE(MultichoiceList_OlivineGymChallenge),
     [MULTI_BUGSY_STONES]               = MULTICHOICE(MultichoiceList_BugsyStones),
     [MULTI_DARACH_CAITLIN]             = MULTICHOICE(MultichoiceList_DarachCaitlin),
+    [MULTI_WELL_TUTOR]                 = MULTICHOICE(MultichoiceList_WellTutor),
 };
 
 const u8 *const gStdStrings[] =

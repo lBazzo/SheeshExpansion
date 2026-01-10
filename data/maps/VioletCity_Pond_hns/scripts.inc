@@ -11,7 +11,10 @@ VioletCity_Pond_EventScript_Unown::
 	msgbox VioletCity_Pond_Text_Unown, MSGBOX_DEFAULT
 	delay 20
 	waitmoncry
+	applymovement LOCALID_UNOWN, Common_Movement_FaceDown
+	waitmovement 0
 	closemessage
+	release
 	end
 
 VioletCity_Pond_Text_Unown:

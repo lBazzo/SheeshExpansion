@@ -2420,7 +2420,9 @@ extern const u8 gText_IceStone[];
 //new strings for darach caitlin
 extern const u8 gText_B2B[];
 
-
+//new strings for well tutor
+extern const u8 gText_Screech[];
+extern const u8 gText_FakeTears[];
 
 //new strings for darach scroll multi menu
 extern const u8 gText_BabiriBerry1BP[];
