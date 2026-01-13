@@ -3,6 +3,14 @@
 .set LOCALID_GOLDENROD_CITY_LITTLEGIRL, 35
 .set LOCALID_GOLDENROD_CITY_AZURILL, 36
 .set LOCALID_GOLDENROD_CITY_GAMECORNERGUARD, 37
+.set LOCALID_GOLDENROD_CITY_PUNCHTUTOR, 38
+.set LOCALID_GOLDENROD_CITY_HITMONCHAN, 39
+.set LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, 40
+.set LOCALID_GOLDENROD_CITY_ACCELGOR, 41
+.set LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, 42
+.set LOCALID_GOLDENROD_CITY_PORYGON2, 43
+.set LOCALID_GOLDENROD_CITY_FANGTUTOR, 44
+.set LOCALID_GOLDENROD_CITY_FERALIGATR, 45
 
 GoldenrodCity_hns_MapScripts::
 	.byte 0
@@ -668,4 +676,1306 @@ GoldenrodCity_Text_GameCornerGuardGiven:
 	.string "it's because they're bad.\p"
 	.string "If you lose, it's because you're\n"
 	.string "unlucky! What can you do, eh?$"
+
+
+
+
+
+
+
+@PUNCH TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GoldenrodCity_EventScript_Hitmonchan::
+	lock
+	faceplayer
+	playmoncry SPECIES_HITMONCHAN, CRY_MODE_NORMAL
+	msgbox GoldenrodCity_Text_Hitmonchan, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_HITMONCHAN, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_Hitmonchan:
+	.string "Hitmonchan: PowPowwwww!$"
+
+GoldenrodCity_EventScript_PunchTutor::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Text_PunchTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_EventScript_PunchTutorDeclined
+	msgbox GoldenrodCity_Text_PunchTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_PUNCH_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, GoldenrodCity_EventScript_PunchTutorThunderPunch
+	case 1, GoldenrodCity_EventScript_PunchTutorFirePunch
+	case 2, GoldenrodCity_EventScript_PunchTutorIcePunch
+	case 3, GoldenrodCity_EventScript_PunchTutorBrickBreak
+	case 4, GoldenrodCity_EventScript_PunchTutorPoisonJab
+	case 5, GoldenrodCity_EventScript_PunchTutorShadowPunch
+	case 6, GoldenrodCity_EventScript_PunchTutorDeclined
+	case MULTI_B_PRESSED, GoldenrodCity_EventScript_PunchTutorDeclined
+	end
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@TEMPLATE
+@GoldenrodCity_EventScript_Tutor::
+@	msgbox GoldenrodCity_Text_TutorWhichMon, MSGBOX_DEFAULT
+@	setvar VAR_0x8005, MOVE_
+@	call MoveTutor_EventScript_OpenPartyMenu
+@	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_TutorDeclined
+@	applymovement LOCALID_GOLDENROD_CITY_TUTOR, Common_Movement_FaceRight
+@	msgbox GoldenrodCity_Text_TutorTeachingMove, MSGBOX_DEFAULT
+@	closemessage
+@	applymovement LOCALID_GOLDENROD_CITY_TUTOR, Common_Movement_FacePlayer
+@	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+@	call_if_eq VAR_TEMP_1, 9, GoldenrodCity_EventScript_TutorTeachPlayerBelow
+@	call_if_eq VAR_TEMP_1, 8, GoldenrodCity_EventScript_TutorTeachPlayerLeft
+@	goto_if_set FLAG_TALKED_GOLDENROD__TUTOR, GoldenrodCity_EventScript_TutorFriend
+@	msgbox GoldenrodCity_Text_TutorMoveTaught, MSGBOX_DEFAULT
+@	setflag FLAG_TALKED_GOLDENROD__TUTOR
+@	closemessage
+@	release
+@	end
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+GoldenrodCity_EventScript_PunchTutorThunderPunch::
+	msgbox GoldenrodCity_Text_PunchTutorThunderPunchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_THUNDER_PUNCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorFirePunch::
+	msgbox GoldenrodCity_Text_PunchTutorFirePunchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FIRE_PUNCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorIcePunch::
+	msgbox GoldenrodCity_Text_PunchTutorIcePunchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ICE_PUNCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorBrickBreak::
+	msgbox GoldenrodCity_Text_PunchTutorBrickBreakWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BRICK_BREAK
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorPoisonJab::
+	msgbox GoldenrodCity_Text_PunchTutorPoisonJabWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_POISON_JAB
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorShadowPunch::
+	msgbox GoldenrodCity_Text_PunchTutorShadowPunchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SHADOW_PUNCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_PunchTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_PunchTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_PUNCHTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR, GoldenrodCity_EventScript_PunchTutorFriend
+	msgbox GoldenrodCity_Text_PunchTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_PUNCH_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorFriend::
+	msgbox GoldenrodCity_Text_PunchTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_PunchTutorTeachPlayerBelow::
+	applymovement LOCALID_GOLDENROD_CITY_HITMONCHAN, GoldenrodCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_HITMONCHAN, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_HITMONCHAN, GoldenrodCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+GoldenrodCity_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+GoldenrodCity_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+GoldenrodCity_EventScript_PunchTutorTeachPlayerLeft::
+	applymovement LOCALID_GOLDENROD_CITY_HITMONCHAN, GoldenrodCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_HITMONCHAN, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_HITMONCHAN, GoldenrodCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+GoldenrodCity_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+GoldenrodCity_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+GoldenrodCity_EventScript_PunchTutorDeclined::
+	msgbox GoldenrodCity_Text_PunchTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_PunchTutorDeclined::
+	.string "Hmph! What, are you going to fight your\n"
+	.string "enemies with your feet like a WUSS?\p"
+	.string "I'll be here training my fists for when\n"
+	.string "you see the error of your ways!$"
+
+GoldenrodCity_Text_PunchTutorLetMeTeach:
+	.string "HIYAH!\p"
+	.string "That's the sound your hands make when\n"
+	.string "striking down your enemies -\l"
+	.string "with the proper technique, of course.\p"
+	.string "I can teach your POKéMON how to punch,\n"
+	.string "jab and chop their way to the top.\p"
+	.string "Come on! What are we waiting for? Let's\n"
+	.string "start training now!$"
+
+GoldenrodCity_Text_PunchTutorWhichMove:
+	.string "Alright! What exercise are we gonna\n"
+	.string "warm up with?$"
+
+GoldenrodCity_Text_PunchTutorThunderPunchWhichMon:
+	.string "The power of Thunder Punch! Who's\n"
+	.string "stepping into the arena?$"
+
+GoldenrodCity_Text_PunchTutorFirePunchWhichMon:
+	.string "The power of Fire Punch! Who's\n"
+	.string "stepping into the arena?$"
+
+GoldenrodCity_Text_PunchTutorIcePunchWhichMon:
+	.string "The power of Ice Punch! Who's\n"
+	.string "stepping into the arena?$"
+
+GoldenrodCity_Text_PunchTutorBrickBreakWhichMon:
+	.string "The power of Brick Break! Who's\n"
+	.string "stepping into the arena?$"
+
+GoldenrodCity_Text_PunchTutorPoisonJabWhichMon:
+	.string "The power of Poison Jab! Who's\n"
+	.string "stepping into the arena?$"
+
+GoldenrodCity_Text_PunchTutorShadowPunchWhichMon:
+	.string "The power of Shadow Punch! Who's\n"
+	.string "stepping into the arena?$"				
+
+GoldenrodCity_Text_PunchTutorTeachingMove:
+	.string "Hitmonchan! Get into the ring and show\n"
+	.string "our friend here how to throw down!$"
+
+GoldenrodCity_Text_PunchTutorMoveTaught:
+	.string "Heh, your POKéMON aren't bad!\p"
+	.string "With your training complete, you should\n"
+	.string "be able to use that move anytime.\p"
+	.string "I eagerly await our next sparring\n"
+	.string "session! You keep at it until then!$"
+
+GoldenrodCity_Text_PunchTutorFriend:
+	.string "Another technique succesfully\n"
+	.string "mastered!\p"
+	.string "One of these days, you'll be teaching me\n"
+	.string "some new moves, HOO HAH!$"
+
+
+
+
+
+
+
+@SPEED DROP TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GoldenrodCity_EventScript_Accelgor::
+	lock
+	faceplayer
+	playmoncry SPECIES_ACCELGOR, CRY_MODE_NORMAL
+	msgbox GoldenrodCity_Text_Accelgor, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_ACCELGOR, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_Accelgor:
+	.string "Accelgor: Vraaaoooo!$"
+
+GoldenrodCity_EventScript_SpeedDropTutor::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Text_SpeedDropTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	msgbox GoldenrodCity_Text_SpeedDropTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_SPEED_DROP_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, GoldenrodCity_EventScript_SpeedDropTutorIcyWind
+	case 1, GoldenrodCity_EventScript_SpeedDropTutorElectroweb
+	case 2, GoldenrodCity_EventScript_SpeedDropTutorRockTomb
+	case 3, GoldenrodCity_EventScript_SpeedDropTutorLowSweep
+	case 4, GoldenrodCity_EventScript_SpeedDropTutorMudShot
+	case 5, GoldenrodCity_EventScript_SpeedDropTutorPounce
+	case 6, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	case MULTI_B_PRESSED, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorIcyWind::
+	msgbox GoldenrodCity_Text_SpeedDropTutorIcyWindWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ICY_WIND
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorElectroweb::
+	msgbox GoldenrodCity_Text_SpeedDropTutorElectrowebWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ELECTROWEB
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorRockTomb::
+	msgbox GoldenrodCity_Text_SpeedDropTutorRockTombWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ROCK_TOMB
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorLowSweep::
+	msgbox GoldenrodCity_Text_SpeedDropTutorLowSweepWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LOW_SWEEP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorMudShot::
+	msgbox GoldenrodCity_Text_SpeedDropTutorMudShotWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MUD_SHOT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorPounce::
+	msgbox GoldenrodCity_Text_SpeedDropTutorPounceWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_POUNCE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorFriend::
+	msgbox GoldenrodCity_Text_SpeedDropTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow::
+	applymovement LOCALID_GOLDENROD_CITY_ACCELGOR, GoldenrodCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_ACCELGOR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_ACCELGOR, GoldenrodCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft::
+	applymovement LOCALID_GOLDENROD_CITY_ACCELGOR, GoldenrodCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_ACCELGOR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_ACCELGOR, GoldenrodCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_SpeedDropTutorDeclined::
+	msgbox GoldenrodCity_Text_SpeedDropTutorDeclined, MSGBOX_DEFAULT
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_SpeedDropTutorDeclined::
+	.string "You've been reading too much into the\n"
+	.string "tortoise and the hare, haven't you?\p"
+	.string "Don't think I'm going to wait around\n"
+	.string "forever just for you to catch up!$"
+
+GoldenrodCity_Text_SpeedDropTutorLetMeTeach:
+	.string "Speed is everything in battles!\p"
+	.string "Sometimes, everything is decided by the\n"
+	.string "first strike.\p"
+	.string "But even if you weren't born the\n"
+	.string "fastest, there are moves you can use\l"
+	.string "to gain that edge over your opponent.\p"
+	.string "So, are you interested in slowing down\n"
+	.string "the pace of your enemies?$"
+
+GoldenrodCity_Text_SpeedDropTutorWhichMove:
+	.string "Good answer! Now, which move will you\n"
+	.string "use to pin down those speedsters with?$"
+
+GoldenrodCity_Text_SpeedDropTutorIcyWindWhichMon:
+	.string "Icy Wind it is! And who's going to\n"
+	.string "learn the move?$"
+
+GoldenrodCity_Text_SpeedDropTutorElectrowebWhichMon:
+	.string "Electroweb it is! And who's going to\n"
+	.string "learn the move?$"
+
+GoldenrodCity_Text_SpeedDropTutorRockTombWhichMon:
+	.string "Rock Tomb it is! And who's going to\n"
+	.string "learn the move?$"
+
+GoldenrodCity_Text_SpeedDropTutorLowSweepWhichMon:
+	.string "Low Sweep it is! And who's going to\n"
+	.string "learn the move?$"
+
+GoldenrodCity_Text_SpeedDropTutorMudShotWhichMon:
+	.string "Mud Shot it is! And who's going to\n"
+	.string "learn the move?$"
+
+GoldenrodCity_Text_SpeedDropTutorPounceWhichMon:
+	.string "Pounce it is! And who's going to\n"
+	.string "learn the move?$"				
+
+GoldenrodCity_Text_SpeedDropTutorTeachingMove:
+	.string "Let's do it. Accelgor, give us a\n"
+	.string "demonstration, if you please!$"
+
+GoldenrodCity_Text_SpeedDropTutorMoveTaught:
+	.string "And that's all there is to it.\p"
+	.string "If you're ever having trouble pinning\n"
+	.string "down a swift opponent, you just leave\l"
+	.string "it to me, got it?$"
+
+GoldenrodCity_Text_SpeedDropTutorFriend:
+	.string "You and your POKéMON learn pretty\n"
+	.string "fast, you know that?\p"
+	.string "If your POKéMON moved as fast as they\n"
+	.string "learned, you probably wouldn't need my\l"
+	.string "techniques at all!$"
+
+
+
+
+
+
+
+
+
+
+@NEVER MISS TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GoldenrodCity_EventScript_Porygon2::
+	lock
+	faceplayer
+	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
+	msgbox GoldenrodCity_Text_Porygon2, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_PORYGON2, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_Porygon2:
+	.string "Porygon2: Boooodobidiboo!$"
+
+GoldenrodCity_EventScript_NeverMissTutor::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Text_NeverMissTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	msgbox GoldenrodCity_Text_NeverMissTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_NEVER_MISS_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, GoldenrodCity_EventScript_NeverMissTutorFeintAttack
+	case 1, GoldenrodCity_EventScript_NeverMissTutorAuraSphere
+	case 2, GoldenrodCity_EventScript_NeverMissTutorAerialAce
+	case 3, GoldenrodCity_EventScript_NeverMissTutorShockWave
+	case 4, GoldenrodCity_EventScript_NeverMissTutorMagicalLeaf
+	case 5, GoldenrodCity_EventScript_NeverMissTutorSmartStrike
+	case 6, GoldenrodCity_EventScript_NeverMissTutorSwift
+	case 7, GoldenrodCity_EventScript_NeverMissTutorMagnetBomb
+	case 8, GoldenrodCity_EventScript_NeverMissTutorOdorSleuth
+	case 9, GoldenrodCity_EventScript_NeverMissTutorForesight
+	case 10, GoldenrodCity_EventScript_NeverMissTutorMiracleEye
+	case 11, GoldenrodCity_EventScript_NeverMissTutorSweetScent
+	case 12, GoldenrodCity_EventScript_NeverMissTutorLockOn
+	case 13, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	case MULTI_B_PRESSED, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorFeintAttack::
+	msgbox GoldenrodCity_Text_NeverMissTutorFeintAttackWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FEINT_ATTACK
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorAuraSphere::
+	msgbox GoldenrodCity_Text_NeverMissTutorAuraSphereWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AURA_SPHERE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorAerialAce::
+	msgbox GoldenrodCity_Text_NeverMissTutorAerialAceWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AERIAL_ACE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorShockWave::
+	msgbox GoldenrodCity_Text_NeverMissTutorShockWaveWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SHOCK_WAVE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorMagicalLeaf::
+	msgbox GoldenrodCity_Text_NeverMissTutorMagicalLeafWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MAGICAL_LEAF
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorSmartStrike::
+	msgbox GoldenrodCity_Text_NeverMissTutorSmartStrikeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SMART_STRIKE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorSwift::
+	msgbox GoldenrodCity_Text_NeverMissTutorSwiftWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SWIFT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorMagnetBomb::
+	msgbox GoldenrodCity_Text_NeverMissTutorMagnetBombWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MAGNET_BOMB
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorOdorSleuth::
+	msgbox GoldenrodCity_Text_NeverMissTutorOdorSleuthWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ODOR_SLEUTH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorForesight::
+	msgbox GoldenrodCity_Text_NeverMissTutorForesightWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FORESIGHT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorMiracleEye::
+	msgbox GoldenrodCity_Text_NeverMissTutorMiracleEyeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_MIRACLE_EYE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorSweetScent::
+	msgbox GoldenrodCity_Text_NeverMissTutorSweetScentWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SWEET_SCENT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorLockOn::
+	msgbox GoldenrodCity_Text_NeverMissTutorLockOnWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LOCK_ON
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_NeverMissTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_NEVERMISSTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 14, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 13, GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR, GoldenrodCity_EventScript_NeverMissTutorFriend
+	msgbox GoldenrodCity_Text_NeverMissTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_NEVER_MISS_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorFriend::
+	msgbox GoldenrodCity_Text_NeverMissTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_NeverMissTutorTeachPlayerBelow::
+	applymovement LOCALID_GOLDENROD_CITY_PORYGON2, GoldenrodCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_PORYGON2, GoldenrodCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_NeverMissTutorTeachPlayerLeft::
+	applymovement LOCALID_GOLDENROD_CITY_PORYGON2, GoldenrodCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_PORYGON2, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_PORYGON2, GoldenrodCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_NeverMissTutorDeclined::
+	msgbox GoldenrodCity_Text_NeverMissTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_NeverMissTutorDeclined::
+	.string "I see. It seems that I miscalculated.\p"
+	.string "Clearly you aren't as invested in\n"
+	.string "POKéMON battles as I thought if you're\l"
+	.string "willing to make such reckless decisions.$"
+
+GoldenrodCity_Text_NeverMissTutorLetMeTeach:
+	.string "I don't deal in if's and maybe's.\p"
+	.string "POKéMON battles are a science.\p"
+	.string "If a move isn't guaranteed to hit, then\n"
+	.string "it may as well be guaranteed to miss.\p"
+	.string "I can make sure every move you make is\n"
+	.string "fully accurate. How about it?$"
+
+GoldenrodCity_Text_NeverMissTutorWhichMove:
+	.string "Just as I predicted. Let us proceed to\n"
+	.string "testing the theory at once, shall we?$"
+
+GoldenrodCity_Text_NeverMissTutorFeintAttackWhichMon:
+	.string "Feint Attack. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorAuraSphereWhichMon:
+	.string "Aura Sphere. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorAerialAceWhichMon:
+	.string "Aerial Ace. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorShockWaveWhichMon:
+	.string "Shock Wave. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorMagicalLeafWhichMon:
+	.string "Magical Leaf. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorSmartStrikeWhichMon:
+	.string "Smart Strike. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorSwiftWhichMon:
+	.string "Swift. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorMagnetBombWhichMon:
+	.string "Magnet Bomb. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorOdorSleuthWhichMon:
+	.string "Odor Sleuth. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorForesightWhichMon:
+	.string "Foresight. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorMiracleEyeWhichMon:
+	.string "Miracle Eye. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorSweetScentWhichMon:
+	.string "Sweet Scent. And which POKéMON will be\n"
+	.string "participating in our experiment?$"			
+
+GoldenrodCity_Text_NeverMissTutorLockOnWhichMon:
+	.string "Lock-On. And which POKéMON will be\n"
+	.string "participating in our experiment?$"	
+
+GoldenrodCity_Text_NeverMissTutorTeachingMove:
+	.string "Now then, Porygon2. Let us see if our\n"
+	.string "hypothesis is correct.$"
+
+GoldenrodCity_Text_NeverMissTutorMoveTaught:
+	.string "The process was a complete success.\p"
+	.string "This puts you one step ahead of your\n"
+	.string "next opponent. $"
+
+GoldenrodCity_Text_NeverMissTutorFriend:
+	.string "Dare we call this an experiement\n"
+	.string "if we both knew it would\l"
+	.string "succeed from the start?\p"
+	.string "I'd say you were fortunate, but this is\n"
+	.string "the result of careful planning.$"
+
+
+
+
+
+
+
+
+
+
+@FANG TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+GoldenrodCity_EventScript_Feraligatr::
+	lock
+	faceplayer
+	playmoncry SPECIES_FERALIGATR, CRY_MODE_NORMAL
+	msgbox GoldenrodCity_Text_Feraligatr, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_FERALIGATR, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_Feraligatr:
+	.string "Feraligatr: BaRawr!$"
+
+GoldenrodCity_EventScript_FangTutor::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_Text_FangTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_EventScript_FangTutorDeclined
+	msgbox GoldenrodCity_Text_FangTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_FANG_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, GoldenrodCity_EventScript_FangTutorThunderFang
+	case 1, GoldenrodCity_EventScript_FangTutorFireFang
+	case 2, GoldenrodCity_EventScript_FangTutorIceFang
+	case 3, GoldenrodCity_EventScript_FangTutorCrunch
+	case 4, GoldenrodCity_EventScript_FangTutorHyperFang
+	case 5, GoldenrodCity_EventScript_FangTutorPoisonFang
+	case 6, GoldenrodCity_EventScript_FangTutorPsychicFangs
+	case MULTI_B_PRESSED, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	end
+
+GoldenrodCity_EventScript_FangTutorThunderFang::
+	msgbox GoldenrodCity_Text_FangTutorThunderFangWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_THUNDER_FANG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+
+GoldenrodCity_EventScript_FangTutorFireFang::
+	msgbox GoldenrodCity_Text_FangTutorFireFangWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FIRE_FANG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorIceFang::
+	msgbox GoldenrodCity_Text_FangTutorIceFangWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ICE_FANG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorCrunch::
+	msgbox GoldenrodCity_Text_FangTutorCrunchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_CRUNCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorHyperFang::
+	msgbox GoldenrodCity_Text_FangTutorHyperFangWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_HYPER_FANG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorPoisonFang::
+	msgbox GoldenrodCity_Text_FangTutorPoisonFangWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_POISON_FANG
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorPsychicFangs::
+	msgbox GoldenrodCity_Text_FangTutorPsychicFangsWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_PSYCHIC_FANGS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_FangTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_FangTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_FANGTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 23, GoldenrodCity_EventScript_FangTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_FangTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR, GoldenrodCity_EventScript_FangTutorFriend
+	msgbox GoldenrodCity_Text_FangTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_FANG_TUTOR
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorFriend::
+	msgbox GoldenrodCity_Text_FangTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_EventScript_FangTutorTeachPlayerBelow::
+	applymovement LOCALID_GOLDENROD_CITY_FERALIGATR, GoldenrodCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_FERALIGATR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_FERALIGATR, GoldenrodCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_FangTutorTeachPlayerLeft::
+	applymovement LOCALID_GOLDENROD_CITY_FERALIGATR, GoldenrodCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_FERALIGATR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_GOLDENROD_CITY_FERALIGATR, GoldenrodCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+GoldenrodCity_EventScript_FangTutorDeclined::
+	msgbox GoldenrodCity_Text_FangTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_Text_FangTutorDeclined::
+	.string "Aww...$"
+
+GoldenrodCity_Text_FangTutorLetMeTeach:
+	.string "Me bite things.\n"
+	.string "You bite things too?$"
+
+GoldenrodCity_Text_FangTutorWhichMove:
+	.string "Mmm! Biting good!\n"
+	.string "How you want bite?$"
+
+GoldenrodCity_Text_FangTutorThunderFangWhichMon:
+	.string "Uh-huh. Who want learn Thunder Fang?$"			
+
+GoldenrodCity_Text_FangTutorFireFangWhichMon:
+	.string "Uh-huh. Who want learn Fire Fang?$"	
+
+GoldenrodCity_Text_FangTutorIceFangWhichMon:
+	.string "Uh-huh. Who want learn Ice Fang?$"	
+
+GoldenrodCity_Text_FangTutorCrunchWhichMon:
+	.string "Uh-huh. Who want learn Crunch?$"	
+
+GoldenrodCity_Text_FangTutorHyperFangWhichMon:
+	.string "Uh-huh. Who want learn HyperFang?$"	
+
+GoldenrodCity_Text_FangTutorPoisonFangWhichMon:
+	.string "Uh-huh. Who want learn Poison Fang?$"	
+
+GoldenrodCity_Text_FangTutorPsychicFangsWhichMon:
+	.string "Uh-huh. Who want learn Psychic Fangs?$"
+
+GoldenrodCity_Text_FangTutorTeachingMove:
+	.string "Feraligatr! Show how bite good!$"
+
+GoldenrodCity_Text_FangTutorMoveTaught:
+	.string "Hmm hmm. Good bite.$"
+
+GoldenrodCity_Text_FangTutorFriend:
+	.string "Hmm! Great bite!$"
 

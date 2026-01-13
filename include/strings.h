@@ -2723,6 +2723,91 @@ extern const u8 gText_BodyPress[];
 extern const u8 gText_WeatherBall[];
 extern const u8 gText_TripleAxel[];
 
+// Punch tutor
+// extern const u8 gText_[];
+
+extern const u8 gText_ThunderPunch[];
+extern const u8 gText_FirePunch[];
+extern const u8 gText_IcePunch[];
+extern const u8 gText_BrickBreak[];
+extern const u8 gText_PoisonJab[];
+extern const u8 gText_ShadowPunch[];
+
+// Speed Drop tutor
+
+extern const u8 gText_IcyWind[];
+extern const u8 gText_Electroweb[];
+extern const u8 gText_RockTomb[];
+extern const u8 gText_LowSweep[];
+extern const u8 gText_MudShot[];
+extern const u8 gText_Pounce[];
+
+// Never Miss tutor
+
+extern const u8 gText_FeintAttack[];
+extern const u8 gText_AuraSphere[];
+extern const u8 gText_AerialAce[];
+extern const u8 gText_ShockWave[];
+extern const u8 gText_MagicalLeaf[];
+extern const u8 gText_SmartStrike[];
+extern const u8 gText_Swift[];
+extern const u8 gText_MagnetBomb[];
+extern const u8 gText_OdorSleuth[];
+extern const u8 gText_Foresight[];
+extern const u8 gText_MiracleEye[];
+extern const u8 gText_SweetScent[];
+extern const u8 gText_LockOn[];
+
+// Fang tutor
+
+extern const u8 gText_ThunderFang[];
+extern const u8 gText_FireFang[];
+extern const u8 gText_IceFang[];
+extern const u8 gText_Crunch[];
+extern const u8 gText_HyperFang[];
+extern const u8 gText_PoisonFang[];
+extern const u8 gText_PsychicFangs[];
+
+// Trapping tutor
+
+extern const u8 gText_FireSpin[];
+extern const u8 gText_Whirlpool[];
+extern const u8 gText_SandTomb[];
+extern const u8 gText_SnapTrap[];
+extern const u8 gText_Wrap[];
+
+// Elemental tutor
+
+extern const u8 gText_Thunder[];
+extern const u8 gText_Blizzard[];
+extern const u8 gText_FireBlast[];
+extern const u8 gText_HydroPump[];
+extern const u8 gText_Hurricane[];
+extern const u8 gText_NaturePower[];
+
+// Multihit tutor
+
+extern const u8 gText_ArmThrust[];
+extern const u8 gText_BoneRush[];
+extern const u8 gText_BulletSeed[];
+extern const u8 gText_DoubleSlap[];
+extern const u8 gText_IcicleSpear[];
+extern const u8 gText_RockBlast[];
+extern const u8 gText_PinMissile[];
+
+// High crit tutor
+
+extern const u8 gText_AquaCutter[];
+extern const u8 gText_AirCutter[];
+extern const u8 gText_CrossPoison[];
+extern const u8 gText_DrillRun[];
+extern const u8 gText_LeafBlade[];
+extern const u8 gText_NightSlash[];
+extern const u8 gText_PsychoCut[];
+extern const u8 gText_ShadowClaw[];
+extern const u8 gText_Slash[];
+extern const u8 gText_BlazeKick[];
+
 // Map name pop-up
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];

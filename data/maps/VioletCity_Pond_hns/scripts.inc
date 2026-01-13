@@ -73,7 +73,6 @@ VioletCity_Pond_Movement_UnownTeachPlayerBelow1::
 VioletCity_Pond_Movement_UnownTeachPlayerBelow2::
 	jump_in_place_left
 	jump_in_place_left
-	delay 30
 	face_up
 	walk_up
 	face_down
@@ -106,7 +105,6 @@ VioletCity_Pond_Movement_UnownTeachPlayerLeft1::
 VioletCity_Pond_Movement_UnownTeachPlayerLeft2::
 	jump_in_place_up
 	jump_in_place_up
-	delay 30
 	face_right
 	walk_right
 	walk_right
@@ -124,7 +122,7 @@ VioletCity_Pond_Text_HPTutorLetMeTeach:
 	.string "Wait...!\p"
 	.string "Your POKéMON's hidden potential...\n"
 	.string "it's off the charts!\p"
-	.string "Please, let me teach HIDDEN POWER to\n"
+	.string "Please, let me teach Hidden Power to\n"
 	.string "your POKéMON! You'll let me, won't you?$"
 
 VioletCity_Pond_Text_HPTutorDeclined:

@@ -2635,6 +2635,86 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_PUNCH_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_SPEED_DROP_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 20;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_NEVER_MISS_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 14;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_FANG_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_TRAPPING_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 6;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_ELEMENTAL_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_MULTIHIT_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 8;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
+    case SCROLL_MULTI_HIGH_CRIT_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 11;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -3050,6 +3130,98 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_BodyPress,
         gText_WeatherBall,
         gText_TripleAxel,
+        gText_Exit
+    },
+    [SCROLL_MULTI_PUNCH_TUTOR] =
+    {
+        gText_ThunderPunch,
+        gText_FirePunch,
+        gText_IcePunch,
+        gText_BrickBreak,
+        gText_PoisonJab,
+        gText_ShadowPunch,
+        gText_Exit
+    },
+    [SCROLL_MULTI_SPEED_DROP_TUTOR] =
+    {
+        gText_IcyWind,
+        gText_Electroweb,
+        gText_RockTomb,
+        gText_LowSweep,
+        gText_MudShot,
+        gText_Pounce,
+        gText_Exit
+    },
+    [SCROLL_MULTI_NEVER_MISS_TUTOR] =
+    {
+        gText_FeintAttack,
+        gText_AuraSphere,
+        gText_AerialAce,
+        gText_ShockWave,
+        gText_MagicalLeaf,
+        gText_SmartStrike,
+        gText_Swift,
+        gText_MagnetBomb,
+        gText_OdorSleuth,
+        gText_Foresight,
+        gText_MiracleEye,
+        gText_SweetScent,
+        gText_LockOn,
+        gText_Exit
+    },
+    [SCROLL_MULTI_FANG_TUTOR] =
+    {
+        gText_ThunderFang,
+        gText_FireFang,
+        gText_IceFang,
+        gText_Crunch,
+        gText_HyperFang,
+        gText_PoisonFang,
+        gText_PsychicFangs,
+        gText_Exit
+    },
+    [SCROLL_MULTI_TRAPPING_TUTOR] =
+    {
+        gText_FireSpin,
+        gText_Whirlpool,
+        gText_SandTomb,
+        gText_SnapTrap,
+        gText_Wrap,
+        gText_Exit
+    },
+    [SCROLL_MULTI_ELEMENTAL_TUTOR] =
+    {
+        gText_Thunder,
+        gText_Blizzard,
+        gText_FireBlast,
+        gText_HydroPump,
+        gText_Hurricane,
+        gText_NaturePower,
+        gText_Exit
+    },
+    [SCROLL_MULTI_MULTIHIT_TUTOR] =
+    {
+        gText_ArmThrust,
+        gText_BoneRush,
+        gText_BulletSeed,
+        gText_DoubleSlap,
+        gText_IcicleSpear,
+        gText_RockBlast,
+        gText_PinMissile,
+        gText_Exit
+    },
+    [SCROLL_MULTI_HIGH_CRIT_TUTOR] =
+    {
+        gText_AquaCutter,
+        gText_AirCutter,
+        gText_CrossPoison,
+        gText_DrillRun,
+        gText_LeafBlade,
+        gText_NightSlash,
+        gText_PsychoCut,
+        gText_ShadowClaw,
+        gText_Slash,
+        gText_BlazeKick,
         gText_Exit
     },
 };

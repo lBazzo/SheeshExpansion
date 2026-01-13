@@ -1,5 +1,7 @@
 .set LOCALID_OLIVINE_SILVER, 4
 .set LOCALID_OLIVINE_DAHLIA, 24
+.set LOCALID_OLIVINE_ELEMENTAL_TUTOR, 25
+.set LOCALID_OLIVINE_CASTFORM, 26
 
 OlivineCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_MapScript_OnTransition
@@ -607,3 +609,304 @@ OlivineCity_Text_BattleTowerSign:
 
 OlivineCity_Text_Machoke:
 	.string "MACHOKE: CHO!$"
+
+
+
+
+
+
+
+
+
+
+
+
+
+@ELEMENTAL TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+OlivineCity_EventScript_Castform::
+	lock
+	faceplayer
+	playmoncry SPECIES_CASTFORM, CRY_MODE_NORMAL
+	msgbox OlivineCity_Text_Castform, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_OLIVINE_CASTFORM, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+OlivineCity_Text_Castform:
+	.string "Castform: Wapapapapawap!$"
+
+OlivineCity_EventScript_ElementalTutor::
+	lock
+	faceplayer
+	msgbox OlivineCity_Text_ElementalTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OlivineCity_EventScript_ElementalTutorDeclined
+	msgbox OlivineCity_Text_ElementalTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_ELEMENTAL_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, OlivineCity_EventScript_ElementalTutorThunder
+	case 1, OlivineCity_EventScript_ElementalTutorBlizzard
+	case 2, OlivineCity_EventScript_ElementalTutorFireBlast
+	case 3, OlivineCity_EventScript_ElementalTutorHydroPump
+	case 4, OlivineCity_EventScript_ElementalTutorHurricane
+	case 5, OlivineCity_EventScript_ElementalTutorNaturePower
+	case 6, OlivineCity_EventScript_ElementalTutorDeclined
+	case MULTI_B_PRESSED, OlivineCity_EventScript_ElementalTutorDeclined
+	end
+
+OlivineCity_EventScript_ElementalTutorThunder::
+	msgbox OlivineCity_Text_ElementalTutorThunderWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_THUNDER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorBlizzard::
+	msgbox OlivineCity_Text_ElementalTutorBlizzardWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BLIZZARD
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorFireBlast::
+	msgbox OlivineCity_Text_ElementalTutorFireBlastWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FIRE_BLAST
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorHydroPump::
+	msgbox OlivineCity_Text_ElementalTutorHydroPumpWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_HYDRO_PUMP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorHurricane::
+	msgbox OlivineCity_Text_ElementalTutorHurricaneWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_HURRICANE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorNaturePower::
+	msgbox OlivineCity_Text_ElementalTutorNaturePowerWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_NATURE_POWER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_ElementalTutorDeclined
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_ElementalTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_ELEMENTAL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 48, OlivineCity_EventScript_ElementalTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_ElementalTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR, OlivineCity_EventScript_ElementalTutorFriend
+	msgbox OlivineCity_Text_ElementalTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorFriend::
+	msgbox OlivineCity_Text_ElementalTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_ElementalTutorTeachPlayerBelow::
+	applymovement LOCALID_OLIVINE_CASTFORM, OlivineCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_CASTFORM, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_OLIVINE_CASTFORM, OlivineCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+OlivineCity_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+OlivineCity_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+OlivineCity_EventScript_ElementalTutorTeachPlayerLeft::
+	applymovement LOCALID_OLIVINE_CASTFORM, OlivineCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_CASTFORM, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_OLIVINE_CASTFORM, OlivineCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+OlivineCity_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+OlivineCity_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+OlivineCity_EventScript_ElementalTutorDeclined::
+	msgbox OlivineCity_Text_ElementalTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OlivineCity_Text_ElementalTutorDeclined::
+	.string "Quite. The elements will guide you from\n"
+	.string "where you are... to where you will be...\l"
+	.string "whether you are aware of it or not.$"
+
+OlivineCity_Text_ElementalTutorLetMeTeach:
+	.string "Can you feel it?\p"
+	.string "The elements... they're all around us.\n"
+	.string "Always changing, always growing...\p"
+	.string "Embrace them, and their power may\n"
+	.string "become yours. Shall it be so?$"
+
+OlivineCity_Text_ElementalTutorWhichMove:
+	.string "Mmm... I wonder... what is it they have in\n"
+	.string "store for you?$"
+
+OlivineCity_Text_ElementalTutorThunderWhichMon:
+	.string "Yes, I see it now. So, for Thunder...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorBlizzardWhichMon:
+	.string "Yes, I see it now. So, for Blizzard...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorFireBlastWhichMon:
+	.string "Yes, I see it now. So, for Fire Blast...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorHydroPumpWhichMon:
+	.string "Yes, I see it now. So, for Hydro Pump...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorHurricaneWhichMon:
+	.string "Yes, I see it now. So, for Hurricane...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorNaturePowerWhichMon:
+	.string "Yes, I see it now. So, for Nature Power...\n"
+	.string "That means our agent of change is...?$"
+
+OlivineCity_Text_ElementalTutorTeachingMove:
+	.string "Castform, my dear. May you act as our\n"
+	.string "beacon of alteration once more...$"
+
+OlivineCity_Text_ElementalTutorMoveTaught:
+	.string "...You think me mad, do you not?\p"
+	.string "It is alright to be sincere. I already\n"
+	.string "know it is so.\p"
+	.string "Yet as long as the elements call for\n"
+	.string "you, I shall be your guide, if they so\l"
+	.string "wish it.$"
+
+OlivineCity_Text_ElementalTutorFriend:
+	.string "Curious that we should cross paths so\n"
+	.string "frequently, and yet, it will at some\l"
+	.string "point be the last time.\p"
+	.string "But that's alright. The things most\n"
+	.string "worth having in life are often fleeting\l"
+	.string "in this way.\p"
+	.string "Best enjoy the breeze while it lasts...$"
+

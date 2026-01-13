@@ -1,5 +1,7 @@
 .set LOCALID_ECRUTEAK_GRAMPS, 4
 .set LOCALID_ECRUTEK_SILVER, 33
+.set LOCALID_ECRUTEAK_TRAPPING_TUTOR, 35
+.set LOCALID_ECRUTEAK_DRAGONAIR, 36
 
 EcruteakCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, EcruteakCity_OnTransition
@@ -413,3 +415,267 @@ EcruteakCity_Text_BurnedTowerSign:
 	.string "It was destroyed by a mysterious\n"
 	.string "fire.\p"
 	.string "Please stay away, as it is unsafe.$"
+
+
+
+
+
+
+
+
+
+@TRAPPING TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+EcruteakCity_EventScript_Dragonair::
+	lock
+	faceplayer
+	playmoncry SPECIES_DRAGONAIR, CRY_MODE_NORMAL
+	msgbox EcruteakCity_Text_Dragonair, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_ECRUTEAK_DRAGONAIR, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+EcruteakCity_Text_Dragonair:
+	.string "Dragonair: PeeWooooo!$"
+
+EcruteakCity_EventScript_TrappingTutor::
+	lock
+	faceplayer
+	msgbox EcruteakCity_Text_TrappingTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EcruteakCity_EventScript_TrappingTutorDeclined
+	msgbox EcruteakCity_Text_TrappingTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_TRAPPING_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, EcruteakCity_EventScript_TrappingTutorFireSpin
+	case 1, EcruteakCity_EventScript_TrappingTutorWhirlpool
+	case 2, EcruteakCity_EventScript_TrappingTutorSandTomb
+	case 3, EcruteakCity_EventScript_TrappingTutorSnapTrap
+	case 4, EcruteakCity_EventScript_TrappingTutorWrap
+	case 5, EcruteakCity_EventScript_TrappingTutorDeclined
+	case MULTI_B_PRESSED, EcruteakCity_EventScript_TrappingTutorDeclined
+	end
+
+EcruteakCity_EventScript_TrappingTutorFireSpin::
+	msgbox EcruteakCity_Text_TrappingTutorFireSpinWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FIRE_SPIN
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, EcruteakCity_EventScript_TrappingTutorDeclined
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FaceRight
+	msgbox EcruteakCity_Text_TrappingTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 34, EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 33, EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR, EcruteakCity_EventScript_TrappingTutorFriend
+	msgbox EcruteakCity_Text_TrappingTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorWhirlpool::
+	msgbox EcruteakCity_Text_TrappingTutorWhirlpoolWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_WHIRLPOOL
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, EcruteakCity_EventScript_TrappingTutorDeclined
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FaceRight
+	msgbox EcruteakCity_Text_TrappingTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 34, EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 33, EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR, EcruteakCity_EventScript_TrappingTutorFriend
+	msgbox EcruteakCity_Text_TrappingTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorSandTomb::
+	msgbox EcruteakCity_Text_TrappingTutorSandTombWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SAND_TOMB
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, EcruteakCity_EventScript_TrappingTutorDeclined
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FaceRight
+	msgbox EcruteakCity_Text_TrappingTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 34, EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 33, EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR, EcruteakCity_EventScript_TrappingTutorFriend
+	msgbox EcruteakCity_Text_TrappingTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorSnapTrap::
+	msgbox EcruteakCity_Text_TrappingTutorSnapTrapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SNAP_TRAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, EcruteakCity_EventScript_TrappingTutorDeclined
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FaceRight
+	msgbox EcruteakCity_Text_TrappingTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 34, EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 33, EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR, EcruteakCity_EventScript_TrappingTutorFriend
+	msgbox EcruteakCity_Text_TrappingTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorWrap::
+	msgbox EcruteakCity_Text_TrappingTutorWrapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_WRAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, EcruteakCity_EventScript_TrappingTutorDeclined
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FaceRight
+	msgbox EcruteakCity_Text_TrappingTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ECRUTEAK_TRAPPING_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 34, EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 33, EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR, EcruteakCity_EventScript_TrappingTutorFriend
+	msgbox EcruteakCity_Text_TrappingTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ECRUTEAK_CITY_TRAPPING_TUTOR
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorFriend::
+	msgbox EcruteakCity_Text_TrappingTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_EventScript_TrappingTutorTeachPlayerBelow::
+	applymovement LOCALID_ECRUTEAK_DRAGONAIR, EcruteakCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_DRAGONAIR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_ECRUTEAK_DRAGONAIR, EcruteakCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+EcruteakCity_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+EcruteakCity_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+EcruteakCity_EventScript_TrappingTutorTeachPlayerLeft::
+	applymovement LOCALID_ECRUTEAK_DRAGONAIR, EcruteakCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_DRAGONAIR, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_ECRUTEAK_DRAGONAIR, EcruteakCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+EcruteakCity_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+EcruteakCity_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+EcruteakCity_EventScript_TrappingTutorDeclined::
+	msgbox EcruteakCity_Text_TrappingTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+EcruteakCity_Text_TrappingTutorDeclined::
+	.string "Aww, whatever. I bet you wouldn't even\n"
+	.string "know how to set a trap anyway...$"
+
+EcruteakCity_Text_TrappingTutorLetMeTeach:
+	.string "Nothing beats a well-laid trap!\p"
+	.string "By the time your opponent realises\n"
+	.string "they want out, it's too late!\l"
+	.string "They're already ensnared!\p"
+	.string "So how about it? Want to learn how to\n"
+	.string "set up some traps?$"
+
+EcruteakCity_Text_TrappingTutorWhichMove:
+	.string "Heck yeah! Go ahead and pick your\n"
+	.string "poison. What are we working with here?$"
+
+EcruteakCity_Text_TrappingTutorFireSpinWhichMon:
+	.string "Fire Spin, wicked! That's real crafty.\n"
+	.string "Who wants to learn it?$"
+
+EcruteakCity_Text_TrappingTutorWhirlpoolWhichMon:
+	.string "Whirlpool, wicked! That's real crafty.\n"
+	.string "Who wants to learn it?$"
+
+EcruteakCity_Text_TrappingTutorSandTombWhichMon:
+	.string "Sand Tomb, wicked! That's real crafty.\n"
+	.string "Who wants to learn it?$"
+
+EcruteakCity_Text_TrappingTutorSnapTrapWhichMon:
+	.string "Snap Trap, wicked! That's real crafty.\n"
+	.string "Who wants to learn it?$"
+
+EcruteakCity_Text_TrappingTutorWrapWhichMon:
+	.string "Wrap, wicked! That's real crafty.\n"
+	.string "Who wants to learn it?$"
+
+EcruteakCity_Text_TrappingTutorTeachingMove:
+	.string "OK! Dragonair, you're up! It's trap time!$"
+
+EcruteakCity_Text_TrappingTutorMoveTaught:
+	.string "There! The trap is set.\p"
+	.string "Man, I wish I could see the look on their\n"
+	.string "face when it triggers, hahaha!$"
+
+EcruteakCity_Text_TrappingTutorFriend:
+	.string "Another trap to add to the collection.\p"
+	.string "It's always good to work with a fellow\n"
+	.string "craftsman, don't you agree?$"

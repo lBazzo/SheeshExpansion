@@ -1,6 +1,8 @@
 .set LOCALID_CIANWOOD_SUICUNE, 1
 .set LOCALID_CIANWOOD_EUSINE, 2
 .set LOCALID_CIANWOOD_CHUCKSWIFE, 6
+.set LOCALID_CIANWOOD_AIPOM, 24
+.set LOCALID_CIANWOOD_MULITHIT_TUTOR, 23
 
 CianwoodCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, CianwoodCity_EventScript_CityEnter
@@ -380,3 +382,326 @@ CianwoodCity_Text_Engineer:
 	.string "This path is under construction.\n"
 	.string "We're getting the new SAFARI ZONE\l"
 	.string "up and running!$"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@MULTIHIT TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+CianwoodCity_EventScript_Aipom::
+	lock
+	faceplayer
+	playmoncry SPECIES_AIPOM, CRY_MODE_NORMAL
+	msgbox CianwoodCity_Text_Aipom, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_CIANWOOD_AIPOM, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+CianwoodCity_Text_Aipom:
+	.string "Aipom: Aipoo!$"
+
+CianwoodCity_EventScript_MultiHitTutor::
+	lock
+	faceplayer
+	msgbox CianwoodCity_Text_MultiHitTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CianwoodCity_EventScript_MultiHitTutorDeclined
+	msgbox CianwoodCity_Text_MultiHitTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_MULTIHIT_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, CianwoodCity_EventScript_MultiHitTutorArmThrust
+	case 1, CianwoodCity_EventScript_MultiHitTutorBoneRush
+	case 2, CianwoodCity_EventScript_MultiHitTutorBulletSeed
+	case 3, CianwoodCity_EventScript_MultiHitTutorDoubleSlap
+	case 4, CianwoodCity_EventScript_MultiHitTutorIcicleSpear
+	case 5, CianwoodCity_EventScript_MultiHitTutorRockBlast
+	case 6, CianwoodCity_EventScript_MultiHitTutorPinMissile
+	case 7, CianwoodCity_EventScript_MultiHitTutorDeclined
+	case MULTI_B_PRESSED, CianwoodCity_EventScript_MultiHitTutorDeclined
+	end
+
+CianwoodCity_EventScript_MultiHitTutorArmThrust::
+	msgbox CianwoodCity_Text_MultiHitTutorArmThrustWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ARM_THRUST
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorBoneRush::
+	msgbox CianwoodCity_Text_MultiHitTutorBoneRushWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BONE_RUSH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorBulletSeed::
+	msgbox CianwoodCity_Text_MultiHitTutorBulletSeedWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BULLET_SEED
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorDoubleSlap::
+	msgbox CianwoodCity_Text_MultiHitTutorDoubleSlapWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_DOUBLE_SLAP
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorIcicleSpear::
+	msgbox CianwoodCity_Text_MultiHitTutorIcicleSpearWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ICICLE_SPEAR
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorRockBlast::
+	msgbox CianwoodCity_Text_MultiHitTutorRockBlastWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ROCK_BLAST
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorPinMissile::
+	msgbox CianwoodCity_Text_MultiHitTutorPinMissileWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_PIN_MISSILE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, CianwoodCity_EventScript_MultiHitTutorDeclined
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FaceRight
+	msgbox CianwoodCity_Text_MultiHitTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CIANWOOD_MULITHIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 41, CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 40, CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR, CianwoodCity_EventScript_MultiHitTutorFriend
+	msgbox CianwoodCity_Text_MultiHitTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorFriend::
+	msgbox CianwoodCity_Text_MultiHitTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CianwoodCity_EventScript_MultiHitTutorTeachPlayerBelow::
+	applymovement LOCALID_CIANWOOD_AIPOM, CianwoodCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_AIPOM, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_CIANWOOD_AIPOM, CianwoodCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+CianwoodCity_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+CianwoodCity_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+CianwoodCity_EventScript_MultiHitTutorTeachPlayerLeft::
+	applymovement LOCALID_CIANWOOD_AIPOM, CianwoodCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_AIPOM, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_CIANWOOD_AIPOM, CianwoodCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+CianwoodCity_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+CianwoodCity_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+CianwoodCity_EventScript_MultiHitTutorDeclined::
+	msgbox CianwoodCity_Text_MultiHitTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CianwoodCity_Text_MultiHitTutorDeclined::
+	.string "Tut tut. I suppose the common OLIVINE\n"
+	.string "DINER would suit your tastes, yes?$"
+
+CianwoodCity_Text_MultiHitTutorLetMeTeach:
+	.string "The world's greatest meal cannot be\n"
+	.string "captured on just a single plate.\p"
+	.string "No, that simply won't do.\p"
+	.string "You must have many courses to make a\n"
+	.string "complete experience.\p"
+	.string "POKéMON moves are the same. Many hits\n"
+	.string "is always better, don't you agree?$"
+
+CianwoodCity_Text_MultiHitTutorWhichMove:
+	.string "Ah, an excellent choice indeed! So, for\n"
+	.string "the starter? What will you order?$"
+
+CianwoodCity_Text_MultiHitTutorArmThrustWhichMon:
+	.string "Arm Thrust, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorBoneRushWhichMon:
+	.string "Bone Rush, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorBulletSeedWhichMon:
+	.string "Bullet Seed, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorDoubleSlapWhichMon:
+	.string "Double Slap, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorIcicleSpearWhichMon:
+	.string "Icicle Spear, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorRockBlastWhichMon:
+	.string "Rock Blast, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorPinMissileWhichMon:
+	.string "Pin Missile, certainly. And the main\n"
+	.string "course? Who shall join us at the table?$"
+
+CianwoodCity_Text_MultiHitTutorTeachingMove:
+	.string "Let us begin, Aipom. Remember to follow\n"
+	.string "the recipe word for word, yes?$"
+
+CianwoodCity_Text_MultiHitTutorMoveTaught:
+	.string "Hmm, not bad! You have excellent taste,\n"
+	.string "it seems.\p"
+	.string "Next time we will create something even\n"
+	.string "more divine, yes? I look forward to it.$"
+
+CianwoodCity_Text_MultiHitTutorFriend:
+	.string "Wonderful, wonderful, wonderful!\n"
+	.string "Cooked to perfection!\p"
+	.string "To dine with you is a pleasure, my\n"
+	.string "friend!$"
+
+

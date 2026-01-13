@@ -185,7 +185,6 @@ SlowpokeWell_Movement_TeachPlayerBelow1::
 SlowpokeWell_Movement_TeachPlayerBelow2::
 	jump_in_place_left
 	jump_in_place_left
-	delay 30
 	face_up
 	walk_up
 	face_down
@@ -218,7 +217,6 @@ SlowpokeWell_Movement_TeachPlayerLeft1::
 SlowpokeWell_Movement_TeachPlayerLeft2::
 	jump_in_place_up
 	jump_in_place_up
-	delay 30
 	face_right
 	walk_right
 	walk_right
@@ -243,8 +241,8 @@ SlowpokeWell_Text_TutorLetMeTeach:
 	.string "I love making lots of noise!\p"
 	.string "Mom says I can make all the noise I like\n"
 	.string "down here, as long as it's not near her.\p"
-	.string "Sometimes I like to SCREECH.\n"
-	.string "Sometimes I like to cry with FAKE TEARS.\p"
+	.string "Sometimes I like to Screech.\n"
+	.string "Sometimes I like to cry with Fake Tears.\p"
 	.string "You like making noise too, right?$"
 
 SlowpokeWell_Text_TutorWhichMove:
@@ -260,19 +258,19 @@ SlowpokeWell_Text_TutorWhichMonFakeTears:
 	.string "to make the WAHHHHHHHH noise?$"
 
 SlowpokeWell_Text_TutorTeachingMove:
-	.string "OK! BONSLY, get ready!\p"
+	.string "OK! Bonsly, get ready!\p"
 	.string "Just wait till you see this!\n"
 	.string "Or, more like till you hear it, tee hee!$"
 
 SlowpokeWell_Text_TutorMoveTaught:
 	.string "BAM! Wasn't that loud? I told you\n"
-	.string "BONSLY is the best!\p"
+	.string "Bonsly is the best!\p"
 	.string "You and your POKéMON make loud noise.\n"
 	.string "Make noise with us again soon!$"
 
 SlowpokeWell_Text_WellTutorFriend:
 	.string "You and your POKéMON make almost as\n"
-	.string "much noise as BONSLY!\p"
+	.string "much noise as Bonsly!\p"
 	.string "Have you considered going pro?\p"
 	.string "My mom says I'm the noisiest person in\n"
 	.string "the world, but you can have second\l"

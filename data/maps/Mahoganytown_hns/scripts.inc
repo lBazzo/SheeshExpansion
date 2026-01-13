@@ -2,6 +2,8 @@
 .set LOCALID_MAHOGANY_DARACH, 10
 .set LOCALID_MAHOGANY_CAITLIN, 11
 .set LOCALID_MAHOGANY_CAITLIN_POKEMON, 12
+.set LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, 13
+.set LOCALID_MAHOGANY_MURKROW, 14
 
 Mahoganytown_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Mahoganytown_OnLoad
@@ -646,5 +648,379 @@ MahoganyTown_EventScript_DeclineDarachChallenge::
 
 
 
+
+@MULTIHIT TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+MahoganyTown_EventScript_Murkrow::
+	lock
+	faceplayer
+	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	msgbox MahoganyTown_Text_Murkrow, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_MAHOGANY_MURKROW, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+MahoganyTown_Text_Murkrow:
+	.string "Murkrow: Murkrow!$"
+
+MahoganyTown_EventScript_HighCritTutor::
+	lock
+	faceplayer
+	msgbox MahoganyTown_Text_HighCritTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, MahoganyTown_EventScript_HighCritTutorDeclined
+	msgbox MahoganyTown_Text_HighCritTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_HIGH_CRIT_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, MahoganyTown_EventScript_HighCritTutorAquaCutter
+	case 1, MahoganyTown_EventScript_HighCritTutorAirCutter
+	case 2, MahoganyTown_EventScript_HighCritTutorCrossPoison
+	case 3, MahoganyTown_EventScript_HighCritTutorDrillRun
+	case 4, MahoganyTown_EventScript_HighCritTutorLeafBlade
+	case 5, MahoganyTown_EventScript_HighCritTutorNightSlash
+	case 6, MahoganyTown_EventScript_HighCritTutorPsychoCut
+	case 7, MahoganyTown_EventScript_HighCritTutorShadowClaw
+	case 8, MahoganyTown_EventScript_HighCritTutorSlash
+	case 9, MahoganyTown_EventScript_HighCritTutorBlazeKick
+	case 10, MahoganyTown_EventScript_HighCritTutorDeclined
+	case MULTI_B_PRESSED, MahoganyTown_EventScript_HighCritTutorDeclined
+	end
+
+MahoganyTown_EventScript_HighCritTutorAquaCutter::
+	msgbox MahoganyTown_Text_HighCritTutorAquaCutterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AQUA_CUTTER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorAirCutter::
+	msgbox MahoganyTown_Text_HighCritTutorAirCutterWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AIR_CUTTER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorCrossPoison::
+	msgbox MahoganyTown_Text_HighCritTutorCrossPoisonWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_CROSS_POISON
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorDrillRun::
+	msgbox MahoganyTown_Text_HighCritTutorDrillRunWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_DRILL_RUN
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorLeafBlade::
+	msgbox MahoganyTown_Text_HighCritTutorLeafBladeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LEAF_BLADE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorNightSlash::
+	msgbox MahoganyTown_Text_HighCritTutorNightSlashWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_NIGHT_SLASH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorPsychoCut::
+	msgbox MahoganyTown_Text_HighCritTutorPsychoCutWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_PSYCHO_CUT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorShadowClaw::
+	msgbox MahoganyTown_Text_HighCritTutorShadowClawWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SHADOW_CLAW
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorSlash::
+	msgbox MahoganyTown_Text_HighCritTutorSlashWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SLASH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorBlazeKick::
+	msgbox MahoganyTown_Text_HighCritTutorBlazeKickWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BLAZE_KICK
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, MahoganyTown_EventScript_HighCritTutorDeclined
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FaceRight
+	msgbox MahoganyTown_Text_HighCritTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_MAHOGANY_HIGH_CRIT_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 10, MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 9, MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR, MahoganyTown_EventScript_HighCritTutorFriend
+	msgbox MahoganyTown_Text_HighCritTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorFriend::
+	msgbox MahoganyTown_Text_HighCritTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_HighCritTutorTeachPlayerBelow::
+	applymovement LOCALID_MAHOGANY_MURKROW, MahoganyTown_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_MAHOGANY_MURKROW, MahoganyTown_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+MahoganyTown_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+MahoganyTown_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+MahoganyTown_EventScript_HighCritTutorTeachPlayerLeft::
+	applymovement LOCALID_MAHOGANY_MURKROW, MahoganyTown_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_MURKROW, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_MAHOGANY_MURKROW, MahoganyTown_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+MahoganyTown_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+MahoganyTown_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+MahoganyTown_EventScript_HighCritTutorDeclined::
+	msgbox MahoganyTown_Text_HighCritTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_Text_HighCritTutorDeclined::
+	.string "It's a dud... Womp-womp...$"
+
+MahoganyTown_Text_HighCritTutorLetMeTeach:
+	.string "Ding ding ding!\n"
+	.string "And the slots are rolling!\p"
+	.string "Behind door number one...\p"
+	.string "7!\p"
+	.string "Behind door number two...\p"
+	.string "7!\p"
+	.string "Behind door number three...?$"
+
+MahoganyTown_Text_HighCritTutorWhichMove:
+	.string "777! It's a critical hit!\n"
+	.string "Congratulations! You've won...?$"
+
+MahoganyTown_Text_HighCritTutorAquaCutterWhichMon:
+	.string "Aqua Cutter! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorAirCutterWhichMon:
+	.string "Air Cutter! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorCrossPoisonWhichMon:
+	.string "Cross Poison! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorDrillRunWhichMon:
+	.string "Drill Run! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorLeafBladeWhichMon:
+	.string "Leaf Blade! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorNightSlashWhichMon:
+	.string "Night Slash! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorPsychoCutWhichMon:
+	.string "Psycho Cut! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorShadowClawWhichMon:
+	.string "Shadow Claw! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorSlashWhichMon:
+	.string "Slash! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+MahoganyTown_Text_HighCritTutorBlazeKickWhichMon:
+	.string "Blaze Kick! Applying the bonus\n"
+	.string "multiplier to...?$"
+
+
+MahoganyTown_Text_HighCritTutorTeachingMove:
+	.string "New high score! Murkrow, pay out the\n"
+	.string "winnings, go go go!$"
+
+MahoganyTown_Text_HighCritTutorMoveTaught:
+	.string "Want to play again? (INSERT 1 COIN)$"
+
+MahoganyTown_Text_HighCritTutorFriend:
+	.string "Want to play again? (FREE!)$"
 
 

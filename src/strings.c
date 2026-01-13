@@ -2449,3 +2449,89 @@ const u8 gText_TripleAxel[]       = _("Triple Axel");
 
 const u8 gText_Screech[]         = _("Screech");
 const u8 gText_FakeTears[]       = _("Fake Tears");
+
+// Punch tutor
+// const u8 gText_[];          = _("")
+
+const u8 gText_ThunderPunch[]         = _("Thunder Punch");
+const u8 gText_FirePunch[]         = _("Fire Punch");
+const u8 gText_IcePunch[]         = _("Ice Punch");
+const u8 gText_BrickBreak[]         = _("Brick Break");
+const u8 gText_PoisonJab[]         = _("Poison Jab");
+const u8 gText_ShadowPunch[]         = _("Shadow Punch");
+
+// Speed Drop tutor
+
+const u8 gText_IcyWind[]         = _("Icy Wind");
+const u8 gText_Electroweb[]         = _("Electroweb");
+const u8 gText_RockTomb[]         = _("Rock Tomb");
+const u8 gText_LowSweep[]         = _("Low Sweep");
+const u8 gText_MudShot[]         = _("Mud Shot");
+const u8 gText_Pounce[]         = _("Pounce");
+
+// Never Miss tutor
+
+const u8 gText_FeintAttack[]         = _("Feint Attack");
+const u8 gText_AuraSphere[]         = _("Aura Sphere");
+const u8 gText_AerialAce[]         = _("Aerial Ace");
+const u8 gText_ShockWave[]         = _("Shock Wave");
+const u8 gText_MagicalLeaf[]         = _("Magical Leaf");
+const u8 gText_SmartStrike[]         = _("Smart Strike");
+const u8 gText_Swift[]         = _("Swift");
+const u8 gText_MagnetBomb[]         = _("Magnet Bomb");
+const u8 gText_OdorSleuth[]         = _("Odor Sleuth");
+const u8 gText_Foresight[]         = _("Foresight");
+const u8 gText_MiracleEye[]         = _("Miracle Eye");
+const u8 gText_SweetScent[]         = _("Sweet Scent");
+const u8 gText_LockOn[]         = _("Lock-On");
+
+// Fang tutor
+
+const u8 gText_ThunderFang[]         = _("Thunder Fang");
+const u8 gText_FireFang[]         = _("Fire Fang");
+const u8 gText_IceFang[]         = _("Ice Fang");
+const u8 gText_Crunch[]         = _("Crunch");
+const u8 gText_HyperFang[]         = _("Hyper Fang");
+const u8 gText_PoisonFang[]         = _("Poison Fang");
+//const u8 gText_PsychicFangs[]         = _("Psychic Fangs");
+
+// Trapping tutor
+
+const u8 gText_FireSpin[]         = _("Fire Spin");
+const u8 gText_Whirlpool[]         = _("Whirlpool");
+const u8 gText_SandTomb[]         = _("Sand Tomb");
+const u8 gText_SnapTrap[]         = _("Snap Trap");
+const u8 gText_Wrap[]         = _("Wrap");
+
+// Elemental tutor
+
+const u8 gText_Thunder[]         = _("Thunder");
+const u8 gText_Blizzard[]         = _("Blizzard");
+const u8 gText_FireBlast[]         = _("Fire Blast");
+const u8 gText_HydroPump[]         = _("Hydro Pump");
+const u8 gText_Hurricane[]         = _("Hurricane");
+const u8 gText_NaturePower[]         = _("Nature Power");
+
+// Multihit tutor
+
+const u8 gText_ArmThrust[]         = _("Arm Thrust");
+const u8 gText_BoneRush[]         = _("Bone Rush");
+const u8 gText_BulletSeed[]         = _("Bullet Seed");
+const u8 gText_DoubleSlap[]         = _("Double Slap");
+const u8 gText_IcicleSpear[]         = _("Icicle Spear");
+const u8 gText_RockBlast[]         = _("Rock Blast");
+const u8 gText_PinMissile[]         = _("Pin Missile");
+
+// High crit tutor
+
+const u8 gText_AquaCutter[]         = _("Aqua Cutter");
+const u8 gText_AirCutter[]         = _("Air Cutter");
+const u8 gText_CrossPoison[]         = _("Cross Poison");
+const u8 gText_DrillRun[]         = _("Drill Run");
+const u8 gText_LeafBlade[]         = _("Leaf Blade");
+const u8 gText_NightSlash[]         = _("Night Slash");
+const u8 gText_PsychoCut[]         = _("Psycho Cut");
+const u8 gText_ShadowClaw[]         = _("Shadow Claw");
+//const u8 gText_Slash[]         = _("Slash");
+const u8 gText_BlazeKick[]         = _("Blaze Kick");
+
