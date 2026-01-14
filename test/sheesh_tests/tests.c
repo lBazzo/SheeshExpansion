@@ -2667,3 +2667,134 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Memento")
             TURN { SCORE_EQ_VAL(opponent, MOVE_MEMENTO, 110); }
     }
 }
+
+
+
+
+//TERA TESTS 
+
+
+AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it goes from being outdamaged to outdamaging")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_ENERGY_BALL); TeraType(TYPE_GRASS); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly sometimes uses tera if both mons kill each other before and after tera")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); HP(1); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_ENERGY_BALL); TeraType(TYPE_GRASS); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly sometimes uses tera if it outdamages player before and after tera")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); HP(1); Ability(ABILITY_SHELL_ARMOR); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_ENERGY_BALL); TeraType(TYPE_GRASS); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly always uses tera to score a KO, but makes this a 50/50 if it would die only using Tera")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_ENERGY_BALL); TeraType(TYPE_GRASS); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly never uses tera if it outdamages Player before using tera and not after")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_VOLCANION) { Moves(MOVE_NIGHT_SHADE, MOVE_CELEBRATE); TeraType(TYPE_NORMAL); HP(60); Level(100); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_TERA_BLAST); TeraType(TYPE_FIRE); HP(110); }
+    } WHEN {
+        TURN {  }
+    } SCENE {
+        NOT MESSAGE("The opposing Typhlosion terastallized into the Fire type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly sometimes uses tera if it is outdamaged before and after tera")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); Ability(ABILITY_SHELL_ARMOR); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_ENERGY_BALL); TeraType(TYPE_GRASS); HP(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it plays into kill but can kill ai first")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_ICE_BEAM); TeraType(TYPE_NORMAL); Speed(1); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_FRENZY_PLANT); TeraType(TYPE_GRASS); HP(130); Speed(2); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_ICE_BEAM); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it can dodge a KO and not get KO'd in Tera form")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_SURF); TeraType(TYPE_NORMAL); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_TACKLE); TeraType(TYPE_GRASS); HP(130); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SURF); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Grass type!");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+AI_SINGLE_BATTLE_TEST("Checking AI is calcing damage wrong")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_TYPHLOSION) { Moves(MOVE_TERA_BLAST, MOVE_CELEBRATE); HP(297); MaxHP(297); SpDefense(206); }
+        OPPONENT(SPECIES_BLASTOISE) { Moves(MOVE_HYDRO_PUMP); SpAttack(206); Ability(ABILITY_SHELL_ARMOR); }
+    } WHEN {
+        TURN { SCORE_EQ_VAL(opponent, MOVE_HYDRO_PUMP, 108); }
+    }
+}

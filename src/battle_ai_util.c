@@ -5814,8 +5814,8 @@ void DecideTerastal(u32 battler)
         return;
 
     // TODO: Currently only single battles are considered.
-    if (!IsBattle1v1())
-        return;
+    //if (!IsBattle1v1())
+    //    return;
 
     // TODO: A lot of these checks are most effective for an omnicient ai.
     // If we don't have enough information about the opponent's moves, consider simpler checks based on type effectivness.
@@ -5887,8 +5887,8 @@ void DecideTerastal(u32 battler)
 
 enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, struct AltTeraCalcs *altCalcs)
 {    
-    struct Pokemon* party = GetBattlerParty(battler);
-
+    //struct Pokemon* party = GetBattlerParty(battler);
+/*
     // Check how many pokemon we have that could tera
     int numPossibleTera = 0;
     for (int i = 0; i < PARTY_SIZE; i++)
@@ -5899,7 +5899,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
          && GetMonData(&party[i], MON_DATA_TERA_TYPE) > 0)
             numPossibleTera++;
     }
-
+*/
     u16 aiHp = gBattleMons[battler].hp;
     u16 oppHp = gBattleMons[opposingBattler].hp;
 
@@ -5912,13 +5912,13 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
 
     for (int i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (dealtWithTera[i].median >= oppHp)
+        if (dealtWithTera[i].maximum >= oppHp)
         {
             u16 move = aiMoves[i];
             if (killingMove == MOVE_NONE || GetBattleMovePriority(battler, gAiLogicData->abilities[battler], move) > GetBattleMovePriority(battler, gAiLogicData->abilities[battler], killingMove))
                 killingMove = move;
         }
-        if (dealtWithoutTera[i].median >= oppHp)
+        if (dealtWithoutTera[i].maximum >= oppHp)
             hasKoWithout = TRUE;
     }
 
@@ -5926,19 +5926,19 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
 
     // Check whether tera saves us from a KO
     bool32 savedFromKo = FALSE;
-    bool32 getsKodRegardlessBySingleMove = FALSE;
+    //bool32 getsKodRegardlessBySingleMove = FALSE;
 
     for (int i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (takenWithoutTera[i].maximum >= aiHp && takenWithTera[i].maximum >= aiHp)
-            getsKodRegardlessBySingleMove = TRUE;
+        //if (takenWithoutTera[i].maximum >= aiHp && takenWithTera[i].maximum >= aiHp)
+        //    getsKodRegardlessBySingleMove = TRUE;
 
         if (takenWithoutTera[i].maximum >= aiHp && takenWithTera[i].maximum < aiHp)
             savedFromKo = TRUE;
     }
 
-    if (getsKodRegardlessBySingleMove)
-        savedFromKo = FALSE;
+    //if (getsKodRegardlessBySingleMove)
+    //    savedFromKo = FALSE;
 
     // Check whether opponent can punish tera by ko'ing
     u16 hardPunishingMove = MOVE_NONE;
@@ -5947,11 +5947,11 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
         if (takenWithTera[i].maximum >= aiHp)
         {
             u16 move = oppMoves[i];
-            if (hardPunishingMove == MOVE_NONE || GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], move) > GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], hardPunishingMove))
+            if (hardPunishingMove == MOVE_NONE /*|| GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], move) > GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], hardPunishingMove)*/)
                 hardPunishingMove = move;
         }
     }
-
+/*
     // Check whether there is a move that deals over half hp, and all such moves are reduced to under 1/4 hp by tera
     // (e.g. a weakness becomes a resistance, a 4x weakness becomes neutral, etc)
     bool32 takesBigHit = FALSE;
@@ -5984,62 +5984,200 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
         if (takenWithTera[i].median > takenWithoutTera[i].median)
             anyDefensiveDrawback = TRUE;
     }
+*/
+// NEW Check for outdamage before and after Tera
+
+    bool32 outdamageBeforeTera = FALSE;
+    bool32 outdamageAfterTera = FALSE;
+
+    u32 percentAIDamageTakenWithoutTera = 0;
+    u32 percentAIDamageTakenWithTera = 0;
+    u32 percentOpponentDamageTakenWithoutTera = 0;
+    u32 percentOpponentDamageTakenWithTera = 0;
+
+    for (int i = 0; i < MAX_MON_MOVES; i++)
+    {
+
+        if (takenWithoutTera[i].maximum >= aiHp)
+            percentAIDamageTakenWithoutTera = 1000;
+        else 
+            percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum * 1000 / aiHp;
+
+        if (takenWithTera[i].maximum >= aiHp)
+            percentAIDamageTakenWithTera = 1000;    
+        else
+            percentAIDamageTakenWithTera = takenWithTera[i].maximum * 1000 / aiHp;
+
+        if (dealtWithoutTera[i].maximum >= oppHp)
+            percentOpponentDamageTakenWithoutTera = 1000;  
+        else
+            percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum * 1000 / oppHp;
+
+        if (dealtWithTera[i].maximum >= oppHp)
+            percentOpponentDamageTakenWithTera = 1000;
+        else
+            percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum * 1000 / oppHp;
+
+
+
+
+
+/*        
+        if (takenWithoutTera[i].maximum >= aiHp)
+            takenWithoutTera[i].maximum = aiHp;
+
+        if (takenWithTera[i].maximum >= aiHp)
+            takenWithTera[i].maximum = aiHp;    
+
+        if (dealtWithoutTera[i].maximum >= oppHp)
+            dealtWithoutTera[i].maximum = oppHp;  
+
+        if (dealtWithTera[i].maximum >= oppHp)
+            dealtWithTera[i].maximum = oppHp;
+
+
+        percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum * 1000 / aiHp;
+        percentAIDamageTakenWithTera = takenWithTera[i].maximum * 1000 / aiHp;
+        percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum * 1000 / oppHp;
+        percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum * 1000 / oppHp;
+/*
+        if (takenWithoutTera[i].maximum >= aiHp)
+            percentAIDamageTakenWithoutTera = 1000;
+
+        if (takenWithTera[i].maximum >= aiHp)
+            percentAIDamageTakenWithTera = 1000;    
+
+        if (dealtWithoutTera[i].maximum >= oppHp)
+            percentOpponentDamageTakenWithoutTera = 1000;  
+
+        if (dealtWithTera[i].maximum >= oppHp)
+            percentOpponentDamageTakenWithTera = 1000;  
+*/
+        if (percentOpponentDamageTakenWithoutTera > percentAIDamageTakenWithoutTera)
+            outdamageBeforeTera = TRUE;
+
+        if (percentOpponentDamageTakenWithTera > percentAIDamageTakenWithTera)
+            outdamageAfterTera = TRUE;
+    }
+
+    
 
     // Make decisions
     // This is done after all loops to minimize the possibility of a timing attack in which the player could
     // determine whether the AI will tera based on the time taken to select a move.
 
+    // When Tera gives KO: 100% if Player can't KO AI after Tera, or AI is faster. 50% otherwise
     if (enablesKo)
     {
+        u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
+
         if (hardPunishingMove == MOVE_NONE)
         {
+        DebugPrintf("AI enables a KO using tera while not dying");
             return USE_GIMMICK;
         }
-        else
+        else if (AI_WhoStrikesFirst(battler, opposingBattler, killingMove, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) == AI_IS_FASTER)
         {
-            u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
-            // will we go first?
-            if (AI_WhoStrikesFirst(battler, opposingBattler, killingMove, predictedMoveSpeedCheck, CONSIDER_PRIORITY) == AI_IS_FASTER && GetBattleMovePriority(battler, gAiLogicData->abilities[battler], killingMove) >= GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], hardPunishingMove))
-                return USE_GIMMICK;
+        DebugPrintf("AI enables a KO using tera while dying but AI being faster");
+            return USE_GIMMICK;
+        }    
+        else if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+        {
+        DebugPrintf("AI is 50/50 to tera when slower than player and KO is enabled, BUT player can KO both before and after Tera");
+            return USE_GIMMICK;
         }
+        else 
+            return NO_GIMMICK;
+        //{
+            //u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
+            // will we go first?
+        //    if (AI_WhoStrikesFirst(battler, opposingBattler, killingMove, predictedMoveSpeedCheck, CONSIDER_PRIORITY) == AI_IS_FASTER && GetBattleMovePriority(battler, gAiLogicData->abilities[battler], killingMove) >= GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], hardPunishingMove))
+         //       return USE_GIMMICK;
+        //}
     }
 
     // Decide to conserve tera based on number of possible later oppotunities
+    /*
     u16 conserveTeraChance = AI_CONSERVE_TERA_CHANCE_PER_MON * (numPossibleTera-1);
     if (RandomPercentage(RNG_AI_CONSERVE_TERA, conserveTeraChance))
         return NO_GIMMICK;
+    */
 
     if (savedFromKo)
     {
         if (hardPunishingMove == MOVE_NONE)
-        {
+        { 
+         DebugPrintf("AI avoids being KO'd using tera when it would be KO'd otherwise and can't be KO'd with tera");
             return USE_GIMMICK;
         }
-        else
+        else if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
         {
+        DebugPrintf("AI is 50/50 to tera when avoiding being KO'd but could then be KO'd by another move");
+            return USE_GIMMICK;
+        }
+        else 
+            return NO_GIMMICK;
+        //{
             // If tera saves us from a ko from one move, but enables a ko otherwise, randomly predict
             // savesFromKo being true ensures opponent doesn't have a ko if we don't tera
-            if (Random() % 100 < AI_TERA_PREDICT_CHANCE)
-                return USE_GIMMICK;
-        }
+        //    if (Random() % 100 < AI_TERA_PREDICT_CHANCE)
+        //        return USE_GIMMICK;
+        //}
     }
 
-    if (hardPunishingMove != MOVE_NONE)
-        return NO_GIMMICK;
+    //if (hardPunishingMove != MOVE_NONE)
+    //    return NO_GIMMICK;
 
-    if (takesBigHit && savedFromAllBigHits)
-        return USE_GIMMICK;
+    //if (takesBigHit && savedFromAllBigHits)
+    //    return USE_GIMMICK;
 
     // No strongly compelling reason to tera. Conserve it if possible.
-    if (numPossibleTera > 1)
-        return NO_GIMMICK;
+    //if (numPossibleTera > 1)
+    //    return NO_GIMMICK;
 
-    if (anyOffensiveBenefit || (anyDefensiveBenefit && !anyDefensiveDrawback))
-        return USE_GIMMICK;
+    //if (anyOffensiveBenefit || (anyDefensiveBenefit && !anyDefensiveDrawback))
+    //    return USE_GIMMICK;
 
     // TODO: Effects other than direct damage are not yet considered. For example, may want to tera poison to avoid a Toxic.
 
+    if (!(outdamageBeforeTera)
+    && (outdamageAfterTera))
+    {
+        DebugPrintf("AI outdamages only with tera");
+        return USE_GIMMICK;
+    }
+/*
+    if (((outdamageBeforeTera) && (outdamageAfterTera))
+    || ((!(outdamageBeforeTera)) && (!(outdamageAfterTera))))
+    {
+        if (outdamageBeforeTera
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        {
+            DebugPrintf("AI outdamages before and after tera");
+            return USE_GIMMICK;
+        }
+        else if (!(outdamageBeforeTera)
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        {
+            DebugPrintf("AI is outdamaged by player before and after tera");
+            return USE_GIMMICK;
+        }
+    }
+*/
+    if (outdamageBeforeTera && outdamageAfterTera)
+    {
+        DebugPrintf("AI outdamages before and after tera");
+        if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+            return USE_GIMMICK;
+    }
+    if (!outdamageBeforeTera && !outdamageAfterTera)
+    {
+        DebugPrintf("AI is outdamaged by player before and after tera");
+        if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+            return USE_GIMMICK;
+    }
 
+     DebugPrintf("No tera criteria met, no chance to tera");
     return NO_GIMMICK;
 }
 #undef dealtWithTera
