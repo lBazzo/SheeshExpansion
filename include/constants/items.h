@@ -1039,12 +1039,15 @@
 #define ITEM_TIDAL_BELL 864
 #define ITEM_RADIO 865
 
+// New Item Holy
+
+#define ITEM_FAULTY_SHIELD 866
 
 // difficulty items
 //#define ITEM_INFINITE_REPEL 866
 //#define ITEM_INFINITE_RARE_CANDIES 867
 
-#define ITEMS_COUNT 866
+#define ITEMS_COUNT 867
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

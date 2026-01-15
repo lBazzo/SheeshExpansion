@@ -200,6 +200,7 @@ struct SpecialStatus
     u8 berryReduced:1;
     u8 neutralizingGasRemoved:1;    // See VARIOUS_TRY_END_NEUTRALIZING_GAS
     u8 padding2:1;
+    u8 faultyShieldActivated:1;
     // End of byte
     u8 gemParam;
     // End of byte
@@ -773,6 +774,7 @@ struct BattleStruct
     u8 calculatedDamageDone:1;
     u8 calculatedSpreadMoveAccuracy:1;
     u8 printedStrongWindsWeakenedAttack:1;
+    u8 printedFaultyShieldActivated:1;
     u8 numSpreadTargets:2;
     u8 noTargetPresent:1;
     u8 padding2:1;

@@ -2785,8 +2785,75 @@ AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it can dodge a KO and no
 
 
 
+//Faulty Shield tests - needs item proc rate to be at 90 for the random rng to work properly
+
+/*
+SINGLE_BATTLE_TEST("Faulty Shield works properly")
+{
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Item(ITEM_FAULTY_SHIELD); }
+        OPPONENT(SPECIES_FARFETCHD) { Moves(MOVE_SLASH); Ability(ABILITY_INFILTRATOR); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+
+        //MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+    }
+}
 
 
+SINGLE_BATTLE_TEST("Focus Band procs multiple times")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Item(ITEM_FOCUS_BAND); HP(1); }
+        OPPONENT(SPECIES_FARFETCHD) { Moves(MOVE_SLASH); Ability(OpponentAbility); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("Wobbuffet hung on using its Focus Band!");
+
+        //MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+    }
+}
+
+SINGLE_BATTLE_TEST("Delta Stream procs multiple times")
+{
+    GIVEN {
+        PLAYER(SPECIES_RAYQUAZA_MEGA) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_FARFETCHD) { Moves(MOVE_POWDER_SNOW); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_POWDER_SNOW); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(opponent, MOVE_POWDER_SNOW); MOVE(player, MOVE_CELEBRATE); }
+    } //SCENE {
+        //MESSAGE("Wobbuffet hung on using its Focus Band!");
+
+        //MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+    //}
+}
+
+SINGLE_BATTLE_TEST("Faulty Shield isn't disappearing after first use")
+{
+    //u32 OpponentAbility;
+    //u32 OpponentItem;
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Item(ITEM_FAULTY_SHIELD); }
+        OPPONENT(SPECIES_FARFETCHD) { Moves(MOVE_SLASH, MOVE_KNOCK_OFF); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_SLASH); MOVE(player, MOVE_CELEBRATE); }
+        TURN { MOVE(opponent, MOVE_KNOCK_OFF); MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+
+        //MESSAGE("Wobbuffet partially covered itself using its Faulty Shield!");
+    }
+}
+*/
 
 AI_SINGLE_BATTLE_TEST("Checking AI is calcing damage wrong")
 {

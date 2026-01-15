@@ -15279,6 +15279,25 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Radio,
         .iconPalette = gItemIconPalette_DevonParts,
     },
+
+    [ITEM_FAULTY_SHIELD] =
+    {
+        .name = ITEM_NAME("Faulty Shield"),
+        .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .holdEffect = HOLD_EFFECT_FAULTY_SHIELD,
+        .holdEffectParam = 20,
+        .description = COMPOUND_STRING(
+            "A hold item that\n"
+            "occasionally\n"
+            "boosts durability."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+        .iconPic = gItemIcon_RustedShield,
+        .iconPalette = gItemIconPalette_RustedWeapons,
+    },
 };
 
 #undef ITEM_NAME

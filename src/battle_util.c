@@ -8335,6 +8335,32 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageContext *ctx)
             return (ctx->abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
         }
         break;
+    case HOLD_EFFECT_FAULTY_SHIELD:
+        u32 rand = Random() % 100;
+        u8 paramFS = GetBattlerHoldEffectParam(ctx->battlerDef);
+        //DebugPrintf("hold effect print BEFORE IF");
+        //DebugPrintf("rnd: %d param: %d", rand, paramFS);
+        if (rand < paramFS)
+        { //DebugPrintf("hold effect print inside first if");
+        if (GetBattleMoveCategory(ctx->move) == DAMAGE_CATEGORY_PHYSICAL || GetBattleMoveCategory(ctx->move) == DAMAGE_CATEGORY_SPECIAL)
+        { //DebugPrintf("hold effect print inside second if");
+            if (ctx->updateFlags)
+                gSpecialStatuses[ctx->battlerDef].faultyShieldActivated = TRUE;
+
+            if (ctx->isCrit || gProtectStructs[ctx->battlerAtk].confusionSelfDmg)
+            {
+                return UQ_4_12(1.0);
+            }
+            if (ctx->abilityAtk == ABILITY_INFILTRATOR)
+            {
+                if (ctx->updateFlags)
+                    RecordAbilityBattle(ctx->battlerAtk, ctx->abilityDef);
+                return UQ_4_12(1.0);
+            }
+            return UQ_4_12(0.5);
+        }
+        }
+        break;
     default:
         break;
     }
@@ -10414,12 +10440,13 @@ void ClearDamageCalcResults(void)
         gBattleStruct->missStringId[battler] = 0;
         gSpecialStatuses[battler].criticalHit = FALSE;
     }
-
     gBattleStruct->doneDoublesSpreadHit = FALSE;
     gBattleStruct->calculatedDamageDone = FALSE;
     gBattleStruct->calculatedSpreadMoveAccuracy = FALSE;
     gBattleStruct->printedStrongWindsWeakenedAttack = FALSE;
+    gBattleStruct->printedFaultyShieldActivated = FALSE;
     gBattleStruct->numSpreadTargets = 0;
+    //DebugPrintf("clear damage calc results print");
 }
 
 bool32 DoesDestinyBondFail(u32 battler)

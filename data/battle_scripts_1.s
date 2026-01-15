@@ -7639,6 +7639,13 @@ BattleScript_BerryReduceDmg::
 	removeitem BS_SCRIPTING
 	return
 
+BattleScript_FaultyShieldActivated::
+	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
+	waitanimation
+	printstring STRINGID_FAULTYSHIELDACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_BerryCureConfusionEnd2::
 	call BattleScript_BerryCureConfusionRet
 	end2

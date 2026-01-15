@@ -2103,6 +2103,20 @@ static inline bool32 TryActivateWeaknessBerry(u32 battlerDef)
     return FALSE;
 }
 
+static inline bool32 TryActivateFaultyShield(u32 battlerDef)
+{
+    if (gSpecialStatuses[battlerDef].faultyShieldActivated && !gBattleStruct->printedFaultyShieldActivated)
+    { //DebugPrintf("try activate function");
+        gBattleStruct->printedFaultyShieldActivated = TRUE;
+        gBattleScripting.battler = battlerDef;
+        gLastUsedItem = gBattleMons[battlerDef].item;
+        BattleScriptCall(BattleScript_FaultyShieldActivated);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
 static bool32 ProcessPreAttackAnimationFuncs(void)
 {
     u32 moveType = GetBattleMoveType(gCurrentMove);
@@ -2120,6 +2134,20 @@ static bool32 ProcessPreAttackAnimationFuncs(void)
                     continue;
 
                 if (TryStrongWindsWeakenAttack(battlerDef, moveType))
+                    return TRUE;
+            }
+        }
+
+        if (!gBattleStruct->printedFaultyShieldActivated)
+        { 
+            for (u32 battlerDef = 0; battlerDef < gBattlersCount; battlerDef++)
+            {
+                if (IsBattlerInvalidForSpreadMove(gBattlerAttacker, battlerDef, moveTarget)
+                 || (battlerDef == BATTLE_PARTNER(gBattlerAttacker) && !(moveTarget & MOVE_TARGET_FOES_AND_ALLY))
+                 || gBattleStruct->noResultString[battlerDef] == WILL_FAIL)
+                    continue;
+
+                if (TryActivateFaultyShield(battlerDef))
                     return TRUE;
             }
         }
@@ -2145,6 +2173,10 @@ static bool32 ProcessPreAttackAnimationFuncs(void)
             return TRUE;
         if (TryActivateWeaknessBerry(gBattlerTarget))
             return TRUE;
+        if (TryActivateFaultyShield(gBattlerTarget))
+        {DebugPrintf("pre attack anim print");
+                return TRUE;
+        }
     }
 
     return FALSE;
