@@ -1608,7 +1608,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkPsychicFangs::
 CherryGrove_Pokecenter_EventScript_TMClerkGivePsychicFangs::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_PSYCHIC_FANGS
+	giveitem ITEM_TM_PSYCHO_BOOST
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -2385,7 +2385,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostWhitneyTMs::
 	giveitem ITEM_TM_DARK_PULSE
 	giveitem ITEM_TM_SHADOW_BALL
 	giveitem ITEM_TM_DRAGON_CLAW
-	giveitem ITEM_TM_PSYCHIC_FANGS
+	giveitem ITEM_TM_PSYCHO_BOOST
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_WHITNEY
 	closemessage
 	releaseall
