@@ -6066,6 +6066,21 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     // This is done after all loops to minimize the possibility of a timing attack in which the player could
     // determine whether the AI will tera based on the time taken to select a move.
 
+    // Checks if AI is a) mono type and b) has the same tera type as its current type. If both are true, 100% tera chance
+
+    u32 species; 
+    u32 teraType; 
+
+    species = gBattleMons[battler].species;
+    teraType = GetBattlerTeraType(battler);
+
+    if (GetSpeciesType(species, 0) == teraType
+    && (GetSpeciesType(species, 1) == teraType))
+    {
+        DebugPrintf("AI always tera's when its tera typing matches its only type");
+        return USE_GIMMICK;
+    }
+
     // When Tera gives KO: 100% if Player can't KO AI after Tera, or AI is faster. 50% otherwise
     if (enablesKo)
     {

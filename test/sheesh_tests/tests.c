@@ -2778,7 +2778,18 @@ AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it can dodge a KO and no
     }
 }
 
-
+AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it has tera type as its primary type with only one type")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_BLASTOISE) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_TYPHLOSION) { TeraType(TYPE_FIRE); Moves(MOVE_CELEBRATE); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CELEBRATE); }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Fire type!");
+    }
+}
 
 
 
