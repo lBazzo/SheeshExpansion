@@ -81,23 +81,22 @@ GoldenrodDeptStore_Text_Girl:
     .string "My POKéMON must really like me!$"
 
 GoldenrodDeptStore_Text_5FDirectory:
-    .string "Customize Your POKéMON\p"
-    .string "5F TM CORNER$"
+    .string "Give POKéMON unique items\p"
+    .string "5F SPECIES CORNER$"
 
 GoldenrodDeptStore_5F_EventScript_ClerkRight::
 	lock
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart GoldenrodDeptStore_5F_Pokemart_DefenseTMs
+	pokemart GoldenrodDeptStore_5F_Pokemart_SpeciesItems
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-GoldenrodDeptStore_5F_Pokemart_DefenseTMs:
-	.2byte ITEM_TM_PROTECT
-	@.2byte ITEM_TM_SAFEGUARD
-	.2byte ITEM_TM_REFLECT
-	.2byte ITEM_TM_LIGHT_SCREEN
+GoldenrodDeptStore_5F_Pokemart_SpeciesItems:
+	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_THICK_CLUB
+	.2byte ITEM_LEEK
 	pokemartlistend

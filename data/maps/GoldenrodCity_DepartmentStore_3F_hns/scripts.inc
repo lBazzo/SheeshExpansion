@@ -46,19 +46,28 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_OtherEvolutionItems
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
-	.2byte ITEM_PROTEIN
-	.2byte ITEM_CALCIUM
-	.2byte ITEM_IRON
-	.2byte ITEM_ZINC
-	.2byte ITEM_CARBOS
-	.2byte ITEM_HP_UP
+LilycoveCity_DepartmentStore_3F_Pokemart_OtherEvolutionItems:
+	.2byte ITEM_DUBIOUS_DISC
+	.2byte ITEM_ELECTIRIZER
+	.2byte ITEM_MAGMARIZER
+	.2byte ITEM_KINGS_ROCK
+	.2byte ITEM_METAL_COAT
+	.2byte ITEM_BLACK_AUGURITE
+	.2byte ITEM_GALARICA_CUFF
+	.2byte ITEM_GALARICA_WREATH
+	.2byte ITEM_METAL_ALLOY
+	.2byte ITEM_SYRUPY_APPLE
+	.2byte ITEM_PROTECTOR
+	.2byte ITEM_RAZOR_CLAW
+	.2byte ITEM_RAZOR_FANG
+	.2byte ITEM_REAPER_CLOTH
+	.2byte ITEM_LINKING_CORD
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
@@ -66,21 +75,21 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters
+	pokemart LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionStones
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
 	release
 	end
 
 	.align 2
-LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
+LilycoveCity_DepartmentStore_3F_Pokemart_EvolutionStones:
 	.2byte ITEM_FIRE_STONE
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_THUNDER_STONE
-	.2byte ITEM_X_SPEED
-	.2byte ITEM_X_SPECIAL
-	.2byte ITEM_X_ATTACK
-	.2byte ITEM_X_DEFEND
-	.2byte ITEM_DIRE_HIT
-	.2byte ITEM_GUARD_SPEC
-	.2byte ITEM_X_ACCURACY
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_MOON_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_SHINY_STONE
+	.2byte ITEM_DUSK_STONE
+	.2byte ITEM_DAWN_STONE
+	.2byte ITEM_ICE_STONE
 	pokemartlistend

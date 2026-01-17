@@ -651,6 +651,8 @@ GoldenrodCity_EventScript_GameCornerGuard::
 	giveitem ITEM_FOCUS_BAND 
 	giveitem ITEM_QUICK_CLAW
 	giveitem ITEM_BRIGHT_POWDER
+	giveitem ITEM_SCOPE_LENS
+	giveitem ITEM_FAULTY_SHIELD
 	setflag FLAG_GOT_HAX_ITEMS
 	goto GoldenrodCity_EventScript_GameCornerGuardGiven
 
