@@ -17496,6 +17496,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             "Pokémon. When humans begin to fight,\n"
             "it will appear and burn everything to the\n"
             "ground with intensely hot flames."),
+        .isFatefulEncoutner = TRUE,
         .pokemonScale = 256,
         .pokemonOffset = 6,
         .trainerScale = 481,
