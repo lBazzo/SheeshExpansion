@@ -1,4 +1,5 @@
 .set LOCALID_AZALEA_TOWN_KURT_GS, 18
+.set LOCALID_AZALEA_TOWN_BUGSY, 19
 
 AzaleaTown_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, AzaleaTown_OnFrame
@@ -216,6 +217,67 @@ AzaleaTown_Movement_KurtLeave:
 	walk_up
 	walk_up
 	step_end
+
+AzaleaTown_EventScript_BugsyAskForHelp::
+	lock
+	applymovement LOCALID_AZALEA_TOWN_BUGSY, Common_Movement_FaceDown
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_AZALEA_TOWN_BUGSY, Common_Movement_ExclamationMark
+	delay 60
+	applymovement LOCALID_AZALEA_TOWN_BUGSY, AzaleaTown_Movement_BugsyApproach
+	waitmovement 0
+	msgbox AzaleaTown_Text_BugsyAskForHelp, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_AZALEA_TOWN_BUGSY, AzaleaTown_Movement_BugsyLeave
+	waitmovement 0
+	removeobject LOCALID_AZALEA_TOWN_BUGSY
+	setvar VAR_VIOLET_CITY_STATE, 6
+	setflag FLAG_HIDE_AZALEA_BUGSY
+	release
+	end
+
+
+
+AzaleaTown_Movement_BugsyApproach::
+	walk_down
+	walk_down
+	step_end
+
+AzaleaTown_Movement_BugsyLeave::
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+AzaleaTown_Text_BugsyAskForHelp:
+	.string "Hey there! {PLAYER}, is it? I'm BUGSY.\n"
+	.string "It's a pleasure to meet you.\p"
+	.string "I know it's rude to ask for a favour\n"
+	.string "right when you meet someone, but I\l"
+	.string "promise it's important!\p"
+	.string "TEAM ROCKET has taken over SLOWPOKE\n"
+	.string "WELL, and the new GYM LEADER in AZALEA\l"
+	.string "TOWN is away right now, so there's no\l"
+	.string "one here to stop them.\p"
+	.string "I'm worried about if they try to come to\n"
+	.string "ILEX FOREST and hurt the POKéMON there\l"
+	.string "too, so I've got to go over and keep\l"
+	.string "them safe...\p"
+	.string "You seem like a capable trainer. Would\n"
+	.string "you be able to beat them in my place?\p"
+	.string "...\p"
+	.string "Really? Great, you're amazing!\p"
+	.string "Oh, and make sure you talk to KURT\n"
+	.string "before you head down the well, OK?\p"
+	.string "He may be old, but he's got fighting\n"
+	.string "spirit. He should be able to help.\p"
+	.string "Thanks, {PLAYER}! I'm counting on you!$"
 
 AzaleaTown_Text_RivalLoss:
 	.string "…Humph! I knew you were lying.$"

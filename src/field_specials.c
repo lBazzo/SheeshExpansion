@@ -2715,6 +2715,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_BUGSY_STONES:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 7;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -3222,6 +3232,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ShadowClaw,
         gText_Slash,
         gText_BlazeKick,
+        gText_Exit
+    },
+    [SCROLL_MULTI_BUGSY_STONES] =
+    {
+        gText_WaterStone,
+        gText_LeafStone,
+        gText_ThunderStone,
+        gText_ShinyStone,
+        gText_SunStone,
+        gText_IceStone,
         gText_Exit
     },
 };

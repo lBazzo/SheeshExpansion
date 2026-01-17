@@ -1643,7 +1643,7 @@
 #define FLAG_TALKED_OLIVINE_CITY_ELEMENTAL_TUTOR    (SYSTEM_FLAGS + 0xAB) // Unused Flag
 #define FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR    (SYSTEM_FLAGS + 0xAC) // Unused Flag
 #define FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR   (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
+#define FLAG_HIDE_AZALEA_BUGSY                      (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
 #define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag

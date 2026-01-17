@@ -27,7 +27,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 34,
+      "x": 42,
       "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -216,7 +216,5 @@
       "script": "AzaleaTown_EventScript_Trigger"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

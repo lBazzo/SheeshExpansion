@@ -2202,19 +2202,19 @@ const u8 gText_FORMS_NONE[]                         = _("{STR_VAR_1} has no alte
 const u8 gText_Var1DotVar2_Metric[]                 = _("{STR_VAR_1}.{STR_VAR_2}cm");
 // end HnS
 
-const u8 gText_Corviknight[]                        = _("CORVIKNIGHT");
-const u8 gText_Escavalier[]                         = _("ESCAVALIER");
-const u8 gText_Tinkaton[]                           = _("TINKATON");
+const u8 gText_Corviknight[]                        = _("Corviknight");
+const u8 gText_Escavalier[]                         = _("Escavalier");
+const u8 gText_Tinkaton[]                           = _("Tinkaton");
 
-const u8 gText_Blaine[]                             = _("BLAINE");
-const u8 gText_Surge[]                              = _("SURGE");
+const u8 gText_Blaine[]                             = _("Blaine");
+const u8 gText_Surge[]                              = _("Surge");
 
-const u8 gText_WaterStone[]                         = _("WATER STONE");
-const u8 gText_LeafStone[]                          = _("LEAF STONE");
-const u8 gText_ThunderStone[]                       = _("THUNDER STONE");
-const u8 gText_ShinyStone[]                         = _("SHINY STONE");
-const u8 gText_SunStone[]                           = _("SUN STONE");
-const u8 gText_IceStone[]                           = _("ICE STONE");
+const u8 gText_WaterStone[]                         = _("Water Stone");
+const u8 gText_LeafStone[]                          = _("Leaf Stone");
+const u8 gText_ThunderStone[]                       = _("Thunder Stone");
+const u8 gText_ShinyStone[]                         = _("Shiny Stone");
+const u8 gText_SunStone[]                           = _("Sun Stone");
+const u8 gText_IceStone[]                           = _("Ice Stone");
 
 const u8 gText_B2B[]                                = _("B2B");
 
@@ -2222,86 +2222,86 @@ const u8 gText_B2B[]                                = _("B2B");
 
 // Darach E4 shop terms
 
-const u8 gText_BabiriBerry1BP[] = _("BABIRI BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_ChartiBerry1BP[] = _("CHARTI BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_ChilanBerry1BP[] = _("CHILAN BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_ChopleBerry1BP[] = _("CHOPLE BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_CobaBerry1BP[]   = _("COBA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_ColburBerry1BP[] = _("COLBUR BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_HabanBerry1BP[]  = _("HABAN BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_KasibBerry1BP[]  = _("KASIB BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_KebiaBerry1BP[]  = _("KEBIA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_OccaBerry1BP[]   = _("OCCA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_PasshoBerry1BP[] = _("PASSHO BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_PayapaBerry1BP[] = _("PAYAPA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_RindoBerry1BP[]  = _("RINDO BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_RoseliBerry1BP[] = _("ROSELI BERRY{CLEAR_TO 0x5E}1BP");
+const u8 gText_BabiriBerry1BP[] = _("Babiri Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_ChartiBerry1BP[] = _("Charti Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_ChilanBerry1BP[] = _("Chilan Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_ChopleBerry1BP[] = _("Chople Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_CobaBerry1BP[]   = _("Coba Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_ColburBerry1BP[] = _("Colbur Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_HabanBerry1BP[]  = _("Haban Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_KasibBerry1BP[]  = _("Kasib Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_KebiaBerry1BP[]  = _("Kebia Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_OccaBerry1BP[]   = _("Occa Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_PasshoBerry1BP[] = _("Passho Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_PayapaBerry1BP[] = _("Payapa Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_RindoBerry1BP[]  = _("Rindo Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_RoseliBerry1BP[] = _("Roseli Berry{CLEAR_TO 0x5E}1BP");
 
 // Caitlin E4 shop terms
 
-const u8 gText_ShucaBerry1BP[] = _("SHUCA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_TangaBerry1BP[] = _("TANGA BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_WacanBerry1BP[] = _("WACAN BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_YacheBerry1BP[] = _("YACHE BERRY{CLEAR_TO 0x5E}1BP");
-const u8 gText_HeartScale2BP[]   = _("HEART SCALE{CLEAR_TO 0x5E}2BP");
-const u8 gText_ClearAmulet2BP[] = _("CLEAR AMULET{CLEAR_TO 0x5E}2BP");
-const u8 gText_AirBalloon2BP[]  = _("AIR BALLOON{CLEAR_TO 0x5E}2BP");
-const u8 gText_Snowball2BP[]  = _("SNOWBALL{CLEAR_TO 0x5E}2BP");
-const u8 gText_LuminousMoss2BP[]  = _("LUMINOUS MOSS{CLEAR_TO 0x5E}2BP");
-const u8 gText_CellBattery2BP[]   = _("CELL BATTERY{CLEAR_TO 0x5E}2BP");
-const u8 gText_AbsorbBulb2BP[] = _("ABSORB BULB{CLEAR_TO 0x5E}2BP");
-const u8 gText_ExpertBelt2BP[] = _("EXPERT BELT{CLEAR_TO 0x5E}2BP");
-const u8 gText_RedCard2BP[]  = _("RED CARD{CLEAR_TO 0x5E}2BP");
-const u8 gText_BoosterEnergy3BP[] = _("BOOSTER ENERGY{CLEAR_TO 0x5E}3BP");
+const u8 gText_ShucaBerry1BP[] = _("Shuca Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_TangaBerry1BP[] = _("Tanga Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_WacanBerry1BP[] = _("Wacan Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_YacheBerry1BP[] = _("Yache Berry{CLEAR_TO 0x5E}1BP");
+const u8 gText_HeartScale2BP[]   = _("Heart Scale{CLEAR_TO 0x5E}2BP");
+const u8 gText_ClearAmulet2BP[] = _("Clear Amulet{CLEAR_TO 0x5E}2BP");
+const u8 gText_AirBalloon2BP[]  = _("Air Balloon{CLEAR_TO 0x5E}2BP");
+const u8 gText_Snowball2BP[]  = _("Snowball{CLEAR_TO 0x5E}2BP");
+const u8 gText_LuminousMoss2BP[]  = _("Luminous Moss{CLEAR_TO 0x5E}2BP");
+const u8 gText_CellBattery2BP[]   = _("Cell Battery{CLEAR_TO 0x5E}2BP");
+const u8 gText_AbsorbBulb2BP[] = _("Absorb Bulb{CLEAR_TO 0x5E}2BP");
+const u8 gText_ExpertBelt2BP[] = _("Expert Belt{CLEAR_TO 0x5E}2BP");
+const u8 gText_RedCard2BP[]  = _("Red Card{CLEAR_TO 0x5E}2BP");
+const u8 gText_BoosterEnergy3BP[] = _("Booster Energy{CLEAR_TO 0x5E}3BP");
 
 // Dahlia E4 shop terms
 
-const u8 gText_ApicotBerry3BP[] = _("APICOT BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_GanlonBerry3BP[] = _("GANLON BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_LiechiBerry3BP[] = _("LIECHI BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_PetayaBerry3BP[] = _("PETAYA BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_SalacBerry3BP[] = _("SALAC BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_JabocaBerry3BP[] = _("JABOCA BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_RowapBerry3BP[] = _("ROWAP BERRY{CLEAR_TO 0x5E}3BP");
-const u8 gText_RockyHelmet5BP[] = _("ROCKY HELMET{CLEAR_TO 0x5E}5BP");
-const u8 gText_Leftovers5BP[] = _("LEFTOVERS{CLEAR_TO 0x5E}5BP");
-const u8 gText_BlackSludge5BP[] = _("BLACK SLUDGE{CLEAR_TO 0x5E}5BP");
-const u8 gText_FireGem5BP[] = _("FIRE GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_WaterGem5BP[] = _("WATER GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_ElectricGem5BP[] = _("ELECTRIC GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_GrassGem5BP[] = _("GRASS GEM{CLEAR_TO 0x5E}5BP");
+const u8 gText_ApicotBerry3BP[] = _("Apicot Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_GanlonBerry3BP[] = _("Ganlon Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_LiechiBerry3BP[] = _("Liechi Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_PetayaBerry3BP[] = _("Petaya Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_SalacBerry3BP[] = _("Salac Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_JabocaBerry3BP[] = _("Jaboca Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_RowapBerry3BP[] = _("Rowap Berry{CLEAR_TO 0x5E}3BP");
+const u8 gText_RockyHelmet5BP[] = _("Rocky Helmet{CLEAR_TO 0x5E}5BP");
+const u8 gText_Leftovers5BP[] = _("Leftovers{CLEAR_TO 0x5E}5BP");
+const u8 gText_BlackSludge5BP[] = _("Black Sludge{CLEAR_TO 0x5E}5BP");
+const u8 gText_FireGem5BP[] = _("Fire Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_WaterGem5BP[] = _("Water Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_ElectricGem5BP[] = _("Electric Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_GrassGem5BP[] = _("Grass Gem{CLEAR_TO 0x5E}5BP");
 
 // Dahlia E4 shop terms
 
-const u8 gText_IceGem5BP[] = _("ICE GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_FightingGem5BP[] = _("FIGHTING GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_PoisonGem5BP[] = _("POISON GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_GroundGem5BP[] = _("GROUND GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_FlyingGem5BP[] = _("FLYING GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_PsychicGem5BP[] = _("PSYCHIC GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_BugGem5BP[] = _("BUG GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_RockGem5BP[] = _("ROCK GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_GhostGem5BP[] = _("GHOST GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_DragonGem5BP[] = _("DRAGON GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_DarkGem5BP[] = _("DARK GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_SteelGem5BP[] = _("STEEL GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_NormalGem5BP[] = _("NORMAL GEM{CLEAR_TO 0x5E}5BP");
-const u8 gText_FairyGem5BP[] = _("FAIRY GEM{CLEAR_TO 0x5E}5BP");
+const u8 gText_IceGem5BP[] = _("Ice Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_FightingGem5BP[] = _("Fighting Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_PoisonGem5BP[] = _("Poison Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_GroundGem5BP[] = _("Ground Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_FlyingGem5BP[] = _("Flying Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_PsychicGem5BP[] = _("Psychic Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_BugGem5BP[] = _("Bug Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_RockGem5BP[] = _("Rock Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_GhostGem5BP[] = _("Ghost Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_DragonGem5BP[] = _("Dragon Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_DarkGem5BP[] = _("Dark Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_SteelGem5BP[] = _("Steel Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_NormalGem5BP[] = _("Normal Gem{CLEAR_TO 0x5E}5BP");
+const u8 gText_FairyGem5BP[] = _("Fairy Gem{CLEAR_TO 0x5E}5BP");
 
 // Thorton E4 shop terms
 
-const u8 gText_CustapBerry6BP[] = _("CUSTAP BERRY{CLEAR_TO 0x5E}6BP");
-const u8 gText_CovertCloak6BP[] = _("COVERT CLOAK{CLEAR_TO 0x5E}6BP");
-const u8 gText_ThroatSpray6BP[] = _("THROAT SPRAY{CLEAR_TO 0x5E}6BP");
-const u8 gText_FocusSash7BP[] = _("FOCUS SASH{CLEAR_TO 0x5E}7BP");
-const u8 gText_EjectPack7BP[] = _("EJECT PACK{CLEAR_TO 0x5E}7BP");
-const u8 gText_EjectButton7BP[] = _("EJECT BUTTON{CLEAR_TO 0x5E}7BP");
-const u8 gText_AssaultVest10BP[] = _("ASSAULT VEST{CLEAR_TO 0x5E}10BP");
-const u8 gText_LifeOrb10BP[] = _("LIFE ORB{CLEAR_TO 0x5E}10BP");
-const u8 gText_WeaknessPolicy10BP[] = _("WEAKNESS POLICY{CLEAR_TO 0x5E}10BP");
-const u8 gText_ChoiceScarf16BP[] = _("CHOICE SCARF{CLEAR_TO 0x5E}16BP");
-const u8 gText_ChoiceSpecs16BP[] = _("CHOICE SPECS{CLEAR_TO 0x5E}16BP");
-const u8 gText_ChoiceBand16BP[] = _("CHOICE BAND{CLEAR_TO 0x5E}16BP");
+const u8 gText_CustapBerry6BP[] = _("Custap Berry{CLEAR_TO 0x5E}6BP");
+const u8 gText_CovertCloak6BP[] = _("Covert Cloak{CLEAR_TO 0x5E}6BP");
+const u8 gText_ThroatSpray6BP[] = _("Throat Spray{CLEAR_TO 0x5E}6BP");
+const u8 gText_FocusSash7BP[] = _("Focus Sash{CLEAR_TO 0x5E}7BP");
+const u8 gText_EjectPack7BP[] = _("Eject Pack{CLEAR_TO 0x5E}7BP");
+const u8 gText_EjectButton7BP[] = _("Eject Button{CLEAR_TO 0x5E}7BP");
+const u8 gText_AssaultVest10BP[] = _("Assault Vest{CLEAR_TO 0x5E}10BP");
+const u8 gText_LifeOrb10BP[] = _("Life Orb{CLEAR_TO 0x5E}10BP");
+const u8 gText_WeaknessPolicy10BP[] = _("Weakness Policy{CLEAR_TO 0x5E}10BP");
+const u8 gText_ChoiceScarf16BP[] = _("Choice Scarf{CLEAR_TO 0x5E}16BP");
+const u8 gText_ChoiceSpecs16BP[] = _("Choice Specs{CLEAR_TO 0x5E}16BP");
+const u8 gText_ChoiceBand16BP[] = _("Choice Band{CLEAR_TO 0x5E}16BP");
 
 // Scale Attendant terms
 

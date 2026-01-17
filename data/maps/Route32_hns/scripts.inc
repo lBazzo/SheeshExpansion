@@ -217,6 +217,7 @@ Route32_EventScript_BaldingManCheck::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
 	setvar VAR_VIOLET_CITY_STATE, 5
+	clearflag FLAG_HIDE_AZALEA_BUGSY
 	release
 	end
 Route32_EventScript_BaldingManTower::

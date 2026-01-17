@@ -812,23 +812,25 @@ IlexForest_EventScript_BugsyPreWell::
 
 IlexForest_EventScript_BugsyGiftTM::
 	msgbox IlexForest_Text_BugsyGiftTM, MSGBOX_DEFAULT
-	@giveitem ITEM_TM_BULLET_SEED
+	giveitem ITEM_TM_U_TURN
 	setflag FLAG_BUGSY_GIFT_TM
 	goto IlexForest_EventScript_BugsyGiftStone
 
 IlexForest_EventScript_BugsyGiftStone::
 	msgbox IlexForest_Text_BugsyGiftStone, MSGBOX_DEFAULT
-	closemessage
-	delay 5
-	multichoice 20, 0, MULTI_BUGSY_STONES, FALSE
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_BUGSY_STONES
+	special ShowScrollableMultichoice
+	waitstate
 	switch VAR_RESULT
-	case MULTI_B_PRESSED, IlexForest_EventScript_BugsyGiftStoneDeclined
 	case 0, IlexForest_EventScript_BugsyWaterStone
 	case 1, IlexForest_EventScript_BugsyLeafStone
 	case 2, IlexForest_EventScript_BugsyThunderStone
 	case 3, IlexForest_EventScript_BugsyShinyStone
 	case 4, IlexForest_EventScript_BugsySunStone
 	case 5, IlexForest_EventScript_BugsyIceStone
+	case 6, IlexForest_EventScript_BugsyGiftStoneDeclined
+	case MULTI_B_PRESSED, IlexForest_EventScript_BugsyGiftStoneDeclined
 	goto IlexForest_EventScript_BugsyGiftStoneDeclined
 
 IlexForest_EventScript_BugsyGiftStoneDeclined::
@@ -857,7 +859,7 @@ IlexForest_EventScript_BugsyThunderStone::
 
 IlexForest_EventScript_BugsyShinyStone::
 	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
-	giveitem ITEM_MOON_STONE
+	giveitem ITEM_SHINY_STONE
 	setflag FLAG_BUGSY_GIFT_STONE
 	goto IlexForest_EventScript_BugsyCheckOnMisty
 
@@ -869,7 +871,7 @@ IlexForest_EventScript_BugsySunStone::
 
 IlexForest_EventScript_BugsyIceStone::
 	msgbox IlexForest_Text_BugsyGiftStoneReceived, MSGBOX_DEFAULT
-	giveitem ITEM_MOON_STONE
+	giveitem ITEM_ICE_STONE
 	setflag FLAG_BUGSY_GIFT_STONE
 	goto IlexForest_EventScript_BugsyCheckOnMisty
 
@@ -880,23 +882,13 @@ IlexForest_EventScript_BugsyCheckOnMisty::
 	end
 
 IlexForest_Text_BugsyPreWell:
-	.string "Hey there! {PLAYER}, is it? I'm BUGSY.\n"
-	.string "It's a pleasure to meet you.\p"
-	.string "I know it's rude to ask for a favour\n"
-	.string "right when you meet someone, but I\l"
-	.string "promise it's important!\p"
-	.string "TEAM ROCKET has taken over SLOWPOKE\n"
-	.string "WELL, and the new GYM LEADER in AZALEA\l"
-	.string "TOWN is away right now, so there's no\l"
-	.string "one there to stop them.\p"
-	.string "I'm worried about if they try to come to\n"
-	.string "ILEX FOREST and hurt the POKéMON here\l"
-	.string "too, so I've got to stay here and keep\l"
-	.string "them safe...\p"
-	.string "You seem like a capable trainer. Would\n"
-	.string "you be able to beat them in my place?\p"
-	.string "...\p"
-	.string "Thanks, {PLAYER}! I'm counting on you!$"
+	.string "Oh, hi again, {PLAYER}.\p"
+	.string "It's good to see you're alright. How is\n"
+	.string "the fight against TEAM ROCKET going?\p"
+	.string "I wish I could help you out, but the\n"
+	.string "POKéMON here need my protection...\p"
+	.string "But don't worry. You can do it! I just\n"
+	.string "know it!$"
 
 IlexForest_Text_BugsyGiftTM:
 	.string "Wow, {PLAYER}, you're amazing!\p"
@@ -915,6 +907,8 @@ IlexForest_Text_BugsyGiftStone:
 	.string "the AZALEA GYM now, right?\p"
 	.string "Your POKéMON could maybe use a boost\n"
 	.string "from one of these evolution stones.\p"
+	.string "I find a bunch of these while looking\n"
+	.string "for POKéMON, so I have plenty to spare.\p"
 	.string "Which one would you like?$"
 
 IlexForest_Text_BugsyGiftStoneReceived:
