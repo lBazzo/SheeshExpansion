@@ -5186,7 +5186,7 @@
       "id": "LAYOUT_BATTLE_TOWER_OUTSIDE",
       "name": "BattleTower_Outside_Layout",
       "width": 33,
-      "height": 30,
+      "height": 65,
       "primary_tileset": "gTileset_Johto_General",
       "secondary_tileset": "gTileset_BattleTower_Outside",
       "border_filepath": "data/layouts/BattleTower_Outside_hns/border.bin",

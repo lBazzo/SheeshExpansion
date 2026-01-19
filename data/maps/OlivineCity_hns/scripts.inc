@@ -10,12 +10,18 @@ OlivineCity_hns_MapScripts::
 
 OlivineCity_MapScript_OnTransition::
 	callnative SetTimeBasedEncounters
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, OlivineCity_MapScript_UnsetLighthouseTooDarkFlag
+	goto_if_set FLAG_DEFEATED_DAHLIA, OlivineCity_MapScript_ClearWeather
 	goto_if_ge VAR_OLIVINE_CITY_STATE, 5, OlivineCity_MapScript_ClearWeather
 	end
 
 OlivineCity_MapScript_ClearWeather::
 	setweather WEATHER_NONE
 	end
+
+OlivineCity_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
 
 OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	setflag FLAG_HIDE_OLIVINE_CITY_GYM_LEADERS
@@ -29,6 +35,7 @@ OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	clearflag FLAG_HIDE_OLIVINE_DAHLIA
 	clearflag FLAG_HIDE_OLIVINE_STEVEN
 	clearflag FLAG_STEVEN_INTRO_DONE
+	clearflag FLAG_DEFEATED_DAHLIA
 	setvar VAR_GETFLY, 0
 	
 	setvar VAR_OLIVINE_CITY_STATE, 1
@@ -160,8 +167,8 @@ OlivineCity_EventScript_DahliaTrigger::
 	call_if_eq VAR_TEMP_1, 45, OlivineCity_EventScript_DahliaWalkToPlayer1
 	call_if_eq VAR_TEMP_1, 46, OlivineCity_EventScript_DahliaWalkToPlayer2
 	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_DahliaWalkToPlayer3
-	goto_if_eq VAR_DAHLIA_STATE, 2, OlivineCity_EventScript_ChallengedByDahliaPostIntro
-	goto OlivineCity_EventScript_ChallengedByDahlia
+	@goto_if_eq VAR_DAHLIA_STATE, 2, OlivineCity_EventScript_EncounterDahliaPostIntro
+	goto OlivineCity_EventScript_EncounterDahlia
 
 OlivineCity_EventScript_DahliaWalkToPlayer1::
 	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaWalkToPlayer1
@@ -175,21 +182,6 @@ OlivineCity_EventScript_DahliaWalkToPlayer2::
 
 OlivineCity_EventScript_DahliaWalkToPlayer3::
 	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaWalkToPlayer3
-	waitmovement 0
-	return
-
-OlivineCity_EventScript_DahliaWalkBack1::
-	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaWalkBack1
-	waitmovement 0
-	return
-
-OlivineCity_EventScript_DahliaWalkBack2::
-	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaWalkBack2
-	waitmovement 0
-	return
-
-OlivineCity_EventScript_DahliaWalkBack3::
-	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaWalkBack3
 	waitmovement 0
 	return
 
@@ -210,33 +202,18 @@ OlivineCity_Movement_DahliaWalkToPlayer3::
 	walk_right
 	step_end
 
-OlivineCity_Movement_DahliaWalkBack1::
-	walk_down
+OlivineCity_Movement_DahliaExit::
 	walk_left
 	walk_left
-	face_right
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
-OlivineCity_Movement_DahliaWalkBack2::
-	walk_left
-	walk_left
-	face_right
-	step_end
-
-OlivineCity_Movement_DahliaWalkBack3::
-	walk_up
-	walk_left
-	walk_left
-	face_right
-	step_end
-
-OlivineCity_Movement_DahliaThinking::
-	face_left
-	waitmovement 30
-	face_right
-	step_end
-
-OlivineCity_EventScript_ChallengedByDahlia::
+OlivineCity_EventScript_EncounterDahlia::
 	setvar VAR_DAHLIA_STATE, 2
 	msgbox OlivineCity_Text_DahliaEncounter, MSGBOX_DEFAULT
 	closemessage
@@ -246,118 +223,17 @@ OlivineCity_EventScript_ChallengedByDahlia::
 	closemessage
 	applymovement LOCALID_OLIVINE_DAHLIA, Common_Movement_FaceRight
 	waitmovement 0
-	msgbox OlivineCity_Text_DahliaEncounterPostIntro, MSGBOX_DEFAULT
-	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
-	switch VAR_RESULT
-	case 0, OlivineCity_EventScript_DahliaBattleNormal
-	case 1, OlivineCity_EventScript_DahliaBattleHard
-	case MULTI_B_PRESSED, OlivineCity_EventScript_DeclineDahliaChallenge
-	goto OlivineCity_EventScript_DeclineDahliaChallenge
-
-OlivineCity_EventScript_ChallengedByDahliaPostIntro::
-	msgbox OlivineCity_Text_DahliaEncounterPostIntro, MSGBOX_DEFAULT
-	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
-	switch VAR_RESULT
-	case 0, OlivineCity_EventScript_DahliaBattleNormal
-	case 1, OlivineCity_EventScript_DahliaBattleHard
-	case MULTI_B_PRESSED, OlivineCity_EventScript_DeclineDahliaChallenge
-	goto OlivineCity_EventScript_DeclineDahliaChallenge
-
-OlivineCity_EventScript_DahliaBattleNormal::
-	msgbox OlivineCity_Text_DahliaBattleNormal, MSGBOX_DEFAULT
+	msgbox OlivineCity_Text_DahliaEncounter3, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_DAHLIA_NORMAL, OlivineCity_Text_DahliaWin
-	playbgm MUS_HG_B_ARCADE, TRUE
-	msgbox OlivineCity_Text_DahliaNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 2
-	msgbox OlivineCity_Text_DahliaLeaving, MSGBOX_DEFAULT
-	closemessage
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	call_if_eq VAR_TEMP_1, 45, OlivineCity_EventScript_DahliaLeave1
-	call_if_eq VAR_TEMP_1, 46, OlivineCity_EventScript_DahliaLeave1
-	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_DahliaLeave2
+	applymovement LOCALID_OLIVINE_DAHLIA, OlivineCity_Movement_DahliaExit
 	waitmovement 0
 	setflag FLAG_HIDE_OLIVINE_DAHLIA
 	removeobject LOCALID_OLIVINE_DAHLIA
-	setvar VAR_DAHLIA_STATE, 3
+	setflag FLAG_LIGHTHOUSE_TOO_DARK
+	setvar VAR_TERA_B2B_COUNTER, 1
 	fadedefaultbgm
 	release
 	end
-
-OlivineCity_EventScript_DahliaBattleHard::
-	setweather WEATHER_RAIN
-	doweather
-	msgbox OlivineCity_Text_DahliaBattleHard, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_DAHLIA_HARD, OlivineCity_Text_DahliaWin
-	playbgm MUS_HG_B_ARCADE, TRUE
-	setweather WEATHER_SHADE
-	doweather
-	msgbox OlivineCity_Text_DahliaHardAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
-	msgbox OlivineCity_Text_DahliaLeaving, MSGBOX_DEFAULT
-	closemessage
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	call_if_eq VAR_TEMP_1, 45, OlivineCity_EventScript_DahliaLeave1
-	call_if_eq VAR_TEMP_1, 46, OlivineCity_EventScript_DahliaLeave1
-	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_DahliaLeave2
-	waitmovement 0
-	setflag FLAG_HIDE_OLIVINE_DAHLIA
-	removeobject LOCALID_OLIVINE_DAHLIA
-	setvar VAR_DAHLIA_STATE, 3
-	fadedefaultbgm
-	release
-	end
-
-OlivineCity_EventScript_DeclineDahliaChallenge::
-	msgbox OlivineCity_Text_DeclineDahliaChallenge, MSGBOX_DEFAULT
-	closemessage
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
-	call_if_eq VAR_TEMP_1, 45, OlivineCity_EventScript_DahliaWalkBack1
-	call_if_eq VAR_TEMP_1, 46, OlivineCity_EventScript_DahliaWalkBack2
-	call_if_eq VAR_TEMP_1, 47, OlivineCity_EventScript_DahliaWalkBack3
-	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
-	waitmovement 0
-	waitmovement 0
-	fadedefaultbgm
-	release
-	end
-
-OlivineCity_EventScript_DahliaLeave1::
-	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaLeave1
-	waitmovement 0
-	return
-
-OlivineCity_EventScript_DahliaLeave2::
-	applymovement LOCALID_OLIVINE_DAHLIA OlivineCity_Movement_DahliaLeave2
-	waitmovement 0
-	return
-
-OlivineCity_Movement_DahliaLeave1::
-	walk_down
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-OlivineCity_Movement_DahliaLeave2::
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
 
 OlivineCity_Text_DahliaEncounter:
 	.string "...Aha!\p"
@@ -366,86 +242,39 @@ OlivineCity_Text_DahliaEncounter:
 	.string "looking to run into. Let me explain.\p"
 	.string "My name is DAHLIA. I run the BATTLE\n"
 	.string "ARCADE in a land far away from here.\p"
-	.string "DAHLIA: The BATTLE ARCADE is a facility\n"
-	.string "where trainers battle under randomly\l"
-	.string "chosen conditions, testing both their\l"
-	.string "luck and skill.\p"
-	.string "...Or so I thought.\p"
-	.string "Recently, I battled an incredibly\n"
-	.string "strong trainer, who managed to win even\l"
-	.string "when the ARCADE gave him a forfeit.\p"
-	.string "Afterwards, he said to me, 'A tougher\n"
-	.string "fight simply means I come out the other\l"
-	.string "side a stronger trainer.'$"
+	.string "DAHLIA: You've seen how the OLIVINE\n"
+	.string "LIGHTHOUSE has gone dark, right?\p"
+	.string "Well, not to make this all about me or\n"
+	.string "anything, but we'd actually just set up\p"
+	.string "a new area south of the BATTLE TOWER\n"
+	.string "hoping to test out a new type of battle\l"
+	.string "style using terastallization!\p"
+	.string "But with the sea being so dark, it's far\n"
+	.string "too dangerous even for powerful\l"
+	.string "trainers to gather here right now...\p"
+	.string "So!\p"
+	.string "That's why your arrival here is perfect\n"
+	.string "timing!\p"
+	.string "It'll take a little while for them to put\n"
+	.string "the emergency lighting in place, so why\l"
+	.string "don't you come and take our challenge?$"
 
 OlivineCity_Text_DahliaEncounter2:
-	.string "That got me thinking...$"
+	.string "Its just straight ahead from here to\n"
+	.string "the BATTLE TOWER. You can't miss it.$"
 
-OlivineCity_Text_DahliaEncounterPostIntro:
-	.string "I want to know.\p"
-	.string "Is it better to always have good luck\n"
-	.string "and an easy path to victory?\p"
-	.string "Or does bad luck and struggle make us\n"
-	.string "stronger in the long run?\p"
-	.string "Say we were to battle right now, would\n"
-	.string "you wish for a hard opponent, or a\l"
-	.string "normal opponent?\p"
-	.string "What'll it be?$"
+OlivineCity_Text_DahliaEncounter3:
+	.string "Don't keep me waiting too long! I look\n"
+	.string "forward to seeing how you battle!$"
 
-OlivineCity_Text_DeclineDahliaChallenge:
-	.string "Oh, you want to think over your answer?\n"
-	.string "Guess that makes two of us!\p"
-	.string "I'll be waiting here for when you're\n"
-	.string "ready then.$"
 
-OlivineCity_Text_DahliaBattleNormal:
-	.string "Hoping your good luck lasts forever,\n"
-	.string "are you? We'll see about that!$"
 
-OlivineCity_Text_DahliaBattleHard:
-	.string "Interesting! So you're the type to opt\n"
-	.string "into adversity, are you?\p"
-	.string "In that case, let's see just how strong\n"
-	.string "the hardship you've endured has made\l"
-	.string "you!$"
 
-OlivineCity_Text_DahliaWin:
-	.string "Incredible! No matter the source of\n"
-	.string "your strength, I can't deny that you\l"
-	.string "are one skilled trainer!$"
 
-OlivineCity_Text_DahliaNormalAfter:
-	.string "So that's that, then.\p"
-	.string "You know, I think you're right. If you\n"
-	.string "take on the more difficult challenge\l"
-	.string "every time, eventually you will lose\l"
-	.string "more than you would have otherwise by\l"
-	.string "letting luck take its natural course.\p"
-	.string "Thank you for showing me your point of\n"
-	.string "view. Here, I want you to have these.\l"
-	.string "It's two HEART SCALES.$"
 
-OlivineCity_Text_DahliaHardAfter:
-	.string "So that's that, then.\p"
-	.string "You know, I think you're right. If you\n"
-	.string "take on the more difficult challenge\l"
-	.string "every time, eventually you will learn\l"
-	.string "how to overcome mountains you\l"
-	.string "otherwise would never be able to climb.\p"
-	.string "Thank you for showing me your point of\n"
-	.string "view. Here, I want you to have these.\l"
-	.string "It's four HEART SCALES.$"
 
-OlivineCity_Text_DahliaLeaving:	
-	.string "The real luck I had was running into you\n"
-	.string "today, {PLAYER}.\p"
-	.string "You know, I think the other FRONTIER\n"
-	.string "BRAINS would love to meet you.\p"
-	.string "Maybe keep an eye out for them on the\n"
-	.string "rest of your journey.\p"
-	.string "Who knows? Maybe I'll be lucky enough\n"
-	.string "to run into you again someday.\l"
-	.string "Bye bye for now!$"
+
+
 
 OlivineCity_EventScript_Sailor1::
 	lock

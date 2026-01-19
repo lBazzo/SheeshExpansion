@@ -1196,6 +1196,23 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+static bool16 IsInflitratedRadioTower(struct WarpData *warp)
+{
+    if (VarGet(VAR_GOLDENROD_CITY_STATE) < 6)
+        return FALSE;
+    else if (VarGet(VAR_GOLDENROD_CITY_STATE) > 10)
+        return FALSE;
+    else if (warp->mapGroup != MAP_GROUP(MAP_GOLDENROD_CITY_RADIO_TOWER_1F))
+        return FALSE;
+    else if (warp->mapNum == MAP_NUM(MAP_GOLDENROD_CITY_RADIO_TOWER_1F)
+     || warp->mapNum == MAP_NUM(MAP_GOLDENROD_CITY_RADIO_TOWER_2F)
+      || warp->mapNum == MAP_NUM(MAP_GOLDENROD_CITY_RADIO_TOWER_3F)
+       || warp->mapNum == MAP_NUM(MAP_GOLDENROD_CITY_RADIO_TOWER_4F)
+        || warp->mapNum == MAP_NUM(MAP_GOLDENROD_CITY_RADIO_TOWER_5F))
+        return TRUE;
+    return FALSE;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
     if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
@@ -1206,6 +1223,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
+    else if (IsInflitratedRadioTower(warp) == TRUE)
+        return MUS_HG_ROCKET_TAKEOVER;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }

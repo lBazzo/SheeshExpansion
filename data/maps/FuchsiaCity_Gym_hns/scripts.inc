@@ -146,55 +146,6 @@ FuchsiaCity_Gym_EventScript_Alice::
 	msgbox FuchsiaCity_Gym_Text_LassAlice_After, MSGBOX_NPC
 	end
 
-
-FuchsiaCity_Gym_EventScript_Linda_J::
-	lock
-	faceplayer
-	msgbox FuchsiaCity_PokemonCenter1F_Text_JanineImpersonator1, MSGBOX_DEFAULT
-	applymovement LOCALID_FUCHSIAGYM_LINDA_J, GoldenrodCity_RadioTower_5F_Movement_Spin
-	waitmovement 0
-	removeobject LOCALID_FUCHSIAGYM_LINDA_J
-	clearflag FLAG_TEMP_3
-	addobject LOCALID_FUCHSIAGYM_LINDA
-	applymovement LOCALID_FUCHSIAGYM_LINDA, GoldenrodCity_RadioTower_5F_Movement_Spin2
-	waitmovement 0
-	applymovement LOCALID_FUCHSIAGYM_LINDA, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox FuchsiaCity_Gym_Text_LassLinda_Before, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_LINDA, FuchsiaCity_Gym_Text_LassLinda_Beaten
-	msgbox FuchsiaCity_Gym_Text_LassLinda_After, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-FuchsiaCity_Gym_EventScript_Linda::
-	msgbox FuchsiaCity_Gym_Text_LassLinda_After, MSGBOX_NPC
-	end
-
-FuchsiaCity_Gym_EventScript_Cindy_J::
-	lock
-	faceplayer
-	msgbox FuchsiaCity_PokemonCenter1F_Text_JanineImpersonator1, MSGBOX_DEFAULT
-	applymovement LOCALID_FUCHSIAGYM_CINDY_J, GoldenrodCity_RadioTower_5F_Movement_Spin
-	waitmovement 0
-	removeobject LOCALID_FUCHSIAGYM_CINDY_J
-	clearflag FLAG_TEMP_5
-	addobject LOCALID_FUCHSIAGYM_CINDY
-	applymovement LOCALID_FUCHSIAGYM_CINDY, GoldenrodCity_RadioTower_5F_Movement_Spin2
-	waitmovement 0
-	applymovement LOCALID_FUCHSIAGYM_CINDY, Common_Movement_FacePlayer
-	waitmovement 0
-	msgbox FuchsiaCity_Gym_Text_PicnickerCindy_Before, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_CINDY, FuchsiaCity_Gym_Text_PicnickerCindy_Beaten
-	msgbox FuchsiaCity_Gym_Text_PicnickerCindy_After, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
-FuchsiaCity_Gym_EventScript_Cindy::
-	msgbox FuchsiaCity_Gym_Text_PicnickerCindy_After, MSGBOX_NPC
-	end
-
 FuchsiaCity_Gym_EventScript_Barry_J::
 	lock
 	faceplayer
@@ -230,26 +181,6 @@ FuchsiaCity_Gym_Text_LassAlice_Beaten:
 FuchsiaCity_Gym_Text_LassAlice_After:
 	.string "How will you distinguish our real\n"
 	.string "LEADER?$"
-
-FuchsiaCity_Gym_Text_LassLinda_Before:
-	.string "Fooled you! Hahaha!$"
-
-FuchsiaCity_Gym_Text_LassLinda_Beaten:
-	.string "Ooh… I lost… You're not weak…$"
-
-FuchsiaCity_Gym_Text_LassLinda_After:
-	.string "Well? Wasn't my disguise perfect?$"
-
-FuchsiaCity_Gym_Text_PicnickerCindy_Before:
-	.string "I'm JANINE!\p"
-	.string "How did you know I was real?\p"
-	.string "Let's battle!$"
-
-FuchsiaCity_Gym_Text_PicnickerCindy_Beaten:
-	.string "Darn it! I wanted to win!$"
-
-FuchsiaCity_Gym_Text_PicnickerCindy_After:
-	.string "You must be getting tired.$"
 
 FuchsiaCity_Gym_Text_CamperBarry_Before:
 	.string "Wahahaha!\p"

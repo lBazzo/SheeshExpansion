@@ -243,7 +243,7 @@
 #define VAR_ALL_B2B_STATE                                0x40DF // Var is written to, but never read
 #define VAR_GYM_WEATHER_STATE                            0x40E0 // Var is written to, but never read
 #define VAR_LIGHTHOUSE_GAUNTLET_SAILOR                   0x40E1 // Var is written to, but never read
-#define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
+#define VAR_TERA_B2B_COUNTER                             0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
 #define VAR_DEBUG_OPTIONS                                0x40E5

@@ -4152,7 +4152,8 @@ static void CursorCb_FieldMove(u8 taskId)
         }
         // Now process the move if the badge check (if any) passed
         // if (gFieldMoveInfo[fieldMove].fieldMoveFunc() == TRUE) - HnS / 1.13.0
-        else if (SetUpFieldMove(fieldMove) == TRUE)
+        else if (SetUpFieldMove(fieldMove) == TRUE
+        && (FlagGet(FLAG_LIGHTHOUSE_TOO_DARK)))
         {
             switch (fieldMove)
             {
@@ -4330,7 +4331,7 @@ bool32 SetUpFieldMove_Surf(void)
 {
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
         return FALSE;
-
+    
     if (PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
     {
         gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;

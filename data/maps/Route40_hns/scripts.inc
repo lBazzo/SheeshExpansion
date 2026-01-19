@@ -1,6 +1,19 @@
 Route40_hns_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_MapScript_OnTransition
+	map_script MAP_SCRIPT_ON_TRANSITION, Route40_MapScript_OnTransition
 	.byte 0
+
+Route40_MapScript_OnTransition::
+	call_if_unset FLAG_DEFEATED_DAHLIA, Route40_EventScript_SetLighthouseTooDarkFlag
+	goto_if_set FLAG_DEFEATED_DAHLIA, Route40_MapScript_ClearWeather
+	end
+
+Route40_EventScript_SetLighthouseTooDarkFlag::
+	setflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
+
+Route40_MapScript_ClearWeather::
+	setweather WEATHER_NONE
+	end
 
 Route40_EventScript_Simon::
 	trainerbattle_single TRAINER_SIMON, Route40_Text_SwimmermSimonSeen, Route40_Text_SwimmermSimonBeaten
@@ -222,3 +235,35 @@ Route40_Text_SwimmermKirkBeaten:
 Route40_Text_SwimmermKirkAfter:
 	.string "The currents keep me from\n"
 	.string "reaching that island.$"
+
+Route40_EventScript_Policeman::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_DAHLIA, Route40_EventScript_PolicemanYouCanGo
+	msgbox Route40_Text_PolicemanItsNotSafe, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route40_EventScript_PolicemanYouCanGo::
+	msgbox Route40_Text_PolicemanYouCanGo, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route40_Text_PolicemanItsNotSafe:
+	.string "Sorry kid, but there's no surfing until\n"
+	.string "the OLIVINE LIGHTHOUSE has its\l"
+	.string "emergency power up and running.\p"
+	.string "Promise you won't try and go anyway,\n"
+	.string "yeah?\p"
+	.string "I can swim faster than any POKéMON, but\n"
+	.string "I don't much fancy getting my uniform\l"
+	.string "wet, or my wife'll kill me...$"
+
+Route40_Text_PolicemanYouCanGo:
+	.string "Heya kid, did you hear? Surf's up!\p"
+	.string "Feel free to head out as far as you\n"
+	.string "want.\p"
+	.string "Maybe I'll go for a swim later too!$"
+

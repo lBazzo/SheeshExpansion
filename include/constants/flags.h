@@ -1644,8 +1644,8 @@
 #define FLAG_TALKED_CIANWOOD_CITY_MULTIHIT_TUTOR    (SYSTEM_FLAGS + 0xAC) // Unused Flag
 #define FLAG_TALKED_MAHOGANY_TOWN_HIGH_CRIT_TUTOR   (SYSTEM_FLAGS + 0xAD) // Unused Flag
 #define FLAG_HIDE_AZALEA_BUGSY                      (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
+#define FLAG_LIGHTHOUSE_TOO_DARK                    (SYSTEM_FLAGS + 0xAF) // Unused Flag 90F
+#define FLAG_DEFEATED_DAHLIA                        (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag

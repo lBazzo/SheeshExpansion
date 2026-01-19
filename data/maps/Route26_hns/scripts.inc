@@ -15,11 +15,6 @@ Route26_EventScript_Jake::
 	msgbox Route26_Text_CooltrainermJakeAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route26_EventScript_Gaven::
-	trainerbattle_single TRAINER_GAVEN Route26_Text_CooltrainermGavenSeen, Route26_Text_CooltrainermGavenBeaten
-	msgbox Route26_Text_CooltrainermGavenAfter, MSGBOX_AUTOCLOSE
-	end
-
 Route26_EventScript_Joyce::
 	trainerbattle_single TRAINER_JOYCE Route26_Text_CooltrainerfJoyceSeen, Route26_Text_CooltrainerfJoyceBeaten
 	msgbox Route26_Text_CooltrainerfJoyceAfter, MSGBOX_AUTOCLOSE
@@ -35,6 +30,21 @@ Route26_EventScript_Richard::
 	msgbox Route26_Text_PsychicRichardAfter, MSGBOX_AUTOCLOSE
 	end
 
+Route26_EventScript_Gaven::
+	trainerbattle_single TRAINER_GAVEN Route26_Text_CooltrainermGavenSeen, Route26_Text_CooltrainermGavenBeaten
+	msgbox Route26_Text_CooltrainermGavenAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route26_Text_CooltrainermGavenSeen:
+    .string "Aiming for the POKéMON LEAGUE?\n"
+    .string "Hah! Don't make me laugh!$"
+
+Route26_Text_CooltrainermGavenBeaten:
+    .string "Well, I'm not laughing now.$"
+
+Route26_Text_CooltrainermGavenAfter:
+    .string "What? Is something funny?$"
+
 Route26_Text_CooltrainermJakeSeen:
     .string "I'm making my final preparations\n"
     .string "for the POKéMON LEAGUE.$"
@@ -48,19 +58,6 @@ Route26_Text_CooltrainermJakeAfter:
     .string "I need to do some more training.\p"
     .string "I hear that the LEAGUE's ELITE\n"
     .string "FOUR are tougher than GYM LEADERS.$"
-
-Route26_Text_CooltrainermGavenSeen:
-    .string "By experiencing tough battles, you\n"
-    .string "gain power.$"
-
-Route26_Text_CooltrainermGavenBeaten:
-    .string "Gaah! Life is even tougher!$"
-
-Route26_Text_CooltrainermGavenAfter:
-    .string "To get to POKéMON LEAGUE, you have\n"
-    .string "to get through VICTORY ROAD.\p"
-    .string "But VICTORY ROAD is tough.\p"
-    .string "Practically nobody goes there!$"
 
 Route26_Text_CooltrainerfJoyceSeen:
     .string "Since you've come this far,\n"

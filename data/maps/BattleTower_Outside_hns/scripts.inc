@@ -1,5 +1,35 @@
+.set LOCALID_BATTLETOWER_DAHLIA, 16
+.set LOCALID_BATTLETOWER_ENGINEER, 9
+.set LOCALID_BATTLETOWER_LINDA, 21
+.set LOCALID_BATTLETOWER_CINDY, 22
+.set LOCALID_BATTLETOWER_LIZZIE, 24
+.set LOCALID_BATTLETOWER_MIRANDA, 25
+.set LOCALID_BATTLETOWER_GORDO, 26
+
 BattleTower_Outside_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BattleTower_Outside_OnTransition
 	.byte 0
+
+BattleTower_Outside_OnTransition::
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, BattleTower_Outside_MapScript_UnsetLighthouseTooDarkFlag
+	call_if_ge VAR_TERA_B2B_COUNTER, 3, BattleTower_Outside_MapScript_MoveLizzie
+	goto_if_set FLAG_DEFEATED_DAHLIA, BattleTower_Outside_MapScript_ClearWeather
+	end
+
+BattleTower_Outside_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
+
+BattleTower_Outside_MapScript_MoveLizzie::
+	setobjectxyperm LOCALID_BATTLETOWER_LIZZIE, 13, 19
+	setobjectmovementtype LOCALID_BATTLETOWER_LIZZIE, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_BATTLETOWER_MIRANDA, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_BATTLETOWER_GORDO, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+BattleTower_Outside_MapScript_ClearWeather::
+	setweather WEATHER_NONE
+	end
 
 BattleTower_Outside_EventScript_BattleTowerSign::
 	lock
@@ -7,7 +37,14 @@ BattleTower_Outside_EventScript_BattleTowerSign::
 	closemessage	
 	release
 	end
-	
+
+BattleTower_Outside_EventScript_PreBattleTowerSign::
+	lock
+	msgbox PreBattleTowerOutsideSignText, MSGBOX_SIGN	
+	closemessage	
+	release
+	end
+
 BattleTower_Outside_EventScript_Engineer::
 	lock
 	faceplayer
@@ -59,6 +96,10 @@ BattleTowerOutsideSignText:
 	.string "BATTLE TOWER\p"
 	.string "Take the Ultimate Trainer\n"
 	.string "Challenge!$"
+
+PreBattleTowerOutsideSignText:
+	.string "Up Ahead:\n"
+	.string "The BATTLE TOWER$"
 
 BattleTowerOutsideText_Closed:
 	.string "The BATTLE TOWER is currently\n"
@@ -1366,3 +1407,550 @@ BattleTower_Outside_ExchangeServiceCorner_Text_FocusBandDesc::
 BattleTower_Outside_ExchangeServiceCorner_Text_ScopeLensDesc::
 	.string "A hold item that raises the\n"
 	.string "critical-hit rate.$"
+
+
+
+BattleTower_Outside_EventScript_Jeffrey::
+	trainerbattle_single TRAINER_JEFFREY SageJeffreySeenText, SageJeffreyBeatenText
+	msgbox SageJeffreyAfterBattleText, MSGBOX_AUTOCLOSE
+	end
+	
+BattleTower_Outside_EventScript_Ping::
+	trainerbattle_single TRAINER_PING SagePingSeenText, SagePingBeatenText
+	msgbox SagePingAfterBattleText, MSGBOX_AUTOCLOSE
+	end
+
+BattleTower_Outside_EventScript_Martha::
+	trainerbattle_single TRAINER_MARTHA MediumMarthaSeenText, MediumMarthaBeatenText
+	msgbox MediumMarthaAfterBattleText, MSGBOX_AUTOCLOSE
+	end
+
+BattleTower_Outside_EventScript_Grace::
+	trainerbattle_single TRAINER_GRACE MediumGraceSeenText, MediumGraceBeatenText
+	msgbox MediumGraceAfterBattleText, MSGBOX_AUTOCLOSE
+	end
+
+SageJeffreySeenText:
+	.string "I spent the spring with my\n"
+	.string "POKéMON.\p"
+	.string "Then summer, fall, and winter...\p"
+	.string "Then spring came again.\n"
+	.string "We've been together a long time.$"
+
+SageJeffreyBeatenText:
+	.string "Wins and losses--I've known\n"
+	.string "them both.$"
+
+SageJeffreyAfterBattleText:
+	.string "Where did POKéMON come from?$"
+
+SagePingSeenText:
+	.string "Terastallization adds a whole new level\n"
+	.string "of depth to battles.\p"
+	.string "Only a master can use it correctly.$"
+
+SagePingBeatenText:
+	.string "Ah! Well done!$"
+
+SagePingAfterBattleText:
+	.string "You truly are an expert in using\n"
+	.string "terastallization. I have much to learn.$"
+
+MediumMarthaSeenText:
+	.string "I shall win!$"
+
+MediumMarthaBeatenText:
+	.string "I... I... I lost!$"
+
+MediumMarthaAfterBattleText:
+	.string "The one who wants to win the\n"
+	.string "most is the one who will!$"
+
+MediumGraceSeenText:
+	.string "Kekekekeke! You? Beat the two of us?\n"
+	.string "Impossible!$"
+
+MediumGraceBeatenText:
+	.string "Ack! It was possible after all!$"
+
+MediumGraceAfterBattleText:
+	.string "Are you some kind of miracle worker?$"
+
+BattleTower_Outside_EventScript_Linda::
+	lock
+	faceplayer
+	msgbox BattleTower_Outside_Text_LassLinda_After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_Cindy::
+	lock
+	faceplayer
+	msgbox BattleTower_Outside_Text_PicnickerCindy_After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_Text_LassLinda_Before:
+	.string "Oh, you look weak. Lucky me!$"
+
+BattleTower_Outside_Text_LassLinda_Beaten:
+	.string "Ooh… I lost… You're not weak…$"
+
+BattleTower_Outside_Text_LassLinda_After:
+	.string "Walking around so quietly when you're\n"
+	.string "so strong... It's false advertising, no?$"
+
+BattleTower_Outside_Text_PicknickerCindy_Before:
+	.string "Take this!\n"
+	.string "Let's battle!$"
+
+BattleTower_Outside_Text_PicnickerCindy_Beaten:
+	.string "Darn it! I wanted to win!$"
+
+BattleTower_Outside_Text_PicnickerCindy_After:
+	.string "You must be getting tired.$"
+
+
+BattleTower_Outside_EventScript_Renji::
+	trainerbattle_single TRAINER_RIVAL_CYNDAQUIL_1 BattleTower_Outside_Text_CooltrainermRenjiSeen, BattleTower_Outside_Text_CooltrainermRenjiBeaten
+	msgbox BattleTower_Outside_Text_CooltrainermRenjiAfter, MSGBOX_AUTOCLOSE
+	end
+
+BattleTower_Outside_Text_CooltrainermRenjiSeen:
+    .string "By experiencing tough battles, you\n"
+    .string "gain power.$"
+
+BattleTower_Outside_Text_CooltrainermRenjiBeaten:
+    .string "Gaah! Life is even tougher!$"
+
+BattleTower_Outside_Text_CooltrainermRenjiAfter:
+    .string "To get to DAHLIA, you have\n"
+    .string "to be tough!$"
+
+
+
+
+BattleTower_Outside_EventScript_B2B::
+	lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+    playse SE_PIN
+	applymovement LOCALID_BATTLETOWER_LINDA, Common_Movement_ExclamationMark
+	delay 60
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 45, BattleTower_Outside_EventScript_AdjustLinda
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_LassLinda_Before, MSGBOX_DEFAULT
+	playbgm MUS_HG_B_TOWER, TRUE
+	trainerbattle_no_intro TRAINER_LINDA, BattleTower_Outside_Text_LassLinda_Beaten
+	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playse SE_PIN
+	applymovement LOCALID_BATTLETOWER_CINDY, Common_Movement_ExclamationMark
+	delay 60
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 44, BattleTower_Outside_EventScript_AdjustCindy
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_PicknickerCindy_Before, MSGBOX_DEFAULT
+	playbgm MUS_HG_B_TOWER, TRUE
+	trainerbattle_no_intro TRAINER_CINDY, BattleTower_Outside_Text_PicnickerCindy_Beaten
+	setvar VAR_TERA_B2B_COUNTER, 2
+	release
+	end
+	
+BattleTower_Outside_EventScript_Lizzie::
+	lock
+	faceplayer
+	goto_if_ge VAR_TERA_B2B_COUNTER, 3, BattleTower_Outside_EventScript_LizziePostB2B2B
+	msgbox BattleTower_Outside_Text_LizzieAskIfReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, BattleTower_Outside_EventScript_B2B2B
+	goto_if_eq VAR_RESULT, NO, BattleTower_Outside_EventScript_LizzieDeclined
+	end
+
+BattleTower_Outside_EventScript_LizzieDeclined::
+	msgbox BattleTower_Outside_Text_LizzieDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end 
+
+BattleTower_Outside_EventScript_B2B2B::
+	msgbox BattleTower_Outside_Text_LizziePreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_LizzieBeaten
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_BATTLETOWER_MIRANDA, Common_Movement_WalkInPlaceRight
+	waitmovement 0
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_MirandaPreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_MirandaBeaten
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_BATTLETOWER_GORDO, Common_Movement_WalkInPlaceLeft
+	waitmovement 0
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_GordoPreFight, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_GordoBeaten
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_BATTLETOWER_LIZZIE, Common_Movement_WalkInPlaceDown
+	waitmovement 0
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_LizzieGoFightDahlia, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_TERA_B2B_COUNTER, 3
+	applymovement LOCALID_BATTLETOWER_LIZZIE, BattleTower_Outside_Movement_LizzieGetOutTheWay
+	applymovement LOCALID_BATTLETOWER_MIRANDA, Common_Movement_FaceRight
+	applymovement LOCALID_BATTLETOWER_GORDO, Common_Movement_FaceLeft
+	waitmovement 0
+	waitmovement 0
+	waitmovement 0
+	setobjectxyperm LOCALID_BATTLETOWER_LIZZIE, 13, 19
+	release
+	end
+
+BattleTower_Outside_EventScript_LizziePostB2B2B::
+	lock
+	faceplayer
+	msgbox BattleTower_Outside_Text_LizzieGoFightDahlia, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_Miranda::
+	lock 
+	faceplayer
+	goto_if_ge VAR_TERA_B2B_COUNTER, 3, BattleTower_Outside_EventScript_MirandaPostB2B2B
+	msgbox BattleTower_Outside_Text_MirandaTalkToLizzie, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_MirandaPostB2B2B::
+	msgbox BattleTower_Outside_Text_MirandaGoFightDahlia, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_Gordo::
+	lock 
+	faceplayer
+	goto_if_ge VAR_TERA_B2B_COUNTER, 3, BattleTower_Outside_EventScript_GordoPostB2B2B
+	msgbox BattleTower_Outside_Text_GordoTalkToLizzie, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_GordoPostB2B2B::
+	msgbox BattleTower_Outside_Text_GordoGoFightDahlia, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_Movement_LizzieGetOutTheWay::
+	walk_left
+	face_right
+	step_end
+
+BattleTower_Outside_Text_LizzieAskIfReady:
+	.string "Halt, trainer.\p"
+	.string "We've been tasked with testing you.\p"
+	.string "If you're planning on challenging\n"
+	.string "DAHLIA, you have to get through the\l"
+	.string "three of us first.\p"
+	.string "How about it? Think you can take all of\n"
+	.string "us on?$"
+
+BattleTower_Outside_Text_LizzieDeclined:
+	.string "What's the matter? Scared?$"
+
+BattleTower_Outside_Text_LizziePreFight:
+	.string "You're gutsy, I'll give you that. Hope\n"
+	.string "you can back that talk up!$"
+
+BattleTower_Outside_Text_LizzieBeaten:
+	.string "Well, I'll be! You really weren't lying!$"
+
+BattleTower_Outside_Text_MirandaPreFight:
+	.string "I'm up next. Think you can keep up?$"
+
+BattleTower_Outside_Text_MirandaBeaten:
+	.string "Wow! Incredible! No wonder you beat\n"
+	.string "LIZZIE!$"
+
+BattleTower_Outside_Text_GordoPreFight:
+	.string "You beat LIZZIE and MIRANDA...\n"
+	.string "Could you maybe go easy on me?$"
+
+BattleTower_Outside_Text_GordoBeaten:
+	.string "Oh well. That was to be expected, I\n"
+	.string "guess.$"
+
+BattleTower_Outside_Text_LizzieGoFightDahlia:
+	.string "To earn DAHLIA's respect is an\n"
+	.string "achievement in and of itself.\p"
+	.string "You should be very proud.$"
+
+BattleTower_Outside_Text_MirandaTalkToLizzie:
+	.string "Uhh, if you want to fight DAHLIA, you'd\n"
+	.string "better talk to LIZZIE first...$"
+
+BattleTower_Outside_Text_MirandaGoFightDahlia:
+	.string "Man, it feels a different kind of\n"
+	.string "depressing to lose in a three on one...$"
+
+BattleTower_Outside_Text_GordoTalkToLizzie:
+	.string "Apologies, trainer. I have been\n"
+	.string "instructed by our great leader that\l"
+	.string "you must first converse with her\l"
+	.string "before we may consider entertaining\l"
+	.string "your wishes.\p"
+	.string "Please do so thusly.\p"
+	.string "Er, did that last bit make sense?$"
+
+BattleTower_Outside_Text_GordoGoFightDahlia:
+	.string "So... how about this weather we're\n"
+	.string "having, huh?$"
+
+BattleTower_Outside_EventScript_AdjustLinda::
+	applymovement LOCALID_BATTLETOWER_LINDA, Common_Movement_WalkDown1
+	waitmovement 0
+	return
+
+BattleTower_Outside_EventScript_AdjustCindy::
+	applymovement LOCALID_BATTLETOWER_CINDY, Common_Movement_WalkUp1
+	waitmovement 0
+	return
+
+@DAHLIA START
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+
+
+BattleTower_Outside_ChallengedByDahlia::
+	lock
+	faceplayer
+	playbgm MUS_HG_B_ARCADE, TRUE
+	goto_if_eq VAR_DAHLIA_STATE, 3, BattleTower_Outside_EventScript_ChallengedByDahliaPostIntro
+	setvar VAR_DAHLIA_STATE, 3
+	msgbox BattleTower_Outside_Text_DahliaIntro, MSGBOX_DEFAULT
+	goto BattleTower_Outside_EventScript_ChallengedByDahliaPostIntro
+	end
+
+BattleTower_Outside_EventScript_ChallengedByDahliaPostIntro::
+	msgbox BattleTower_Outside_Text_DahliaEncounterPostIntro, MSGBOX_DEFAULT
+	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
+	switch VAR_RESULT
+	case 0, BattleTower_Outside_EventScript_DahliaBattleNormal
+	case 1, BattleTower_Outside_EventScript_DahliaBattleHard
+	case MULTI_B_PRESSED, BattleTower_Outside_EventScript_DeclineDahliaChallenge
+	goto BattleTower_Outside_EventScript_DeclineDahliaChallenge
+
+BattleTower_Outside_EventScript_DahliaBattleNormal::
+	msgbox BattleTower_Outside_Text_DahliaBattleNormal, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_DAHLIA_NORMAL, BattleTower_Outside_Text_DahliaWin
+	setweather WEATHER_NONE
+	msgbox BattleTower_Outside_Text_DahliaNormalAfter, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_SERIOUS_MINT
+	msgbox BattleTower_Outside_Text_DahliaLeaving, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 13, BattleTower_Outside_EventScript_DahliaLeavePlayerLeft
+	call_if_eq VAR_TEMP_0, 14, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	call_if_eq VAR_TEMP_0, 15, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	waitmovement 0
+	setflag FLAG_DEFEATED_DAHLIA
+	removeobject LOCALID_BATTLETOWER_DAHLIA
+	setvar VAR_DAHLIA_STATE, 3
+	fadedefaultbgm
+	release
+	end
+
+BattleTower_Outside_EventScript_DahliaBattleHard::
+	msgbox BattleTower_Outside_Text_DahliaBattleHard, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_DAHLIA_HARD, BattleTower_Outside_Text_DahliaWin
+	setweather WEATHER_NONE
+	msgbox BattleTower_Outside_Text_DahliaHardAfter, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 4
+	msgbox BattleTower_Outside_Text_DahliaLeaving, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 13, BattleTower_Outside_EventScript_DahliaLeavePlayerLeft
+	call_if_eq VAR_TEMP_0, 14, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	call_if_eq VAR_TEMP_0, 15, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	setflag FLAG_DEFEATED_DAHLIA
+	removeobject LOCALID_BATTLETOWER_DAHLIA
+	setvar VAR_DAHLIA_STATE, 3
+	fadedefaultbgm
+	release
+	end
+
+BattleTower_Outside_EventScript_DeclineDahliaChallenge::
+	msgbox BattleTower_Outside_Text_DeclineDahliaChallenge, MSGBOX_DEFAULT
+	closemessage
+	fadedefaultbgm
+	release
+	end
+
+BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown::
+	applymovement LOCALID_BATTLETOWER_DAHLIA, BattleTower_Outside_Movement_DahliaMoveToEngineerPlayerRightOrDown
+	waitmovement 0
+	applymovement LOCALID_BATTLETOWER_ENGINEER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_DahliaInstructEngineer, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BATTLETOWER_DAHLIA, BattleTower_Outside_Movement_DahliaLeave
+	waitmovement 0
+	applymovement LOCALID_BATTLETOWER_ENGINEER, BattleTower_Outside_Movement_EngineerBlockDoorPlayerRightOrDown
+	waitmovement 0
+	return
+
+BattleTower_Outside_EventScript_DahliaLeavePlayerLeft::
+	applymovement LOCALID_BATTLETOWER_DAHLIA, BattleTower_Outside_Movement_DahliaMoveToEngineerPlayerLeft
+	waitmovement 0
+	applymovement LOCALID_BATTLETOWER_ENGINEER, Common_Movement_FaceDown
+	waitmovement 0
+	msgbox BattleTower_Outside_Text_DahliaInstructEngineer, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BATTLETOWER_DAHLIA, BattleTower_Outside_Movement_DahliaLeave
+	waitmovement 0
+	applymovement LOCALID_BATTLETOWER_ENGINEER, BattleTower_Outside_Movement_EngineerBlockDoorPlayerLeft
+	waitmovement 0
+	return
+
+
+
+BattleTower_Outside_Movement_DahliaMoveToEngineerPlayerRightOrDown::
+	walk_left
+	walk_down
+	walk_left
+	face_up
+	step_end
+
+BattleTower_Outside_Movement_EngineerBlockDoorPlayerRightOrDown::
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+BattleTower_Outside_Movement_DahliaMoveToEngineerPlayerLeft::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+BattleTower_Outside_Movement_EngineerBlockDoorPlayerLeft::
+	walk_down
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+BattleTower_Outside_Movement_DahliaLeave::
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+BattleTower_Outside_Text_DahliaIntro:
+	.string "DAHLIA: I knew you'd make it here\n"
+	.string "without an issue.\p"
+	.string "You remind me of a trainer I met back at\n"
+	.string "my BATTLE ARCADE in SINNOH.\p"
+	.string "The BATTLE ARCADE is a facility I run\n"
+	.string "where trainers battle under randomly\l"
+	.string "chosen conditions, testing both their\l"
+	.string "luck and skill.\p"
+	.string "...Or so I thought.\p"
+	.string "Recently, I lost to an incredibly\n"
+	.string "strong trainer, who managed to win even\l"
+	.string "when the conditions were against him.\p"
+	.string "Afterwards, he said to me, 'A tougher\n"
+	.string "fight simply means I come out the other\l"
+	.string "side a stronger trainer.'\p"
+	.string "In other words, he was willing to\n"
+	.string "undergo greater adversity in order to\l"
+	.string "hone his skills for the journey ahead.\p"
+	.string "...\p"
+	.string "I promise to make this worth your while,\n"
+	.string "{PLAYER}, so answer honestly.$"
+
+BattleTower_Outside_Text_DahliaEncounterPostIntro:
+	.string "Would you prefer to always have good\n"
+	.string "luck and an easy path to victory?\p"
+	.string "Or does bad luck and struggle make us\n"
+	.string "stronger in the long run?\p"
+	.string "Say we were to battle right now...\p"
+	.string "Would you wish for a hard opponent,\n"
+	.string "or a normal opponent?$"
+
+BattleTower_Outside_Text_DeclineDahliaChallenge:
+	.string "Oh, you want to think over your answer?\n"
+	.string "Guess that makes two of us!\p"
+	.string "I'll be waiting here for when you're\n"
+	.string "ready then.$"
+
+BattleTower_Outside_Text_DahliaBattleNormal:
+	.string "Hoping your good luck lasts forever,\n"
+	.string "are you? We'll see about that!$"
+
+BattleTower_Outside_Text_DahliaBattleHard:
+	.string "Interesting! So you're the type to opt\n"
+	.string "into adversity, are you? Ha!\p"
+	.string "Then let's see just how strong the\n"
+	.string "hardship you've endured has made you!$"
+
+BattleTower_Outside_Text_DahliaWin:
+	.string "Incredible! No matter the source of\n"
+	.string "your strength, I can't deny that you\l"
+	.string "are one skilled trainer!$"
+
+BattleTower_Outside_Text_DahliaNormalAfter:
+	.string "So that's that, then.\p"
+	.string "You know, I think you're right. If you\n"
+	.string "take on the more difficult challenge\l"
+	.string "every time, eventually you will lose\l"
+	.string "more than you would have otherwise by\l"
+	.string "letting luck take its natural course.\p"
+	.string "Thank you for showing me your point of\n"
+	.string "view. Here, I want you to have these.$"
+
+BattleTower_Outside_Text_DahliaHardAfter:
+	.string "So that's that, then.\p"
+	.string "You know, I think you're right. If you\n"
+	.string "take on the more difficult challenge\l"
+	.string "every time, eventually you will learn\l"
+	.string "how to overcome mountains you\l"
+	.string "otherwise would never be able to climb.\p"
+	.string "Thank you for showing me your point of\n"
+	.string "view. Here, I want you to have these.$"
+
+BattleTower_Outside_Text_DahliaLeaving:	
+	.string "The real luck I had was running into you\n"
+	.string "today, {PLAYER}.\p"
+	.string "You know, I think the other FRONTIER\n"
+	.string "BRAINS would love to meet you.\p"
+	.string "Maybe keep an eye out for them on the\n"
+	.string "rest of your journey.\p"
+	.string "Who knows? Maybe I'll be lucky enough\n"
+	.string "to run into you again someday.\l"
+	.string "Bye bye for now!$"
+
+BattleTower_Outside_Text_DahliaInstructEngineer:
+	.string "It looks like the OLIVINE LIGHTHOUSE\n"
+	.string "has sorted out its emergency power\l"
+	.string "now, so we might get an influx of people\l"
+	.string "coming over here soon.\p"
+	.string "Make sure you keep this place locked up\n"
+	.string "until it's ready, okay? Thanks a bunch!$"
+
