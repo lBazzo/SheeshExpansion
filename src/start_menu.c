@@ -1572,6 +1572,71 @@ void HealNoneFaintedPartyMons(void)
     }
 } 
 
+static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
+{
+    enum Ability ability = GetMonAbility(mon);
+    bool8 ret = FALSE;
+
+    if (ability == ABILITY_COMATOSE)
+        return TRUE;
+
+    switch (status)
+    {
+    case STATUS1_FREEZE:
+    case STATUS1_FROSTBITE:
+        if (ability == ABILITY_MAGMA_ARMOR)
+            ret = TRUE;
+        break;
+    case STATUS1_BURN:
+        if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
+            ret = TRUE;
+        break;
+    case STATUS1_PARALYSIS:
+        if (ability == ABILITY_LIMBER)
+            ret = TRUE;
+        break;
+    case STATUS1_SLEEP:
+        if (ability == ABILITY_INSOMNIA || ability == ABILITY_VITAL_SPIRIT)
+            ret = TRUE;
+        break;
+    case STATUS1_TOXIC_POISON:
+        if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+            ret = TRUE;
+        break;
+    }
+    return ret;
+}
+
+static bool8 DoesTypePreventStatus(u16 species, u32 status)
+{
+    bool8 ret = FALSE;
+
+    switch (status)
+    {
+    case STATUS1_TOXIC_POISON:
+        if (GetSpeciesType(species, 0) == TYPE_STEEL || GetSpeciesType(species, 0) == TYPE_POISON
+            || GetSpeciesType(species, 1) == TYPE_STEEL || GetSpeciesType(species, 1) == TYPE_POISON)
+            ret = TRUE;
+        break;
+    case STATUS1_FREEZE:
+    case STATUS1_FROSTBITE:
+        if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE)
+            ret = TRUE;
+        break;
+    case STATUS1_PARALYSIS:
+        if (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)
+            ret = TRUE;
+        break;
+    case STATUS1_BURN:
+        if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
+            ret = TRUE;
+        break;
+    case STATUS1_SLEEP:
+        break;
+    }
+    return ret;
+}
+
 void SetRandomStatus(void)
 {
     static const u32 sNoneVolatiles[] =
@@ -1591,6 +1656,125 @@ void SetRandomStatus(void)
         if (species != SPECIES_NONE
          && species != SPECIES_EGG
          && GetMonData(&gPlayerParty[slot], MON_DATA_HP) != 0)
-            SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status);
+            {
+                if (!DoesTypePreventStatus(species, status)
+                && (!DoesAbilityPreventStatus(&gPlayerParty[slot], status)))
+                    SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status);
+            }
     }
 }
+
+//SCRAPPED VER OF SET RANDOM STATUS
+
+/*static bool8 DoesAbilityPreventStatus(struct Pokemon *mon, u32 status)
+{
+    enum Ability ability = GetMonAbility(mon);
+    bool8 ret = FALSE;
+
+    if (ability == ABILITY_COMATOSE)
+        return TRUE;
+
+    switch (status)
+    {
+    case STATUS1_FREEZE:
+    case STATUS1_FROSTBITE:
+        if (ability == ABILITY_MAGMA_ARMOR)
+            ret = TRUE;
+        break;
+    case STATUS1_BURN:
+        if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
+            ret = TRUE;
+        break;
+    case STATUS1_PARALYSIS:
+        if (ability == ABILITY_LIMBER)
+            ret = TRUE;
+        break;
+    case STATUS1_SLEEP:
+        if (ability == ABILITY_INSOMNIA || ability == ABILITY_VITAL_SPIRIT)
+            ret = TRUE;
+        break;
+    case STATUS1_TOXIC_POISON:
+        if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+            ret = TRUE;
+        break;
+    }
+    return ret;
+}
+
+static bool8 DoesTypePreventStatus(u16 species, u32 status)
+{
+    bool8 ret = FALSE;
+
+    switch (status)
+    {
+    case STATUS1_TOXIC_POISON:
+        if (GetSpeciesType(species, 0) == TYPE_STEEL || GetSpeciesType(species, 0) == TYPE_POISON
+            || GetSpeciesType(species, 1) == TYPE_STEEL || GetSpeciesType(species, 1) == TYPE_POISON)
+            ret = TRUE;
+        break;
+    case STATUS1_FREEZE:
+    case STATUS1_FROSTBITE:
+        if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE)
+            ret = TRUE;
+        break;
+    case STATUS1_PARALYSIS:
+        if (GetSpeciesType(species, 0) == TYPE_ELECTRIC || GetSpeciesType(species, 1) == TYPE_ELECTRIC)
+            ret = TRUE;
+        break;
+    case STATUS1_BURN:
+        if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
+            ret = TRUE;
+        break;
+    case STATUS1_SLEEP:
+        break;
+    }
+    return ret;
+}
+
+void SetRandomStatus(void)
+{
+    static const u32 sNoneVolatiles[] =
+    {
+        STATUS1_SLEEP,
+        STATUS1_BURN,
+        STATUS1_FREEZE,
+        STATUS1_FROSTBITE,
+        STATUS1_PARALYSIS,
+        STATUS1_POISON,
+        STATUS1_TOXIC_POISON,
+    };
+
+    u16 species;
+    bool8 statusConfirmed;
+    u32 attemptedStatus;
+    u32 chosenStatusBeingTried;
+    chosenStatusBeingTried = 0;
+
+    for (u32 slot = 0; slot < PARTY_SIZE; slot++)
+    {
+        do 
+        {
+            statusConfirmed = FALSE;
+            attemptedStatus = RandomElement(RNG_NONE, sNoneVolatiles);
+
+            if (chosenStatusBeingTried != attemptedStatus)
+            {
+                chosenStatusBeingTried = attemptedStatus;
+                species = GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES);
+
+                if (species != SPECIES_NONE
+                && species != SPECIES_EGG
+                && GetMonData(&gPlayerParty[slot], MON_DATA_HP) != 0)
+                {
+                    if (!DoesTypePreventStatus(species, attemptedStatus)
+                    && (!DoesAbilityPreventStatus(&gPlayerParty[slot], attemptedStatus)))
+                    {
+                        SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &attemptedStatus);
+                        statusConfirmed = TRUE;
+                        break;
+                    }                    
+                }
+            }
+        } while (!statusConfirmed);
+    }
+}*/
