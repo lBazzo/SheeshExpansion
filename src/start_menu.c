@@ -30,6 +30,7 @@
 #include "party_menu.h"
 #include "pokedex.h"
 #include "pokenav.h"
+#include "random.h"
 #include "safari_zone.h"
 #include "save.h"
 #include "scanline_effect.h"
@@ -1554,4 +1555,42 @@ void Script_ForceSaveGame(struct ScriptContext *ctx)
     ShowSaveInfoWindow();
     gMenuCallback = SaveCallback;
     sSaveDialogCallback = SaveSavingMessageCallback;
+}
+
+void HealNoneFaintedPartyMons(void)
+{
+    struct Pokemon *party = gPlayerParty;
+
+    for (u32 partyMon = 0; partyMon < gPlayerPartyCount; partyMon++)
+    {
+        if (GetMonData(&party[partyMon], MON_DATA_HP) == 0
+         || GetMonData(&party[partyMon], MON_DATA_SPECIES) == SPECIES_NONE
+         || GetMonData(&party[partyMon], MON_DATA_IS_EGG))
+            continue;
+
+        HealPokemon(&party[partyMon]);
+    }
+} 
+
+void SetRandomStatus(void)
+{
+    static const u32 sNoneVolatiles[] =
+    {
+        STATUS1_SLEEP,
+        STATUS1_BURN,
+        STATUS1_FREEZE,
+        STATUS1_PARALYSIS,
+        STATUS1_TOXIC_POISON,
+    };
+
+    u32 status = RandomElement(RNG_NONE, sNoneVolatiles);
+
+    for (u32 slot = 0; slot < PARTY_SIZE; slot++)
+    {
+        u32 species = GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES);
+        if (species != SPECIES_NONE
+         && species != SPECIES_EGG
+         && GetMonData(&gPlayerParty[slot], MON_DATA_HP) != 0)
+            SetMonData(&gPlayerParty[slot], MON_DATA_STATUS, &status);
+    }
 }

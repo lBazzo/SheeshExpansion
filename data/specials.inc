@@ -628,3 +628,5 @@ gSpecials::
 	def_special CheckBurnIsLegal
 	def_special CheckFreezeIsLegal
 	def_special CheckIsSheeshSilverStarter
+	def_special HealNoneFaintedPartyMons
+	def_special SetRandomStatus

@@ -586,6 +586,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, OlivineCity_Gym_Text_BlaineWin
 	msgbox OlivineCity_Gym_Text_BlainePostFirstFight, MSGBOX_DEFAULT
 	closemessage
+	special HealNoneFaintedPartyMons
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineBackMovement
 	waitmovement 0
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, Common_Movement_WalkInPlaceDown
@@ -605,7 +606,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
-	giveitem ITEM_TM_IRON_TAIL
+	giveitem ITEM_TM_VOLT_TACKLE
 	msgbox OlivineCity_Gym_Text_SurgeSecondTMSpeech, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeBackMovement
@@ -613,7 +614,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineForwardMovement
 	waitmovement 0
 	msgbox OlivineCity_Gym_Text_BlainePreTMLine, MSGBOX_DEFAULT
-	giveitem ITEM_TM_IRON_TAIL
+	giveitem ITEM_TM_OVERHEAT
 	msgbox OlivineCity_Gym_Text_BlaineFirstTMSpeech, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineBackMovement
@@ -701,6 +702,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, OlivineCity_Gym_Text_SurgeWin
 	msgbox OlivineCity_Gym_Text_SurgePostFirstFight, MSGBOX_DEFAULT
 	closemessage
+	special HealNoneFaintedPartyMons
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeBackMovement
 	waitmovement 0
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, Common_Movement_WalkInPlaceDown
@@ -720,7 +722,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 6
 	call Common_EventScript_SetGymTrainers
-	giveitem ITEM_TM_IRON_TAIL
+	giveitem ITEM_TM_OVERHEAT
 	msgbox OlivineCity_Gym_Text_BlaineFirstTMSpeech, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineBackMovement
@@ -728,7 +730,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeForwardMovement
 	waitmovement 0
 	msgbox OlivineCity_Gym_Text_SurgeBadgeSpeech, MSGBOX_DEFAULT
-	giveitem ITEM_TM_IRON_TAIL
+	giveitem ITEM_TM_VOLT_TACKLE
 	msgbox OlivineCity_Gym_Text_SurgeSecondTMSpeech, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeBackMovement

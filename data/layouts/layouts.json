@@ -2777,7 +2777,7 @@
       "id": "LAYOUT_OLIVINE_CITY_GYM",
       "name": "OlivineCity_Gym_Layout",
       "width": 17,
-      "height": 27,
+      "height": 28,
       "primary_tileset": "gTileset_Johto_Building",
       "secondary_tileset": "gTileset_EcruteakTheater",
       "border_filepath": "data/layouts/OlivineCity_Gym_hns/border.bin",
