@@ -211,9 +211,10 @@ OlivineCity_Gym_Text_GymGuidePreText:
 	.string "A strong trainer has to be\n"
 	.string "compassionate.\p"
 	.string "The replacement leaders?\n"
-	.string "I'm afraid I can't say.\p"
-	.string "I'm not convinced they take their\n"
-	.string "posts very seriously...$"
+	.string "They were held up in KANTO, so now even\n"
+	.string "if we do get the emergency power\l"
+	.string "running up in the LIGHTHOUSE, it's too\l"
+	.string "long a journey for it to reliably hold.$"
 
 OlivineCity_Gym_EventScript_Jasmine::
 	lock
