@@ -4,3 +4,7 @@ gText_WantToUseSurf::
 
 gText_PlayerUsedSurf::
 	.string "{STR_VAR_1} used SURF!$"
+
+gText_TooDangerousToSurf::
+	.string "It's too dangerous to surf here right\n"
+	.string "now.$"

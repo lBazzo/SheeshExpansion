@@ -258,8 +258,9 @@ Route40_Text_PolicemanItsNotSafe:
 	.string "Promise you won't try and go anyway,\n"
 	.string "yeah?\p"
 	.string "I can swim faster than any POKéMON, but\n"
-	.string "I don't much fancy getting my uniform\l"
-	.string "wet, or my wife'll kill me...$"
+	.string "I don't fancy getting my uniform wet.\p"
+	.string "My wife just ironed it for me yesterday.\n"
+	.string "She'd get real sad if it got soaked...$"
 
 Route40_Text_PolicemanYouCanGo:
 	.string "Heya kid, did you hear? Surf's up!\p"
@@ -267,3 +268,16 @@ Route40_Text_PolicemanYouCanGo:
 	.string "want.\p"
 	.string "Maybe I'll go for a swim later too!$"
 
+Route40_EventScript_Arcanine::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ARCANINE, CRY_MODE_NORMAL
+	msgbox Route40_Text_Arcanine, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Route40_Text_Arcanine:
+	.string "Arcanine: RURURURURU!$"

@@ -2980,16 +2980,16 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 
     // HnS PORT NOTE - changed this to accommodate OW_LEARNSET_FIELD_MOVES
     // Add field moves to action list
-    for (i = 0; i < FIELD_MOVES_COUNT; i++)
+    for (i = 0; i < MAX_MON_MOVES; i++)
     {
-        if (CanMonUseFieldMove(&mons[slotId], gFieldMoveInfo[i].moveID))
+        //if (CanMonUseFieldMove(&mons[slotId], gFieldMoveInfo[i].moveID))
         {
             for (j = 0; j != FIELD_MOVES_COUNT; j++)
             {
                 if (GetMonData(&mons[slotId], i + MON_DATA_MOVE1) == FieldMove_GetMoveId(j))
                 {
                     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
-                    break;
+                    //break;
                 }
             }
         }
