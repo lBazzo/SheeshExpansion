@@ -13,15 +13,16 @@ EventScript_CutTree::
 	lockall
 	goto_if_unset FLAG_BADGE02_GET, EventScript_CheckTreeCantCut
 	goto_if_unset FLAG_RECEIVED_HM_CUT, EventScript_CheckTreeCantCut @ HnS PORT NOTE - checks for badge and access to move, not party movesets
+	@ checkitem ITEM_HM_CUT
 	checkfieldmove FIELD_MOVE_CUT, TRUE @ HnS PORT TODO - maybe replace with "checkpartylearnsets" or modify behavior? @@ Expansion 1.13.0
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	@setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT	@ loads the lead pokemon's nickname into STR_VAR_1
-	buffermovename STR_VAR_2, MOVE_CUT			@ loads the HM name Cut into STR_VAR_2
-	@msgbox Text_WantToCut, MSGBOX_YESNO
-	@goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	@bufferpartymonnick STR_VAR_1, VAR_RESULT	@ loads the lead pokemon's nickname into STR_VAR_1
+	@buffermovename STR_VAR_2, MOVE_CUT			@ loads the HM name Cut into STR_VAR_2
+	msgbox Text_WantToCut, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
+	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_CutTreeCommon: @ fallthrough
 	isfollowerfieldmoveuser VAR_0x8004
@@ -80,19 +81,20 @@ EventScript_RockSmash::
 	lockall
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CantSmashRock
 	goto_if_unset FLAG_RECEIVED_HM_ROCK_SMASH, EventScript_CantSmashRock
+	@ checkitem ITEM_HM_ROCK_SMASH
 	checkfieldmove FIELD_MOVE_ROCK_SMASH, TRUE
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	@setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	@msgbox Text_WantToSmash, MSGBOX_YESNO
-	@goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	@bufferpartymonnick STR_VAR_1, VAR_RESULT
+	@buffermovename STR_VAR_2, MOVE_ROCK_SMASH
+	msgbox Text_WantToSmash, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_RockSmashCommon: @ fallthrough
 	@ check if follower should use the field move
-	isfollowerfieldmoveuser VAR_0x8004
+	@isfollowerfieldmoveuser VAR_0x8004
 	@setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	@dofieldeffect FLDEFF_USE_ROCK_SMASH
 	@waitstate
@@ -342,8 +344,8 @@ EventScript_StrengthBoulder::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	@msgbox Text_WantToStrength, MSGBOX_YESNO
-	@goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
+	msgbox Text_WantToStrength, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
 	@closemessage
 	@dofieldeffect FLDEFF_USE_STRENGTH
 	@waitstate
@@ -359,10 +361,10 @@ EventScript_UseStrength::
 
 EventScript_ActivateStrength::
 	setflag FLAG_SYS_USE_STRENGTH
-	msgbox Text_MonUsedStrength, MSGBOX_DEFAULT @ TEST - more standardized practice
+	@msgbox Text_MonUsedStrength, MSGBOX_DEFAULT @ TEST - more standardized practice
 	@ buffermovename STR_VAR_2, MOVE_STRENGTH
 	@ msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
-	@ msgbox Text_StrengthActivated, MSGBOX_DEFAULT @ TEST - can this be reused instead?
+	msgbox Text_StrengthActivated, MSGBOX_DEFAULT @ TEST - can this be reused instead?
 	releaseall
 	end
 
@@ -411,11 +413,11 @@ EventScript_UseWaterfall::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
-	@msgbox Text_WantToWaterfall, MSGBOX_YESNO
-	@goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
+	msgbox Text_WantToWaterfall, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	@msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
 	buffermovename STR_VAR_2, MOVE_WATERFALL
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	hidefollowernpc @ HnS PORT NOTE - why not in HnS?
 	dofieldeffect FLDEFF_USE_WATERFALL @ HnS PORT NOTE - why other calls to "dofieldeffect" removed, but not this one?
 	callnative FollowerNPC_WarpSetEnd @ HnS PORT NOTE - seems to move follower to player's end destination?
@@ -510,8 +512,8 @@ EventScript_Whirlpool::
 	@checkitem ITEM_HM_WHIRLPOOL @ HnS PORT NOTE - why not FLAG_RECEIVED_HM_WHIRLPOOL?
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
 	playse SE_M_WHIRLPOOL
-	buffermovename STR_VAR_2, MOVE_WHIRLPOOL
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	@ buffermovename STR_VAR_2, MOVE_WHIRLPOOL
+	@ msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	@ msgbox Text_MonUsedWhirlpool, MSGBOX_DEFAULT @ why not in HnS?
 	goto_if_eq VAR_FACING, DIR_NORTH, EventScript_WhirlpoolGoNorth
 	goto_if_eq VAR_FACING, DIR_SOUTH, EventScript_WhirlpoolGoSouth

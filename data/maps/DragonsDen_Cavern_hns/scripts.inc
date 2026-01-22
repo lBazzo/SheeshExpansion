@@ -84,6 +84,7 @@ DragonsDen_Cavern_EventScript_Clair::
 	msgbox DragonsDen_Cavern_Text_ClairGiveDragonclaw, MSGBOX_DEFAULT
 	giveitem ITEM_TM_DRAGON_CLAW
 	giveitem ITEM_HM_WHIRLPOOL
+	setflag FLAG_RECEIVED_HM_WHIRLPOOL
 	msgbox DragonsDen_Cavern_Text_ClairDescribeDragonclaw, MSGBOX_DEFAULT
 	closemessage
 	delay 30

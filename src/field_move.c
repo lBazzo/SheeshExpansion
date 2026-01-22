@@ -35,7 +35,7 @@ static bool32 IsFieldMoveUnlocked_Surf(void)
 
 static bool32 IsFieldMoveUnlocked_Fly(void)
 {
-    return FlagGet(FLAG_BADGE06_GET);
+    return FlagGet(FLAG_BADGE05_GET);
 }
 
 static bool32 UNUSED IsFieldMoveUnlocked_Dive(void)

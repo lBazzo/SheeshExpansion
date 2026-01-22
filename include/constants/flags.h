@@ -1646,7 +1646,7 @@
 #define FLAG_HIDE_AZALEA_BUGSY                      (SYSTEM_FLAGS + 0xAE) // Unused Flag
 #define FLAG_LIGHTHOUSE_TOO_DARK                    (SYSTEM_FLAGS + 0xAF) // Unused Flag 90F
 #define FLAG_DEFEATED_DAHLIA                        (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
+#define FLAG_SYS_POKERIDER_UNLOCKED                 (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
