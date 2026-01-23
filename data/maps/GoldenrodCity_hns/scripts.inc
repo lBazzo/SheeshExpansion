@@ -14,12 +14,21 @@
 .set LOCALID_GOLDENROD_CITY_GIOVANNI, 46
 
 GoldenrodCity_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GoldenrodCity_MapScript_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodCity_OnFrame
 	.byte 0
 
 GoldenrodCity_EventScript_MoveGameCornerGuard::
 	setobjectxyperm LOCALID_GOLDENROD_CITY_GAMECORNERGUARD, 28, 30
 	end
+
+GoldenrodCity_MapScript_OnTransition::
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, GoldenrodCity_MapScript_UnsetLighthouseTooDarkFlag
+	end
+
+GoldenrodCity_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
 
 GoldenrodCity_OnFrame::
 	map_script_2 VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_MapScript_Hide_Silver

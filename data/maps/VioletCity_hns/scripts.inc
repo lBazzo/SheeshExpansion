@@ -16,10 +16,15 @@ VioletCity_OnFrame::
 VioletCity_OnTransition::
 	callnative SetTimeBasedEncounters
 	call_if_unset (TRAINER_FLAGS_START + TRAINER_LI), VioletCity_Set_MoveGymSage
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, VioletCity_MapScript_UnsetLighthouseTooDarkFlag
 	end
 
 VioletCity_Set_MoveGymSage::
 	setobjectxyperm LOCALID_GYM_SAGE, 23, 37
+	return
+
+VioletCity_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
 	return
 
 VioletCity_EventScript_Trigger::

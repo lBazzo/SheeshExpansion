@@ -24,12 +24,17 @@ NewBarkTown_EventScript_ElmCallAfterLeague::
 
 NewBarkTown_OnTransition::
 	call_if_lt VAR_NEWBARK_TOWN_STATE, 3, NewBarkTown_Set_MoveGrassGirl
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, NewBarkTown_MapScript_UnsetLighthouseTooDarkFlag
 	goto_if_eq VAR_NEWBARK_TOWN_STATE, 2, NewBarkTown_Set_TalkToElm
 	goto_if_eq VAR_NEWBARK_TOWN_STATE, 4, NewBarkTown_Set_TalkToMom
 	end
 
 NewBarkTown_Set_MoveGrassGirl::
 	setobjectxyperm LOCALID_GRASS_GIRL, 23, 12
+	return
+
+NewBarkTown_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
 	return
 
 NewBarkTown_Set_TalkToElm::

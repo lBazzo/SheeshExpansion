@@ -3,11 +3,20 @@
 
 AzaleaTown_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, AzaleaTown_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, AzaleaTown_MapScript_OnTransition
 	.byte 0
 
 AzaleaTown_OnFrame::
 	map_script_2 VAR_AZALEA_TOWN_STATE, 8, AzaleaTown_EventScript_GSBall
 	.2byte 0
+
+AzaleaTown_MapScript_OnTransition::
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, AzaleaTown_MapScript_UnsetLighthouseTooDarkFlag
+	end
+
+AzaleaTown_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
 
 AzaleaTown_EventScript_Trigger:: @flagheap
 	setflag FLAG_VISITED_AZALEA_TOWN

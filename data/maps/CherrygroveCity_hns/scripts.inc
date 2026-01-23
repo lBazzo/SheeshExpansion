@@ -8,7 +8,12 @@ CherrygroveCity_hns_MapScripts::
 
 CherryGroveCity_OnTransition::
 	callnative SetTimeBasedEncounters
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, CherryGroveCity_MapScript_UnsetLighthouseTooDarkFlag
 	end
+
+CherryGroveCity_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
 
 CherryGroveCity_EventScript_TriggerGent_Top::
 	lock

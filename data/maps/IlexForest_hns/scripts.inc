@@ -878,7 +878,7 @@ IlexForest_EventScript_BugsyIceStone::
 
 IlexForest_EventScript_BugsyCheckOnMisty::
 	msgbox IlexForest_Text_BugsyCheckOnMisty, MSGBOX_DEFAULT
-	closemessage
+	closemessage 
 	release
 	end
 

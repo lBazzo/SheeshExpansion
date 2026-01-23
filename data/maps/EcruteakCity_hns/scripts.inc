@@ -10,7 +10,12 @@ EcruteakCity_hns_MapScripts::
 
 EcruteakCity_OnTransition::
 	callnative SetTimeBasedEncounters
+	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, EcruteakCity_MapScript_UnsetLighthouseTooDarkFlag
 	end
+
+EcruteakCity_MapScript_UnsetLighthouseTooDarkFlag::
+	clearflag FLAG_LIGHTHOUSE_TOO_DARK
+	return
 
 EcruteakCity_Test_Lugia::
 	setvar VAR_LUGIA_OR_HOOH, 1
