@@ -365,8 +365,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MR_MIME)",
-      "x": 39,
-      "y": 7,
+      "x": 52,
+      "y": 1,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_TOWER_BEAM",
       "movement_range_x": 0,
@@ -481,7 +481,7 @@
       "flag": "FLAG_HIDE_GOLDENROD_CITY_LITTLEGIRL"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_AZURILL",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZURILL)",
       "x": 33,
       "y": 8,
       "elevation": 0,
@@ -609,6 +609,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GoldenrodCity_EventScript_Feraligatr",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIOVANNI",
+      "x": 20,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_GOLDENROD_GIOVANNI"
     }
   ],
   "warp_events": [
@@ -788,6 +801,15 @@
       "var": "VAR_GOLDENROD_SILVER_STATE",
       "var_value": "1",
       "script": "GoldenrodCity_Trigger_Silver"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_GOLDENROD_SILVER_STATE",
+      "var_value": "3",
+      "script": "GoldenrodCity_EventScript_Giovanni"
     }
   ],
   "bg_events": [

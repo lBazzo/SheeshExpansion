@@ -11,18 +11,20 @@
 .set LOCALID_GOLDENROD_CITY_PORYGON2, 43
 .set LOCALID_GOLDENROD_CITY_FANGTUTOR, 44
 .set LOCALID_GOLDENROD_CITY_FERALIGATR, 45
+.set LOCALID_GOLDENROD_CITY_GIOVANNI, 46
 
 GoldenrodCity_hns_MapScripts::
-	.byte 0
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodCity_OnFrame
+	.byte 0
 
 GoldenrodCity_EventScript_MoveGameCornerGuard::
 	setobjectxyperm LOCALID_GOLDENROD_CITY_GAMECORNERGUARD, 28, 30
 	end
 
 GoldenrodCity_OnFrame::
-	goto_if_eq VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_MapScript_Hide_Silver
-	end
+	map_script_2 VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_MapScript_Hide_Silver
+	map_script_2 VAR_GOLDENROD_SILVER_STATE, 3, GoldenrodCity_EventScript_Giovanni
+	.2byte 0
 
 GoldenrodCity_MapScript_Hide_Silver:
 	setflag FLAG_HIDE_GOLDENROD_CITY_SILVER
@@ -40,6 +42,7 @@ GoldenrodCity_EventScript_Trigger:: @flagheap
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_PETREL
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR_2
 	setflag FLAG_HIDE_GOLDENROD_CITY_SILVER
+	setflag FLAG_HIDE_GOLDENROD_GIOVANNI
 	
 	clearflag FLAG_HIDE_GOLDENROD_BEAUTY
 	clearflag FLAG_HIDE_GOLDENROD_ROCKET_SCOUT
@@ -1980,4 +1983,103 @@ GoldenrodCity_Text_FangTutorMoveTaught:
 
 GoldenrodCity_Text_FangTutorFriend:
 	.string "Hmm! Great bite!$"
+
+GoldenrodCity_EventScript_Giovanni::
+	lock
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement LOCALID_GOLDENROD_CITY_GIOVANNI, Common_Movement_ExclamationMark
+	delay 60
+	applymovement LOCALID_GOLDENROD_CITY_GIOVANNI, GoldenrodCity_Movement_GiovanniApproach
+	waitmovement 0
+	msgbox GoldenrodCity_Text_GiovanniMeetPlayer, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_GIOVANNI, Common_Movement_FaceDown
+	delay 90
+	applymovement LOCALID_GOLDENROD_CITY_GIOVANNI, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox GoldenrodCity_Text_GiovanniGiveBasementKey, MSGBOX_DEFAULT
+	giveitem ITEM_BASEMENT_KEY
+	msgbox GoldenrodCity_Text_GiovanniGoodLuck, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_GIOVANNI, GoldenrodCity_Movement_GiovanniLeave
+	waitmovement 0
+	setvar VAR_GOLDENROD_SILVER_STATE, 4
+	setflag FLAG_HIDE_GOLDENROD_GIOVANNI
+	removeobject LOCALID_GOLDENROD_CITY_GIOVANNI
+	release
+	end
+
+GoldenrodCity_Movement_GiovanniApproach::
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GoldenrodCity_Movement_GiovanniLeave::
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+GoldenrodCity_Text_GiovanniMeetPlayer:
+	.string "Psst.\p"
+	.string "Hey, kid.\p"
+	.string "You wouldn't happen to know of a weasly\n"
+	.string "looking guy who's going around\l"
+	.string "impersonating people, would you?\p"
+	.string "Impersonating myself, to be more\n"
+	.string "specific.\p"
+	.string "...\p"
+	.string "You just battled a guy like that?\p"
+	.string "Then you must be trying to stop TEAM\n"
+	.string "ROCKET.\p"
+	.string "Then I'm afraid you leave me with no\n"
+	.string "other option.\p"
+	.string "I, GIOVANNI, the BOSS of TEAM ROCKET,\n"
+	.string "will have to...$"
+
+GoldenrodCity_Text_GiovanniGiveBasementKey:
+	.string "GIOVANNI: Ask for your help, of course!\p"
+	.string "Fwahahahaha! Did you expect something\n"
+	.string "else?\p"
+	.string "Sorry, but my days as a criminal\n"
+	.string "mastermind have long since passed.\p"
+	.string "Which brings us to the crux of the\n"
+	.string "matter.\p"
+	.string "Not only is that complete buffoon\n"
+	.string "PETREL still going around disguised as\l"
+	.string "me, the rest of TEAM ROCKET can't seem\l"
+	.string "to accept that I've moved on either.\p"
+	.string "I knew they relied on me, but I never\n"
+	.string "suspected that they would all be so\l"
+	.string "aimless without my guidance.\p"
+	.string "It's no wonder that TEAM ROCKET has\n"
+	.string "become a shell of its former self.\p"
+	.string "Regardless, this is the part where you\n"
+	.string "come in.\p"
+	.string "I'd expected to see a different kid\n"
+	.string "here from the way the TEAM ROCKET\l"
+	.string "GRUNTS were whispering about your\l"
+	.string "infiltration of the RADIO TOWER, but it\l"
+	.string "sounds like you're just as exceptional\l"
+	.string "as the one I knew from way back when.\p"
+	.string "Since I'm asking you to do my dirty\n"
+	.string "work, it's only fair I help you out.\p"
+	.string "Here. This should give you access to\n"
+	.string "the underground where they've stashed\l"
+	.string "away the DIRECTOR.$"
+
+GoldenrodCity_Text_GiovanniGoodLuck:
+	.string "Well, best of luck, kid.\p"
+	.string "If you're capable of taking down TEAM\n"
+	.string "ROCKET, then this probably won't be the\l"
+	.string "last we see of each other.\p"
+	.string "Give 'em hell for me, yeah?$"
 

@@ -38,10 +38,12 @@ GoldenrodCity_RadioTower_5F_EventScript_Petrel::
 	msgbox GoldenrodCity_RadioTower_5F_Text_FakeDirector2, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_PETREL_2, GoldenrodCity_RadioTower_5F_Text_FakeDirectorWin
 	msgbox GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter, MSGBOX_DEFAULT
-	giveitem ITEM_BASEMENT_KEY
+	@ giveitem ITEM_BASEMENT_KEY
 	setvar VAR_GOLDENROD_CITY_STATE, 7
+	setvar VAR_GOLDENROD_SILVER_STATE, 3
 	clearflag FLAG_HIDE_GOLDENROD_UNDERGROUND_KIMONO
 	clearflag FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY
+	clearflag FLAG_HIDE_GOLDENROD_GIOVANNI
 	closemessage
 	release
 	end
@@ -124,19 +126,26 @@ GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter:
 	.string "the UNDERGROUND WAREHOUSE.\p"
 	.string "It's at the far end of the UNDER-\n"
 	.string "GROUND.\p"
-	.string "I am a nice guy, I will give you\n"
-	.string "the BASEMENT KEY to get to the\l"
-	.string "UNDERGROUND WAREHOUSE.\p"
-	.string "But I doubt you'll get that far.$"
+	.string "If I were a nice guy, I'd give you the\n"
+	.string "BASEMENT KEY here.\p"
+	.string "However, I'm feeling just a teensy bit\n"
+	.string "spiteful after you beat me so badly,\l"
+	.string "so I think I'll leave you to figure that\l"
+	.string "one out for yourself.\p"
+	.string "Nyehehehehe! Good luck!$"
 
 GoldenrodCity_RadioTower_5F_Text_FakeDirectorAfter2:
 	.string "The boss stashed the DIRECTOR in\n"
 	.string "the UNDERGROUND WAREHOUSE.\p"
 	.string "It's at the far end of the UNDER-\n"
 	.string "GROUND.\p"
-	.string "You can use the BASEMENT KEY to\n"
-	.string "get to the UNDERGROUND WAREHOUSE.\p"
-	.string "But I doubt you'll get that far.$"
+	.string "If I were a nice guy, I'd give you the\n"
+	.string "BASEMENT KEY here.\p"
+	.string "However, I'm feeling just a teensy bit\n"
+	.string "spiteful after you beat me so badly,\l"
+	.string "so I think I'll leave you to figure that\l"
+	.string "one out for yourself.\p"
+	.string "Nyehehehehe! Good luck!$"
 
 @=======[STUDIO]==============================================================================================================================
 
