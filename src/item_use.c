@@ -1724,4 +1724,33 @@ void ItemUseOutOfBattle_Radio(u8 taskId)
     DisplayRadioMessage(taskId, tUsingRegisteredKeyItem);
 }
 
+void ItemUseOutOfBattle_Repellent(u8 taskId)
+{
+    bool8 repellentOn = FlagGet(OW_FLAG_NO_ENCOUNTER);
+    if (!repellentOn)
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_REPEL);
+        if(gTasks[taskId].tUsingRegisteredKeyItem)
+            DisplayItemMessageOnField(taskId, gText_RepellentOn, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, 1, gText_RepellentOn, CloseItemMessage);
+    }
+    else
+    {
+        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        PlaySE(SE_PC_OFF);
+        if (gTasks[taskId].tUsingRegisteredKeyItem)
+            DisplayItemMessageOnField(taskId, gText_RepellentOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, 1, gText_RepellentOff, CloseItemMessage);
+    }
+}
+
+void ItemUseOutOfBattle_InfiniteCandy (u8 taskId)
+{
+    gItemUseCB = ItemUseCB_InfiniteCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 #undef tUsingRegisteredKeyItem

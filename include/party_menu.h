@@ -109,6 +109,9 @@ void MoveDeleterForgetMove(void);
 void BufferMoveDeleterNicknameAndMove(void);
 void GetNumMovesSelectedMonHas(void);
 void MoveDeleterChooseMoveToForget(void);
+void ItemUseOutOfBattle_Repellent(u8 taskId);
+void ItemUseOutOfBattle_InfiniteCandy(u8 taskId);
+void ItemUseCB_InfiniteCandy(u8 taskId, TaskFunc task);
 
 bool32 SetUpFieldMove_Surf(void);
 bool32 SetUpFieldMove_Fly(void);
