@@ -2792,7 +2792,19 @@ AI_SINGLE_BATTLE_TEST("AI correctly always uses tera if it has tera type as its 
     }
 }
 
-
+AI_SINGLE_BATTLE_TEST("AI correctly uses tera sometimes even if it outdamages Player before using tera and not after if it has the spencer flag")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA
+             | AI_FLAG_SPENCER_TERA);
+        PLAYER(SPECIES_VOLCANION) { Moves(MOVE_NIGHT_SHADE, MOVE_CELEBRATE); TeraType(TYPE_NORMAL); HP(60); Level(100); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_TERA_BLAST); TeraType(TYPE_WATER); HP(110); }
+    } WHEN {
+        TURN {  }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Water type!");
+    }
+}
 
 
 

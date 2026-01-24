@@ -43,6 +43,7 @@ NewBarkTown_PlayersHouse_1F_EventScript_MomsFriend::
 NewBarkTown_PlayersHouse_1F_MomEventScript_GoodLuck::
 	msgbox NewBarkTown_PlayersHouse_1F_Text_MomLeaving, MSGBOX_DEFAULT
 	setflag FLAG_MOM_VISITED
+	setflag FLAG_SYS_POKERIDER_UNLOCKED
 	clearflag FLAG_HIDE_ROUTE_30_NPCS
 	setvar VAR_NEWBARK_TOWN_STATE, 5
 	release
@@ -226,6 +227,14 @@ NewBarkTown_PlayersHouse_1F_Text_MomLeaving:
 	.string "Just be careful.\p"
 	.string "POKéMON are your friends.\n"
 	.string "You need to work as a team.\p"
+	.string "And here, let me see your POKéGEAR for\n"
+	.string "a moment...\p"
+	.string "Great! Now you can fly using your\n"
+	.string "POKéGEAR and visit me anytime!\l"
+	.string "Just use the R Button in the map!\p"
+	.string "...\p"
+	.string "Only joking. Don't worry about me. Enjoy\n"
+	.string "your time away as much as you can!\p"
 	.string "Now, go on!\n"
 	.string "I'm behind you all the way!$"
 

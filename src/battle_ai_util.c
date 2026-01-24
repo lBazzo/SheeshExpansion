@@ -5900,6 +5900,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
             numPossibleTera++;
     }
 */
+
     u16 aiHp = gBattleMons[battler].hp;
     u16 oppHp = gBattleMons[opposingBattler].hp;
 
@@ -6067,6 +6068,15 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     // determine whether the AI will tera based on the time taken to select a move.
 
     // Checks if AI is a) mono type and b) has the same tera type as its current type. If both are true, 100% tera chance
+
+    //Spencer Tera specific: NOTE HE NEEDS AI_FLAG_SMART_TERA FLAG ALSO SET TO GET TO THIS POINT!!!
+    if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SPENCER_TERA)
+    {
+        if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT))
+            return USE_GIMMICK;
+        else 
+            return NO_GIMMICK;
+    }
 
     u32 species; 
     u32 teraType; 
