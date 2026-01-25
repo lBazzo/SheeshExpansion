@@ -181,7 +181,7 @@
     },
     {
       "id": "HEAL_LOCATION_LAKE_OF_RAGE",
-      "map": "MAP_LAKE_OF_RAGE",
+      "map": "MAP_LAKE_OF_RAGE_LOW_TIDE",
       "x": 31,
       "y": 43,
       "respawn_map": "MAP_MAHOGANY_TOWN_POKEMON_CENTER",
