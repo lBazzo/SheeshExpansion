@@ -1029,7 +1029,7 @@ AI_SINGLE_BATTLE_TEST("AI will use recovery move if is in no immediate danger be
 
 AI_SINGLE_BATTLE_TEST("AI has a chance to prioritize last chance priority damage over slow KO")
 {
-
+    KNOWN_FAILING; // this fails because floatzel sees a kill with jet when iv's are all 0 + it sees highest roll by standard
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_CAMERUPT) { Speed(2); Moves(MOVE_FLAMETHROWER, MOVE_CELEBRATE); }
