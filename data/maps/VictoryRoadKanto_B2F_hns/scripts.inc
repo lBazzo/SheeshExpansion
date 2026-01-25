@@ -33,6 +33,7 @@ VictoryRoadKanto_B2F_EventScript_B2B2B::
 	applymovement LOCALID_VICTORYROAD_TOPVICTOR, Common_Movement_ExclamationMark
 	delay 60
 	msgbox VictoryRoadKanto_B2F_Text_VictorSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_VICTORY_ROAD, TRUE
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, VictoryRoadKanto_B2F_Text_VictorBeaten
 	applymovement LOCALID_VICTORYROAD_TOPVICTOR, VictoryRoadKanto_B2F_Movement_VictorBeaten
 	waitmovement 0

@@ -36,6 +36,7 @@ SlowpokeWell_B1F_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox SlowpokeWell_B1F_Text_Grunt23PreFight, MSGBOX_DEFAULT
+	playbgm MUS_HG_UNION_CAVE, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt23Beaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
@@ -44,6 +45,7 @@ SlowpokeWell_B1F_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox SlowpokeWell_B1F_Text_Grunt24PreFight, MSGBOX_DEFAULT
+	playbgm MUS_HG_UNION_CAVE, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt24Beaten
 	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 2
 	release

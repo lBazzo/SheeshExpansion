@@ -313,6 +313,7 @@ GoldenrodCity_Gym_EventScript_B2B1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautySamanthaSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_SAMANTHA, GoldenrodCity_Gym_Text_BeautySamanthaBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
 	playse SE_PIN
@@ -321,6 +322,7 @@ GoldenrodCity_Gym_EventScript_B2B1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_LassCarrieSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_CARRIE, GoldenrodCity_Gym_Text_LassCarrieBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 2
 	release
@@ -335,6 +337,7 @@ GoldenrodCity_Gym_EventScript_B2B2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_TeacherHillarySeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_HILLARY, GoldenrodCity_Gym_Text_TeacherHillaryBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN
@@ -343,6 +346,7 @@ GoldenrodCity_Gym_EventScript_B2B2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_TeacherColetteSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_COLETTE, GoldenrodCity_Gym_Text_TeacherColetteBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 3
 	release
@@ -357,6 +361,7 @@ GoldenrodCity_Gym_EventScript_B2B3::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautyVictoriaSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_VICTORIA, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN
@@ -365,6 +370,7 @@ GoldenrodCity_Gym_EventScript_B2B3::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_LassBridgetSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_BRIDGET, GoldenrodCity_Gym_Text_LassBridgetBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 4
 	release

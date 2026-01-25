@@ -449,6 +449,7 @@ BlackthornGym_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox BlackthornGym_Text_IrisSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
     trainerbattle_no_intro TRAINER_SPENCER, BlackthornGym_Text_IrisBeaten
     playbgm MUS_ENCOUNTER_RICH, TRUE
     playse SE_PIN
@@ -461,7 +462,9 @@ BlackthornGym_EventScript_B2B::
 	waitmovement 0 
     msgbox BlackthornGym_Text_DraydenSeen1, MSGBOX_DEFAULT
 	closemessage
+	special HealNoneFaintedPartyMons
 	msgbox BlackthornGym_Text_DraydenSeen2, MSGBOX_DEFAULT
+	playbgm MUS_HG_GYM, TRUE
     trainerbattle_no_intro TRAINER_RON, BlackthornGym_Text_DraydenBeaten
     setvar VAR_ALL_B2B_STATE, 11
     release

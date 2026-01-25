@@ -126,6 +126,7 @@ Route26_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox Route26_Text_LolaSeenText, MSGBOX_DEFAULT
+    playbgm MUS_HG_ROUTE26, TRUE
     trainerbattle_no_intro TRAINER_LOLA, Route26_Text_LolaBeatenText
     playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
     playse SE_PIN
@@ -137,6 +138,7 @@ Route26_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
     msgbox Route26_Text_MikeSeenText, MSGBOX_DEFAULT
+    playbgm MUS_HG_ROUTE26, TRUE
     trainerbattle_no_intro TRAINER_MIKE, Route26_Text_MikeBeatenText
     setvar VAR_ALL_B2B_STATE, 13
     release

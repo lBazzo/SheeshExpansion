@@ -245,6 +245,7 @@ GoldenrodCity_RadioTower_2F_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntTopPreFight, MSGBOX_DEFAULT
+	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntTopBeaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
@@ -253,8 +254,8 @@ GoldenrodCity_RadioTower_2F_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntBotPreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
+	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten
 	setvar VAR_ALL_B2B_STATE, 5
 	release
 	end

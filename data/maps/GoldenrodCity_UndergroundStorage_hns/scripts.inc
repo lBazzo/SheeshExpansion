@@ -140,6 +140,7 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B1GruntTopPreFight, MSGBOX_DEFAULT
+    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B1GruntTopBeaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
@@ -148,6 +149,7 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B1::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B1GruntBotPreFight, MSGBOX_DEFAULT
+    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B1GruntBotBeaten
 	setvar VAR_ALL_B2B_STATE, 7
 	release
@@ -207,6 +209,7 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftPreFight, MSGBOX_DEFAULT
+    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftBeaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
@@ -215,6 +218,7 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B2::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightPreFight, MSGBOX_DEFAULT
+    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
 	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightBeaten
 	setvar VAR_ALL_B2B_STATE, 8
 	release
@@ -292,6 +296,7 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B2BDeclined::
 GoldenrodCity_UndergroundStorage_EventScript_B2B2BAccepted::
     playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
     msgbox GoldenrodCity_UndergroundStorage_Text_B2B2BGruntDownConfirmedFight, MSGBOX_DEFAULT
+    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
     trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B2BGruntDownBeaten
     applymovement LOCALID_UNDERGROUND_STORAGE_B2B2BGRUNTDOWN, GoldenrodCity_UndergroundStorage_Movement_B2B2BGruntDownBeaten
     waitmovement 0

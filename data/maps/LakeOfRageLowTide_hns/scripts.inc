@@ -485,6 +485,7 @@ LakeOfRage_EventScript_B2B1::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0 
 	msgbox LakeOfRage_Text_CooltrainerfLoisSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_ROUTE42, TRUE
     trainerbattle_no_intro TRAINER_LOIS, LakeOfRage_Text_CooltrainerfLoisBeaten
     playbgm MUS_HG_ENCOUNTER_SUSPICIOUS_1, TRUE
     playse SE_PIN
@@ -495,6 +496,7 @@ LakeOfRage_EventScript_B2B1::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
     msgbox LakeOfRage_Text_FisherRaymondSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_ROUTE42, TRUE
     trainerbattle_no_intro TRAINER_RAYMOND, LakeOfRage_Text_FisherRaymondBeaten
     setvar VAR_ALL_B2B_STATE, 3
     release
@@ -519,6 +521,7 @@ LakeOfRage_EventScript_B2B2::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0 
 	msgbox LakeOfRage_Text_SupernerdSamSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_ROUTE42, TRUE
     trainerbattle_no_intro TRAINER_SAM, LakeOfRage_Text_SupernerdSamBeaten
     playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
     playse SE_PIN
@@ -527,6 +530,7 @@ LakeOfRage_EventScript_B2B2::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
     msgbox LakeOfRage_Text_CamperSidSeen, MSGBOX_DEFAULT
+	playbgm MUS_HG_ROUTE42, TRUE
     trainerbattle_no_intro TRAINER_SID, LakeOfRage_Text_CamperSidBeaten
     setvar VAR_ALL_B2B_STATE, 4
     release
