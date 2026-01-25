@@ -1558,6 +1558,21 @@ bool8 IsMapTypeIndoors(enum MapType mapType)
         return FALSE;
 }
 
+bool8 Overworld_MapTypeAllowsPortaPC(enum MapType mapType)
+{
+    if (mapType == MAP_TYPE_ROUTE
+     || mapType == MAP_TYPE_TOWN
+     || mapType == MAP_TYPE_UNDERWATER
+     || mapType == MAP_TYPE_CITY
+     || mapType == MAP_TYPE_OCEAN_ROUTE
+     || mapType == MAP_TYPE_FOREST
+     || mapType == MAP_TYPE_INDOOR
+     || mapType == MAP_TYPE_UNDERGROUND)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 mapsec_u8_t GetSavedWarpRegionMapSectionId(void)
 {
     return Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->dynamicWarp.mapGroup, gSaveBlock1Ptr->dynamicWarp.mapNum)->regionMapSectionId;

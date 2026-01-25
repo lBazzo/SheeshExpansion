@@ -149,6 +149,7 @@ enum MapType GetLastUsedWarpMapType(void);
 bool8 IsMapTypeOutdoors(enum MapType mapType);
 bool8 Overworld_MapTypeAllowsTeleportAndFly(enum MapType mapType);
 bool8 IsMapTypeIndoors(enum MapType mapType);
+bool8 Overworld_MapTypeAllowsPortaPC(enum MapType mapType);
 mapsec_u8_t GetSavedWarpRegionMapSectionId(void);
 mapsec_u8_t GetCurrentRegionMapSectionId(void);
 enum MapBattleScene GetCurrentMapBattleScene(void);
