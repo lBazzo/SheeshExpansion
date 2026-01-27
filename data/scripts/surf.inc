@@ -1,5 +1,6 @@
 EventScript_UseSurf::
 	checkfieldmove FIELD_MOVE_SURF
+	goto_if_unset FLAG_RECEIVED_HM_SURF, EventScript_CantUseSurf
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantUseSurf
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_EndUseSurf
 	goto_if_set FLAG_LIGHTHOUSE_TOO_DARK, EventScript_TooDangerousToSurf
