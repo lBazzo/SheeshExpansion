@@ -741,8 +741,8 @@
 #define FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY  0x29E // Unused Flag
 #define FLAG_RECEIVED_MUSCLE_BAND  0x29F // Unused Flag
 #define FLAG_RECEIVED_WISE_GLASSES  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
+#define FLAG_TALKED_DRAGONSDEN_SPENSER  0x2A1 // Unused Flag
+#define FLAG_DEFEATED_SPENSER  0x2A2 // Unused Flag
 #define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
 #define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag

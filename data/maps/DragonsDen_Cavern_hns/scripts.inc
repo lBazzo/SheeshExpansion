@@ -1,13 +1,35 @@
 .set LOCALID_DRAGONSDEN2_CLAIR, 5
 .set LOCALID_DEN_CLAIR, 35
+.set LOCALID_DRAGONSDEN_WANDA, 46
+.set LOCALID_DRAGONSDEN_COSMO, 47
+.set LOCALID_DRAGONSDEN_AIMI, 40
+.set LOCALID_DRAGONSDEN_ESTELLE, 39
+.set LOCALID_DRAGONSDEN_ATLAS, 38
+.set LOCALID_DRAGONSDEN_DUBU, 37
+.set LOCALID_DRAGONSDEN_ERA, 36
+.set LOCALID_DRAGONSDEN_SPENSER, 48
 
 DragonsDen_Cavern_hns_MapScripts::
 	@map_script MAP_SCRIPT_ON_FRAME_TABLE, DragonsDen_Cavern_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, DragonsDen_Cavern_OnTransition
 	.byte 0
+
+DragonsDen_Cavern_OnTransition::
+	call_if_ge VAR_TERA_B2B_COUNTER, 6, DragonsDen_Cavern_MapScript_MoveB2B2B2B2BTrainers
+	end
 
 DragonsDen_Cavern_OnFrame::
 	map_script_2 VAR_BLACKTHORN_CITY_STATE, 3, DragonsDen_Cavern_EventScript_Clair
 	.2byte 0
+
+DragonsDen_Cavern_MapScript_MoveB2B2B2B2BTrainers::
+	setobjectxyperm LOCALID_DRAGONSDEN_AIMI, 28, 37
+	setobjectxyperm LOCALID_DRAGONSDEN_ATLAS, 28, 38
+	setobjectxyperm LOCALID_DRAGONSDEN_ESTELLE, 34, 37
+	setobjectxyperm LOCALID_DRAGONSDEN_DUBU, 34, 38
+	setobjectmovementtype LOCALID_DRAGONSDEN_ATLAS, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_DRAGONSDEN_DUBU, MOVEMENT_TYPE_FACE_LEFT
+	return
 
 DragonsDen_EventScript_ClairRematch::
     lock
@@ -264,3 +286,757 @@ DragonsDen_Cavern_Text_TwinsLeaandPia2Beaten:
 DragonsDen_Cavern_Text_TwinsLeaandPia2After:
     .string "We'll tell on you.\p"
     .string "MASTER will be angry with you.$"
+
+@ NEWLY ADDED 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+DragonsDen_Cavern_EventScript_Ed::
+	trainerbattle_single TRAINER_ED, DragonsDen_Cavern_Text_BugCatcherEd_Seen, DragonsDen_Cavern_Text_BugCatcherEd_Beaten
+	msgbox DragonsDen_Cavern_Text_BugCatcherEd_AfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+DragonsDen_Cavern_EventScript_Doug::
+	trainerbattle_single TRAINER_DOUG, DragonsDen_Cavern_Text_BugCatcherDoug_Seen, DragonsDen_Cavern_Text_BugCatcherDoug_Beaten
+	msgbox DragonsDen_Cavern_Text_BugCatcherDoug_AfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+DragonsDen_Cavern_Text_BugCatcherEd_Seen:
+	.string "If you walk in gravel wearing\n"
+	.string "no shoes, do you get nicks and cuts?$"
+
+DragonsDen_Cavern_Text_BugCatcherEd_Beaten:
+	.string "Ouch, ouch, ouch!$"
+
+DragonsDen_Cavern_Text_BugCatcherEd_AfterBattle:
+	.string "They'll really sting when you take a\n"
+	.string "bath.$"
+
+DragonsDen_Cavern_Text_BugCatcherDoug_Seen:
+	.string "Why don't girls like my POKéMON?$"
+
+DragonsDen_Cavern_Text_BugCatcherDoug_Beaten:
+	.string "No good!$"
+
+DragonsDen_Cavern_Text_BugCatcherDoug_AfterBattle:
+	.string "My POKéMON are cool. My mum says so.\n"
+	.string "You believe me, right...?$"
+
+DragonsDen_Cavern_EventScript_Jonah::
+	trainerbattle_single TRAINER_JONAH DragonsDen_Cavern_Text_FisherJonahSeen, DragonsDen_Cavern_Text_FisherJonahBeaten
+	msgbox DragonsDen_Cavern_Text_FisherJonahAfter, MSGBOX_AUTOCLOSE
+	end
+
+DragonsDen_Cavern_Text_FisherJonahSeen:
+	.string "This is boring! Let's battle!$"
+
+DragonsDen_Cavern_Text_FisherJonahBeaten:
+	.string "I… I'm not bored anymore…$"
+
+DragonsDen_Cavern_Text_FisherJonahAfter:
+	.string "I plan to fish off\n"
+	.string "VERMILION's pier.$"
+
+DragonsDen_Cavern_EventScript_Miller::
+	trainerbattle_single TRAINER_MILLER DragonsDen_Cavern_Text_PokemaniacMillerSeen, DragonsDen_Cavern_Text_PokemaniacMillerBeaten
+	msgbox DragonsDen_Cavern_Text_PokemaniacMillerAfter, MSGBOX_AUTOCLOSE
+	end
+
+DragonsDen_Cavern_EventScript_Markus::
+	trainerbattle_single TRAINER_MARKUS DragonsDen_Cavern_Text_SupernerdMarkusSeen, DragonsDen_Cavern_Text_SupernerdMarkusBeaten
+	msgbox DragonsDen_Cavern_Text_SupernerdMarkusAfter, MSGBOX_AUTOCLOSE
+	end
+
+DragonsDen_Cavern_Text_PokemaniacMillerSeen:
+	.string "I'm not losing this time!$"
+
+DragonsDen_Cavern_Text_PokemaniacMillerBeaten:
+	.string "I lost to some kid...?$"
+
+DragonsDen_Cavern_Text_PokemaniacMillerAfter:
+	.string "A while back, this karate dude\n"
+	.string "wanted to battle.\p"
+	.string "He was ridiculously good.\n"
+	.string "He just thrashed us silly.\p"
+	.string "He went in deeper saying it\n"
+	.string "was for his training.\p"
+	.string "I wonder how he is?$"
+
+DragonsDen_Cavern_Text_SupernerdMarkusSeen:
+	.string "Hey! HUGH!$"
+
+DragonsDen_Cavern_Text_SupernerdMarkusBeaten:
+	.string "I mistook you for someone\n"
+	.string "else…$"
+
+DragonsDen_Cavern_Text_SupernerdMarkusAfter:
+	.string "You look a lot like HUGH...$"
+
+DragonsDen_Cavern_EventScript_B2B::
+	lock
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+    playse SE_PIN
+	applymovement LOCALID_DRAGONSDEN_WANDA, Common_Movement_ExclamationMark
+	delay 60
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 41, DragonsDen_Cavern_EventScript_AdjustWandaMiddle
+	call_if_eq VAR_TEMP_0, 42, DragonsDen_Cavern_EventScript_AdjustWandaRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_CooltrainerWanda_Before, MSGBOX_DEFAULT
+	playbgm MUS_HG_DRAGONS_DEN, TRUE
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_CooltrainerWanda_Beaten
+	playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
+	playse SE_PIN
+	applymovement LOCALID_DRAGONSDEN_COSMO, Common_Movement_ExclamationMark
+	delay 60
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 41, DragonsDen_Cavern_EventScript_AdjustCosmoMiddle
+	call_if_eq VAR_TEMP_0, 40, DragonsDen_Cavern_EventScript_AdjustCosmoLeft
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_CooltrainerCosmo_Before, MSGBOX_DEFAULT
+	playbgm MUS_HG_DRAGONS_DEN, TRUE
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_CooltrainerCosmo_Beaten
+	setvar VAR_TERA_B2B_COUNTER, 4
+	release
+	end
+
+DragonsDen_Cavern_EventScript_AdjustWandaMiddle::
+	applymovement LOCALID_DRAGONSDEN_WANDA, Common_Movement_WalkRight1
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_EventScript_AdjustWandaRight::
+	applymovement LOCALID_DRAGONSDEN_WANDA, DragonsDen_Cavern_Movement_WandaRight
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_WandaRight::
+	walk_right
+	walk_right
+	step_end
+
+DragonsDen_Cavern_EventScript_Wanda::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_CooltrainerWanda_After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_Cosmo::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_CooltrainerCosmo_After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_CooltrainerWanda_Before:
+	.string "Life is like a sandwich. No matter which\n"
+	.string "way you flip it, the bread comes first.$"
+
+DragonsDen_Cavern_Text_CooltrainerWanda_Beaten:
+	.string "You look like a printer warning light\n"
+	.string "the way you be low on paper.$"
+
+DragonsDen_Cavern_Text_CooltrainerWanda_After:
+	.string "I must be an unexpected item\n"
+	.string "the way I'm always in the bagging area.$"
+
+DragonsDen_Cavern_EventScript_AdjustCosmoMiddle::
+	applymovement LOCALID_DRAGONSDEN_COSMO, Common_Movement_WalkLeft1
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_EventScript_AdjustCosmoLeft:
+	applymovement LOCALID_DRAGONSDEN_COSMO, DragonsDen_Cavern_Movement_CosmoLeft
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_CosmoLeft::
+	walk_left
+	walk_left
+	step_end
+
+DragonsDen_Cavern_Text_CooltrainerCosmo_Before:
+	.string "Do you think there are POKéMON in\n"
+	.string "space?$"
+
+DragonsDen_Cavern_Text_CooltrainerCosmo_Beaten:
+	.string "Wow! Your skills are out of this world!$"
+
+DragonsDen_Cavern_Text_CooltrainerCosmo_After:
+	.string "Do you ever wonder where the meteors\n"
+	.string "from Meteor Beam come from?$"
+
+
+@B2B2B2B2B
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+DragonsDen_Cavern_EventScript_ChallengedToB2B2B2B2B::
+	lock
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_B2B2B2B2BAdjustPlayerLeft
+	call_if_eq VAR_TEMP_0, 32, DragonsDen_Cavern_EventScript_B2B2B2B2BAdjustPlayerRight
+	applymovement LOCALID_DRAGONSDEN_ERA, Common_Movement_WalkInPlaceUp
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_EraChallengedToB2B2B2B2B, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DragonsDen_Cavern_EventScript_AcceptedB2B2B2B2B
+	goto_if_eq VAR_RESULT, NO, DragonsDen_Cavern_EventScript_DeclinedB2B2B2B2B
+	end
+
+DragonsDen_Cavern_EventScript_DeclinedB2B2B2B2B::
+	msgbox DragonsDen_Cavern_Text_DeclinedB2B2B2B2B, MSGBOX_DEFAULT
+	closemessage 
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
+	waitmovement 0
+	release
+	end
+
+DragonsDen_Cavern_EventScript_AcceptedB2B2B2B2B::
+	msgbox DragonsDen_Cavern_Text_AcceptedB2B2B2B2B, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DRAGONSDEN_AIMI, DragonsDen_Cavern_Movement_AimiApproachPlayer
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_AimiBefore, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_EventScript_AimiBeaten
+	applymovement LOCALID_DRAGONSDEN_AIMI, DragonsDen_Cavern_Movement_AimiStandAside
+	waitmovement 0
+	applymovement LOCALID_DRAGONSDEN_ESTELLE, DragonsDen_Cavern_Movement_EstelleApproachPlayer
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_EstelleBefore, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_EventScript_EstelleBeaten
+	applymovement LOCALID_DRAGONSDEN_ESTELLE, DragonsDen_Cavern_Movement_EstelleStandAside
+	waitmovement 0
+	applymovement LOCALID_DRAGONSDEN_ATLAS, DragonsDen_Cavern_Movement_AtlasApproachPlayer
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_AtlasBefore, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_EventScript_AtlasBeaten
+	applymovement LOCALID_DRAGONSDEN_ATLAS, DragonsDen_Cavern_Movement_AtlasStandAside
+	waitmovement 0
+	applymovement LOCALID_DRAGONSDEN_DUBU, DragonsDen_Cavern_Movement_DubuApproachPlayer
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_DubuBefore, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_EventScript_DubuBeaten
+	applymovement LOCALID_DRAGONSDEN_DUBU, DragonsDen_Cavern_Movement_DubuStandAside
+	waitmovement 0
+	applymovement LOCALID_DRAGONSDEN_ERA, DragonsDen_Cavern_Movement_EraApproachPlayer
+	waitmovement 0
+	msgbox DragonsDen_Cavern_Text_EraBefore, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_EventScript_EraBeaten
+	msgbox DragonsDen_Cavern_Text_EraReadyForSpenser, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DRAGONSDEN_ERA, DragonsDen_Cavern_Movement_EraStandAside
+	waitmovement 0
+	setobjectxyperm LOCALID_DRAGONSDEN_AIMI, 28, 37
+	setobjectxyperm LOCALID_DRAGONSDEN_ATLAS, 28, 38
+	setobjectxyperm LOCALID_DRAGONSDEN_ESTELLE, 34, 37
+	setobjectxyperm LOCALID_DRAGONSDEN_DUBU, 34, 38
+	setobjectmovementtype LOCALID_DRAGONSDEN_ATLAS, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_DRAGONSDEN_DUBU, MOVEMENT_TYPE_FACE_LEFT
+	setvar VAR_TERA_B2B_COUNTER, 6
+	release
+	end
+
+DragonsDen_Cavern_EventScript_B2B2B2B2BAdjustPlayerLeft::
+	applymovement OBJ_EVENT_ID_PLAYER, DragonsDen_Cavern_Movement_AdjustPlayerLeft
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_AdjustPlayerLeft::
+	walk_right
+	face_down
+	step_end
+
+DragonsDen_Cavern_EventScript_B2B2B2B2BAdjustPlayerRight::
+	applymovement OBJ_EVENT_ID_PLAYER, DragonsDen_Cavern_Movement_AdjustPlayerRight
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_AdjustPlayerRight::
+	walk_left
+	face_down
+	step_end
+
+DragonsDen_Cavern_Movement_AimiApproachPlayer::
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+DragonsDen_Cavern_Movement_AimiStandAside::
+	walk_left
+	walk_left
+	walk_left
+	face_right
+	step_end
+
+DragonsDen_Cavern_Movement_EstelleApproachPlayer::
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+DragonsDen_Cavern_Movement_EstelleStandAside::
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+
+DragonsDen_Cavern_Movement_AtlasApproachPlayer::
+	walk_up
+	walk_right
+	face_up
+	step_end
+
+DragonsDen_Cavern_Movement_AtlasStandAside::
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	face_right
+	step_end
+
+DragonsDen_Cavern_Movement_DubuApproachPlayer::
+	walk_up
+	walk_left
+	face_up
+	step_end
+
+DragonsDen_Cavern_Movement_DubuStandAside::
+	walk_right
+	walk_down
+	walk_right
+	walk_right
+	face_left
+	step_end
+
+DragonsDen_Cavern_Movement_EraApproachPlayer::
+	walk_up
+	step_end
+
+DragonsDen_Cavern_Movement_EraStandAside::
+	walk_down
+	face_up
+	step_end
+
+DragonsDen_Cavern_EventScript_Aimi::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_AimiDone, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_AimiBefore:
+	.string "Really? You're the challenger Clair is\n"
+	.string "so worried about?\p"
+	.string "Sigh... I guess I'll have to make do and\n"
+	.string "use you as a warm up then.$"
+
+DragonsDen_Cavern_EventScript_AimiBeaten:
+	.string "Nyaah! Don't you dare think that means\n"
+	.string "anything! I just wasn't being serious!$"
+
+DragonsDen_Cavern_Text_AimiDone:
+	.string "I bet you think you're real cool right\n"
+	.string "now, don't you?\p"
+	.string "Well... maybe so! But Clair is still the\n"
+	.string "coolest!$"
+
+DragonsDen_Cavern_EventScript_Estelle::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_EstelleDone, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_EstelleBefore:
+	.string "You're not half bad, but don't get\n"
+	.string "comfortable just yet.\p"
+	.string "You'll need to do better than that for\n"
+	.string "me to even break a sweat.$"
+
+DragonsDen_Cavern_EventScript_EstelleBeaten:
+	.string "But...\n"
+	.string "But I was going to become champion...$"
+
+DragonsDen_Cavern_Text_EstelleDone:
+	.string "You're right. Reaching the top won't be\n"
+	.string "that easy.\p"
+	.string "If it were, none of us would bother\n"
+	.string "chasing it in the first place.$"
+
+DragonsDen_Cavern_EventScript_Atlas::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_AtlasDone, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_AtlasBefore:
+	.string "You battle well now, but what about\n"
+	.string "when the pressure amps up?\p"
+	.string "Can you still perform with the weight of\n"
+	.string "the world on your shoulders?$"
+
+DragonsDen_Cavern_EventScript_AtlasBeaten:
+	.string "I see. Your power is truly an unwavering\n"
+	.string "force after all.$"
+
+DragonsDen_Cavern_Text_AtlasDone:
+	.string "You know, you seem so sure of yourself,\n"
+	.string "it's almost unnerving.\p"
+	.string "I feel as though you've calculated your\n"
+	.string "victory before we've even started.$"
+
+DragonsDen_Cavern_EventScript_Dubu::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_DubuDone, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_DubuBefore:
+	.string "Dubu, Dubu!$"
+
+DragonsDen_Cavern_EventScript_DubuBeaten:
+	.string "Du... bu.$"
+
+DragonsDen_Cavern_Text_DubuDone:
+	.string "Dubu. Dubu, Dubu Dubu, Dubu.$"
+
+DragonsDen_Cavern_EventScript_Era::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_EraDone, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_Text_EraChallengedToB2B2B2B2B:
+	.string "Wait.\p"
+	.string "I know why you're here.\p"
+	.string "The only outsiders permitted to enter\n"
+	.string "are trainers who have beaten CLAIR.\p"
+	.string "Sorry, but we're going to have to test\n"
+	.string "you once more.\p"
+	.string "It's easier this way than trying to\n"
+	.string "convince CLAIR she's wrong. Trust me.\p"
+	.string "So then, champion-to-be... It's five\n"
+	.string "versus one. Still fancy your odds here?$"
+
+DragonsDen_Cavern_Text_DeclinedB2B2B2B2B:
+	.string "...\p"
+	.string "Oh. Okay.\p"
+	.string "Sorry, I just- I thought the trainer\n"
+	.string "that beat CLAIR would have a bit more\l"
+	.string "confidence than that.$"
+
+DragonsDen_Cavern_Text_AcceptedB2B2B2B2B:
+	.string "I'm impressed. Most people would back\n"
+	.string "down in your position.\p"
+	.string "Then let us commence the test at once.$"
+
+DragonsDen_Cavern_Text_EraBefore:
+	.string "You beat all four of the others...\p"
+	.string "But that means nothing unless all five\n"
+	.string "of us are down.\p"
+	.string "Prepare yourself for the fifth and\n"
+	.string "final hurdle!$"
+
+DragonsDen_Cavern_EventScript_EraBeaten:
+	.string "N-no way...$"
+
+DragonsDen_Cavern_Text_EraDone:
+	.string "That old man out front...\n"
+	.string "Did you deal with him yet?$"
+
+DragonsDen_Cavern_Text_EraReadyForSpenser:
+	.string "To be honest, I'm sort of relieved.\p"
+	.string "It's not my way of doing things to gang\n"
+	.string "up on one person this way, but now not\l"
+	.string "even CLAIR can dispute your potential.\p"
+	.string "...\p"
+	.string "Although... there's one more thing.\p"
+	.string "There's some pushy old man in front of\n"
+	.string "the den that said he wanted to see you.\p"
+	.string "It's not part of the official test,\n"
+	.string "but...\p"
+	.string "Could you please deal with him? He's so\n"
+	.string "stubborn, we can't get him to leave...$"
+
+@SPENSER 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+DragonsDen_Cavern_EventScript_Spenser::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_SPENSER, DragonsDen_Cavern_EventScript_SpenserAlreadyDefeated
+	playbgm MUS_B_PALACE, TRUE
+	goto_if_set FLAG_TALKED_DRAGONSDEN_SPENSER, DragonsDen_Cavern_EventScript_SpenserPostIntro
+	setflag FLAG_TALKED_DRAGONSDEN_SPENSER
+	msgbox DragonsDen_Cavern_Text_SpenserIntro, MSGBOX_DEFAULT
+	goto DragonsDen_Cavern_EventScript_SpenserPostIntro
+	end
+
+DragonsDen_Cavern_EventScript_SpenserPostIntro::
+	msgbox DragonsDen_Cavern_Text_SpenserPostIntro, MSGBOX_DEFAULT
+	dynmultipush DragonsDen_Cavern_Text_One, 0
+	dynmultipush DragonsDen_Cavern_Text_Two, 1
+	dynmultipush DragonsDen_Cavern_Text_Three, 2
+	dynmultipush DragonsDen_Cavern_Text_Four, 3
+	dynmultipush DragonsDen_Cavern_Text_Five, 4
+	dynmultipush DragonsDen_Cavern_Text_Six, 5
+	dynmultipush DragonsDen_Cavern_Text_Exit, 6
+	dynmultistack 2, 2, FALSE, 5, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, DragonsDen_Cavern_EventScript_SpenserOneTeraFight
+	case 1, DragonsDen_Cavern_EventScript_SpenserTwoTeraFight
+	case 2, DragonsDen_Cavern_EventScript_SpenserThreeTeraFight
+	case 3, DragonsDen_Cavern_EventScript_SpenserFourTeraFight
+	case 4, DragonsDen_Cavern_EventScript_SpenserFiveTeraFight
+	case 5, DragonsDen_Cavern_EventScript_SpenserSixTeraFight
+	case 6, DragonsDen_Cavern_EventScript_SpenserDeclined
+	case MULTI_B_PRESSED, DragonsDen_Cavern_EventScript_SpenserDeclined
+
+DragonsDen_Cavern_EventScript_SpenserDeclined::
+	msgbox DragonsDen_Cavern_Text_SpenserDeclined, MSGBOX_DEFAULT
+	closemessage
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserAlreadyDefeated::
+	msgbox DragonsDen_Cavern_Text_SpenserAlreadyDefeated, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserOneTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserOnlyOneTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserNoReward, MSGBOX_DEFAULT
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserTwoTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserTwoToFiveTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserNormalReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserThreeTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserTwoToFiveTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserNormalReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 3
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserFourTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserTwoToFiveTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserNormalReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 5
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserFiveTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserTwoToFiveTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserNormalReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 7
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_SpenserSixTeraFight::
+	msgbox DragonsDen_Cavern_Text_SpenserSixTera, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
+	msgbox DragonsDen_Cavern_Text_SpenserFullReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 10
+	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 30, DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft
+	call_if_ge VAR_TEMP_0, 31, DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight
+	setflag FLAG_DEFEATED_SPENSER
+	fadedefaultbgm
+	release
+	end
+
+DragonsDen_Cavern_EventScript_MoveSpenserPlayerLeft::
+	applymovement LOCALID_DRAGONSDEN_SPENSER, DragonsDen_Cavern_Movement_MoveSpenserPlayerLeft
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_MoveSpenserPlayerLeft::
+	walk_right
+	face_left
+	step_end
+
+DragonsDen_Cavern_EventScript_MoveSpenserPlayerMiddleOrRight::
+	applymovement LOCALID_DRAGONSDEN_SPENSER, DragonsDen_Cavern_Movement_MoveSpenserPlayerMiddleOrRight
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_MoveSpenserPlayerMiddleOrRight::
+	walk_left
+	face_right
+	step_end
+
+
+
+
+DragonsDen_Cavern_Text_SpenserIntro:
+	.string "Oho!\p"
+	.string "It's you!\p"
+	.string "I knew it would be. I can sense a strong\n"
+	.string "spirit from miles away.\p"
+	.string "...\p"
+	.string "What's that?\p"
+	.string "No, don't be ridiculous. I'm not part of\n"
+	.string "whatever silly scheme that Clair girl\l"
+	.string "likes to call a test of character.\p"
+	.string "I'm here of my own accord.\p"
+	.string "I am Spenser, head of the BATTLE\n"
+	.string "PALACE.\p"
+	.string "SPENSER: Trainers are far too obsessed\n"
+	.string "with perfect strategy these days.\p"
+	.string "They forget that in the heat of battle,\n"
+	.string "those who can think on their feet and\l"
+	.string "trust their minds are synched with\l"
+	.string "their POKéMON used to reign supreme.$"
+
+DragonsDen_Cavern_Text_SpenserPostIntro:
+	.string "I came here to wait because I believed\n"
+	.string "you thought the same as me.\p"
+	.string "You want my challenge, do you?\n"
+	.string "Then here are my terms.\p"
+	.string "Pick a number from one to six.\n"
+	.string "The higher the number you pick,\l"
+	.string "the more POKéMON I'll trust to use\l"
+	.string "terastallization of their own accord,\l"
+	.string "and the bigger your reward will be.\p"
+	.string "If you trust your POKéMON, prove it to\n"
+	.string "me here and now!$"
+
+DragonsDen_Cavern_Text_SpenserDeclined:
+	.string "Gwahahahaha! I have nothing to fear!\n"
+	.string "Come back when you have some gusto!$"
+
+DragonsDen_Cavern_Text_SpenserBeaten:
+	.string "Ah... Now this is something else...$"
+
+DragonsDen_Cavern_Text_SpenserOnlyOneTera:
+	.string "Hm! You're wimpier than I expected, but\n"
+	.string "fine.\p"
+	.string "Come at me with everything you and your\n"
+	.string "POKéMON have! Kaaah!$"
+
+DragonsDen_Cavern_Text_SpenserTwoToFiveTera:
+	.string "Hm! Good answer! I knew I was right\n"
+	.string "about you!\p"
+	.string "Come at me with everything you and your\n"
+	.string "POKéMON have! Kaaah!$"
+
+DragonsDen_Cavern_Text_SpenserSixTera:
+	.string "Grahaha! Now you're just being cocky!\n"
+	.string "Not that I mind at all!\p"
+	.string "Come at me with everything you and your\n"
+	.string "POKéMON have! Kaaah!$"
+
+DragonsDen_Cavern_Text_SpenserNoReward:
+	.string "Well, you won. Not that you deserve\n"
+	.string "anything for your victory, given how\l"
+	.string "little belief you've shown in your\l"
+	.string "POKéMON. How shameful...\p"
+	.string "Grahaha! Only joking. A win is a win.\p"
+	.string "I lost and you won. That's all there is\n"
+	.string "to it.$"
+
+DragonsDen_Cavern_Text_SpenserNormalReward:
+	.string "Hm! You've some courage in you, that's\n"
+	.string "for sure.\p"
+	.string "Though there's room for improvement,\n"
+	.string "the bond between you and your POKéMON\l"
+	.string "is still worthy of some praise.\p"
+	.string "Well? Don't just stand there, take this\n"
+	.string "with you!$"
+
+DragonsDen_Cavern_Text_SpenserFullReward:
+	.string "I'm beat! After such a sound thrashing,\n"
+	.string "there's nothing more for me to say.\p"
+	.string "Go on. Take this whole lot with you! It's\n"
+	.string "been a while since I fought someone\l"
+	.string "with as much vigor as you!$"
+
+DragonsDen_Cavern_Text_SpenserTakeTheFinalTest:
+	.string "I believe we're done here. Take the old\n"
+	.string "man's test when you're ready.\p"
+	.string "If you're serious about becoming\n"
+	.string "strong, then you'd better give it all\l"
+	.string "you've got! No half assing it!$"
+
+DragonsDen_Cavern_Text_SpenserAlreadyDefeated:
+	.string "What? Still here? Time doesn't grow on\n"
+	.string "trees, you know.\p"
+	.string "Do something useful with yourself!\n"
+	.string "Grahaha!$"
+
+DragonsDen_Cavern_Text_One:
+	.string "One$"
+DragonsDen_Cavern_Text_Two:
+	.string "Two$"
+DragonsDen_Cavern_Text_Three:
+	.string "Three$"
+DragonsDen_Cavern_Text_Four:
+	.string "Four$"
+DragonsDen_Cavern_Text_Five:
+	.string "Five$"
+DragonsDen_Cavern_Text_Six:
+	.string "Six$"
+DragonsDen_Cavern_Text_Exit:
+	.string "Exit$"

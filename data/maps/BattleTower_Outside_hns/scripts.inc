@@ -1748,7 +1748,6 @@ BattleTower_Outside_EventScript_ChallengedByDahliaPostIntro::
 
 BattleTower_Outside_EventScript_DahliaBattleNormal::
 	msgbox BattleTower_Outside_Text_DahliaBattleNormal, MSGBOX_DEFAULT
-	closemessage
 	trainerbattle_no_intro TRAINER_DAHLIA_NORMAL, BattleTower_Outside_Text_DahliaWin
 	setweather WEATHER_NONE
 	msgbox BattleTower_Outside_Text_DahliaNormalAfter, MSGBOX_DEFAULT
@@ -1770,7 +1769,6 @@ BattleTower_Outside_EventScript_DahliaBattleNormal::
 
 BattleTower_Outside_EventScript_DahliaBattleHard::
 	msgbox BattleTower_Outside_Text_DahliaBattleHard, MSGBOX_DEFAULT
-	closemessage
 	trainerbattle_no_intro TRAINER_DAHLIA_HARD, BattleTower_Outside_Text_DahliaWin
 	setweather WEATHER_NONE
 	msgbox BattleTower_Outside_Text_DahliaHardAfter, MSGBOX_DEFAULT

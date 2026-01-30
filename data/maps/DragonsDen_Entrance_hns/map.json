@@ -6,13 +6,13 @@
   "region_map_section": "MAPSEC_DRAGONS_DEN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_UNDERGROUND",
-  "allow_cycling": true,
-  "allow_escaping": true,
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SAGE",
@@ -29,15 +29,54 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
-      "x": 3,
-      "y": 5,
+      "x": 60,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_sight_or_berry_tree_id": "5",
       "script": "DragonsDen_Entrance_EventScript_Cybil",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 48,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "DragonsDen_Entrance_EventScript_Debra",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DragonsDen_Entrance_EventScript_Kim",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_F",
+      "x": 28,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "DragonsDen_Entrance_EventScript_Shego",
       "flag": "0"
     }
   ],
@@ -69,6 +108,20 @@
       "elevation": 0,
       "dest_map": "MAP_DRAGONS_DEN_CAVERN",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 61,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_DRAGONS_DEN_ENTRANCE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_DRAGONS_DEN_CAVERN",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [
@@ -80,9 +133,25 @@
       "var": "VAR_BLACKTHORN_CITY_STATE",
       "var_value": "1",
       "script": "DragonsDen_Entrance_Trigger_Sage"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TERA_B2B_COUNTER",
+      "var_value": "4",
+      "script": "DragonsDen_Entrance_EventScript_B2B"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TERA_B2B_COUNTER",
+      "var_value": "4",
+      "script": "DragonsDen_Entrance_EventScript_B2B"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

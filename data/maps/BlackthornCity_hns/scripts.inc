@@ -26,6 +26,8 @@ BlackthornCity_OnFrame::
 BlackthornCity_EventScript_CityEnter:: 
 	setflag FLAG_VISITED_BLACKTHORN_CITY
 	clearflag FLAG_HIDE_ROUTE45_POTTER
+	clearflag FLAG_TALKED_DRAGONSDEN_SPENSER
+	clearflag FLAG_DEFEATED_SPENSER
 	setvar VAR_POTTER_STATE, 1
 	callnative SetTimeBasedEncounters
 	end
