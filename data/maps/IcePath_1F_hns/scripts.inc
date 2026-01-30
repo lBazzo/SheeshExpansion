@@ -73,10 +73,17 @@ IcePath_Movement_PlayerJump:
 	step_end
 
 IcePath_Movement_KimonoSlide:
-	slide_down
-	slide_down
-	slide_down
-	slide_down
+	@slide_down
+	@slide_down
+	@slide_down
+	@slide_down
+	@walk_in_place_faster_down
+	lock_anim
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	unlock_anim
 	walk_in_place_fast_down
 	face_up
 	walk_in_place_fast_up
