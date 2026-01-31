@@ -42,7 +42,7 @@ VioletCity_Gym_EventScript_Falkner::
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
 	giveitem ITEM_HEART_SCALE, 4
-	@giveitem ITEM_TM_DOUBLE_TEAM
+	giveitem ITEM_TM_DUAL_WINGBEAT
 	msgbox VioletGym_Text_Falkner_TMExplain, MSGBOX_DEFAULT
 	setvar VAR_VIOLET_CITY_STATE, 3
 	setrespawn HEAL_LOCATION_VIOLET_CITY
@@ -88,10 +88,11 @@ VioletGym_Text_Falkner_BadgeExplain:
 VioletGym_Text_Falkner_TMExplain:
 	.string "By using a TM, a POKéMON will\n"
 	.string "instantly learn a new move.\p"
-	.string "TM32 contains DOUBLE TEAM.\p"
-	.string "It increase a POKéMON's evasion.\p"
-	.string "In other words, your POKéMON\n"
-	.string "will be harder to hit.$"
+	.string "TM10 contains Dual Wingbeat. It hits\n"
+	.string "the opponent twice in one turn.\p"
+	.string "It's useful for all sorts of things, like\n"
+	.string "getting around your opponent's Focus\l"
+	.string "Sash, for example.$"
 
 VioletGym_Text_Falkner_AfterFight:
 	.string "There are POKéMON GYMS in cities\n"
@@ -142,7 +143,7 @@ VioletGym_Text_BirdKeeperAbe_After:
 VioletGym_Text_GymGuide_Intro:
 	.string "Hey! What's up? I'm no trainer,\n"
 	.string "but I can give some advice!\p"
-	.string "Believe me! If you believe, a\n"
+	.string "Believe! If you believe, a\n"
 	.string "championship dream can come true!$"
 
 VioletGym_Text_GymGuide_Win:

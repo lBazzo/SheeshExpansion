@@ -9,7 +9,6 @@ VioletCity_Pond_EventScript_Unown::
 	faceplayer
 	playmoncry SPECIES_UNOWN, CRY_MODE_NORMAL
 	msgbox VioletCity_Pond_Text_Unown, MSGBOX_DEFAULT
-	delay 20
 	waitmoncry
 	applymovement LOCALID_UNOWN, Common_Movement_FaceDown
 	waitmovement 0
@@ -153,3 +152,56 @@ VioletCity_Pond_Text_HPTutorFriend:
 	.string "Do come and see us again, won't you?\p"
 	.string "UNOWN and I consider you our friend.\n"
 	.string "Um- that's okay with you, right?$"
+
+VioletCity_Pond_EventScript_Wattrel::
+	lock
+	faceplayer
+	playmoncry SPECIES_WATTREL, CRY_MODE_NORMAL
+	msgbox VioletCity_Pond_Text_Wattrel, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+VioletCity_Pond_Text_Wattrel:
+	.string "'Munch', 'Crunch', 'Munch', 'Crunch'\p"
+	.string "Wattrel: Watt?$"
+
+VioletCity_Pond_EventScript_BirdFeeder::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_BERRIES_BIRD_FEEDER, VioletCity_Pond_EventScript_BirdFeederPostBerries
+	msgbox VioletCity_Pond_Text_BirdFeederGiveBerries, MSGBOX_DEFAULT
+	giveitem ITEM_ORAN_BERRY, 900
+	giveitem ITEM_CHERI_BERRY, 900
+	giveitem ITEM_CHESTO_BERRY, 900
+	giveitem ITEM_PECHA_BERRY, 900
+	giveitem ITEM_RAWST_BERRY, 900
+	giveitem ITEM_ASPEAR_BERRY, 900
+	giveitem ITEM_PERSIM_BERRY, 900
+	msgbox VioletCity_Pond_Text_BirdFeederAfterBerriesGiven, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_BERRIES_BIRD_FEEDER
+	closemessage
+	release
+	end
+
+VioletCity_Pond_EventScript_BirdFeederPostBerries::
+	msgbox VioletCity_Pond_Text_BirdFeederAfterBerriesGiven, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+VioletCity_Pond_Text_BirdFeederGiveBerries:
+	.string "I like to come here to feed the birds.\n"
+	.string "They just love snacking on berries.\p"
+	.string "Would you like to feed them too? Or are\n"
+	.string "you just hungry?\p"
+	.string "It doesn't matter. Everyone who likes\n"
+	.string "berries can have some!$"
+
+VioletCity_Pond_Text_BirdFeederAfterBerriesGiven:
+	.string "The magic lady over there and I tend to\n"
+	.string "get on better with POKéMON than we do\l"
+	.string "with people.\p"
+	.string "I guess as a trainer, you must get along\n"
+	.string "well with both. That sounds fun!$"

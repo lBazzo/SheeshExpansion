@@ -315,7 +315,6 @@ NewBarkTown_Lab_EventScript_TriggerAideGivePotion::
 	msgbox NewBarkTown_Lab_Text_AideGivePotion, MSGBOX_DEFAULT
 	closemessage
 	giveitem ITEM_POTION
-	giveitem ITEM_POKEMON_BOX_LINK
 	giveitem ITEM_SUPER_CANDY
 	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_REPELLENT
@@ -457,7 +456,8 @@ NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	giveitem ITEM_POKE_BALL, 100
 	giveitem ITEM_EVERSTONE
 	giveitem ITEM_SUPER_ROD
-	giveitem ITEM_POKEMON_BOX_LINK	
+	giveitem ITEM_POKEMON_BOX_LINK
+	giveitem ITEM_ABILITY_CAPSULE, 900	
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FIRST_BALLS
 	setvar VAR_NEWBARKTOWN_LABSTATE, 6
