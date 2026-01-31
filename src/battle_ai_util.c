@@ -6019,9 +6019,11 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
         else
             percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum * 1000 / oppHp;
 
+        if (percentOpponentDamageTakenWithoutTera > percentAIDamageTakenWithoutTera)
+            outdamageBeforeTera = TRUE;
 
-
-
+        if (percentOpponentDamageTakenWithTera > percentAIDamageTakenWithTera)
+            outdamageAfterTera = TRUE;
 
 /*        
         if (takenWithoutTera[i].maximum >= aiHp)
@@ -6054,11 +6056,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
         if (dealtWithTera[i].maximum >= oppHp)
             percentOpponentDamageTakenWithTera = 1000;  
 */
-        if (percentOpponentDamageTakenWithoutTera > percentAIDamageTakenWithoutTera)
-            outdamageBeforeTera = TRUE;
 
-        if (percentOpponentDamageTakenWithTera > percentAIDamageTakenWithTera)
-            outdamageAfterTera = TRUE;
     }
 
     

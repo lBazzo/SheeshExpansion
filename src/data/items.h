@@ -1142,7 +1142,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Berry Juice"),
         .pluralName = ITEM_PLURAL_NAME("Berry Juice"),
-        .price = 100,
+        .price = 10,
         .holdEffect = HOLD_EFFECT_RESTORE_HP,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(

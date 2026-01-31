@@ -19,7 +19,7 @@ AzaleaTown_MapScript_UnsetLighthouseTooDarkFlag::
 	return
 
 AzaleaTown_EventScript_Trigger:: @flagheap
-	setflag FLAG_VISITED_AZALEA_TOWN
+	@setflag FLAG_VISITED_AZALEA_TOWN
 	setflag FLAG_HIDE_AZALEA_TOWN_SLOWPOKE
 	setflag FLAG_HIDE_KURT_2
 	setflag FLAG_HIDE_ILEX_FOREST_APPRENTICE
@@ -243,6 +243,7 @@ AzaleaTown_EventScript_BugsyAskForHelp::
 	removeobject LOCALID_AZALEA_TOWN_BUGSY
 	setvar VAR_VIOLET_CITY_STATE, 6
 	setflag FLAG_HIDE_AZALEA_BUGSY
+	setflag FLAG_VISITED_AZALEA_TOWN
 	release
 	end
 

@@ -200,7 +200,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	call Common_EventScript_SetGymTrainers
 	msgbox CeruleanGym_Text_MistyTm, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 4
-	giveitem ITEM_TM_WATER_PULSE
+	giveitem ITEM_TM_FLIP_TURN
 	setvar VAR_AZALEA_TOWN_STATE, 5
 	closemessage
 	setflag FLAG_HIDE_AZALEA_TOWN_FARFETCHD

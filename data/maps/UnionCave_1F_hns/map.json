@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIREBREATHER",
-      "x": 5,
-      "y": 46,
+      "x": 3,
+      "y": 58,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 7,
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SUPER_NERD",
-      "x": 5,
-      "y": 47,
+      "x": 4,
+      "y": 58,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 5,
@@ -120,8 +120,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 22,
-      "y": 55,
+      "x": 1,
+      "y": 58,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -381,7 +381,5 @@
       "script": "UnionCave_1F_Trigger_Monview"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }

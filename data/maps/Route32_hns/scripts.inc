@@ -176,6 +176,7 @@ Route32_EventScript_FriedaCompleted::
 Route32_EventScript_BaldingMan::
 	lock
 	faceplayer
+	goto_if_unset FLAG_RECEIVED_EVIOLITE, Route32_EventScript_BaldingManCheck
 	msgbox Route32_Text_CooltrainerM_Experiences, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_ROUTE32_BALDINGMAN, DIR_EAST
@@ -213,7 +214,7 @@ Route32_EventScript_BaldingManCheck::
 	goto_if_unset FLAG_DEFEATED_VIOLET_GYM, Route32_EventScript_BaldingManGym
 	goto_if_unset FLAG_RECEIVED_SPINDA, Route32_EventScript_BaldingManEgg
 	msgbox Route32_Text_CooltrainerM_HaveThisSeed, MSGBOX_DEFAULT
-	giveitem ITEM_MIRACLE_SEED
+	giveitem ITEM_EVIOLITE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
 	setvar VAR_VIOLET_CITY_STATE, 5
@@ -256,6 +257,12 @@ Route32_EventScript_GreatBallII::
 	end
 Route32_EventScript_SuperPotion::
 	finditem ITEM_SUPER_POTION
+	end
+Route32_EventScript_Reflect::
+	finditem ITEM_TM_REFLECT
+	end
+Route32_EventScript_LightScreen::
+	finditem ITEM_TM_LIGHT_SCREEN
 	end
 
 Route32_EventScript_Sign1::
@@ -336,8 +343,8 @@ Route32_Text_CooltrainerM_HaveThisSeed:
 	.string "The training at the GYM must have\p"
 	.string "been especially helpful. As a\n"
 	.string "souvenir of VIOLET CITY, take this.\p"
-	.string "It increases the power of GRASS-\n"
-	.string "type moves.$"
+	.string "It increases the toughness of POKéMON\n"
+	.string "that aren't fully evolved.$"
 
 Route32_Text_CooltrainerM_Experiences:
 	.string "Your experiences in VIOLET CITY\n"

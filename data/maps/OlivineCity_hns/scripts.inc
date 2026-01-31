@@ -26,7 +26,7 @@ OlivineCity_MapScript_UnsetLighthouseTooDarkFlag::
 OlivineCity_EventScript_CityTrigger:: @FLAGHEAP
 	setflag FLAG_HIDE_OLIVINE_CITY_GYM_LEADERS
 	setflag FLAG_HIDE_OLIVINE_SILVER
-	setflag FLAG_VISITED_OLIVINE_CITY
+	@setflag FLAG_VISITED_OLIVINE_CITY
 	clearflag FLAG_SAFARI_ZONE_WEST_EXPANSION
 	clearflag FLAG_SAFARI_ZONE_EAST_EXPANSION
 	clearflag FLAG_HIDE_BATTLEFRONTIER_ENGINEER
@@ -69,6 +69,7 @@ OlivineCity_EventScript_SilverTrigger::
 	waitmovement 0
 	setvar VAR_OLIVINE_CITY_STATE, 2
 	setflag FLAG_HIDE_OLIVINE_SILVER
+	setflag FLAG_VISITED_OLIVINE_CITY
 	removeobject LOCALID_OLIVINE_SILVER
 	fadedefaultbgm
 	release
