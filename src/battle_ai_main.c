@@ -1488,8 +1488,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_GEOMANCY:
             if (AI_IsAbilityOnSide(battlerDef, ABILITY_UNAWARE))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
-            if (gBattleMons[battlerAtk].statStages[STAT_SPATK] >= MAX_STAT_STAGE || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL))
-                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            //if (gBattleMons[battlerAtk].statStages[STAT_SPATK] >= MAX_STAT_STAGE || !HasMoveWithCategory(battlerAtk, DAMAGE_CATEGORY_SPECIAL))
+            //    ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPEED))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             else if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPDEF))
@@ -6178,8 +6178,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         //ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF, move));
         break;
     case EFFECT_GEOMANCY:
-        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB)
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_POWER_HERB
+        && (!CanTargetFaintAi(battlerDef, battlerAtk)))
             ADJUST_SCORE(GOOD_EFFECT);
+        else
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+        break;
     case EFFECT_QUIVER_DANCE:
         //ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED, move));
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK, move));

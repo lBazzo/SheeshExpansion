@@ -2889,3 +2889,33 @@ AI_SINGLE_BATTLE_TEST("Checking AI is calcing damage wrong")
         TURN { SCORE_EQ_VAL(opponent, MOVE_HYDRO_PUMP, 108); }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI scores Geomancy correctly")
+{
+    u32 playerKillingMoveChecker;
+    u32 opponentItem;
+
+    PARAMETRIZE { playerKillingMoveChecker = MOVE_DRAGON_RAGE; opponentItem = ITEM_POWER_HERB; }
+    PARAMETRIZE { playerKillingMoveChecker = MOVE_SPLASH; opponentItem = ITEM_NONE; }
+    PARAMETRIZE { playerKillingMoveChecker = MOVE_SPLASH; opponentItem = ITEM_POWER_HERB; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(playerKillingMoveChecker, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_GEOMANCY, MOVE_CELEBRATE); Item(opponentItem); HP(40); }
+    } WHEN {
+        if (playerKillingMoveChecker == MOVE_DRAGON_RAGE && opponentItem == ITEM_POWER_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GEOMANCY, 80); }
+        }
+        else if (playerKillingMoveChecker == MOVE_SPLASH && opponentItem == ITEM_NONE)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GEOMANCY, 80); }
+        }
+        else if (playerKillingMoveChecker == MOVE_SPLASH && opponentItem == ITEM_POWER_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GEOMANCY, 109); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_GEOMANCY, 80); }
+        }
+    }
+}
