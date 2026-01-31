@@ -64,7 +64,9 @@
     F(WATER_PULSE) \
     F(WEATHER_BALL) \
     F(WILL_O_WISP) \
-    F(X_SCISSOR) 
+    F(X_SCISSOR) \
+    F(HEAL_BELL) \
+    F(AROMATHERAPY)
 
 #define FOREACH_HM(F) \
     F(CUT) \

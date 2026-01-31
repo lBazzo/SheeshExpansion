@@ -2916,6 +2916,37 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveTripleAxel::
 	release
 	end
 
+CherryGrove_Pokecenter_EventScript_TMClerkHealBell::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantHealBell, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveHealBell
+	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkGiveHealBell::
+	checkitem ITEM_HEART_SCALE, 1
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
+	giveitem ITEM_TM_HEAL_BELL
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkAromatherapy::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantAromatherapy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveAromatherapy
+	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkGiveAromatherapy::
+	checkitem ITEM_HEART_SCALE, 1
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
+	giveitem ITEM_TM_AROMATHERAPY
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
 
 @OTHER EVENTS
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -3048,6 +3079,8 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs::
 	giveitem ITEM_TM_PSYCHIC
 	giveitem ITEM_TM_FOCUS_PUNCH
 	giveitem ITEM_TM_BODY_PRESS
+	giveitem ITEM_TM_HEAL_BELL
+	giveitem ITEM_TM_AROMATHERAPY
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_PRYCE
 	closemessage
 	releaseall
@@ -3393,4 +3426,12 @@ CherryGrove_Pokecenter_Text_TMClerkWantWeatherBall::
 
 CherryGrove_Pokecenter_Text_TMClerkWantTripleAxel::
 	.string "You want the TRIPLE AXEL TM?\n"
+	.string "It'll cost you one HEART SCALE, okay?$"
+
+CherryGrove_Pokecenter_Text_TMClerkWantHealBell::
+	.string "You want the HEAL BELL TM?\n"
+	.string "It'll cost you one HEART SCALE, okay?$"
+
+CherryGrove_Pokecenter_Text_TMClerkWantAromatherapy::
+	.string "You want the AROMATHERAPY TM?\n"
 	.string "It'll cost you one HEART SCALE, okay?$"
