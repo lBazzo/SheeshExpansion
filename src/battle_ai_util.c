@@ -6000,29 +6000,29 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     {
 
         if (takenWithoutTera[i].maximum >= aiHp)
-            percentAIDamageTakenWithoutTera = 1000;
+            percentAIDamageTakenWithoutTera = aiHp /* * 1000 */;
         else 
-            percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum * 1000 / aiHp;
+            percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum/* * 1000 */ / aiHp;
 
         if (takenWithTera[i].maximum >= aiHp)
-            percentAIDamageTakenWithTera = 1000;    
+            percentAIDamageTakenWithTera = aiHp /* * 1000 */;    
         else
-            percentAIDamageTakenWithTera = takenWithTera[i].maximum * 1000 / aiHp;
+            percentAIDamageTakenWithTera = takenWithTera[i].maximum /* * 1000 */ / aiHp;
 
         if (dealtWithoutTera[i].maximum >= oppHp)
-            percentOpponentDamageTakenWithoutTera = 1000;  
+            percentOpponentDamageTakenWithoutTera = oppHp /* * 1000 */;  
         else
-            percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum * 1000 / oppHp;
+            percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum /* * 1000 */ / oppHp;
 
         if (dealtWithTera[i].maximum >= oppHp)
-            percentOpponentDamageTakenWithTera = 1000;
+            percentOpponentDamageTakenWithTera = oppHp/* * 1000 */;
         else
-            percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum * 1000 / oppHp;
+            percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum /* * 1000 */ / oppHp;
 
-        if (percentOpponentDamageTakenWithoutTera > percentAIDamageTakenWithoutTera)
+        if (percentOpponentDamageTakenWithoutTera >= percentAIDamageTakenWithoutTera)
             outdamageBeforeTera = TRUE;
 
-        if (percentOpponentDamageTakenWithTera > percentAIDamageTakenWithTera)
+        if (percentOpponentDamageTakenWithTera >= percentAIDamageTakenWithTera)
             outdamageAfterTera = TRUE;
 
 /*        

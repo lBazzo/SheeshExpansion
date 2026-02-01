@@ -2919,3 +2919,16 @@ AI_SINGLE_BATTLE_TEST("AI scores Geomancy correctly")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly uses tera sometimes when it deals the same damage as player before and after tera seeing that as outdamaging with new tera edit")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TERA);
+        PLAYER(SPECIES_TYPHLOSION) { Moves(MOVE_HYPER_BEAM, MOVE_CELEBRATE); TeraType(TYPE_GRASS); }
+        OPPONENT(SPECIES_TYPHLOSION) { Moves(MOVE_HYPER_BEAM, MOVE_CELEBRATE); TeraType(TYPE_WATER); }
+    } WHEN {
+        TURN {  }
+    } SCENE {
+        MESSAGE("The opposing Typhlosion terastallized into the Water type!");
+    }
+}
