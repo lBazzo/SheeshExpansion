@@ -152,6 +152,8 @@ EcruteakCity_Theater_EventScript_Rocket::
 	call_if_eq VAR_FACING, DIR_SOUTH, EcruteakCity_Theater_EventScript_PostRocketTop
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox EcruteakCity_Theater_Text_KimonoRocket3, MSGBOX_DEFAULT
+	giveitem ITEM_EXPERT_BELT
+	msgbox EcruteakCity_Theater_Text_KimonoRocket4, MSGBOX_DEFAULT
 	closemessage	
 	setflag FLAG_HIDE_ECRUTEAK_CITY_BURNEDTOWERYOUNGSTER
 	setvar VAR_ECRUTEAK_CITY_THEATER, 2
@@ -214,8 +216,15 @@ EcruteakCity_Theater_Text_KimonoRocket3:
 	.string "to look for in people...\p"
 	.string "Ohoho! That was just me\n"
 	.string "talking to myself.\l"
-	.string "Never mind.$"
+	.string "Never mind.\p"
+	.string "But as you've been gracious enough to\n"
+	.string "help me out in my time of need, please\l"
+	.string "do allow me to repay you in kind.\p"
+	.string "Perhaps you will find some use for this\n"
+	.string "on your journey.$"
 
+EcruteakCity_Theater_Text_KimonoRocket4:
+	.string "Be seeing you, {PLAYER}.$"
 
 EcruteakCity_Theater_EventScript_KimonoGirl::
 	lock

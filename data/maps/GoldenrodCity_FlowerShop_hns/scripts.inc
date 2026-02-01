@@ -77,11 +77,12 @@ GoldenrodCity_FlowerShop_EventScript_AlreadyReceivedBerry::
 GoldenrodCity_FlowerShop_EventScript_MintOwner::
 	lock
 	faceplayer
-	goto_if_unset FLAG_BADGE04_GET, GoldenrodCity_FlowerShop_EventScript_NoSellMints
-	msgbox GoldenrodCity_FlowerShop_Text_Mints1, MSGBOX_DEFAULT
-	waitmessage
-	pokemart GoldenrodCity_FlowerShop_MintShop
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	@goto_if_unset FLAG_BADGE04_GET, GoldenrodCity_FlowerShop_EventScript_NoSellMints
+	msgbox GoldenrodCity_FlowerShop_Text_Mints2, MSGBOX_DEFAULT
+	@waitmessage
+	@pokemart GoldenrodCity_FlowerShop_MintShop
+	@msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -196,3 +197,48 @@ GoldenrodCity_FlowerShop_Text_FloriaYouBeatWhitney:
 
 GoldenrodCity_FlowerShop_Text_FloriaItWasAMon:
     .string "So it really was a POKéMON!$"
+
+GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_BADGE03_GET, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlGoBeatWhitney
+	goto_if_set FLAG_GOLDENROD_BERRIES_OBTAINED, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
+	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlHaveTheseBerries, MSGBOX_DEFAULT
+	giveitem ITEM_FIGY_BERRY, 10
+	giveitem ITEM_WIKI_BERRY, 10
+	giveitem ITEM_MAGO_BERRY, 10
+	giveitem ITEM_AGUAV_BERRY, 10
+	giveitem ITEM_IAPAPA_BERRY, 10
+	giveitem ITEM_ENIGMA_BERRY, 25
+	giveitem ITEM_LUM_BERRY, 900
+	giveitem ITEM_ROWAP_BERRY, 3
+	giveitem ITEM_JABOCA_BERRY, 3
+	giveitem ITEM_CUSTAP_BERRY, 1
+	setflag FLAG_GOLDENROD_BERRIES_OBTAINED
+	goto GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
+	end
+
+GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlGoBeatWhitney::
+	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlGoBeatWhitney, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven::
+	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlSpreadTheBerryLove, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_FlowerShop_Text_ManyBerryGirlGoBeatWhitney:
+	.string "I've got something yummy for your\n"
+	.string "tummy if you beat Whitney on your\l"
+	.string "runny, okay sonny or mummy?$"
+
+GoldenrodCity_FlowerShop_Text_ManyBerryGirlHaveTheseBerries:
+	.string "Many berries makes many people merry!\n"
+	.string "May you be merry with berries a plenty!$"
+
+GoldenrodCity_FlowerShop_Text_ManyBerryGirlSpreadTheBerryLove:
+	.string "Spread these fruits, plant those roots,\n"
+	.string "then loot them en route!$"

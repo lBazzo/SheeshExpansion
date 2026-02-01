@@ -111,8 +111,8 @@ GoldenrodCity_Gym_EventScript_WhitneyBadge::
 	setvar VAR_0x8008, 3
 	call Common_EventScript_SetGymTrainers
 	giveitem ITEM_HEART_SCALE, 4
-	@giveitem ITEM_TM_ATTRACT
-	msgbox GoldenrodCity_Gym_Text_WhitneyAttract, MSGBOX_DEFAULT
+	giveitem ITEM_TM_FACADE
+	msgbox GoldenrodCity_Gym_Text_WhitneyFacade, MSGBOX_DEFAULT
 	setvar VAR_GOLDENROD_CITY_STATE, 5
 	closemessage
 	release
@@ -194,11 +194,11 @@ GoldenrodCity_Gym_Text_WhitneyPlainBadge:
 	.string "DEFENSE.\p"
     .string "Oh, you can have this too!$"
 
-GoldenrodCity_Gym_Text_WhitneyAttract:
-    .string "It's ATTRACT! It makes full use of a\n"
-    .string "POKéMON's charm.\p"
-    .string "Isn't it just perfect for a cutie\n"
-    .string "like me?$"
+GoldenrodCity_Gym_Text_WhitneyFacade:
+    .string "It's Facade! That means you put on a\n"
+    .string "deceptive appearance for others.\p"
+    .string "Just like when I was pretending to cry\n"
+    .string "earlier, am I right? Hahahaha...$"
 
 GoldenrodCity_Gym_Text_WhitneyGoodCry:
     .string "Ah, that was a good cry!$"

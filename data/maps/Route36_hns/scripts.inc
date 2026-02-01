@@ -165,6 +165,10 @@ Route36_EventScript_Schoolboy::
 	msgbox Route36_Text_SchoolboyAlanAfter, MSGBOX_AUTOCLOSE
 	end
 
+Route36_EventScript_Item_Payback::
+	finditem ITEM_TM_PAYBACK
+	end
+
 Route36_EventScript_Sign::
 	lock
 	msgbox Route36_Text_Sign_RuinsNorth, MSGBOX_SIGN

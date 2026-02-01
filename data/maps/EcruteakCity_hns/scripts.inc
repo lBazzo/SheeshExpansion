@@ -295,8 +295,8 @@ EcruteakCity_EventScript_Vulpix::
 	release
 	end
 
-EcruteakCity_EventScript_Item_RareCandy::
-	finditem ITEM_RARE_CANDY
+EcruteakCity_EventScript_Item_WhiteHerb::
+	finditem ITEM_WHITE_HERB
 	end
 
 EcruteakCity_Text_Eevee:

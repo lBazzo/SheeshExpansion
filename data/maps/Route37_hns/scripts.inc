@@ -7,7 +7,9 @@ Route37_OnTransition:
 	callnative SetTimeBasedEncounters
 	end
 
-
+Route37_EventScript_Item_SafetyGoggles::
+	finditem ITEM_SAFETY_GOGGLES
+	end
 
 Route37_EventScript_TwinAnn::
 	trainerbattle_double TRAINER_ANN_AND_ANNE, Route37_Text_TwinsAnnAndAnne1_Seen, Route37_Text_TwinsAnnAndAnne1_Beaten, Route104_Text_GinaNotEnoughMons
@@ -44,7 +46,7 @@ Route37_EventScript_Sunny::
 	case 4, Route37_EventScript_SunnyNope
 	case 5, Route37_EventScript_SunnyNope
 	case 6, Route37_EventScript_SunnyNope
-	case 7 Route37_EventScript_SunnyCancel
+	case 7, Route37_EventScript_SunnyCancel
 	case MULTI_B_PRESSED, Route37_EventScript_SunnyCancel
 	closemessage
 	release

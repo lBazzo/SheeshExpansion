@@ -61,8 +61,8 @@ Route35_EventScript_Sign2::
 	release
 	end
 
-Route35_EventScript_Item_RockTomb::
-	finditem ITEM_TM_WILL_O_WISP
+Route35_EventScript_Item_LowKick::
+	finditem ITEM_TM_LOW_KICK
 	end
 
 Route35_EventScript_Item_Nugget::

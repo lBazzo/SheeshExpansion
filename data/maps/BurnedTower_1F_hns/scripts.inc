@@ -236,8 +236,8 @@ BurnedTower_1F_EventScript_Item_HpUp::
 	finditem ITEM_HP_UP
 	end
 
-BurnedTower_1F_EventScript_Item_Ether::
-	finditem ITEM_ETHER
+BurnedTower_1F_EventScript_Item_ShedShell::
+	finditem ITEM_SHED_SHELL
 	end
 
 BurnedTower_1FEusineText:

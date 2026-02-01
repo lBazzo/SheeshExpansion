@@ -80,6 +80,7 @@ GoldenrodCity_EventScript_Trigger:: @flagheap
 	clearflag FLAG_HIDE_GOLDENROD_CITY_LITTLEGIRL
 	clearflag FLAG_HIDE_GOLDENROD_CITY_AZURILL
 	clearflag FLAG_GOT_TYPE_BOOSTING_ITEMS
+	clearflag FLAG_GOLDENROD_BERRIES_OBTAINED
 
 	setvar VAR_BUG_CONTEST_STATE, 0
 	setvar VAR_KENYA, 0

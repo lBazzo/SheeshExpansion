@@ -737,7 +737,7 @@
 #define FLAG_HIDE_MAHOGANY_TOWN_FRONTIER_NPCS  0x29A // Unused Flag
 #define FLAG_HIDE_SAFARIZONEGATE_THORTON  0x29B // Unused Flag
 #define FLAG_HIDE_ROUTE45_POTTER  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
+#define FLAG_ITEM_ROUTE37_SAFETY_GOGGLES  0x29D // Unused Flag
 #define FLAG_HIDE_GOLDENROD_UNDERGROUND_LUCY  0x29E // Unused Flag
 #define FLAG_RECEIVED_MUSCLE_BAND  0x29F // Unused Flag
 #define FLAG_RECEIVED_WISE_GLASSES  0x2A0 // Unused Flag
@@ -745,8 +745,8 @@
 #define FLAG_DEFEATED_SPENSER  0x2A2 // Unused Flag
 #define FLAG_RECEIVED_BERRIES_BIRD_FEEDER  0x2A3 // Unused Flag
 #define FLAG_RECEIVED_EVIOLITE  0x2A4 // Unused Flag
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
-#define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
+#define FLAG_ITEM_ROUTE36_PAYBACK  0x2A5 // Unused Flag
+#define FLAG_GOLDENROD_BERRIES_OBTAINED  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
@@ -1318,12 +1318,12 @@
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_MAX_POTION                  0x4D5 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_REVIVE                      0x4D6 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_SMOKE_BALL                  0x4D7 
-#define FLAG_ITEM_ROUTE35_ROCK_TOMB                                 0x4D8 
+#define FLAG_ITEM_ROUTE35_LOW_KICK                                  0x4D8 
 #define FLAG_ITEM_ROUTE35_PARALYZE_HEAL                             0x4D9 
 #define FLAG_ITEM_ROUTE35_BIG_NUGGET                                0x4DA 
 #define FLAG_ITEM_NATIONAL_PARK_SOOTHE_BELL                         0x4DB 
 #define FLAG_ITEM_NATIONAL_PARK_TM_DIG                              0x4DC 
-#define FLAG_ITEM_ECRUTEAK_RARE_CANDY                               0x4DD 
+#define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 
 #define FLAG_ITEM_BELLCHIME_BIG_MUSHROOM                            0x4DE 
 #define FLAG_ITEM_TIN_TOWER_3F_FULL_HEAL                            0x4DF 
 #define FLAG_ITEM_TIN_TOWER_4F_ULTRA_BALL                           0x4E0 
@@ -1337,7 +1337,7 @@
 #define FLAG_ITEM_TIN_TOWER_8F_MAX_ELIXIR                           0x4E8 
 #define FLAG_ITEM_TIN_TOWER_8F_BIG_NUGGET                           0x4E9 
 #define FLAG_ITEM_BURNED_TOWER_1F_HP_UP                             0x4EA 
-#define FLAG_ITEM_BURNED_TOWER_1F_ETHER                             0x4EB 
+#define FLAG_ITEM_BURNED_TOWER_1F_SHED_SHELL                        0x4EB 
 #define FLAG_ITEM_BURNED_TOWER_B1F_TM_TAUNT                         0x4EC 
 #define FLAG_ITEM_BURNED_TOWER_B1F_ULTRA_BALL                       0x4ED 
 #define FLAG_ITEM_ROUTE38_LAX_INCENSE                               0x4EE 
