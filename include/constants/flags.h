@@ -749,8 +749,8 @@
 #define FLAG_GOT_GOLDENROD_BERRIES  0x2A6 // Unused Flag
 #define FLAG_DAYCARE_SITRUS_BERRIES_OBTAINED  0x2A7 // Unused Flag
 #define FLAG_GOT_NATURAL_GIFT_BERRIES  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
-#define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
+#define FLAG_GOT_UTILITY_UMBRELLA  0x2A9 // Unused Flag
+#define FLAG_GOT_LAGGING_TAIL_AND_IRON_BALL  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
 #define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
 #define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
@@ -1075,7 +1075,7 @@
 
 // Item Ball Flags 
 #define FLAG_ITEM_GARBAGEFLAG                                       0x3E8 // HnS ItemFlags Block 2
-#define FLAG_ITEM_ROUTE39_NUGGET                                    0x3E9
+#define FLAG_ITEM_ROUTE39_DRAINING_KISS                                    0x3E9
 #define FLAG_ITEM_ROUTE42_ULTRA_BALL                                0x3EA
 #define FLAG_ITEM_ROUTE42_SUPER_POTION                              0x3EB
 #define FLAG_ITEM_ROUTE42_MODEST_MINT                               0x3EC
@@ -1340,8 +1340,8 @@
 #define FLAG_ITEM_BURNED_TOWER_1F_SHED_SHELL                        0x4EB 
 #define FLAG_ITEM_BURNED_TOWER_B1F_TM_TAUNT                         0x4EC 
 #define FLAG_ITEM_BURNED_TOWER_B1F_ULTRA_BALL                       0x4ED 
-#define FLAG_ITEM_ROUTE38_LAX_INCENSE                               0x4EE 
-#define FLAG_ITEM_ROUTE39_TM_BRICK_BREAK                            0x4EF 
+#define FLAG_ITEM_ROUTE38_VOLT_SWITCH                               0x4EE 
+#define FLAG_ITEM_ROUTE39_TM_DAZZLING_GLEAM                            0x4EF 
 
 #define FLAG_DEFEATED_GYM_1                                         0x4F0 // Begin Gym Flags
 #define FLAG_DEFEATED_GYM_2                                         0x4F1

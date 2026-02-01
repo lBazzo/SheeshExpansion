@@ -68,7 +68,7 @@ CianwoodGym_EventScript_ChuckVictory::
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 5
 	call Common_EventScript_SetGymTrainers
-	giveitem ITEM_TM_FOCUS_PUNCH
+	giveitem ITEM_TM_DRAIN_PUNCH
 	msgbox CianwoodGym_Text_ChuckTMSpeech, MSGBOX_DEFAULT
 	setvar VAR_GETFLY, 1
 	setrespawn HEAL_LOCATION_CIANWOOD_CITY
@@ -169,9 +169,9 @@ CianwoodGym_Text_ChuckBadgeSpeech:
 	.string "Here, take this too!$"
 
 CianwoodGym_Text_ChuckTMSpeech:
-	.string "That is FOCUS PUNCH.\p"
-	.string "It moves slow but deals huge\n"
-	.string "damage. Just don't get hit first!$"
+	.string "That is Drain Punch.\p"
+	.string "It lets you heal your HP while staying\n"
+	.string "on the offensive.$"
 
 CianwoodGym_Text_ChuckAfter:
 	.string "WAHAHAH! I enjoyed battling you!\p"

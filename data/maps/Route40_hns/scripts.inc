@@ -86,14 +86,36 @@ Route40_Text_SwimmerfPaulaAfter:
 Route40_EventScript_Woman1::
 	lock
 	faceplayer
+	goto_if_set FLAG_GOT_UTILITY_UMBRELLA, Route40_EventScript_Woman1GotUmbrella
 	msgbox Route40_Text_Lass1, MSGBOX_DEFAULT
+	giveitem ITEM_UTILITY_UMBRELLA
+	setflag FLAG_GOT_UTILITY_UMBRELLA
+	goto Route40_EventScript_Woman1GotUmbrella
+	end
+
+Route40_EventScript_Woman1GotUmbrella::
+	msgbox Route40_Text_Lass1Part2, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 Route40_Text_Lass1:
-	.string "Although you can't see it from here,\n"
-	.string "CIANWOOD is across the sea.$"
+	.string "I came to the beach thinking I'd bring\n"
+	.string "my brand new parasol with me, but it\l"
+	.string "turns out I actually bought a second\l"
+	.string "umbrella instead...\p"
+	.string "I'm so embarrassed, I'd rather just\n"
+	.string "pretend I lost it instead of admitting\l"
+	.string "the truth to my friends.\p"
+	.string "You can have this. Please take it.$"
+
+Route40_Text_Lass1Part2:
+	.string "Maybe I just shouldn't buy anything for\n"
+	.string "the weather at all.\p"
+	.string "Getting soaked or sunburned is still\n"
+	.string "better than everyone knowing how\l"
+	.string "forgetful I am.\p"
+	.string "Sigh...$"
 
 Route40_EventScript_Woman2::
 	lock

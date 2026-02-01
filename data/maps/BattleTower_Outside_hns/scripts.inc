@@ -105,6 +105,46 @@ BattleTowerOutsideText_Closed:
 	.string "The BATTLE TOWER is currently\n"
 	.string "closed for repairs.$"
 
+BattleTower_Outside_EventScript_FatMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_LAGGING_TAIL_AND_IRON_BALL, BattleTower_Outside_EventScript_FatManGotItems
+	msgbox BattleTower_Outside_Text_FatManGivingItems, MSGBOX_DEFAULT
+	giveitem ITEM_LAGGING_TAIL
+	giveitem ITEM_IRON_BALL
+	setflag FLAG_GOT_LAGGING_TAIL_AND_IRON_BALL
+	goto BattleTower_Outside_EventScript_FatManGotItems
+	end
+
+BattleTower_Outside_EventScript_FatManGotItems::
+	msgbox BattleTower_Outside_Text_FatManItemsGiven, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_Text_FatManGivingItems:
+	.string "Huff.............................................................\n"
+	.string ".....................................................................\p"
+	.string "Puff.............................................................\n"
+	.string ".....................................................................\p"
+	.string "Huff.............................................................\n"
+	.string ".....................................................................\p"
+	.string "Puff.............................................................\n"
+	.string ".....................................................................\p"
+	.string "Climbing all the way to the tower...\p"
+	.string "Is hard work...\p"
+	.string "What...\p"
+	.string "You don't believe me...?\p"
+	.string "Maybe if you were weighed down like me...\p"
+	.string "You'd feel the same...\p"
+	.string "Try carrying these...$"
+
+BattleTower_Outside_Text_FatManItemsGiven:
+	.string "Those items...\p"
+	.string "Make you slower...\p"
+	.string "Or make you move last...\p"
+	.string "Race you...\p"
+	.string "To the top...?$"
 
 BattleTower_Outside_EventScript_LeftMoveTutor::
 	lock

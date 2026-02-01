@@ -202,6 +202,8 @@ CianwoodCity_EventScript_SuicuneTrigger::
 	trainerbattle_no_intro TRAINER_EUSINE, CianwoodCity_Text_EusineBeaten
 	playbgm MUS_HG_EUSINE, TRUE
 	msgbox CianwoodCity_Text_EusineAfter, MSGBOX_DEFAULT
+	giveitem ITEM_LOADED_DICE
+	msgbox CianwoodCity_Text_EusineAfter2, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CIANWOOD_EUSINE, CianwoodCity_Movement_Eusine2
 	applymovement LOCALID_CIANWOOD_SUICUNE, CianwoodCity_Movement_Suicune5
@@ -317,6 +319,10 @@ CianwoodCity_Text_EusineAfter:
 	.string "You're amazing, {PLAYER}!\p"
 	.string "No wonder POKéMON gravitate to you.\p"
 	.string "I get it now.\p"
+	.string "Here's something for impressing me.\n"
+	.string "You've earned it.$"
+
+CianwoodCity_Text_EusineAfter2:	
 	.string "I'm going to keep training with\n"
 	.string "SUICUNE.\p"
 	.string "I'm sure we'll see each other again.\p"

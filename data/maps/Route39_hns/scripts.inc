@@ -10,12 +10,12 @@ Route39_OnTransition:
 	callnative SetTimeBasedEncounters
 	end
 
-Route39_EventScript_Item_TM::
-	@finditem ITEM_TM_BRICK_BREAK
+Route39_EventScript_Item_Dazzling_Gleam::
+	finditem ITEM_TM_DAZZLING_GLEAM
 	end
 
-Route39_EventScript_Item_Nugget::
-	finditem ITEM_BIG_NUGGET
+Route39_EventScript_Item_Draining_Kiss::
+	finditem ITEM_TM_DRAINING_KISS
 	end
 
 Route39_EventScript_LegendaryTrigger::

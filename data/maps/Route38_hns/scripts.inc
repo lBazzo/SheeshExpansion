@@ -51,8 +51,8 @@ Route38_EventScript_Sign2::
 	release
 	end
 
-Route38_EventScript_Item_LaxIncense::
-	finditem ITEM_LAX_INCENSE
+Route38_EventScript_Item_VoltSwitch::
+	finditem ITEM_TM_VOLT_SWITCH
 	end
 
 Route38_Text_BirdKeeperTobySeen:
