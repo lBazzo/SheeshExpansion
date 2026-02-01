@@ -202,7 +202,7 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	lock
 	faceplayer
 	goto_if_unset FLAG_BADGE03_GET, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlGoBeatWhitney
-	goto_if_set FLAG_GOLDENROD_BERRIES_OBTAINED, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
+	goto_if_set FLAG_GOT_GOLDENROD_BERRIES, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
 	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlHaveTheseBerries, MSGBOX_DEFAULT
 	giveitem ITEM_FIGY_BERRY, 10
 	giveitem ITEM_WIKI_BERRY, 10
@@ -214,7 +214,7 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	giveitem ITEM_ROWAP_BERRY, 3
 	giveitem ITEM_JABOCA_BERRY, 3
 	giveitem ITEM_CUSTAP_BERRY, 1
-	setflag FLAG_GOLDENROD_BERRIES_OBTAINED
+	setflag FLAG_GOT_GOLDENROD_BERRIES
 	goto GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
 	end
 

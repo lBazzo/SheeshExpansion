@@ -1,5 +1,7 @@
 .set LOCALID_ROUTE36_SUDOWOODO, 6
 .set LOCALID_ROUTE36_ROCKSMASHGUY, 3
+.set LOCALID_ROUTE36_NATURALGIFTUTOR, 1
+.set LOCALID_ROUTE36_CHERRIM, 27
 
 Route36_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route36_OnTransition
@@ -19,20 +21,6 @@ Route36_EventScript_RockSmashGuy::
 	setflag FLAG_RECEIVED_HM_ROCK_SMASH
 Route36_EventScript_RockSmashGuy3::
 	msgbox Route36_Text_RockSmashGuy3
-	closemessage
-	release
-	end
-
-Route36_EventScript_Lass::
-	lock
-	faceplayer
-	goto_if_set FLAG_HIDE_SUDOWOODO, Route36_EventScript_Lass2
-	msgbox Route36_Text_Lass1, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-Route36_EventScript_Lass2::
-	msgbox Route36_Text_Lass2_ClearedSudowoodo, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -238,6 +226,106 @@ Route36_Text_RockSmashGuy3:
 Route36_Text_OddTree:
 	.string "A weird tree is blocking the way.$"
 
+@NATURAL GIFT TUTOR 
+
+Route36_EventScript_Lass::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_NATURAL_GIFT_BERRIES, Route36_EventScript_NaturalGiftTutor
+	goto_if_set FLAG_HIDE_SUDOWOODO, Route36_EventScript_Lass2
+	msgbox Route36_Text_Lass1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+Route36_EventScript_Lass2::
+	msgbox Route36_Text_Lass2_ClearedSudowoodo, MSGBOX_DEFAULT
+	giveitem ITEM_CUSTAP_BERRY, 1
+	giveitem ITEM_KEE_BERRY, 1
+	giveitem ITEM_MARANGA_BERRY, 1
+	giveitem ITEM_BLUK_BERRY, 3
+	giveitem ITEM_NANAB_BERRY, 3
+	giveitem ITEM_WEPEAR_BERRY, 3
+	giveitem ITEM_PINAP_BERRY, 3
+	giveitem ITEM_POMEG_BERRY, 3
+	giveitem ITEM_KELPSY_BERRY, 3
+	giveitem ITEM_QUALOT_BERRY, 3
+	giveitem ITEM_HONDEW_BERRY, 3
+	giveitem ITEM_GREPA_BERRY, 3
+	giveitem ITEM_TAMATO_BERRY, 3
+	giveitem ITEM_CORNN_BERRY, 3
+	giveitem ITEM_MAGOST_BERRY, 3
+	giveitem ITEM_RABUTA_BERRY, 3
+	giveitem ITEM_NOMEL_BERRY, 3
+	giveitem ITEM_SPELON_BERRY, 3
+	giveitem ITEM_PAMTRE_BERRY, 3
+	setflag FLAG_GOT_NATURAL_GIFT_BERRIES
+	goto Route36_EventScript_NaturalGiftTutor
+	end
+
+Route36_EventScript_NaturalGiftTutor::
+	msgbox Route36_Text_LassTeachNaturalGift, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route36_EventScript_NaturalGiftTutorDeclined
+	msgbox Route36_Text_NaturalGiftTutorWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_NATURAL_GIFT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, Route36_EventScript_NaturalGiftTutorDeclined
+	applymovement LOCALID_ROUTE36_NATURALGIFTUTOR, Common_Movement_FaceRight
+	msgbox Route36_Text_NaturalGiftTutorTeachingNaturalGift, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE36_NATURALGIFTUTOR, Common_Movement_FacePlayer
+	call Route36_EventScript_CherrimTeachPlayer
+	goto_if_set FLAG_TALKED_ROUTE36_NATURAL_GIFT_TUTOR, Route36_EventScript_NaturalGiftTutorFriend
+	msgbox Route36_Text_NaturalGiftTutorNaturalGiftTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_ROUTE36_NATURAL_GIFT_TUTOR
+	closemessage
+	release
+	end
+
+Route36_EventScript_NaturalGiftTutorDeclined::
+	msgbox Route36_Text_NaturalGiftTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route36_EventScript_CherrimTeachPlayer::
+	applymovement LOCALID_ROUTE36_CHERRIM, Route36_Movement_CherrimTeachPlayer1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_CHERRIM, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_ROUTE36_CHERRIM, Route36_Movement_CherrimTeachPlayer2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+Route36_Movement_CherrimTeachPlayer1::
+	walk_down
+	face_left
+	step_end
+
+Route36_Movement_CherrimTeachPlayer2::
+	jump_in_place_left
+	jump_in_place_left
+	face_up
+	walk_up
+	face_down
+	step_end
+
+Route36_EventScript_NaturalGiftTutorFriend::
+	msgbox Route36_Text_NaturalGiftTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+
+
+
+
 Route36_Text_Lass1:
 	.string "Be careful at night on this route!\p"
 	.string "I saw a POKéMON that looked like\n"
@@ -248,7 +336,46 @@ Route36_Text_Lass2_ClearedSudowoodo:
 	.string "That odd tree disappeared without\n"
 	.string "a trace.\p"
 	.string "Oh! That tree was really a\n"
-	.string "POKéMON?$"
+	.string "POKéMON?\p"
+	.string "Wow, I learned something new today!\p"
+	.string "I can teach you something as well.\n"
+	.string "Here, take these. And don't eat them!$"
+
+Route36_Text_LassTeachNaturalGift:
+	.string "Okay. Now take a deep breath, and let\n"
+	.string "yourself become in tune with mother\l"
+	.string "nature, accepting her embrace.\p"
+	.string "Are you ready to learn how to use\n"
+	.string "Natural Gift?$"
+
+Route36_Text_NaturalGiftTutorWhichMon:
+	.string "Who will embark on the journey to\n"
+	.string "discover inner peace?$"
+
+Route36_Text_NaturalGiftTutorTeachingNaturalGift:
+	.string "Cherrim, please guide us back in time\n"
+	.string "and return us to our most natural form.$"
+
+Route36_Text_NaturalGiftTutorNaturalGiftTaught:
+	.string "There. Don't you feel a huge weight\n"
+	.string "being lifted from your shoulders?\p"
+	.string "Visit me anytime and I'll help you\n"
+	.string "rediscover your natural roots.$"
+
+Route36_Text_NaturalGiftTutorDeclined:
+	.string "Oh, I understand.\p"
+	.string "Sometimes the temptation to cling to\n"
+	.string "your old self can be overpowering.$"
+
+Route36_Text_NaturalGiftTutorFriend:
+	.string "You blend into the natural world so\n"
+	.string "well, sometimes I have trouble\l"
+	.string "separating you from the birds and the\l"
+	.string "trees that surround us.\p"
+	.string "I hope you may maintain that state for\n"
+	.string "as long as you live.$"
+
+
 
 Route36_Text_PsychicMarkSeen:
 	.string "I'm going to read your thoughts!$"

@@ -87,7 +87,7 @@ Route34_EventScript_Item_SoftSand::
 	end
 
 Route34_EventScript_Item_SyrupyApple::
-	finditem ITEM_ORAN_BERRY
+	finditem ITEM_SYRUPY_APPLE
 	end
 
 Route34_EventScript_Item_SuperPotion::

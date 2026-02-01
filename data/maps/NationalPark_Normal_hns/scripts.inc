@@ -40,16 +40,21 @@ NationalPark_Normal_EventScript_Teacher2::
 	release
 	end
 
-NationalPark_Normal_EventScript_TeacherQuickclaw::
+NationalPark_Normal_EventScript_TeacherStickyBarbAndOrbs::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_QUICK_CLAW, NationalPark_Normal_EventScript_TeacherQuickclaw2
+	goto_if_set FLAG_GOT_STICKY_BARB_AND_ORBS, NationalPark_Normal_EventScript_TeacherStickyBarbAndOrbs2
 	msgbox NationalPark_Normal_Text_Teacher1, MSGBOX_DEFAULT
-	giveitem ITEM_QUICK_CLAW
+	giveitem ITEM_STICKY_BARB
+	giveitem ITEM_TOXIC_ORB
+	giveitem ITEM_FLAME_ORB
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
-	setflag FLAG_GOT_QUICK_CLAW
-NationalPark_Normal_EventScript_TeacherQuickclaw2::
-	msgbox NationalPark_Normal_Text_Teacher1_QuickClaw, MSGBOX_DEFAULT
+	setflag FLAG_GOT_STICKY_BARB_AND_ORBS
+	goto NationalPark_Normal_EventScript_TeacherStickyBarbAndOrbs2
+	end
+
+NationalPark_Normal_EventScript_TeacherStickyBarbAndOrbs2::
+	msgbox NationalPark_Normal_Text_Teacher1_StickyBarbAndOrbs, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -81,12 +86,15 @@ NationalPark_Normal_Text_Teacher1:
 	.string "a teacher all the time.\p"
 	.string "You must be a POKéMON trainer.\p"
 	.string "Since you're working so hard, I\n"
-	.string "want you to have this.$"
+	.string "want you to have these.$"
 
-NationalPark_Normal_Text_Teacher1_QuickClaw:
-	.string "Let a POKéMON hold that QUICK CLAW.\p"
-	.string "Sometimes it will strike first\n"
-	.string "during battle.$"
+NationalPark_Normal_Text_Teacher1_StickyBarbAndOrbs:
+	.string "A POKéMON holding those items will\n"
+	.string "experience adverse effects, but\l"
+	.string "sometimes, a negative can become a\l"
+	.string "positive.\p"
+	.string "A studious trainer will know when a\n"
+	.string "drawback can become a strength.$"
 
 NationalPark_Normal_Text_Youngster1:
 	.string "I'm playing with stickers I printed\n"
@@ -106,12 +114,12 @@ NationalPark_Normal_Text_Teacher2:
 NationalPark_Normal_Text_Persian:
 	.string "PERSIAN: Fufushaa!$"
 
-NationalPark_Normal_EventScript_TM_Dig::
-	@finditem ITEM_TM_DIG
+NationalPark_Normal_EventScript_Zoom_Lens::
+	finditem ITEM_ZOOM_LENS
 	end
 
-NationalPark_Normal_EventScript_Item_Soothe_Bell::
-	finditem ITEM_SOOTHE_BELL
+NationalPark_Normal_EventScript_Item_Wide_Lens::
+	finditem ITEM_WIDE_LENS
 	end
 
 NationalPark_Normal_Text_Sign_RelaxationSquare:

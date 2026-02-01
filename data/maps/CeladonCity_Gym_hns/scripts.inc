@@ -43,7 +43,7 @@ CeladonCity_Gym_Text_ErikaBeforeBattle:
 	.string "I have taken his place as GYM LEADER\l"
 	.string "here so he may chase greater ambitions.\p"
 	.string "However, don't mistake me for a\n"
-	.string "pushover just because I'm covering for\l"
+	.string "pushover simply because I'm covering for\l"
 	.string "him.\p"
 	.string "My grass POKéMON and I have honed our\n"
 	.string "elegant fighting style in KANTO.\l"

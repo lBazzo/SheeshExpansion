@@ -271,15 +271,51 @@ Route34_EventScript_CheckOnTwoMons::
 Route34_DayCare_EventScript_DaycareWoman::
 	lock
 	faceplayer
-	specialvar VAR_RESULT, GetDaycareState
-	goto_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route34_DayCare_EventScript_EggWaiting
-	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, Route34_DayCare_EventScript_OneMonInDaycare
-	goto_if_eq VAR_RESULT, DAYCARE_TWO_MONS, Route34_DayCare_EventScript_TwoMonsInDaycare
-	msgbox Route34_DayCare_Text_WouldYouLikeUsToRaiseAMon, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route34_DayCare_EventScript_GiveMonToRaise
-	msgbox Route34_DayCare_Text_FineThenComeAgain, MSGBOX_DEFAULT
+	goto_if_set FLAG_DAYCARE_SITRUS_BERRIES_OBTAINED, Route34_DayCare_EventScript_DaycareWomanPostSitrus
+	msgbox Route34_DayCare_Text_HaveSomeSitrus, MSGBOX_DEFAULT
+	giveitem ITEM_SITRUS_BERRY, 900
+	setflag FLAG_DAYCARE_SITRUS_BERRIES_OBTAINED
+	goto Route34_DayCare_EventScript_DaycareWomanPostSitrus
+	@specialvar VAR_RESULT, GetDaycareState
+	@goto_if_eq VAR_RESULT, DAYCARE_EGG_WAITING, Route34_DayCare_EventScript_EggWaiting
+	@goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, Route34_DayCare_EventScript_OneMonInDaycare
+	@goto_if_eq VAR_RESULT, DAYCARE_TWO_MONS, Route34_DayCare_EventScript_TwoMonsInDaycare
+	@msgbox Route34_DayCare_Text_WouldYouLikeUsToRaiseAMon, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, YES, Route34_DayCare_EventScript_GiveMonToRaise
+	@msgbox Route34_DayCare_Text_FineThenComeAgain, MSGBOX_DEFAULT
+	@release
+	end
+
+Route34_DayCare_EventScript_DaycareWomanPostSitrus::
+	msgbox Route34_DayCare_Text_PostSitrus, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
+
+Route34_DayCare_Text_HaveSomeSitrus:
+	.string "Looking for us to raise some for your\n"
+	.string "POKéMON for you?\p"
+	.string "I'm sorry, dear, but that ship has\n"
+	.string "sailed.\p"
+	.string "Trainers these days have candies to\n"
+	.string "raise their POKéMON for them, so we\l"
+	.string "packed up shop a long time ago.\p"
+	.string "No need to feel sorry for us, though.\p"
+	.string "We've got our garden and POKéMON of our\n"
+	.string "own to keep us busy.\p"
+	.string "Since you came all this way, why don't\n"
+	.string "you take these Sitrus Berries with you?\p"
+	.string "Our POKéMON don't like to eat them, and\n"
+	.string "neither my husband or I like to battle,\l"
+	.string "so they'd be wasted staying here.$"
+
+Route34_DayCare_Text_PostSitrus:
+	.string "There we are. That should keep your\n"
+	.string "POKéMON eating well for a while.\p"
+	.string "Don't forget to keep yourself well fed\n"
+	.string "too, alright?\p"
+	.string "It won't do you any good to live on an\n"
+	.string "empty stomach.$"
 
 Route34_DayCare_EventScript_GiveMonToRaise::
 	specialvar VAR_RESULT, CountPartyNonEggMons

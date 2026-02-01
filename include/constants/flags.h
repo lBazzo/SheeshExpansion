@@ -746,9 +746,9 @@
 #define FLAG_RECEIVED_BERRIES_BIRD_FEEDER  0x2A3 // Unused Flag
 #define FLAG_RECEIVED_EVIOLITE  0x2A4 // Unused Flag
 #define FLAG_ITEM_ROUTE36_PAYBACK  0x2A5 // Unused Flag
-#define FLAG_GOLDENROD_BERRIES_OBTAINED  0x2A6 // Unused Flag
-#define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
-#define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
+#define FLAG_GOT_GOLDENROD_BERRIES  0x2A6 // Unused Flag
+#define FLAG_DAYCARE_SITRUS_BERRIES_OBTAINED  0x2A7 // Unused Flag
+#define FLAG_GOT_NATURAL_GIFT_BERRIES  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
@@ -829,7 +829,7 @@
 #define FLAG_GOT_FRUSTRATION                                        0x2F2
 #define FLAG_HIDE_GOLDENROD_BILL                                    0x2F3
 #define FLAG_GOT_EEVEE                                              0x2F4
-#define FLAG_GOT_TYPE_BOOSTING_ITEMS                                0x2F5 //unused
+#define FLAG_GOT_TYPE_BOOSTING_ITEMS                                0x2F5 
 #define FLAG_GOLDENROD_MACHOKE_1                                    0x2F6
 #define FLAG_GOLDENROD_MACHOKE_2                                    0x2F7
 #define FLAG_GOLDENROD_MACHOKE_3                                    0x2F8
@@ -840,7 +840,7 @@
 #define FLAG_GOT_MARY_BRIGHT_POWDER                                 0x2FD
 #define FLAG_HIDE_BUG_CONTEST_BUGS                                  0x2FE
 #define FLAG_HIDE_BUG_CONTEST_ATTENDANT_SIDE                        0x2FF
-#define FLAG_GOT_QUICK_CLAW                                         0x300
+#define FLAG_GOT_STICKY_BARB_AND_ORBS                               0x300
 #define FLAG_GOT_MAGNET                                             0x301
 #define FLAG_GOT_TM_SNATCH                                          0x302
 #define FLAG_HIDE_BATTLEFRONTIER_ENGINEER                           0x303
@@ -1321,8 +1321,8 @@
 #define FLAG_ITEM_ROUTE35_LOW_KICK                                  0x4D8 
 #define FLAG_ITEM_ROUTE35_PARALYZE_HEAL                             0x4D9 
 #define FLAG_ITEM_ROUTE35_BIG_NUGGET                                0x4DA 
-#define FLAG_ITEM_NATIONAL_PARK_SOOTHE_BELL                         0x4DB 
-#define FLAG_ITEM_NATIONAL_PARK_TM_DIG                              0x4DC 
+#define FLAG_ITEM_NATIONAL_PARK_WIDE_LENS                           0x4DB 
+#define FLAG_ITEM_NATIONAL_PARK_ZOOM_LENS                           0x4DC 
 #define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 
 #define FLAG_ITEM_BELLCHIME_BIG_MUSHROOM                            0x4DE 
 #define FLAG_ITEM_TIN_TOWER_3F_FULL_HEAL                            0x4DF 
@@ -1332,8 +1332,8 @@
 #define FLAG_ITEM_TIN_TOWER_5F_RARE_CANDY                           0x4E3 
 #define FLAG_ITEM_TIN_TOWER_5F_MAX_POTION                           0x4E4 
 #define FLAG_ITEM_TIN_TOWER_5F_CARBOS                               0x4E5 
-#define FLAG_ITEM_TIN_TOWER_7F_MAX_REVIVE                           0x4E6 
-#define FLAG_ITEM_TIN_TOWER_8F_FULL_RESTORE                         0x4E7 
+#define FLAG_ITEM_HIDDEN_GROVE_MALICIOUS_ARMOR                      0x4E6 
+#define FLAG_ITEM_HIDDEN_GROVE_AUSPICIOUS_ARMOR                     0x4E7 
 #define FLAG_ITEM_TIN_TOWER_8F_MAX_ELIXIR                           0x4E8 
 #define FLAG_ITEM_TIN_TOWER_8F_BIG_NUGGET                           0x4E9 
 #define FLAG_ITEM_BURNED_TOWER_1F_HP_UP                             0x4EA 
@@ -1596,7 +1596,7 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_TALKED_ROUTE36_NATURAL_GIFT_TUTOR      (SYSTEM_FLAGS + 0x83) 
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 

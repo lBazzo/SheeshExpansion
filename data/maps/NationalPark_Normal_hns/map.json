@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NationalPark_Normal_EventScript_TeacherQuickclaw",
+      "script": "NationalPark_Normal_EventScript_TeacherStickyBarbAndOrbs",
       "flag": "0"
     },
     {
@@ -107,29 +107,29 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 40,
-      "y": 35,
+      "x": 39,
+      "y": 15,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NationalPark_Normal_EventScript_TM_Dig",
-      "flag": "FLAG_ITEM_NATIONAL_PARK_TM_DIG"
+      "script": "NationalPark_Normal_EventScript_Zoom_Lens",
+      "flag": "FLAG_ITEM_NATIONAL_PARK_ZOOM_LENS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 41,
-      "y": 35,
+      "x": 6,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NationalPark_Normal_EventScript_Item_Soothe_Bell",
-      "flag": "FLAG_ITEM_NATIONAL_PARK_SOOTHE_BELL"
+      "script": "NationalPark_Normal_EventScript_Item_Wide_Lens",
+      "flag": "FLAG_ITEM_NATIONAL_PARK_WIDE_LENS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIDORAN_M)",
@@ -351,9 +351,7 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

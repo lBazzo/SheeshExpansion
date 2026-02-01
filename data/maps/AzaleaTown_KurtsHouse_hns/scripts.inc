@@ -92,7 +92,10 @@ AzaleaTown_KurtsHouse_EventScript_ReturnFromWell::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
 	msgbox KurtsHouse_Text_KurtHonoredToMakeBalls, MSGBOX_DEFAULT
 	giveitem ITEM_WATER_STONE
+	giveitem ITEM_MOON_STONE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	msgbox KurtsHouse_Text_KurtTeamRocketLeftThis, MSGBOX_DEFAULT
+	giveitem ITEM_UPGRADE
 	msgbox KurtsHouse_Text_KurtBallsFromApricorns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_AZALEA_TOWN_KURT, DIR_NORTH
@@ -435,6 +438,15 @@ KurtsHouse_Text_KurtHonoredToMakeBalls:
 	.string "else for you.\p"
 	.string "This is all I have now, \n"
 	.string "but take it.$"
+
+KurtsHouse_Text_KurtTeamRocketLeftThis:
+	.string "Team Rocket also seem to have left this\n"
+	.string "behind.\p"
+	.string "I don't know what it does, but I\n"
+	.string "snagged it anyway to stop them from\l"
+	.string "having it.\p"
+	.string "It's probably safer for you to keep\n"
+	.string "hold of it than me, though.$"
 
 KurtsHouse_Text_KurtBallsFromApricorns:
 	.string "KURT: I make BALLS from BERRIES.\p"

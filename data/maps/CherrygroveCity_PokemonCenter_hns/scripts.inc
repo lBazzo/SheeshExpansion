@@ -2124,7 +2124,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkPlainBadge::
 	case 2, CherryGrove_Pokecenter_EventScript_TMClerkDarkPulse
 	case 3, CherryGrove_Pokecenter_EventScript_TMClerkShadowBall
 	case 4, CherryGrove_Pokecenter_EventScript_TMClerkDragonClaw
-	case 5, CherryGrove_Pokecenter_EventScript_TMClerkPsychicFangs
+	case 5, CherryGrove_Pokecenter_EventScript_TMClerkPsychoBoost
 	case 6, CherryGrove_Pokecenter_EventScript_TMClerkLowKick
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkReturn
 	case 8, CherryGrove_Pokecenter_EventScript_TMClerkFacade
@@ -2212,13 +2212,13 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveDragonClaw::
 	release
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkPsychicFangs::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantPsychicFangs, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGivePsychicFangs
+CherryGrove_Pokecenter_EventScript_TMClerkPsychoBoost::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantPsychoBoost, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoBoost
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGivePsychicFangs::
+CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoBoost::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
 	giveitem ITEM_TM_PSYCHO_BOOST
@@ -3272,8 +3272,8 @@ CherryGrove_Pokecenter_Text_TMClerkWantDragonClaw::
 	.string "You want the DRAGON CLAW TM?\n"
 	.string "It'll cost you one HEART SCALE, okay?$"
 
-CherryGrove_Pokecenter_Text_TMClerkWantPsychicFangs::
-	.string "You want the PSYCHIC FANGS TM?\n"
+CherryGrove_Pokecenter_Text_TMClerkWantPsychoBoost::
+	.string "You want the PSYCHO BOOST TM?\n"
 	.string "It'll cost you one HEART SCALE, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantLowKick::
