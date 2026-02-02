@@ -52,6 +52,7 @@ MahoganyTown_EventScript_TownTrigger::
 	clearflag FLAG_GOT_HIDDEN_POWER
 	clearflag FLAG_HIDE_ICE_PATH_KIMONO
 	clearflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS
+	clearflag FLAG_GOT_MAHOGANY_GEMS
 
 	setflag FLAG_VISITED_MAHOGANY_TOWN
 	setflag FLAG_HIDE_LAKE_OF_RAGE_LANCE
@@ -213,14 +214,6 @@ MahoganyTown_EventScript_Fisher::
 	release
 	end
 
-MahoganyTown_EventScript_Lass::
-	lock
-	faceplayer
-	msgbox MahoganyTown_Text_Lass, MSGBOX_DEFAULT
-	closemessage
-	release
-	end
-
 MahoganyTown_EventScript_Sign::
 	lock
 	msgbox MahoganyTown_Text_Sign, MSGBOX_SIGN
@@ -288,10 +281,6 @@ MahoganyTown_Text_Fisher:
     .string "time to do some sightseeing.\p"
     .string "You should head north and check\n"
     .string "out LAKE OF RAGE right now.$"
-
-MahoganyTown_Text_Lass:
-    .string "Visit Grandma's shop. She sells\n"
-    .string "stuff that nobody else has.$"
 
 MahoganyTown_Text_Sign:
     .string "MAHOGANY TOWN\p"
@@ -1024,3 +1013,74 @@ MahoganyTown_Text_HighCritTutorFriend:
 	.string "Want to play again? (FREE!)$"
 
 
+
+
+
+
+
+
+
+@GEM GIRL
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+MahoganyTown_EventScript_GemGirl::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_MAHOGANY_GEMS, MahoganyTown_EventScript_GemGirlAlreadyGivenGems
+	msgbox MahoganyTown_Text_GemGirlBeforeGivingGems, MSGBOX_DEFAULT
+	giveitem ITEM_FIRE_GEM
+	giveitem ITEM_WATER_GEM
+	giveitem ITEM_ELECTRIC_GEM
+	giveitem ITEM_GRASS_GEM
+	giveitem ITEM_ICE_GEM
+	giveitem ITEM_FIGHTING_GEM
+	giveitem ITEM_POISON_GEM
+	giveitem ITEM_GROUND_GEM
+	giveitem ITEM_FLYING_GEM
+	giveitem ITEM_PSYCHIC_GEM
+	giveitem ITEM_BUG_GEM
+	giveitem ITEM_ROCK_GEM
+	giveitem ITEM_GHOST_GEM
+	giveitem ITEM_DRAGON_GEM
+	giveitem ITEM_DARK_GEM
+	giveitem ITEM_STEEL_GEM
+	giveitem ITEM_NORMAL_GEM
+	giveitem ITEM_FAIRY_GEM
+	setflag FLAG_GOT_MAHOGANY_GEMS
+	goto MahoganyTown_EventScript_GemGirlAlreadyGivenGems
+	end
+
+MahoganyTown_EventScript_GemGirlAlreadyGivenGems::
+	msgbox MahoganyTown_Text_GemGirlAlreadyGivenGems, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_Drilbur::
+	lock
+	faceplayer
+	playmoncry SPECIES_DRILBUR, CRY_MODE_NORMAL
+	msgbox MahoganyTown_Text_Drilbur, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+MahoganyTown_Text_Drilbur:
+	.string "Drilbur: Buh.$"
+
+MahoganyTown_Text_GemGirlBeforeGivingGems:
+	.string "My Drilbur keeps digging up gems for\n"
+	.string "some reason.\p"
+	.string "I keep telling her to look for stones\n"
+	.string "and shards, but all she ever digs up is\l"
+	.string "gems and more gems.\p"
+	.string "Do you think you could take some of\n"
+	.string "these gems off my hands?$"
+
+MahoganyTown_Text_GemGirlAlreadyGivenGems:
+	.string "I guess I shouldn't be surprised.\p"
+	.string "Gems look much prettier than stones\n"
+	.string "and shards, don't they?\p"
+	.string "Maybe my Drilbur's trying to get me to\n"
+	.string "sign her up for a beauty contest.$"

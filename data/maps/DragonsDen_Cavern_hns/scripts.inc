@@ -15,14 +15,14 @@ DragonsDen_Cavern_hns_MapScripts::
 	.byte 0
 
 DragonsDen_Cavern_OnTransition::
-	call_if_ge VAR_TERA_B2B_COUNTER, 6, DragonsDen_Cavern_MapScript_MoveB2B2B2B2BTrainers
+	call_if_ge VAR_TERA_B2B_COUNTER, 6, DragonsDen_Cavern_EventScript_MoveB2B2B2B2BTrainers
 	end
 
 DragonsDen_Cavern_OnFrame::
 	map_script_2 VAR_BLACKTHORN_CITY_STATE, 3, DragonsDen_Cavern_EventScript_Clair
 	.2byte 0
 
-DragonsDen_Cavern_MapScript_MoveB2B2B2B2BTrainers::
+DragonsDen_Cavern_EventScript_MoveB2B2B2B2BTrainers::
 	setobjectxyperm LOCALID_DRAGONSDEN_AIMI, 28, 37
 	setobjectxyperm LOCALID_DRAGONSDEN_ATLAS, 28, 38
 	setobjectxyperm LOCALID_DRAGONSDEN_ESTELLE, 34, 37

@@ -17,7 +17,7 @@ VioletCity_Pond_EventScript_Unown::
 	end
 
 VioletCity_Pond_Text_Unown:
-	.string "Oooooeeeeeooooo!$"
+	.string "Unown: Oooooeeeeeooooo!$"
 
 VioletCity_Pond_EventScript_HPTutor::	
 	lock

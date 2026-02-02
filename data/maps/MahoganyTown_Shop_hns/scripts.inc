@@ -1,5 +1,5 @@
 .set LOCALID_MAHOGANYSHOP_LANCE, 3
-.set LOCALID_MAHOGANYSHOP_DRAGONITE,4
+.set LOCALID_MAHOGANYSHOP_DRAGONITE, 4
 .set LOCALID_MAHOGANYSHOP_ROCKET, 2
 
 MahoganyTown_Shop_hns_MapScripts::
@@ -82,7 +82,7 @@ MahoganyTown_Shop_EventScript_Raid::
 
 	turnobject LOCALID_MAHOGANYSHOP_LANCE, DIR_SOUTH
 	msgbox MahoganyMart1F_Text_Lance_SplitUp, MSGBOX_DEFAULT
-	closemessage
+	giveitem ITEM_HEAVY_DUTY_BOOTS
 	applymovement LOCALID_MAHOGANYSHOP_DRAGONITE, Common_Movement_WalkRight1
 	waitmovement 0
 	removeobject LOCALID_MAHOGANYSHOP_DRAGONITE
@@ -248,4 +248,9 @@ MahoganyMart1F_Text_Lance_Stairs:
 MahoganyMart1F_Text_Lance_SplitUp:
     .string "LANCE: {PLAYER}, we should split up\n"
     .string "to check this place.\p"
-    .string "I'll go first.$"
+    .string "I'll go first.\p"
+	.string "Oh, and take these with you before you\n"
+	.string "go down.\p"
+	.string "There's a good chance that Team Rocket\n"
+	.string "will have set some traps for intruders\l"
+	.string "like us just in case we discovered them.$"

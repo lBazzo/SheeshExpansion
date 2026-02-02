@@ -751,8 +751,8 @@
 #define FLAG_GOT_NATURAL_GIFT_BERRIES  0x2A8 // Unused Flag
 #define FLAG_GOT_UTILITY_UMBRELLA  0x2A9 // Unused Flag
 #define FLAG_GOT_LAGGING_TAIL_AND_IRON_BALL  0x2AA // Unused Flag
-#define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
-#define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
+#define FLAG_HIDE_BLACKBELT_AND_KINGAMBIT  0x2AB // Unused Flag
+#define FLAG_GOT_MAHOGANY_GEMS  0x2AC // Unused Flag
 #define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
 #define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
 #define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag

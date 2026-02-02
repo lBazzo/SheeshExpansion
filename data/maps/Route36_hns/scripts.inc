@@ -322,9 +322,20 @@ Route36_EventScript_NaturalGiftTutorFriend::
 	release
 	end
 
+Route36_EventScript_Cherrim::
+	lock
+	faceplayer
+	playmoncry SPECIES_CHERRIM, CRY_MODE_NORMAL
+	msgbox Route36_Text_Cherrim, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_ROUTE36_CHERRIM, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
 
-
-
+Route36_Text_Cherrim:
+	.string "Cherrim: Baowaow!$"
 
 Route36_Text_Lass1:
 	.string "Be careful at night on this route!\p"

@@ -84,7 +84,8 @@ MahoganyTown_Gym_EventScript_PryceVictory::
     addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 7
 	call Common_EventScript_SetGymTrainers
-	@giveitem ITEM_TM_HAIL
+	giveitem ITEM_TM_TRIPLE_AXEL
+    giveitem ITEM_HEART_SCALE, 4
 	msgbox MahoganyTown_Gym_Text_HailSpeech, MSGBOX_DEFAULT
     setvar VAR_SAFARI_ZONE_GATE_STATE, 1
     setflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS
@@ -151,11 +152,9 @@ MahoganyTown_Gym_Text_GlacierBadgeSpeech:
     .string "And this… This is a gift from me!$"
 
 MahoganyTown_Gym_Text_HailSpeech:
-    .string "That TM contains HAIL.\p"
-    .string "It inflicts damage every\n"
-    .string "turn for 5 turns.\p"
-    .string "It demonstrates the harshness\n"
-    .string "of winter.$"
+    .string "That TM contains Triple Axel.\p"
+    .string "I doubt I need to explain its potency\n"
+    .string "to a veteran such as yourself.$"
 
 MahoganyTown_Gym_Text_CherishPokemon:
     .string "When the ice and snow melt,\n"

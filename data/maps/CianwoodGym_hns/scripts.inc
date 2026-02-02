@@ -65,6 +65,7 @@ CianwoodGym_EventScript_ChuckVictory::
 	setflag FLAG_DEFEATED_CIANWOOD_GYM
 	setflag FLAG_HIDE_ROUTE42_TEAPARTY
 	setflag FLAG_TM_CLERK_COLLECTION_POST_CHUCK
+	clearflag FLAG_HIDE_BLACKBELT_AND_KINGAMBIT
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 5
 	call Common_EventScript_SetGymTrainers
