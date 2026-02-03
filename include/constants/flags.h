@@ -753,8 +753,8 @@
 #define FLAG_GOT_LAGGING_TAIL_AND_IRON_BALL  0x2AA // Unused Flag
 #define FLAG_HIDE_BLACKBELT_AND_KINGAMBIT  0x2AB // Unused Flag
 #define FLAG_GOT_MAHOGANY_GEMS  0x2AC // Unused Flag
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
-#define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
+#define FLAG_HEALED_VS_DARACH_CAITLIN  0x2AD // Unused Flag
+#define FLAG_DID_NOTHING_VS_DARACH_CAITLIN 0x2AE // Unused Flag
 #define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
 #define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
 #define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag

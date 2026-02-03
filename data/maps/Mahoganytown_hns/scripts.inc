@@ -53,6 +53,8 @@ MahoganyTown_EventScript_TownTrigger::
 	clearflag FLAG_HIDE_ICE_PATH_KIMONO
 	clearflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS
 	clearflag FLAG_GOT_MAHOGANY_GEMS
+	clearflag FLAG_HEALED_VS_DARACH_CAITLIN
+	clearflag FLAG_DID_NOTHING_VS_DARACH_CAITLIN
 
 	setflag FLAG_VISITED_MAHOGANY_TOWN
 	setflag FLAG_HIDE_LAKE_OF_RAGE_LANCE
@@ -317,23 +319,24 @@ MahoganyTown_Text_Baoba:
 
 
 MahoganyTown_Text_CaitlinPokemonIntro:
-	.string "POKEMON: Zig Zag!$"
+	.string "Gothitelle: ...$"
 
 MahoganyTown_Text_CaitlinIntro:
-	.string "CAITLIN: ...$"
+	.string "Caitlin: ...$"
 
 MahoganyTown_Text_CaitlinIntroPart2:
 	.string "Darach...\p"
 	.string "This person is staring at me...$"
 
 MahoganyTown_Text_DarachIntro:
-	.string "DARACH: Greetings, fellow trainer.\n"
-	.string "My name is DARACH.\p"
-	.string "I am fortunate enough to have served\n"
-	.string "as the BATTLE CASTLE valet for some time.\p"
+	.string "Greetings, fellow trainer.\n"
+	.string "My name is Darach.\p"
+	.string "Darach: I am fortunate enough to have\n"
+	.string "served as the Battle Castle valet for\l"
+	.string "quite some time now.\p"
 	.string "I have heard great tales of your\n"
 	.string "battling skill from my dear friend,\l"
-	.string "DAHLIA, and hoped you might humble me\l"
+	.string "Dahlia, and hoped you might humble me\l"
 	.string "in fulfilling a request of mine.\p"
 	.string "You see, Lady Caitlin here has recently\n"
 	.string "taken to battling again.\p"
@@ -349,7 +352,19 @@ MahoganyTown_Text_DarachIntro:
 	.string "As it is my duty to appease her ladyship\n"
 	.string "first and foremost, the reward will be\l"
 	.string "more handsome should you choose to\l"
-	.string "face us one at a time.$"
+	.string "face us one at a time.\p"
+	.string "In the event you do elect to face us\n"
+	.string "one by one, I have an exciting twist\l"
+	.string "prepared for you, which mimics the\l"
+	.string "style of the Battle Castle we call home.\p"
+	.string "Between battles, I will offer you the\n"
+	.string "opportunity to heal one party member,\l"
+	.string "equip a specific item to a party member\l"
+	.string "who is neither fainted nor holding an\l"
+	.string "item, or do nothing at all.\p"
+	.string "Should you not use an item during\n"
+	.string "battle, you are of course permitted to\l"
+	.string "take it with you on your journey.$"
 
 
 MahoganyTown_Text_DarachPostIntro:
@@ -367,7 +382,7 @@ MahoganyTown_Text_CaitlinWin:
 	.string "...$"
 
 MahoganyTown_Text_DarachNormalGiveNormalReward:
-	.string "DARACH: It seems that I was wrong.\p"
+	.string "Darach: It seems that I was wrong.\p"
 	.string "Or...\n"
 	.string "No, that isn't right.\p"
 	.string "I believe we displayed great strength\n"
@@ -379,13 +394,13 @@ MahoganyTown_Text_DarachNormalGiveNormalReward:
 
 MahoganyTown_Text_DarachLeaving:
 	.string "Please, do come and visit us at the\n"
-	.string "BATTLE CASTLE whenever you can.\p"
+	.string "Battle Castle whenever you can.\p"
 	.string "Lady Caitlin seems quite taken with\n"
 	.string "your fighting style. I'm sure she would\l"
 	.string "appreciate seeing it once more.$"
 
 MahoganyTown_Text_CaitlinLeaving:
-	.string "CAITLIN: See you, {PLAYER}...\n"
+	.string "Caitlin: See you, {PLAYER}...\n"
 	.string "Let us battle again someday.$"
 
 MahoganyTown_Text_DarachPreBattleHard:
@@ -394,15 +409,73 @@ MahoganyTown_Text_DarachPreBattleHard:
 	.string "En Garde, {PLAYER}!$"
 
 MahoganyTown_Text_DarachHardAfter:
-	.string "DARACH: A fantastic battle. Let us see\n"
-	.string "if you can maintain that valiant spirit.$"
+	.string "Darach: A fantastic battle. Truly a\n"
+	.string "commendable performance.\p"
+	.string "Now, before you commence your battle\n"
+	.string "with Lady Caitlin, may I present to you\l"
+	.string "the options we discussed earlier?\p"
+	.string "How would you like to proceed before\n"
+	.string "your next fight?$"
+
+MahoganyTown_Text_DarachHealWhichMon:
+	.string "You wish to heal a POKéMON?\n"
+	.string "Of course. Who would you like to heal?$"
+
+MahoganyTown_Text_DarachMonHealed:
+	.string "Your POKéMON has been restored to full\n"
+	.string "health.$"
+	.string "I'll give you a small bonus for choosing\n"
+	.string "this option later as well, of course.$"
+
+MahoganyTown_Text_DarachCantHealFaintedMon:
+	.string "I'm afraid that's not possible. I cannot\n"
+	.string "heal a fainted POKéMON.$"
+
+MahoganyTown_Text_DarachGiveWhichItem:
+	.string "You'd like to equip an item to a\n"
+	.string "POKéMON? Which item would you like?$"
+
+MahoganyTown_Text_DarachGiveItemToWhichMon:
+	.string "Of course. And which POKéMON should\n"
+	.string "hold it?$"
+
+MahoganyTown_Text_DarachItemAndMonConfirmation:
+	.string "The {STR_VAR_2} for {STR_VAR_1}?\n"
+	.string "Do I have that right?$"
+
+MahoganyTown_Text_DarachItemGiven:
+	.string "There we are. The item has been\n"
+	.string "equipped for you.$"
+
+MahoganyTown_Text_DarachCantGiveItemToFaintedMon:
+	.string "I'm afraid that's not possible. I cannot\n"
+	.string "give an item to a fainted POKéMON.$"
+
+MahoganyTown_Text_DarachCantGiveItemToMonHoldingAnItem:
+	.string "I'm afraid that's not possible. I cannot\n"
+	.string "give an item to a POKéMON holding one.$"
+
+MahoganyTown_Text_DarachConfirmDoNothing:
+	.string "You don't want me do anything for you?\n"
+	.string "Are you quite certain that is the case?$"
+
+MahoganyTown_Text_DarachPlayerChoseDoNothing:
+	.string "Well, if that's what you really want...\p"
+	.string "In that case, I'll be sure to\n"
+	.string "compensate you for this appropriately,\l"
+	.string "should you still manage to win.$"
+
+MahoganyTown_Text_DarachHardGoodLuckOnNextBattle:
+	.string "That will be all from me for now.\p"
+	.string "Let us hope you have chosen wisely,\n"
+	.string "and I wish you luck in your next battle.$"
 
 MahoganyTown_Text_CaitlinPreBattleHard:
-	.string "CAITLIN: I'm up next.\p"
-	.string "...Good luck.$"
+	.string "Caitlin: I'm next.\p"
+	.string "...Let's go.$"
 
 MahoganyTown_Text_DarachHardGiveHardReward:
-	.string "DARACH: I don't believe it.\p"
+	.string "Darach: I don't believe it.\p"
 	.string "Lady Caitlin's theory was indeed true,\n"
 	.string "and yet, you still managed to blow us\l"
 	.string "away with your masterful display.\p"
@@ -416,22 +489,22 @@ MahoganyTown_Text_DeclineDarachChallenge:
 	.string "whenever you are ready.$"
 
 MahoganyTown_Text_CaitlinDisappointed:
-	.string "CAITLIN: But I want to battle now...$"
+	.string "Caitlin: But I want to battle now...$"
 
 MahoganyTown_Text_DarachCaitlinDoubleIntro:
-	.string "DARACH: Prepare for trouble.\p"
-	.string "CAITLIN: Make it double.$"
+	.string "Darach: Prepare for trouble.\p"
+	.string "Caitlin: Make it double.$"
 
 MahoganyTown_Text_DarachCaitlinDoubleDefeat:
-	.string "DARACH: G\n"
-	.string "CAITLIN: G$"
+	.string "Darach: G\n"
+	.string "Caitlin: G$"
 
 MahoganyTown_Text_DarachCaitlinWin:
-	.string "DARACH: DARACH: Bravo! What an incredible show!\n"
-	.string "CAITLIN: ...$"
+	.string "Darach: Darach: Bravo! What an incredible show!\n"
+	.string "Caitlin: ...$"
 
 MahoganyTown_Text_DarachCaitlinNeedTwoMons:
-	.string "DARACH: I respect your enthusiasm,\n"
+	.string "Darach: I respect your enthusiasm,\n"
 	.string "but...\p"
 	.string "It appears you don't have enough\n"
 	.string "POKéMON on you battle us in this way.\p"
@@ -466,7 +539,7 @@ MahoganyTown_EventScript_CaitlinPokemonIntro::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_TOGEPI, CRY_MODE_NORMAL
+	playmoncry SPECIES_GOTHITELLE, CRY_MODE_NORMAL
 	msgbox MahoganyTown_Text_CaitlinPokemonIntro, MSGBOX_DEFAULT
 	waitmoncry
 	release
@@ -492,21 +565,41 @@ MahoganyTown_EventScript_DarachIntro::
 	msgbox MahoganyTown_Text_DarachIntro, MSGBOX_DEFAULT
 	closemessage
 	msgbox MahoganyTown_Text_DarachPostIntro, MSGBOX_DEFAULT
-	multichoice 20, 6, MULTI_DARACH_CAITLIN, FALSE 
+	dynmultipush MahoganyTown_Text_Double, 0
+	dynmultipush MahoganyTown_Text_BackToBack, 1
+	dynmultipush MahoganyTown_Text_Exit, 2
+	dynmultistack 20, 5, FALSE, 3, FALSE, 0, NULL
 	switch VAR_RESULT
 	case 0, MahoganyTown_EventScript_DarachCaitlinBattleNormal
 	case 1, MahoganyTown_EventScript_DarachCaitlinBattleHard
+	case 2, MahoganyTown_EventScript_DeclineDarachChallenge
 	case MULTI_B_PRESSED, MahoganyTown_EventScript_DeclineDarachChallenge
-	goto MahoganyTown_EventScript_DeclineDarachChallenge
+	end
+	@multichoice 20, 6, MULTI_DARACH_CAITLIN, FALSE 
+	@switch VAR_RESULT
+	@case 0, MahoganyTown_EventScript_DarachCaitlinBattleNormal
+	@case 1, MahoganyTown_EventScript_DarachCaitlinBattleHard
+	@case MULTI_B_PRESSED, MahoganyTown_EventScript_DeclineDarachChallenge
+	@goto MahoganyTown_EventScript_DeclineDarachChallenge
 
 MahoganyTown_EventScript_DarachPostIntro::
 	msgbox MahoganyTown_Text_DarachPostIntro, MSGBOX_DEFAULT
-	multichoice 20, 6, MULTI_DARACH_CAITLIN, FALSE 
+	dynmultipush MahoganyTown_Text_Double, 0
+	dynmultipush MahoganyTown_Text_BackToBack, 1
+	dynmultipush MahoganyTown_Text_Exit, 2
+	dynmultistack 20, 5, FALSE, 3, FALSE, 0, NULL
 	switch VAR_RESULT
 	case 0, MahoganyTown_EventScript_DarachCaitlinBattleNormal
 	case 1, MahoganyTown_EventScript_DarachCaitlinBattleHard
+	case 2, MahoganyTown_EventScript_DeclineDarachChallenge
 	case MULTI_B_PRESSED, MahoganyTown_EventScript_DeclineDarachChallenge
-	goto MahoganyTown_EventScript_DeclineDarachChallenge
+	end
+	@multichoice 20, 6, MULTI_DARACH_CAITLIN, FALSE 
+	@switch VAR_RESULT
+	@case 0, MahoganyTown_EventScript_DarachCaitlinBattleNormal
+	@case 1, MahoganyTown_EventScript_DarachCaitlinBattleHard
+	@case MULTI_B_PRESSED, MahoganyTown_EventScript_DeclineDarachChallenge
+	@goto MahoganyTown_EventScript_DeclineDarachChallenge
 
 MahoganyTown_EventScript_DarachCaitlinBattleNormal::
 	msgbox MahoganyTown_Text_DarachPreBattleNormal, MSGBOX_DEFAULT
@@ -522,13 +615,14 @@ MahoganyTown_EventScript_DarachCaitlinBattleNormal::
 	waitmovement 0
 	waitmovement 0
 	trainerbattle_no_intro TRAINER_ANN_AND_ANNE, MahoganyTown_Text_DarachCaitlinWin
-	playbgm MUS_HG_B_CASTLE, TRUE
+	@playbgm MUS_HG_B_CASTLE, TRUE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MAHOGANY_DARACH, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	waitmovement 0
 	msgbox MahoganyTown_Text_DarachNormalGiveNormalReward, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 2
+	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_SERIOUS_MINT
 	msgbox MahoganyTown_Text_DarachLeaving, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MAHOGANY_CAITLIN, Common_Movement_WalkInPlaceUp
@@ -565,8 +659,187 @@ MahoganyTown_EventScript_DarachCaitlinBattleHard::
 	msgbox MahoganyTown_Text_DarachPreBattleHard, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, MahoganyTown_Text_DarachWin
-	playbgm MUS_HG_B_CASTLE, TRUE
+	@playbgm MUS_HG_B_CASTLE, TRUE
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	end
+
+MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption::	
 	msgbox MahoganyTown_Text_DarachHardAfter, MSGBOX_DEFAULT
+	dynmultipush MahoganyTown_Text_HealPokemon, 0
+	dynmultipush MahoganyTown_Text_GiveItem, 1
+	dynmultipush MahoganyTown_Text_DoNothing, 2
+	dynmultistack 20, 5, TRUE, 3, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, MahoganyTown_EventScript_DarachHealMon
+	case 1, MahoganyTown_EventScript_DarachGiveItem
+	case 2, MahoganyTown_EventScript_DarachDoNothing
+	end
+
+MahoganyTown_EventScript_DarachHealMon::
+	msgbox MahoganyTown_Text_DarachHealWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantHealFaintedMon
+	special HealSpecificPokemonInSlot
+	msgbox MahoganyTown_Text_DarachMonHealed, MSGBOX_DEFAULT
+	setflag FLAG_HEALED_VS_DARACH_CAITLIN
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachCantHealFaintedMon::
+	msgbox MahoganyTown_Text_DarachCantHealFaintedMon, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	end
+
+MahoganyTown_EventScript_DarachGiveItem::
+	msgbox MahoganyTown_Text_DarachGiveWhichItem, MSGBOX_DEFAULT
+	dynmultipush MahoganyTown_Text_CustapBerry, 0
+	dynmultipush MahoganyTown_Text_EjectButton, 1
+	dynmultipush MahoganyTown_Text_EjectPack, 2
+	dynmultipush MahoganyTown_Text_FocusSash, 3
+	dynmultipush MahoganyTown_Text_BottleCap, 4
+	dynmultipush MahoganyTown_Text_Exit, 5
+	dynmultistack 20, 4, FALSE, 4, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, MahoganyTown_EventScript_DarachCustapBerry
+	case 1, MahoganyTown_EventScript_DarachEjectButton
+	case 2, MahoganyTown_EventScript_DarachEjectPack
+	case 3, MahoganyTown_EventScript_DarachFocusSash
+	case 4, MahoganyTown_EventScript_DarachBottleCap
+	case 5, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	case MULTI_B_PRESSED, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	end
+
+MahoganyTown_EventScript_DarachCustapBerry::
+	setvar VAR_0x8006, ITEM_CUSTAP_BERRY
+	msgbox MahoganyTown_Text_DarachGiveItemToWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_DarachItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_DarachItemGiven, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachEjectButton::
+	setvar VAR_0x8006, ITEM_EJECT_BUTTON
+	msgbox MahoganyTown_Text_DarachGiveItemToWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_DarachItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_DarachItemGiven, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachEjectPack::
+	setvar VAR_0x8006, ITEM_EJECT_PACK
+	msgbox MahoganyTown_Text_DarachGiveItemToWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_DarachItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_DarachItemGiven, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachFocusSash::
+	setvar VAR_0x8006, ITEM_FOCUS_SASH
+	msgbox MahoganyTown_Text_DarachGiveItemToWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_DarachItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_DarachItemGiven, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachBottleCap::
+	setvar VAR_0x8006, ITEM_BOTTLE_CAP
+	msgbox MahoganyTown_Text_DarachGiveItemToWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_DarachItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_DarachItemGiven, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachCantGiveItemToFaintedMon::
+	msgbox MahoganyTown_Text_DarachCantGiveItemToFaintedMon, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	end
+
+MahoganyTown_EventScript_DarachCantGiveItemToMonHoldingAnItem::
+	msgbox MahoganyTown_Text_DarachCantGiveItemToMonHoldingAnItem, MSGBOX_DEFAULT
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	end
+
+MahoganyTown_EventScript_DarachDoNothing::
+	msgbox MahoganyTown_Text_DarachConfirmDoNothing, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
+	msgbox MahoganyTown_Text_DarachPlayerChoseDoNothing, MSGBOX_DEFAULT
+	setflag FLAG_DID_NOTHING_VS_DARACH_CAITLIN
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen
+	end
+
+MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen::
+	msgbox MahoganyTown_Text_DarachHardGoodLuckOnNextBattle, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MAHOGANY_CAITLIN, Common_Movement_WalkInPlaceRight
 	waitmovement 0
@@ -583,13 +856,31 @@ MahoganyTown_EventScript_DarachCaitlinBattleHard::
 	waitmovement 0
 	waitmovement 0
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, MahoganyTown_Text_CaitlinWin
-	playbgm MUS_HG_B_CASTLE, TRUE
+	@playbgm MUS_HG_B_CASTLE, TRUE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MAHOGANY_DARACH, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	waitmovement 0
+	goto_if_set FLAG_HEALED_VS_DARACH_CAITLIN, MahoganyTown_EventScript_DarachAdditionalHealReward
+	goto_if_set FLAG_DID_NOTHING_VS_DARACH_CAITLIN, MahoganyTown_EventScript_DarachAdditionalDoNothingReward
 	msgbox MahoganyTown_Text_DarachHardGiveHardReward, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
+	giveitem ITEM_HEART_SCALE
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardRewardAlreadyGiven
+	end
+
+MahoganyTown_EventScript_DarachAdditionalHealReward::
+	msgbox MahoganyTown_Text_DarachHardGiveHardReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 2
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardRewardAlreadyGiven
+	end
+
+MahoganyTown_EventScript_DarachAdditionalDoNothingReward::
+	msgbox MahoganyTown_Text_DarachHardGiveHardReward, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 3
+	goto MahoganyTown_EventScript_DarachCaitlinBattleHardRewardAlreadyGiven
+	end
+
+MahoganyTown_EventScript_DarachCaitlinBattleHardRewardAlreadyGiven::	
 	msgbox MahoganyTown_Text_DarachLeaving, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_MAHOGANY_CAITLIN, Common_Movement_WalkInPlaceUp
@@ -1084,3 +1375,149 @@ MahoganyTown_Text_GemGirlAlreadyGivenGems:
 	.string "and shards, don't they?\p"
 	.string "Maybe my Drilbur's trying to get me to\n"
 	.string "sign her up for a beauty contest.$"
+
+@CASTLE ITEM TESTER
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+MahoganyTown_EventScript_CastleTester::
+	lock
+	faceplayer
+	msgbox MahoganyTown_Text_CastleTesterWhatDo, MSGBOX_DEFAULT
+	dynmultipush MahoganyTown_Text_HealPokemon, 0
+	dynmultipush MahoganyTown_Text_GiveItem, 1
+	dynmultipush MahoganyTown_Text_Exit, 2
+	dynmultistack 2, 2, FALSE, 3, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, MahoganyTown_EventScript_CastleTesterHealMon
+	case 1, MahoganyTown_EventScript_CastleTesterGiveItem
+	case 2, MahoganyTown_EventScript_CastleTesterExit
+	case MULTI_B_PRESSED, MahoganyTown_EventScript_CastleTesterExit
+	end
+
+MahoganyTown_EventScript_CastleTesterExit::
+	msgbox MahoganyTown_Text_CastleTesterExit, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_CastleTesterHealMon::
+	msgbox MahoganyTown_Text_CastleTesterWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_CastleTesterExit
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_CastleTesterExit
+	special HealSpecificPokemonInSlot
+	msgbox MahoganyTown_Text_CastleTesterMonHealed, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_CastleTesterGiveItem::
+	msgbox MahoganyTown_Text_CastleTesterGiveWhichItem, MSGBOX_DEFAULT
+	dynmultipush MahoganyTown_Text_CustapBerry, 0
+	dynmultipush MahoganyTown_Text_EjectButton, 1
+	dynmultipush MahoganyTown_Text_EjectPack, 2
+	dynmultipush MahoganyTown_Text_FocusSash, 3
+	dynmultipush MahoganyTown_Text_BottleCap, 4
+	dynmultipush MahoganyTown_Text_Exit, 5
+	dynmultistack 2, 2, FALSE, 4, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, MahoganyTown_EventScript_CastleTesterCustapBerry
+	case 1, MahoganyTown_EventScript_CastleTesterEjectButton
+	case 2, MahoganyTown_EventScript_CastleTesterEjectPack
+	case 3, MahoganyTown_EventScript_CastleTesterFocusSash
+	case 4, MahoganyTown_EventScript_CastleTesterBottleCap
+	case 5, MahoganyTown_EventScript_CastleTesterExit
+	case MULTI_B_PRESSED, MahoganyTown_EventScript_CastleTesterExit
+	end
+
+MahoganyTown_EventScript_CastleTesterCustapBerry::
+	setvar VAR_0x8006, ITEM_CUSTAP_BERRY
+	msgbox MahoganyTown_Text_CastleTesterWhichMon, MSGBOX_DEFAULT
+	waitmessage
+	special ChoosePartyMon
+	waitstate 
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, MahoganyTown_EventScript_CastleTesterExit
+	copyvar VAR_0x8005, VAR_0x8004
+	specialvar VAR_RESULT, CheckIfMonFainted
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_CastleTesterExit
+	specialvar VAR_RESULT, CheckSpecificMonHasAnyHeldItem
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_CastleTesterExit
+	special BufferPokemonNicknameAndCastleItem
+	msgbox MahoganyTown_Text_CastleTesterItemAndMonConfirmation, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahoganyTown_EventScript_CastleTesterExit
+	special GiveMonSelectedCastleItem
+	msgbox MahoganyTown_Text_CastleTesterItemGiven, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+
+
+
+
+
+
+
+
+MahoganyTown_EventScript_CastleTesterEjectButton::
+
+
+MahoganyTown_EventScript_CastleTesterEjectPack::
+
+
+MahoganyTown_EventScript_CastleTesterFocusSash::
+
+
+MahoganyTown_EventScript_CastleTesterBottleCap::
+
+
+
+@dynmulti text
+MahoganyTown_Text_HealPokemon:
+	.string "Heal Pokemon$"
+MahoganyTown_Text_GiveItem:
+	.string "Give Item$"
+MahoganyTown_Text_Exit:
+	.string "Exit$"
+MahoganyTown_Text_CustapBerry:
+	.string "Custap Berry$"
+MahoganyTown_Text_EjectButton:
+	.string "Eject Button$"
+MahoganyTown_Text_EjectPack:
+	.string "Eject Pack$"
+MahoganyTown_Text_FocusSash:
+	.string "Focus Sash$"
+MahoganyTown_Text_BottleCap:
+	.string "Bottle Cap$"
+MahoganyTown_Text_DoNothing:
+	.string "Do Nothing$"
+MahoganyTown_Text_BackToBack:
+	.string "Back to Back$"
+MahoganyTown_Text_Double:
+	.string "Double$"
+
+MahoganyTown_Text_CastleTesterExit:
+	.string "Exit$"
+
+MahoganyTown_Text_CastleTesterWhatDo:
+	.string "What do?$"
+
+MahoganyTown_Text_CastleTesterWhichMon:
+	.string "Which mon?$"
+
+MahoganyTown_Text_CastleTesterMonHealed:
+	.string "Mon healed$"
+
+MahoganyTown_Text_CastleTesterItemAndMonConfirmation:
+	.string "Give {STR_VAR_1} the {STR_VAR_2}?$"
+
+MahoganyTown_Text_CastleTesterItemGiven:
+	.string "Item given$"
+
+MahoganyTown_Text_CastleTesterGiveWhichItem:
+	.string "Which item?$"

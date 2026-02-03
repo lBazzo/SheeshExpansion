@@ -644,4 +644,10 @@ gSpecials::
 	def_special SetPokemonSpecialAttackIVHigher
 	def_special SetPokemonSpecialDefenseIVHigher
 	def_special SetPokemonSpeedIVHigher
+	def_special HealSpecificPokemonInSlot
+	def_special CheckIfMonFainted
+	def_special BufferPokemonNicknameAndCastleItem
+	def_special GiveMonSelectedCastleItem
+	def_special CheckSpecificMonHasAnyHeldItem
+
 	

@@ -5897,3 +5897,65 @@ void SetPokemonSpeedIVHigher(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPEED_IV, &newSpeedIV);
     CalculateMonStats(&gPlayerParty[gSpecialVar_0x8004]);
 }
+
+void HealSpecificPokemonInSlot(void)
+{
+    if (GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_HP) != 0)
+        HealPokemon(&gPlayerParty[gSpecialVar_0x8005]);
+}
+
+bool8 CheckIfMonFainted(void)
+{
+    if (GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_HP) != 0)
+        return FALSE;
+
+    return TRUE;
+}
+
+static const u8 sText_CustapBerryCastle[] = _("Custap Berry");
+static const u8 sText_EjectButtonCastle[] = _("Eject Button");
+static const u8 sText_EjectPackCastle[] = _("Eject Pack");
+static const u8 sText_FocusSashCastle[] = _("Focus Sash");
+static const u8 sText_BottleCapCastle[] = _("Bottle Cap");
+
+void BufferPokemonNicknameAndCastleItem(void)
+{
+    GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+    switch (gSpecialVar_0x8006)
+    {
+        case ITEM_CUSTAP_BERRY:
+            StringCopy(gStringVar2, sText_CustapBerryCastle);
+            break;
+        case ITEM_EJECT_BUTTON:
+            StringCopy(gStringVar2, sText_EjectButtonCastle);
+            break;
+        case ITEM_EJECT_PACK:
+            StringCopy(gStringVar2, sText_EjectPackCastle);
+            break;
+        case ITEM_FOCUS_SASH:
+            StringCopy(gStringVar2, sText_FocusSashCastle);
+            break;
+        case ITEM_BOTTLE_CAP:
+            StringCopy(gStringVar2, sText_BottleCapCastle);
+            break;
+        default:
+            break;
+    }
+}
+
+bool8 CheckSpecificMonHasAnyHeldItem(void)
+{
+    u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_SPECIES_OR_EGG);
+    if (species != SPECIES_NONE && species != SPECIES_EGG && GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_HELD_ITEM) != ITEM_NONE)
+        return TRUE;
+
+    return FALSE;
+}
+
+void GiveMonSelectedCastleItem(void)
+{
+    SetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_HELD_ITEM, &gSpecialVar_0x8006);
+    //GiveItemToMon(&gPlayerParty[gSpecialVar_0x8005], gSpecialVar_0x8006);
+    //gTasks[taskId].func = Task_UpdateHeldItemSprite;
+}
