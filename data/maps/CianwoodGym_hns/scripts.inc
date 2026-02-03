@@ -31,8 +31,8 @@ CianwoodGym_Text_GymStatueCertified:
 CianwoodGym_EventScript_Chuck::
 	lock
 	faceplayer
-	goto_if_unset FLAG_HIDE_DOJO_CHUCK, CianwoodGym_EventScript_ChuckAtDojo
-	goto_if_set FLAG_VISITED_VERMILION_CITY, CianwoodGym_EventScript_ChuckGotoDojo
+	@goto_if_unset FLAG_HIDE_DOJO_CHUCK, CianwoodGym_EventScript_ChuckAtDojo
+	@goto_if_set FLAG_VISITED_VERMILION_CITY, CianwoodGym_EventScript_ChuckGotoDojo
 	goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, CianwoodGym_EventScript_Chuck_Defeated
 	msgbox CianwoodGym_Text_ChuckIntro1, MSGBOX_DEFAULT
 	applymovement LOCALID_CIANWOOD_CHUCK, CianwoodGym_Movement_ChuckLeft
@@ -52,8 +52,8 @@ CianwoodGym_EventScript_Chuck::
 	waitmessage
 	turnobject LOCALID_CIANWOOD_CHUCK, DIR_SOUTH
 	msgbox CianwoodGym_Text_ChuckIntro3, MSGBOX_DEFAULT
-	goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, CianwoodGym_EventScript_OlivineCheckMahog
-	goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, CianwoodGym_EventScript_MahogCheckOlivine
+	@goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, CianwoodGym_EventScript_OlivineCheckMahog
+	@goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, CianwoodGym_EventScript_MahogCheckOlivine
 	goto CianwoodGym_EventScript_Chuck_Battle1
 
 CianwoodGym_EventScript_ChuckVictory::

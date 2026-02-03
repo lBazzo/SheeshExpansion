@@ -96,6 +96,51 @@ MahoganyTown_EventScript_TownTrigger::
 	setvar VAR_DRAGONS_DEN_QUIZ, 0
 	end
 
+MahoganyTown_EventScript_Youngster::
+	lock
+	faceplayer
+	checkitem ITEM_BOTTLE_CAP
+	goto_if_eq VAR_RESULT, TRUE, MahoganyTown_EventScript_YoungsterAskToTradeCap
+	msgbox MahganyTown_Text_NoCap, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahoganyTown_EventScript_YoungsterAskToTradeCap::
+	msgbox MahganyTown_Text_WantTradeCap, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, MahganyTown_EventScript_DeclinedTradeCap
+	removeitem ITEM_BOTTLE_CAP
+	giveitem ITEM_HEART_SCALE, 4
+	msgbox MahganyTown_Text_TradedCap, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahganyTown_EventScript_DeclinedTradeCap::
+	msgbox MahganyTown_Text_DeclinedTradeCap, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+MahganyTown_Text_NoCap:
+	.string "...\p"
+	.string "No cap.$"
+
+MahganyTown_Text_WantTradeCap:
+	.string "Oh! You have THE CAP!\n"
+	.string "Want to trade for these four scales?$"
+
+MahganyTown_Text_DeclinedTradeCap:
+	.string "Yeah, I wouldn't trade either I guess...$"
+
+MahganyTown_Text_TradedCap:
+	.string "Woohoo! Man I'm gonna do so much with\n"
+	.string "this.\p"
+	.string "Like, for example...\p"
+	.string "Y'know...\p"
+	.string "Eh, I'll figure it out.$"
+
 MahoganyTown_EventScript_MerchantTrigger::
 	lock
 	turnobject LOCALID_MAHOGANY_MERCHANT, DIR_SOUTH

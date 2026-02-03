@@ -360,7 +360,7 @@ SafariZone_EventScript_ThortonHardVariantAChosen::
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
+	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -379,7 +379,7 @@ SafariZone_EventScript_ThortonHardVariantBChosen::
 	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
+	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -398,7 +398,7 @@ SafariZone_EventScript_ThortonHardVariantCChosen::
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
+	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
