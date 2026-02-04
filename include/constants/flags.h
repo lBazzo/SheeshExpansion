@@ -1225,7 +1225,7 @@
 #define FLAG_ITEM_MTSILVER_FULLRESTORE                              0x47A
 #define FLAG_ITEM_MTSILVER_DIREHIT                                  0x47B
 #define FLAG_ITEM_MTSILVER_ULTRABALL                                0x47C
-#define FLAG_ITEM_MTSILVER_MAXPOTION                                0x47D
+#define FLAG_MTSILVER_BLACKBELTTALKED                                0x47D
 #define FLAG_ITEM_MTSILVER_SPELL_TAG                                0x47E
 #define FLAG_ITEM_MTSILVER_NERVERMELTICE                            0x47F
 #define FLAG_ITEM_MTSILVER_RARECANDY                                0x480

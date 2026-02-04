@@ -894,7 +894,8 @@ DragonsDen_Cavern_EventScript_SpenserSixTeraFight::
 	msgbox DragonsDen_Cavern_Text_SpenserSixTera, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_SpenserBeaten
 	msgbox DragonsDen_Cavern_Text_SpenserFullReward, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 10
+	giveitem ITEM_HEART_SCALE, 7
+	giveitem ITEM_SAPPHIRE
 	msgbox DragonsDen_Cavern_Text_SpenserTakeTheFinalTest, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
