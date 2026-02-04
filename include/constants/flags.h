@@ -1133,7 +1133,7 @@
 #define FLAG_ITEM_WHIRL_ISLANDS_B2F_CARBOS                          0x41F
 #define FLAG_ITEM_WHIRL_ISLANDS_B2F_CALCIUM                         0x420
 #define FLAG_ITEM_WHIRL_ISLANDS_B2F_ESCAPE_ROPE                     0x421
-#define FLAG_ITEM_ROUTE47_PEARL                                     0x422
+#define FLAG_ITEM_ROUTE47_WEATHER_BALL_TM                           0x422
 #define FLAG_ITEM_ROUTE47_REVIVE                                    0x423
 #define FLAG_ITEM_ROUTE47_WHITE_FLUTE                               0x424
 #define FLAG_ITEM_ROUTE47_STARDUST                                  0x425
@@ -1269,7 +1269,7 @@
 #define FLAG_ITEM_VIOLET_CITY_SHELL_BELL                            0x4A4 
 #define FLAG_ITEM_VIOLET_CITY_HYPER_POTION                          0x4A5 
 #define FLAG_EXP_SHARE                                              0x4A6 // EXP SHARE
-#define FLAG_ITEM_SPROUT_TOWER_PARALYZE_HEAL                        0x4A7 
+#define FLAG_ITEM_SPROUT_TOWER_BIG_ROOT                             0x4A7 
 #define FLAG_ITEM_SPROUT_TOWER_X_DEFEND                             0x4A8 
 #define FLAG_ITEM_SPROUT_TOWER_POTION                               0x4A9 
 #define FLAG_ITEM_SPROUT_TOWER_ESCAPE_ROPE                          0x4AA 
@@ -1325,7 +1325,7 @@
 #define FLAG_ITEM_NATIONAL_PARK_ZOOM_LENS                           0x4DC 
 #define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 
 #define FLAG_ITEM_BELLCHIME_BIG_MUSHROOM                            0x4DE 
-#define FLAG_ITEM_TIN_TOWER_3F_FULL_HEAL                            0x4DF 
+#define FLAG_PLAYER_CAUGHT_SILVALLY                            0x4DF 
 #define FLAG_ITEM_TIN_TOWER_4F_ULTRA_BALL                           0x4E0 
 #define FLAG_ITEM_TIN_TOWER_4F_ESCAPE_ROPE                          0x4E1 
 #define FLAG_ITEM_TIN_TOWER_4F_MAX_POTION                           0x4E2 
@@ -1648,7 +1648,7 @@
 #define FLAG_DEFEATED_DAHLIA                        (SYSTEM_FLAGS + 0xB0) // Unused Flag
 #define FLAG_SYS_POKERIDER_UNLOCKED                 (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_HIDE_GOLDENROD_GIOVANNI                (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
+#define FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE  (SYSTEM_FLAGS + 0xB3) // Unused Flag
 #define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag

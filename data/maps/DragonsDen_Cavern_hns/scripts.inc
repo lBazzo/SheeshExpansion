@@ -104,7 +104,7 @@ DragonsDen_Cavern_Trigger_ClairRight::
 DragonsDen_Cavern_EventScript_Clair::
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox DragonsDen_Cavern_Text_ClairGiveDragonclaw, MSGBOX_DEFAULT
-	giveitem ITEM_TM_DRAGON_CLAW
+	giveitem ITEM_TM_DRACO_METEOR
 	giveitem ITEM_HM_WHIRLPOOL
 	setflag FLAG_RECEIVED_HM_WHIRLPOOL
 	msgbox DragonsDen_Cavern_Text_ClairDescribeDragonclaw, MSGBOX_DEFAULT
@@ -158,11 +158,9 @@ DragonsDen_Cavern_Text_ClairGiveDragonclaw:
     .string "Here, take these as my apology.$"
 
 DragonsDen_Cavern_Text_ClairDescribeDragonclaw:
-    .string "That contains DRAGON CLAW.\p"
-    .string "No, it doesn't have anything to\n"
-    .string "do with my nails.\p"
-    .string "If you don't want it, you don't\n"
-    .string "have to take it.\p"
+    .string "That contains Draco Meteor.\p"
+    .string "It's one of the most powerful Dragon\n"
+    .string "moves there is.\p"
 	.string "The other one is WHIRLPOOL. It will\n"
 	.string "allow you to cross whirlpools at sea.$"
 

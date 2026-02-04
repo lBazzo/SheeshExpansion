@@ -46,6 +46,84 @@ TinTower_1F_EventScript_SageC_Hooh::
 	release
 	end
 
+TinTower_1F_EventScript_SageD::
+	lock
+	faceplayer
+	goto_if_set FLAG_PLAYER_CAUGHT_SILVALLY, TinTower_1F_EventScript_SageDPostMemories
+	msgbox TinTower_1F_Text_SageDDoYouHaveSilvally, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	lockall
+	copyvar VAR_0x800A, VAR_0x8004
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, TinTower_1F_EventScript_SageDNotSilvally
+	baobacheckmon 5
+	goto_if_eq VAR_RESULT, FALSE, TinTower_1F_EventScript_SageDNotSilvally
+	msgbox TinTower_1F_Text_SageDPlayerHasSilvally, MSGBOX_DEFAULT
+	giveitem ITEM_BUG_MEMORY
+	giveitem ITEM_DARK_MEMORY
+	giveitem ITEM_DRAGON_MEMORY
+	giveitem ITEM_ELECTRIC_MEMORY
+	giveitem ITEM_FAIRY_MEMORY
+	giveitem ITEM_FIGHTING_MEMORY
+	giveitem ITEM_FIRE_MEMORY
+	giveitem ITEM_FLYING_MEMORY
+	giveitem ITEM_GHOST_MEMORY
+	giveitem ITEM_GRASS_MEMORY
+	giveitem ITEM_GROUND_MEMORY
+	giveitem ITEM_ICE_MEMORY
+	giveitem ITEM_POISON_MEMORY
+	giveitem ITEM_PSYCHIC_MEMORY
+	giveitem ITEM_ROCK_MEMORY
+	giveitem ITEM_STEEL_MEMORY
+	giveitem ITEM_WATER_MEMORY
+	setflag FLAG_PLAYER_CAUGHT_SILVALLY
+	goto TinTower_1F_EventScript_SageDPostMemories
+	end
+
+TinTower_1F_EventScript_SageDNotSilvally::
+	msgbox TinTower_1F_Text_SageDThatsNotSilvally, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+TinTower_1F_EventScript_SageDPostMemories::
+	msgbox TinTower_1F_Text_SageDMemoriesChangeItsType, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+TinTower_1F_Text_SageDDoYouHaveSilvally:
+	.string "I'm looking for a Pokémon called\n"
+	.string "Silvally.\p"
+	.string "I've heard rumours that its somewhere\n"
+	.string "above this floor, but us Sages have\l"
+	.string "never been permitted to go upstairs.\p"
+	.string "Do you have one? Could you show it to\n"
+	.string "me?$"
+
+TinTower_1F_Text_SageDPlayerHasSilvally:
+	.string "Oh, that's it!\p"
+	.string "It's truly breathtaking...\p"
+	.string "Please. Take these with you.\n"
+	.string "Help Silvally realise its potential.$"
+
+TinTower_1F_Text_SageDThatsNotSilvally:
+	.string "...Sorry, I don't think that's what\n"
+	.string "Silvally looks like.\p"
+	.string "Not that I've ever seen it myself, but\n"
+	.string "I'm convinced I'll know it when I see it.\p"
+	.string "Or, I hope so...$"
+
+TinTower_1F_Text_SageDMemoriesChangeItsType:
+	.string "Silvally uses artificially created\n"
+	.string "memories to change it's type.\p"
+	.string "They say it's like the ability of a\n"
+	.string "certain other Pokémon.\p"
+	.string "Though of course, no one has seen that\n"
+	.string "Pokémon except for La-\p"
+	.string "Please excuse me. That is only a rumour.\p"
+	.string "It would be blasphemous to assume it is\n"
+	.string "true.$"
 
 TinTower_1F_Sage1_Text:
 	.string "According to legend…\n"

@@ -127,8 +127,8 @@ EmbeddedTower_Text_OldManIntro:
 	.string "the entrance and its interior, where\l"
 	.string "you'll see strange patterns.$"
 
-Route47_EventScript_Item_Pearl::
-    finditem ITEM_PEARL
+Route47_EventScript_Item_WeatherBallTM::
+    finditem ITEM_TM_WEATHER_BALL
     end
 
 Route47_EventScript_Item_Revive::

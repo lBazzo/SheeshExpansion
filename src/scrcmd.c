@@ -3796,6 +3796,11 @@ bool8 ScrCmd_baobacheckmon(struct ScriptContext *ctx)
              species == SPECIES_FEEBAS);
         break;
 
+    case 5:
+        gSpecialVar_Result =
+            (species == SPECIES_SILVALLY);
+        break;
+
     default:
         gSpecialVar_Result = FALSE;
         break;

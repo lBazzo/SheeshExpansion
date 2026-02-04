@@ -457,7 +457,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard::
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, GoldenrodCity_UndergroundTunnel_Text_LucyWin
 	playbgm MUS_B_PIKE, TRUE
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyHardAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 4
+	giveitem ITEM_HEART_SCALE, 5
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1

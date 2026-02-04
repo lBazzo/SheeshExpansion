@@ -1784,6 +1784,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkPostIntro::
 	goto_if_set FLAG_TM_CLERK_COLLECTION_POST_ERIKA, CherryGrove_Pokecenter_EventScript_TMClerkGivePostErikaTMs
 	goto_if_set FLAG_TM_CLERK_COLLECTION_POST_CHUCK, CherryGrove_Pokecenter_EventScript_TMClerkGivePostChuckTMs
 	goto_if_set FLAG_TM_CLERK_COLLECTION_POST_PRYCE, CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs
+	goto_if_set FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE, CherryGrove_Pokecenter_EventScript_TMClerkGivePostBlaineSurgeBerries
 	msgbox CherryGrove_Pokecenter_Text_TMClerkPostIntro, MSGBOX_DEFAULT
 	waitmessage
 	setvar VAR_0x8004, SCROLL_MULTI_TM_CLERK_MAIN_MENU
@@ -3086,9 +3087,30 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs::
 	releaseall
 	end
 
-
-
-
+CherryGrove_Pokecenter_EventScript_TMClerkGivePostBlaineSurgeBerries::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostBlaineSurgeBerries, MSGBOX_DEFAULT
+	giveitem ITEM_BABIRI_BERRY
+	giveitem ITEM_CHARTI_BERRY
+	giveitem ITEM_CHILAN_BERRY
+	giveitem ITEM_CHOPLE_BERRY
+	giveitem ITEM_COBA_BERRY
+	giveitem ITEM_COLBUR_BERRY
+	giveitem ITEM_HABAN_BERRY
+	giveitem ITEM_KASIB_BERRY
+	giveitem ITEM_KEBIA_BERRY
+	giveitem ITEM_OCCA_BERRY
+	giveitem ITEM_PASSHO_BERRY
+	giveitem ITEM_PAYAPA_BERRY
+	giveitem ITEM_RINDO_BERRY
+	giveitem ITEM_ROSELI_BERRY
+	giveitem ITEM_SHUCA_BERRY
+	giveitem ITEM_TANGA_BERRY
+	giveitem ITEM_WACAN_BERRY
+	giveitem ITEM_YACHE_BERRY
+	clearflag FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE
+	closemessage
+	releaseall
+	end
 
 
 CherryGrove_Pokecenter_Text_TMClerkIntro::
@@ -3157,6 +3179,13 @@ CherryGrove_Pokecenter_Text_TMClerkGivingPostPryceTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
 	.string "PRYCE. Way to go!\p"
+	.string "As promised, here's your reward. I hope\n"
+	.string "you have enough room for them all!$"
+
+CherryGrove_Pokecenter_Text_TMClerkGivingPostBlaineSurgeBerries::
+	.string "Hey, {PLAYER}, over here!\p"
+	.string "I just heard about your victory over\n"
+	.string "BLAINE and SURGE. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 

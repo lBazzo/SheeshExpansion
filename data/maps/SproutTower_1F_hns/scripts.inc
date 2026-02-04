@@ -38,8 +38,8 @@ SproutTower_1F_EventScript_Teacher::
 	release
 	end
 
-SproutTower_1F_EventScript_ItemParalyzeHeal::
-	finditem ITEM_PARALYZE_HEAL
+SproutTower_1F_EventScript_ItemBigRoot::
+	finditem ITEM_BIG_ROOT
 	end
 
 SproutTower_Text_SageChow_Seen:

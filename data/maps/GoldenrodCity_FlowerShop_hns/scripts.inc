@@ -211,6 +211,7 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	giveitem ITEM_IAPAPA_BERRY, 10
 	giveitem ITEM_ENIGMA_BERRY, 25
 	giveitem ITEM_LUM_BERRY, 900
+	giveitem ITEM_LEPPA_BERRY, 25
 	giveitem ITEM_ROWAP_BERRY, 3
 	giveitem ITEM_JABOCA_BERRY, 3
 	giveitem ITEM_CUSTAP_BERRY, 1

@@ -621,6 +621,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	waitmovement 0
 	setvar VAR_OLIVINE_CITY_STATE, 8
 	setvar VAR_MAHOGANY_TOWN_STATE, 17
+	setflag FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE
 	closemessage
 	release
 	end
@@ -737,6 +738,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	waitmovement 0
 	setvar VAR_OLIVINE_CITY_STATE, 8
 	setvar VAR_MAHOGANY_TOWN_STATE, 17
+	setflag FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE
 	closemessage
 	release
 	end

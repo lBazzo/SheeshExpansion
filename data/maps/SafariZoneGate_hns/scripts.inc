@@ -262,7 +262,8 @@ SafariZone_EventScript_FightNormalVariantA::
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 2
+	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -297,7 +298,8 @@ SafariZone_EventScript_FightNormalVariantB::
 	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 2
+	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -332,7 +334,8 @@ SafariZone_EventScript_FightNormalVariantC::
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE, 2
+	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
@@ -464,15 +467,15 @@ SafariZoneGate_Text_ChallengedByThorton:
 	.string "arrive here at this exact time.\p"
 	.string "How do I know your name? Let me\n"
 	.string "explain.\p"
-	.string "My name is THORTON.\p"
-	.string "THORTON: I am the head of the BATTLE\n"
-	.string "FACTORY.\p"
+	.string "My name is Thorton.\p"
+	.string "Thorton: I am the head of the Battle\n"
+	.string "Factory.\p"
 	.string "It's an environment where trainers use\n"
 	.string "rental POKéMON to build makeshift\l"
 	.string "teams and prove their mastery of\l"
 	.string "battles and adaptation.\p"
-	.string "My fellow facility heads DARACH and\n"
-	.string "DAHLIA both spoke highly of your\l"
+	.string "My fellow facility heads Darach and\n"
+	.string "Dahlia both spoke highly of your\l"
 	.string "performance thus far.\p"
 	.string "As it so happens, there is a hypothesis\n"
 	.string "I would appreciate your help with.\p"
@@ -489,7 +492,7 @@ SafariZoneGate_Text_ChallengedByThorton:
 	.string "Should you wish to prove yourself one\n"
 	.string "step further, why don't we up the\l"
 	.string "stakes a little?\p"
-	.string "For double the reward, I will instead\n"
+	.string "For a greater reward, I will instead\n"
 	.string "not reveal which team I'm picking.$"
 
 SafariZone_Text_ThortonAreYouSureNormal:
@@ -514,19 +517,19 @@ SafariZoneGate_Text_ChallengedByThortonPostIntro:
 
 SafariZone_Text_ThortonRevealVariantA:
 	.string "Very well, then. The team you will fight\n"
-	.string "is Variant A, using VIRIZION.\p"
+	.string "is Variant A, using Virizion.\p"
 	.string "Come and speak to me again when your\n"
 	.string "preparations are complete.$"
 
 SafariZone_Text_ThortonRevealVariantB:
 	.string "Very well, then. The team you will fight\n"
-	.string "is Variant B, using TERRAKION.\p"
+	.string "is Variant B, using Terrakion.\p"
 	.string "Come and speak to me again when your\n"
 	.string "preparations are complete.$"
 
 SafariZone_Text_ThortonRevealVariantC:
 	.string "Very well, then. The team you will fight\n"
-	.string "is Variant C, using COBALION.\p"
+	.string "is Variant C, using Cobalion.\p"
 	.string "Come and speak to me again when your\n"
 	.string "preparations are complete.$"
 
@@ -571,6 +574,6 @@ SafariZoneGate_Text_ThortonLeaving:
 	.string "would have from a win.\l"
 	.string "I suppose that's just the way it goes.\p"
 	.string "Thank you, {PLAYER}. Oh, and look out\n"
-	.string "for the last one of us on your journey.\p"
+	.string "for the next one of us on your journey.\p"
 	.string "Though, be warned. She is a bit of an\n"
 	.string "oddball, and that's coming from me...$"

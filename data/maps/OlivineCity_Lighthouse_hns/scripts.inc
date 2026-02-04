@@ -1045,6 +1045,7 @@ OlivineLighthouse_EventScript_RewardSailor::
 	waitmovement 0
 	msgbox OlivineLighthouse_Text_RewardSailorIntro, MSGBOX_DEFAULT
 	giveitem ITEM_LEFTOVERS
+	giveitem ITEM_BLACK_SLUDGE
 	msgbox OlivineLighthouse_Text_RewardSailorLeaving, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_TEMP_0, 118, OlivineLighthouse_EventScript_RewardSailorLeave1
