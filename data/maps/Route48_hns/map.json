@@ -182,9 +182,7 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
@@ -259,7 +257,5 @@
       "script": "SafariZoneGate_EventScript_BackupTrigger"
     }
   ],
-  "bg_events": [
-
-  ]
+  "bg_events": []
 }
