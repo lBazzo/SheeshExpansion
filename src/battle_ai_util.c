@@ -2313,6 +2313,7 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
         case ABILITY_CLEAR_BODY:
         case ABILITY_WHITE_SMOKE:
         case ABILITY_FULL_METAL_BODY:
+        case ABILITY_FLOWER_BLOCK:
             return FALSE;
         case ABILITY_SHIELD_DUST:
             if (!IsBattleMoveStatus(move) && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
@@ -6781,6 +6782,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
     case ABILITY_PURIFYING_SALT:
     case ABILITY_SPEED_BOOST:
     case ABILITY_WHITE_SMOKE:
+    case ABILITY_FLOWER_BLOCK:
         return GOOD_EFFECT;
     // Conditional ability logic goes here.
     case ABILITY_COMPOUND_EYES:

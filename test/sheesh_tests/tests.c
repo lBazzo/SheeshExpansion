@@ -3001,3 +3001,62 @@ SINGLE_BATTLE_TEST("Skitter Speed only grants priority to Bug/Poison-type moves"
         }
     }
 }
+
+SINGLE_BATTLE_TEST("Sun Gazer reduces damage to Normal Effective moves by 0.66", s16 damage)
+{
+    enum Ability ability;
+    PARAMETRIZE { ability = ABILITY_SOUNDPROOF; }
+    PARAMETRIZE { ability = ABILITY_SUN_GAZER; }
+    GIVEN {
+        ASSUME(gSpeciesInfo[SPECIES_MR_MIME].types[0] == TYPE_PSYCHIC);
+        ASSUME(gSpeciesInfo[SPECIES_MR_MIME].types[1] == TYPE_FAIRY);
+        ASSUME(GetMoveType(MOVE_STRENGTH) == TYPE_NORMAL);
+        ASSUME(gTypeEffectivenessTable[TYPE_NORMAL][TYPE_FAIRY] == UQ_4_12(1.0));
+        ASSUME(gTypeEffectivenessTable[TYPE_NORMAL][TYPE_PSYCHIC] == UQ_4_12(1.0));
+        PLAYER(SPECIES_MR_MIME) { Ability(ability); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_STRENGTH); }
+    } SCENE {
+        HP_BAR(player, captureDamage: &results[i].damage);
+        //MESSAGE("It's super effective!");
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.66), results[1].damage);
+    }
+}
+
+SINGLE_BATTLE_TEST("Updated Defiant doesn't let mon proc it's own Defiant")
+{
+    GIVEN {
+        PLAYER(SPECIES_PRIMEAPE) { Moves(MOVE_CLOSE_COMBAT, MOVE_CELEBRATE); Ability(ABILITY_DEFIANT); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_CLOSE_COMBAT); }
+    } SCENE {
+        NOT MESSAGE("Primeape's Attack sharply rose!");
+    }
+}
+
+SINGLE_BATTLE_TEST("Flower Block stops self stat reduction")
+{
+    GIVEN {
+        PLAYER(SPECIES_SERPERIOR) { Moves(MOVE_LEAF_STORM, MOVE_CELEBRATE); Ability(ABILITY_FLOWER_BLOCK); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_LEAF_STORM); }
+    } SCENE {
+        NOT MESSAGE("Serperior's Special Attack harshly fell!");
+    }
+}
+
+SINGLE_BATTLE_TEST("Flower Block shows animation for Intimidate")
+{
+    GIVEN {
+        PLAYER(SPECIES_SERPERIOR) { Moves(MOVE_LEAF_STORM, MOVE_CELEBRATE); Ability(ABILITY_FLOWER_BLOCK); }
+        OPPONENT(SPECIES_WOBBUFFET) Ability(ABILITY_INTIMIDATE);
+    } WHEN {
+        TURN {  }
+    } SCENE {
+        MESSAGE("Serperior's Flower Block prevents stat loss!");
+    }
+}

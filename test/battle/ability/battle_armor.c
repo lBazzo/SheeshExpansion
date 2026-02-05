@@ -8,6 +8,8 @@ SINGLE_BATTLE_TEST("Battle Armor and Shell Armor block critical hits")
 
     PARAMETRIZE { species = SPECIES_KINGLER; ability = ABILITY_SHELL_ARMOR; }
     PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_BATTLE_ARMOR; }
+    PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_LEAF_GUARD; }
+    PARAMETRIZE { species = SPECIES_ARMALDO; ability = ABILITY_MAGMA_ARMOR; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

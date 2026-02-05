@@ -2444,4 +2444,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Bug/Poison moves go first."),
         .aiRating = 6,
     },
+
+    [ABILITY_SUN_GAZER] =
+    {
+        .name = _("Sun Gazer"),
+        .description = COMPOUND_STRING("Weakens “normaleffective”."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_FLOWER_BLOCK] =
+    {
+        .name = _("Flower Block"),
+        .description = COMPOUND_STRING("Prevents all stat reduction."),
+        .aiRating = 4,
+        .breakable = TRUE,
+    },
 };

@@ -1640,7 +1640,8 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
     }
 
-    if (critChance != CRITICAL_HIT_BLOCKED && (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR))
+    if (critChance != CRITICAL_HIT_BLOCKED && (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR 
+        || abilityDef == ABILITY_LEAF_GUARD || abilityDef == ABILITY_MAGMA_ARMOR))
     {
         // Record ability only if move had 100% chance to get a crit
         if (recordAbility)
@@ -1695,7 +1696,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     // Prevented crits
     if (gSideStatuses[battlerDef] & SIDE_STATUS_LUCKY_CHANT)
         critChance = CRITICAL_HIT_BLOCKED;
-    else if (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR)
+    else if (abilityDef == ABILITY_BATTLE_ARMOR || abilityDef == ABILITY_SHELL_ARMOR || abilityDef == ABILITY_LEAF_GUARD || abilityDef == ABILITY_MAGMA_ARMOR)
     {
         if (recordAbility)
             RecordAbilityBattle(battlerDef, abilityDef);
@@ -10189,7 +10190,8 @@ static void TryPlayStatChangeAnimation(u32 battler, enum Ability ability, u32 st
                 else if (!((ability == ABILITY_KEEN_EYE || ability == ABILITY_MINDS_EYE) && currStat == STAT_ACC)
                         && !(GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9 && ability == ABILITY_ILLUMINATE && currStat == STAT_ACC)
                         && !(ability == ABILITY_HYPER_CUTTER && currStat == STAT_ATK)
-                        && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF))
+                        && !(ability == ABILITY_BIG_PECKS && currStat == STAT_DEF)
+                        && !(ability == ABILITY_FLOWER_BLOCK))
                 {
                     if (gBattleMons[battler].statStages[currStat] > MIN_STAT_STAGE)
                     {
@@ -10304,7 +10306,7 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         }
         else if ((battlerHoldEffect == HOLD_EFFECT_CLEAR_AMULET || CanAbilityPreventStatLoss(battlerAbility))
               && (flags.statDropPrevention || gBattlerAttacker != gBattlerTarget || flags.mirrorArmored) && !flags.certain && gCurrentMove != MOVE_CURSE)
-        {
+        { //DebugPrintf("enter change stat buffs (prevent stat loss)");
             if (flags.allowPtr)
             {
                 if (gSpecialStatuses[battler].statLowered)
@@ -10334,6 +10336,29 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
             }
             return STAT_CHANGE_DIDNT_WORK;
         }
+        else if (battlerAbility == ABILITY_FLOWER_BLOCK)
+        { //DebugPrintf("enter change stat buffs (flower block)");
+            if (flags.allowPtr)
+            {
+                gBattleScripting.battler = battler;
+                if (gSpecialStatuses[battler].statLowered)
+                {
+                    gBattlescriptCurrInstr = BS_ptr;
+                }
+                    //gBattleScripting.battler = battler;
+                else
+                {
+                    //gBattleScripting.battler = battler;
+                    gBattlerAbility = battler;
+                    BattleScriptPush(BS_ptr);
+                    gBattlescriptCurrInstr = BattleScript_AbilityNoStatLoss;
+                    gLastUsedAbility = battlerAbility;
+                    RecordAbilityBattle(battler, gLastUsedAbility);
+                }
+                gSpecialStatuses[battler].statLowered = TRUE;
+            }
+            return STAT_CHANGE_DIDNT_WORK;
+        }
         else if ((index = IsFlowerVeilProtected(battler)) && !flags.certain)
         {
             if (flags.allowPtr)
@@ -10358,8 +10383,9 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
                 && (((battlerAbility == ABILITY_KEEN_EYE || battlerAbility == ABILITY_MINDS_EYE) && statId == STAT_ACC)
                 || (GetGenConfig(GEN_ILLUMINATE_EFFECT) >= GEN_9 && battlerAbility == ABILITY_ILLUMINATE && statId == STAT_ACC)
                 || (battlerAbility == ABILITY_HYPER_CUTTER && statId == STAT_ATK)
-                || (battlerAbility == ABILITY_BIG_PECKS && statId == STAT_DEF)))
-        {
+                || (battlerAbility == ABILITY_BIG_PECKS && statId == STAT_DEF)
+                || (battlerAbility == ABILITY_FLOWER_BLOCK)))
+        { DebugPrintf("non specific print");
             if (flags.allowPtr)
             {
                 BattleScriptPush(BS_ptr);
@@ -14696,10 +14722,12 @@ static bool32 IsFinalStrikeEffect(enum MoveEffect moveEffect)
 static bool32 CanAbilityPreventStatLoss(enum Ability abilityDef)
 {
     switch (abilityDef)
-    {
+    { 
     case ABILITY_CLEAR_BODY:
     case ABILITY_FULL_METAL_BODY:
     case ABILITY_WHITE_SMOKE:
+    case ABILITY_FLOWER_BLOCK:
+        //DebugPrintf("prevent stat loss print");
         return TRUE;
     default:
         break;

@@ -1226,7 +1226,8 @@ bool32 ShouldDefiantCompetitiveActivate(u32 battler, enum Ability ability)
     if (ability != ABILITY_DEFIANT && ability != ABILITY_COMPETITIVE)
         return FALSE;
     // if an ally dropped the stats (except for Sticky Web), don't activate
-    if (IsBattlerAlly(gSpecialStatuses[battler].changedStatsBattlerId, battler) && !gBattleScripting.stickyWebStatDrop)
+    //Bazzo note: changing this to suit some fights made lol
+    if (/*IsBattlerAlly(*/gSpecialStatuses[battler].changedStatsBattlerId == battler/*)*/ && !gBattleScripting.stickyWebStatDrop)
         return FALSE;
 
     if (GetGenConfig(GEN_CONFIG_DEFIANT_STICKY_WEB) >= GEN_9 || !gBattleScripting.stickyWebStatDrop)
@@ -8248,6 +8249,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         if (ctx->typeEffectivenessModifier >= UQ_4_12(2.0))
         {
             modifier = UQ_4_12(0.75);
+            recordAbility = TRUE;
+        }
+        break;
+    case ABILITY_SUN_GAZER:
+        if (ctx->typeEffectivenessModifier >= UQ_4_12(1.0))
+        {
+            modifier = UQ_4_12(0.66);
             recordAbility = TRUE;
         }
         break;

@@ -2361,7 +2361,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_LASER_FOCUS:
             if (gBattleMons[battlerDef].volatiles.laserFocus)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
-            else if (aiData->abilities[battlerDef] == ABILITY_SHELL_ARMOR || aiData->abilities[battlerDef] == ABILITY_BATTLE_ARMOR)
+            else if (aiData->abilities[battlerDef] == ABILITY_SHELL_ARMOR || aiData->abilities[battlerDef] == ABILITY_BATTLE_ARMOR
+            || aiData->abilities[battlerDef] == ABILITY_LEAF_GUARD || aiData->abilities[battlerDef] == ABILITY_MAGMA_ARMOR)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
         case EFFECT_SKETCH:
@@ -3062,6 +3063,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
              && (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)
               || aiData->abilities[battlerDef] == ABILITY_CLEAR_BODY
               || aiData->abilities[battlerDef] == ABILITY_GOOD_AS_GOLD
+              || aiData->abilities[battlerDef] == ABILITY_FLOWER_BLOCK
               || aiData->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
