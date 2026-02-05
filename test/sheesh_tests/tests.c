@@ -2932,3 +2932,72 @@ AI_SINGLE_BATTLE_TEST("AI correctly uses tera sometimes when it deals the same d
         MESSAGE("The opposing Typhlosion terastallized into the Water type!");
     }
 }
+
+SINGLE_BATTLE_TEST("Threatening Aura correctly boosts dark type damage")
+{
+    GIVEN {
+        PLAYER(SPECIES_FERALIGATR) { Moves(MOVE_CRUNCH, MOVE_CELEBRATE); Ability(ABILITY_THREATENING_AURA); }
+        OPPONENT(SPECIES_BRONZOR) { Moves(MOVE_CELEBRATE); HP(210); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CRUNCH); }
+    } SCENE {
+        MESSAGE("The opposing Bronzor fainted!");
+    }
+}
+
+SINGLE_BATTLE_TEST("Sense Danger correctly gives +2 Crit Chance")
+{
+    //u32 OpponentAbility;
+
+    //PARAMETRIZE { OpponentAbility = ABILITY_AROMA_VEIL; }
+    //PARAMETRIZE { OpponentAbility = ABILITY_SENSE_DANGER; }
+
+    GIVEN {
+        PLAYER(SPECIES_ZANGOOSE) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_SEVIPER) { Moves(MOVE_DRILL_RUN); Ability(ABILITY_SENSE_DANGER); }
+    } WHEN {
+        /*if (OpponentAbility == ABILITY_AROMA_VEIL)
+        {
+            TURN {  }
+        } SCENE {
+            NOT MESSAGE("A critical hit!");
+        }
+        else if (OpponentAbility == ABILITY_SENSE_DANGER)
+        { */
+            TURN { MOVE(opponent, MOVE_DRILL_RUN);/*SCORE_EQ_VAL(opponent, MOVE_DRILL_RUN, 108);*/ }
+        } SCENE {
+            MESSAGE("A critical hit!");
+        }
+        //}
+    }
+//}
+
+SINGLE_BATTLE_TEST("Skitter Speed only grants priority to Bug/Poison-type moves")
+{
+    u32 move;
+    PARAMETRIZE { move = MOVE_X_SCISSOR; }
+    PARAMETRIZE { move = MOVE_POISON_JAB; }
+    PARAMETRIZE { move = MOVE_FLARE_BLITZ; }
+    GIVEN {
+        ASSUME(GetMoveType(MOVE_X_SCISSOR) == TYPE_BUG);
+        ASSUME(GetMoveType(MOVE_POISON_JAB) == TYPE_POISON);
+        ASSUME(GetMoveType(MOVE_FLARE_BLITZ) == TYPE_FIRE);
+        PLAYER(SPECIES_TALONFLAME) { Ability(ABILITY_SKITTER_SPEED); HP(100); MaxHP(100); Speed(1);}
+        OPPONENT(SPECIES_LINOONE) { Speed(100);};
+    } WHEN {
+        TURN { MOVE(player, move); }
+    } SCENE {
+        if (move == MOVE_X_SCISSOR) {
+            MESSAGE("Talonflame used X-Scissor!");
+            MESSAGE("The opposing Linoone used Celebrate!");
+        }
+        else if (move == MOVE_POISON_JAB) {
+            MESSAGE("Talonflame used Poison Jab!");
+            MESSAGE("The opposing Linoone used Celebrate!");
+        }
+        else {
+            MESSAGE("The opposing Linoone used Celebrate!");
+            MESSAGE("Talonflame used Flare Blitz!");
+        }
+    }
+}

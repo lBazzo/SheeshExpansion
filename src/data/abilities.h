@@ -2409,4 +2409,39 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_THREATENING_AURA] =
+    {
+        .name = _("Threatening Aura"),
+        .description = COMPOUND_STRING("Powers up Dark moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_FIERY_DEMEANOUR] =
+    {
+        .name = _("Fiery Demeanour"),
+        .description = COMPOUND_STRING("Powers up Fire moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_SENSE_DANGER] =
+    {
+        .name = _("Sense Danger"),
+        .description = COMPOUND_STRING("Crits extremely often."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_OLD_PICKPOCKET_PLACEHOLDER] =
+    {
+        .name = _("Pickpocket2"),
+        .description = COMPOUND_STRING("Steals the foe's held item."),
+        .aiRating = 3,
+    },
+
+    [ABILITY_SKITTER_SPEED] =
+    {
+        .name = _("Skitter Speed"),
+        .description = COMPOUND_STRING("Bug/Poison moves go first."),
+        .aiRating = 6,
+    },
 };

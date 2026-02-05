@@ -4882,6 +4882,12 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
     {
         priority++;
     }
+    else if (ability == ABILITY_SKITTER_SPEED
+          && (GetGenConfig(GEN_CONFIG_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
+          && (GetMoveType(move) == TYPE_BUG || GetMoveType(move) == TYPE_POISON))
+    {
+        priority++;
+    }
     else if (IsBattleMoveStatus(move) && IsAbilityAndRecord(battler, ability, ABILITY_PRANKSTER))
     {
         gProtectStructs[battler].pranksterElevated = 1;
