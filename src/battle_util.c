@@ -7398,6 +7398,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_NIGHT_OWL:
+        if (IsMoonMove(move))
+           modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;    
     case ABILITY_SUPREME_OVERLORD:
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
         break;
@@ -7810,6 +7814,14 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
                 RecordAbilityBattle(battlerDef, ABILITY_PURIFYING_SALT);
+        }
+        break;
+    case ABILITY_NIGHT_OWL:
+        if (moveType == TYPE_DARK || moveType == TYPE_FAIRY)
+        {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
+            if (ctx->updateFlags)
+                RecordAbilityBattle(battlerDef, ABILITY_NIGHT_OWL);
         }
         break;
     default:
@@ -10872,6 +10884,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     switch (atkAbility)
     {
     case ABILITY_COMPOUND_EYES:
+    case ABILITY_ILLUMINATE:
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
         break;
     case ABILITY_VICTORY_STAR:

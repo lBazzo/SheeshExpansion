@@ -2460,4 +2460,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 4,
         .breakable = TRUE,
     },
+
+    [ABILITY_NIGHT_OWL] =
+    {
+        .name = _("Night Owl"),
+        .description = COMPOUND_STRING("Gains moon powers."),
+        .aiRating = 6,
+    },
 };

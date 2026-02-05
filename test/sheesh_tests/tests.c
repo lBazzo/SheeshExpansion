@@ -3060,3 +3060,49 @@ SINGLE_BATTLE_TEST("Flower Block shows animation for Intimidate")
         MESSAGE("Serperior's Flower Block prevents stat loss!");
     }
 }
+
+SINGLE_BATTLE_TEST("Night Owl increases damage for Moon based moves", s16 damage)
+{
+    enum Ability ability;
+    PARAMETRIZE { ability = ABILITY_SOUNDPROOF; }
+    PARAMETRIZE { ability = ABILITY_NIGHT_OWL; }
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_NOCTOWL) { Ability(ability); Moves(MOVE_MOONBLAST); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_MOONBLAST); }
+    } SCENE {
+        HP_BAR(player, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
+    }
+}
+
+SINGLE_BATTLE_TEST("Moonlight recovers 2/3 of the user's max HP with Night Owl")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); Ability(ABILITY_NIGHT_OWL); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_MOONLIGHT); }
+    } SCENE {
+        HP_BAR(player, damage: -(300 / 1.5));
+    }
+}
+
+SINGLE_BATTLE_TEST("Night Owl halves damage taken from dark/fairy moves", s16 damage)
+{
+    enum Ability ability;
+    PARAMETRIZE { ability = ABILITY_SOUNDPROOF; }
+    PARAMETRIZE { ability = ABILITY_NIGHT_OWL; }
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Ability(ability); }
+        OPPONENT(SPECIES_NOCTOWL) { Moves(MOVE_MOONBLAST); }
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_MOONBLAST); }
+    } SCENE {
+        HP_BAR(player, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.5), results[1].damage);
+    }
+}
