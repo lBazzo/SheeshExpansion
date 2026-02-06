@@ -153,6 +153,18 @@ Route29_EventScript_Sign::
 	release
 	end
 
+Route29_EventScript_NewBerryText::
+	lock
+	msgbox Route29_Text_NewBerryText, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+Route29_Text_NewBerryText::
+	.string "It's a berry tree!\p"
+	.string "It's in a public space though.\n"
+	.string "Better leave it for everyone to enjoy.$"
+
 Route29_EventScript_ItemPotion::
 	finditem ITEM_POTION
 	end

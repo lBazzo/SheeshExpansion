@@ -5771,15 +5771,15 @@ void CheckIsSheeshSilverStarter(void)
     u16 species;
     species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES);
 
-        if (species == SPECIES_CHESPIN
-         || species == SPECIES_QUILLADIN
-         || species == SPECIES_CHESNAUGHT
-         || species == SPECIES_FENNEKIN
-         || species == SPECIES_BRAIXEN
-         || species == SPECIES_DELPHOX
-         || species == SPECIES_FROAKIE
-         || species == SPECIES_FROGADIER
-         || species == SPECIES_GRENINJA)
+        if (species == SPECIES_CHIKORITA
+         || species == SPECIES_BAYLEEF
+         || species == SPECIES_MEGANIUM
+         || species == SPECIES_CYNDAQUIL
+         || species == SPECIES_QUILAVA
+         || species == SPECIES_TYPHLOSION_HISUI
+         || species == SPECIES_TOTODILE
+         || species == SPECIES_CROCONAW
+         || species == SPECIES_FERALIGATR)
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
