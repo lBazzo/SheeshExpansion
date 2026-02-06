@@ -113,6 +113,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after the mon loses Eject Butt
 
 SINGLE_BATTLE_TEST("Eject Button is not triggered after given to player by Picketpocket")
 {
+    KNOWN_FAILING; //Bazzo note: due to pickpocket being changed to magician
     GIVEN {
         PLAYER(SPECIES_REGIELEKI) { Item(ITEM_EJECT_BUTTON); }
         PLAYER(SPECIES_WOBBUFFET);

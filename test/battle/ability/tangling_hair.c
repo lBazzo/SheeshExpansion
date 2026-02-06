@@ -27,6 +27,11 @@ SINGLE_BATTLE_TEST("Tangling Hair drops opposing mon's speed if ability user got
             ABILITY_POPUP(player, ABILITY_TANGLING_HAIR);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
             MESSAGE("The opposing Wynaut's Speed fell!");
+        } // Bazzo Note: Newly added to test lack of contact move if it works
+        else if (move == MOVE_SWIFT) {
+            ABILITY_POPUP(player, ABILITY_TANGLING_HAIR);
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
+            MESSAGE("The opposing Wynaut's Speed fell!");
         }
     }
 }

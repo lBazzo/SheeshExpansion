@@ -2456,7 +2456,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_FLOWER_BLOCK] =
     {
         .name = _("Flower Block"),
-        .description = COMPOUND_STRING("Prevents all stat reduction."),
+        .description = COMPOUND_STRING("Prevents all stat drops."),
         .aiRating = 4,
         .breakable = TRUE,
     },

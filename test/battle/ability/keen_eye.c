@@ -62,6 +62,7 @@ SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye ignore target's evasi
 
 SINGLE_BATTLE_TEST("Keen Eye, Gen9+ Illuminate & Minds Eye are ignored by Mold Breaker abilities")
 {
+    KNOWN_FAILING; //Bazzo note: illuminate changed to compound eyes effect
     enum Ability abilityPlayer = ABILITY_NONE, abilityOpponent = ABILITY_NONE;
     u16 speciesPlayer = SPECIES_NONE, speciesOpponent = SPECIES_NONE;
 
