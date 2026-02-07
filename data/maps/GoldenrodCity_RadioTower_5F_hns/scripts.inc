@@ -260,6 +260,7 @@ GoldenrodCity_RadioTower_5F_Fakeout::
 	applymovement LOCALID_DIRECTOR_STUDIO, GoldenrodCity_RadioTower_5F_Movement_Leave2
 	waitmovement 0
 	setflag FLAG_HIDE_GOLDENROD_RADIOTOWER_DIRECTOR_2
+	setflag FLAG_DEFEATED_RADIO_TOWER_ARCHER
 	removeobject LOCALID_DIRECTOR_STUDIO
 	release
 	end
