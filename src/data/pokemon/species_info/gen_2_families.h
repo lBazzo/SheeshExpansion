@@ -2176,16 +2176,16 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_AMPHAROS}),
     },
 
-#define AMPHAROS_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 85 : 75)
+#define AMPHAROS_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 100 : 100)
 
     [SPECIES_AMPHAROS] =
     {
-        .baseHP        = 90,
+        .baseHP        = 100,
         .baseAttack    = 75,
         .baseDefense   = AMPHAROS_DEFENSE,
         .baseSpeed     = 55,
         .baseSpAttack  = 115,
-        .baseSpDefense = 90,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -7430,7 +7430,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseHP        = 75,
         .baseAttack    = 90,
         .baseDefense   = 50,
-        .baseSpeed     = 95,
+        .baseSpeed     = 110,
         .baseSpAttack  = 110,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_DARK, TYPE_FIRE),

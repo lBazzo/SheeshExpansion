@@ -3385,9 +3385,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_LOPUNNY] =
     {
         .baseHP        = 65,
-        .baseAttack    = 76,
+        .baseAttack    = 106,
         .baseDefense   = 84,
-        .baseSpeed     = 105,
+        .baseSpeed     = 120,
         .baseSpAttack  = 54,
         .baseSpDefense = 96,
         .types = MON_TYPES(TYPE_NORMAL),
@@ -5474,12 +5474,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
     [SPECIES_ABOMASNOW] =
     {
-        .baseHP        = 90,
-        .baseAttack    = 92,
-        .baseDefense   = 75,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 92,
-        .baseSpDefense = 85,
+        .baseHP        = 100,
+        .baseAttack    = 97,
+        .baseDefense   = 120,
+        .baseSpeed     = 20,
+        .baseSpAttack  = 97,
+        .baseSpDefense = 120,
         .types = MON_TYPES(TYPE_GRASS, TYPE_ICE),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 173 : 214,
