@@ -849,7 +849,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_GROWLITHE"
+                "species": "SPECIES_TORCHIC"
               },
               {
                 "min_level": 5,
@@ -5814,6 +5814,21 @@
               {
                 "min_level": 5,
                 "max_level": 5,
+                "species": "SPECIES_TORCHIC"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TEPIG"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TEPIG"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
                 "species": "SPECIES_CHIMCHAR"
               },
               {
@@ -5825,21 +5840,6 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_LITTEN"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TEPIG"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TEPIG"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_TEPIG"
               }
             ]
           },
@@ -35365,7 +35365,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_MANKEY"
+                "species": "SPECIES_TORCHIC"
               },
               {
                 "min_level": 5,
