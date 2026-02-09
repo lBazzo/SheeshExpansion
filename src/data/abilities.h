@@ -2467,4 +2467,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Gains moon powers."),
         .aiRating = 6,
     },
+
+    [ABILITY_DRAGON_HERITAGE] =
+    {
+        .name = _("Dragon Heritage"),
+        .description = COMPOUND_STRING("Powers up Dragon moves."),
+        .aiRating = 6,
+    },
 };
