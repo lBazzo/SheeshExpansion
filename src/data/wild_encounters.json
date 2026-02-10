@@ -4682,7 +4682,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHARCADET"
+                "species": "SPECIES_TORCHIC"
               },
               {
                 "min_level": 5,
@@ -5090,7 +5090,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PAWNIARD"
+                "species": "SPECIES_ROLYCOLY"
               },
               {
                 "min_level": 5,
@@ -5110,12 +5110,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_PAWNIARD"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ROLYCOLY"
+                "species": "SPECIES_PAWNIARD"
               }
             ]
           },
@@ -5784,7 +5784,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHARMANDER"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 5,
@@ -5814,7 +5814,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORCHIC"
+                "species": "SPECIES_CHARMANDER"
               },
               {
                 "min_level": 5,
@@ -6478,12 +6478,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_HORSEA"
+                "species": "SPECIES_DRAMPA"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TATSUGIRI"
+                "species": "SPECIES_DRUDDIGON"
               },
               {
                 "min_level": 5,
@@ -35434,7 +35434,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TAILLOW"
+                "species": "SPECIES_CHARCADET"
               },
               {
                 "min_level": 5,
@@ -35869,7 +35869,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_ARON"
+                "species": "SPECIES_MAGBY"
               },
               {
                 "min_level": 5,
