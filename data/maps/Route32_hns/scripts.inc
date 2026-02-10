@@ -215,6 +215,8 @@ Route32_EventScript_BaldingManCheck::
 	goto_if_unset FLAG_RECEIVED_SPINDA, Route32_EventScript_BaldingManEgg
 	msgbox Route32_Text_CooltrainerM_HaveThisSeed, MSGBOX_DEFAULT
 	giveitem ITEM_EVIOLITE
+	giveitem ITEM_DEEP_SEA_TOOTH
+	giveitem ITEM_DEEP_SEA_SCALE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
 	setvar VAR_VIOLET_CITY_STATE, 5
@@ -255,8 +257,8 @@ Route32_EventScript_GreatBall::
 Route32_EventScript_GreatBallII::
 	finditem ITEM_GREAT_BALL
 	end
-Route32_EventScript_SuperPotion::
-	finditem ITEM_SUPER_POTION
+Route32_EventScript_ProtectivePads::
+	finditem ITEM_PROTECTIVE_PADS
 	end
 Route32_EventScript_Reflect::
 	finditem ITEM_TM_REFLECT
@@ -342,9 +344,11 @@ Route32_Text_CooltrainerM_HaveThisSeed:
 	.string "gave them around VIOLET CITY.\n"
 	.string "The training at the GYM must have\p"
 	.string "been especially helpful. As a\n"
-	.string "souvenir of VIOLET CITY, take this.\p"
+	.string "souvenir of VIOLET CITY, take these.\p"
 	.string "It increases the toughness of POKéMON\n"
-	.string "that aren't fully evolved.$"
+	.string "that aren't fully evolved.\l"
+	.string "and those Deep Sea items can help to\l"
+	.string "evolve a Clamperl, if you have one.$"
 
 Route32_Text_CooltrainerM_Experiences:
 	.string "Your experiences in VIOLET CITY\n"

@@ -118,12 +118,12 @@ Route31_EventScript_Sign::
 	release
 	end
 
-Route31_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+Route31_EventScript_ItemPunchingGlove::
+	finditem ITEM_PUNCHING_GLOVE
 	end
 
-Route31_EventScript_ItemAntidote::
-	finditem ITEM_ANTIDOTE
+Route31_EventScript_ItemLightClay::
+	finditem ITEM_LIGHT_CLAY
 	end
 
 Route31_Text_CooltrainerM:

@@ -1263,8 +1263,8 @@
 #define FLAG_NO_SLOW_STAIR_MOVEMENT                                 0x49F // Used to temporaly remove slow stair movement, as it glitches things 
                                                                           // like Steven in Sootopolis leading to Origin Cave.
 #define FLAG_ITEM_ROUTE_29_POTION                                   0x4A0 // HnS ItemFlags Block 1
-#define FLAG_ITEM_ROUTE_31_ANTIDOE                                  0x4A1 
-#define FLAG_ITEM_ROUTE_31_POKEBALL                                 0x4A2 
+#define FLAG_ITEM_ROUTE_31_LIGHT_CLAY                                  0x4A1 
+#define FLAG_ITEM_ROUTE_31_PUNCHING_GLOVE                                 0x4A2 
 #define FLAG_ITEM_VIOLET_CITY_BERRY_JUICE                           0x4A3 
 #define FLAG_ITEM_VIOLET_CITY_SHELL_BELL                            0x4A4 
 #define FLAG_ITEM_VIOLET_CITY_HYPER_POTION                          0x4A5 
@@ -1281,7 +1281,7 @@
 #define FLAG_ITEM_ROUTE_32_GREATBALL                                0x4B0 
 #define FLAG_ITEM_ROUTE_32_GREATBALL2                               0x4B1 
 #define FLAG_ITEM_ROUTE_32_POTION                                   0x4B2 
-#define FLAG_ITEM_ROUTE_32_SUPERPOTION                              0x4B3 
+#define FLAG_ITEM_ROUTE_32_PROTECTIVE_PADS                              0x4B3 
 #define FLAG_ITEM_UNION_CAVE_POTION                                 0x4B4 
 #define FLAG_ITEM_UNION_CAVE_GREAT_BALL                             0x4B5 
 #define FLAG_ITEM_UNION_CAVE_X_ATTACK                               0x4B6 
