@@ -11,7 +11,7 @@ The above gifs are from the **`pokeemerald-expansion`** repository.
 # PLEASE NOTE WHILE READING THIS DOCUMENTATION
 **1:** This README and the rest of the documentation are very much **still work in progress**. They have been taken from the parent **`pokeemerald-expansion`** project and will gradually be updated over time. Please feel free to contribute to this effort.
 **2:** The **`pokehns-expansion`** project itself is also very much **still work in progress**. If this point is still in the documentation, the project will only be accepting pull requests for bug fixes, feature alignment to the original **`pokehns`** project, and the **`pokehns`** 2.0 release feature list, which may be found further down this page in the **`PULL REQUEST SCOPE`** section.
-**3:** **`pokehns-expansion`** is currently up to date with **`pokeemerald-expansion`** version **`1.14.1`**. Incremental updates will be made as time permits after new releases of the **`pokeemerald-expansion`** **`master`** branch become available.
+**3:** **`pokehns-expansion`** is currently up to date with **`pokeemerald-expansion`** version **`1.14.2`**. Incremental updates will be made as time permits after new releases of the **`pokeemerald-expansion`** **`master`** branch become available.
 
 # [Features](FEATURES.md)
 
@@ -24,7 +24,7 @@ The above gifs are from the **`pokeemerald-expansion`** repository.
 If you use **`pokehns-expansion`**, please credit **RHH (Rom Hacking Hideout)** and **pokemonHnS**. Optionally, include the version number for clarity.
 
 ```
-Based off pokehns-expansion https://github.com/TixoRebel/pokehns-expansion, using RHH's pokeemerald-expansion 1.14.1 https://github.com/rh-hideout/pokeemerald-expansion/ and pokemonHnS https://github.com/PokemonHnS-Development/pokemonHnS.
+Based off pokehns-expansion https://github.com/TixoRebel/pokehns-expansion, using RHH's pokeemerald-expansion 1.14.2 https://github.com/rh-hideout/pokeemerald-expansion/ and pokemonHnS https://github.com/PokemonHnS-Development/pokemonHnS.
 ```
 
 Please consider [crediting all contributors](CREDITS.md) involved in the upstream pokeemerald-expansion project!

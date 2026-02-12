@@ -29,7 +29,7 @@ The best bug reports have enough information that we won't have to contact you f
 
 - A maintainer will [label](https://github.com/TixoRebel/pokehns-expansion/labels) the bug report.
 - A maintainer will try to reproduce the bug with your provided steps.
-    - If there are no reproduction steps or no obvious way to reproduce the issue, somebody will ask you for those steps. Until the bug can be reproduced, the bug will retain the `bug:unconfirmed` label. Unconfirmed bugs are less likely get fixed.
+    - If there are no reproduction steps or no obvious way to reproduce the issue, somebody will ask you for those steps. Until the bug can be reproduced, the bug will retain the `bug:unconfirmed` label. Unconfirmed bugs are less likely to get fixed.
 - If the team is able to reproduce the bug, it will be labeled `bug:confirmed`, and the bug will be left to be [fixed by someone](#Pull-Requests).
     - If the issue is particularly game-breaking, a maintainer will add it to a future version's [milestone](), meaning that version will not be released until the problem is solved.
 
@@ -124,17 +124,6 @@ Once a maintainer has begun reviewing your PR, **please** do not force-push new 
 Maintainers will measure the submitted pull request against a [merge checklist](docs/team_procedures/merge_checklist.md).
 
 Once all items on the merge checklist are true, the branch will be merged in.
-
-
-## Maintainers
-
-This list was last updated 2025 November 19.
-
-| Name | Discord | Currently Active | Areas of Expertise |
-| --- | --- | --- | --- |
-| [grintoul](https://github.com/grintoul1) | grintoul | ✅ | Tests, Battle Engine/Controllers, Battle AI, Overworld, FollowerNPC, Sprites, Trainer Slides, Multibattles
-
-For topics not covered above please do not request a specific maintainer; somebody will assign themselves in due course.
 
 ## Attribution
 This guide is based on the [contributing.md](https://contributing.md/generator)!

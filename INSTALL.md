@@ -156,7 +156,7 @@ For example, if your version is 1.7.0, you should update to 1.7.4.
 git pull HNS-EXPANSION hns-expansion-release-X.Y.Z # Replace X, Y and Z with the target version, such as `hns-expansion-release-1.9.3`, `main`, or `development-bugfix`.
 ```
 
-You may have merge conflicts that you need to resolve. 
+You may have merge conflicts that you need to resolve.
 
 Different releases are stored as branches which may be found on the [branches](https://github.com/TixoRebel/pokehns-expansion/branches) page. You should repeat steps 3 and 4 until you are up to date with the latest release.
 
