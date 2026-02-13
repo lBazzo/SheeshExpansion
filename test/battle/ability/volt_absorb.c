@@ -118,7 +118,7 @@ AI_DOUBLE_BATTLE_TEST("Volt Absorb on partner gives spread moves an appropriate 
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_LANTURN) { Ability(ABILITY_VOLT_ABSORB); HP(99); MaxHP(maxHp); }
-        OPPONENT(SPECIES_JOLTEON) { Moves(MOVE_DISCHARGE); }
+        OPPONENT(SPECIES_JOLTEON) { Ability(ABILITY_VOLT_ABSORB); Moves(MOVE_DISCHARGE); }
     } WHEN {
         if (maxHp == 100)
         {

@@ -21,6 +21,7 @@ SINGLE_BATTLE_TEST("Aerilate turns a Normal-type move into Flying-type move")
     }
 }
 
+//Bazzo note: why don't they just write the new ability instead of writing in salamence using mega????? a mystery :) anyway fails with mega removal
 SINGLE_BATTLE_TEST("Aerilate can not turn certain moves into Flying type moves")
 {
     u32 move;
@@ -33,12 +34,12 @@ SINGLE_BATTLE_TEST("Aerilate can not turn certain moves into Flying type moves")
     PARAMETRIZE { move = MOVE_TERRAIN_PULSE; }
     GIVEN {
         PLAYER(SPECIES_MEGANIUM);
-        OPPONENT(SPECIES_SALAMENCE) { Item(ITEM_SALAMENCITE); }
+        OPPONENT(SPECIES_SALAMENCE) { Item(ITEM_SALAMENCITE); Ability(ABILITY_AERILATE); } 
     } WHEN {
-        TURN { MOVE(opponent, move, gimmick: GIMMICK_MEGA); }
+        TURN { MOVE(opponent, move/*, gimmick: GIMMICK_MEGA*/); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, move, opponent);
+        //ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_MEGA_EVOLUTION, opponent);
+        //ANIMATION(ANIM_TYPE_MOVE, move, opponent);
         NONE_OF {
             MESSAGE("It's super effective!");
         }

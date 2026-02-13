@@ -64,7 +64,7 @@ DOUBLE_BATTLE_TEST("Intimidate doesn't activate on an empty field in a double ba
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
-        PLAYER(SPECIES_ABRA);
+        PLAYER(SPECIES_ABRA) { Ability(ABILITY_SYNCHRONIZE); } ;
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
         OPPONENT(SPECIES_ARBOK) { Ability(ABILITY_INTIMIDATE); }

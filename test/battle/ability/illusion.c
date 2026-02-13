@@ -5,7 +5,7 @@
 SINGLE_BATTLE_TEST("Illusion can only imitate Normal Form terapagos")
 {
     GIVEN {
-        PLAYER(SPECIES_ZOROARK) { Moves(MOVE_CELEBRATE); }
+        PLAYER(SPECIES_ZOROARK) { Moves(MOVE_CELEBRATE); Ability(ABILITY_ILLUSION); }
         PLAYER(SPECIES_TERAPAGOS) { Moves(MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -25,8 +25,9 @@ SINGLE_BATTLE_TEST("Illusion can only imitate Normal Form terapagos")
 
 SINGLE_BATTLE_TEST("Illusion breaks if the target faints")
 {
+    //KNOWN_FAILING; //Bazzo note: illusion removed from zoroark
     GIVEN {
-        PLAYER(SPECIES_ZOROARK) { HP(1); }
+        PLAYER(SPECIES_ZOROARK) { HP(1); Ability(ABILITY_ILLUSION); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -43,7 +44,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if the attacker faints")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FINAL_GAMBIT) == EFFECT_FINAL_GAMBIT);
-        PLAYER(SPECIES_ZOROARK) { HP(1); }
+        PLAYER(SPECIES_ZOROARK) { HP(1); Ability(ABILITY_ILLUSION); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -60,7 +61,7 @@ SINGLE_BATTLE_TEST("Illusion cannot imitate if the user is on the last slot")
 {
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
-        PLAYER(SPECIES_ZOROARK);
+        PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { SWITCH(player, 1); }
@@ -73,7 +74,7 @@ SINGLE_BATTLE_TEST("Illusion cannot imitate if the user is on the last slot")
 SINGLE_BATTLE_TEST("Illusion breaks in Neutralizing Gas")
 {
     GIVEN {
-        PLAYER(SPECIES_ZOROARK);
+        PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WEEZING) { Ability(ABILITY_NEUTRALIZING_GAS); }
     } WHEN {
@@ -88,7 +89,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if affected by Gastro Acid")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_GASTRO_ACID) == EFFECT_GASTRO_ACID);
-        PLAYER(SPECIES_ZOROARK);
+        PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -103,7 +104,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if user loses Illusion due to Worry Seed")
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WORRY_SEED) == EFFECT_OVERWRITE_ABILITY);
-        PLAYER(SPECIES_ZOROARK);
+        PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -119,7 +120,7 @@ SINGLE_BATTLE_TEST("Illusion breaks when attacked behind a substitute")
     GIVEN {
         PLAYER(SPECIES_DRAGAPULT) {Ability(ABILITY_INFILTRATOR); Speed(1);};
         OPPONENT(SPECIES_WOBBUFFET) {Speed(2);};
-        OPPONENT(SPECIES_ZOROARK) {Speed(2);};
+        OPPONENT(SPECIES_ZOROARK) {Speed(2); Ability(ABILITY_ILLUSION); };
         OPPONENT(SPECIES_WYNAUT) {Speed(2);};
     } WHEN {
         TURN {  MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_SHED_TAIL); SEND_OUT(opponent, 1);}

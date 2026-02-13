@@ -67,7 +67,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
-        PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(1); Moves(playerAttack, MOVE_CELEBRATE); }
+        PLAYER(SPECIES_ABOMASNOW) { HP(321); Defense(186); Attack(220); Speed(1); Moves(playerAttack, MOVE_CELEBRATE); Ability(ABILITY_SNOW_WARNING); }
         OPPONENT(SPECIES_URSARING) { Attack(313); HP(321); Defense(186); Speed(10); Moves(MOVE_CELEBRATE, opponentSetUpMove, opponentAttack); }
     } WHEN {
         if (opponentSetUpMove == MOVE_SHARPEN && opponentAttack == MOVE_FIRE_PUNCH && playerAttack == MOVE_TACKLE)
@@ -318,7 +318,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Pivot moves such as U-Turn")
 
     PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 110; playerKillingMoveChecker = MOVE_SPLASH;}
     // PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 90; playerKillingMoveChecker = MOVE_SPLASH;}
-    PARAMETRIZE { pivotMove = MOVE_FLIP_TURN; otherMoveDamageChecker = MOVE_BUG_BITE; opponentSpeed = 110; playerKillingMoveChecker = MOVE_THUNDERBOLT;}
+    PARAMETRIZE { pivotMove = MOVE_FLIP_TURN; otherMoveDamageChecker = MOVE_BUG_BITE; opponentSpeed = 110; playerKillingMoveChecker = MOVE_DRACO_METEOR;}
     PARAMETRIZE { pivotMove = MOVE_U_TURN; otherMoveDamageChecker = MOVE_X_SCISSOR; opponentSpeed = 110; playerKillingMoveChecker = MOVE_DISCHARGE;}
 
     GIVEN {
@@ -345,7 +345,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Pivot moves such as U-Turn")
         }
         */
         // Scores applied: +1 faster and player kills AI, +2 kill with move, +1 super effective (and an extra +7 from fast kill)
-        if (pivotMove == MOVE_FLIP_TURN && otherMoveDamageChecker == MOVE_BUG_BITE && opponentSpeed == 110 && playerKillingMoveChecker == MOVE_THUNDERBOLT)
+        if (pivotMove == MOVE_FLIP_TURN && otherMoveDamageChecker == MOVE_BUG_BITE && opponentSpeed == 110 && playerKillingMoveChecker == MOVE_DRACO_METEOR)
         {
             TURN {
                 SCORE_EQ_VAL(opponent, pivotMove, 117);

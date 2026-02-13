@@ -40,7 +40,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: No damage will be dealt to a mon in an invulne
         ASSUME(GetMoveTarget(MOVE_LAVA_PLUME) == MOVE_TARGET_FOES_AND_ALLY);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WYNAUT);
-        OPPONENT(SPECIES_ZAPDOS);
+        OPPONENT(SPECIES_ZAPDOS) { Ability(ABILITY_STATIC); } 
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponentLeft, invulMove, target: playerLeft); MOVE(playerLeft, attackingMove); }
@@ -123,7 +123,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will be weakened by stron
         PLAYER(SPECIES_RAYQUAZA) { Ability(ABILITY_AIR_LOCK); }
         PLAYER(SPECIES_RALTS);
         OPPONENT(SPECIES_ZAPDOS)
-        OPPONENT(SPECIES_RAYQUAZA) { Moves(MOVE_DRAGON_ASCENT, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_RAYQUAZA) { Moves(MOVE_DRAGON_ASCENT, MOVE_CELEBRATE); Ability(ABILITY_DELTA_STREAM); }
     } WHEN {
         TURN { MOVE(opponentRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); MOVE(playerLeft, MOVE_ROCK_SLIDE); }
         TURN { SWITCH(playerRight, 2); MOVE(opponentRight, MOVE_CELEBRATE); MOVE(playerLeft, MOVE_ROCK_SLIDE); }
@@ -143,6 +143,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will be weakened by stron
 
 DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will be weakened by strong winds on one of the targets")
 {
+    //KNOWN_FAILING; // removed megas so this doesnt put ability up
     s16 opponentLeftDmg[2];
     s16 opponentRightDmg[2];
 
@@ -151,7 +152,7 @@ DOUBLE_BATTLE_TEST("Spread Moves: A spread move attack will be weakened by stron
         PLAYER(SPECIES_RAYQUAZA) { Ability(ABILITY_AIR_LOCK); }
         PLAYER(SPECIES_RALTS);
         OPPONENT(SPECIES_DONPHAN)
-        OPPONENT(SPECIES_RAYQUAZA) { Moves(MOVE_DRAGON_ASCENT, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_RAYQUAZA) { Moves(MOVE_DRAGON_ASCENT, MOVE_CELEBRATE); Ability(ABILITY_DELTA_STREAM); }
     } WHEN {
         TURN { MOVE(opponentRight, MOVE_CELEBRATE, gimmick: GIMMICK_MEGA); MOVE(playerLeft, MOVE_ROCK_SLIDE); }
         TURN { SWITCH(playerRight, 2); MOVE(opponentRight, MOVE_CELEBRATE); MOVE(playerLeft, MOVE_ROCK_SLIDE); }

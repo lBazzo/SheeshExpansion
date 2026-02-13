@@ -184,6 +184,7 @@ SINGLE_BATTLE_TEST("Normalize-affected moves become Electric-type under Ion Delu
 
 SINGLE_BATTLE_TEST("Normalize doesn't affect Weather Ball's type", s16 damage)
 {
+    //KNOWN_FAILING; //Bazzo note: caused by meg type chan
     u16 move;
     enum Ability ability;
     PARAMETRIZE { move = MOVE_CELEBRATE; ability = ABILITY_CUTE_CHARM; }
@@ -195,7 +196,7 @@ SINGLE_BATTLE_TEST("Normalize doesn't affect Weather Ball's type", s16 damage)
         ASSUME(GetMoveType(MOVE_WEATHER_BALL) == TYPE_NORMAL);
         ASSUME(GetSpeciesType(SPECIES_MEGANIUM, 0) == TYPE_GRASS);
         PLAYER(SPECIES_SKITTY) { Ability(ability); }
-        OPPONENT(SPECIES_MEGANIUM);
+        OPPONENT(SPECIES_MEGANIUM) { Ability(ABILITY_OVERGROW); }
     } WHEN {
         TURN { MOVE(player, move); }
         TURN { MOVE(player, MOVE_WEATHER_BALL); }

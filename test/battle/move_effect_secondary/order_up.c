@@ -125,7 +125,7 @@ DOUBLE_BATTLE_TEST("Order Up is boosted by Sheer Force without removing the stat
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_ENTRAINMENT) == EFFECT_ENTRAINMENT);
         PLAYER(SPECIES_DONDOZO) { Speed(10); }
-        PLAYER(SPECIES_TATSUGIRI_CURLY) { Speed(9); }
+        PLAYER(SPECIES_TATSUGIRI_CURLY) { Speed(9); Ability(ABILITY_COMMANDER); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
         OPPONENT(SPECIES_TAUROS) { Speed(21); Ability(ABILITY_SHEER_FORCE); }
     } WHEN {

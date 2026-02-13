@@ -1261,11 +1261,13 @@ AI_SINGLE_BATTLE_TEST("Switch AI: AI will switch out if mon has Truant and oppon
 
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attacking stat lowered by 2 stages with good switchin candidate 50% of the time")
 {
+    //Bazzo note: changed espeon to zam to get rid of magic bounce
+    //KNOWN_FAILING; // passes randomly bullshit again...
     u32 aiSpecies = SPECIES_NONE, aiMove = MOVE_NONE, move = MOVE_NONE;
 
     PASSES_RANDOMLY(SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE, 100, RNG_AI_SWITCH_STATS_LOWERED);
     PARAMETRIZE {move = MOVE_CHARM; aiSpecies = SPECIES_FLAREON; aiMove = MOVE_FIRE_FANG; };
-    PARAMETRIZE {move = MOVE_EERIE_IMPULSE; aiSpecies = SPECIES_ESPEON; aiMove = MOVE_CONFUSION; };
+    PARAMETRIZE {move = MOVE_EERIE_IMPULSE; aiSpecies = SPECIES_ALAKAZAM; aiMove = MOVE_CONFUSION; };
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_CHARM) == EFFECT_ATTACK_DOWN_2);
@@ -1286,7 +1288,7 @@ AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI will switch out if main attac
 
     PASSES_RANDOMLY(SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE, 100, RNG_AI_SWITCH_STATS_LOWERED);
     PARAMETRIZE {move = MOVE_GROWL; move2 = MOVE_CHARM; aiSpecies = SPECIES_FLAREON; aiMove = MOVE_FIRE_FANG; };
-    PARAMETRIZE {move = MOVE_CONFIDE; move2 = MOVE_EERIE_IMPULSE; aiSpecies = SPECIES_ESPEON; aiMove = MOVE_STORED_POWER; };
+    PARAMETRIZE {move = MOVE_CONFIDE; move2 = MOVE_EERIE_IMPULSE; aiSpecies = SPECIES_ALAKAZAM; aiMove = MOVE_STORED_POWER; };
 
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_CHARM) == EFFECT_ATTACK_DOWN_2);
