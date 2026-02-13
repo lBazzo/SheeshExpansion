@@ -20012,7 +20012,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Ice-covered feet hit a foe\n"
             "and destroy the terrain."),
-        .effect = EFFECT_ICE_SPINNER,
+        .effect = EFFECT_HIT //EFFECT_ICE_SPINNER,
         .power = 80,
         .type = TYPE_ICE,
         .accuracy = 100,
@@ -21295,6 +21295,47 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 50,
         }),
         .battleAnimScript = gBattleAnimMove_MalignantChain,
+    },
+
+    [MOVE_TWIN_FLAME] =
+    {
+        .name = COMPOUND_STRING("Twin Flame"),
+        .description = COMPOUND_STRING(
+            "User shoots a concentrated\n"
+            "ball of fire twice in a row."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = FALSE,
+        .strikeCount = 2,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FlameBurst,
+    },
+
+    [MOVE_MIND_FLARE] =
+    {
+        .name = COMPOUND_STRING("Mind Flare"),
+        .description = COMPOUND_STRING(
+            "A desperation attack. Power\n"
+            "doubles if last move failed."),
+        .effect = EFFECT_STOMPING_TANTRUM,
+        .power = 75,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = TRUE,
+        .battleAnimScript = gBattleAnimMove_TemperFlare,
     },
 
     // Z-Moves

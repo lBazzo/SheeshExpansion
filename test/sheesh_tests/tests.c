@@ -3106,3 +3106,15 @@ SINGLE_BATTLE_TEST("Night Owl halves damage taken from dark/fairy moves", s16 da
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.5), results[1].damage);
     }
 }
+
+SINGLE_BATTLE_TEST("Twin Flame works correctly")
+{
+    GIVEN {
+        PLAYER(SPECIES_TYPHLOSION_HISUI) { Moves(MOVE_TWIN_FLAME, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_MEGANIUM);
+    } WHEN {
+        TURN { MOVE(player, MOVE_TWIN_FLAME); }
+    } SCENE {
+        MESSAGE("It's super effective!");
+    }
+}
