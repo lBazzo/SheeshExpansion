@@ -7,6 +7,7 @@ CeladonCity_Gym_EventScript_Erika::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_ECRUTEAK_CITY_GYM, CeladonCity_Gym_EventScript_Erika_Defeated
 	msgbox CeladonCity_Gym_Text_ErikaBeforeBattle, MSGBOX_DEFAULT
+	special HealPlayerParty
 	trainerbattle_no_intro TRAINER_ERIKA, CeladonCity_Gym_Text_ErikaBeaten
 	message Text_ReceivedFogBadge
 	waitmessage

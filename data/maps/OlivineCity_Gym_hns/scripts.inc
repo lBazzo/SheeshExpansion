@@ -583,6 +583,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineForwardMovement
 	waitmovement 0
+	special HealPlayerParty
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, OlivineCity_Gym_Text_BlaineWin
 	msgbox OlivineCity_Gym_Text_BlainePostFirstFight, MSGBOX_DEFAULT
 	closemessage
@@ -700,6 +701,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeForwardMovement
 	waitmovement 0
+	special HealPlayerParty
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, OlivineCity_Gym_Text_SurgeWin
 	msgbox OlivineCity_Gym_Text_SurgePostFirstFight, MSGBOX_DEFAULT
 	closemessage

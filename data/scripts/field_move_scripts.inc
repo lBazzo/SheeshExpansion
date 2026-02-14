@@ -120,15 +120,15 @@ EventScript_Headbutt::
 	setvar VAR_RESULT, 0
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantHeadbuttTree
 	@setfieldeffectargument 0, VAR_RESULT
-	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	buffermovename STR_VAR_2, MOVE_HEADBUTT
-	@msgbox Text_WantToHeadbutt, MSGBOX_YESNO
-	@goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
-	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
+	@bufferpartymonnick STR_VAR_1, VAR_RESULT
+	@buffermovename STR_VAR_2, MOVE_HEADBUTT
+	msgbox Text_WantToHeadbutt, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
+	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_HeadbuttCommon:
 	@ check if follower should use the field move
-	Isfollowerfieldmoveuser VAR_0x8004
+	@Isfollowerfieldmoveuser VAR_0x8004
 	@setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	@dofieldeffect FLDEFF_USE_ROCK_SMASH
 	@waitstate

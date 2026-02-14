@@ -71,6 +71,7 @@ MahoganyTown_Gym_EventScript_Pryce::
 	msgbox MahoganyTown_Gym_Text_PryceIntro, MSGBOX_DEFAULT
 	@goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, MahoganyTown_Gym_EventScript_OlivineCheckCianwood
 	@goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, MahoganyTown_Gym_EventScript_CianwoodCheckOlivine
+    special HealPlayerParty
 	goto MahoganyTown_Gym_EventScript_Pryce_Battle1
 
 MahoganyTown_Gym_EventScript_PryceVictory::

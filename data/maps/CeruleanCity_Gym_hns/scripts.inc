@@ -187,6 +187,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_AZALEA_TOWN_GYM, CeruleanCity_Gym_EventScript_Misty_Defeated
 	msgbox CeruleanGym_Text_MistyIntro, MSGBOX_DEFAULT
+	special HealPlayerParty
 	trainerbattle_no_intro TRAINER_MISTY, CeruleanGym_Text_MistyWinLoss
 	message AzaleaTown_Gym_Text_ReceivedHiveBadge
 	waitmessage

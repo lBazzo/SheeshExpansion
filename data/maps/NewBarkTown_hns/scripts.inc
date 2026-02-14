@@ -323,3 +323,26 @@ NewBarkTown_Text_PlayersHouse:
 
 NewBarkTown_Text_ElmsHouse:
 	.string "PROF.ELM's House$"
+
+@TEST FOR CHARLIE
+NewBarkTown_EventScript_CheckTotodile::
+	lock
+	faceplayer
+	checkspecies SPECIES_TOTODILE
+	goto_if_eq VAR_RESULT, FALSE, NewBarkTown_EventScript_NoTotodile
+	msgbox NewBarkTown_Text_GotTotodile, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+NewBarkTown_EventScript_NoTotodile::
+	msgbox NewBarkTown_Text_NoTotodile, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+NewBarkTown_Text_NoTotodile:
+	.string "No Totodile.$"
+
+NewBarkTown_Text_GotTotodile:
+	.string "You have Totodile!$"

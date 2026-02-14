@@ -262,7 +262,7 @@ SafariZone_EventScript_FightNormalVariantA::
 	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
@@ -298,7 +298,7 @@ SafariZone_EventScript_FightNormalVariantB::
 	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage
@@ -334,7 +334,7 @@ SafariZone_EventScript_FightNormalVariantC::
 	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, SafariZoneGate_Text_ThortonWin
 	playbgm MUS_B_FACTORY, TRUE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
-	giveitem ITEM_HEART_SCALE
+	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
 	closemessage

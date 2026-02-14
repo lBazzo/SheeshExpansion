@@ -30,6 +30,7 @@ VioletCity_Gym_EventScript_Falkner::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_VIOLET_GYM, VioletCity_Gym_EventScript_Falkner_Defeated
 	msgbox VioletGym_Text_Falkner_Intro, MSGBOX_DEFAULT
+	special HealPlayerParty
 	trainerbattle_no_intro TRAINER_FALKNER_1, VioletGym_Text_Falkner_WinLoss
 	message VioletGym_Text_ReceivedZephyrBadge
 	waitmessage
