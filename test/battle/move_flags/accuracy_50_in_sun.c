@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(GetMoveAccuracy(MOVE_THUNDER) == 70);
+    ASSUME(GetMoveAccuracy(MOVE_THUNDER) == 80);
     ASSUME(MoveHas50AccuracyInSun(MOVE_HURRICANE) == TRUE);
 }
 

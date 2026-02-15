@@ -10,8 +10,8 @@ static const u16 sMoveItemTable[][18] =
     { TYPE_GROUND,   MOVE_MUD_SHOT,        ITEM_SOFT_SAND },
     { TYPE_ROCK,     MOVE_ROCK_THROW,      ITEM_HARD_STONE },
     { TYPE_BUG,      MOVE_BUG_BITE,        ITEM_SILVER_POWDER },
-    { TYPE_GHOST,    MOVE_SHADOW_PUNCH,    ITEM_SPELL_TAG },
-    { TYPE_STEEL,    MOVE_METAL_CLAW,      ITEM_METAL_COAT },
+    { TYPE_GHOST,    MOVE_SHADOW_BALL,     ITEM_SPELL_TAG },
+    { TYPE_STEEL,    MOVE_IRON_HEAD,       ITEM_METAL_COAT },
     { TYPE_FIRE,     MOVE_EMBER,           ITEM_CHARCOAL },
     { TYPE_WATER,    MOVE_WATER_GUN,       ITEM_MYSTIC_WATER },
     { TYPE_GRASS,    MOVE_VINE_WHIP,       ITEM_MIRACLE_SEED },
@@ -20,7 +20,7 @@ static const u16 sMoveItemTable[][18] =
     { TYPE_ICE,      MOVE_AURORA_BEAM,     ITEM_NEVER_MELT_ICE },
     { TYPE_DRAGON,   MOVE_DRAGON_BREATH,   ITEM_DRAGON_FANG },
     { TYPE_DARK,     MOVE_BITE,            ITEM_BLACK_GLASSES },
-    { TYPE_FAIRY,    MOVE_DISARMING_VOICE, ITEM_FAIRY_FEATHER },
+    { TYPE_FAIRY,    MOVE_FAIRY_WIND,      ITEM_FAIRY_FEATHER },
 };
 
 SINGLE_BATTLE_TEST("Type-enhancing items increase the base power of moves by 20%", s16 damage)

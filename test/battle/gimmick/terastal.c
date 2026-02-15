@@ -92,7 +92,7 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing boosts moves of the same type to 60 BP
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
-        ASSUME(GetMovePower(MOVE_ABSORB) == 20);
+        ASSUME(GetMovePower(MOVE_ABSORB) == 40);
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_GRASS); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -102,8 +102,8 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing boosts moves of the same type to 60 BP
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        // The jump from 20 BP to 90 BP (60 * 1.5x) is a 4.5x boost.
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(4.5), results[1].damage);
+        // The jump from 40 BP to 90 BP (60 * 1.5x) is a 2.25x boost.
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.25), results[1].damage);
     }
 }
 
@@ -113,14 +113,14 @@ SINGLE_BATTLE_TEST("(TERA) Terastallization's 60 BP floor occurs after Technicia
     PARAMETRIZE { tera = GIMMICK_NONE; }
     PARAMETRIZE { tera = GIMMICK_TERA; }
     GIVEN {
-        ASSUME(GetMovePower(MOVE_MEGA_DRAIN) == 40);
+        ASSUME(GetMovePower(MOVE_ABSORB) == 40);
         PLAYER(SPECIES_MR_MIME) { Ability(ABILITY_TECHNICIAN); TeraType(TYPE_GRASS); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_MEGA_DRAIN, gimmick: tera); }
+        TURN { MOVE(player, MOVE_ABSORB, gimmick: tera); }
     } SCENE {
-        MESSAGE("Mr. Mime used Mega Drain!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_MEGA_DRAIN, player);
+        MESSAGE("Mr. Mime used Absorb!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
         // This should be the same as a normal Tera boost.
@@ -558,27 +558,27 @@ SINGLE_BATTLE_TEST("(TERA) Terastallizing into the Stellar type boosts all moves
 {
     s16 damage[4];
     GIVEN {
-        ASSUME(GetMovePower(MOVE_MEGA_DRAIN) == 40);
+        ASSUME(GetMovePower(MOVE_ABSORB) == 40);
         ASSUME(GetMovePower(MOVE_WATER_GUN) == 40);
         PLAYER(SPECIES_WOBBUFFET) { TeraType(TYPE_STELLAR); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_MEGA_DRAIN); }
-        TURN { MOVE(player, MOVE_MEGA_DRAIN, gimmick: GIMMICK_TERA); }
-        TURN { MOVE(player, MOVE_MEGA_DRAIN); }
+        TURN { MOVE(player, MOVE_ABSORB); }
+        TURN { MOVE(player, MOVE_ABSORB, gimmick: GIMMICK_TERA); }
+        TURN { MOVE(player, MOVE_ABSORB); }
         TURN { MOVE(player, MOVE_WATER_GUN); }
     } SCENE {
         // turn 1
-        MESSAGE("Wobbuffet used Mega Drain!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_MEGA_DRAIN, player);
+        MESSAGE("Wobbuffet used Absorb!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent, captureDamage: &damage[0]);
         // turn 2
-        MESSAGE("Wobbuffet used Mega Drain!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_MEGA_DRAIN, player);
+        MESSAGE("Wobbuffet used Absorb!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent, captureDamage: &damage[1]);
         // turn 3
-        MESSAGE("Wobbuffet used Mega Drain!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_MEGA_DRAIN, player);
+        MESSAGE("Wobbuffet used Absorb!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ABSORB, player);
         HP_BAR(opponent, captureDamage: &damage[2]);
         // turn 4
         MESSAGE("Wobbuffet used Water Gun!");

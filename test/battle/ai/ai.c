@@ -92,7 +92,7 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they b
         ASSUME(GetMoveAccuracy(MOVE_GUST) == 100);
         ASSUME(GetMoveAccuracy(MOVE_SHOCK_WAVE) == 0);
         ASSUME(GetMoveAccuracy(MOVE_THUNDERBOLT) == 100);
-        ASSUME(GetMoveAccuracy(MOVE_ICY_WIND) != 100);
+        ASSUME(GetMoveAccuracy(MOVE_ICY_WIND) == 100); 
         ASSUME(GetMoveCategory(MOVE_SLAM) == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(GetMoveCategory(MOVE_STRENGTH) == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);

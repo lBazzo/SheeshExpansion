@@ -27,6 +27,7 @@ SINGLE_BATTLE_TEST("Captivate decreases the target's Sp. Attack if they're oppos
 
 SINGLE_BATTLE_TEST("Captivate fails if the target and user share gender")
 {
+    KNOWN_FAILING; //Bazzo note: changed captivate to work regardless of gender
     GIVEN {
         PLAYER(SPECIES_NIDOKING);
         OPPONENT(SPECIES_NIDOKING);
@@ -41,6 +42,7 @@ SINGLE_BATTLE_TEST("Captivate fails if the target and user share gender")
 
 SINGLE_BATTLE_TEST("Captivate fails if the target is genderless")
 {
+    KNOWN_FAILING; //Bazzo note: changed captivate to work regardless of gender
     GIVEN {
         PLAYER(SPECIES_NIDOQUEEN);
         OPPONENT(SPECIES_STARMIE);
@@ -55,6 +57,7 @@ SINGLE_BATTLE_TEST("Captivate fails if the target is genderless")
 
 SINGLE_BATTLE_TEST("Captivate fails if the user is genderless")
 {
+    KNOWN_FAILING; //Bazzo note: changed captivate to work regardless of gender
     GIVEN {
         PLAYER(SPECIES_STARMIE);
         OPPONENT(SPECIES_NIDOQUEEN);
@@ -69,6 +72,7 @@ SINGLE_BATTLE_TEST("Captivate fails if the user is genderless")
 
 SINGLE_BATTLE_TEST("Captivate fails if both the user and the opponent are genderless")
 {
+    KNOWN_FAILING; //Bazzo note: changed captivate to work regardless of gender
     GIVEN {
         PLAYER(SPECIES_STARMIE);
         OPPONENT(SPECIES_STARMIE);

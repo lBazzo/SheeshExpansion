@@ -3536,7 +3536,7 @@ static const struct LevelUpMove sFlareonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(48, MOVE_FACADE),
     LEVEL_UP_MOVE(48, MOVE_WEATHER_BALL),
     LEVEL_UP_MOVE(52, MOVE_HEADLONG_RUSH),
-    LEVEL_UP_MOVE(70, MOVE_V_CREATE),
+    LEVEL_UP_MOVE(65, MOVE_V_CREATE),
     LEVEL_UP_END
 };
 

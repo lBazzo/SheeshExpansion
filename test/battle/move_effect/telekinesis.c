@@ -10,18 +10,18 @@ SINGLE_BATTLE_TEST("Telekinesis makes the target unable to avoid any attacks mad
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_MINIMIZE) == EFFECT_MINIMIZE); // Raises evs by 2
-        ASSUME(GetMoveAccuracy(MOVE_SCREECH) < 100);
+        ASSUME(GetMoveAccuracy(MOVE_STONE_EDGE) < 100);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WYNAUT);
     } WHEN {
         TURN { MOVE(player, MOVE_TELEKINESIS); MOVE(opponent, MOVE_MINIMIZE); }
-        TURN { MOVE(player, MOVE_SCREECH, hit:FALSE); }
+        TURN { MOVE(player, MOVE_STONE_EDGE, hit:FALSE); }
     } SCENE {
         MESSAGE("Wobbuffet used Telekinesis!");
         MESSAGE("The opposing Wynaut was hurled into the air!");
         MESSAGE("The opposing Wynaut used Minimize!");
-        MESSAGE("Wobbuffet used Screech!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCREECH, player);
+        MESSAGE("Wobbuffet used Stone Edge!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_STONE_EDGE, player);
         NOT MESSAGE("Wobbuffet's attack missed!");
     }
 }

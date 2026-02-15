@@ -14415,14 +14415,14 @@ static void Cmd_jumpifcaptivateaffected(void)
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
     }
-    else if (AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+    else /*if (AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))*/
     {
         gBattlescriptCurrInstr = cmd->jumpInstr;
     }
-    else
+    /*else
     {
         gBattlescriptCurrInstr = cmd->nextInstr;
-    }
+    }*/
 }
 
 static void Cmd_setnonvolatilestatus(void)

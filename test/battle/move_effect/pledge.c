@@ -38,7 +38,7 @@ DOUBLE_BATTLE_TEST("Rainbow doubles the chance of secondary move effects")
 {
     PASSES_RANDOMLY(20, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
-        ASSUME(MoveHasAdditionalEffect(MOVE_EMBER, MOVE_EFFECT_BURN) == TRUE);
+        ASSUME(MoveHasAdditionalEffect(MOVE_FLAME_WHEEL, MOVE_EFFECT_BURN) == TRUE);
         PLAYER(SPECIES_WOBBUFFET) { Speed(4); }
         PLAYER(SPECIES_WYNAUT) { Speed(3); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(8); }
@@ -47,10 +47,10 @@ DOUBLE_BATTLE_TEST("Rainbow doubles the chance of secondary move effects")
         TURN { MOVE(playerLeft, MOVE_WATER_PLEDGE, target: opponentLeft);
                MOVE(playerRight, MOVE_FIRE_PLEDGE, target: opponentRight);
         }
-        TURN { MOVE(playerLeft, MOVE_EMBER, target: opponentRight); }
+        TURN { MOVE(playerLeft, MOVE_FLAME_WHEEL, target: opponentRight); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_WATER_PLEDGE, playerRight);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_EMBER, playerLeft);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_FLAME_WHEEL, playerLeft);
         MESSAGE("The opposing Wynaut was burned!");
     }
 }
