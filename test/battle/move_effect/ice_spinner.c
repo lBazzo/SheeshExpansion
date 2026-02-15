@@ -1,6 +1,8 @@
 #include "global.h"
 #include "test/battle.h"
 
+//Bazzo note: removing all of this as it no longer removes terrain
+/*
 ASSUMPTIONS
 {
     ASSUME(GetMoveEffect(MOVE_ICE_SPINNER) == EFFECT_ICE_SPINNER);
@@ -123,3 +125,4 @@ AI_SINGLE_BATTLE_TEST("Ice Spinner can be chosen by AI regardless if there is a 
         }
     }
 }
+*/
