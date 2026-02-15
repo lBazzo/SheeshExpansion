@@ -8,6 +8,8 @@
 .set LOCALID_DRAGONSDEN_DUBU, 37
 .set LOCALID_DRAGONSDEN_ERA, 36
 .set LOCALID_DRAGONSDEN_SPENSER, 48
+.set LOCALID_DRAGONSDEN_TERAGUY, 49
+.set LOCALID_DRAGONSDEN_KECLEON, 50
 
 DragonsDen_Cavern_hns_MapScripts::
 	@map_script MAP_SCRIPT_ON_FRAME_TABLE, DragonsDen_Cavern_OnFrame
@@ -1039,3 +1041,377 @@ DragonsDen_Cavern_Text_Six:
 	.string "Six$"
 DragonsDen_Cavern_Text_Exit:
 	.string "Exit$"
+
+@TERA GUY 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+DragonsDen_Cavern_EventScript_Kecleon::
+	lock
+	faceplayer
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	msgbox DragonsDen_Cavern_Text_Kecleon, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_DRAGONSDEN_KECLEON, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuy::
+	lock
+	faceplayer
+	msgbox DragonsDen_Cavern_Text_TeraGuyWhatWouldYouLike, MSGBOX_DEFAULT
+	dynmultipush DragonsDen_Cavern_Text_TeachTeraBlast, 0 
+	dynmultipush DragonsDen_Cavern_Text_ChangeTeraType, 1
+	dynmultipush DragonsDen_Cavern_Text_Exit, 2
+	dynmultistack 0, 0, FALSE, 3, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, DragonsDen_Cavern_EventScript_TeraGuyTeachTeraBlast
+	case 1, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraType
+	case 2, DragonsDen_Cavern_EventScript_TeraGuyExit
+	case MULTI_B_PRESSED, DragonsDen_Cavern_EventScript_TeraGuyExit
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyTeachTeraBlast::
+	msgbox DragonsDen_Cavern_Text_TeraGuyWhoWantsToLearn, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_TERA_BLAST
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, DragonsDen_Cavern_EventScript_TeraGuyExit
+	applymovement LOCALID_DRAGONSDEN_TERAGUY, Common_Movement_FaceRight
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_DRAGONSDEN_TERAGUY, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 7, DragonsDen_Cavern_EventScript_TeraGuyTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 6, DragonsDen_Cavern_EventScript_TeraGuyTeachPlayerLeft
+	msgbox DragonsDen_Cavern_Text_TeraGuyMoveTaught, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyTeachPlayerBelow::
+	applymovement LOCALID_DRAGONSDEN_KECLEON, DragonsDen_Cavern_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_DRAGONSDEN_KECLEON, DragonsDen_Cavern_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+DragonsDen_Cavern_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+DragonsDen_Cavern_EventScript_TeraGuyTeachPlayerLeft::
+	applymovement LOCALID_DRAGONSDEN_KECLEON, DragonsDen_Cavern_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_DRAGONSDEN_KECLEON, DragonsDen_Cavern_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+DragonsDen_Cavern_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+DragonsDen_Cavern_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraType::
+	msgbox DragonsDen_Cavern_Text_TeraGuyChangeWhichMonType, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, DragonsDen_Cavern_EventScript_TeraGuyExit
+	msgbox DragonsDen_Cavern_Text_TeraGuyWhatNewTeraTypeToBe, MSGBOX_DEFAULT
+	dynmultipush DragonsDen_Cavern_Text_Normal, 0
+	dynmultipush DragonsDen_Cavern_Text_Fighting, 1
+	dynmultipush DragonsDen_Cavern_Text_Flying, 2
+	dynmultipush DragonsDen_Cavern_Text_Poison, 3
+	dynmultipush DragonsDen_Cavern_Text_Ground, 4
+	dynmultipush DragonsDen_Cavern_Text_Rock, 5
+	dynmultipush DragonsDen_Cavern_Text_Bug, 6
+	dynmultipush DragonsDen_Cavern_Text_Ghost, 7
+	dynmultipush DragonsDen_Cavern_Text_Steel, 8
+	dynmultipush DragonsDen_Cavern_Text_Fire, 9
+	dynmultipush DragonsDen_Cavern_Text_Water, 10
+	dynmultipush DragonsDen_Cavern_Text_Grass, 11
+	dynmultipush DragonsDen_Cavern_Text_Electric, 12
+	dynmultipush DragonsDen_Cavern_Text_Psychic, 13
+	dynmultipush DragonsDen_Cavern_Text_Ice, 14
+	dynmultipush DragonsDen_Cavern_Text_Dragon, 15
+	dynmultipush DragonsDen_Cavern_Text_Dark, 16
+	dynmultipush DragonsDen_Cavern_Text_Fairy, 17
+	dynmultipush DragonsDen_Cavern_Text_Exit, 18
+	dynmultistack 2, 2, FALSE, 5, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToNormal
+	case 1, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFighting
+	case 2, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFlying
+	case 3, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToPoison
+	case 4, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGround
+	case 5, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToRock
+	case 6, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToBug
+	case 7, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGhost
+	case 8, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToSteel
+	case 9, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFire
+	case 10, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToWater
+	case 11, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGrass
+	case 12, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToElectric
+	case 13, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToPsychic
+	case 14, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToIce
+	case 15, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToDragon
+	case 16, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToDark
+	case 17, DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFairy
+	case 18, DragonsDen_Cavern_EventScript_TeraGuyExit
+	case MULTI_B_PRESSED, DragonsDen_Cavern_EventScript_TeraGuyExit
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToNormal::
+	SetTeraType TYPE_NORMAL, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFighting::
+	SetTeraType TYPE_FIGHTING, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFlying::
+	SetTeraType TYPE_FLYING, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToPoison::
+	SetTeraType TYPE_POISON, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGround::
+	SetTeraType TYPE_GROUND, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToRock::
+	SetTeraType TYPE_ROCK, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToBug::
+	SetTeraType TYPE_BUG, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGhost::
+	SetTeraType TYPE_GHOST, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToSteel::
+	SetTeraType TYPE_STEEL, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFire::
+	SetTeraType TYPE_FIRE, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToWater::
+	SetTeraType TYPE_WATER, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToGrass::
+	SetTeraType TYPE_GRASS, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToElectric::
+	SetTeraType TYPE_ELECTRIC, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToPsychic::
+	SetTeraType TYPE_PSYCHIC, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToIce::
+	SetTeraType TYPE_ICE, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToDragon::
+	SetTeraType TYPE_DRAGON, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToDark::
+	SetTeraType TYPE_DARK, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyChangeTeraTypeToFairy::
+	SetTeraType TYPE_FAIRY, VAR_0x8004
+	msgbox DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+DragonsDen_Cavern_EventScript_TeraGuyExit::
+	msgbox DragonsDen_Cavern_Text_TeraGuyExit, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+
+DragonsDen_Cavern_Text_TeachTeraBlast:
+	.string "Teach Move$"
+DragonsDen_Cavern_Text_ChangeTeraType:
+	.string "Change Type$"
+DragonsDen_Cavern_Text_Normal:
+	.string "Normal$"
+DragonsDen_Cavern_Text_Fighting:
+	.string "Fighting$"
+DragonsDen_Cavern_Text_Flying:
+	.string "Flying$"
+DragonsDen_Cavern_Text_Poison:
+	.string "Poison$"
+DragonsDen_Cavern_Text_Ground:
+	.string "Ground$"
+DragonsDen_Cavern_Text_Rock:
+	.string "Rock$"
+DragonsDen_Cavern_Text_Bug:
+	.string "Bug$"
+DragonsDen_Cavern_Text_Ghost:
+	.string "Ghost$"
+DragonsDen_Cavern_Text_Steel:
+	.string "Steel$"
+DragonsDen_Cavern_Text_Fire:
+	.string "Fire$"
+DragonsDen_Cavern_Text_Water:
+	.string "Water$"
+DragonsDen_Cavern_Text_Grass:
+	.string "Grass$"
+DragonsDen_Cavern_Text_Electric:
+	.string "Electric$"
+DragonsDen_Cavern_Text_Psychic:
+	.string "Psychic$"
+DragonsDen_Cavern_Text_Ice:
+	.string "Ice$"
+DragonsDen_Cavern_Text_Dragon:
+	.string "Dragon$"
+DragonsDen_Cavern_Text_Dark:
+	.string "Dark$"
+DragonsDen_Cavern_Text_Fairy:
+	.string "Fairy$"
+
+DragonsDen_Cavern_Text_Kecleon:
+	.string "Kecleon: ...?$"
+
+DragonsDen_Cavern_Text_TeraGuyWhatWouldYouLike:
+	.string "Hello there, young one.\p"
+	.string "Would you like some help in preparing\n"
+	.string "for your next terastal battle?\p"
+	.string "I can help you to change the tera type\n"
+	.string "of your team, or my friend Kecleon here\l"
+	.string "can teach your team Tera Blast.\p"
+	.string "So, what do you say? Shall I teach a\n"
+	.string "move or change a type for you?$"
+
+DragonsDen_Cavern_Text_TeraGuyWhoWantsToLearn:
+	.string "Jolly good! So then, who would like to\n"
+	.string "learn Tera Blast?$"
+
+DragonsDen_Cavern_Text_TeraGuyTeachingMove:
+	.string "Well then, my partner. Would you care to\n"
+	.string "demonstrate the technique for us?$"
+
+DragonsDen_Cavern_Text_TeraGuyMoveTaught:
+	.string "How was that? Not too tricky, yes? Do\n"
+	.string "let me know if you'd like to see it again.$"
+
+DragonsDen_Cavern_Text_TeraGuyChangeWhichMonType:
+	.string "A change of tera type, yes? Who would\n"
+	.string "you have change their tera type?$"
+
+DragonsDen_Cavern_Text_TeraGuyWhatNewTeraTypeToBe:
+	.string "OK! I hear you loud and clear. And what\n"
+	.string "should their new tera type be?$"
+
+DragonsDen_Cavern_Text_TeraGuyTeraTypeChanged:
+	.string "Good show! I've changed their tera type\n"
+	.string "for you. I hope it will help you out!$"
+
+DragonsDen_Cavern_Text_TeraGuyExit:
+	.string "Ah, so it's like that, then...\p"
+	.string "In that case, remember to stay out of\n"
+	.string "trouble, little rascal! Ho-ho-ho!$"

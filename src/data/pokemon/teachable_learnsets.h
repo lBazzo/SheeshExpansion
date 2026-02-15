@@ -119,6 +119,7 @@
 // - MOVE_SWAGGER                                      //
 // - MOVE_SWIFT                                        //
 // - MOVE_SWORDS_DANCE                                 //
+// - MOVE_TERA_BLAST                                   //
 // - MOVE_THUNDER_PUNCH                                //
 // - MOVE_THUNDER_WAVE                                 //
 // *************************************************** //

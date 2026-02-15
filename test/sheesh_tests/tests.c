@@ -3021,7 +3021,7 @@ SINGLE_BATTLE_TEST("Sun Gazer reduces damage to Normal Effective moves by 0.66",
         HP_BAR(player, captureDamage: &results[i].damage);
         //MESSAGE("It's super effective!");
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.66), results[1].damage);
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(0.67), results[1].damage);
     }
 }
 

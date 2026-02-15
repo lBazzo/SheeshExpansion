@@ -907,7 +907,7 @@ CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpecialDefenseIVChange::
 	.string "changed to {STR_VAR_2}, is that right?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSpeedIVChange::
-	.string "You want {STR_VAR_1}'s Speed IV changed\n"
+	.string "You want {STR_VAR_1}'s Speed IV\n"
 	.string "changed to {STR_VAR_2}, is that right?$"
 
 

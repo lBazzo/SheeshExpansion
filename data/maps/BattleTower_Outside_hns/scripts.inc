@@ -5,6 +5,8 @@
 .set LOCALID_BATTLETOWER_LIZZIE, 24
 .set LOCALID_BATTLETOWER_MIRANDA, 25
 .set LOCALID_BATTLETOWER_GORDO, 26
+.set LOCALID_BATTLETOWER_TERAGUY, 29
+.set LOCALID_BATTLETOWER_KECLEON, 30
 
 BattleTower_Outside_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, BattleTower_Outside_OnTransition
@@ -1992,3 +1994,381 @@ BattleTower_Outside_Text_DahliaInstructEngineer:
 	.string "Make sure you keep this place locked up\n"
 	.string "until it's ready, okay? Thanks a bunch!$"
 
+
+
+
+@TERA GUY 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+BattleTower_Outside_EventScript_Kecleon::
+	lock
+	faceplayer
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	msgbox BattleTower_Outside_Text_Kecleon, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_BATTLETOWER_KECLEON, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuy::
+	lock
+	faceplayer
+	msgbox BattleTower_Outside_Text_TeraGuyWhatWouldYouLike, MSGBOX_DEFAULT
+	dynmultipush BattleTower_Outside_Text_TeachTeraBlast, 0 
+	dynmultipush BattleTower_Outside_Text_ChangeTeraType, 1
+	dynmultipush BattleTower_Outside_Text_Exit, 2
+	dynmultistack 0, 0, FALSE, 3, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, BattleTower_Outside_EventScript_TeraGuyTeachTeraBlast
+	case 1, BattleTower_Outside_EventScript_TeraGuyChangeTeraType
+	case 2, BattleTower_Outside_EventScript_TeraGuyExit
+	case MULTI_B_PRESSED, BattleTower_Outside_EventScript_TeraGuyExit
+	end
+
+BattleTower_Outside_EventScript_TeraGuyTeachTeraBlast::
+	msgbox BattleTower_Outside_Text_TeraGuyWhoWantsToLearn, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_TERA_BLAST
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, BattleTower_Outside_EventScript_TeraGuyExit
+	applymovement LOCALID_BATTLETOWER_TERAGUY, Common_Movement_FaceRight
+	msgbox BattleTower_Outside_Text_TeraGuyTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_BATTLETOWER_TERAGUY, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 60, BattleTower_Outside_EventScript_TeraGuyTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 59, BattleTower_Outside_EventScript_TeraGuyTeachPlayerLeft
+	msgbox BattleTower_Outside_Text_TeraGuyMoveTaught, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyTeachPlayerBelow::
+	applymovement LOCALID_BATTLETOWER_KECLEON, BattleTower_Outside_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_BATTLETOWER_KECLEON, BattleTower_Outside_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+BattleTower_Outside_Movement_TeachPlayerBelow1::
+	walk_down
+	face_left
+	step_end
+
+BattleTower_Outside_Movement_TeachPlayerBelow2::
+	jump_in_place_left
+	jump_in_place_left
+	walk_up
+	face_down
+	step_end
+
+BattleTower_Outside_EventScript_TeraGuyTeachPlayerLeft::
+	applymovement LOCALID_BATTLETOWER_KECLEON, BattleTower_Outside_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_BATTLETOWER_KECLEON, BattleTower_Outside_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+BattleTower_Outside_Movement_TeachPlayerLeft1::
+	walk_down
+	walk_left
+	walk_left
+	face_up
+	step_end
+
+BattleTower_Outside_Movement_TeachPlayerLeft2::
+	jump_in_place_up
+	jump_in_place_up
+	walk_right
+	walk_right
+	walk_up
+	face_down
+	step_end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraType::
+	msgbox BattleTower_Outside_Text_TeraGuyChangeWhichMonType, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleTower_Outside_EventScript_TeraGuyExit
+	msgbox BattleTower_Outside_Text_TeraGuyWhatNewTeraTypeToBe, MSGBOX_DEFAULT
+	dynmultipush BattleTower_Outside_Text_Normal, 0
+	dynmultipush BattleTower_Outside_Text_Fighting, 1
+	dynmultipush BattleTower_Outside_Text_Flying, 2
+	dynmultipush BattleTower_Outside_Text_Poison, 3
+	dynmultipush BattleTower_Outside_Text_Ground, 4
+	dynmultipush BattleTower_Outside_Text_Rock, 5
+	dynmultipush BattleTower_Outside_Text_Bug, 6
+	dynmultipush BattleTower_Outside_Text_Ghost, 7
+	dynmultipush BattleTower_Outside_Text_Steel, 8
+	dynmultipush BattleTower_Outside_Text_Fire, 9
+	dynmultipush BattleTower_Outside_Text_Water, 10
+	dynmultipush BattleTower_Outside_Text_Grass, 11
+	dynmultipush BattleTower_Outside_Text_Electric, 12
+	dynmultipush BattleTower_Outside_Text_Psychic, 13
+	dynmultipush BattleTower_Outside_Text_Ice, 14
+	dynmultipush BattleTower_Outside_Text_Dragon, 15
+	dynmultipush BattleTower_Outside_Text_Dark, 16
+	dynmultipush BattleTower_Outside_Text_Fairy, 17
+	dynmultipush BattleTower_Outside_Text_Exit, 18
+	dynmultistack 2, 2, FALSE, 5, FALSE, 0, NULL
+	switch VAR_RESULT
+	case 0, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToNormal
+	case 1, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFighting
+	case 2, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFlying
+	case 3, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToPoison
+	case 4, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGround
+	case 5, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToRock
+	case 6, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToBug
+	case 7, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGhost
+	case 8, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToSteel
+	case 9, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFire
+	case 10, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToWater
+	case 11, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGrass
+	case 12, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToElectric
+	case 13, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToPsychic
+	case 14, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToIce
+	case 15, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToDragon
+	case 16, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToDark
+	case 17, BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFairy
+	case 18, BattleTower_Outside_EventScript_TeraGuyExit
+	case MULTI_B_PRESSED, BattleTower_Outside_EventScript_TeraGuyExit
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToNormal::
+	SetTeraType TYPE_NORMAL, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFighting::
+	SetTeraType TYPE_FIGHTING, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFlying::
+	SetTeraType TYPE_FLYING, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToPoison::
+	SetTeraType TYPE_POISON, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGround::
+	SetTeraType TYPE_GROUND, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToRock::
+	SetTeraType TYPE_ROCK, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToBug::
+	SetTeraType TYPE_BUG, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGhost::
+	SetTeraType TYPE_GHOST, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToSteel::
+	SetTeraType TYPE_STEEL, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFire::
+	SetTeraType TYPE_FIRE, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToWater::
+	SetTeraType TYPE_WATER, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToGrass::
+	SetTeraType TYPE_GRASS, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToElectric::
+	SetTeraType TYPE_ELECTRIC, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToPsychic::
+	SetTeraType TYPE_PSYCHIC, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToIce::
+	SetTeraType TYPE_ICE, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToDragon::
+	SetTeraType TYPE_DRAGON, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToDark::
+	SetTeraType TYPE_DARK, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyChangeTeraTypeToFairy::
+	SetTeraType TYPE_FAIRY, VAR_0x8004
+	msgbox BattleTower_Outside_Text_TeraGuyTeraTypeChanged, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+BattleTower_Outside_EventScript_TeraGuyExit::
+	msgbox BattleTower_Outside_Text_TeraGuyExit, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+
+BattleTower_Outside_Text_TeachTeraBlast:
+	.string "Teach Move$"
+BattleTower_Outside_Text_ChangeTeraType:
+	.string "Change Type$"
+BattleTower_Outside_Text_Exit:
+	.string "Exit$"
+BattleTower_Outside_Text_Normal:
+	.string "Normal$"
+BattleTower_Outside_Text_Fighting:
+	.string "Fighting$"
+BattleTower_Outside_Text_Flying:
+	.string "Flying$"
+BattleTower_Outside_Text_Poison:
+	.string "Poison$"
+BattleTower_Outside_Text_Ground:
+	.string "Ground$"
+BattleTower_Outside_Text_Rock:
+	.string "Rock$"
+BattleTower_Outside_Text_Bug:
+	.string "Bug$"
+BattleTower_Outside_Text_Ghost:
+	.string "Ghost$"
+BattleTower_Outside_Text_Steel:
+	.string "Steel$"
+BattleTower_Outside_Text_Fire:
+	.string "Fire$"
+BattleTower_Outside_Text_Water:
+	.string "Water$"
+BattleTower_Outside_Text_Grass:
+	.string "Grass$"
+BattleTower_Outside_Text_Electric:
+	.string "Electric$"
+BattleTower_Outside_Text_Psychic:
+	.string "Psychic$"
+BattleTower_Outside_Text_Ice:
+	.string "Ice$"
+BattleTower_Outside_Text_Dragon:
+	.string "Dragon$"
+BattleTower_Outside_Text_Dark:
+	.string "Dark$"
+BattleTower_Outside_Text_Fairy:
+	.string "Fairy$"
+
+BattleTower_Outside_Text_Kecleon:
+	.string "Kecleon: ...?$"
+
+BattleTower_Outside_Text_TeraGuyWhatWouldYouLike:
+	.string "Hello there, young one.\p"
+	.string "Would you like some help in preparing\n"
+	.string "for your next terastal battle?\p"
+	.string "I can help you to change the tera type\n"
+	.string "of your team, or my friend Kecleon here\l"
+	.string "can teach your team Tera Blast.\p"
+	.string "So, what do you say? Shall I teach a\n"
+	.string "move or change a type for you?$"
+
+BattleTower_Outside_Text_TeraGuyWhoWantsToLearn:
+	.string "Jolly good! So then, who would like to\n"
+	.string "learn Tera Blast?$"
+
+BattleTower_Outside_Text_TeraGuyTeachingMove:
+	.string "Well then, my partner. Would you care to\n"
+	.string "demonstrate the technique for us?$"
+
+BattleTower_Outside_Text_TeraGuyMoveTaught:
+	.string "How was that? Not too tricky, yes? Do\n"
+	.string "let me know if you'd like to see it again.$"
+
+BattleTower_Outside_Text_TeraGuyChangeWhichMonType:
+	.string "A change of tera type, yes? Who would\n"
+	.string "you have change their tera type?$"
+
+BattleTower_Outside_Text_TeraGuyWhatNewTeraTypeToBe:
+	.string "OK! I hear you loud and clear. And what\n"
+	.string "should their new tera type be?$"
+
+BattleTower_Outside_Text_TeraGuyTeraTypeChanged:
+	.string "Good show! I've changed their tera type\n"
+	.string "for you. I hope it will help you out!$"
+
+BattleTower_Outside_Text_TeraGuyExit:
+	.string "Ah, so it's like that, then...\p"
+	.string "In that case, remember to stay out of\n"
+	.string "trouble, little rascal! Ho-ho-ho!$"

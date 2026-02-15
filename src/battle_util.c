@@ -8340,7 +8340,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
     case ABILITY_SUN_GAZER:
         if (ctx->typeEffectivenessModifier >= UQ_4_12(1.0))
         {
-            modifier = UQ_4_12(0.66);
+            modifier = UQ_4_12(0.67);
             recordAbility = TRUE;
         }
         break;
