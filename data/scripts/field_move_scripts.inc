@@ -99,8 +99,8 @@ EventScript_RockSmashCommon: @ fallthrough
 	@dofieldeffect FLDEFF_USE_ROCK_SMASH
 	@waitstate
 EventScript_SmashRock:: @ fallthrough
-	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	@setflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	@call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	playse SE_M_ROCK_THROW
 	waitmovement 0
@@ -241,12 +241,12 @@ EventScript_FollowerJumpWest:
 
 @ HnS PORT TODO - make this pull from a table like w/ wild encounters, or even change "RockSmashWildEncounter" to "RockSmashSecondaryEvents"
 EventScript_EndSmash::
-	random 20
-	call_if_eq VAR_RESULT, 1, EventScript_RockSmashHeartscale
-	call_if_eq VAR_RESULT, 2, EventScript_RockSmashBlueShard
-	call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
-	call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
-	call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
+	@random 20
+	@call_if_eq VAR_RESULT, 1, EventScript_RockSmashHeartscale
+	@call_if_eq VAR_RESULT, 2, EventScript_RockSmashBlueShard
+	@call_if_eq VAR_RESULT, 3, EventScript_RockSmashRedShard
+	@call_if_eq VAR_RESULT, 4, EventScript_RockSmashGreenShard
+	@call_if_eq VAR_RESULT, 5, EventScript_RockSmashYellowShard
 	releaseall
 	end
 
