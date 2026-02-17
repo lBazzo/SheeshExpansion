@@ -3118,3 +3118,60 @@ SINGLE_BATTLE_TEST("Twin Flame works correctly")
         MESSAGE("It's super effective!");
     }
 }
+
+// DO NOT WRITE TESTS WITH A WOBBUFFET HERE BECAUSE OF THE RULE
+AI_SINGLE_BATTLE_TEST("NEW SWITCH: AI correctly scores switch ai for fast ohko in the back")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
+        PLAYER(SPECIES_SWELLOW) { HP(30); Moves(MOVE_BOOMBURST); Speed(100); }
+        OPPONENT(SPECIES_ARTICUNO) { HP(1); Moves(MOVE_CELEBRATE); Speed(90); }
+        OPPONENT(SPECIES_ZAPDOS) { Moves(MOVE_THUNDERBOLT, MOVE_SEISMIC_TOSS); Speed(90); } //slow ohko
+        OPPONENT(SPECIES_LUGIA) { Level(20); Moves(MOVE_SEISMIC_TOSS); Speed(110); } //fast outdamage
+        OPPONENT(SPECIES_MOLTRES) { Moves(MOVE_THUNDERBOLT); Speed(110); } // fast ohko
+    } WHEN {
+        TURN { MOVE(player, MOVE_BOOMBURST); EXPECT_SEND_OUT(opponent, 3); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("NEW SWITCH: AI correctly scores switch ai for fast/slow outdamaging")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
+        PLAYER(SPECIES_SWELLOW) { Level(45); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(100); }
+        OPPONENT(SPECIES_ARTICUNO) { HP(1); Moves(MOVE_CELEBRATE); Speed(90); }
+        OPPONENT(SPECIES_ZAPDOS) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(90); } //slower and outdamaged AKA default
+        OPPONENT(SPECIES_LUGIA) { Level(60); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(90); } // slow outdamage
+        OPPONENT(SPECIES_MOLTRES) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(110); } //just faster
+        OPPONENT(SPECIES_MEWTWO) { Level(60); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(110); } //faster and outdamage
+    } WHEN {
+        TURN { MOVE(player, MOVE_SEISMIC_TOSS); EXPECT_SEND_OUT(opponent, 4); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("NEW SWITCH: AI correctly scores switch ai for just fast, default and getting fast ohko'd")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
+        PLAYER(SPECIES_SWELLOW) { Level(45); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(100); }
+        OPPONENT(SPECIES_ARTICUNO) { HP(1); Moves(MOVE_CELEBRATE); Speed(90); }
+        OPPONENT(SPECIES_LUGIA) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(90); } //default
+        OPPONENT(SPECIES_MOLTRES) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS); Speed(110); } //just fast
+        OPPONENT(SPECIES_MEWTWO) { Level(100); HP(45); Moves(MOVE_SEISMIC_TOSS); Speed(90); } //outsped + ohko'd
+    } WHEN {
+        TURN { MOVE(player, MOVE_SEISMIC_TOSS); EXPECT_SEND_OUT(opponent, 2); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("NEW SWITCH: AI correctly scores switch ai default")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
+        PLAYER(SPECIES_TOTODILE) { Level(45); HP(1); Moves(MOVE_SEISMIC_TOSS); Speed(100); }
+        OPPONENT(SPECIES_TOTODILE) { HP(1); Moves(MOVE_CELEBRATE); Speed(90); }
+        OPPONENT(SPECIES_TOTODILE) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS, MOVE_SUCKER_PUNCH); Speed(90); } //default
+        OPPONENT(SPECIES_TOTODILE) { Level(40); HP(100); Moves(MOVE_SEISMIC_TOSS, MOVE_NIGHT_SHADE); Speed(90); } 
+    } WHEN {
+        TURN { MOVE(player, MOVE_SEISMIC_TOSS); EXPECT_SEND_OUT(opponent, 1); }
+    }
+}

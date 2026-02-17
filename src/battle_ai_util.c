@@ -4825,7 +4825,7 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
         else if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_CONSERVATIVE && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY))
             return dmg.minimum;
         else
-            return dmg.median;
+            return dmg.maximum;
     }
 
     else if (calcContext == AI_DEFENDING)
@@ -4836,7 +4836,7 @@ s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct Battl
         else if (gAiThinkingStruct->aiFlags[battlerDef] & AI_FLAG_CONSERVATIVE && !(gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY))
             return dmg.maximum;
         else
-            return dmg.median;
+            return dmg.maximum;
     }
 
     return dmg.median;

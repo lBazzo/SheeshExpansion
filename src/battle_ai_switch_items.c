@@ -1961,6 +1961,7 @@ static u32 GetBattleMonTypeMatchup(struct BattlePokemon opposingBattleMon, struc
     return typeEffectiveness1 + typeEffectiveness2;
 }
 
+/*
 static int GetRandomSwitchinWithBatonPass(int aliveCount, int bits, int firstId, int lastId, int currentMonId)
 {
     // Breakout early if there aren't any Baton Pass mons to save computation time
@@ -1980,6 +1981,7 @@ static int GetRandomSwitchinWithBatonPass(int aliveCount, int bits, int firstId,
     else
         return PARTY_SIZE;
 }
+*/
 
 static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattler, struct BattlePokemon battleMon, u32 *bestPlayerMove)
 {
@@ -2009,7 +2011,7 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
     }
     return maxDamageTaken;
 }
-
+/*
 static s32 GetMaxPriorityDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattler, struct BattlePokemon battleMon, u32 *bestPlayerPriorityMove)
 {
     int i = 0;
@@ -2042,6 +2044,7 @@ static s32 GetMaxPriorityDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposi
     }
     return maxDamageTaken;
 }
+*/
 
 static bool32 CanAbilityTrapOpponent(enum Ability ability, u32 opponent)
 {
@@ -2119,6 +2122,7 @@ static inline bool32 CanSwitchinWin1v1(u32 hitsToKOAI, u32 hitsToKOPlayer, bool3
 
 // This function splits switching behaviour depending on whether the switch is free.
 // Everything runs in the same loop to minimize computation time. This makes it harder to read, but hopefully the comments can guide you!
+/*
 static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, u32 battler, u32 opposingBattler, u32 battlerIn1, u32 battlerIn2, enum SwitchType switchType)
 {
     int revengeKillerId = PARTY_SIZE, slowRevengeKillerId = PARTY_SIZE, fastThreatenId = PARTY_SIZE, slowThreatenId = PARTY_SIZE, damageMonId = PARTY_SIZE, generic1v1MonId = PARTY_SIZE;
@@ -2320,8 +2324,201 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         return bestMonId;
 
     // If ace mon is the last available Pokemon and U-Turn/Volt Switch or Eject Pack/Button was used - switch to the mon.
-    if (aceMonId != PARTY_SIZE && CountUsablePartyMons(battler) <= aceMonCount)
-        return aceMonId;
+    //if (aceMonId != PARTY_SIZE && CountUsablePartyMons(battler) <= aceMonCount)
+    //    return aceMonId;
+
+    return PARTY_SIZE;
+}
+*/
+
+// Bazzo Note: changed switch AI hopefully works using this, provided you use flag AI_FLAG_SMART_MON_CHOICES + changed GetBestMonIntegrated to this one
+static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int lastId, u32 battler, u32 opposingBattler, u32 battlerIn1, u32 battlerIn2, enum SwitchType switchType)
+{
+    int i, j, aliveCount = 0;
+    int AIFastOHKOId = PARTY_SIZE, AISlowOHKOId = PARTY_SIZE, AIFastOutdamageId = PARTY_SIZE, AISlowOutdamageOrDittoWobbId = PARTY_SIZE, AIJustFasterId = PARTY_SIZE;
+    int PlayerFastOHKOsId = PARTY_SIZE, AIDefaultId = PARTY_SIZE; 
+    //s32 playerMonHP = gBattleMons[opposingBattler].hp, AIMonHP = gBattleMons[battler].hp, monMaxDamage = 0;
+    //s32 playerMonMaxHP = gBattleMons[opposingBattler].maxHP, AIMonMaxHP = gBattleMons[battler].maxHP;
+    
+    u32 aiMove;//, hitsToKOAI, hitsToKOPlayer;
+    bool32 isSwitchinFirst;
+    u32 invalidMons = 0;
+    uq4_12_t effectiveness = UQ_4_12(1.0);
+
+    // Iterate through mons
+    for (i = firstId; i < lastId; i++)
+    {
+        u32 species = 0;
+        // Check mon validity
+        if (!IsValidForBattle(&party[i])
+            || gBattlerPartyIndexes[battlerIn1] == i
+            || gBattlerPartyIndexes[battlerIn2] == i
+            || i == gBattleStruct->monToSwitchIntoId[battlerIn1]
+            || i == gBattleStruct->monToSwitchIntoId[battlerIn2])
+        {
+            invalidMons |= 1u << i;
+            continue;
+        }
+        else
+            aliveCount++;
+
+        InitializeSwitchinCandidate(&party[i]);
+        u32 bestPlayerMove = MOVE_NONE;
+        s32 playerMonHP = gBattleMons[opposingBattler].hp, AIMonHP = gAiLogicData->switchinCandidate.battleMon.hp, monMaxDamage = 0;
+        //s32 playerMonMaxHP = gBattleMons[opposingBattler].maxHP, AIMonMaxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
+        u32 playerDamagePercentToAI = 0, AIDamagePercentToPlayer = 0, playerRawDamageToAI = 0, AIRawDamageToPlayer = 0;
+        // Get max number of hits for player to KO AI mon and type matchup for defensive switching
+        //hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove), battler);
+
+        // NEW DAMAGE TESTING - works out Player damage to AI mon in raw numbers and then %    
+        playerRawDamageToAI = GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove);
+        
+        //if (playerRawDamageToAI >= AIMonHP) 
+        //    playerDamagePercentToAI = 1;
+        //else 
+            playerDamagePercentToAI = playerRawDamageToAI * 1000 / AIMonHP;
+
+
+
+        //Bazzo Note: used later, looks important
+        monMaxDamage = 0;
+        species = GetMonData(&party[i], MON_DATA_SPECIES, NULL);
+        
+        // Check through current mon's moves
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
+            // Check that move has PP remaining before running calcs
+            if (gAiLogicData->switchinCandidate.battleMon.pp[j] < 1)
+                continue;
+
+            aiMove = gAiLogicData->switchinCandidate.battleMon.moves[j];
+            if (aiMove == MOVE_NONE)
+                continue;
+
+            AIRawDamageToPlayer = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &effectiveness, AI_ATTACKING);
+            //hitsToKOPlayer = GetNoOfHitsToKOBattlerDmg(AIRawDamageToPlayer, opposingBattler);
+
+            //if (AIRawDamageToPlayer >= playerMonHP)
+            //    AIDamagePercentToPlayer = 1;
+            //else damageDealt
+                AIDamagePercentToPlayer = AIRawDamageToPlayer * 1000 / playerMonHP;
+
+
+            // NEW DAMAGE TESTING - works out AI damage to Player mon in %    
+
+            // Checks for if SwitchIn mon is faster than Player mon
+            isSwitchinFirst = AI_IsPartyMonFaster(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, aiMove, bestPlayerMove, DONT_CONSIDER_PRIORITY);
+            // Checks for AI mon being faster than Player mon + OHKOing
+            /*if (isSwitchinFirst
+            && (hitsToKOPlayer = 1))
+            {
+                DebugPrintf("Fast OHKO by AI");
+                AIFastOHKOId = i;
+            }*/
+
+            if (isSwitchinFirst
+            && (AIRawDamageToPlayer >= playerMonHP)
+            && (AIFastOHKOId == PARTY_SIZE))
+            { 
+                    DebugPrintf("Fast OHKO by AI i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                    AIFastOHKOId = i;
+            }
+            // Checks for AI mon Slow OHKOing player mon + not being dead to Player mon
+            /*else if (!isSwitchinFirst
+            && (hitsToKOPlayer = 1)
+            && (hitsToKOAI != 1))
+            {
+                DebugPrintf("Slow OHKO by AI without being OHKOd itself");
+                AISlowOHKOId = i;
+            }*/
+            else if (!isSwitchinFirst
+                && (AIRawDamageToPlayer >= playerMonHP)
+                && (playerRawDamageToAI < AIMonHP)
+                && (AISlowOHKOId == PARTY_SIZE))
+                {
+                    DebugPrintf("Slow OHKO by AI without being OHKOd itself i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                    AISlowOHKOId = i;
+                }
+            // Checks for AI mon fast outdamaging Player mon while no one sees kill - note outdamage can mean equal here
+            else if (isSwitchinFirst
+            && (AIRawDamageToPlayer < playerMonHP)
+            && (playerRawDamageToAI < AIMonHP)
+            && (AIDamagePercentToPlayer >= playerDamagePercentToAI)
+            && (AIFastOutdamageId == PARTY_SIZE))
+            {
+                DebugPrintf("Fast outdamage by AI i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AIFastOutdamageId = i;
+            }
+            // Checks for AI mon fast outdamaging Player mon while no one sees kill - note outdamage can mean equal here
+            else if (!isSwitchinFirst
+            && (AIRawDamageToPlayer < playerMonHP)
+            && (playerRawDamageToAI < AIMonHP)
+            && (AIDamagePercentToPlayer >= playerDamagePercentToAI)
+            && (AISlowOutdamageOrDittoWobbId == PARTY_SIZE))
+            {
+                DebugPrintf("Slow outdamage by AI OR DITTO/WOBB - slow outdamage i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AISlowOutdamageOrDittoWobbId = i;
+            }
+            // Check if AI mon is ditto/wobb
+            else if ((species == SPECIES_DITTO
+             || species == SPECIES_WOBBUFFET)
+            && (AISlowOutdamageOrDittoWobbId == PARTY_SIZE))
+            {
+                DebugPrintf("Slow outdamage by AI OR DITTO/WOBB - wobb and ditto i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AISlowOutdamageOrDittoWobbId = i;
+            } 
+            else if (isSwitchinFirst
+            && (AIJustFasterId == PARTY_SIZE))
+            {
+                DebugPrintf("AI is faster but nothing else i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AIJustFasterId = i;
+            }
+            /*else if (!isSwitchinFirst
+            && (playerRawDamageToAI >= AIMonHP)
+            && (PlayerFastOHKOsId == PARTY_SIZE))
+            {
+                DebugPrintf("Player fast ohkos i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                PlayerFastOHKOsId = i;
+            }*/
+            else if (!isSwitchinFirst
+            && (AIDamagePercentToPlayer < playerDamagePercentToAI)
+            && (playerRawDamageToAI < AIMonHP)
+            && (AIRawDamageToPlayer < playerMonHP)
+            && (AIDefaultId == PARTY_SIZE))
+            {
+                DebugPrintf("default i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AIDefaultId = i;
+            }
+            else if (!isSwitchinFirst
+            && (playerRawDamageToAI >= AIMonHP)
+            && (PlayerFastOHKOsId == PARTY_SIZE))
+            {
+                DebugPrintf("Player fast ohkos i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                PlayerFastOHKOsId = i;
+            }
+
+            
+        }
+        if (monMaxDamage == 0)
+            invalidMons |= 1u << i;
+    }
+
+        // Return Fast OHKO, slow OHKO, fast oudamage, slow outdamage/wobb/ditto, faster, default, ai gets fast OHKO'd
+        if (AIFastOHKOId != PARTY_SIZE)                      return AIFastOHKOId;
+        else if (AISlowOHKOId != PARTY_SIZE)                 return AISlowOHKOId;
+        else if (AIFastOutdamageId != PARTY_SIZE)            return AIFastOutdamageId;
+        else if (AISlowOutdamageOrDittoWobbId != PARTY_SIZE) return AISlowOutdamageOrDittoWobbId;
+        else if (AIJustFasterId != PARTY_SIZE)               return AIJustFasterId;
+        else if (AIDefaultId != PARTY_SIZE)                  return AIDefaultId;
+        else                                                 return PlayerFastOHKOsId;    
+
+    if (switchType == SWITCH_MID_BATTLE_OPTIONAL)
+        return PARTY_SIZE;
+
+    // Fallback
+    u32 bestMonId = GetFirstNonInvalidMon(firstId, lastId, invalidMons);
+    if (bestMonId != PARTY_SIZE)
+        return bestMonId;
 
     return PARTY_SIZE;
 }
@@ -2389,9 +2586,9 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, enum SwitchType switchType)
     }
 
     // Only use better mon selection if AI_FLAG_SMART_MON_CHOICES is set for the trainer.
-    if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_MON_CHOICES && !IsDoubleBattle()) // Double Battles aren't included in AI_FLAG_SMART_MON_CHOICE. Defaults to regular switch in logic
+    if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_MON_CHOICES/* && !IsDoubleBattle()*/) // Double Battles aren't included in AI_FLAG_SMART_MON_CHOICE. Defaults to regular switch in logic
     {
-        bestMonId = GetBestMonIntegrated(party, firstId, lastId, battler, opposingBattler, battlerIn1, battlerIn2, switchType);
+        bestMonId = GetBestMonIntegratedCustom(party, firstId, lastId, battler, opposingBattler, battlerIn1, battlerIn2, switchType);
         return bestMonId;
     }
 
