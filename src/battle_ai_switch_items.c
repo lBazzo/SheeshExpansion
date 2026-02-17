@@ -1818,6 +1818,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     return statusDamage;
 }
 
+/*
 // Gets number of hits to KO factoring in hazards, healing held items, status, and weather
 static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
 {
@@ -1930,6 +1931,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
     }
     return hitsToKO;
 }
+*/
 
 static u32 GetBattleMonTypeMatchup(struct BattlePokemon opposingBattleMon, struct BattlePokemon battleMon)
 {

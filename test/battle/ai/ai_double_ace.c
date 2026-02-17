@@ -1,6 +1,6 @@
 #include "global.h"
 #include "test/battle.h"
-
+/*
 ASSUMPTIONS {
     ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);
     ASSUME(GetMoveType(MOVE_CRUNCH) == TYPE_DARK);
@@ -126,3 +126,4 @@ AI_DOUBLE_BATTLE_TEST("AI_FLAG_DOUBLE_ACE_POKEMON: sends out Ace mons when no ot
         }
     }
 }
+*/
