@@ -6,61 +6,61 @@
 // Think of them almost like success rates; if the AI has determined that it needs to switch out to hit Wonder Guard, how often do you want it to actually take that course of action? Etc.
 
 // AI switch chances; if you want more complex behaviour, modify GetSwitchChance
-#define SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE                   100
-#define SHOULD_SWITCH_TRUANT_PERCENTAGE                         100
-#define SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE                  100
-#define STAY_IN_STATS_RAISED                                    2  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
+#define SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE                   0
+#define SHOULD_SWITCH_TRUANT_PERCENTAGE                         0
+#define SHOULD_SWITCH_ALL_MOVES_BAD_PERCENTAGE                  50
+#define STAY_IN_STATS_RAISED                                    900  // Number of stat stages that must be raised across any stats before the AI won't switch mon out in certain cases
 
 // AI smart switching chances; if you want more complex behaviour, modify GetSwitchChance
-#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       100
-#define SHOULD_SWITCH_ABSORBS_HIDDEN_POWER_PERCENTAGE               50
-#define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            100
-#define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          50
-#define STAY_IN_ABSORBING_PERCENTAGE                                66  // Chance to stay in if outgoing mon has super effective move against player, will prevent switching out for an absorber with this likelihood
-#define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         50
-#define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      100
-#define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      50
-#define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      100 // Only if locked into status move
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           50
-#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    100
-#define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     100
+#define SHOULD_SWITCH_ABSORBS_MOVE_PERCENTAGE                       0
+#define SHOULD_SWITCH_ABSORBS_HIDDEN_POWER_PERCENTAGE               0
+#define SHOULD_SWITCH_TRAPPER_PERCENTAGE                            0
+#define SHOULD_SWITCH_FREE_TURN_PERCENTAGE                          0
+#define STAY_IN_ABSORBING_PERCENTAGE                                0  // Chance to stay in if outgoing mon has super effective move against player, will prevent switching out for an absorber with this likelihood
+#define SHOULD_SWITCH_HASBADODDS_PERCENTAGE                         0
+#define SHOULD_SWITCH_ENCORE_STATUS_PERCENTAGE                      0
+#define SHOULD_SWITCH_ENCORE_DAMAGE_PERCENTAGE                      0
+#define SHOULD_SWITCH_CHOICE_LOCKED_PERCENTAGE                      50 // Only if locked into status move
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_TWO_PERCENTAGE           0
+#define SHOULD_SWITCH_ATTACKING_STAT_MINUS_THREE_PLUS_PERCENTAGE    0
+#define SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE                     50
 
 // AI smart switching chances for bad statuses
-#define SHOULD_SWITCH_PERISH_SONG_PERCENTAGE                    100
-#define SHOULD_SWITCH_YAWN_PERCENTAGE                           100
-#define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 50
-#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    20
-#define SHOULD_SWITCH_CURSED_PERCENTAGE                         50
-#define SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE            20
-#define SHOULD_SWITCH_NIGHTMARE_PERCENTAGE                      33
-#define SHOULD_SWITCH_NIGHTMARE_STATS_RAISED_PERCENTAGE         15
-#define SHOULD_SWITCH_SEEDED_PERCENTAGE                         25
-#define SHOULD_SWITCH_SEEDED_STATS_RAISED_PERCENTAGE            10
-#define SHOULD_SWITCH_INFATUATION_PERCENTAGE                    100
+#define SHOULD_SWITCH_PERISH_SONG_PERCENTAGE                    50
+#define SHOULD_SWITCH_YAWN_PERCENTAGE                           0
+#define SHOULD_SWITCH_BADLY_POISONED_PERCENTAGE                 0
+#define SHOULD_SWITCH_BADLY_POISONED_STATS_RAISED_PERCENTAGE    0
+#define SHOULD_SWITCH_CURSED_PERCENTAGE                         0
+#define SHOULD_SWITCH_CURSED_STATS_RAISED_PERCENTAGE            0
+#define SHOULD_SWITCH_NIGHTMARE_PERCENTAGE                      0
+#define SHOULD_SWITCH_NIGHTMARE_STATS_RAISED_PERCENTAGE         0
+#define SHOULD_SWITCH_SEEDED_PERCENTAGE                         0
+#define SHOULD_SWITCH_SEEDED_STATS_RAISED_PERCENTAGE            0
+#define SHOULD_SWITCH_INFATUATION_PERCENTAGE                    0
 
 // AI smart switching chances for beneficial abilities
-#define SHOULD_SWITCH_NATURAL_CURE_STRONG_PERCENTAGE                66
-#define SHOULD_SWITCH_NATURAL_CURE_STRONG_STATS_RAISED_PERCENTAGE   10
-#define SHOULD_SWITCH_NATURAL_CURE_WEAK_PERCENTAGE                  25
-#define SHOULD_SWITCH_NATURAL_CURE_WEAK_STATS_RAISED_PERCENTAGE     10
-#define SHOULD_SWITCH_REGENERATOR_PERCENTAGE                        50
-#define SHOULD_SWITCH_REGENERATOR_STATS_RAISED_PERCENTAGE           20
+#define SHOULD_SWITCH_NATURAL_CURE_STRONG_PERCENTAGE                0
+#define SHOULD_SWITCH_NATURAL_CURE_STRONG_STATS_RAISED_PERCENTAGE   0
+#define SHOULD_SWITCH_NATURAL_CURE_WEAK_PERCENTAGE                  0
+#define SHOULD_SWITCH_NATURAL_CURE_WEAK_STATS_RAISED_PERCENTAGE     0
+#define SHOULD_SWITCH_REGENERATOR_PERCENTAGE                        0
+#define SHOULD_SWITCH_REGENERATOR_STATS_RAISED_PERCENTAGE           0
 
 // AI switchin considerations
 #define ALL_MOVES_BAD_STATUS_MOVES_BAD                          FALSE // If the AI has no moves that affect the target, ShouldSwitchIfAllMovesBad can prompt a switch. Enabling this config will ignore status moves that can affect the target when making this decision.
-#define AI_BAD_SCORE_THRESHOLD                                  90 // Move scores beneath this threshold are considered "bad" when deciding switching
+#define AI_BAD_SCORE_THRESHOLD                                  100 // Move scores beneath this threshold are considered "bad" when deciding switching
 #define AI_GOOD_SCORE_THRESHOLD                                 100 // Move scores above this threshold are considered "good" when deciding switching
 
 // AI held item-based move scoring
 #define LOW_ACCURACY_THRESHOLD                                  75 // Moves with accuracy equal OR below this value are considered low accuracy
 
 // AI move scoring
-#define STATUS_MOVE_FOCUS_PUNCH_CHANCE                          50 // Chance the AI will use a status move if the player's best move is Focus Punch
+#define STATUS_MOVE_FOCUS_PUNCH_CHANCE                          0 // Chance the AI will use a status move if the player's best move is Focus Punch
 #define BOOST_INTO_HAZE_CHANCE                                  0 // Chance the AI will use a stat boosting move if the player has used Haze
-#define SHOULD_RECOVER_CHANCE                                   50 // Chance the AI will give recovery moves score increase if less than ENABLE_RECOVERY_THRESHOLD and in no immediate danger
-#define ENABLE_RECOVERY_THRESHOLD                               60 // HP percentage beneath which SHOULD_RECOVER_CHANCE is active
-#define SUCKER_PUNCH_CHANCE                                     50 // Chance for the AI to not use Sucker Punch if the player has a status move
-#define SUCKER_PUNCH_PREDICTION_CHANCE                          50 // Additional chance for the AI to not use Sucker Punch if actively predicting a status move if SUCKER_PUNCH_CHANCE fails
+#define SHOULD_RECOVER_CHANCE                                   0 // Chance the AI will give recovery moves score increase if less than ENABLE_RECOVERY_THRESHOLD and in no immediate danger
+#define ENABLE_RECOVERY_THRESHOLD                               0 // HP percentage beneath which SHOULD_RECOVER_CHANCE is active
+#define SUCKER_PUNCH_CHANCE                                     0 // Chance for the AI to not use Sucker Punch if the player has a status move
+#define SUCKER_PUNCH_PREDICTION_CHANCE                          0 // Additional chance for the AI to not use Sucker Punch if actively predicting a status move if SUCKER_PUNCH_CHANCE fails
 #define PRIORITIZE_LAST_CHANCE_CHANCE                           100 // Chance the AI will prioritize Last Chance (priority move in the face of being outsped and KO'd) over Slow KO
 
 // AI damage calc considerations
@@ -91,7 +91,7 @@
 #define ASSUME_ALL_STATUS_ODDS                          25 // Chance for the AI to see any kind of status move.
 
 // AI_FLAG_SMART_SWITCHING settings
-#define SMART_SWITCHING_OMNISCIENT                              FALSE // AI will use omniscience for switching calcs, regardless of omniscience setting otherwise
+#define SMART_SWITCHING_OMNISCIENT                              TRUE // AI will use omniscience for switching calcs, regardless of omniscience setting otherwise
 
 // Configurations specifically for AI_FLAG_DOUBLE_BATTLE.
 #define FRIENDLY_FIRE_RISKY_THRESHOLD             2 // AI_FLAG_RISKY acceptable number of hits to KO the partner via friendly fire

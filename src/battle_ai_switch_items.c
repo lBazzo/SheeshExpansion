@@ -401,18 +401,19 @@ static bool32 ShouldSwitchIfAllMovesBad(u32 battler)
     u32 aiMove;
 
     // Switch if no moves affect opponents
+    // Bazzo note: now just doesn't switch in doubles
     if (IsDoubleBattle())
     {
-        u32 opposingPartner = GetBattlerAtPosition(BATTLE_PARTNER(opposingBattler));
+        /*u32 opposingPartner = GetBattlerAtPosition(BATTLE_PARTNER(opposingBattler));
         for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
         {
             aiMove = gBattleMons[battler].moves[moveIndex];
             if (aiMove == MOVE_NONE)
                 continue;
             if (gAiLogicData->effectiveness[battler][opposingBattler][moveIndex] > UQ_4_12(0.0)
-             || gAiLogicData->effectiveness[battler][opposingPartner][moveIndex] > UQ_4_12(0.0))
+             || gAiLogicData->effectiveness[battler][opposingPartner][moveIndex] > UQ_4_12(0.0))*/
                 return FALSE;
-        }
+        //}
     }
     else
     {
@@ -430,9 +431,9 @@ static bool32 ShouldSwitchIfAllMovesBad(u32 battler)
     if (RandomPercentage(RNG_AI_SWITCH_ALL_MOVES_BAD, GetSwitchChance(SHOULD_SWITCH_ALL_MOVES_BAD)))
     {
         if (gAiLogicData->mostSuitableMonId[battler] == PARTY_SIZE) // No good candidate mons, find any one that can deal damage
-            return FindMonWithMoveOfEffectiveness(battler, opposingBattler, UQ_4_12(1.0));
+            return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
         else // Good candidate mon, send that in
-            return SetSwitchinAndSwitch(battler, PARTY_SIZE);
+            return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
     }
 
     return FALSE;
@@ -677,7 +678,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
         && gDisableStructs[battler].perishSongTimer == 0
         && monAbility != ABILITY_SOUNDPROOF
         && RandomPercentage(RNG_AI_SWITCH_PERISH_SONG, GetSwitchChance(SHOULD_SWITCH_PERISH_SONG)))
-        return SetSwitchinAndSwitch(battler, PARTY_SIZE);
+        return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
 
     if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
     {
@@ -1039,7 +1040,7 @@ static bool32 ShouldSwitchIfBadChoiceLock(u32 battler)
     if (IsHoldEffectChoice(holdEffect) && IsBattlerItemEnabled(battler))
     {
         if ((GetMoveCategory(lastUsedMove) == DAMAGE_CATEGORY_STATUS || !moveAffectsTarget) && RandomPercentage(RNG_AI_SWITCH_CHOICE_LOCKED, GetSwitchChance(SHOULD_SWITCH_CHOICE_LOCKED)))
-            return SetSwitchinAndSwitch(battler, PARTY_SIZE);
+            return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
     }
 
     return FALSE;
@@ -1610,7 +1611,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     }
     return hazardDamage;
 }
-
+/*
 // Gets damage / healing from weather
 static s32 GetSwitchinWeatherImpact(void)
 {
@@ -1710,7 +1711,7 @@ static u32 GetSwitchinRecurringHealing(void)
     }
     return recurringHealing;
 }
-
+/*
 // Gets one turn of recurring damage
 static u32 GetSwitchinRecurringDamage(void)
 {
@@ -1741,8 +1742,8 @@ static u32 GetSwitchinRecurringDamage(void)
         }
     }
     return passiveDamage;
-}
-
+}*/
+/*
 // Gets one turn of status damage
 static u32 GetSwitchinStatusDamage(u32 battler)
 {
@@ -1817,6 +1818,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     }
     return statusDamage;
 }
+*/
 
 /*
 // Gets number of hits to KO factoring in hazards, healing held items, status, and weather
