@@ -218,7 +218,7 @@
 #define TRAINER_DANIEL                     212
 #define TRAINER_LARRY                      213
 #define TRAINER_SHANE                      214
-#define TRAINER_JUSTIN                     215
+#define TRAINER_GRUNT_34                   215
 #define TRAINER_NAOKO                      216
 #define TRAINER_COLETTE                    217
 #define TRAINER_TRAVIS                     218 // UNUSED
@@ -355,7 +355,7 @@
 #define TRAINER_MICHAEL                    349
 #define TRAINER_RONALD                     350
 #define TRAINER_RIVAL_CYNDAQUIL_2          351
-#define TRAINER_ANTHONY                    352
+#define TRAINER_GRUNT_35                   352
 #define TRAINER_BENJAMIN_1                 353 // UNUSED
 #define TRAINER_BENJAMIN_2                 354 // UNUSED
 #define TRAINER_BENJAMIN_3                 355 // UNUSED
@@ -766,7 +766,7 @@
 #define TRAINER_JOHN                       760 // UNUSED
 #define TRAINER_RACHEL                     761 // UNUSED
 #define TRAINER_LEONEL                     762 // UNUSED
-#define TRAINER_ETO                        763
+#define TRAINER_GRUNT_36                   763
 #define TRAINER_ETHEL                      764 // UNUSED
 #define TRAINER_MYLES                      765 // UNUSED
 #define TRAINER_PAT                        766

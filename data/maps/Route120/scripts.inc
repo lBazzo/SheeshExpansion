@@ -355,7 +355,7 @@ Route120_EventScript_Leonel::
 	end
 
 Route120_EventScript_Callie::
-	trainerbattle_single TRAINER_ETO, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
+	trainerbattle_single TRAINER_GRUNT_36, Route120_Text_CallieIntro, Route120_Text_CallieDefeat
 	msgbox Route120_Text_CalliePostBattle, MSGBOX_AUTOCLOSE
 	end
 

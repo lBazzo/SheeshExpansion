@@ -6229,15 +6229,15 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
+            return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_VS_RIVAL;
+                return MUS_HG_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
+                return MUS_HG_VS_RIVAL;
+            return MUS_HG_VS_RIVAL;
         case TRAINER_CLASS_PKMN_TRAINER_1:
             return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_ELITE_FOUR:
@@ -6250,6 +6250,15 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_COOLTRAINER:
+        case TRAINER_CLASS_COOLTRAINER_2:
+            return MUS_HG_VS_TRAINER_KANTO;
+        case TRAINER_CLASS_LEADER_KANTO:
+            return MUS_HG_VS_GYM_LEADER_KANTO;
+        case TRAINER_CLASS_TEAM_ROCKET:
+            return MUS_HG_VS_ROCKET;
+        case TRAINER_CLASS_MYSTERY_MAN:
+            return MUS_HG_VS_SUICUNE;
         default:
             return MUS_VS_TRAINER;
         }

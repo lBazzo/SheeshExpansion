@@ -37,7 +37,7 @@ SlowpokeWell_B1F_EventScript_B2B::
 	waitmovement 0 
 	msgbox SlowpokeWell_B1F_Text_Grunt23PreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_UNION_CAVE, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt23Beaten
+	trainerbattle_no_intro TRAINER_GRUNT_34, SlowpokeWell_B1F_Text_Grunt23Beaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
 	applymovement LOCALID_WELL_B2BGRUNT24, Common_Movement_ExclamationMark
@@ -106,13 +106,8 @@ SlowpokeWell_B1F_EventScript_Grunt22F::
 	end
 
 SlowpokeWell_B1F_EventScript_Eto::
-	trainerbattle_single TRAINER_ETO, SlowpokeWell_B1F_Text_GruntM2Seen, SlowpokeWell_B1F_Text_GruntM2Beaten
+	trainerbattle_single TRAINER_GRUNT_36, SlowpokeWell_B1F_Text_GruntM2Seen, SlowpokeWell_B1F_Text_GruntM2Beaten
 	msgbox SlowpokeWell_B1F_Text_GruntM2After, MSGBOX_AUTOCLOSE
-	end
-
-SlowpokeWell_B1F_EventScript_Joey::
-	trainerbattle_single TRAINER_JOEY, SlowpokeWell_B1F_Text_JoeySeen, SlowpokeWell_B1F_Text_JoeyBeaten
-	msgbox SlowpokeWell_B1F_Text_JoeyAfter, MSGBOX_AUTOCLOSE
 	end
 
 SlowpokeWell_B1F_EventScript_Proton::

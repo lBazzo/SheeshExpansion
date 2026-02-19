@@ -21340,6 +21340,168 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_TemperFlare,
     },
 
+    [MOVE_HIDDEN_POWER_PSYCHIC_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HIDDEN_POWER_FLYING_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HIDDEN_POWER_ICE_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HIDDEN_POWER_GRASS_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HIDDEN_POWER_GROUND_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HIDDEN_POWER_FIGHTING_2] =
+    {
+        .name = COMPOUND_STRING("Hidden Power"),
+        .description = COMPOUND_STRING(
+        #if B_HIDDEN_POWER_DMG >= GEN_6
+            "The type varies\n"
+            "with the user."),
+        #else
+            "The type and effectiveness\n"
+            "vary with the user."),
+        #endif
+        .power = 60,
+        .effect = EFFECT_HIT,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HiddenPower,
+        .validApprenticeMove = TRUE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

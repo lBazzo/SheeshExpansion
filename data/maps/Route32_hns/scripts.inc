@@ -12,7 +12,7 @@ Route32_OnTransition:
 	end
 
 Route32_EventScript_FisherJustin::
-	trainerbattle_single TRAINER_JUSTIN Route32_Text_FisherJustin_Seen, Route32_Text_FisherJustin_Beaten
+	trainerbattle_single TRAINER_GRUNT_34 Route32_Text_FisherJustin_Seen, Route32_Text_FisherJustin_Beaten
 	msgbox Route32_Text_FisherJustin_After, MSGBOX_AUTOCLOSE
 	end
 
