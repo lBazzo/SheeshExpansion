@@ -388,6 +388,10 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_JUGGLER] = { _("Juggler") },
     [TRAINER_CLASS_PSYCHIC_M] = { _("Psychic") },
     [TRAINER_CLASS_POLICEMAN] = { _("Officer") },
+    [TRAINER_CLASS_ARCADE_STAR] = { _("Arcade Star") },
+    [TRAINER_CLASS_CASTLE_VALET] = { _("Castle Valet") },
+    [TRAINER_CLASS_CASTLE_ROYAL] = { _("Castle Royal") },
+    [TRAINER_CLASS_CASTLE_DUO] = { _("Castle Duo") },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -5474,7 +5478,7 @@ static void HandleEndTurn_BattleWon(void)
         {
         case TRAINER_CLASS_ELITE_FOUR:
         case TRAINER_CLASS_CHAMPION:
-            PlayBGM(MUS_VICTORY_LEAGUE);
+            PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
             break;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
@@ -5486,10 +5490,15 @@ static void HandleEndTurn_BattleWon(void)
             break;
         case TRAINER_CLASS_LEADER:
         case TRAINER_CLASS_LEADER_KANTO:
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
+            PlayBGM(MUS_HG_VICTORY_GYM_LEADER);
             break;
+        case TRAINER_CLASS_ARCADE_STAR:
+        case TRAINER_CLASS_CASTLE_VALET:
+        case TRAINER_CLASS_CASTLE_ROYAL:
+        case TRAINER_CLASS_CASTLE_DUO:
+            PlayBGM(MUS_HG_VICTORY_FRONTIER_BRAIN);
         default:
-            PlayBGM(MUS_VICTORY_TRAINER);
+            PlayBGM(MUS_HG_VICTORY_TRAINER);
             break;
         }
     }

@@ -199,7 +199,7 @@ CianwoodCity_EventScript_SuicuneTrigger::
 	waitmovement 0 
 	waitmovement 0
 	msgbox CianwoodCity_Text_EusineSuicune, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_EUSINE, CianwoodCity_Text_EusineBeaten
+	trainerbattle_no_intro TRAINER_EUSINE_2, CianwoodCity_Text_EusineBeaten
 	playbgm MUS_HG_EUSINE, TRUE
 	msgbox CianwoodCity_Text_EusineAfter, MSGBOX_DEFAULT
 	giveitem ITEM_LOADED_DICE

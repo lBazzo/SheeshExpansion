@@ -270,8 +270,8 @@ RocketHideout_B3F_EventScript_IncrementPasswordGruntF::
 	setflag FLAG_GOT_PASSWORD_FROM_GRUNTF
 	end
 
-RocketHideout_B3F_EventScript_Eto::
-	trainerbattle_single TRAINER_ETO_2 RocketHideout_B3F_Text_GruntM28Seen, RocketHideout_B3F_Text_GruntM28Beaten
+RocketHideout_B3F_EventScript_Grunt46::
+	trainerbattle_single TRAINER_GRUNT_46 RocketHideout_B3F_Text_GruntM28Seen, RocketHideout_B3F_Text_GruntM28Beaten
 	msgbox RocketHideout_B3F_Text_GruntM28After, MSGBOX_NPC
 	goto_if_unset FLAG_GOT_PASSWORD_FROM_ETO, RocketHideout_B3F_EventScript_IncrementPasswordEto
 	end

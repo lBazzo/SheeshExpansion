@@ -46,33 +46,37 @@ EVs: 252 Atk / 252 SpA / 6 SpD
 - Dragon Claw
 
 === PARTNER_LANCE ===
-Name: LANCE
+Name: Lance
 Class: Rival
 Pic: Champion Lance
 Gender: Male
 Music: Male
 Back Pic: Lance
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_TAG_PARTNER
 
-Gyarados @ Leftovers
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Rain Dance
-- Hyper Beam
-- Rock Smash
+Cyclizar @ Expert Belt  
+Ability: Regenerator  
+Level: 65    
+Hasty Nature  
+- Rapid Spin  
+- Iron Tail  
+- Draco Meteor  
+- Knock Off  
 
-Dragonite @ Sitrus Berry
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
-- Fire Blast
-- Thunder
-- Extreme Speed
+Tyrantrum @ Focus Sash  
+Ability: Strong Jaw  
+Level: 67  
+Adamant Nature  
+- Psychic Fangs  
+- Heavy Slam  
+- Ice Fang  
+- Crunch  
 
-Aerodactyl @ Silk Scarf
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Wing Attack
-- Rock Slide
-- Hyper Beam
-- Earthquake
+Goodra-Hisui @ Sitrus Berry  
+Ability: Shell Armor  
+Level: 65   
+Sassy Nature   
+- Flash Cannon  
+- Ice Beam  
+- Flamethrower  
+- Protect  

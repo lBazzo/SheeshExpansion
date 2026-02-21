@@ -114,7 +114,7 @@ CianwoodGym_EventScript_Chuck_Battle1::
 	goto CianwoodGym_EventScript_ChuckVictory
 
 CianwoodGym_EventScript_Chuck_Battle2::
-	trainerbattle_no_intro TRAINER_CHUCK_1_2, CianwoodGym_Text_ChuckIntro2
+	trainerbattle_no_intro TRAINER_CAITLIN_CASTLE, CianwoodGym_Text_ChuckIntro2
 	goto CianwoodGym_EventScript_ChuckVictory
 
 CianwoodGym_EventScript_Chuck_Battle3::
@@ -191,8 +191,8 @@ CianwoodGym_Text_ChuckRematchDefeat:
 	.string "Wha? Huh? I lost?\n"
 	.string "Again?$"
 
-CianwoodGym_EventScript_Kenji::
-	trainerbattle_single TRAINER_KENJI CianwoodGym_Text_BlackbeltKenjiSeen, CianwoodGym_Text_BlackbeltKenjiBeaten
+CianwoodGym_EventScript_Mikey::
+	trainerbattle_single TRAINER_MIKEY CianwoodGym_Text_BlackbeltKenjiSeen, CianwoodGym_Text_BlackbeltKenjiBeaten
 	msgbox CianwoodGym_Text_BlackbeltKenjiAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -208,8 +208,8 @@ CianwoodGym_Text_BlackbeltKenjiAfter:
     .string "I must take to the hills and train\n"
     .string "in solitude.$"
 
-CianwoodGym_EventScript_Yoshi::
-	trainerbattle_single TRAINER_YOSHI CianwoodGym_Text_BlackbeltYoshiSeen, CianwoodGym_Text_BlackbeltYoshiBeaten
+CianwoodGym_EventScript_Raphael::
+	trainerbattle_single TRAINER_RAPHAEL CianwoodGym_Text_BlackbeltYoshiSeen, CianwoodGym_Text_BlackbeltYoshiBeaten
 	msgbox CianwoodGym_Text_BlackbeltYoshiAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -225,8 +225,8 @@ CianwoodGym_Text_BlackbeltYoshiAfter:
 	.string "You seem to have a strong bond\n"
 	.string "with your POKéMON too!$"
 
-CianwoodGym_EventScript_Lao::
-	trainerbattle_single TRAINER_LAO CianwoodGym_Text_BlackbeltLaoSeen, CianwoodGym_Text_BlackbeltLaoBeaten
+CianwoodGym_EventScript_Leonardo::
+	trainerbattle_single TRAINER_LEONARDO CianwoodGym_Text_BlackbeltLaoSeen, CianwoodGym_Text_BlackbeltLaoBeaten
 	msgbox CianwoodGym_Text_BlackbeltLaoAfter, MSGBOX_AUTOCLOSE
 	end
 
@@ -256,8 +256,8 @@ CianwoodGym_Text_BlackbeltNobBeaten:
 CianwoodGym_Text_BlackbeltNobAfter:
 	.string "I lost! I'm speechless!$"
 
-CianwoodGym_EventScript_Lung::
-	trainerbattle_single TRAINER_LUNG CianwoodGym_Text_BlackbeltLungSeen, CianwoodGym_Text_BlackbeltLungBeaten
+CianwoodGym_EventScript_Donatello::
+	trainerbattle_single TRAINER_DONATELLO CianwoodGym_Text_BlackbeltLungSeen, CianwoodGym_Text_BlackbeltLungBeaten
 	msgbox CianwoodGym_Text_BlackbeltLungAfter, MSGBOX_AUTOCLOSE
 	end
 

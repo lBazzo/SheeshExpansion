@@ -211,14 +211,14 @@ RocketHideout_B1F_Trigger_StatueGruntRight::
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_EAST
 	msgbox RocketHideout_B1F_Text_CameraGrunt3Seen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_17, RocketHideout_B1F_Text_CameraGrunt3Beaten
+	trainerbattle_no_intro TRAINER_GRUNT_44, RocketHideout_B1F_Text_CameraGrunt3Beaten
 	applymovement VAR_TEMP_0, RocketHideout_B1F_Movement_GruntWalkRight
 	waitmovement 0
 	delay 55
 	applymovement VAR_TEMP_0, RocketHideout_B1F_Movement_GruntWalkNormalLeft
 	waitmovement 0
 	msgbox RocketHideout_B1F_Text_CameraGrunt4Seen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_18, RocketHideout_B1F_Text_CameraGrunt4Beaten
+	trainerbattle_no_intro TRAINER_GRUNT_45, RocketHideout_B1F_Text_CameraGrunt4Beaten
 	applymovement VAR_TEMP_0, RocketHideout_B1F_Movement_GruntWalkNormalRight
 	waitmovement 0
 	delay 55
@@ -351,20 +351,20 @@ RocketHideout_B1F_Text_CameraGrunt5Beaten:
 	.string "My brothers are gonna yell at me again\n"
 	.string "when they get here...$"
 
-RocketHideout_B1F_EventScript_TrainerJed::
-	trainerbattle_single TRAINER_JED RocketHideout_B1F_Text_ScientistJedSeen, RocketHideout_B1F_Text_ScientistJedBeaten
-	msgbox RocketHideout_B1F_Text_ScientistJedAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_TrainerGrunt38::
+	trainerbattle_single TRAINER_GRUNT_38 RocketHideout_B1F_Text_Grunt38Seen, RocketHideout_B1F_Text_Grunt38Beaten
+	msgbox RocketHideout_B1F_Text_Grunt38After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_Text_ScientistJedSeen:
+RocketHideout_B1F_Text_Grunt38Seen:
     .string "This was once a ninja hideout.\p"
     .string "There are traps to confound\n"
     .string "intruders like you.$"
 
-RocketHideout_B1F_Text_ScientistJedBeaten:
+RocketHideout_B1F_Text_Grunt38Beaten:
     .string "I get it…$"
 
-RocketHideout_B1F_Text_ScientistJedAfter:
+RocketHideout_B1F_Text_Grunt38After:
     .string "All right. I'll divulge a secret\n"
     .string "about our hideout.\p"
     .string "That thing on the floor at the\n"
@@ -457,22 +457,22 @@ RocketHideout_B1F_Text_SecretSwitch:
 RocketHideout_B1F_Text_SwitchOff:
     .string "The switch is turned off.$"
 
-RocketHideout_B1F_EventScript_Dwayne::
-	trainerbattle_single TRAINER_DWAYNE, RocketHideout_B1F_Text_BikerDwayneSeen, RocketHideout_B1F_Text_BikerDwayneBeaten
-	msgbox RocketHideout_B1F_Text_BikerDwayneAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt39::
+	trainerbattle_single TRAINER_GRUNT_39, RocketHideout_B1F_Text_Grunt39Seen, RocketHideout_B1F_Text_Grunt39Beaten
+	msgbox RocketHideout_B1F_Text_Grunt39After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_EventScript_Harris::
-	trainerbattle_single TRAINER_HARRIS, RocketHideout_B1F_Text_BikerHarrisSeen, RocketHideout_B1F_Text_BikerHarrisBeaten
-	msgbox RocketHideout_B1F_Text_BikerHarrisAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt41::
+	trainerbattle_single TRAINER_GRUNT_41, RocketHideout_B1F_Text_Grunt41Seen, RocketHideout_B1F_Text_Grunt41Beaten
+	msgbox RocketHideout_B1F_Text_Grunt41After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_EventScript_Zeke::
-	trainerbattle_single TRAINER_ZEKE, RocketHideout_B1F_Text_BikerZekeSeen, RocketHideout_B1F_Text_BikerZekeBeaten
-	msgbox RocketHideout_B1F_Text_BikerZekeAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt37::
+	trainerbattle_single TRAINER_GRUNT_37, RocketHideout_B1F_Text_Grunt37Seen, RocketHideout_B1F_Text_Grunt37Beaten
+	msgbox RocketHideout_B1F_Text_Grunt37After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_Text_BikerDwayneSeen:
+RocketHideout_B1F_Text_Grunt39Seen:
 	.string "Of course they give me the guard post\n"
 	.string "right next to the surveillance statue.\p"
 	.string "Now I can't even use my phone down\n"
@@ -481,57 +481,57 @@ RocketHideout_B1F_Text_BikerDwayneSeen:
 	.string "just sitting around waiting for an\l"
 	.string "intruder to show up?$"
 
-RocketHideout_B1F_Text_BikerDwayneBeaten:
+RocketHideout_B1F_Text_Grunt39Beaten:
 	.string "Well, that killed some time at least...$"
 
-RocketHideout_B1F_Text_BikerDwayneAfter:
+RocketHideout_B1F_Text_Grunt39After:
 	.string "You know, I guess our boss doesn't care\n"
 	.string "about us enough to even get mad if I\l"
 	.string "slack off on company time\p"
 	.string "That's it. Time to reignite my Words With\n"
 	.string "Friends rivalry with Grunt 8!$"
 
-RocketHideout_B1F_Text_BikerHarrisSeen:
+RocketHideout_B1F_Text_Grunt41Seen:
 	.string "Man... can't you see I'm busy here?\n"
 	.string "Why'd you have to show up now?$"
 
-RocketHideout_B1F_Text_BikerHarrisBeaten:
+RocketHideout_B1F_Text_Grunt41Beaten:
 	.string "Great. Now I lost my train of thought.$"
 
-RocketHideout_B1F_Text_BikerHarrisAfter:
+RocketHideout_B1F_Text_Grunt41After:
 	.string "Hey kid. Eight letter word beginning\n"
 	.string "with the letter 'I'. Got any ideas?\p"
 	.string "'Ignorant'?\p"
 	.string "Pfft. Yeah. Like that's a real word. You\n"
 	.string "think I was born yesterday or what?$"
 
-RocketHideout_B1F_Text_BikerZekeSeen:
+RocketHideout_B1F_Text_Grunt37Seen:
 	.string "BOO!\p"
 	.string "Bet you weren't expecting to be\n"
 	.string "spotted the moment you walked in!$"
 
-RocketHideout_B1F_Text_BikerZekeBeaten:
+RocketHideout_B1F_Text_Grunt37Beaten:
 	.string "Oh... I guess you were expecting it.$"
 
-RocketHideout_B1F_Text_BikerZekeAfter:
+RocketHideout_B1F_Text_Grunt37After:
 	.string "I'm not sure what's worse.\n"
 	.string "Not being able to scare a kid,\l"
 	.string "or scaring them and still losing...$"
 
-RocketHideout_B1F_EventScript_Riley::
-	trainerbattle_single TRAINER_RILEY RocketHideout_B1F_Text_BikerRileySeen, RocketHideout_B1F_Text_BikerRileyBeaten
-	msgbox RocketHideout_B1F_Text_BikerRileyAfterBattle, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt43::
+	trainerbattle_single TRAINER_GRUNT_43 RocketHideout_B1F_Text_Grunt43Seen, RocketHideout_B1F_Text_Grunt43Beaten
+	msgbox RocketHideout_B1F_Text_Grunt43AfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_Text_BikerRileySeen:
+RocketHideout_B1F_Text_Grunt43Seen:
 	.string "Yo! Wanna join TEAM ROCKET? We get to\n"
 	.string "wear this cool uniform and stay up late!$"
 
-RocketHideout_B1F_Text_BikerRileyBeaten:
+RocketHideout_B1F_Text_Grunt43Beaten:
 	.string "Aw man, but I need to recruit more\n"
 	.string "members, or my savings are toast!$"
 
-RocketHideout_B1F_Text_BikerRileyAfterBattle:
+RocketHideout_B1F_Text_Grunt43AfterBattle:
 	.string "If I just get two more people to join,\n"
 	.string "and they get two more people to join\l"
 	.string "too, then I'll be rich!\p"
@@ -539,21 +539,21 @@ RocketHideout_B1F_Text_BikerRileyAfterBattle:
 	.string "Why would a guy successful enough to\n"
 	.string "to lead his own organisation lie?$"
 
-RocketHideout_B1F_EventScript_Ross::
-	trainerbattle_single TRAINER_ROSS RocketHideout_B1F_Text_ScientistRossSeen, RocketHideout_B1F_Text_ScientistRossBeaten
-	msgbox RocketHideout_B1F_Text_ScientistRossAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt40::
+	trainerbattle_single TRAINER_GRUNT_40 RocketHideout_B1F_Text_ScientistGrunt40Seen, RocketHideout_B1F_Text_ScientistGrunt40Beaten
+	msgbox RocketHideout_B1F_Text_ScientistGrunt40After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_Text_ScientistRossSeen:
+RocketHideout_B1F_Text_ScientistGrunt40Seen:
     .string "I used to work for SILPH, but now\n"
     .string "I run research for TEAM ROCKET.\p"
     .string "A meddlesome child like you needs\n"
     .string "to be punished.$"
 
-RocketHideout_B1F_Text_ScientistRossBeaten:
+RocketHideout_B1F_Text_ScientistGrunt40Beaten:
     .string "A mere tactical error cost me…$"
 
-RocketHideout_B1F_Text_ScientistRossAfter:
+RocketHideout_B1F_Text_ScientistGrunt40After:
     .string "A radio signal that drives\n"
     .string "POKéMON mad…\p"
     .string "My experiment is a complete\n"
@@ -561,20 +561,20 @@ RocketHideout_B1F_Text_ScientistRossAfter:
     .string "My promotion is assured. This\n"
     .string "loss means absolutely nothing.$"
 
-RocketHideout_B1F_EventScript_Mitch::
-	trainerbattle_single TRAINER_MITCH RocketHideout_B1F_Text_ScientistMitchSeen, RocketHideout_B1F_Text_ScientistMitchBeaten
-	msgbox RocketHideout_B1F_Text_ScientistMitchAfter, MSGBOX_AUTOCLOSE
+RocketHideout_B1F_EventScript_Grunt42::
+	trainerbattle_single TRAINER_GRUNT_42 RocketHideout_B1F_Text_ScientistGrunt42Seen, RocketHideout_B1F_Text_ScientistGrunt42Beaten
+	msgbox RocketHideout_B1F_Text_ScientistGrunt42After, MSGBOX_AUTOCLOSE
 	end
 
-RocketHideout_B1F_Text_ScientistMitchSeen:
+RocketHideout_B1F_Text_ScientistGrunt42Seen:
     .string "I don't care that POKéMON are hurt\n"
     .string "by our experiment.$"
 
-RocketHideout_B1F_Text_ScientistMitchBeaten:
+RocketHideout_B1F_Text_ScientistGrunt42Beaten:
     .string "Thinking is my strong suit, not\n"
     .string "battling.$"
 
-RocketHideout_B1F_Text_ScientistMitchAfter:
+RocketHideout_B1F_Text_ScientistGrunt42After:
     .string "If we turn up the power of our\n"
     .string "radio signal for broadcast\l"
     .string "nationwide…\p"

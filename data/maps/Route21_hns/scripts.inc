@@ -8,12 +8,12 @@ Route21_OnTransition:
 	end
 
 Route21_EventScript_Seth::
-	trainerbattle_single TRAINER_SETH Route21_Text_SwimmermSethSeen, Route21_Text_SwimmermSethBeaten
+	trainerbattle_single TRAINER_RENJI Route21_Text_SwimmermSethSeen, Route21_Text_SwimmermSethBeaten
 	msgbox Route21_Text_SwimmermSethAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route21_EventScript_Nikki::
-	trainerbattle_single TRAINER_NIKKI Route21_Text_SwimmerfNikkiSeen, Route21_Text_SwimmerfNikkiBeaten
+	trainerbattle_single TRAINER_LIZZIE Route21_Text_SwimmerfNikkiSeen, Route21_Text_SwimmerfNikkiBeaten
 	msgbox Route21_Text_SwimmerfNikkiAfterBattle, MSGBOX_AUTOCLOSE
 	end
 

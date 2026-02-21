@@ -17,7 +17,7 @@ Route126_EventScript_Dean::
 	end
 
 Route126_EventScript_Nikki::
-	trainerbattle_single TRAINER_NIKKI, Route126_Text_NikkiIntro, Route126_Text_NikkiDefeat
+	trainerbattle_single TRAINER_LIZZIE, Route126_Text_NikkiIntro, Route126_Text_NikkiDefeat
 	msgbox Route126_Text_NikkiPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -46,7 +46,7 @@ Route105_EventScript_Beverly::
 	end
 
 Route105_EventScript_Imani::
-	trainerbattle_single TRAINER_CHUCK_1_2, Route105_Text_ImaniIntro, Route105_Text_ImaniDefeated
+	trainerbattle_single TRAINER_CAITLIN_CASTLE, Route105_Text_ImaniIntro, Route105_Text_ImaniDefeated
 	msgbox Route105_Text_ImaniPostBattle, MSGBOX_AUTOCLOSE
 	end
 

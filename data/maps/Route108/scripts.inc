@@ -2,7 +2,7 @@ Route108_MapScripts::
 	.byte 0
 
 Route108_EventScript_Jerome::
-	trainerbattle_single TRAINER_JEROME, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated
+	trainerbattle_single TRAINER_MIRANDA, Route108_Text_JeromeIntro, Route108_Text_JeromeDefeated
 	msgbox Route108_Text_JeromePostBattle, MSGBOX_AUTOCLOSE
 	end
 

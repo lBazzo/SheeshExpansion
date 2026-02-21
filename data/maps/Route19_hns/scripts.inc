@@ -8,12 +8,12 @@ Route19_OnTransition:
 	end
 
 Route19_EventScript_Harold::
-	trainerbattle_single TRAINER_HAROLD Route19_Text_SwimmermHaroldSeen, Route19_Text_SwimmermHaroldBeaten
+	trainerbattle_single TRAINER_GORDO Route19_Text_SwimmermHaroldSeen, Route19_Text_SwimmermHaroldBeaten
 	msgbox Route19_Text_SwimmermHaroldAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route19_EventScript_Tucker::
-	trainerbattle_single TRAINER_TUCKER Route19_Text_SwimmermTuckerSeen, Route19_Text_SwimmermTuckerBeaten
+	trainerbattle_single TRAINER_EUSINE_2 Route19_Text_SwimmermTuckerSeen, Route19_Text_SwimmermTuckerBeaten
 	msgbox Route19_Text_SwimmermTuckerAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -23,7 +23,7 @@ Route19_EventScript_Dawn::
 	end
 
 Route19_EventScript_Jerome::
-	trainerbattle_single TRAINER_JEROME Route19_Text_SwimmermJeromeSeen, Route19_Text_SwimmermJeromeBeaten
+	trainerbattle_single TRAINER_MIRANDA Route19_Text_SwimmermJeromeSeen, Route19_Text_SwimmermJeromeBeaten
 	msgbox Route19_Text_SwimmermJeromeAfterBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -45,10 +45,11 @@ EcruteakCity_Gym_SetGymTrainers::
 	return
 
 CianwoodCity_Gym_SetGymTrainers::
-	settrainerflag TRAINER_YOSHI
-	settrainerflag TRAINER_LAO
+	settrainerflag TRAINER_RAPHAEL
+	settrainerflag TRAINER_LEONARDO
 	settrainerflag TRAINER_NOB
-	settrainerflag TRAINER_LUNG
+	settrainerflag TRAINER_DONATELLO
+	settrainerflag TRAINER_MIKEY
 	return
 
 OlivineCity_Gym_SetGymTrainers::

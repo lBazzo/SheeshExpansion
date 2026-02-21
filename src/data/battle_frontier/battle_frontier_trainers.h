@@ -2456,7 +2456,7 @@ const struct BattleFrontierTrainer gBattleFrontierTrainers[FRONTIER_TRAINERS_COU
         .speechLose = {EC_WORD_AREN_T, EC_WORD_THERE, EC_WORD_MORE, EC_WORD_FLYING, EC_WORD_POKEMON, EC_WORD_QUES},
         .monSet = (const u16[]){FRONTIER_MONS_BIRD_KEEPER_3}
     },
-    [FRONTIER_TRAINER_HAROLD] = {
+    [FRONTIER_TRAINER_GORDO] = {
         .facilityClass = FACILITY_CLASS_BIRD_KEEPER,
         .trainerName = _("HAROLD"),
         .speechBefore = {EC_WORD_MY, EC_WORD_POKEMON, EC_WORD_APPEAL, EC_WORD_TO, EC_WORD_YOU, EC_WORD_QUES},

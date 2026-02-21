@@ -659,7 +659,7 @@ MahoganyTown_EventScript_DarachCaitlinBattleNormal::
 	waitmovement 0
 	waitmovement 0
 	waitmovement 0
-	trainerbattle_no_intro TRAINER_ANN_AND_ANNE, MahoganyTown_Text_DarachCaitlinWin
+	trainerbattle_no_intro TRAINER_DARACH_CAIT, MahoganyTown_Text_DarachCaitlinWin
 	@playbgm MUS_HG_B_CASTLE, TRUE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MAHOGANY_DARACH, Common_Movement_WalkInPlaceRight
@@ -703,7 +703,7 @@ MahoganyTown_EventScript_DarachCaitlinBattleNormal::
 MahoganyTown_EventScript_DarachCaitlinBattleHard::
 	msgbox MahoganyTown_Text_DarachPreBattleHard, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, MahoganyTown_Text_DarachWin
+	trainerbattle_no_intro TRAINER_DARACH, MahoganyTown_Text_DarachWin
 	@playbgm MUS_HG_B_CASTLE, TRUE
 	goto MahoganyTown_EventScript_DarachCaitlinBattleHardChooseCastleOption
 	end
@@ -900,7 +900,7 @@ MahoganyTown_EventScript_DarachCaitlinBattleHardCastleOptionChosen::
 	waitmovement 0
 	waitmovement 0
 	waitmovement 0
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, MahoganyTown_Text_CaitlinWin
+	trainerbattle_no_intro TRAINER_CAITLIN_CASTLE, MahoganyTown_Text_CaitlinWin
 	@playbgm MUS_HG_B_CASTLE, TRUE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_MAHOGANY_DARACH, Common_Movement_WalkInPlaceRight

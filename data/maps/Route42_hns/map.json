@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKER",
       "x": 50,
       "y": 13,
       "elevation": 0,
@@ -87,7 +87,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "Route42_EventScript_Ben",
+      "script": "Route42_EventScript_Benjamin",
       "flag": "0"
     },
     {

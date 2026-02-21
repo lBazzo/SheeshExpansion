@@ -159,7 +159,7 @@
 #define TRAINER_DOUGLAS                     153
 #define TRAINER_DARRIN                      154
 #define TRAINER_TONY_1                      155
-#define TRAINER_JEROME                      156
+#define TRAINER_MIRANDA                      156
 #define TRAINER_MATTHEW                     157
 #define TRAINER_DAVID                       158
 #define TRAINER_SPENCER                     159
@@ -456,7 +456,7 @@
 #define TRAINER_GRACE                       450
 #define TRAINER_TANYA                       451
 #define TRAINER_SHARON                      452
-#define TRAINER_NIKKI                       453
+#define TRAINER_LIZZIE                       453
 #define TRAINER_BRENDA                      454
 #define TRAINER_KATIE                       455
 #define TRAINER_SUSIE                       456
@@ -809,7 +809,7 @@
 #define TRAINER_DARIUS                      803
 #define TRAINER_STEVEN                      804
 #define TRAINER_ANABEL                      805
-#define TRAINER_TUCKER                      806
+#define TRAINER_EUSINE_2                    806
 #define TRAINER_SPENSER                     807
 #define TRAINER_GRETA                       808
 #define TRAINER_NOLAND                      809

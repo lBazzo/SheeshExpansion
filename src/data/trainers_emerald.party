@@ -2819,7 +2819,7 @@ Carvanha
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_JEROME ===
+=== TRAINER_MIRANDA ===
 Name: JEROME
 Class: Swimmer M
 Pic: Swimmer M
@@ -8279,7 +8279,7 @@ Seaking
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_NIKKI ===
+=== TRAINER_LIZZIE ===
 Name: NIKKI
 Class: Swimmer F
 Pic: Swimmer F
@@ -10620,7 +10620,7 @@ Meditite
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_LEONARDO ===
+=== TRAINER_LAO ===
 Name: LEONARDO
 Class: Swimmer M
 Pic: Swimmer M
@@ -15924,7 +15924,7 @@ Beldum
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_TUCKER ===
+=== TRAINER_EUSINE_2 ===
 Name: TUCKER
 Class: Dome Ace
 Pic: Dome Ace Tucker

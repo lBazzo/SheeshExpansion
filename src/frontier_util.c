@@ -120,7 +120,7 @@ const struct FrontierBrain gFrontierBrainInfo[NUM_FRONTIER_FACILITIES] =
     },
     [FRONTIER_FACILITY_DOME] =
     {
-        .trainerId = TRAINER_TUCKER,
+        .trainerId = TRAINER_EUSINE_2,
         .objEventGfx = OBJ_EVENT_GFX_MISTY,
         .isFemale = FALSE,
         .lostTexts = {

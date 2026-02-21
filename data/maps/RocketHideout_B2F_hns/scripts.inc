@@ -353,7 +353,7 @@ RocketHideout_B2F_EventScript_DoLanceMultiBattle::
 	applymovement LOCALID_ROCKETHIDEOUT2_ARCHER, Common_Movement_WalkUp
 	waitmovement 0
 	turnobject LOCALID_ROCKETHIDEOUT2_ARCHER, DIR_WEST
-	multi_2_vs_2 TRAINER_ARIANA_1, RocketHideout_B2F_Text_ArianaLoss, TRAINER_GRUNT_23, RocketHideout_B2F_Text_GruntLoss, PARTNER_LANCE
+	multi_2_vs_2 TRAINER_ARIANA_1, RocketHideout_B2F_Text_ArianaLoss, TRAINER_ARCHER_TAG, RocketHideout_B2F_Text_GruntLoss, PARTNER_LANCE
 	switch VAR_RESULT
 	case 1, RocketHideout_B2F_EventScript_DefeatedAriana
 	fadescreen FADE_TO_BLACK
@@ -367,7 +367,7 @@ RocketHideout_B2F_EventScript_DoLanceMultiBattle::
 @	end
 
 @RocketHideout_B2F_EventScript_GruntTrainer::
-@	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_GRUNT_23, 0, RocketHideout_B2F_Text_GruntLoss, RocketHideout_B2F_Text_GruntLoss
+@	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_ARCHER_TAG, 0, RocketHideout_B2F_Text_GruntLoss, RocketHideout_B2F_Text_GruntLoss
 @	end
 
 RocketHideout_B2F_EventScript_DefeatedAriana::

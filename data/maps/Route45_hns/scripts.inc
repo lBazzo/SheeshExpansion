@@ -24,7 +24,7 @@ Route45_EventScript_Timothy::
 	end
 
 Route45_EventScript_Kenji::
-	trainerbattle_single TRAINER_KENJI Route45_Text_BlackbeltKenjiSeen, Route45_Text_BlackbeltKenjiBeaten
+	trainerbattle_single TRAINER_MIKEY Route45_Text_BlackbeltKenjiSeen, Route45_Text_BlackbeltKenjiBeaten
 	msgbox Route45_Text_BlackbeltKenjiAfter, MSGBOX_AUTOCLOSE
 	end
 

@@ -6231,7 +6231,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_LEADER:
             return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
+            return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_HG_VS_RIVAL;
@@ -6246,7 +6246,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
         case TRAINER_CLASS_ARENA_TYCOON:
-        case TRAINER_CLASS_FACTORY_HEAD:
+        //case TRAINER_CLASS_FACTORY_HEAD:
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
@@ -6259,13 +6259,19 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_ROCKET;
         case TRAINER_CLASS_MYSTERY_MAN:
             return MUS_HG_VS_SUICUNE;
+        case TRAINER_CLASS_ARCADE_STAR:
+        case TRAINER_CLASS_CASTLE_VALET:
+        case TRAINER_CLASS_CASTLE_ROYAL:
+        case TRAINER_CLASS_CASTLE_DUO:
+        case TRAINER_CLASS_FACTORY_HEAD:
+            return MUS_HG_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_HG_VS_TRAINER;
         }
     }
     else
     {
-        return MUS_VS_WILD;
+        return MUS_HG_VS_WILD;
     }
 }
 
