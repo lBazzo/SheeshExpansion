@@ -118,7 +118,7 @@ CianwoodGym_EventScript_Chuck_Battle2::
 	goto CianwoodGym_EventScript_ChuckVictory
 
 CianwoodGym_EventScript_Chuck_Battle3::
-	trainerbattle_no_intro TRAINER_CHUCK_1_3, CianwoodGym_Text_ChuckIntro2
+	trainerbattle_no_intro TRAINER_THORTON_A, CianwoodGym_Text_ChuckIntro2
 	goto CianwoodGym_EventScript_ChuckVictory
 
 CianwoodGym_EventScript_Chuck_Defeated::

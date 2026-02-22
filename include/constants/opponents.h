@@ -247,7 +247,7 @@
 #define TRAINER_GORDON                     241
 #define TRAINER_GREGG                      242 // UNUSED
 #define TRAINER_JACLYN                     243 // UNUSED
-#define TRAINER_PRYCE_2                    244
+#define TRAINER_THORTON_B                    244
 #define TRAINER_SAMANTHA                   245
 #define TRAINER_MAURA                      246 // UNUSED
 #define TRAINER_KAYLA                      247 // UNUSED
@@ -541,7 +541,7 @@
 #define TRAINER_MAY_ROUTE_103_TORCHIC      535 // UNUSED
 #define TRAINER_MAY_ROUTE_110_TORCHIC      536 // UNUSED
 #define TRAINER_MAY_ROUTE_119_TORCHIC      537 // UNUSED
-#define TRAINER_CHUCK_1_3                  538
+#define TRAINER_THORTON_A                  538
 #define TRAINER_JOE                        539
 #define TRAINER_MITCHELL                   540 // UNUSED
 #define TRAINER_CLAIR_1                    541
@@ -581,7 +581,7 @@
 #define TRAINER_SYLVIA                     575 // UNUSED
 #define TRAINER_LEONARDO                   576 
 #define TRAINER_CHOW                       577
-#define TRAINER_PRYCE_1_2                  578
+#define TRAINER_THORTON_C                  578
 #define TRAINER_THEO                       579
 #define TRAINER_GRUNT_24                   580 // UNUSED
 #define TRAINER_TERRY                      581 // UNUSED

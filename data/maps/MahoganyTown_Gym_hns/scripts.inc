@@ -108,7 +108,7 @@ MahoganyTown_Gym_EventScript_Pryce_Battle1::
 	goto MahoganyTown_Gym_EventScript_PryceVictory
 
 MahoganyTown_Gym_EventScript_Pryce_Battle2::
-	trainerbattle_no_intro TRAINER_PRYCE_1_2, MahoganyTown_Gym_Text_PryceImpressed
+	trainerbattle_no_intro TRAINER_THORTON_C, MahoganyTown_Gym_Text_PryceImpressed
 	goto MahoganyTown_Gym_EventScript_PryceVictory
 
 MahoganyTown_Gym_EventScript_Pryce_Battle3::

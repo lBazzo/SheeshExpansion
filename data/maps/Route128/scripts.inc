@@ -232,7 +232,7 @@ Route128_EventScript_Wayne::
 	end
 
 Route128_EventScript_Harrison::
-	trainerbattle_single TRAINER_PRYCE_1_2, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
+	trainerbattle_single TRAINER_THORTON_C, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat
 	msgbox Route128_Text_HarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
