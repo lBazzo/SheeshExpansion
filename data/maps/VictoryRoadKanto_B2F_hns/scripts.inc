@@ -34,7 +34,7 @@ VictoryRoadKanto_B2F_EventScript_B2B2B::
 	delay 60
 	msgbox VictoryRoadKanto_B2F_Text_VictorSeen, MSGBOX_DEFAULT
 	playbgm MUS_HG_VICTORY_ROAD, TRUE
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, VictoryRoadKanto_B2F_Text_VictorBeaten
+	trainerbattle_no_intro TRAINER_VICTOR_VR, VictoryRoadKanto_B2F_Text_VictorBeaten
 	applymovement LOCALID_VICTORYROAD_TOPVICTOR, VictoryRoadKanto_B2F_Movement_VictorBeaten
 	waitmovement 0
 	applymovement LOCALID_VICTORYROAD_LEFTXERXES, Common_Movement_WalkInPlaceRight
@@ -42,7 +42,7 @@ VictoryRoadKanto_B2F_EventScript_B2B2B::
 	waitmovement 0 
     waitmovement 0
 	msgbox VictoryRoadKanto_B2F_Text_XerxesSeen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, VictoryRoadKanto_B2F_Text_XerxesBeaten
+	trainerbattle_no_intro TRAINER_XERXES_VR, VictoryRoadKanto_B2F_Text_XerxesBeaten
 	applymovement LOCALID_VICTORYROAD_LEFTXERXES, VictoryRoadKanto_B2F_Movement_XerxesBeaten
 	waitmovement 0
 	applymovement LOCALID_VICTORYROAD_RIGHTJACOBI, Common_Movement_WalkInPlaceLeft
@@ -50,7 +50,7 @@ VictoryRoadKanto_B2F_EventScript_B2B2B::
 	waitmovement 0 
     waitmovement 0
 	msgbox VictoryRoadKanto_B2F_Text_JacobiSeen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, VictoryRoadKanto_B2F_Text_JacobiBeaten
+	trainerbattle_no_intro TRAINER_JACOBI_VR, VictoryRoadKanto_B2F_Text_JacobiBeaten
 	applymovement LOCALID_VICTORYROAD_RIGHTJACOBI, VictoryRoadKanto_B2F_Movement_JacobiBeaten
 	waitmovement 0
 	setobjectxyperm LOCALID_VICTORYROAD_TOPVICTOR, 18, 30

@@ -228,7 +228,7 @@ PokemonLeague_KarensRoom_EventScript_MortyFight::
 	closemessage
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_5
-	trainerbattle_no_intro TRAINER_MORTY_1, PokemonLeague_KarensRoom_Text_MortyBeaten
+	trainerbattle_no_intro TRAINER_MORTY_2, PokemonLeague_KarensRoom_Text_MortyBeaten
 	goto PokemonLeague_KarensRoom_EventScript_MortyOnDefeat
 
 PokemonLeague_KarensRoom_EventScript_MortyOnDefeat::

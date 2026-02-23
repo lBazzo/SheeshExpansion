@@ -1743,29 +1743,68 @@ Modest Nature
 - Air Slash  
 
 === TRAINER_JOSE ===
-Name: JOSE
+Name: Jose
 Class: Bird Keeper
 Pic: Bird Keeper
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Fearow
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Vanilluxe @ Ice Gem  
+Ability: Snow Warning  
+Level: 93  
+Naive Nature  
+- Blizzard  
+- Freeze-Dry  
+- Ice Shard  
+- Explosion  
 
-Farfetchd
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mamoswine @ Focus Sash  
+Ability: Thick Fat  
+Level: 92  
+Jolly Nature  
+- Stealth Rock  
+- Earthquake  
+- Icicle Crash  
+- Trailblaze  
 
-Pidgeot
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sigilyph @ Life Orb  
+Ability: Tinted Lens  
+Level: 94   
+Timid Nature   
+- Psycho Boost  
+- Aeroblast  
+- Tailwind  
+- Thunder Wave  
 
-Dodrio
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blaziken @ Lum Berry  
+Ability: Speed Boost  
+Level: 91   
+Jolly Nature  
+- Close Combat  
+- Flare Blitz  
+- Earthquake  
+- Stone Edge  
+
+Arctovish @ Figy Berry  
+Ability: Slush Rush  
+Level: 90   
+Hasty Nature  
+- Fishious Rend  
+- Blizzard  
+- Freeze-Dry  
+- Substitute  
+
+Articuno @ Charti Berry  
+Ability: Snow Cloak  
+Level: 95   
+Timid Nature  
+IVs: 1 Atk / 30 SpA / 30 SpD  
+- Blizzard  
+- Air Slash  
+- Hidden Power 
+- Roost  
 
 === TRAINER_PETER ===
 Name: Peter
@@ -2520,54 +2559,95 @@ Modest Nature
 - Aura Sphere  
 
 === TRAINER_MIKE ===
-Name: MIKE
-Class: Dragon Tamer
-Pic: Dragon Tamer
+Name: Mike
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Gyarados
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Regigigas @ Chople Berry  
+Ability: Slow Start  
+Level: 95   
+Adamant Nature  
+- Skill Swap  
+- Double-Edge  
+- Drain Punch  
+- Knock Off  
 
-Dragonair
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swampert @ Focus Sash  
+Ability: Torrent  
+Level: 93   
+Adamant Nature  
+- Liquidation  
+- Earthquake  
+- Counter  
+- Mirror Coat  
 
-Vaporeon
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat @ Choice Specs  
+Ability: Inner Focus  
+Level: 92   
+Hasty Nature  
+IVs: 1 Atk / 30 SpA / 30 SpD  
+- Hurricane  
+- Heat Wave  
+- Giga Drain  
+- Hidden Power 
+
+Slaking @ Normal Gem  
+Ability: Truant  
+Level: 90   
+Adamant Nature  
+- Retaliate  
+- Return  
+- Knock Off  
 
 === TRAINER_GAVEN ===
-Name: GAVEN
+Name: Gaven
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Victreebel
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ampharos @ Iapapa Berry  
+Ability: Illuminate  
+Level: 94    
+Quiet Nature  
+IVs: 30 HP / 30 SpA  
+- Zap Cannon  
+- Hidden Power 
+- Ice Punch  
+- Confuse Ray  
 
-Kingler
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Melmetal @ Assault Vest  
+Ability: Iron Fist  
+Level: 92   
+Adamant Nature  
+- Double Iron Bash  
+- Earthquake  
+- Thunder Punch  
+- Explosion  
 
-Flareon
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Diancie @ Rock Gem  
+Ability: Clear Body  
+Level: 95  
+Sassy Nature  
+- Misty Explosion  
+- Diamond Storm  
+- Play Rough  
+- Earth Power  
 
-Donphan
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dragonair
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tentacruel @ Grass Gem  
+Ability: Clear Body  
+Level: 94   
+Hasty Nature  
+- Scald  
+- Giga Drain  
+- Blizzard  
+- Flip Turn  
 
 === TRAINER_RYAN ===
 Name: Ryan
@@ -2633,83 +2713,149 @@ Jolly Nature
 - Double Kick  
 
 === TRAINER_JAKE ===
-Name: JAKE
+Name: Jake
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Cloyster
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Latios @ Life Orb  
+Ability: Levitate  
+Level: 95  
+Timid Nature  
+- Luster Purge  
+- Mystical Fire  
+- Signal Beam  
+- Grass Knot  
 
-Pidgeot
-Level: 47
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Grimmsnarl @ Fairy Gem  
+Ability: Prankster  
+Level: 93  
+Adamant Nature  
+- Play Rough  
+- Sucker Punch  
+- Bulk Up  
+- Thunder Wave  
 
-Alakazam
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Arcanine
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Jolteon
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Salazzle @ Focus Sash  
+Ability: Corrosion  
+Level: 93   
+Timid Nature  
+IVs: 30 SpA / 30 SpD  
+- Flamethrower  
+- Sludge Bomb  
+- Hidden Power  
+- Endeavor  
 
 === TRAINER_BLAKE ===
-Name: BLAKE
+Name: Blake
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Magneton
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tapu Lele @ Light Clay  
+Ability: Telepathy  
+Level: 95    
+Timid Nature    
+- Psychic  
+- Nature's Madness  
+- Reflect  
+- Light Screen  
 
-Quagsire
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heracross @ Blunder Policy  
+Ability: Swarm  
+Level: 91   
+Adamant Nature  
+- Megahorn  
+- Close Combat  
+- Stone Edge  
+- Knock Off  
 
-Exeggutor
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aurorus @ Chople Berry  
+Ability: Refrigerate  
+Level: 94   
+Modest Nature   
+- Power Gem  
+- Thunder  
+- Hyper Voice  
+- Earth Power  
 
-Piloswine
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Talonflame @ Focus Sash  
+Ability: Flame Body  
+Level: 93    
+Hasty Nature  
+- Fire Blast  
+- Hurricane  
+- Fire Spin  
+- Flail  
 
 === TRAINER_BRIAN ===
-Name: BRIAN
+Name: Brian
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Sandslash
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Iron Bundle @ Booster Energy  
+Ability: Quark Drive  
+Level: 91    
+Mild Nature  
+- Freeze-Dry  
+- Flip Turn  
+- Hydro Pump  
+- Ice Beam  
 
-Scizor
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nidoking @ Life Orb  
+Ability: Sheer Force  
+Level: 94  
+Timid Nature  
+- Sludge Wave  
+- Earth Power  
+- Thunderbolt  
+- Ice Beam  
 
-Sneasel
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Corviknight @ Wacan Berry  
+Ability: Unnerve  
+Level: 93   
+Adamant Nature  
+- Tailwind  
+- Swagger  
+- Brave Bird  
+- Iron Head  
 
-Ursaring
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pawmot @ Electric Gem  
+Ability: Iron Fist  
+Level: 93   
+Jolly Nature  
+- Double Shock  
+- Thunder Punch  
+- Close Combat  
+- Ice Punch  
+
+Pecharunt @ Assault Vest  
+Ability: Poison Puppeteer  
+Level: 95   
+Calm Nature   
+- Malignant Chain  
+- Shadow Ball  
+- Foul Play  
+- Night Shade  
+
+Golem-Alola @ Focus Sash  
+Ability: Magnet Pull  
+Level: 94   
+Adamant Nature  
+- Earthquake  
+- Body Press  
+- Fire Punch  
+- Explosion  
 
 === TRAINER_ERICK ===
 Name: ERICK
@@ -2916,29 +3062,41 @@ Jolly Nature
 - Zen Headbutt  
 
 === TRAINER_DARIN ===
-Name: DARIN
+Name: Darin
 Class: Dragon Tamer
 Pic: Dragon Tamer
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
-Dragonair
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Braviary @ Assault Vest  
+Ability: Defiant  
+Level: 90    
+Adamant Nature  
+- Brave Bird  
+- Double-Edge  
+- Close Combat  
+- U-turn  
 
-Dragonair
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Passimian @ Blunder Policy  
+Ability: Defiant  
+Level: 90    
+Adamant Nature  
+- Close Combat  
+- Stone Edge  
+- Gunk Shot  
+- Acrobatics  
 
-Dragonair
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Dragonair
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tyrantrum @ Covert Cloak  
+Ability: Sturdy  
+Level: 90  
+Tera Type: Ground  
+Adamant Nature  
+- Agility  
+- Rock Slide  
+- Earthquake  
+- Glaive Rush  
 
 === TRAINER_GWEN ===
 Name: GWEN
@@ -3065,29 +3223,49 @@ Impish Nature
 - Earthquake  
 
 === TRAINER_LOLA ===
-Name: LOLA
+Name: Lola
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Dragonair
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Latias @ Soul Dew  
+Ability: Levitate  
+Level: 95  
+Bold Nature   
+- Calm Mind  
+- Dragon Pulse  
+- Mist Ball  
+- Mystical Fire  
 
-Mantine
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sneasler @ Poison Gem  
+Ability: Unburden  
+Level: 91   
+Adamant Nature  
+- Close Combat  
+- Dire Claw  
+- Throat Chop  
+- Psycho Cut  
 
-Lanturn
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blacephalon @ Fire Gem  
+Ability: Beast Boost  
+Level: 92   
+Timid Nature    
+- Incinerate  
+- Hex  
+- Energy Ball  
+- Hypnosis  
 
-Dragonair
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tinkaton @ Expert Belt  
+Ability: Mold Breaker  
+Level: 94  
+Adamant Nature  
+- Gigaton Hammer  
+- Play Rough  
+- Knock Off  
+- Bulldoze  
 
 === TRAINER_KATE ===
 Name: KATE
@@ -3187,116 +3365,227 @@ Modest Nature
 - Giga Drain  
 
 === TRAINER_JOYCE ===
-Name: JOYCE
+Name: Joyce
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Blastoise
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Throh @ Assault Vest  
+Ability: Guts  
+Level: 94    
+Impish Nature  
+- Circle Throw  
+- Thunder Punch  
+- Ice Punch  
+- Poison Jab  
 
-Raichu
-Level: 46
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lycanroc-Dusk @ Hard Stone  
+Ability: Tough Claws  
+Level: 92   
+Adamant Nature  
+- Accelerock  
+- Sucker Punch  
+- Stomping Tantrum  
+- Stealth Rock  
 
-Tauros
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Braviary @ Power Herb  
+Ability: Defiant  
+Level: 92   
+Adamant Nature  
+- Sky Attack  
+- Body Slam  
+- Iron Head  
+- Tailwind  
 
-Rhydon
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Victreebel @ Salac Berry  
+Ability: Gluttony  
+Level: 93   
+Timid Nature  
+- Chloroblast  
+- Sludge Bomb  
+- Acid Spray  
+- Sleep Powder  
 
-Jumpluff
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Camerupt @ Life Orb  
+Ability: Sheer Force  
+Level: 94  
+Modest Nature  
+- Earth Power  
+- Flamethrower  
+- Ancient Power  
+- Roar  
+
+Manaphy @ Leftovers  
+Ability: Hydration  
+Level: 95   
+Modest Nature    
+- Scald  
+- Ice Beam  
+- Energy Ball  
+- Tail Glow  
 
 === TRAINER_BETH ===
-Name: BETH
+Name: Beth
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Rapidash
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Registeel @ Sitrus Berry  
+Ability: Clear Body  
+Level: 93    
+Adamant Nature  
+- Stealth Rock  
+- Thunder Wave  
+- Iron Head  
+- Explosion  
 
-Ampharos
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Azumarill @ Choice Band  
+Ability: Huge Power  
+Level: 93    
+Adamant Nature  
+- Liquidation  
+- Aqua Jet  
+- Ice Punch  
+- Play Rough  
 
-Miltank
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lokix @ Focus Sash  
+Ability: Tinted Lens  
+Level: 94   
+Adamant Nature  
+- First Impression  
+- Leech Life  
+- Sucker Punch  
+- Knock Off  
 
-Lanturn
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Chesnaught @ Leftovers  
+Ability: Overgrow  
+Level: 93  
+Jolly Nature  
+- Bulk Up  
+- Seed Bomb  
+- Drain Punch  
+- Thunder Punch  
 
-Gengar
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cresselia @ Clear Amulet  
+Ability: Levitate  
+Level: 95    
+Bold Nature   
+- Calm Mind  
+- Lunar Blessing  
+- Thunderbolt  
+- Ice Beam  
 
 === TRAINER_REENA ===
-Name: REENA
+Name: Reena
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Starmie
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tapu Fini @ Iapapa Berry  
+Ability: Telepathy  
+Level: 95  
+Bold Nature   
+- Scald  
+- Moonblast  
+- Double Team  
+- Calm Mind  
 
-Nidoqueen
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Conkeldurr @ Choice Band  
+Ability: Iron Fist  
+Level: 94   
+Adamant Nature  
+- Drain Punch  
+- Fire Punch  
+- Ice Punch  
+- Thunder Punch  
 
-Vileplume
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dugtrio @ Life Orb  
+Ability: Arena Trap  
+Level: 92    
+Jolly Nature  
+- Earthquake  
+- Stone Edge  
+- Aerial Ace  
+- Final Gambit  
 
-Electrode
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Starmie
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Spiritomb @ Black Glasses  
+Ability: Dark Aura  
+Level: 93   
+Brave Nature  
+- Pursuit  
+- Sucker Punch  
+- Payback  
+- Dazzling Gleam  
 
 === TRAINER_MEGAN ===
-Name: MEGAN
+Name: Megan
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Tangela
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Glimmora @ Air Balloon  
+Ability: Toxic Debris  
+Level: 93    
+Modest Nature   
+- Stealth Rock  
+- Memento  
+- Ancient Power  
+- Dazzling Gleam  
 
-Venusaur
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cyclizar @ Eject Pack  
+Ability: Regenerator  
+Level: 92   
+Hasty Nature  
+- Retaliate  
+- Draco Meteor  
+- Iron Head  
+- Shed Tail  
 
-Victreebel
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ninetales-Alola @ Choice Specs  
+Ability: Pixilate  
+Level: 94  
+Timid Nature    
+- Blizzard  
+- Hyper Voice  
 
-Bellossom
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magnezone @ Focus Sash  
+Ability: Magnet Pull  
+Level: 93    
+Modest Nature   
+- Thunderbolt  
+- Flash Cannon  
+- Earth Power  
+- Body Press  
+
+Rhyperior @ Ground Gem  
+Ability: Reckless  
+Level: 93   
+Adamant Nature  
+- Head Smash  
+- Headlong Rush  
+- Megahorn  
+- Focus Punch  
+
+Shaymin-Sky @ Grass Gem  
+Ability: Serene Grace  
+Level: 95   
+Timid Nature   
+- Seed Flare  
+- Air Slash  
+- Earth Power  
+- Psychic  
 
 === TRAINER_CAROL ===
 Name: CAROL
@@ -3395,25 +3684,59 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CYBIL ===
-Name: CYBIL
+Name: Cybil
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Butterfree
-Level: 40
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ariados @ Poison Gem  
+Ability: Skitter Speed  
+Level: 90   
+Adamant Nature  
+- Gunk Shot  
+- Toxic Spikes  
+- Megahorn  
+- Sticky Web  
 
-Bellossom
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Farigiraf @ Life Orb  
+Ability: Technician  
+Level: 90   
+Hasty Nature  
+- Twin Beam  
+- Double Hit  
+- Bulldoze  
+- Thief  
 
-Quagsire
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pinsir @ Occa Berry  
+Ability: Mold Breaker  
+Level: 90  
+Jolly Nature  
+- Megahorn  
+- Close Combat  
+- Earthquake  
+- Stone Edge  
+
+Granbull @ Assault Vest  
+Ability: Fluffy  
+Level: 90    
+Adamant Nature  
+- Play Rough  
+- Hammer Arm  
+- Earthquake  
+- Stone Edge  
+
+Tatsugiri @ Focus Sash  
+Ability: Multiscale  
+Level: 90  
+Tera Type: Ice  
+Modest Nature    
+- Hydro Pump  
+- Dragon Pulse  
+- Freeze-Dry  
+- Nasty Plot  
 
 === TRAINER_JENN ===
 Name: JENN
@@ -3433,25 +3756,45 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CARA ===
-Name: CARA
+Name: Cara
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
-Seadra
-Level: 40
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seadra
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Yache Berry  
+Ability: Cotton Down  
+Level: 90  
+Tera Type: Dragon  
+Bold Nature  
+IVs: 0 Atk  
+- Helping Hand  
+- Heat Wave  
+- Hurricane  
+- Endure  
 
-Gyarados
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Goodra @ White Herb  
+Ability: Gooey  
+Level: 90  
+Tera Type: Dragon  
+Lax Nature  
+- Draco Meteor  
+- Power Whip  
+- Sludge Wave  
+- Protect  
+
+Hydreigon @ Wise Glasses  
+Ability: Levitate  
+Level: 90  
+Tera Type: Fire  
+Timid Nature   
+- Dark Pulse  
+- Dragon Pulse  
+- Burn Up  
+- Tailwind  
 
 === TRAINER_VICTORIA ===
 Name: Victoria
@@ -4175,21 +4518,68 @@ Sassy Nature
 - Drain Punch  
 
 === TRAINER_MILLER ===
-Name: MILLER
+Name: Miller
 Class: Pokemaniac
 Pic: Pokemaniac
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Nidoking
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Arcanine @ Focus Sash  
+Ability: Rock Head  
+Level: 90   
+Adamant Nature  
+- Flare Blitz  
+- Wild Charge  
+- Submission  
+- Morning Sun  
 
-Nidoqueen
-Level: 20
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hydrapple @ Yache Berry  
+Ability: Flower Block  
+Level: 90    
+Modest Nature  
+- Fickle Beam  
+- Giga Drain  
+- Hydro Pump  
+- Nasty Plot  
+
+Meloetta @ Normal Gem  
+Ability: Serene Grace  
+Level: 90   
+Naive Nature  
+- Relic Song  
+- Acrobatics  
+- Close Combat  
+- U-turn  
+
+Iron Jugulis @ Booster Energy  
+Ability: Quark Drive  
+Level: 90    
+Timid Nature  
+- Hurricane  
+- Dark Pulse  
+- Heat Wave  
+- Tailwind  
+
+Barbaracle @ Focus Sash  
+Ability: Sniper  
+Level: 90   
+Adamant Nature  
+- Shell Smash  
+- Liquidation  
+- Stone Edge  
+- Earthquake  
+
+Kommo-o @ Iapapa Berry  
+Ability: Sturdy  
+Level: 90  
+Tera Type: Steel  
+Adamant Nature  
+- Clangorous Soul  
+- Scale Shot  
+- Iron Head  
+- Body Press  
 
 === TRAINER_GRUNT ===
 Name: Grunt
@@ -5966,21 +6356,67 @@ Level: 63
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GREGORY ===
-Name: GREGORY
+Name: Gregory
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
-Music: Male
+Music: Rich
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Pikachu
-Level: 57
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Groudon @ Iapapa Berry  
+Ability: Drought  
+Level: 95   
+Hasty Nature  
+- Precipice Blades  
+- Stone Edge  
+- Eruption  
+- Solar Beam  
 
-Ampharos
-Level: 56
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Umbreon @ Weakness Policy  
+Ability: Synchronize  
+Level: 94   
+Adamant Nature  
+- Cosmic Power  
+- Moonlight  
+- Play Rough  
+- Power Trip  
+
+Ursaluna-Bloodmoon @ Rindo Berry  
+Ability: Mind's Eye  
+Level: 93    
+Modest Nature  
+- Blood Moon  
+- Earth Power  
+- Moonblast  
+- Calm Mind  
+
+Lilligant-Hisui @ Flying Gem  
+Ability: Chlorophyll  
+Level: 94  
+Adamant Nature  
+- Acrobatics  
+- Close Combat  
+- Solar Blade  
+- Swords Dance  
+
+Jolteon @ Focus Sash  
+Ability: Volt Absorb  
+Level: 93    
+Timid Nature  
+- Thunderbolt  
+- Weather Ball  
+- Alluring Voice  
+- Thunder Wave  
+
+Houndoom @ Choice Scarf  
+Ability: Solar Power  
+Level: 93   
+Timid Nature   
+- Fire Blast  
+- Dark Pulse  
+- Solar Beam  
+- Foul Play  
 
 === TRAINER_VIRGIL ===
 Name: VIRGIL
@@ -6288,25 +6724,68 @@ Level: 62
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ED ===
-Name: ED
-Class: Bug Catcher
-Pic: Bug Catcher
+Name: Ed
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Beedrill
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gliscor @ Yache Berry  
+Ability: Hyper Cutter  
+Level: 90   
+Jolly Nature  
+- Stealth Rock  
+- Tailwind  
+- Earthquake  
+- U-turn  
 
-Beedrill
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Lucario @ Eject Pack  
+Ability: Inner Focus  
+Level: 90  
+Hasty Nature  
+- Close Combat  
+- Steel Beam  
+- Trailblaze  
+- Dark Pulse  
 
-Beedrill
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Floette-Eternal @ Light Clay  
+Ability: Flower Veil  
+Level: 90    
+Timid Nature   
+- Fleur Cannon  
+- Psychic  
+- Light Screen  
+- Reflect  
+
+Magmortar @ Eject Pack  
+Ability: Mega Launcher  
+Level: 90   
+Modest Nature  
+- Armor Cannon  
+- Aura Sphere  
+- Earth Power  
+- Scary Face  
+
+Gholdengo @ Eject Pack  
+Ability: Good as Gold  
+Level: 90    
+Modest Nature  
+- Make It Rain  
+- Shadow Ball  
+- Focus Blast  
+- Memento  
+
+Dragonite @ Sharp Beak  
+Ability: Aerilate  
+Level: 90  
+Tera Type: Flying  
+Adamant Nature  
+- Extreme Speed  
+- Swords Dance  
+- Earthquake  
+- Supersonic  
 
 === TRAINER_WADE ===
 Name: Wade
@@ -6577,17 +7056,68 @@ Level: 62
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DOUG ===
-Name: DOUG
-Class: Bug Catcher
-Pic: Bug Catcher
+Name: Doug
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Ariados
-Level: 62
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mantine @ Wacan Berry  
+Ability: No Guard  
+Level: 90   
+Modest Nature   
+- Tailwind  
+- Hurricane  
+- Hydro Pump  
+- Confuse Ray  
+
+Ursaluna-Bloodmoon @ Aguav Berry  
+Ability: Mind's Eye  
+Level: 90   
+Calm Nature   
+- Blood Moon  
+- Earth Power  
+- Focus Blast  
+- Calm Mind  
+
+Cinderace @ Choice Band  
+Ability: Libero  
+Level: 90  
+Jolly Nature  
+- Pyro Ball  
+- Stone Edge  
+- Iron Head  
+- U-turn  
+
+Baxcalibur @ Loaded Dice  
+Ability: Mold Breaker  
+Level: 90    
+Adamant Nature  
+- Icicle Spear  
+- Scale Shot  
+- Earthquake  
+- Swords Dance  
+
+Sceptile @ Focus Sash  
+Ability: Super Luck  
+Level: 90   
+Jolly Nature  
+- Leaf Blade  
+- Cross Chop  
+- Swords Dance  
+- Earthquake  
+
+Dragalge @ Life Orb  
+Ability: Adaptability  
+Level: 90  
+Tera Type: Ice  
+Modest Nature  
+- Sludge Wave  
+- Draco Meteor  
+- Tera Blast  
+- Acid Spray  
 
 === TRAINER_WAYNE ===
 Name: WAYNE
@@ -7009,29 +7539,67 @@ Adamant Nature
 - Substitute  
 
 === TRAINER_JONAH ===
-Name: JONAH
-Class: Fisherman
-Pic: Fisherman
+Name: Jonah
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Shellder
-Level: 55
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dragapult @ Life Orb  
+Ability: Clear Body  
+Level: 90    
+Modest Nature  
+- Dragon Pulse  
+- Fire Blast  
+- Shadow Ball  
+- Flash Cannon  
 
-Octillery
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sylveon @ Throat Spray  
+Ability: Pixilate  
+Level: 90   
+Modest Nature    
+- Hyper Voice  
+- Psychic Noise  
+- Hyper Beam  
+- Baton Pass  
 
-Remoraid
-Level: 55
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alakazam @ Focus Sash  
+Ability: Inner Focus  
+Level: 90   
+Timid Nature    
+- Psychic  
+- Dazzling Gleam  
+- Flamethrower  
+- Nasty Plot  
 
-Cloyster
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pidgeot @ Choice Scarf  
+Ability: Tangled Feet  
+Level: 90   
+Hasty Nature  
+- Hurricane  
+- Raging Fury  
+- Thrash  
+
+Palossand @ Assault Vest  
+Ability: Water Compaction  
+Level: 90   
+Modest Nature  
+- Ancient Power  
+- Earth Power  
+- Mud-Slap  
+- Shadow Ball  
+
+Flygon @ Payapa Berry  
+Ability: Levitate  
+Level: 90    
+Tera Type: Poison
+Adamant Nature  
+- Tera Blast  
+- Dragon Rush  
+- Earthquake  
+- Scale Shot  
 
 === TRAINER_MARTIN ===
 Name: Martin
@@ -7163,29 +7731,67 @@ Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SCOTT ===
-Name: SCOTT
+Name: Scott
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Qwilfish
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skarmory @ Covert Cloak  
+Ability: Sturdy  
+Level: 94    
+Jolly Nature  
+- Stealth Rock  
+- Spikes  
+- Roost  
+- Steel Wing  
 
-Seaking
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golduck @ Wacan Berry  
+Ability: Super Luck  
+Level: 94   
+Timid Nature   
+- Hydro Pump  
+- Blizzard  
+- Focus Blast  
+- Future Sight  
 
-Gyarados
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Durant @ Focus Sash  
+Ability: Hustle  
+Level: 91   
+Adamant Nature  
+- Iron Head  
+- Steamroller  
+- Stomping Tantrum  
+- Agility  
 
-Quagsire
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tyranitar @ Black Glasses  
+Ability: Unnerve  
+Level: 92    
+Jolly Nature  
+- Stone Edge  
+- Crunch  
+- Earthquake  
+- Dragon Dance  
+
+Uxie @ Big Root  
+Ability: Levitate  
+Level: 95    
+Quiet Nature  
+- Cosmic Power  
+- Draining Kiss  
+- Drain Punch  
+- Giga Drain  
+
+Iron Valiant @ Booster Energy  
+Ability: Quark Drive  
+Level: 92   
+Modest Nature    
+- Focus Blast  
+- Moonblast  
+- Psychic  
+- Vacuum Wave  
 
 === TRAINER_GORDO ===
 Name: Gordo
@@ -9226,17 +9832,68 @@ Adamant Nature
 - Stomping Tantrum  
 
 === TRAINER_MARKUS ===
-Name: MARKUS
+Name: Markus
 Class: Super Nerd
 Pic: Super Nerd
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Slowpoke
-Level: 19
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Weezing-Galar @ Focus Sash  
+Ability: Misty Surge  
+Level: 90   
+Modest Nature  
+- Strange Steam  
+- Spikes  
+- Misty Explosion  
+- Fire Blast  
+
+Cyclizar @ Eject Pack  
+Ability: Regenerator  
+Level: 90  
+Hasty Nature  
+- Shed Tail  
+- Draco Meteor  
+- Overheat  
+- Retaliate  
+
+Druddigon @ Misty Seed  
+Ability: Rough Skin  
+Level: 90    
+Impish Nature  
+- Iron Tail  
+- Dragon Claw  
+- Sucker Punch  
+- Spiky Shield  
+
+Iron Crown @ Booster Energy  
+Ability: Quark Drive  
+Level: 90   
+Timid Nature  
+- Tachyon Cutter  
+- Future Sight  
+- Volt Switch  
+- Focus Blast  
+
+Volcarona @ Choice Specs  
+Ability: Swarm  
+Level: 90   
+Timid Nature  
+- Fiery Dance  
+- Bug Buzz  
+- Energy Ball  
+- Hurricane  
+
+Dracovish @ Salac Berry  
+Ability: Strong Jaw  
+Level: 90  
+Tera Type: Water  
+Jolly Nature  
+- Aqua Step  
+- Fishious Rend  
+- Ice Fang  
+- Endure  
 
 === TRAINER_CLYDE ===
 Name: CLYDE
@@ -9252,29 +9909,68 @@ Level: 61
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_VINCENT ===
-Name: VINCENT
+Name: Vincent
 Class: Hiker
 Pic: Hiker
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Magneton
-Level: 57
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pelipper @ Wacan Berry  
+Ability: Drizzle  
+Level: 94    
+Timid Nature  
+- Tailwind  
+- Flip Turn  
+- Hurricane  
+- Hydro Pump  
 
-Electrode
-Level: 55
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Seismitoad @ Eject Pack  
+Ability: Swift Swim  
+Level: 93    
+Jolly Nature  
+- Headlong Rush  
+- Scald  
+- Rock Slide  
+- Ice Punch  
 
-Magneton
-Level: 57
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Scizor @ Bug Gem  
+Ability: Technician  
+Level: 92  
+Adamant Nature  
+- Swords Dance  
+- Bug Bite  
+- Bullet Punch  
+- Rock Tomb  
 
-Jolteon
-Level: 55
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rotom-Mow @ White Herb  
+Ability: Levitate  
+Level: 92    
+Timid Nature  
+IVs: 30 Atk / 30 Def
+- Leaf Storm  
+- Thunder  
+- Foul Play  
+- Hidden Power  
+
+Drifblim @ Flying Gem  
+Ability: Unburden  
+Level: 93  
+Rash Nature  
+- Explosion  
+- Hurricane  
+- Weather Ball  
+- Thunder  
+
+Palkia @ Lustrous Orb  
+Ability: Pressure  
+Level: 95    
+Timid Nature  
+- Water Pulse  
+- Spacial Rend  
+- Thunder  
+- Ice Beam  
 
 === TRAINER_GRUNT_35 ===
 Name: Grunt
@@ -10818,29 +11514,40 @@ Level: 56
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HORTON ===
-Name: HORTON
+Name: Horton
 Class: Juggler
 Pic: Juggler
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Electrode
-Level: 56
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Talonflame @ Life Orb  
+Ability: Flame Body  
+Level: 94    
+Jolly Nature  
+- Brave Bird  
+- Flare Blitz  
+- Steel Wing  
+- Swords Dance  
 
-Electrode
-Level: 57
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Goodra-Hisui @ Sitrus Berry  
+Ability: Shell Armor  
+Level: 94   
+Impish Nature  
+- Curse  
+- Counter  
+- Dragon Claw  
+- Heavy Slam  
 
-Electrode
-Level: 56
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Electrode
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Reshiram @ Power Herb  
+Ability: Turboblaze  
+Level: 95  
+Timid Nature    
+- Blue Flare  
+- Draco Meteor  
+- Earth Power  
+- Solar Beam  
 
 === TRAINER_MIKEY ===
 Name: Mikey
@@ -11187,17 +11894,22 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FRANKLIN ===
-Name: FRANKLIN
+Name: Franklin
 Class: Psychic M
 Pic: Psychic M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Alakazam
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mewtwo @ Weakness Policy  
+Ability: Unnerve  
+Level: 95  
+Timid Nature   
+- Psystrike  
+- Fire Blast  
+- Blizzard  
+- Signal Beam  
 
 === TRAINER_HERMAN ===
 Name: Herman
@@ -11506,67 +12218,148 @@ Modest Nature
 - Iron Defense  
 
 === TRAINER_RICHARD ===
-Name: RICHARD
-Class: Psychic M
-Pic: Psychic M
+Name: Richard
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Espeon
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Zeraora @ Muscle Band  
+Ability: Volt Absorb  
+Level: 92    
+Adamant Nature  
+- Plasma Fists  
+- Close Combat  
+- Dual Chop  
+- Play Rough  
 
-Mr Mime
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Abomasnow @ Expert Belt  
+Ability: Soundproof  
+Level: 94   
+Naive Nature  
+- Blizzard  
+- Wood Hammer  
+- Focus Blast  
+- Earthquake  
 
-Slowking
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise @ Iapapa Berry  
+Ability: Torrent  
+Level: 92   
+Modest Nature  
+- Origin Pulse 
+- Blizzard  
+- Focus Blast  
+- Shell Smash  
+
+Dugtrio @ Life Orb  
+Ability: Arena Trap  
+Level: 93   
+Jolly Nature  
+- Earthquake  
+- Rock Slide  
+- Sucker Punch  
+- Iron Head  
+
+Aerodactyl @ Choice Band  
+Ability: Unnerve  
+Level: 92   
+Jolly Nature  
+- Rock Slide  
+- Dual Wingbeat  
+- Iron Tail  
+- Fire Fang  
+
+Enamorus-Therian @ Leftovers  
+Ability: Overcoat  
+Level: 95   
+Bold Nature    
+- Springtide Storm  
+- Mystical Fire  
+- Psychic  
+- Calm Mind  
 
 === TRAINER_GILBERT ===
-Name: GILBERT
+Name: Gilbert
 Class: Psychic M
 Pic: Psychic M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Xatu
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tapu Koko @ Flying Gem  
+Ability: Telepathy  
+Level: 95    
+Hasty Nature  
+- Dazzling Gleam  
+- Thunder Punch  
+- Acrobatics  
+- Grass Knot  
 
-Exeggutor
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ludicolo @ Eject Pack  
+Ability: Dancer  
+Level: 94    
+Timid Nature  
+- Leaf Storm  
+- Hydro Pump  
+- Blizzard  
+- Focus Blast  
 
-Girafarig
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Delphox @ Charcoal  
+Ability: Blaze  
+Level: 93   
+Timid Nature  
+- Psychic  
+- Temper Flare  
+- Shadow Ball  
+- Hypnosis  
+
+Mimikyu @ Rocky Helmet  
+Ability: Disguise  
+Level: 93   
+Adamant Nature  
+- Bulk Up  
+- Play Rough  
+- Shadow Sneak  
+- Drain Punch  
 
 === TRAINER_JARED ===
-Name: JARED
-Class: Psychic M
-Pic: Psychic M
+Name: Jared
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Unown
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Skarmory @ Liechi Berry  
+Ability: Sturdy  
+Level: 94   
+Naive Nature  
+- Agility  
+- Iron Head  
+- Hurricane  
+- Rock Slide  
 
-Mr Mime
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingdra @ Clear Amulet  
+Ability: Sniper  
+Level: 94    
+Jolly Nature  
+- Agility  
+- Whirlpool  
+- Scale Shot  
+- Iron Head  
 
-Exeggutor
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rayquaza @ Expert Belt  
+Ability: Air Lock  
+Level: 95   
+Adamant Nature  
+- Outrage  
+- Dragon Ascent  
+- Wild Charge  
+- Earthquake  
 
 === TRAINER_RODNEY ===
 Name: RODNEY
@@ -11949,17 +12742,41 @@ Adamant Nature
 - Flame Charge  
 
 === TRAINER_DEBRA ===
-Name: DEBRA
+Name: Debra
 Class: Picnicker
 Pic: Picnicker
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Seaking
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aerodactyl @ Focus Sash  
+Ability: Unnerve  
+Level: 90   
+Jolly Nature  
+- Stealth Rock  
+- Rock Blast  
+- Dual Wingbeat  
+- Fire Fang  
+
+Piloswine @ Eviolite  
+Ability: Thick Fat  
+Level: 90   
+Adamant Nature  
+- Avalanche  
+- Ice Shard  
+- Earthquake  
+- Curse  
+
+Archaludon @ Iapapa Berry  
+Ability: Steelworker  
+Level: 90  
+Tera Type: Flying  
+Timid Nature  
+- Earth Power  
+- Flash Cannon  
+- Tera Blast  
+- Metal Sound  
 
 === TRAINER_ERIN ===
 Name: ERIN
@@ -13337,25 +14154,40 @@ Level: 25
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REBECCA ===
-Name: REBECCA
+Name: Rebecca
 Class: Hex Maniac
 Pic: Hex Maniac
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Hypno
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Froslass @ Never-Melt Ice  
+Ability: Cursed Body  
+Level: 94  
+Timid Nature   
+- Blizzard  
+- Thunder Wave  
+- Will-O-Wisp  
+- Confuse Ray  
 
-Jynx
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Flygon @ Haban Berry  
+Ability: Levitate  
+Level: 94  
+Adamant Nature  
+- Tailwind  
+- Earthquake  
+- Dragon Claw  
+- Fire Punch  
 
-Hypno
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kyurem @ Lum Berry  
+Ability: Pressure  
+Level: 95   
+Modest Nature    
+- Freeze-Dry  
+- Glaciate  
+- Ancient Power  
+- Dragon Pulse  
 
 === TRAINER_DORIS ===
 Name: DORIS
@@ -13929,88 +14761,93 @@ Pic: Kimono Girl
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: Pink
 
-Espeon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Psych Up
-- Swift
-- Endeavor
+Moltres @ Charti Berry  
+Ability: Sheer Force  
+Level: 90   
+Timid Nature   
+- Hurricane  
+- Fire Blast  
+- Ancient Power  
+- Scorching Sands
 
 === TRAINER_SAYO ===
-Name: SAYO
+Name: Sayo
 Class: Kimono Girl
 Pic: Kimono Girl
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: Yellow
 
-Jolteon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunderbolt
-- Double Team
-- Thunder Wave
-- Endeavor
+Darkrai @ Expert Belt  
+Ability: Bad Dreams  
+Level: 90  
+Timid Nature  
+- Dark Void  
+- Dark Pulse  
+- Sludge Bomb  
+- Blizzard 
 
 === TRAINER_ZUKI ===
-Name: ZUKI
+Name: Zuki
 Class: Kimono Girl
 Pic: Kimono Girl
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: Purple
 
-Umbreon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dark Pulse
-- Confuse Ray
-- Shadow Ball
-- Endeavor
+Miraidon @ Power Herb  
+Ability: Hadron Engine  
+Level: 90   
+Modest Nature  
+- Electro Drift  
+- Draco Meteor  
+- Overheat  
+- Solar Beam 
 
 === TRAINER_KUNI ===
-Name: KUNI
+Name: Kuni
 Class: Kimono Girl
 Pic: Kimono Girl
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: LightBlue
 
-Vaporeon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Quick Attack
-- Aurora Beam
-- Endeavor
+Deoxys-Speed @ Life Orb  
+Ability: Pressure  
+Level: 90  
+Modest Nature   
+- Psychic  
+- Ice Beam  
+- Thunder  
+- Shadow Ball 
 
 === TRAINER_MIKI ===
-Name: MIKI
+Name: Miki
 Class: Kimono Girl
 Pic: Kimono Girl
 Gender: Male
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Flareon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Fire Blast
-- Quick Attack
-- Will O Wisp
-- Endeavor
+Kyogre @ Throat Spray  
+Ability: Drizzle  
+Level: 90   
+Timid Nature  
+- Sparkling Aria  
+- Thunder  
+- Ice Beam  
+- Calm Mind 
 
 === TRAINER_AMY_AND_MAY ===
 Name: Amy&May
@@ -14164,29 +15001,66 @@ Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEA_AND_PIA ===
-Name: LEA&PIA
+Name: Lea&Pia
 Class: Twins
 Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
-Dragonair
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dragapult @ Choice Band  
+Ability: Clear Body  
+Level: 90   
+Adamant Nature  
+- Dragon Darts  
+- U-turn  
 
-Gyarados
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Nidoqueen @ Life Orb  
+Ability: Sheer Force  
+Level: 90   
+Hasty Nature  
+- Sludge Wave  
+- Earth Power  
+- Iron Tail  
+- Toxic Spikes  
 
-Dragonair
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Durant @ Blunder Policy  
+Ability: Hustle  
+Level: 90    
+Adamant Nature  
+- First Impression  
+- Iron Head  
+- Rock Slide  
+- Baton Pass  
 
-Gyarados
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Perrserker @ Metal Coat  
+Ability: Steely Spirit  
+Level: 90   
+Adamant Nature  
+- Meteor Mash  
+- Bullet Punch  
+- Protect  
+- Fake Out  
+
+Gyarados @ Wacan Berry  
+Ability: Intimidate  
+Level: 90    
+Jolly Nature  
+- Aqua Tail  
+- Bounce  
+- Iron Tail  
+- Thunder Wave  
+
+Haxorus @ Dragon Gem  
+Ability: Unnerve  
+Level: 90  
+Tera Type: Dragon  
+Jolly Nature  
+- Outrage  
+- Iron Tail  
+- Scale Shot  
+- Close Combat  
 
 === TRAINER_BEVERLY ===
 Name: Beverly
@@ -14567,39 +15441,63 @@ Adamant Nature
 - Substitute  
 
 === TRAINER_BUGSY_1 ===
-Name: BUGSY
-Class: Leader
+Name: Bugsy
+Class: Elite Four
 Pic: Leader Bugsy
 Gender: Male
 Music: Male
-Items: Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Green
 
-Pineco
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Pin Missile
-- Headbutt
-- Bullet Seed
-- Harden
+Ribombee @ Kee Berry  
+Ability: Shield Dust   
+Timid Nature  
+- Sticky Web  
+- Moonblast  
+- Bug Buzz  
+- U-turn  
 
-Ledian
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bullet Seed
-- Comet Punch
-- Supersonic
-- Reflect
+Golisopod @ Bug Gem  
+Ability: Emergency Exit  
+Careful Nature  
+- First Impression  
+- Jet Punch  
+- Leech Life  
+- Spikes  
 
-Scyther @ Berry Juice
-Level: 16
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Quick Attack
-- Fury Cutter
-- Bullet Seed
-- Pursuit
+Buzzwole @ Focus Sash  
+Ability: Beast Boost  
+Adamant Nature  
+- Drain Punch  
+- Leech Life  
+- Darkest Lariat  
+- Counter  
+
+Eelektross @ Assault Vest  
+Ability: Levitate  
+Bold Nature   
+- Thunder Cage  
+- Super Fang  
+- Giga Drain  
+- Ice Beam  
+
+Kleavor @ Life Orb  
+Ability: Sheer Force  
+Adamant Nature  
+- Agility  
+- Rock Slide  
+- Lunge  
+- Earthquake  
+
+Zygarde @ Sitrus Berry  
+Ability: Power Construct  
+Tera Type: Bug  
+Impish Nature  
+- Thousand Waves  
+- Iron Tail  
+- Breaking Swipe  
+- Skitter Smack  
 
 === TRAINER_GRUNT_45 ===
 Name: Grunt
@@ -14795,63 +15693,63 @@ Timid Nature
 - Hypnosis  
 
 === TRAINER_MORTY_2 ===
-Name: MORTY
-Class: Leader
+Name: Morty
+Class: Elite Four
 Pic: Leader Morty
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Purple
 
-Sableye
-Level: 64
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Claw
-- Power Gem
-- Mean Look
-- Detect
+Lopunny @ Toxic Orb  
+Ability: Scrappy   
+Jolly Nature  
+- Fake Out  
+- Facade  
+- High Jump Kick  
+- Teeter Dance  
 
-Wyrdeer @ Silk Scarf
-Level: 63
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Jump Kick
-- Headbutt
-- Hypnosis
-- Psycho Cut
+Flutter Mane @ Booster Energy  
+Ability: Protosynthesis   
+Timid Nature    
+- Shadow Ball  
+- Moonblast  
+- Fake Tears  
+- Confuse Ray  
 
-Gengar @ Spell Tag
-Level: 64
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Giga Drain
-- Sludge Bomb
-- Psychic
+Zoroark @ Flame Orb  
+Ability: Flare Boost    
+Timid Nature   
+- Night Daze  
+- Dark Pulse  
+- Focus Blast  
+- Sludge Bomb  
 
-Mismagius
-Level: 63
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Mean Look
-- Pain Split
-- Perish Song
+Aegislash @ Colbur Berry  
+Ability: Stance Change    
+Adamant Nature  
+- Iron Head  
+- Shadow Sneak  
+- X-Scissor  
+- King's Shield  
 
-Gengar @ Sitrus Berry
-Level: 65
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Ball
-- Hypnosis
-- Thunderbolt
-- Dream Eater
+Basculegion (M) @ Mystic Water  
+Ability: Adaptability  
+Adamant Nature  
+- Aqua Jet  
+- Flip Turn  
+- Liquidation  
+- Last Respects  
 
-Dusknoir
-Level: 65
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Shadow Punch
-- Fire Punch
-- Will O Wisp
-- Dark Pulse
+Lugia @ Leftovers  
+Ability: Multiscale  
+Tera Type: Water  
+Bold Nature   
+- Aeroblast  
+- Hydro Pump  
+- Calm Mind  
+- Recover  
 
 === TRAINER_PRYCE_1 ===
 Name: Pryce
@@ -15112,55 +16010,64 @@ Modest Nature
 - Destiny Bond  
 
 === TRAINER_JASMINE_1 ===
-Name: JASMINE
-Class: Leader
+Name: Jasmine
+Class: Elite Four
 Pic: Leader Jasmine
 Gender: Male
 Music: Male
-Items: Super Potion / Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Yellow
 
-Skarmory
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Spikes
-- Drill Peck
-- Swagger
-- Steel Wing
+Lucario @ Focus Sash  
+Ability: Inner Focus  
+Adamant Nature  
+- Reversal  
+- Meteor Mash  
+- Crunch  
+- Trailblaze  
 
-Corsola
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rain Dance
-- Surf
-- Recover
-- Ancient Power
+Sandy Shocks @ Booster Energy  
+Ability: Protosynthesis  
+Timid Nature  
+IVs: 30 Atk / 30 SpA / 30 Spe  
+- Thunderbolt  
+- Volt Switch  
+- Hidden Power  
+- Earth Power  
 
-Magneton
-Level: 35
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunderbolt
-- Tri Attack
-- Rain Dance
-- Thunder
+Arcanine-Hisui @ Air Balloon  
+Ability: Rock Head   
+Adamant Nature  
+- Flare Blitz  
+- Stone Edge  
+- Wild Charge  
+- Extreme Speed  
 
-Scizor @ Focus Band
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Twineedle
-- Metal Claw
-- Agility
-- Swords Dance
+Gyarados @ Wacan Berry  
+Ability: Intimidate   
+Jolly Nature  
+- Dragon Ascent  
+- Aqua Tail  
+- Earthquake  
+- Dragon Dance  
 
-Steelix @ Quick Claw
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Crunch
-- Earthquake
-- Rock Slide
-- Iron Tail
+Kartana @ Choice Scarf  
+Ability: Beast Boost    
+Adamant Nature  
+- Leaf Blade  
+- Smart Strike  
+- Knock Off  
+- Aqua Cutter  
+
+Dialga @ Dragon Gem  
+Ability: Pressure  
+Tera Type: Flying  
+Hasty Nature  
+- Dragon Pulse  
+- Scale Shot  
+- Flash Cannon  
+- Earth Power  
 
 === TRAINER_GRUNT_49 ===
 Name: Grunt
@@ -15520,8 +16427,8 @@ Class: Leader
 Pic: Leader Clair
 Gender: Male
 Music: Male
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 Mugshot: Blue
 
 
@@ -16188,55 +17095,66 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Extreme Speed
 
 === TRAINER_WILL_1 ===
-Name: WILL
+Name: Will
 Class: Elite Four
 Pic: Elite Four Will
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Pink
 
-Girafarig
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Rock Smash
-- Agility
-- Baton Pass
+Indeedee (M) @ Focus Sash  
+Ability: Psychic Surge    
+Modest Nature  
+IVs: 30 Atk / 30 SpA / 30 Spe
+- Future Sight  
+- Expanding Force  
+- Alluring Voice  
+- Hidden Power 
 
-Slowking
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Amnesia
-- Flamethrower
-- Surf
-- Psychic
+Kommo-o @ Salac Berry  
+Ability: Sturdy   
+Jolly Nature  
+- Reversal  
+- Dragon Rush  
+- Iron Head  
+- Swords Dance  
 
-Espeon
-Level: 48
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Psychic
-- Shadow Ball
-- Reflect
-- Headbutt
+Typhlosion-Hisui @ Kasib Berry  
+Ability: Technician  
+Tera Type: Fire  
+Timid Nature  
+IVs: 30 HP / 30 Atk / 30 SpA / 30 SpD / 30 Spe 
+- Twin Flame  
+- Temper Flare  
+- Infernal Parade  
+- Hidden Power 
 
-Slowbro @ Quick Claw
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Curse
-- Rock Smash
-- Body Slam
-- Psychic
+Guzzlord @ Assault Vest  
+Ability: Beast Boost   
+Adamant Nature  
+- Knock Off  
+- Dragon Tail  
+- Heavy Slam  
+- Earthquake  
 
-Xatu @ Twisted Spoon
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drill Peck
-- Recover
-- Confuse Ray
-- Psychic
+Scream Tail @ Booster Energy  
+Ability: Protosynthesis    
+Naive Nature  
+- Misty Explosion  
+- Psychic Fangs  
+- Crunch  
+- Drain Punch  
+
+Solgaleo @ Chesto Berry  
+Ability: Full Metal Body  
+Tera Type: Steel  
+Jolly Nature  
+- Meteor Mash  
+- Psyshield Bash  
+- Cosmic Power  
+- Rest  
 
 === TRAINER_WILL_2 ===
 Name: WILL
@@ -16298,55 +17216,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Protect
 
 === TRAINER_BRUNO_1 ===
-Name: BRUNO
+Name: Bruno
 Class: Elite Four
 Pic: Elite Four Bruno
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Orange
 
-Hitmonchan @ Scope Lens
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Mach Punch
-- Pursuit
-- Dizzy Punch
-- Thunder Punch
+Wugtrio @ Focus Sash  
+Ability: Gooey   
+Adamant Nature  
+- Liquidation  
+- Stomping Tantrum  
+- Sucker Punch  
+- Final Gambit  
 
-Heracross
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Cross Chop
-- Megahorn
-- Take Down
-- Earthquake
+Decidueye-Hisui @ Eject Pack  
+Ability: Scrappy   
+Naive Nature  
+- Close Combat  
+- Leaf Storm  
+- Brave Bird  
+- Tailwind  
 
-Hitmonlee @ Silk Scarf
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Body Slam
-- Meditate
-- Reversal
-- Hi Jump Kick
+Urshifu @ Roseli Berry  
+Ability: Unseen Fist   
+Adamant Nature  
+- Swords Dance  
+- Wicked Blow  
+- Close Combat  
+- Poison Jab  
 
-Steelix
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Crunch
-- Earthquake
-- Rock Slide
-- Iron Tail
+Raikou @ Leftovers  
+Ability: Inner Focus  
+Modest Nature  
+IVs: 30 Spe  
+- Thunderbolt  
+- Scald  
+- Hidden Power 
+- Calm Mind  
 
-Machamp @ Black Belt
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rock Slide
-- Fire Punch
-- Vital Throw
-- Cross Chop
+Sneasler @ Flying Gem  
+Ability: Unburden   
+Jolly Nature  
+- Close Combat  
+- Dire Claw  
+- Acrobatics  
+- Throat Chop  
+
+Zamazenta-Crowned @ Rusted Shield  
+Ability: Dauntless Shield  
+Tera Type: Fighting  
+Jolly Nature  
+- Body Press  
+- Behemoth Bash  
+- Light Screen  
+- Iron Defense  
 
 === TRAINER_BRUNO_2 ===
 Name: BRUNO
@@ -16408,55 +17335,63 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Cross Chop
 
 === TRAINER_KAREN_1 ===
-Name: KAREN
+Name: Karen
 Class: Elite Four
 Pic: Elite Four Karen
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Yellow
 
-Umbreon @ Sitrus Berry
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Faint Attack
-- Double Team
-- Baton Pass
-- Moonlight
+Meowscarada @ Life Orb  
+Ability: Protean   
+Jolly Nature  
+- Flower Trick  
+- Play Rough  
+- Knock Off  
+- Triple Axel  
 
-Gengar
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Ball
-- Hypnosis
-- Dream Eater
-- Confuse Ray
+Rotom-Wash @ Iapapa Berry  
+Ability: Levitate   
+Modest Nature  
+- Hydro Pump  
+- Thunder  
+- Volt Switch  
+- Will-O-Wisp  
 
-Vileplume @ Leftovers
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Sleep Powder
-- Giga Drain
-- Leech Seed
-- Substitute
+Yveltal @ Lum Berry  
+Ability: Dark Aura  
+Hasty Nature  
+- Knock Off  
+- Hurricane  
+- Heat Wave  
+- Tailwind  
 
-Honchkrow @ Sharp Beak
-Level: 53
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Drill Peck
-- Faint Attack
-- Steel Wing
-- Haze
+Drapion @ Assault Vest  
+Ability: Battle Armor   
+Adamant Nature  
+- Knock Off  
+- Pursuit  
+- Cross Poison  
+- Earthquake  
 
-Houndoom @ Black Glasses
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Crunch
-- Iron Tail
-- Reversal
+Chandelure @ Choice Specs  
+Ability: Shadow Tag   
+Modest Nature  
+- Fire Blast  
+- Shadow Ball  
+- Energy Ball  
+- Power Gem  
+
+Kingambit @ Black Glasses  
+Ability: Supreme Overlord  
+Tera Type: Dark  
+Adamant Nature  
+- Swords Dance  
+- Kowtow Cleave  
+- Sucker Punch  
+- Iron Head  
 
 === TRAINER_KAREN_2 ===
 Name: KAREN
@@ -16518,55 +17453,64 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hidden Power
 
 === TRAINER_KOGA_1 ===
-Name: KOGA
+Name: Koga
 Class: Elite Four
 Pic: Elite Four Koga
 Gender: Male
 Music: Elite Four
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Purple
 
-Ariados @ Kings Rock
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Megahorn
-- Giga Drain
-- Double Team
-- Toxic
+Glimmora @ Assault Vest  
+Ability: Toxic Debris  
+Timid Nature  
+- Power Gem  
+- Sludge Wave  
+- Earth Power  
+- Dazzling Gleam  
 
-Qwilfish
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Toxic
-- Protect
-- Sludge Bomb
+Gliscor @ Flying Gem  
+Ability: Hyper Cutter   
+Jolly Nature  
+- Stealth Rock  
+- Toxic Spikes  
+- Acrobatics  
+- Earthquake  
 
-Muk @ Leftovers
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Minimize
-- Fire Blast
-- Sludge Bomb
-- Toxic
+Greninja @ Life Orb  
+Ability: Torrent   
+Timid Nature  
+- Hydro Pump  
+- Dark Pulse  
+- U-turn  
+- Taunt  
 
-Venomoth
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Leech Life
-- Psychic
-- Sludge Bomb
-- Sleep Powder
+Yanmega @ Expert Belt  
+Ability: Speed Boost    
+Modest Nature  
+IVs: 30 SpA / 30 SpD  
+- Hurricane  
+- Signal Beam  
+- Hidden Power 
+- Hypnosis  
 
-Crobat @ Bright Powder
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Toxic
-- Bite
-- Confuse Ray
+Iron Moth @ Booster Energy  
+Ability: Quark Drive   
+Timid Nature   
+- Fiery Dance  
+- Energy Ball  
+- Venoshock  
+- Confuse Ray  
+
+Eternatus @ Power Herb  
+Ability: Pressure  
+Tera Type: Rock  
+Timid Nature   
+- Sludge Wave  
+- Solar Beam  
+- Meteor Beam  
+- Flamethrower  
 
 === TRAINER_KOGA_2 ===
 Name: KOGA
@@ -16628,63 +17572,63 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Confuse Ray
 
 === TRAINER_LANCE_1 ===
-Name: LANCE
+Name: Lance
 Class: Champion
 Pic: Champion Lance
 Gender: Male
 Music: Hg Champion
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Blue
 
-Gyarados @ Leftovers
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Rain Dance
-- Hyper Beam
-- Rock Smash
+Koraidon @ Roseli Berry  
+Ability: Orichalcum Pulse  
+Hasty Nature  
+- Draco Meteor  
+- Collision Course  
+- Flare Blitz  
+- Iron Head  
 
-Dragonite @ Sitrus Berry
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Blizzard
-- Fire Blast
-- Thunder
-- Extreme Speed
+Volcanion @ Assault Vest  
+Ability: Water Absorb    
+Quiet Nature  
+- Hydro Steam  
+- Fire Blast  
+- Rock Tomb  
+- Explosion  
 
-Charizard @ Charcoal
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
-- Wing Attack
-- Double Team
-- Steel Wing
+Sceptile @ Grass Gem  
+Ability: Unburden   
+Modest Nature  
+- Solar Beam  
+- Acrobatics  
+- Focus Blast  
+- Shed Tail  
 
-Dragonite
-Level: 55
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Bounce
-- Dragon Claw
-- Waterfall
-- Dragon Dance
+Roaring Moon @ Life Orb  
+Ability: Protosynthesis    
+Jolly Nature  
+- Outrage  
+- Jaw Lock  
+- Stone Edge  
+- Zen Headbutt  
 
-Aerodactyl @ Silk Scarf
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Wing Attack
-- Rock Slide
-- Hyper Beam
-- Earthquake
+Arceus-Poison @ Toxic Plate  
+Ability: Multitype   
+Modest Nature   
+- Calm Mind  
+- Judgment  
+- Earth Power  
+- Solar Beam  
 
-Dragonite @ Sitrus Berry
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder
-- Safeguard
-- Outrage
-- Hyper Beam
+Dragonite @ Normal Gem  
+Ability: Aerilate  
+Tera Type: Flying  
+Adamant Nature  
+- Swords Dance  
+- Dragon Rush  
+- Extreme Speed  
+- Fire Lash  
 
 === TRAINER_LANCE_2 ===
 Name: LANCE
@@ -16958,58 +17902,63 @@ Class: Rival
 Pic: Silver
 Gender: Male
 Music: Silver
-Items: Hyper Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Ursaring @ Chesto Berry
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Slash
-- Faint Attack
-- Rock Smash
-- Rest
+Porygon-Z @ Focus Sash  
+Ability: Download  
+Level: 95  
+Timid Nature    
+- Tri Attack  
+- Thunder  
+- Blizzard  
+- Nasty Plot  
 
-Golbat
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Toxic
-- Double Team
-- Confuse Ray
-- Wing Attack
+Iron Thorns @ Booster Energy  
+Ability: Quark Drive  
+Level: 95  
+Adamant Nature  
+- Stone Edge  
+- Wild Charge  
+- Earthquake  
+- Ice Fang  
 
-Octillery @ Quick Claw
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Surf
-- Ice Beam
-- Psybeam
-- Hyper Beam
+Chesnaught @ Coba Berry  
+Ability: Shell Armor  
+Level: 95   
+Adamant Nature  
+- Swords Dance  
+- Wood Hammer  
+- Close Combat  
+- Stone Edge  
 
-Houndoom
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flamethrower
-- Iron Tail
-- Crunch
-- Sunny Day
+Darmanitan @ Life Orb  
+Ability: Sheer Force  
+Level: 95   
+Jolly Nature  
+- Flare Blitz  
+- Rock Slide  
+- Earthquake  
+- U-turn  
 
-Meganium @ Miracle Seed
-Level: 47
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sunny Day
-- Giga Drain
-- Body Slam
-- Synthesis
+Keldeo @ Assault Vest  
+Ability: Justified  
+Level: 95  
+Timid Nature  
+- Muddy Water  
+- Secret Sword  
+- Ice Beam  
+- Icy Wind  
 
-Tyranitar
-Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Crunch
-- Earthquake
-- Rock Slide
-- Fire Punch
+Giratina @ Power Herb  
+Ability: Pressure  
+Level: 95   
+Adamant Nature  
+- Dragon Rush  
+- Shadow Force  
+- Flying Press  
+- Destiny Bond  
 
 === TRAINER_RIVAL_CHIKORITA_6 ===
 Name: Silver
@@ -17346,53 +18295,59 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Ursaring @ Chesto Berry
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Slash
-- Faint Attack
-- Rock Smash
-- Rest
+Porygon-Z @ Focus Sash  
+Ability: Download  
+Level: 95   
+Timid Nature  
+- Tri Attack  
+- Thunder  
+- Blizzard  
+- Nasty Plot  
 
-Golbat
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Toxic
-- Double Team
-- Confuse Ray
-- Wing Attack
+Iron Hands @ Booster Energy  
+Ability: Quark Drive  
+Level: 95   
+Adamant Nature  
+- Thunder Punch  
+- Drain Punch  
+- Ice Punch  
+- Heavy Slam  
 
-Octillery @ Quick Claw
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Surf
-- Ice Beam
-- Psybeam
-- Hyper Beam
+Delphox @ Blunder Policy  
+Ability: Magician  
+Level: 95   
+Modest Nature    
+- Fire Blast  
+- Psychic  
+- Focus Blast  
+- Hypnosis  
 
-Victreebel
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sludge Bomb
-- Giga Drain
-- Sleep Powder
-- Growth
+Gyarados @ Wacan Berry  
+Ability: Intimidate  
+Level: 95  
+Jolly Nature  
+- Wave Crash  
+- Dragon Ascent  
+- Earthquake  
+- Dragon Dance  
 
-Typhlosion @ Charcoal
-Level: 47
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flamethrower
-- Quick Attack
-- Iron Tail
-- Thunder Punch
+Zarude @ Tanga Berry  
+Ability: Leaf Guard  
+Level: 95    
+Adamant Nature  
+- Power Whip  
+- Crunch  
+- Close Combat  
+- Stomping Tantrum  
 
-Tyranitar
-Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Crunch
-- Earthquake
-- Rock Slide
-- Fire Punch
+Giratina @ Power Herb  
+Ability: Pressure  
+Level: 95    
+Adamant Nature  
+- Dragon Rush  
+- Shadow Force  
+- Flying Press  
+- Destiny Bond  
 
 === TRAINER_RIVAL_CYNDAQUIL_6 ===
 Name: Silver
@@ -17725,58 +18680,63 @@ Class: Rival
 Pic: Silver
 Gender: Male
 Music: Silver
-Items: Hyper Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Ursaring @ Chesto Berry
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Slash
-- Faint Attack
-- Rock Smash
-- Rest
+Porygon-Z @ Focus Sash  
+Ability: Download  
+Level: 95   
+Timid Nature   
+- Tri Attack  
+- Thunder  
+- Blizzard  
+- Nasty Plot  
 
-Golbat
-Level: 45
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Toxic
-- Double Team
-- Confuse Ray
-- Wing Attack
+Iron Jugulis @ Booster Energy  
+Ability: Quark Drive  
+Level: 95  
+Modest Nature  
+- Hurricane  
+- Dark Pulse  
+- Earth Power  
+- Fire Blast  
 
-Victreebel @ Quick Claw
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sludge Bomb
-- Giga Drain
-- Sleep Powder
-- Growth
+Greninja @ Expert Belt  
+Ability: Protean  
+Level: 95   
+Timid Nature   
+- Hydro Pump  
+- Dark Pulse  
+- Ice Beam  
+- Sludge Wave  
 
-Houndoom
-Level: 46
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Flamethrower
-- Iron Tail
-- Crunch
-- Double Team
+Roserade @ Life Orb  
+Ability: Poison Point  
+Level: 95   
+Timid Nature  
+- Leaf Storm  
+- Sludge Bomb  
+- Extrasensory  
+- Grass Whistle  
 
-Feraligatr @ Mystic Water
-Level: 47
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Ice Punch
-- Surf
-- Slash
-- Bite
+Gouging Fire @ Fire Gem  
+Ability: Protosynthesis  
+Level: 95   
+Adamant Nature  
+- Burning Bulwark  
+- Flame Charge  
+- Dragon Rush  
+- Thunder Fang  
 
-Tyranitar
-Level: 48
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Crunch
-- Earthquake
-- Rock Slide
-- Fire Punch
+Giratina @ Power Herb  
+Ability: Pressure  
+Level: 95   
+Adamant Nature  
+- Dragon Rush  
+- Shadow Force  
+- Flying Press  
+- Destiny Bond  
 
 === TRAINER_RIVAL_TOTODILE_6 ===
 Name: Silver
@@ -17989,63 +18949,63 @@ Timid Nature
 - Dazzling Gleam  
 
 === TRAINER_GIOVANNI ===
-Name: GIOVANNI
-Class: Rocket Admin
+Name: Giovanni
+Class: Elite Four
 Pic: Giovanni
 Gender: Male
 Music: Male
-Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: DarkRed
 
-Kangaskhan
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dizzy Punch
-- Fire Punch
-- Safeguard
-- Mega Punch
+Hippowdon @ Custap Berry  
+Ability: Sand Stream    
+Careful Nature  
+- Earthquake  
+- Heavy Slam  
+- Stealth Rock  
+- Substitute  
 
-Honchkrow
-Level: 61
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dark Pulse
-- Air Slash
-- Thief
-- Double Team
+Venusaur @ Safety Goggles  
+Ability: Thick Fat   
+Hasty Nature  
+- Power Whip  
+- Gunk Shot  
+- Weather Ball  
+- Sleep Powder  
 
-Nidoqueen
-Level: 61
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Ice Punch
-- Sludge Bomb
-- Surf
-- Body Slam
+Ting-Lu @ Enigma Berry  
+Ability: Vessel of Ruin   
+Adamant Nature  
+- Stomping Tantrum  
+- Lash Out  
+- Sand Tomb  
+- Protect  
 
-Persian
-Level: 61
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Faint Attack
-- Swagger
-- Screech
-- Slash
+Dracozolt @ Steel Gem  
+Ability: Sand Rush   
+Adamant Nature  
+- Bolt Beak  
+- Dragon Claw  
+- Iron Tail  
+- Fire Fang  
 
-Ursaluna
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Sandstorm
-- Play Rough
-- Double Edge
+Celesteela @ Flying Gem  
+Ability: Beast Boost  
+Jolly Nature  
+- Heavy Slam  
+- Acrobatics  
+- Leech Seed  
+- Protect  
 
-Nidoking
-Level: 62
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Thunder Punch
-- Earthquake
-- Rock Slide
-- Thrash
+Rhyperior @ Assault Vest  
+Ability: Solid Rock  
+Tera Type: Ground  
+Adamant Nature  
+- Head Smash  
+- Earthquake  
+- Heat Crash  
+- Counter  
 
 === TRAINER_PROTON_1 ===
 Name: Proton
@@ -19299,6 +20259,895 @@ Adamant Nature
 - Dragon Rush  
 - Iron Tail  
 - Earthquake  
+
+=== TRAINER_WANDA ===
+Name: Wanda
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Electrode-Hisui @ Eject Pack  
+Ability: Aftermath  
+Level: 90   
+Naive Nature  
+- Zap Cannon  
+- Chloroblast  
+- Thunder Wave  
+- Explosion  
+
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 90   
+Adamant Nature  
+- Brave Bird  
+- Extreme Speed  
+- U-turn  
+- Steel Wing  
+
+Politoed @ Flame Orb  
+Ability: Quick Feet  
+Level: 90   
+Timid Nature    
+- Hydro Pump  
+- Blizzard  
+- Focus Blast  
+- Hypnosis  
+
+Garchomp @ Rocky Helmet  
+Ability: Rough Skin  
+Level: 90  
+Tera Type: Steel  
+Careful Nature  
+- Dragon Tail  
+- Earthquake  
+- Iron Tail  
+- Swords Dance  
+
+=== TRAINER_COSMO ===
+Name: Cosmo
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Falinks @ Adrenaline Orb  
+Ability: Defiant  
+Level: 90    
+Adamant Nature  
+- Close Combat  
+- Rock Slide  
+- Knock Off  
+- Iron Head  
+
+Skuntank @ Assault Vest  
+Ability: Aftermath  
+Level: 90   
+Adamant Nature  
+- Sucker Punch  
+- Poison Jab  
+- Explosion  
+- Stomping Tantrum  
+
+Avalugg-Hisui @ Loaded Dice  
+Ability: Technician  
+Level: 90   
+Adamant Nature  
+- Icicle Spear  
+- Rock Blast  
+- Ice Shard  
+- Accelerock  
+
+Charizard @ Salac Berry  
+Ability: Blaze  
+Level: 90  
+Tera Type: Grass  
+Naive Nature  
+- Fire Blast  
+- Tera Blast  
+- Ancient Power  
+- Endure  
+
+=== TRAINER_KIM_P ===
+Name: Kim P
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Tinkaton @ Choice Band  
+Ability: Mold Breaker  
+Level: 90   
+Adamant Nature  
+- Gigaton Hammer  
+- Play Rough  
+- Ice Hammer  
+- Wood Hammer  
+
+Blastoise @ White Herb  
+Ability: Mega Launcher  
+Level: 90  
+Modest Nature    
+- Origin Pulse  
+- Dragon Pulse  
+- Aura Sphere  
+- Shell Smash  
+
+Manectric @ Life Orb  
+Ability: Static  
+Level: 90   
+Timid Nature   
+- Thunderbolt  
+- Overheat  
+- Hyper Beam  
+- Thunder Wave  
+
+Typhlosion @ Expert Belt  
+Ability: Blaze  
+Level: 90    
+Naive Nature  
+- Eruption  
+- Wild Charge  
+- Focus Blast  
+- Earthquake  
+
+Drampa @ Leftovers  
+Ability: Multiscale  
+Level: 90  
+Tera Type: Ghost  
+Modest Nature  
+- Tera Blast  
+- Hyper Voice  
+- Focus Blast  
+- Calm Mind  
+
+=== TRAINER_SHEGO ===
+Name: Shego
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Mabosstiff @ Choice Band  
+Ability: Stakeout  
+Level: 90  
+Tera Type: Dark  
+Adamant Nature  
+- Jaw Lock  
+- Play Rough  
+
+=== TRAINER_AIMI ===
+Name: Aimi
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Pikachu @ Light Ball  
+Ability: Static  
+Level: 90   
+Hasty Nature  
+- Volt Tackle  
+- Surf  
+- Grass Knot  
+- Focus Punch  
+
+Diggersby @ Life Orb  
+Ability: Huge Power  
+Level: 90    
+Adamant Nature  
+- Quick Attack  
+- Earthquake  
+- Stone Edge  
+- U-turn  
+
+Ribombee @ Expert Belt  
+Ability: Shield Dust  
+Level: 90  
+Tera Type: Ground  
+Timid Nature  
+- Moonblast  
+- Bug Buzz  
+- Energy Ball  
+- Tera Blast  
+
+=== TRAINER_ESTELLE ===
+Name: Estelle
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Torkoal @ Rock Gem  
+Ability: Drought  
+Level: 90  
+Sassy Nature  
+- Flamethrower  
+- Solar Beam  
+- Earth Power  
+- Ancient Power  
+
+Tropius @ Power Herb  
+Ability: Chlorophyll  
+Level: 90  
+Tera Type: Rock  
+Timid Nature   
+- Meteor Beam  
+- Hurricane  
+- Solar Beam  
+- Draco Meteor  
+
+=== TRAINER_ATLAS ===
+Name: Atlas
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Weezing @ Assault Vest  
+Ability: Levitate  
+Level: 90   
+Sassy Nature  
+- Gunk Shot  
+- Thunder  
+- Fire Blast  
+- Explosion  
+
+Dusclops @ Eviolite  
+Ability: Sticky Hold  
+Level: 90  
+Tera Type: Dark  
+Adamant Nature  
+- Knock Off  
+- Leech Life  
+- Pain Split  
+- Confuse Ray  
+
+=== TRAINER_DUBU ===
+Name: Dubu
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Meowstic @ Colbur Berry  
+Ability: Prankster  
+Level: 90    
+Modest Nature    
+- Psychic  
+- Moonblast  
+- Reflect  
+- Light Screen  
+
+Alomomola @ Assault Vest  
+Ability: Regenerator  
+Level: 90   
+Careful Nature  
+- Liquidation  
+- Whirlpool  
+- Icy Wind  
+- Flip Turn  
+
+Purugly @ Lum Berry  
+Ability: Defiant  
+Level: 90    
+Hasty Nature  
+- Assist  
+
+Spiritomb @ Roseli Berry  
+Ability: Dark Aura  
+Level: 90  
+Sassy Nature   
+- Teleport  
+- Ember  
+- Night Shade  
+- Destiny Bond  
+
+Magneton @ Eviolite  
+Ability: Analytic  
+Level: 90  
+Tera Type: Grass  
+Quiet Nature  
+- Thunderbolt  
+- Flash Cannon  
+- Tera Blast  
+- Explosion  
+
+=== TRAINER_ERA ===
+Name: Era
+Class: Cooltrainer
+Pic: Cooltrainer F
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+
+Mightyena @ Dark Gem  
+Ability: Intimidate  
+Level: 90    
+Adamant Nature  
+- Pursuit  
+- Crunch  
+- Sucker Punch  
+
+Ninjask @ Liechi Berry  
+Ability: Speed Boost  
+Level: 90  
+Tera Type: Normal  
+Adamant Nature  
+- Leech Life  
+- Endure  
+- Night Slash  
+- Flail  
+
+=== TRAINER_SPENSER_1 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88   
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91  
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87   
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88    
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91   
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_SPENSER_2 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88    
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91   
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87  
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88    
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91  
+Tera Type: Ghost  
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_SPENSER_3 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88    
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91    
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87    
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88  
+Tera Type: Normal  
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91  
+Tera Type: Ghost  
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_SPENSER_4 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88   
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91   
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87  
+Tera Type: Fire  
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88  
+Tera Type: Normal  
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91  
+Tera Type: Ghost  
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_SPENSER_5 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88   
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91  
+Tera Type: Ground  
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87  
+Tera Type: Fire  
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88  
+Tera Type: Normal  
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91  
+Tera Type: Ghost  
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_SPENSER_6 ===
+Name: Spenser
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
+
+Necrozma-Dusk-Mane @ Clear Amulet  
+Ability: Prism Armor  
+Level: 88  
+Tera Type: Rock  
+Adamant Nature  
+- Stone Edge  
+- Photon Geyser  
+- Sunsteel Strike  
+- Stealth Rock  
+
+Golduck @ Bright Powder  
+Ability: Super Luck  
+Level: 91  
+Tera Type: Ground  
+Naive Nature  
+- Liquidation  
+- Triple Axel  
+- Drill Run  
+- Confuse Ray  
+
+Salamence @ Life Orb  
+Ability: Sheer Force  
+Level: 87  
+Tera Type: Fire  
+Modest Nature   
+- Air Slash  
+- Fire Blast  
+- Roost  
+- Tailwind  
+
+Excadrill @ King's Rock  
+Ability: Mold Breaker  
+Level: 88  
+Tera Type: Normal  
+Jolly Nature  
+- Earthquake  
+- Spin Out  
+- Rapid Spin  
+- Double-Edge  
+
+Xatu @ Power Herb  
+Ability: Sun Gazer 
+Level: 91  
+Tera Type: Ghost  
+Modest Nature  
+- Esper Wing  
+- Air Slash  
+- Ominous Wind  
+- Geomancy  
+
+Slaking @ Iapapa Berry  
+Ability: Truant  
+Level: 87  
+Tera Type: Fairy  
+Adamant Nature  
+- Retaliate  
+- Hammer Arm  
+- Play Rough  
+- Knock Off  
+
+=== TRAINER_CRASHER_WAKE ===
+Name: Spenser
+Class: Leader
+Pic: Expert M
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+
+Palafin @ Choice Scarf  
+Ability: Zero to Hero  
+Level: 95    
+Adamant Nature  
+- Flip Turn  
+- Jet Punch  
+- Drain Punch  
+- Ice Punch  
+
+Armaldo @ Passho Berry  
+Ability: Swift Swim  
+Level: 95   
+Jolly Nature  
+- Stealth Rock  
+- Stone Edge  
+- X-Scissor  
+- Liquidation  
+
+Ludicolo @ Leftovers  
+Ability: Swift Swim  
+Level: 95    
+Bold Nature    
+- Muddy Water  
+- Ice Beam  
+- Leech Seed  
+- Protect  
+
+Frosmoth @ Choice Specs  
+Ability: Ice Scales  
+Level: 95  
+Modest Nature   
+- Blizzard  
+- Freeze-Dry  
+- Signal Beam  
+- Hurricane  
+
+Magnezone @ Air Balloon  
+Ability: Magnet Pull  
+Level: 95  
+Modest Nature  
+- Thunder  
+- Flash Cannon  
+- Earth Power  
+- Metal Sound  
+
+Walking Wake @ Booster Energy  
+Ability: Protosynthesis  
+Level: 95   
+Timid Nature   
+- Hydro Pump  
+- Draco Meteor  
+- Hurricane  
+- Haze  
+
+=== TRAINER_VICTOR_VR ===
+Name: Victor
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+
+Victini @ Eject Pack  
+Ability: Victory Star  
+Level: 95   
+Hasty Nature  
+- V-create  
+- Energy Ball  
+- Thunderbolt  
+- Future Sight  
+
+Glalie @ Focus Sash  
+Ability: Inner Focus  
+Level: 94   
+Naive Nature  
+- Freeze-Dry  
+- Ice Shard  
+- Earthquake  
+- Explosion  
+
+Quaquaval @ Water Gem  
+Ability: Moxie  
+Level: 94   
+Jolly Nature  
+- Aqua Step  
+- Close Combat  
+- Brave Bird  
+- Aqua Jet  
+
+=== TRAINER_XERXES_VR ===
+Name: Xerxes
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+
+Xurkitree @ Power Herb  
+Ability: Beast Boost  
+Level: 95  
+Timid Nature  
+IVs: 30 Atk / 30 Def  
+- Thunderbolt  
+- Solar Beam  
+- Dazzling Gleam  
+- Hidden Power 
+
+=== TRAINER_JACOBI_VR ===
+Name: Jacobi
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+
+Salamence @ Yache Berry  
+Ability: Moxie  
+Level: 94   
+Adamant Nature  
+- Scale Shot  
+- Dual Wingbeat  
+- Iron Tail  
+- Earthquake  
+
+Nihilego @ Rock Gem  
+Ability: Beast Boost  
+Level: 95    
+Timid Nature  
+- Thunderbolt  
+- Ancient Power  
+- Grass Knot  
+- Earth Power  
+
+Greninja @ Life Orb  
+Ability: Battle Bond  
+Level: 94   
+Naive Nature  
+- Hydro Pump  
+- Dark Pulse  
+- Blizzard  
+- Gunk Shot  
 
 /*TEST SYSTEM TRAINERS*/
 === TRAINER_RED ===

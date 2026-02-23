@@ -26,7 +26,7 @@ WhirlIslands_B1F_EventScript_CrasherWake::
 	call_if_eq VAR_TEMP_0, 53, WhirlIslands_B1F_EventScript_PlayerFaceWakeLeft
 	goto_if_ge VAR_ALL_B2B_STATE, 12, WhirlIslands_B1F_EventScript_CrasherWakeAlreadyFought
 	msgbox WhirlIslands_B1F_Text_CrasherWakeSeen, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_MILLER, WhirlIslands_B1F_Text_CrasherWakeBeaten
+	trainerbattle_no_intro TRAINER_CRASHER_WAKE, WhirlIslands_B1F_Text_CrasherWakeBeaten
 	msgbox WhirlIslands_B1F_Text_CrasherWakeAfter, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_ALL_B2B_STATE, 12

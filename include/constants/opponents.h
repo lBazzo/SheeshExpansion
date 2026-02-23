@@ -380,7 +380,7 @@
 #define TRAINER_GARRETT                    374
 #define TRAINER_JULIA                      375
 #define TRAINER_WILL_2                     376
-#define TRAINER_PABLO_1                    377 // UNUSED
+#define TRAINER_VICTOR_VR                  377 
 #define TRAINER_GRUNT_14                   378
 #define TRAINER_BRUNO_1                    379
 #define TRAINER_BRUNO_2                    380
@@ -388,16 +388,16 @@
 #define TRAINER_KAREN_2                    382
 #define TRAINER_KOGA_1                     383
 #define TRAINER_KIM                        384
-#define TRAINER_TALIA                      385 // UNUSED
-#define TRAINER_KATELYN_1                  386 // UNUSED
+#define TRAINER_XERXES_VR                  385 
+#define TRAINER_JACOBI_VR                  386
 #define TRAINER_BOB                        387
-#define TRAINER_KATELYN_2                  388 // UNUSED
-#define TRAINER_KATELYN_3                  389 // UNUSED
-#define TRAINER_KATELYN_4                  390 // UNUSED
-#define TRAINER_KATELYN_5                  391 // UNUSED
-#define TRAINER_NICOLAS_1                  392 // UNUSED
-#define TRAINER_NICOLAS_2                  393 // UNUSED
-#define TRAINER_NICOLAS_3                  394 // UNUSED
+#define TRAINER_SPENSER_1                  388 
+#define TRAINER_SPENSER_2                  389 
+#define TRAINER_SPENSER_3                  390 
+#define TRAINER_SPENSER_4                  391 
+#define TRAINER_SPENSER_5                  392 
+#define TRAINER_SPENSER_6                  393 
+#define TRAINER_CRASHER_WAKE               394
 #define TRAINER_NICOLAS_4                  395 // UNUSED
 #define TRAINER_NICOLAS_5                  396 // UNUSED
 #define TRAINER_AARON                      397
@@ -405,7 +405,7 @@
 #define TRAINER_HUGH                       399
 #define TRAINER_PHIL                       400
 #define TRAINER_JARED                      401
-#define TRAINER_DARACH                    402
+#define TRAINER_DARACH                     402
 #define TRAINER_PRESLEY                    403 // UNUSED
 #define TRAINER_LOIS                       404
 #define TRAINER_COLIN                      405
@@ -550,11 +550,11 @@
 #define TRAINER_MISTY                      544
 #define TRAINER_LYDIA_1                    545 // UNUSED
 #define TRAINER_PRYCE_1                    546
-#define TRAINER_RUSS                       547 // UNUSED
-#define TRAINER_LYDIA_2                    548 // UNUSED
-#define TRAINER_LYDIA_3                    549 // UNUSED
-#define TRAINER_LYDIA_4                    550 // UNUSED
-#define TRAINER_LYDIA_5                    551 // UNUSED
+#define TRAINER_AIMI                       547 
+#define TRAINER_ESTELLE                    548 
+#define TRAINER_ATLAS                      549 
+#define TRAINER_DUBU                       550 
+#define TRAINER_ERA                        551 
 #define TRAINER_RIVAL_CHIKORITA_4          552
 #define TRAINER_LORENZO                    553 // UNUSED
 #define TRAINER_SEBASTIAN                  554 // UNUSED
@@ -595,15 +595,15 @@
 #define TRAINER_RAPHAEL                    589
 #define TRAINER_ZACH                       590
 #define TRAINER_MACEY                      591 // UNUSED
-#define TRAINER_BRENDAN_RUSTBORO_TREECKO   592 // UNUSED
-#define TRAINER_BRENDAN_RUSTBORO_MUDKIP    593 // UNUSED
+#define TRAINER_WANDA                      592 // UNUSED
+#define TRAINER_COSMO                      593 // UNUSED
 #define TRAINER_PAXTON                     594 // UNUSED
 #define TRAINER_BLUE                       595
 #define TRAINER_BUGSY_1                    596
 #define TRAINER_TABITHA_MT_CHIMNEY         597 // UNUSED
 #define TRAINER_JONATHAN                   598 // UNUSED
-#define TRAINER_BRENDAN_RUSTBORO_TORCHIC   599 // UNUSED
-#define TRAINER_MAY_RUSTBORO_MUDKIP        600 // UNUSED
+#define TRAINER_KIM_P                      599 
+#define TRAINER_SHEGO                      600 
 #define TRAINER_MAXIE_MAGMA_HIDEOUT        601 // UNUSED
 #define TRAINER_MAXIE_MT_CHIMNEY           602 // UNUSED
 #define TRAINER_TIANA                      603
@@ -652,7 +652,7 @@
 #define TRAINER_KIRA_AND_DAN_5             646 // UNUSED
 #define TRAINER_JOHANNA                    647 // UNUSED
 #define TRAINER_RUSSELL                    648
-#define TRAINER_VIVIAN                     649 // UNUSED
+#define TRAINER_RUSS                     649 // UNUSED
 #define TRAINER_KENDRA                     650 // UNUSED
 #define TRAINER_JASMINE_1_2                651
 #define TRAINER_KEIGO                      652 // UNUSED
@@ -667,9 +667,9 @@
 #define TRAINER_BRENDAN_LILYCOVE_MUDKIP    661 // UNUSED
 #define TRAINER_BRENDAN_LILYCOVE_TREECKO   662 // UNUSED
 #define TRAINER_BRENDAN_LILYCOVE_TORCHIC   663 // UNUSED
-#define TRAINER_MAY_LILYCOVE_MUDKIP        664 // UNUSED
-#define TRAINER_MAY_LILYCOVE_TREECKO       665 // UNUSED
-#define TRAINER_MAY_LILYCOVE_TORCHIC       666 // UNUSED
+#define TRAINER_KATELYN_1                  664 // UNUSED
+#define TRAINER_PABLO_1                    665 // UNUSED
+#define TRAINER_NICOLAS_1                  666 // UNUSED
 #define TRAINER_JONAH                      667
 #define TRAINER_HENRY                      668
 #define TRAINER_ROGER                      669 // UNUSED

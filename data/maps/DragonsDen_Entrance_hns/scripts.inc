@@ -84,7 +84,7 @@ DragonsDen_Entrance_EventScript_B2B::
 	waitmovement 0
 	msgbox DragonsDen_Entrance_Text_CooltrainerKim_Before, MSGBOX_DEFAULT
 	playbgm MUS_HG_DRAGONS_DEN, TRUE
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Entrance_Text_CooltrainerKim_Beaten
+	trainerbattle_no_intro TRAINER_KIM_P, DragonsDen_Entrance_Text_CooltrainerKim_Beaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN
 	applymovement LOCALID_DRAGONSDEN_SHEGO, Common_Movement_ExclamationMark
@@ -95,7 +95,7 @@ DragonsDen_Entrance_EventScript_B2B::
 	waitmovement 0
 	msgbox DragonsDen_Entrance_Text_CooltrainerShego_Before, MSGBOX_DEFAULT
 	playbgm MUS_HG_DRAGONS_DEN, TRUE
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Entrance_Text_CooltrainerShego_Beaten
+	trainerbattle_no_intro TRAINER_SHEGO, DragonsDen_Entrance_Text_CooltrainerShego_Beaten
 	setvar VAR_TERA_B2B_COUNTER, 5
 	release
 	end
