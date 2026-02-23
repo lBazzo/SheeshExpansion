@@ -112,7 +112,7 @@ MahoganyTown_Gym_EventScript_Pryce_Battle2::
 	goto MahoganyTown_Gym_EventScript_PryceVictory
 
 MahoganyTown_Gym_EventScript_Pryce_Battle3::
-	trainerbattle_no_intro TRAINER_PRYCE_1_3, MahoganyTown_Gym_Text_PryceImpressed
+	trainerbattle_no_intro TRAINER_POTTER, MahoganyTown_Gym_Text_PryceImpressed
 	goto MahoganyTown_Gym_EventScript_PryceVictory
 
 MahoganyTown_Gym_EventScript_Pryce_Defeated::

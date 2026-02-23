@@ -6265,6 +6265,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_CASTLE_DUO:
         case TRAINER_CLASS_FACTORY_HEAD:
             return MUS_HG_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_POTTER:
+            return MUS_HG_VS_HO_OH;
         default:
             return MUS_HG_VS_TRAINER;
         }

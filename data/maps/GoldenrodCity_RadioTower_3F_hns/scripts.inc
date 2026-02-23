@@ -64,11 +64,10 @@ GoldenrodRaidoTower3_EventScript_Grunt8::
 	msgbox GoldenrodCity_RadioTower_3F_Text_GruntM9After, MSGBOX_AUTOCLOSE
 	end
 
-GoldenrodRaidoTower3_EventScript_Scientist::
-	trainerbattle_single TRAINER_MARC GoldenrodCity_RadioTower_3F_Text_ScientistMarcSeen, GoldenrodCity_RadioTower_3F_Text_ScientistMarcBeaten
-	msgbox GoldenrodCity_RadioTower_3F_Text_ScientistMarcAfter, MSGBOX_AUTOCLOSE
+GoldenrodRaidoTower3_EventScript_Grunt50::
+	trainerbattle_single TRAINER_GRUNT_50 GoldenrodCity_RadioTower_3F_Text_Grunt50MarcSeen, GoldenrodCity_RadioTower_3F_Text_Grunt50MarcBeaten
+	msgbox GoldenrodCity_RadioTower_3F_Text_Grunt50MarcAfter, MSGBOX_AUTOCLOSE
 	end
-
 
 GoldenrodCity_RadioTower_3F_EventScript_Cooltrainer::
 	lock
@@ -238,14 +237,14 @@ GoldenrodCity_RadioTower_3F_Text_GruntM9After:
 	.string "the UNDERGROUND?\p"
 	.string "How could you?$"
 
-GoldenrodCity_RadioTower_3F_Text_ScientistMarcSeen:
+GoldenrodCity_RadioTower_3F_Text_Grunt50MarcSeen:
 	.string "An unknown child wandering here?\p"
 	.string "Who are you?$"
 
-GoldenrodCity_RadioTower_3F_Text_ScientistMarcBeaten:
+GoldenrodCity_RadioTower_3F_Text_Grunt50MarcBeaten:
 	.string "Tch! I took you too lightly!$"
 
-GoldenrodCity_RadioTower_3F_Text_ScientistMarcAfter:
+GoldenrodCity_RadioTower_3F_Text_Grunt50MarcAfter:
 	.string "Bwahahaha…\p"
 	.string "I can transmit as strong a signal\n"
 	.string "as I need from here.$"
@@ -460,7 +459,7 @@ GoldenrodCity_RadioTower_3F_EventScript_B2B::
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftPreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_7, GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftBeaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
 	applymovement LOCALID_RADIOTOWER_3F_B2BGRUNTRIGHT, Common_Movement_ExclamationMark
@@ -472,7 +471,7 @@ GoldenrodCity_RadioTower_3F_EventScript_B2B::
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_3F_Text_B2BGruntRightPreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_3F_Text_B2BGruntRightBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_8, GoldenrodCity_RadioTower_3F_Text_B2BGruntRightBeaten
 	setvar VAR_ALL_B2B_STATE, 6
 	release
 	end

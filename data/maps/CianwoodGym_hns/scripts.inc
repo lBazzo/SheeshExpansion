@@ -38,16 +38,16 @@ CianwoodGym_EventScript_Chuck::
 	applymovement LOCALID_CIANWOOD_CHUCK, CianwoodGym_Movement_ChuckLeft
 	waitmovement 0
 	message CianwoodGym_Text_ChuckIntro2
-	applymovement LOCALID_CIANWOOD_CHUCK_ROCK_LEFT, Movement_SmashRock
 	playse SE_M_ROCK_THROW
+	applymovement LOCALID_CIANWOOD_CHUCK_ROCK_LEFT, Movement_SmashRock
 	waitmovement 0
 
 	delay 20
 
 	applymovement LOCALID_CIANWOOD_CHUCK, CianwoodGym_Movement_ChuckRight
 	waitmovement 0
-	applymovement LOCALID_CIANWOOD_CHUCK_ROCK_RIGHT, Movement_SmashRock
 	playse SE_M_ROCK_THROW
+	applymovement LOCALID_CIANWOOD_CHUCK_ROCK_RIGHT, Movement_SmashRock
 	waitmovement 0
 	waitmessage
 	turnobject LOCALID_CIANWOOD_CHUCK, DIR_SOUTH

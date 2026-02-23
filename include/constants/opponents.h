@@ -56,7 +56,7 @@
 #define TRAINER_LEA_AND_PIA                50
 #define TRAINER_REENA                      51
 #define TRAINER_REX                        52
-#define TRAINER_RICH                       53
+#define TRAINER_GRUNT_51                   53
 #define TRAINER_RICKY                      54
 #define TRAINER_ROB                        55
 #define TRAINER_ROBERT                     56
@@ -227,7 +227,7 @@
 #define TRAINER_NICK                       221
 #define TRAINER_NICO                       222
 #define TRAINER_BRENT                      223
-#define TRAINER_DONALD                     224
+#define TRAINER_GRUNT_48                   224
 #define TRAINER_TAYLOR                     225 // UNUSED
 #define TRAINER_RIVAL_TOTODILE_5           226
 #define TRAINER_DEREK                      227
@@ -308,7 +308,7 @@
 #define TRAINER_LTSURGE                    302
 #define TRAINER_ERIKA                      303
 #define TRAINER_SABRINA                    304
-#define TRAINER_JANINE                     305
+#define TRAINER_GRUNT_54                     305
 #define TRAINER_BLAINE                     306
 #define TRAINER_TIMOTHY_1                  307 // UNUSED
 #define TRAINER_TIMOTHY_2                  308 // UNUSED
@@ -335,7 +335,7 @@
 #define TRAINER_FRAN                       329
 #define TRAINER_FRITZ                      330
 #define TRAINER_GAKU                       331 // UNUSED
-#define TRAINER_EDDIE                      332
+#define TRAINER_GRUNT_52                   332
 #define TRAINER_ALLEN                      333
 #define TRAINER_TIMMY                      334 // UNUSED
 #define TRAINER_WALLACE                    335 // UNUSED
@@ -430,7 +430,7 @@
 #define TRAINER_LAO_5                      424 // UNUSED
 #define TRAINER_JOCELYN                    425 // UNUSED
 #define TRAINER_LAURA                      426
-#define TRAINER_JASMINE_2                  427
+#define TRAINER_GRUNT_49                  427
 #define TRAINER_GRUNT_28                   428
 #define TRAINER_PAULA                      429
 #define TRAINER_JAKE                       430
@@ -499,7 +499,7 @@
 #define TRAINER_GRUNT_39                   493
 #define TRAINER_PHILLIP                    494
 #define TRAINER_LEONARD                    495
-#define TRAINER_DUNCAN                     496
+#define TRAINER_GRUNT_53                   496
 #define TRAINER_MIKEY                      497
 #define TRAINER_MIKI                       498
 #define TRAINER_MILLER                     499
@@ -525,22 +525,22 @@
 #define TRAINER_WALLY_VR_1                 519 // UNUSED
 #define TRAINER_THOM_AND_KAE               520
 #define TRAINER_DUFF_AND_EDA               521
-#define TRAINER_BRENDAN_ROUTE_119_MUDKIP   522 // UNUSED
-#define TRAINER_BRENDAN_ROUTE_103_TREECKO  523 // UNUSED
-#define TRAINER_BRENDAN_ROUTE_110_TREECKO  524 // UNUSED
-#define TRAINER_BRENDAN_ROUTE_119_TREECKO  525 // UNUSED
+#define TRAINER_GRUNT_64                   522 
+#define TRAINER_GRUNT_65                   523 
+#define TRAINER_IRIS                       524 
+#define TRAINER_DRAYDEN                    525 
 #define TRAINER_BRENDAN_ROUTE_103_TORCHIC  526 // UNUSED
 #define TRAINER_BRENDAN_ROUTE_110_TORCHIC  527 // UNUSED
 #define TRAINER_BRENDAN_ROUTE_119_TORCHIC  528 // UNUSED
-#define TRAINER_MAY_ROUTE_103_MUDKIP       529 // UNUSED
-#define TRAINER_MAY_ROUTE_110_MUDKIP       530 // UNUSED
-#define TRAINER_MAY_ROUTE_119_MUDKIP       531 // UNUSED
-#define TRAINER_MAY_ROUTE_103_TREECKO      532 // UNUSED
-#define TRAINER_MAY_ROUTE_110_TREECKO      533 // UNUSED
-#define TRAINER_MAY_ROUTE_119_TREECKO      534 // UNUSED
-#define TRAINER_MAY_ROUTE_103_TORCHIC      535 // UNUSED
-#define TRAINER_MAY_ROUTE_110_TORCHIC      536 // UNUSED
-#define TRAINER_MAY_ROUTE_119_TORCHIC      537 // UNUSED
+#define TRAINER_GRUNT_55                   529 
+#define TRAINER_GRUNT_56                   530 
+#define TRAINER_GRUNT_57                   531 
+#define TRAINER_GRUNT_58                   532 
+#define TRAINER_GRUNT_59                   533 
+#define TRAINER_GRUNT_60                   534 
+#define TRAINER_GRUNT_61                   535 
+#define TRAINER_GRUNT_62                   536 
+#define TRAINER_GRUNT_63                   537 
 #define TRAINER_THORTON_A                  538
 #define TRAINER_JOE                        539
 #define TRAINER_MITCHELL                   540 // UNUSED
@@ -574,7 +574,7 @@
 #define TRAINER_STEVEN2                    568 // UNUSED
 #define TRAINER_TOBY                       569
 #define TRAINER_TERRELL                    570
-#define TRAINER_MARC                       571
+#define TRAINER_GRUNT_50                   571
 #define TRAINER_BRENDEN                    572 // UNUSED
 #define TRAINER_LILITH                     573 // UNUSED
 #define TRAINER_HARVEY                     574 // UNUSED
@@ -635,7 +635,7 @@
 #define TRAINER_LUCAS_1                    629 // UNUSED
 #define TRAINER_ALAN                       630
 #define TRAINER_CLARK                      631 // UNUSED
-#define TRAINER_ERIC                       632
+#define TRAINER_GRUNT_47                   632
 #define TRAINER_LUCAS_2                    633 // UNUSED
 #define TRAINER_MIKE_1                     634 // UNUSED
 #define TRAINER_MIKE_2                     635 // UNUSED
@@ -710,7 +710,7 @@
 #define TRAINER_TYRON                      704 // UNUSED
 #define TRAINER_GRUNT_10                   705
 #define TRAINER_BIANCA                     706 // UNUSED
-#define TRAINER_PRYCE_1_3                  707
+#define TRAINER_POTTER                  707
 #define TRAINER_SOPHIE                     708 // UNUSED
 #define TRAINER_GRUNT_25                   709 // UNUSED
 #define TRAINER_LAWRENCE                   710 // UNUSED
@@ -781,7 +781,7 @@
 #define TRAINER_DON                        775
 #define TRAINER_DORIS                      776
 #define TRAINER_EDNA                       777
-#define TRAINER_GRUNT_46                      778
+#define TRAINER_GRUNT_46                   778
 #define TRAINER_ETO_3                      779
 #define TRAINER_WATTSON_4                  780 // UNUSED
 #define TRAINER_WATTSON_5                  781 // UNUSED

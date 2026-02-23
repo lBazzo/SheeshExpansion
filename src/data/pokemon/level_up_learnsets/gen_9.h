@@ -4823,6 +4823,7 @@ static const struct LevelUpMove sSunfloraLevelUpLearnset[] = {
     LEVEL_UP_MOVE(48, MOVE_STRENGTH_SAP),
     LEVEL_UP_MOVE(48, MOVE_LEECH_SEED),
     LEVEL_UP_MOVE(48, MOVE_LEAF_STORM),
+    LEVEL_UP_MOVE(56, MOVE_EMBER),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_SUNKERN

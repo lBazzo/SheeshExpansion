@@ -196,36 +196,36 @@ GoldenrodCity_RadioTower_2F_Text_OakTalkSign:
 GoldenrodCity_RadioTower_2F_Text_PokemonRadioSign:
 	.string "Anywhere, Anytime POKéMON Radio$"
 
-GoldenrodCity_RadioTower_2F_EventScript_Eric::
-	trainerbattle_single TRAINER_ERIC GoldenrodCity_RadioTower_2F_Text_SupernerdEricSeen, GoldenrodCity_RadioTower_2F_Text_SupernerdEricBeaten
-	msgbox GoldenrodCity_RadioTower_2F_Text_SupernerdEricAfterBattle, MSGBOX_AUTOCLOSE
+GoldenrodCity_RadioTower_2F_EventScript_Grunt47::
+	trainerbattle_single TRAINER_GRUNT_47 GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47Seen, GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47Beaten
+	msgbox GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47AfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-GoldenrodCity_RadioTower_2F_EventScript_Donald::
-	trainerbattle_single TRAINER_DONALD GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldSeen, GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldBeaten
-	msgbox GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldAfterBattle, MSGBOX_AUTOCLOSE
+GoldenrodCity_RadioTower_2F_EventScript_Grunt48::
+	trainerbattle_single TRAINER_GRUNT_48 GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48Seen, GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48Beaten
+	msgbox GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48AfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-GoldenrodCity_RadioTower_2F_Text_SupernerdEricSeen:
+GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47Seen:
     .string "Prepare for trouble!$"
 
-GoldenrodCity_RadioTower_2F_Text_SupernerdEricBeaten:
+GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47Beaten:
     .string "Eeeek! You didn't let us finish!$"
 
-GoldenrodCity_RadioTower_2F_Text_SupernerdEricAfterBattle:
+GoldenrodCity_RadioTower_2F_Text_SupernerdGrunt47AfterBattle:
     .string "We spent all day working on that\n"
     .string "routine and we didn't even get to do it\l"
 	.string "properly.\p"
 	.string "I don't know how you can live with\n"
 	.string "yourself, you mean little devil.$"
 
-GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldSeen:
+GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48Seen:
     .string "Make it double!$"
 
-GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldBeaten:
+GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48Beaten:
     .string "Uh, I forgot the next line.$"
 
-GoldenrodCity_RadioTower_2F_Text_PokemaniacDonaldAfterBattle:
+GoldenrodCity_RadioTower_2F_Text_PokemaniacGrunt48AfterBattle:
 	.string "Sometimes I think my partner here gets\n"
 	.string "too invested in her job, but I don't\l"
 	.string "have the heart to tell her.\p"
@@ -246,7 +246,7 @@ GoldenrodCity_RadioTower_2F_EventScript_B2B::
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntTopPreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntTopBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_3, GoldenrodCity_RadioTower_2F_Text_B2BGruntTopBeaten
 	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
 	playse SE_PIN
 	applymovement LOCALID_RADIOTOWER_B2BGRUNTBOT, Common_Movement_ExclamationMark
@@ -255,7 +255,7 @@ GoldenrodCity_RadioTower_2F_EventScript_B2B::
 	waitmovement 0 
 	msgbox GoldenrodCity_RadioTower_2F_Text_B2BGruntBotPreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_49, GoldenrodCity_RadioTower_2F_Text_B2BGruntBotBeaten
 	setvar VAR_ALL_B2B_STATE, 5
 	release
 	end

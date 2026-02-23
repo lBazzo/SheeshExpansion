@@ -13362,7 +13362,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "the foe equal to its HP."),
         .effect = EFFECT_FINAL_GAMBIT,
         .power = 1,
-        .type = TYPE_FIGHTING,
+        .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,

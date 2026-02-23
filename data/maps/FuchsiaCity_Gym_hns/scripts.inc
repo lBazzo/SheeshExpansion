@@ -57,7 +57,7 @@ FuchsiaCity_Gym_EventScript_Janine::
 	faceplayer
 	goto_if_set FLAG_DEFEATED_FUCHSIA_GYM, FuchsiaCity_Gym_EventScript_Janine_Defeated
 	msgbox FuchsiaCity_Gym_Text_Janine_DisappointYou, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_JANINE, FuchsiaCity_Gym_Text_Janine_ToughOne
+	trainerbattle_no_intro TRAINER_GRUNT_54, FuchsiaCity_Gym_Text_Janine_ToughOne
 	message FuchsiaCity_Gym_Text_ReceivedSoulBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
