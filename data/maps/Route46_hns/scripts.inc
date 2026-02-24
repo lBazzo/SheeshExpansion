@@ -78,5 +78,5 @@ Route46_Text_PicnickerErin2Beaten:
 	.string "other time.$"
 
 Route46_Text_Sign:
-	.string "ROUTE 46\n"
-	.string "MOUNTAIN RD. AHEAD$"
+	.string "Route 46\n"
+	.string "Mountian road ahead$"

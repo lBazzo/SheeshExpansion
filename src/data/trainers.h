@@ -34999,7 +34999,7 @@
     [DIFFICULTY_NORMAL][TRAINER_NICO] =
     {
 #line 13670
-        .trainerName = _("NICO"),
+        .trainerName = _("Nico"),
 #line 13671
         .trainerClass = TRAINER_CLASS_SAGE,
 #line 13672
@@ -35113,7 +35113,7 @@
     [DIFFICULTY_NORMAL][TRAINER_JIN] =
     {
 #line 13715
-        .trainerName = _("JIN"),
+        .trainerName = _("Jin"),
 #line 13716
         .trainerClass = TRAINER_CLASS_SAGE,
 #line 13717
@@ -35610,7 +35610,7 @@
     [DIFFICULTY_NORMAL][TRAINER_NEAL] =
     {
 #line 13908
-        .trainerName = _("NEAL"),
+        .trainerName = _("Neal"),
 #line 13909
         .trainerClass = TRAINER_CLASS_SAGE,
 #line 13910
@@ -35678,7 +35678,7 @@
     [DIFFICULTY_NORMAL][TRAINER_LI] =
     {
 #line 13934
-        .trainerName = _("LI"),
+        .trainerName = _("Li"),
 #line 13935
         .trainerClass = TRAINER_CLASS_SAGE,
 #line 13936

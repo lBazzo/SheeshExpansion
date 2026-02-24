@@ -7272,7 +7272,7 @@ Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HENRY ===
-Name: HENRY
+Name: Henry
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
@@ -10007,7 +10007,7 @@ Jolly Nature
 - Thunder Punch  
 
 === TRAINER_RUSSELL ===
-Name: RUSSELL
+Name: Russell
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -10624,7 +10624,7 @@ Rash Nature
 - Explosion  
 
 === TRAINER_DANIEL ===
-Name: DANIEL
+Name: Daniel
 Class: Hiker
 Pic: Hiker
 Gender: Male
@@ -11387,7 +11387,7 @@ Modest Nature
 - Focus Blast 
 
 === TRAINER_RAY ===
-Name: RAY
+Name: Ray
 Class: Firebreather
 Pic: Firebreather
 Gender: Male
@@ -12379,7 +12379,7 @@ Level: 63
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LIZ ===
-Name: LIZ
+Name: Liz
 Class: Picnicker
 Pic: Picnicker
 Gender: Male
@@ -13667,7 +13667,7 @@ Adamant Nature
 - Poison Sting  
 
 === TRAINER_NICO ===
-Name: NICO
+Name: Nico
 Class: Sage
 Pic: Sage
 Gender: Male
@@ -13712,7 +13712,7 @@ Jolly Nature
 - Skull Bash  
 
 === TRAINER_JIN ===
-Name: JIN
+Name: Jin
 Class: Sage
 Pic: Sage
 Gender: Male
@@ -13905,7 +13905,7 @@ Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NEAL ===
-Name: NEAL
+Name: Neal
 Class: Sage
 Pic: Sage
 Gender: Male
@@ -13931,7 +13931,7 @@ Careful Nature
 - Stuff Cheeks  
 
 === TRAINER_LI ===
-Name: LI
+Name: Li
 Class: Sage
 Pic: Mr Fuji
 Gender: Male

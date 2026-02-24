@@ -1,5 +1,5 @@
 .set LOCALID_ROUTE32_BALDINGMAN, 1
-.set LOCALID_SLOWPOKETAIL_MAN, 14
+.set LOCALID_SLOWPOKETAIL_MAN, 11
 
 
 Route32_hns_MapScripts::
@@ -135,18 +135,18 @@ Route32_EventScript_Frieda::
 	goto_if_set FLAG_GOT_POISON_BARB, Route32_EventScript_FriedaCompleted
 	msgbox Route32_Text_MeetFrieda, MSGBOX_DEFAULT
 	closemessage
-	multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
-	switch VAR_RESULT
-	case 0, Route32_EventScript_FriedaNope
-	case 1, Route32_EventScript_FriedaNope
-	case 2, Route32_EventScript_FriedaNope
-	case 3, Route32_EventScript_FriedaNope
-	case 4, Route32_EventScript_FriedaNope
-	case 5, Route32_EventScript_FriedaYes
-	case 6, Route32_EventScript_FriedaNope
-	case 7, Route32_EventScript_FriedaCancel
-	case MULTI_B_PRESSED, Route32_EventScript_FriedaCancel
-	closemessage
+	@multichoice 20, 0, MULTI_DAYS_OF_WEEK, FALSE
+	@switch VAR_RESULT
+	@case 0, Route32_EventScript_FriedaNope
+	@case 1, Route32_EventScript_FriedaNope
+	@case 2, Route32_EventScript_FriedaNope
+	@case 3, Route32_EventScript_FriedaNope
+	@case 4, Route32_EventScript_FriedaNope
+	@case 5, Route32_EventScript_FriedaYes
+	@case 6, Route32_EventScript_FriedaNope
+	@case 7, Route32_EventScript_FriedaCancel
+	@case MULTI_B_PRESSED, Route32_EventScript_FriedaCancel
+	@closemessage
 	release
 	end
 Route32_EventScript_FriedaYes::
@@ -185,6 +185,7 @@ Route32_EventScript_BaldingMan::
 
 Route32_EventScript_BaldingManTriggerLeft::
 	lock
+	turnobject LOCALID_ROUTE32_BALDINGMAN, DIR_EAST
 	playse SE_PIN
 	applymovement LOCALID_ROUTE32_BALDINGMAN, Common_Movement_ExclamationMark
 	delay 60
@@ -193,6 +194,7 @@ Route32_EventScript_BaldingManTriggerLeft::
 	end
 Route32_EventScript_BaldingManTriggerMid::
 	lock
+	turnobject LOCALID_ROUTE32_BALDINGMAN, DIR_EAST
 	playse SE_PIN
 	applymovement LOCALID_ROUTE32_BALDINGMAN, Common_Movement_ExclamationMark
 	delay 60
@@ -202,6 +204,7 @@ Route32_EventScript_BaldingManTriggerMid::
 	end
 Route32_EventScript_BaldingManTriggerRight::
 	lock
+	turnobject LOCALID_ROUTE32_BALDINGMAN, DIR_EAST
 	playse SE_PIN
 	applymovement LOCALID_ROUTE32_BALDINGMAN, Common_Movement_ExclamationMark
 	delay 60
@@ -220,6 +223,7 @@ Route32_EventScript_BaldingManCheck::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
 	setvar VAR_VIOLET_CITY_STATE, 5
+	setflag FLAG_RECEIVED_EVIOLITE
 	clearflag FLAG_HIDE_AZALEA_BUGSY
 	release
 	end
@@ -322,41 +326,41 @@ Route32_Text_CooltrainerM_AideIsWaiting:
 	.string "Some guy wearing glasses\p"
 	.string "was looking for you.\p"
 	.string "See for yourself. He's waiting for\n"
-	.string "you at the Pokémon CENTER.$"
+	.string "you at the Pokémon Center.$"
 
 Route32_Text_CooltrainerM_SproutTower:
-	.string "Have you gone to SPROUT TOWER?\n"
-	.string "If you ever visit VIOLET CITY,\p"
-	.string "they'll expect you to train there.\n"
+	.string "Have you gone to Sprout Tower?\p"
+	.string "If you ever visit Violet City,\n"
+	.string "they'll expect you to train there.\l"
 	.string "That's basic for trainers.\p"
-	.string "Go to SPROUT TOWER!$"
+	.string "Go to Sprout Tower!$"
 
 Route32_Text_CooltrainerM_VioletGym:
-	.string "Have you gone to the Pokémon GYM?\n"
-	.string "You can test your Pokémon and\p"
-	.string "yourself there.\n"
-	.string "It's a rite of passage for all\p"
+	.string "Have you gone to the Pokémon Gym?\n"
+	.string "You can test your Pokémon and\l"
+	.string "yourself there.\p"
+	.string "It's a rite of passage for all\n"
 	.string "trainers!$"
 
 Route32_Text_CooltrainerM_HaveThisSeed:
-	.string "You have some good Pokémon there.\n"
-	.string "It must be from the training you\p"
-	.string "gave them around VIOLET CITY.\n"
-	.string "The training at the GYM must have\p"
-	.string "been especially helpful. As a\n"
-	.string "souvenir of VIOLET CITY, take these.\p"
+	.string "You have some good Pokémon there.\p"
+	.string "It must be from the training you\n"
+	.string "gave them around Violet City.\p"
+	.string "The training at the Gym must have\n"
+	.string "been especially helpful.\p"
+	.string "As a souvenir of Violet City, here.\p"
 	.string "It increases the toughness of Pokémon\n"
-	.string "that aren't fully evolved.\l"
-	.string "and those Deep Sea items can help to\l"
+	.string "that aren't fully evolved.\p"
+	.string "Those Deep Sea items can also help to\l"
 	.string "evolve a Clamperl, if you have one.$"
 
 Route32_Text_CooltrainerM_Experiences:
-	.string "Your experiences in VIOLET CITY\n"
+	.string "Your experiences in Violet City\n"
 	.string "should be useful for your journey.$"
 
 Route32_Text_SlowpokeTailOffer:
 	.string "How would you like to have this\n"
-	.string "tasty, nutritious SLOWPOKE TAIL?\p"
+	.string "tasty, nutritious Slowpoke Tail?\p"
 	.string "For you right now, just\n"
 	.string "¥1,000,000!\p"
 	.string "You'll want this!$"
@@ -384,7 +388,7 @@ Route32_Text_FisherHenry_Seen:
 	.string "My Pokémon? Freshly caught!$"
 
 Route32_Text_FisherHenry_Beaten:
-	.string "SPLASH?$"
+	.string "Splash?$"
 
 Route32_Text_FisherHenry_After:
 	.string "Freshly caught Pokémon are\n"
@@ -422,15 +426,15 @@ Route32_Text_RoarIntro:
 
 Route32_Text_RoarOutro:
 	.string "WROOOOAR! IT'S ROAR!\p"
-	.string "EVEN Pokémon RUN FROM A GOOD\n"
+	.string "EVEN POKéMON RUN FROM A GOOD\n"
 	.string "ROAR!$"
 
 Route32_Text_MeetFrieda:
-	.string "FRIEDA: Yahoo!\p"
-	.string "I'm FRIEDA of the WEEKDAY FAMILY!\n"
+	.string "Frieda: Yahoo!\p"
+	.string "I'm Frieda of the Weekday Family!\n"
 	.string "Nice to meet you!\p"
-	.string "If you can guess my favorite day,\n"
-	.string "I'll give you a reward.$"
+	.string "...\n"
+	.string "I love Fridays!$"
 
 Route32_Text_FriedaGivesGift:
 	.string "Here's a POISON BARB for you!$"
@@ -454,13 +458,13 @@ Route32_Text_FriedaNope:
 	.string "FRIEDA: Not that one!$"
 
 Route32_Text_Sign1:
-	.string "ROUTE 32\p"
-	.string "VIOLET CITY - AZALEA TOWN$"
+	.string "Route 32\p"
+	.string "Violet City - Azalea Town$"
 
 Route32_Text_Sign2:
-	.string "RUINS OF ALPH\n"
-	.string "EAST ENTRANCE$"
+	.string "Ruins of Alph\n"
+	.string "East Entrance$"
 
 Route32_Text_Sign3:
-	.string "UNION CAVE\n"
-	.string "AHEAD$"
+	.string "Union Cave\n"
+	.string "Ahead$"

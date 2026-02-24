@@ -40,7 +40,7 @@
     F(PLUCK) \
     F(PROTECT) \
     F(PSYCHIC) \
-    F(PSYCHO_BOOST) \
+    F(PSYCHO_SHIFT) \
     F(REFLECT) \
     F(REST) \
     F(RETURN) \

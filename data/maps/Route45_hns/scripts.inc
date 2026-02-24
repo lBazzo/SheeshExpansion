@@ -180,8 +180,8 @@ Route45_Text_CamperQuentinAfter:
     .string "I never, ever lose there, but…$"
 
 Route45_Text_Sign:
-    .string "ROUTE 45\n"
-    .string "MOUNTAIN RD. AHEAD$"
+    .string "Route 45\n"
+    .string "Mountian road ahead$"
 
 
 

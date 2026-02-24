@@ -127,7 +127,7 @@ Route31_EventScript_ItemLightClay::
 	end
 
 Route31_Text_CooltrainerM:
-	.string "DARK CAVE…\p"
+	.string "Dark Cave…\p"
 	.string "If Pokémon could light it up,\n"
 	.string "I'd explore it.$"
 
@@ -142,7 +142,7 @@ Route31_Text_BugCatcherWade1_After:
 	.string "You can catch Pokémon even if\n"
 	.string "you have six with you.\p"
 	.string "If you catch one, it'll go to\n"
-	.string "your BOX automatically.$"
+	.string "your Box automatically.$"
 
 Route31_Text_SleepyMan:
 	.string "… Hnuurg… Huh?\p"
@@ -155,7 +155,7 @@ Route31_Text_SleepyMan:
 
 Route31_Text_SleepyManGotMail:
 	.string "…Zzzz… Huh?\p"
-	.string "What's that? You have MAIL\n"
+	.string "What's that? You have Mail\n"
 	.string "for me?$"
 
 Route31_Text_SleepyManFail:
@@ -163,7 +163,7 @@ Route31_Text_SleepyManFail:
 
 Route31_Text_HandOverMailMon:
 	.string "{PLAYER} handed over the\n"
-	.string "Pokémon holding the MAIL.$"
+	.string "Pokémon holding the Mail.$"
 
 Route31_Text_ReadingMail:
 	.string "Let's see…\p"
@@ -184,11 +184,11 @@ Route31_Text_DescribeNightmare:
 	.string "move multiple times in a row.$"
 
 Route31_Text_WrongMail:
-	.string "This MAIL isn't for me.$"
+	.string "This Mail isn't for me.$"
 
 Route31_Text_MissingMail:
 	.string "Why is this Pokémon so special?\p"
-	.string "It doesn't have any MAIL.$"
+	.string "It doesn't have any Mail.$"
 
 Route31_Text_DeclinedToHandOverMail:
 	.string "What? You don't want\n"
@@ -201,16 +201,16 @@ Route31_Text_CantTakeLastMon:
 	.string "battle?$"
 
 Route31_Text_Youngster:
-	.string "I found a good Pokémon in DARK\n"
-	.string "CAVE.\p"
+	.string "I found a good Pokémon in Dark\n"
+	.string "Cave.\p"
 	.string "I'm going to raise it to take\n"
-	.string "on FALKNER.\p"
-	.string "He's the leader of VIOLET\n"
-	.string "CITY's GYM.$"
+	.string "on Falkner.\p"
+	.string "He's the leader of Violet\n"
+	.string "City's Gym.$"
 
 Route31_Text_Sign:
-	.string "ROUTE 31\p"
-	.string "VIOLET CITY - CHERRYGROVE CITY$"
+	.string "Route 31\p"
+	.string "Violet City - Cherrygrove City$"
 
 Route31_Text_DarkCaveSign:
-	.string "DARK CAVE$"
+	.string "Dark Cave$"

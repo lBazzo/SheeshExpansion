@@ -43,7 +43,8 @@ CherryGroveCity_EventScript_TriggerGent_Mid::
 	playse SE_PIN
 	applymovement LOCALID_GUIDE_GENT, Common_Movement_ExclamationMark
 	delay 60
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
+	waitmovement 0
 	msgbox CherrygroveCity_Text_GuideGentIntro, MSGBOX_YESNO
 	waitmessage
 	goto_if_eq VAR_RESULT, NO, CherryGroveCity_EventScript_TriggerGent_Cancel
@@ -63,7 +64,8 @@ CherryGroveCity_EventScript_TriggerGent_Bottom::
 	playse SE_PIN
 	applymovement LOCALID_GUIDE_GENT, Common_Movement_ExclamationMark
 	delay 60
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	applymovement OBJ_EVENT_ID_PLAYER, CherryGroveCity_Movement_GentTriggeredBottom
+	waitmovement 0
 	msgbox CherrygroveCity_Text_GuideGentIntro, MSGBOX_YESNO
 	waitmessage
 	goto_if_eq VAR_RESULT, NO, CherryGroveCity_EventScript_TriggerGent_Cancel
@@ -76,6 +78,11 @@ CherryGroveCity_EventScript_TriggerGent_Bottom::
 	goto CherryGroveCity_EventScript_GentTour
 	release
 	end
+
+CherryGroveCity_Movement_GentTriggeredBottom::
+	walk_up
+	walk_up
+	step_end
 
 CherryGroveCity_EventScript_TriggerGent_Cancel::
 	msgbox CherrygroveCity_Text_GuideGentDecline, MSGBOX_DEFAULT
@@ -254,7 +261,7 @@ CherryGroveCity_Silver_Battle_Chikorita::
 	goto CherryGroveCity_Silver_AfterBattle
 
 CherryGroveCity_Silver_AfterBattle::
-	playbgm MUS_HG_RIVAL_EXIT, TRUE
+	@playbgm MUS_HG_RIVAL_EXIT, TRUE
 	msgbox CherrygroveCity_Text_RivalAfter, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, CherryGroveCity_Movement_Silver_Leave1Player
@@ -294,19 +301,19 @@ CherrygroveCity_Text_GuideGentTourStart:
 	.string "Follow me!$"
 
 CherrygroveCity_Text_GuideGentPokecenter:
-	.string "This is a Pokémon CENTER.\p"
+	.string "This is a Pokémon Center.\p"
 	.string "They heal your Pokémon in no\n"
 	.string "time at all.\p"
 	.string "You'll be relying on them a lot,\n"
 	.string "so you better learn about them.$"
 
 CherrygroveCity_Text_GuideGentMart:
-	.string "This is a Pokémon MART.\p"
-	.string "They sell BALLS for catching wild\n"
+	.string "This is a Pokémon Mart.\p"
+	.string "They sell Balls for catching wild\n"
 	.string "Pokémon and other useful items.$"
 
 CherrygroveCity_Text_GuideGentRoute30:
-	.string "ROUTE 30 is out this way.\p"
+	.string "Route 30 is out this way.\p"
 	.string "Trainers will be battling\n"
 	.string "their prized Pokémon there.$"
 
@@ -320,7 +327,7 @@ CherrygroveCity_Text_GuideGentMap:
 	.string "It's my house! Thanks for\n"
 	.string "your company.\p"
 	.string "Oh, and if you're ever lost, check\n"
-	.string "the MAP on your POKéGEAR!\p"
+	.string "the Map on your Pokégear!\p"
 	.string "I wish you luck on your journey!$"
 
 CherrygroveCity_Text_GuideGentDecline:
@@ -331,7 +338,7 @@ CherrygroveCity_Text_GuideGentDecline:
 
 CherrygroveCity_Text_RivalSeen:
 	.string "… … … … … … … …\p"
-	.string "You got a Pokémon at the LAB.\p"
+	.string "You got a Pokémon at the Lab.\p"
 	.string "What a waste.\n"
 	.string "A wimp like you.\p"
 	.string "… … … … … … … …\p"
@@ -350,7 +357,7 @@ CherrygroveCity_Text_RivalAfter:
 
 CherrygroveCity_Text_RivalID:
 	.string "Give it back!\n"
-	.string "That's my TRAINER CARD!\p"
+	.string "That's my Trainer Card!\p"
 	.string "Oh no!\n"
 	.string "You saw my name...$"
 
@@ -359,7 +366,7 @@ CherrygroveCity_Text_TeacherHaveMapCard:
 	.string "going anywhere is fun.$"
 
 CherrygroveCity_Text_YoungsterNoPokedex:
-	.string "MR. Pokémon's house is still\n"
+	.string "Mr. Pokémon's house is still\n"
 	.string "farther up ahead.$"
 
 CherrygroveCity_Text_YoungsterHavePokedex:
@@ -367,7 +374,7 @@ CherrygroveCity_Text_YoungsterHavePokedex:
 	.string "road.\p"
 	.string "My Pokémon lost. They're a\n"
 	.string "mess! I must take them to a\l"
-	.string "Pokémon CENTER.$"
+	.string "Pokémon Center.$"
 
 CherrygroveCity_Text_MysticWaterGuyBefore:
 	.string "A Pokémon I caught had an\n"
@@ -380,21 +387,21 @@ CherrygroveCity_Text_MysticWaterGuyAfter:
 	.string "Back to fishing for me, then.$"
 
 CherrygroveCity_Text_CitySign:
-	.string "CHERRYGROVE CITY\p"
+	.string "Cherrygrove City\p"
 	.string "The City of Cute, Fragrant\n"
 	.string "Flowers$"
 
 CherrygroveCity_Text_GuideGentsHouseSign:
-	.string "GUIDE GENT'S HOUSE$"
+	.string "Guide Gent's House$"
 
 CherryGroveCity_Text_Staryu:
-	.string "STARYU: Yuuuuuuuu.$"
+	.string "Staryu: Yuuuuuuuu.$"
 
 CherryGroveCity_Text_Corsola:
-	.string "CORSOLA: Corsola! La!$"
+	.string "Corsola: Corsola! La!$"
 
 CherryGroveCity_Text_Krabby:
-	.string "KRABBY: KOOOOKEEE!$"
+	.string "Krabby: KOOOOKEEE!$"
 
 CherryGroveCity_Movement_Trigger_Gent:
 	walk_down

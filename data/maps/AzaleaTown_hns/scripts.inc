@@ -266,24 +266,24 @@ AzaleaTown_Movement_BugsyLeave::
 	step_end
 
 AzaleaTown_Text_BugsyAskForHelp:
-	.string "Hey there! {PLAYER}, is it? I'm BUGSY.\n"
+	.string "Hey there! {PLAYER}, is it? I'm Bugsy.\n"
 	.string "It's a pleasure to meet you.\p"
 	.string "I know it's rude to ask for a favour\n"
 	.string "right when you meet someone, but I\l"
 	.string "promise it's important!\p"
-	.string "TEAM ROCKET has taken over SLOWPOKE\n"
-	.string "WELL, and the new GYM LEADER in AZALEA\l"
-	.string "TOWN is away right now, so there's no\l"
+	.string "Team Rocket has taken over Slowpoke\n"
+	.string "Well, and the new Gym Leader in Azalea\l"
+	.string "Town is away right now, so there's no\l"
 	.string "one here to stop them.\p"
 	.string "I'm worried about if they try to come to\n"
-	.string "ILEX FOREST and hurt the Pokémon there\l"
+	.string "Ilex Forest and hurt the Pokémon there\l"
 	.string "too, so I've got to go over and keep\l"
 	.string "them safe...\p"
 	.string "You seem like a capable trainer. Would\n"
 	.string "you be able to beat them in my place?\p"
 	.string "...\p"
 	.string "Really? Great, you're amazing!\p"
-	.string "Oh, and make sure you talk to KURT\n"
+	.string "Oh, and make sure you talk to Kurt\n"
 	.string "before you head down the well, OK?\p"
 	.string "He may be old, but he's got fighting\n"
 	.string "spirit. He should be able to help.\p"
@@ -298,74 +298,74 @@ AzaleaTown_Text_Rocket1:
 	.string "Aren't I a good Samaritan?$"
 
 AzaleaTown_Text_Rocket2:
-	.string "Do you know about SLOWPOKETAIL?\n"
+	.string "Do you know about Slowpoketail?\n"
 	.string "I heard it's tasty!\p"
 	.string "Aren't you glad I told you that?$"
 
 AzaleaTown_Text_GrampsBefore:
-	.string "The SLOWPOKE have disappeared\n"
+	.string "The Slowpoke have disappeared\n"
 	.string "from town…\p"
-	.string "I heard their TAILS are being\n"
+	.string "I heard their tails are being\n"
 	.string "sold somewhere.$"
 
 AzaleaTown_Text_GrampsAfter:
-	.string "The SLOWPOKE have returned.\p"
+	.string "The Slowpoke have returned.\p"
 	.string "Knowing them, they could've just\n"
 	.string "been goofing off somewhere.$"
 
 AzaleaTown_Text_Teacher:
-	.string "Did you come to get KURT to make\n"
-	.string "some BALLS?\p"
+	.string "Did you come to get Kurt to make\n"
+	.string "some Balls?\p"
 	.string "A lot of people do just that.$"
 
 AzaleaTown_Text_Youngster:
-	.string "Cut through AZALEA and you'll be\n"
-	.string "in ILEX FOREST.\p"
+	.string "Cut through Azalea and you'll be\n"
+	.string "in Ilex Forest.\p"
 	.string "But these skinny trees make it\n"
 	.string "impossible to get through.\p"
-	.string "The CHARCOAL MAN's Pokémon\n"
-	.string "can CUT down trees.$"
+	.string "The Charcoal Man's Pokémon\n"
+	.string "can Cut down trees.$"
 
 AzaleaTown_Text_Slowpoke1:
-	.string "SLOWPOKE:..........\p"
-	.string "...............YAWN?$"
+	.string "Slowpoke:..........\p"
+	.string "...............Yawn?$"
 
 AzaleaTown_Text_Kurt1:
-	.string "ILEX FOREST is restless!\p"
+	.string "Ilex Forest is restless!\p"
 	.string "What is going on?$"
 
 AzaleaTown_Text_Kurt2:
 	.string "{PLAYER}, here's your GS BALL back!$"
 
 AzaleaTown_Text_Kurt3:
-	.string "Could you go see why ILEX FOREST\n"
+	.string "Could you go see why Ilex Forest\n"
 	.string "is so restless?$"
 
 AzaleaTown_Text_Sign:
-	.string "AZALEA TOWN\n"
+	.string "Azalea Town\n"
 	.string "Where People and Pokémon Live in\l"
 	.string "Happy Harmony.$"
 
 AzaleaTown_Text_KurtsHouseSign:
-	.string "KURT'S HOUSE$"
+	.string "Kurt's House$"
 
 AzaleaTown_Text_GymSign:
-	.string "AZALEA TOWN\n"
-	.string "Pokémon GYM\p"
-	.string "LEADER: MISTY\p"
+	.string "Azalea Town\n"
+	.string "Pokémon Gym\p"
+	.string "Leader: Misty\p"
 	.string "The Tomboyish Mermaid$"
 
 AzaleaTown_Text_SlowpokeWellSign:
-	.string "SLOWPOKE WELL\p"
-	.string "Also known as the RAINMAKER WELL.\p"
-	.string "Locals believe that a SLOWPOKE's\n"
+	.string "Slowpoke Well\p"
+	.string "Also known as the Rainmaker Well.\p"
+	.string "Locals believe that a Slowpoke's\n"
 	.string "yawn summons rain.\p"
-	.string "Records show that a SLOWPOKE's\n"
+	.string "Records show that a Slowpoke's\n"
 	.string "yawn ended a drought 400 years ago.$"
 
 AzaleaTown_Text_CharcoalKilnSign:
-	.string "CHARCOAL KILN$"
+	.string "Charcoal Kiln$"
 
 AzaleaTown_Text_IlexForestSign:
-	.string "ILEX FOREST\p"
+	.string "Ilex Forest\p"
 	.string "Enter through the gate.$"

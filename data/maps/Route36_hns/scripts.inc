@@ -197,14 +197,14 @@ Route36_Movement_SudoWoodo:
 	step_end
 
 Route36_Text_UseSquirtbottle:
-	.string "Use SQUIRTBOTTLE?$"
+	.string "Use Squirtbottle?$"
 
 Route36_Text_UsedSquirtbottle:
-	.string "{PLAYER} used the SQUIRTBOTTLE.$"
+	.string "{PLAYER} used the Squirtbottle.$"
 
 Route36_Text_SudowoodoAttacked:
 	.string "The weird tree doesn't like the\n"
-	.string "SQUIRTBOTTLE!\p"
+	.string "Squirtbottle!\p"
 	.string "The weird tree attacked!$"
 
 Route36_Text_RockSmashGuy1:
@@ -217,7 +217,7 @@ Route36_Text_RockSmashGuy2:
 	.string "Quick! Take This!$"
 
 Route36_Text_RockSmashGuy3:
-	.string "That happens to be ROCK SMASH.\p"
+	.string "That happens to be Rock Smash.\p"
 	.string "You can shatter rocks with just a\n"
 	.string "single well-aimed smack.\p"
 	.string "If any rocks are in your way,\n"
@@ -340,7 +340,7 @@ Route36_Text_Cherrim:
 Route36_Text_Lass1:
 	.string "Be careful at night on this route!\p"
 	.string "I saw a Pokémon that looked like\n"
-	.string "GROWLITHE, but it had a scary aura\l"
+	.string "Growlithe, but it had a scary aura\l"
 	.string "to it.$"
 
 Route36_Text_Lass2_ClearedSudowoodo:
@@ -411,10 +411,10 @@ Route36_Text_SchoolboyAlanAfter:
 	.string "reading books.$"
 
 Route36_Text_MeetArthur:
-	.string "ARTHUR: Who are you?\n"
-	.string "I'm ARTHUR of the WEEKDAY FAMILY.\p"
+	.string "Arthur: Who are you?\n"
+	.string "I'm Arthur of the Weekday Family.\p"
 	.string "If you can guess my favorite day,\n"
-	.string "I'll give you a reward.$"
+	.string "I'll give you nothing.$"
 
 Route36_Text_ArthurNope:
 	.string "Not quite!$"
@@ -423,18 +423,18 @@ Route36_Text_ArthurGivesGift:
 	.string "Yup.$"
 
 Route36_Text_ArthurThursday:
-	.string "ARTHUR: I'm ARTHUR of Thursday.\n"
+	.string "Arthur: I'm Arthur of Thursday.\n"
 	.string "I'm the fifth son out of seven.$"
 
 Route36_Text_Sign:
-	.string "ROUTE 36$"
+	.string "Route 36$"
 
 Route36_Text_Sign_RuinsNorth:
-	.string "RUINS OF ALPH\n"
-	.string "NORTH ENTRANCE$"
+	.string "Ruins of Alph\n"
+	.string "North Entrance$"
 
 Route36_Text_Tips1:
-	.string "TRAINER TIPS\n"
+	.string "Trainer Tips\n"
 	.string "Pokémon stats vary--even within\l"
 	.string "the same species.\p"
 	.string "Their stats may be similar at first.\p"
@@ -442,8 +442,8 @@ Route36_Text_Tips1:
 	.string "pronounced as the Pokémon grow.$"
 
 Route36_Text_Tips2:
-	.string "TRAINER TIPS\n"
-	.string "Use DIG to return to the entrance of\n"
+	.string "Trainer Tips\n"
+	.string "Use Dig to return to the entrance of\n"
 	.string "any place.\p"
 	.string "It is convenient for exploring\n"
 	.string "caves and other landmarks.$"
@@ -519,7 +519,7 @@ Route36_Text_LassKrise_After:
 	.string "because I'm cute!$"
 
 Route36_Text_Sign_HiddenGrottoLeft:
-	.string "HIDDEN GROTTO ON YOUR LEFT$"
+	.string "Hidden Grotto on your left$"
 
 
 

@@ -991,7 +991,7 @@ EcruteakCity_Theater_Text_ZukiSeen:
 	.string "We asked Mr. Pokémon to give this\n"
 	.string "Mystery Egg to\l"
 	.string "whoever showed potential.\p"
-	.string "The Egg went from MR. Pokémon\n"
+	.string "The Egg went from Mr. Pokémon\n"
 	.string "to PROF. ELM, then to you.\p"
 	.string "But being pure alone is not enough\n"
 	.string "to face the power of this Pokémon.$"
@@ -1089,7 +1089,7 @@ EcruteakCity_Theater_Text_ZukiAfterAll:
 	.string "We appreciate how you lived up\n"
 	.string "to our hopes, {PLAYER}!\p"
 	.string "If you learned anything from\n"
-	.string "this, thank MR. Pokémon and\l"
+	.string "this, thank Mr. Pokémon and\l"
 	.string "PROF. ELM...$"
 
 EcruteakCity_Theater_Text_KimonoGirlsBeforeBattle:

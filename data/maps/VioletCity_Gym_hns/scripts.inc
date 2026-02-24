@@ -58,10 +58,10 @@ VioletCity_Gym_EventScript_Falkner_Defeated::
 	end
 
 VioletGym_Text_Falkner_Intro:
-	.string "I'm FALKNER, the VIOLET Pokémon\n"
-	.string "GYM leader!\p"
+	.string "I'm Falkner, the Violet Pokémon\n"
+	.string "Gym leader!\p"
 	.string "People say you can clip\n"
-	.string "FLYING-type Pokémon's wings\p"
+	.string "Flying-type Pokémon's wings\p"
 	.string "with a jolt of electricity…\n"
 	.string "I won't allow such insults to bird\l"
 	.string "Pokémon!\p"
@@ -72,17 +72,17 @@ VioletGym_Text_Falkner_WinLoss:
 	.string "…Darn! My dad's cherished bird\n"
 	.string "Pokémon…\p"
 	.string "All right. Take this.\p"
-	.string "It's the official Pokémon LEAGUE\n"
-	.string "ZEPHYRBADGE.$"
+	.string "It's the official Pokémon League\n"
+	.string "ZephyrBadge.$"
 
 VioletGym_Text_ReceivedZephyrBadge:
-	.string "{PLAYER} received ZEPHYRBADGE.$"
+	.string "{PLAYER} received ZephyrBadge.$"
 
 VioletGym_Text_Falkner_BadgeExplain:
-	.string "ZEPHYRBADGE raises the ATTACK\n"
+	.string "ZephyrBadge raises the Attack\n"
 	.string "power of Pokémon.\p"
 	.string "It also enables Pokémon to use\n"
-	.string "FLASH, if they can learn it,\l"
+	.string "Flash, if they can learn it,\l"
 	.string "anytime.\p"
 	.string "Here--take this too.$"
 
@@ -96,16 +96,16 @@ VioletGym_Text_Falkner_TMExplain:
 	.string "Sash, for example.$"
 
 VioletGym_Text_Falkner_AfterFight:
-	.string "There are Pokémon GYMS in cities\n"
+	.string "There are Pokémon Gyms in cities\n"
 	.string "and towns ahead.\p"
 	.string "You should test your skills at\n"
-	.string "these GYMS.\p"
+	.string "these Gyms.\p"
 	.string "I'm going to train harder to\n"
 	.string "become the greatest bird master!$"
 
 VioletGym_Text_Falkner_Rematch:
 	.string "Congratulations on defeating\n"
-	.string "the ELITE 4!\p"
+	.string "the Elite 4!\p"
 	.string "I've been training my\n"
 	.string "FLYING-type Pokémon even harder.\p"
 	.string "Think you can take on the power\n"
@@ -126,13 +126,13 @@ VioletGym_Text_BirdKeeperRod_Beaten:
 	.string "Gaaah!$"
 
 VioletGym_Text_BirdKeeperRod_After:
-	.string "FALKNER's skills are for real!\p"
+	.string "Falkner's skills are for real!\p"
 	.string "Don't get cocky just because\n"
 	.string "you beat me!$"
 
 VioletGym_Text_BirdKeeperAbe_Seen:
 	.string "Let me see if you are good\n"
-	.string "enough to face FALKNER!$"
+	.string "enough to face Falkner!$"
 
 VioletGym_Text_BirdKeeperAbe_Beaten:
 	.string "This can't be true!$"
@@ -149,7 +149,7 @@ VioletGym_Text_GymGuide_Intro:
 
 VioletGym_Text_GymGuide_Win:
 	.string "Nice battle! Keep it up,\n"
-	.string "and you'll be the CHAMP in no\l"
+	.string "and you'll be the Champ in no\l"
 	.string "time at all!$"
 
 VioletCity_Gym_EventScript_Statue::
@@ -167,9 +167,9 @@ VioletCity_Gym_EventScript_Statue2::
 	end
 
 VioletCity_Gym_Text_GymStatue:
-	.string "VIOLET CITY Pokémon GYM$"
+	.string "Violet City Pokémon Gym$"
 
 VioletCity_Gym_Text_GymStatueCertified:
-	.string "VIOLET CITY Pokémon GYM\p"
-	.string "FALKNER'S CERTIFIED TRAINERS:\n"
+	.string "Violet City Pokémon Gym\p"
+	.string "Falkner's Certified Trainers:\n"
 	.string "{PLAYER}$"

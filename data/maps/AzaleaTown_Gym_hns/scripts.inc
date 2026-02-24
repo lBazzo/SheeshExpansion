@@ -636,11 +636,11 @@ AzaleaTown_Gym_EventScript_Statue2::
 	end
 
 AzaleaTown_Gym_Text_GymStatue:
-	.string "AZALEA Pokémon GYM$"
+	.string "Azalea Pokémon Gym$"
 
 AzaleaTown_Gym_Text_GymStatueCertified:
-	.string "AZALEA TOWN Pokémon GYM\p"
-	.string "BUGSY'S CERTIFIED TRAINERS:\n"
+	.string "Azalea Town Pokémon Gym\p"
+	.string "Misty's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 AzaleaTown_Gym_Text_BugsyIntro:

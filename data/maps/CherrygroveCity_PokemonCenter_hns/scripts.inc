@@ -61,10 +61,10 @@ CherryGrove_Pokecenter_Text_Gentleman:
 CherryGrove_Pokecenter_Text_Lass:
 	.string "They say a watched pot never\n"
 	.string "boils. But watching the clock\l"
-	.string "in the POKéCENTER makes time fly!$"
+	.string "in the Pokécenter makes time fly!$"
 
 CherryGrove_Pokecenter_Text_Chansey:
-	.string "CHANSEY: Chaan! Sii!$"
+	.string "Chansey: Chaan! Sii!$"
 
 
 
@@ -151,13 +151,13 @@ CherryGrove_Pokecenter_Text_ScaleAttendantIntro::
 	.string "you in your travels.\p"
 	.string "Some of these we are happy to do for\n"
 	.string "free, while others will require\l"
-	.string "exchanging some HEART SCALES.\p"
-	.string "HEART SCALES can be hard to come by\n"
+	.string "exchanging some Heart Scales.\p"
+	.string "Heart Scales can be hard to come by\n"
 	.string "these days, so be sure to think\l"
 	.string "carefully before you spend them.\p"
 	.string "If you need any more information, don't\n"
 	.string "be afraid to ask. You can find us in any\l"
-	.string "Pokémon CENTER.$"
+	.string "Pokémon Center.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantPostIntro::
     .string "So, how may I help you today, {PLAYER}?$"
@@ -412,7 +412,7 @@ CherryGrove_Pokecenter_Text_ScaleAttendantMonHasForgottenMove::
 	.string "{STR_VAR_2} completely.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantEggCantForgetMoves::
-	.string "Oh, dear me. I'm afraid that an EGG\n"
+	.string "Oh, dear me. I'm afraid that an Egg\n"
 	.string "cannot delete any moves.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantMonOnlyKnowsOneMove::
@@ -480,7 +480,7 @@ CherryGrove_Pokecenter_Text_ScaleAttendantTeachWhichMove::
 	.string "your Pokémon to learn?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale::
-	.string "{PLAYER} handed over one HEART SCALE\n"
+	.string "{PLAYER} handed over one Heart Scale\n"
 	.string "in exchange.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantDontHaveMoveToTeachPokemon::
@@ -489,10 +489,10 @@ CherryGrove_Pokecenter_Text_ScaleAttendantDontHaveMoveToTeachPokemon::
 
 CherryGrove_Pokecenter_Text_ScaleAttendantComeBackWithHeartScale::
 	.string "Oh, dear me. I'm afraid that you need a\n"
-	.string "HEART SCALE to teach a move.$"
+	.string "Heart Scale to teach a move.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantCantTeachEgg::
-	.string "Oh, dear me. I'm afraid that an EGG\n"
+	.string "Oh, dear me. I'm afraid that an Egg\n"
 	.string "cannot learn any moves.$"
 
 
@@ -863,7 +863,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantEggCantAdjustIV::
 	end
 
 CherryGrove_Pokecenter_Text_ScaleAttendantCantAdjustIVsForEgg::
-	.string "Oh, dear me. I'm afraid that an EGG\n"
+	.string "Oh, dear me. I'm afraid that an Egg\n"
 	.string "does not have any IVs.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantAdjustIVLowerConfirmIVRange::
@@ -1421,63 +1421,63 @@ CherryGrove_Pokecenter_Text_ScaleAttendantWhichMint::
 
 CherryGrove_Pokecenter_Text_ScaleAttendantNotEnoughHeartScales::
 	.string "Oh, dear me. You don't appear to have\n"
-	.string "enough HEART SCALES for that.$"
+	.string "enough Heart Scales for that.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverTwoHeartScales::
-	.string "{PLAYER} handed over two HEART SCALES\n"
+	.string "{PLAYER} handed over two Heart Scales\n"
 	.string "in exchange.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverThreeHeartScales::
-	.string "{PLAYER} handed over three HEART\n"
-	.string "SCALES in exchange.$"
+	.string "{PLAYER} handed over three Heart\n"
+	.string "Scales in exchange.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverFourHeartScales::
-	.string "{PLAYER} handed over four HEART\n"
-	.string "SCALES in exchange.$"
+	.string "{PLAYER} handed over four Heart\n"
+	.string "Scales in exchange.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSeriousMint::
-	.string "You want the SERIOUS MINT, is that\n"
-	.string "right? It'll cost you 2 HEART SCALES.$"
+	.string "You want the Serious Mint, is that\n"
+	.string "right? It'll cost you 2 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmBoldMint::
-	.string "You want the BOLD MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Bold Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmImpishMint::
-	.string "You want the IMPISH MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Impish Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmLaxMint::
-	.string "You want the LAX MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Lax Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmRelaxedMint::
-	.string "You want the RELAXED MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Relaxed Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmCalmMint::
-	.string "You want the CALM MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Calm Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmGentleMint::
-	.string "You want the GENTLE MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Gentle Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmCarefulMint::
-	.string "You want the CAREFUL MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Careful Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmSassyMint::
-	.string "You want the SASSY MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Sassy Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmBraveMint::
-	.string "You want the BRAVE MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Brave Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmQuietMint::
-	.string "You want the QUIET MINT, is that\n"
-	.string "right? It'll cost you 3 HEART SCALES.$"
+	.string "You want the Quiet Mint, is that\n"
+	.string "right? It'll cost you 3 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHeresYourMint::
 	.string "Splendid. In that case, this mint is\n"
@@ -1700,44 +1700,44 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantPurchasedNaiveMint::
 	end
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmLonelyMint::
-	.string "You want the LONELY MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Lonely Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmAdamantMint::
-	.string "You want the ADAMANT MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Adamant Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmNaughtyMint::
-	.string "You want the NAUGHTY MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Naughty Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmModestMint::
-	.string "You want the MODEST MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Modest Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmMildMint::
-	.string "You want the MILD MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Mild Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmRashMint::
-	.string "You want the RASH MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Rash Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmTimidMint::
-	.string "You want the TIMID MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Timid Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmHastyMint::
-	.string "You want the HASTY MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Hasty Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmJollyMint::
-	.string "You want the JOLLY MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Jolly Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantConfirmNaiveMint::
-	.string "You want the NAIVE MINT, is that\n"
-	.string "right? It'll cost you 4 HEART SCALES.$"
+	.string "You want the Naive Mint, is that\n"
+	.string "right? It'll cost you 4 Heart Scales.$"
 
 
 
@@ -2125,7 +2125,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkPlainBadge::
 	case 2, CherryGrove_Pokecenter_EventScript_TMClerkDarkPulse
 	case 3, CherryGrove_Pokecenter_EventScript_TMClerkShadowBall
 	case 4, CherryGrove_Pokecenter_EventScript_TMClerkDragonClaw
-	case 5, CherryGrove_Pokecenter_EventScript_TMClerkPsychoBoost
+	case 5, CherryGrove_Pokecenter_EventScript_TMClerkPsychoShift
 	case 6, CherryGrove_Pokecenter_EventScript_TMClerkLowKick
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkReturn
 	case 8, CherryGrove_Pokecenter_EventScript_TMClerkFacade
@@ -2213,16 +2213,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveDragonClaw::
 	release
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkPsychoBoost::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantPsychoBoost, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoBoost
+CherryGrove_Pokecenter_EventScript_TMClerkPsychoShift::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantPsychoShift, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoShift
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoBoost::
+CherryGrove_Pokecenter_EventScript_TMClerkGivePsychoShift::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_PSYCHO_BOOST
+	giveitem ITEM_TM_PSYCHO_SHIFT
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -3030,7 +3030,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostWhitneyTMs::
 	giveitem ITEM_TM_DARK_PULSE
 	giveitem ITEM_TM_SHADOW_BALL
 	giveitem ITEM_TM_DRAGON_CLAW
-	giveitem ITEM_TM_PSYCHO_BOOST
+	giveitem ITEM_TM_PSYCHO_SHIFT
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_WHITNEY
 	closemessage
 	releaseall
@@ -3116,17 +3116,17 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostBlaineSurgeBerries::
 CherryGrove_Pokecenter_Text_TMClerkIntro::
 	.string "Hi there! A new trainer, are you? Don't\n"
 	.string "worry, I'm pretty new at this as well!\p"
-	.string "I used to work in the MART before, and\n"
+	.string "I used to work in the Mart before, and\n"
 	.string "it's been a bit of a transition getting\l"
 	.string "used to-\p"
-	.string "Oh! Sorry, NURSE JOY says I can be a bit\n"
+	.string "Oh! Sorry, Nurse ~Joy says I can be a bit\n"
 	.string "too chatty sometimes...\p"
 	.string "Anyway, come and see me whenever you\n"
-	.string "get a new BADGE, and I'll have some\l"
+	.string "get a new Badge, and I'll have some\l"
 	.string "great TMs for you!\p"
 	.string "Or, if you want an extra copy of\n"
-	.string "something, you can exchange a HEART\l"
-	.string "SCALE for it. Pretty neat, huh?$"
+	.string "something, you can exchange a Heart\l"
+	.string "Scale for it. Pretty neat, huh?$"
 
 CherryGrove_Pokecenter_Text_TMClerkPostIntro::
 	.string "Hi there, {PLAYER}!\n"
@@ -3143,324 +3143,324 @@ CherryGrove_Pokecenter_Text_TMClerkWhichTMWouldYouLike::
 CherryGrove_Pokecenter_Text_TMClerkGivingPostFalknerTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "FALKNER. Way to go!\p"
+	.string "Falkner. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostMistyTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "MISTY. Way to go!\p"
+	.string "Misty. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostWhitneyTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "WHITNEY. Way to go!\p"
+	.string "Whitney. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostErikaTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "ERIKA. Way to go!\p"
+	.string "Erika. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostChuckTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "CHUCK. Way to go!\p"
+	.string "Chuck. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostPryceTMs::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "PRYCE. Way to go!\p"
+	.string "Pryce. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostBlaineSurgeBerries::
 	.string "Hey, {PLAYER}, over here!\p"
 	.string "I just heard about your victory over\n"
-	.string "BLAINE and SURGE. Way to go!\p"
+	.string "Blaine and Surge. Way to go!\p"
 	.string "As promised, here's your reward. I hope\n"
 	.string "you have enough room for them all!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatFalkner::
-	.string "Oh, sorry. You need to defeat FALKNER\n"
+	.string "Oh, sorry. You need to defeat Falkner\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatMisty::
-	.string "Oh, sorry. You need to defeat MISTY\n"
+	.string "Oh, sorry. You need to defeat Misty\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatWhitney::
-	.string "Oh, sorry. You need to defeat WHITNEY\n"
+	.string "Oh, sorry. You need to defeat Whitney\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatErika::
-	.string "Oh, sorry. You need to defeat ERIKA\n"
+	.string "Oh, sorry. You need to defeat Erika\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatChuck::
-	.string "Oh, sorry. You need to defeat CHUCK\n"
+	.string "Oh, sorry. You need to defeat Chuck\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkGoBeatPryce::
-	.string "Oh, sorry. You need to defeat PRYCE\n"
+	.string "Oh, sorry. You need to defeat Pryce\n"
 	.string "in order to buy these TMs.$"
 
 CherryGrove_Pokecenter_Text_TMClerkNotEnoughScales::
-	.string "Ah, but you don't have any HEART\n"	
-	.string "SCALES. Sorry, {PLAYER}.$"
+	.string "Ah, but you don't have any Heart\n"	
+	.string "Scales. Sorry, {PLAYER}.$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantGrassKnot::
-	.string "You want the GRASS KNOT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Grass Knot TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantNightShade::
-	.string "You want the NIGHT SHADE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Night Shade TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSeismicToss::
-	.string "You want the SEISMIC TOSS TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Seismic Toss TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantWaterPulse::
-	.string "You want the WATER PULSE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Water Pulse TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantPluck::
-	.string "You want the PLUCK TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Pluck TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDualWingbeat::
-	.string "You want the DUAL WINGBEAT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Dual Wingbeat TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantProtect::
-	.string "You want the PROTECT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Protect TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantWillOWisp::
-	.string "You want the WILL-O-WISP TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Will-O-Wisp TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantToxic::
-	.string "You want the TOXIC TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Toxic TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantThunderWave::
-	.string "You want the THUNDER WAVE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Thunder Wave TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSteelWing::
-	.string "You want the STEEL WING TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Steel Wing TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDefog::
-	.string "You want the DEFOG TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Defog TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantUTurn::
-	.string "You want the U-TURN TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the U-Turn TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantReflect::
-	.string "You want the REFLECT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Reflect TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantLightScreen::
-	.string "You want the LIGHT SCREEN TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Light Screen TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFlipTurn::
-	.string "You want the FLIP TURN TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Flip Turn TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantXScissor::
 	.string "You want the X-Scissor TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFlashCannon::
-	.string "You want the FLASH CANNON TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Flash Cannon TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDarkPulse::
-	.string "You want the DARK PULSE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Dark Pulse TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantShadowBall::
-	.string "You want the SHADOW BALL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Shadow Ball TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDragonClaw::
-	.string "You want the DRAGON CLAW TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Dragon Claw TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
-CherryGrove_Pokecenter_Text_TMClerkWantPsychoBoost::
-	.string "You want the PSYCHO BOOST TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+CherryGrove_Pokecenter_Text_TMClerkWantPsychoShift::
+	.string "You want the Psycho Shift TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantLowKick::
-	.string "You want the LOW KICK TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Low Kick TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantReturn::
-	.string "You want the RETURN TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Return TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFacade::
-	.string "You want the FACADE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Facade TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantEnergyBall::
-	.string "You want the ENERGY BALL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Energy Ball TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSludgeBomb::
-	.string "You want the SLUDGE BOMB TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Sludge Bomb TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFlamethrower::
-	.string "You want the FLAMETHROWER TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Flamethrower TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantThunderbolt::
-	.string "You want the THUNDERBOLT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Thunderbolt TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantIceBeam::
-	.string "You want the ICE BEAM TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Ice Beam TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantPsychic::
-	.string "You want the PSYCHIC TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Psychic TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantMoonblast::
-	.string "You want the MOONBLAST TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Moonblast TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantPlayRough::
-	.string "You want the PLAY ROUGH TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Play Rough TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantEarthPower::
-	.string "You want the EARTH POWER TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Earth Power TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantHyperVoice::
-	.string "You want the HYPER VOICE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Hyper Voice TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantPayback::
-	.string "You want the PAYBACK TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Payback TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantGigaDrain::
-	.string "You want the GIGA DRAIN TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Giga Drain TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantStoneEdge::
-	.string "You want the STONE EDGE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Stone Edge TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantRockSlide::
-	.string "You want the ROCK SLIDE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Rock Slide TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantEarthquake::
-	.string "You want the EARTHQUAKE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Earthquake TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantIronTail::
-	.string "You want the IRON TAIL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Iron Tail TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFocusBlast::
-	.string "You want the FOCUS BLAST TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Focus Blast TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSolarBeam::
-	.string "You want the SOLAR BEAM TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Solar Beam TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSolarBlade::
-	.string "You want the SOLAR BLADE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Solar Blade TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantHyperBeam::
-	.string "You want the HYPER BEAM TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Hyper Beam TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantGigaImpact::
-	.string "You want the GIGA IMPACT TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Giga Impact TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDragonPulse::
-	.string "You want the DRAGON PULSE TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Dragon Pulse TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantVoltSwitch::
-	.string "You want the VOLT SWITCH TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Volt Switch TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDrainingKiss::
-	.string "You want the DRAINING KISS TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Draining Kiss TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDazzlingGleam::
-	.string "You want the DAZZLING GLEAM TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Dazzling Gleam TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantDrainPunch::
-	.string "You want the DRAIN PUNCH TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Drain Punch TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantRest::
-	.string "You want the REST TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Rest TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantSleepTalk::
-	.string "You want the SLEEP TALK TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Sleep Talk TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantRoost::
-	.string "You want the ROOST TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Roost TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantExplosion::
-	.string "You want the EXPLOSION TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Explosion TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantMistyExplosion::
-	.string "You want the MISTY EXPLOSION TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Misty Explosion TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFocusPunch::
-	.string "You want the FOCUS PUNCH TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Focus Punch TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantBodyPress::
-	.string "You want the BODY PRESS TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Body Press TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantWeatherBall::
-	.string "You want the WEATHER BALL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Weather Ball TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantTripleAxel::
-	.string "You want the TRIPLE AXEL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Triple Axel TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantHealBell::
-	.string "You want the HEAL BELL TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Heal Bell TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantAromatherapy::
-	.string "You want the AROMATHERAPY TM?\n"
-	.string "It'll cost you one HEART SCALE, okay?$"
+	.string "You want the Aromatherapy TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"

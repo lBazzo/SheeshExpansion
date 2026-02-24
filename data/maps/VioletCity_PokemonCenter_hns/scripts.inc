@@ -105,13 +105,13 @@ VioletCity_PokemonCenter_Text_BookshelfWoman::
 
 VioletCity_PokeCenter_Text_ElmsAideFavor:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "Prof.Elm asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take this Pokémon?$"
 
 VioletCity_PokeCenter_Text_ElmsAideNoRoom:
 	.string "{PLAYER}, long time, no see.\p"
-	.string "PROF.ELM asked me to find you.\p"
+	.string "Prof.Elm asked me to find you.\p"
 	.string "He has another favor to ask.\p"
 	.string "Would you take this Pokémon?\p"
 	.string "Oh, wait... You need to make room\n"
@@ -131,7 +131,7 @@ VioletCity_PokeCenter_Text_ElmsAideFullParty:
 	.string "room for it.$"
 
 VioletCity_PokeCenter_Text_ElmsAideRefuse:
-	.string "B-but… PROF.ELM asked for you…$"
+	.string "B-but… Prof.Elm asked for you…$"
 
 VioletCity_PokeCenter_Text_BooksAreGreat:
 	.string "While my Pokémon are recovering\n"
@@ -139,18 +139,18 @@ VioletCity_PokeCenter_Text_BooksAreGreat:
 
 VioletCity_PokeCenter_Text_MobileAdapter:
 	.string "I just battled a friend in\n"
-	.string "CIANWOOD over a link.\p"
-	.string "If you connect a MOBILE ADAPTER,\n"
+	.string "Cianwood over a link.\p"
+	.string "If you connect a Mobile Adapter,\n"
 	.string "you can link with a friend far\l"
 	.string "away.$"
 
 VioletCity_PokeCenter_Text_GameboyKid:
-	.string "A guy named BILL made the\n"
+	.string "A guy named Bill made the\n"
 	.string "Pokémon PC storage system.$"
 
 VioletCity_PokeCenter_Text_Gentleman:
 	.string "It was around three years ago.\p"
-	.string "TEAM ROCKET was up to no good\n"
+	.string "Team Rocket was up to no good\n"
 	.string "with Pokémon.\p"
 	.string "But justice prevailed--a young\n"
 	.string "kid broke 'em up.$"
@@ -158,7 +158,7 @@ VioletCity_PokeCenter_Text_Gentleman:
 VioletCity_PokeCenter_Text_Youngster:
 	.string "Pokémon are smart. They won't\n"
 	.string "obey a trainer they don't respect.\p"
-	.string "Without the right GYM BADGES,\n"
+	.string "Without the right Gym Badges,\n"
 	.string "they will just do as they please.$"
 
 VioletCity_PokeCenter_Text_ReceivedSpinda:

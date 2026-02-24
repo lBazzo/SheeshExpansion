@@ -66,5 +66,5 @@ Route32_Pokecenter_Text_FishingGuruAfter:
 Route32_Pokecenter_Text_CooltrainerF:
 	.string "What should I make my Pokémon hold?\p"
 	.string "Maybe an item that increases\n"
-	.string "ATTACK power…$"
+	.string "Attack power…$"
 

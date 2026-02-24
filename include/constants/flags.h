@@ -1279,9 +1279,9 @@
 #define FLAG_ITEM_GS_BALL                                           0x4AE 
 #define FLAG_GARBAGEFLAG3                                           0x4AF 
 #define FLAG_ITEM_ROUTE_32_GREATBALL                                0x4B0 
-#define FLAG_ITEM_ROUTE_32_GREATBALL2                               0x4B1 
-#define FLAG_ITEM_ROUTE_32_POTION                                   0x4B2 
-#define FLAG_ITEM_ROUTE_32_PROTECTIVE_PADS                              0x4B3 
+#define FLAG_ITEM_ROUTE_32_REFLECT                                  0x4B1 
+#define FLAG_ITEM_ROUTE_32_LIGHT_SCREEN                             0x4B2 
+#define FLAG_ITEM_ROUTE_32_PROTECTIVE_PADS                          0x4B3 
 #define FLAG_ITEM_UNION_CAVE_POTION                                 0x4B4 
 #define FLAG_ITEM_UNION_CAVE_GREAT_BALL                             0x4B5 
 #define FLAG_ITEM_UNION_CAVE_X_ATTACK                               0x4B6 

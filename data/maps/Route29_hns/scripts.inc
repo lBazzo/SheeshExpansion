@@ -185,7 +185,7 @@ Route29_Text_OldManExplanation:
 	.string "Then, throw a ball at them from\n"
 	.string "your bag! Any ball will do.\p"
 	.string "If you want to learn more,\n"
-	.string "go to the ACADEMY in VIOLET CITY!\p"
+	.string "go to the Academy in Violet City!\p"
 	.string "The students there know a lot\n"
 	.string "about Pokémon.$"
 
@@ -193,10 +193,10 @@ Route29_Text_OldManDeclined:
 	.string "Oh. Fine, then.\p"
 	.string "Check every route to find\n"
 	.string "different types of Pokémon.\p"
-	.string "Your POKéDEX shows where you can\n"
+	.string "Your Pokédex shows where you can\n"
 	.string "find them too!\p"
 	.string "If you want to learn more,\n"
-	.string "go to the ACADEMY in VIOLET CITY!\p"
+	.string "go to the Academy in Violet City!\p"
 	.string "The students know a lot about\n"
 	.string "Pokémon.$"
 
@@ -208,7 +208,7 @@ Route29_Text_Youngster:
 Route29_Text_Lass:
 	.string "See those ledges?\n"
 	.string "It's scary to jump off them.\p"
-	.string "But you can go to NEW BARK\n"
+	.string "But you can go to New Bark Town\n"
 	.string "without walking through the grass.$"
 
 Route29_Text_Girl:
@@ -224,9 +224,9 @@ Route29_Text_Boy_WaitingForNight:
 	.string "appear only at night.$"
 
 Route29_Text_MeetTuscany:
-	.string "TUSCANY: I do believe that this\n"
+	.string "Tuscany: I do believe that this\n"
 	.string "is the first time we've met?\p"
-	.string "I'm TUSCANY of the WEEKDAY FAMILY.\p"
+	.string "I'm Tuscany of the Weekday Family.\p"
 	.string "If you can guess my favorite day,\n"
 	.string "I'll give you a reward.$"
 
@@ -253,6 +253,6 @@ Route29_Text_TuscanyTuesday:
 	.string "children.$"
 
 Route29_Text_Sign1:
-	.string "ROUTE 29\p"
-	.string "CHERRYGROVE CITY - NEW BARK TOWN$"
+	.string "Route 29\p"
+	.string "Cherrygrove City - New Bark Town$"
 

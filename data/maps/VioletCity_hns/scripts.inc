@@ -448,7 +448,7 @@ VioletCity_Text_LiquidJustice:
 VioletCity_Text_EarlAsksIfYouBeatFalkner:
 	.string "Hello!\n"
 	.string "You are trainer?\p"
-	.string "Battle GYM LEADER,\n"
+	.string "Battle Gym Leader,\n"
 	.string "win you did?$"
 
 VioletCity_Text_VeryNiceIndeed:
@@ -465,20 +465,20 @@ VioletCity_Text_HereTeacherIAm:
 
 VioletCity_Text_Lass:
 	.string "Ghosts are rumored to appear\n"
-	.string "in SPROUT TOWER.\p"
-	.string "They say that GHOST-type\n"
+	.string "in Sprout Tower.\p"
+	.string "They say that Ghost-type\n"
 	.string "moves can bypass the defenses\p"
-	.string "of tough Pokémon like ONIX\n"
-	.string "and GEODUDE.$"
+	.string "of tough Pokémon like Onix\n"
+	.string "and Geodude.$"
 
 VioletCity_Text_Boy:
 	.string "Hey, you're a Pokémon trainer?\p"
-	.string "If you head to the ACADEMY,\n"
+	.string "If you head to the Academy,\n"
 	.string "you might learn something new!$"
 
 VioletCity_Text_Gramps:
-	.string "FALKNER, from the VIOLET\n"
-	.string "Pokémon GYM, is a fine trainer!\p"
+	.string "Falkner, from the Violet\n"
+	.string "Pokémon Gym, is a fine trainer!\p"
 	.string "He inherited his father's gym\n"
 	.string "and has done a great job with\l"
 	.string "it.$"
@@ -489,35 +489,35 @@ VioletCity_Text_Youngster:
 	.string "and dances! Cool!$"
 
 VioletCity_Text_Sign:
-	.string "VIOLET CITY\p"
+	.string "Violet City\p"
 	.string "The City of Nostalgic Scents$"
 
 VioletCity_Text_GymSign:
-	.string "VIOLET CITY Pokémon GYM\p"
-	.string "LEADER: FALKNER, The Elegant\n"
+	.string "Violet City Pokémon Gym\p"
+	.string "Leader: Falkner, The Elegant\n"
 	.string "Master of Flying Pokémon$"
 
 VioletCity_Text_SproutTowerSign:
-	.string "SPROUT TOWER\p"
+	.string "Sprout Tower\p"
 	.string "Experience the Way of Pokémon$"
 
 VioletCity_Text_EarlsAcademySign:
-	.string "EARL'S Pokémon ACADEMY$"
+	.string "Earl'S Pokémon Academy$"
 
 VioletCity_Text_Pichu:
-	.string "PICHU: Chuuuu!$"
+	.string "Pichu: Chuuuu!$"
 
 VioletCity_Text_Bellsprout:
-	.string "BELLSPROUT: Sprouuuut.$"
+	.string "Bellsprout: Sprouuuut.$"
 
 VioletCity_Text_Rattata:
-	.string "RATTATA: RATTATARATTA!$"
+	.string "Rattata: RATTATARATTA!$"
 
 VioletCity_Text_Elm_Call:
-	.string "ELM: Hello, {PLAYER}? We\n"
-	.string "discovered something about the EGG!\p"
+	.string "Elm: Hello, {PLAYER}? We\n"
+	.string "discovered something about the Egg!\p"
 	.string "My assistant is at the Pokémon\n"
-	.string "CENTER in VIOLET CITY.\p"
+	.string "Center in Violet City.\p"
 	.string "Could you talk to him?$"
 
 VioletCity_Text_Kimono_Girl1:
@@ -526,13 +526,13 @@ VioletCity_Text_Kimono_Girl1:
 
 VioletCity_Text_Kimono_Girl2:
 .string "I see...\p"
-.string "So it was handed from MR. Pokémon\n"
-.string "to PROF. ELM, then from \l"
-.string "PROF. ELM to you.\p"
+.string "So it was handed from Mr. Pokémon\n"
+.string "to Prof.Elm, then from \l"
+.string "Prof.Elm to you.\p"
 .string "Now I get it...$"
 
 VioletCity_Text_Kimono_Girl3:
-.string "That Egg is truly an important Egg.\p"
+.string "That Pokémon is truly important.\p"
 .string "Please do take good care of it\n"
 .string "for me. Is that understood?$"
 
@@ -541,19 +541,19 @@ VioletCity_Text_Kimono_Girl4:
 
 VioletCity_Text_GymSage_GymSageGym:
 .string "Ah, welcome back. I see you managed to\n"
-.string "best SAGE LI in a battle. Wonderful!\p"
+.string "best Elder Li in a battle. Wonderful!\p"
 .string "Make sure you bring that same energy\n"
-.string "when you're up against FALKNER.\l"
+.string "when you're up against Falkner.\l"
 .string "He's not one to hold back.$"
 
 VioletCity_Text_GymSage_GymSageTower:
-.string "Looking for this city's GYM LEADER,\n"
-.string "FALKNER? I'm afraid he's out at the\l"
+.string "Looking for this city's Gym Leader,\n"
+.string "Falkner? I'm afraid he's out at the\l"
 .string "moment.\p"
 .string "While you wait, why not pay a visit to\n"
-.string "SPROUT TOWER? You might catch a\p"
+.string "Sprout Tower? You might catch a\p"
 .string "Pokémon there that could aid you in\n"
-.string "your GYM challenge.\p"
+.string "your Gym challenge.\p"
 .string "What's that? 'Bellsprout isn't good\n"
 .string "against Flying Pokémon?'\p"
 .string "...\p"
