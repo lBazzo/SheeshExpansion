@@ -8,6 +8,7 @@ enum Type GetBattlerTeraType(u32 battler);
 void ExpendTypeStellarBoost(u32 battler, enum Type type);
 bool32 IsTypeStellarBoosted(u32 battler, enum Type type);
 uq4_12_t GetTeraMultiplier(struct DamageContext *ctx);
+bool32 IsTeraTrainer(u16 trainerId);
 
 u16 GetTeraTypeRGB(enum Type type);
 

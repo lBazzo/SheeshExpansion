@@ -433,7 +433,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_LucyPostIntro::
 GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleNormal::
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleNormal, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, GoldenrodCity_UndergroundTunnel_Text_LucyWin
+	trainerbattle_no_intro TRAINER_LUCY, GoldenrodCity_UndergroundTunnel_Text_LucyWin
 	playbgm MUS_B_PIKE, TRUE
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyNormalAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 2
@@ -454,7 +454,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard::
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleHard, MSGBOX_DEFAULT
 	closemessage
 	special SetRandomStatus
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, GoldenrodCity_UndergroundTunnel_Text_LucyWin
+	trainerbattle_no_intro TRAINER_LUCY, GoldenrodCity_UndergroundTunnel_Text_LucyWin
 	playbgm MUS_B_PIKE, TRUE
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 5

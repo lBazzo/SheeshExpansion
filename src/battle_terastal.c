@@ -6,6 +6,7 @@
 #include "battle_terastal.h"
 #include "battle_gimmick.h"
 #include "battle_scripts.h"
+#include "battle_setup.h"
 #include "event_data.h"
 #include "item.h"
 #include "palette.h"
@@ -58,6 +59,69 @@ void ApplyBattlerVisualsForTeraAnim(u32 battler)
     BlendPalette(OBJ_PLTT_ID(battler), 16, 16, RGB_WHITEALPHA);
 }
 
+// Checks for the TrainerID, therefore only letting player use Tera on trainers with Tera Pokemon
+bool32 IsTeraTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_JEFFREY:
+        case TRAINER_PING:
+        case TRAINER_LINDA:
+        case TRAINER_CINDY:
+        case TRAINER_MARTHA:
+        case TRAINER_GRACE:
+        case TRAINER_RENJI:
+        case TRAINER_LIZZIE:
+        case TRAINER_MIRANDA:
+        case TRAINER_GORDO:
+        case TRAINER_DAHLIA_NORMAL:
+        case TRAINER_DAHLIA_HARD:
+        case TRAINER_CAITLIN_CASTLE:
+        case TRAINER_DARACH:
+        case TRAINER_DARACH_CAIT:
+        case TRAINER_THORTON_A:
+        case TRAINER_THORTON_B:
+        case TRAINER_THORTON_C:
+        case TRAINER_LUCY:
+        case TRAINER_DOUG:
+        case TRAINER_ED:
+        case TRAINER_WANDA:
+        case TRAINER_COSMO:
+        case TRAINER_JONAH:
+        case TRAINER_MILLER:
+        case TRAINER_MARKUS:
+        case TRAINER_DARIN:
+        case TRAINER_CARA:
+        case TRAINER_CYBIL:
+        case TRAINER_DEBRA:
+        case TRAINER_KIM_P:
+        case TRAINER_SHEGO:
+        case TRAINER_LEA_AND_PIA:
+        case TRAINER_AIMI:
+        case TRAINER_ESTELLE:
+        case TRAINER_ATLAS:
+        case TRAINER_DUBU:
+        case TRAINER_ERA:
+        case TRAINER_SPENSER_1:
+        case TRAINER_SPENSER_2:
+        case TRAINER_SPENSER_3:
+        case TRAINER_SPENSER_4:
+        case TRAINER_SPENSER_5:
+        case TRAINER_SPENSER_6:
+        case TRAINER_WILL_1:
+        case TRAINER_BUGSY_1:
+        case TRAINER_KOGA_1:
+        case TRAINER_GIOVANNI:
+        case TRAINER_BRUNO_1:
+        case TRAINER_JASMINE_1:
+        case TRAINER_KAREN_1:
+        case TRAINER_MORTY_2:
+        case TRAINER_LANCE_1:
+            return TRUE;
+    }
+    return FALSE;
+}
+
 // Returns whether a battler can Terastallize.
 bool32 CanTerastallize(u32 battler)
 {
@@ -74,7 +138,11 @@ bool32 CanTerastallize(u32 battler)
     {
         // Skip all other checks in this block, go to HasTrainerUsedGimmick
     }
-    else if (!CheckBagHasItem(ITEM_TERA_ORB, 1))
+    else if (!IsTeraTrainer(TRAINER_BATTLE_PARAM.opponentA))
+    {
+        return FALSE;
+    }
+    /*else if (!CheckBagHasItem(ITEM_TERA_ORB, 1))
     {
         return FALSE;
     }
@@ -85,7 +153,7 @@ bool32 CanTerastallize(u32 battler)
     else if (!FlagGet(B_FLAG_TERA_ORB_CHARGED))
     {
         return FALSE;
-    }
+    }*/
 
     // Check if Trainer has already Terastallized.
     if (HasTrainerUsedGimmick(battler, GIMMICK_TERA))
