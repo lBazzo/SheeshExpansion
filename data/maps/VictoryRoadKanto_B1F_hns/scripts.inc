@@ -44,7 +44,7 @@ VictoryRoadKanto_B1F_Text_JugglerHortonAfter:
 
 VictoryRoadKanto_B1F_Text_PsychicJaredSeen:
 	.string "Challenging me means taking on a\n"
-	.string "LEGENDARY POKéMON!\l"
+	.string "LEGENDARY Pokémon!\l"
 	.string "Doesn't that terrify you?$"
 
 VictoryRoadKanto_B1F_Text_PsychicJaredBeaten:
@@ -52,7 +52,7 @@ VictoryRoadKanto_B1F_Text_PsychicJaredBeaten:
 
 VictoryRoadKanto_B1F_Text_PsychicJaredAfter:
 	.string "I guess if all I have going for me is my\n"
-	.string "LEGENDARY POKéMON, then I don't\l"
+	.string "LEGENDARY Pokémon, then I don't\l"
 	.string "deserve to win with it.$"
 
 VictoryRoadKanto_B1F_Text_MediumRebeccaSeen:

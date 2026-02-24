@@ -114,19 +114,19 @@ PokemonLeague_KarensRoom_Text_Rematch:
     .string "I trust you haven't forgotten\n"
     .string "my belief:\p"
     .string "True strength arises from trust\n"
-    .string "in one's POKéMON.\p"
+    .string "in one's Pokémon.\p"
     .string "Since our last encounter, my\n"
-    .string "bond with my POKéMON has\l"
+    .string "bond with my Pokémon has\l"
     .string "deepened further.\p"
     .string "Are you ready to face a team\n"
     .string "united by an unbreakable bond?\p"
     .string "Show me the power of the bond\n"
-    .string "with your POKéMON.$"
+    .string "with your Pokémon.$"
 
 PokemonLeague_KarensRoom_Text_BeforeIntro:
     .string "I am KAREN of the ELITE FOUR.\p"
     .string "You're {PLAYER}? How amusing.\p"
-    .string "I love DARK-type POKéMON.\p"
+    .string "I love DARK-type Pokémon.\p"
     .string "I find their wild, tough image\n"
     .string "to be so appealing. And they're\l"
     .string "so strong.\p"
@@ -136,7 +136,7 @@ PokemonLeague_KarensRoom_Text_KarenDeclined:
 	.string "Boo, you're no fun.$"
 
 PokemonLeague_KarensRoom_Text_AfterIntro:
-	.string "Think you can take on my POKéMON?$"
+	.string "Think you can take on my Pokémon?$"
 
 PokemonLeague_KarensRoom_Text_KarenFightConfirmed:
 	.string "Just try to entertain me.$"
@@ -149,8 +149,8 @@ PokemonLeague_KarensRoom_Text_Beaten:
     .string "in a trainer.$"
 
 PokemonLeague_KarensRoom_Text_Defeat:
-    .string "Strong POKéMON.\p"
-    .string "Weak POKéMON.\p"
+    .string "Strong Pokémon.\p"
+    .string "Weak Pokémon.\p"
     .string "That is only the selfish\n"
     .string "perception of people.\p"
     .string "Truly skilled trainers should\n"
@@ -160,8 +160,8 @@ PokemonLeague_KarensRoom_Text_Defeat:
     .string "Go on--the CHAMPION is waiting.$"
 
 PokemonLeague_KarensRoom_Text_KarenDefeatedMorty:
-    .string "Strong POKéMON.\p"
-    .string "Weak POKéMON.\p"
+    .string "Strong Pokémon.\p"
+    .string "Weak Pokémon.\p"
     .string "That is only the selfish\n"
     .string "perception of people.\p"
     .string "Truly skilled trainers should\n"
@@ -273,7 +273,7 @@ PokemonLeague_KarensRoom_Text_MortyBeforeIntro:
 	.string "trainer I was back then.\p"
 	.string "After a lifetime of preparation, I have\n"
 	.string "finally realised the future in which I\l"
-	.string "tamed the LEGENDARY POKéMON.\p"
+	.string "tamed the LEGENDARY Pokémon.\p"
 	.string "Tell me, {PLAYER}. Do you still think you\n"
 	.string "are on our level?$"
 

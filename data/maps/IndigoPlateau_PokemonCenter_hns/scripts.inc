@@ -44,12 +44,12 @@ IndigoPlateau_Text_ShigyNinja:
 	.string "Now, go get em'!$"
 
 IndigoPlateau_Text_Blackbelt:
-	.string "The POKéMON LEAGUE is not taking\n"
+	.string "The Pokémon LEAGUE is not taking\n"
 	.string "new challengers at the moment.\p"
 	.string "Please check back later.$"
 
 IndigoPlateau_Text_CooltrainerM:
-    .string "At the POKéMON LEAGUE, you'll get\n"
+    .string "At the Pokémon LEAGUE, you'll get\n"
     .string "tested by the ELITE FOUR.\p"
     .string "You have to beat them all. If you\n"
     .string "lose, you have to start all over!$"
@@ -87,10 +87,10 @@ IndigoPlateau_Silver_Battle_Chikorita::
 
 IndigoPlateau_Text_RivalEntrance1:
     .string "Hold it.\p"
-    .string "You're going to take the POKéMON\n"
+    .string "You're going to take the Pokémon\n"
     .string "LEAGUE challenge now?\p"
     .string "That's not going to happen.\p"
-    .string "My super-well-trained POKéMON\n"
+    .string "My super-well-trained Pokémon\n"
     .string "are going to pound you.\p"
     .string "{PLAYER}!\n"
     .string "I challenge you!$"
@@ -102,7 +102,7 @@ IndigoPlateau_Text_RivalWin:
 IndigoPlateau_Text_RivalAfter:
     .string "…Darn… I still can't win…\p"
     .string "I… I have to think more about my\n"
-    .string "POKéMON…\p"
+    .string "Pokémon…\p"
     .string "Humph! Try not to lose!$"
 
 IndigoPlateau_EventScript_Psychic::
@@ -212,7 +212,7 @@ IndigoPlateau_PokemonCenter_Text_SpencerExplainBP:
     .string "While there is some part of me that is\n"
     .string "curious as to how I would fare against\l"
     .string "you, now is not the time for that.\p"
-    .string "You're here to challenge the POKéMON\n"
+    .string "You're here to challenge the Pokémon\n"
     .string "LEAGUE, aren't you?\p"
     .string "In that case, let us lend you some\n"
     .string "assistance.\p"
@@ -1432,7 +1432,7 @@ IndigoPlateau_Text_ThortonIntro:
     .string "precisely this moment, {PLAYER}.\p"
     .string "I'll bet you've already decided on what\n"
     .string "team you're bringing to challenge the\l"
-    .string "POKéMON LEAGUE, haven't you?\p"
+    .string "Pokémon LEAGUE, haven't you?\p"
     .string "Personally, I've already analysed all of\n"
     .string "their weaknesses.\p"
     .string "It's not very interesting when the\n"

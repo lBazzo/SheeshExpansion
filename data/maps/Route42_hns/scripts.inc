@@ -202,7 +202,7 @@ Route42_EventScript_Item_UltraBall::
 
 Route42_Text_FisherTullySeen:
 	.string "Let me demonstrate the power\n"
-	.string "of the POKéMON I caught!$"
+	.string "of the Pokémon I caught!$"
 
 Route42_Text_FisherTullyBeaten:
 	.string "What? That's not right.\n"
@@ -210,7 +210,7 @@ Route42_Text_FisherTullyBeaten:
 
 Route42_Text_FisherTullyAfter:
 	.string "I want to become the trainer\n"
-	.string "CHAMP using the POKéMON I\l"
+	.string "CHAMP using the Pokémon I\l"
 	.string "caught myself.\p"
 	.string "That's the best part of fishing!$"
 
@@ -238,7 +238,7 @@ Route42_Text_PokemaniacShaneBeaten:
 Route42_Text_PokemaniacShaneAfter:
 	.string "You're working on a POKéDEX?\p"
 	.string "Wow, you must know some\n"
-	.string "pretty rare POKéMON!\p"
+	.string "pretty rare Pokémon!\p"
 	.string "May I please see it?\n"
 	.string "Please?$"
 

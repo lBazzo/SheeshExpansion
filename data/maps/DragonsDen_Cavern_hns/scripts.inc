@@ -168,17 +168,17 @@ DragonsDen_Cavern_Text_ClairDescribeDragonclaw:
 
 DragonsDen_Cavern_Text_ClairWhatsTheMatter:
     .string "What's the matter? Aren't\n"
-    .string "you going on to the POKéMON\l"
+    .string "you going on to the Pokémon\l"
     .string "LEAGUE?\p"
     .string "After you become CHAMPION, you\n"
     .string "can rematch any GYM LEADER you\l"
     .string "want.\p"
-    .string "Go to the POKéMON LEAGUE.\p"
+    .string "Go to the Pokémon LEAGUE.\p"
     .string "Do you know how to get there?\p"
     .string "From here, go to NEW BARK TOWN.\p"
-    .string "Then SURF east to POKéMON LEAGUE.\p"
+    .string "Then SURF east to Pokémon LEAGUE.\p"
     .string "The route there is very tough.\p"
-    .string "Don't you dare lose at the POKéMON\n"
+    .string "Don't you dare lose at the Pokémon\n"
     .string "LEAGUE!\p"
     .string "If you do, I'll feel even worse\n"
     .string "about having lost to you!\p"
@@ -223,7 +223,7 @@ DragonsDen_Cavern_EventScript_Item_PP_Max::
 DragonsDen_Cavern_Text_DragonShrineSign:
     .string "DRAGON SHRINE\p"
     .string "A shrine honoring the dragon\n"
-    .string "POKéMON\p"
+    .string "Pokémon\p"
     .string "said to have lived in DRAGON'S\n"
     .string "DEN.$"
 
@@ -231,11 +231,11 @@ DragonsDen_Cavern_Text_SilverTraining1:
     .string "…\n"
     .string "What? {PLAYER}?\p"
     .string "…No, I won't battle you now…\p"
-    .string "My POKéMON aren't ready to beat\n"
+    .string "My Pokémon aren't ready to beat\n"
     .string "you.\p"
     .string "I can't push them too hard now.\p"
     .string "I have to be disciplined to become\n"
-    .string "the greatest POKéMON trainer…$"
+    .string "the greatest Pokémon trainer…$"
 
 DragonsDen_Cavern_Text_SilverTraining2:
     .string "…\p"
@@ -312,13 +312,13 @@ DragonsDen_Cavern_Text_BugCatcherEd_AfterBattle:
 	.string "bath.$"
 
 DragonsDen_Cavern_Text_BugCatcherDoug_Seen:
-	.string "Why don't girls like my POKéMON?$"
+	.string "Why don't girls like my Pokémon?$"
 
 DragonsDen_Cavern_Text_BugCatcherDoug_Beaten:
 	.string "No good!$"
 
 DragonsDen_Cavern_Text_BugCatcherDoug_AfterBattle:
-	.string "My POKéMON are cool. My mum says so.\n"
+	.string "My Pokémon are cool. My mum says so.\n"
 	.string "You believe me, right...?$"
 
 DragonsDen_Cavern_EventScript_Jonah::
@@ -460,7 +460,7 @@ DragonsDen_Cavern_Movement_CosmoLeft::
 	step_end
 
 DragonsDen_Cavern_Text_CooltrainerCosmo_Before:
-	.string "Do you think there are POKéMON in\n"
+	.string "Do you think there are Pokémon in\n"
 	.string "space?$"
 
 DragonsDen_Cavern_Text_CooltrainerCosmo_Beaten:
@@ -949,7 +949,7 @@ DragonsDen_Cavern_Text_SpenserIntro:
 	.string "They forget that in the heat of battle,\n"
 	.string "those who can think on their feet and\l"
 	.string "trust their minds are synched with\l"
-	.string "their POKéMON used to reign supreme.$"
+	.string "their Pokémon used to reign supreme.$"
 
 DragonsDen_Cavern_Text_SpenserPostIntro:
 	.string "I came here to wait because I believed\n"
@@ -958,10 +958,10 @@ DragonsDen_Cavern_Text_SpenserPostIntro:
 	.string "Then here are my terms.\p"
 	.string "Pick a number from one to six.\n"
 	.string "The higher the number you pick,\l"
-	.string "the more POKéMON I'll trust to use\l"
+	.string "the more Pokémon I'll trust to use\l"
 	.string "terastallization of their own accord,\l"
 	.string "and the bigger your reward will be.\p"
-	.string "If you trust your POKéMON, prove it to\n"
+	.string "If you trust your Pokémon, prove it to\n"
 	.string "me here and now!$"
 
 DragonsDen_Cavern_Text_SpenserDeclined:
@@ -975,25 +975,25 @@ DragonsDen_Cavern_Text_SpenserOnlyOneTera:
 	.string "Hm! You're wimpier than I expected, but\n"
 	.string "fine.\p"
 	.string "Come at me with everything you and your\n"
-	.string "POKéMON have! Kaaah!$"
+	.string "Pokémon have! Kaaah!$"
 
 DragonsDen_Cavern_Text_SpenserTwoToFiveTera:
 	.string "Hm! Good answer! I knew I was right\n"
 	.string "about you!\p"
 	.string "Come at me with everything you and your\n"
-	.string "POKéMON have! Kaaah!$"
+	.string "Pokémon have! Kaaah!$"
 
 DragonsDen_Cavern_Text_SpenserSixTera:
 	.string "Grahaha! Now you're just being cocky!\n"
 	.string "Not that I mind at all!\p"
 	.string "Come at me with everything you and your\n"
-	.string "POKéMON have! Kaaah!$"
+	.string "Pokémon have! Kaaah!$"
 
 DragonsDen_Cavern_Text_SpenserNoReward:
 	.string "Well, you won. Not that you deserve\n"
 	.string "anything for your victory, given how\l"
 	.string "little belief you've shown in your\l"
-	.string "POKéMON. How shameful...\p"
+	.string "Pokémon. How shameful...\p"
 	.string "Grahaha! Only joking. A win is a win.\p"
 	.string "I lost and you won. That's all there is\n"
 	.string "to it.$"
@@ -1002,7 +1002,7 @@ DragonsDen_Cavern_Text_SpenserNormalReward:
 	.string "Hm! You've some courage in you, that's\n"
 	.string "for sure.\p"
 	.string "Though there's room for improvement,\n"
-	.string "the bond between you and your POKéMON\l"
+	.string "the bond between you and your Pokémon\l"
 	.string "is still worthy of some praise.\p"
 	.string "Well? Don't just stand there, take this\n"
 	.string "with you!$"

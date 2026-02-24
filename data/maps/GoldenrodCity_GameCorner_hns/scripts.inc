@@ -866,7 +866,7 @@ GoldenrodCity_GameCorner_Text_CooltrainerF:
     .string "I won't quit until I win!$"
 
 GoldenrodCity_GameCorner_Text_Gentleman:
-    .string "I taught BLIZZARD to my POKéMON.\p"
+    .string "I taught BLIZZARD to my Pokémon.\p"
     .string "It was hard to get enough coins for\n"
     .string "it, but it was worth it.$"
 
@@ -896,7 +896,7 @@ GoldenrodCity_GameCorner_Text_NeedCoinCaseForCoins:
 
 GoldenrodCity_GameCorner_Text_NoRoomForPokemon:
 	.string "Hm? You don't seem to have any room\n"
-	.string "for this POKéMON.$"
+	.string "for this Pokémon.$"
 
 GoldenrodCity_GameCorner_Text_WhichPrize:
 	.string "Which prize would you like?$"

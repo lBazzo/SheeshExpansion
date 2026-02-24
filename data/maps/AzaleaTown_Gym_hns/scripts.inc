@@ -636,19 +636,19 @@ AzaleaTown_Gym_EventScript_Statue2::
 	end
 
 AzaleaTown_Gym_Text_GymStatue:
-	.string "AZALEA POKéMON GYM$"
+	.string "AZALEA Pokémon GYM$"
 
 AzaleaTown_Gym_Text_GymStatueCertified:
-	.string "AZALEA TOWN POKéMON GYM\p"
+	.string "AZALEA TOWN Pokémon GYM\p"
 	.string "BUGSY'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 AzaleaTown_Gym_Text_BugsyIntro:
 	.string "I'm BUGSY!\p"
 	.string "I never lose when it comes\n"
-	.string "to bug POKéMON.\p"
+	.string "to bug Pokémon.\p"
 	.string "My research is going to make me the\n"
-	.string "authority on bug POKéMON!\p"
+	.string "authority on bug Pokémon!\p"
 	.string "For example, did you know\n"
 	.string "that the move CUT is\l"
 	.string "actually a BUG-type move?\p"
@@ -657,7 +657,7 @@ AzaleaTown_Gym_Text_BugsyIntro:
 
 AzaleaTown_Gym_Text_BugsyBeaten:
 	.string "Whoa, amazing! You're an\n"
-	.string "expert on POKéMON!\p"
+	.string "expert on Pokémon!\p"
 	.string "My research isn't complete\n"
 	.string "yet.\p"
 	.string "OK, you win. Take this\n"
@@ -673,7 +673,7 @@ AzaleaTown_Gym_Text_FuryCutterSpeech:
 	.string "I discovered it!$"
 
 AzaleaTown_Gym_Text_BugsyAdvice:
-	.string "Bug POKéMON are deep. There are\n"
+	.string "Bug Pokémon are deep. There are\n"
 	.string "many mysteries to be explored.\p"
 	.string "Study your favorites thoroughly.$"
 
@@ -692,10 +692,10 @@ AzaleaTown_Gym_Text_BugsyRematchDefeat:
 AzaleaTown_Gym_Text_GymGuide:
 	.string "Yo, challenger!\p"
 	.string "BUGSY's young, but his knowledge\n"
-	.string "of bug POKéMON is for real.\p"
+	.string "of bug Pokémon is for real.\p"
 	.string "It's going to be tough\n"
 	.string "without my advice.\p"
-	.string "Let's see… BUGSY's bagworm POKéMON\n"
+	.string "Let's see… BUGSY's bagworm Pokémon\n"
 	.string "knows a move that covers its\l"
 	.string "ROCK-type weakness.\p"
 	.string "He's also developed a new verison\n"
@@ -707,4 +707,4 @@ AzaleaTown_Gym_Text_GymGuideWin:
 	.string "Well done! That was a great\n"
 	.string "clash of talented young trainers.\p"
 	.string "With people like you, the\n"
-	.string "future of POKéMON is bright!$"
+	.string "future of Pokémon is bright!$"

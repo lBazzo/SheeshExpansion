@@ -92,7 +92,7 @@ Route37_Text_TwinsAnnAndAnne1_Beaten:
 
 Route37_Text_TwinsAnnAndAnne1_After:
 	.string "ANN: I can tell what my sister and\n"
-	.string "my POKéMON are thinking.$"
+	.string "my Pokémon are thinking.$"
 
 Route37_Text_TwinsAnnAndAnne2_Seen:
 	.string "ANNE: ANN and I are in this\n"
@@ -104,10 +104,10 @@ Route37_Text_TwinsAnnAndAnne2_Beaten:
 
 Route37_Text_TwinsAnnAndAnne2_After:
 	.string "ANNE: We share the same feelings as\n"
-	.string "our POKéMON.$"
+	.string "our Pokémon.$"
 
 Route37_Text_PsychicGreg_Seen:
-	.string "POKéMON can't do a thing if they are\n"
+	.string "Pokémon can't do a thing if they are\n"
 	.string "asleep.\p"
 	.string "I'll show you how scary that is!$"
 
@@ -115,7 +115,7 @@ Route37_Text_PsychicGreg_Beaten:
 	.string "I lost. That's pretty sad…$"
 
 Route37_Text_PsychicGreg_After:
-	.string "Putting POKéMON to sleep or paralyz-\n"
+	.string "Putting Pokémon to sleep or paralyz-\n"
 	.string "ing them are good battle techniques.$"
 
 Route37_Text_Sunny_Meet:
@@ -138,7 +138,7 @@ Route37_Text_Sunny_GaveGift:
 	.string "… What was it now…\p"
 	.string "…\p"
 	.string "Oh! I remember now!\p"
-	.string "A POKéMON that knows electric\n"
+	.string "A Pokémon that knows electric\n"
 	.string "moves should hold it.\p"
 	.string "My sis MONICA said it powers up\n"
 	.string "electric moves!$"
@@ -178,7 +178,7 @@ Route37_EventScript_BugCatcherArnie::
 	end
 
 Route37_Text_CamperIvanSeen:
-	.string "I've been getting POKéMON data off\n"
+	.string "I've been getting Pokémon data off\n"
 	.string "my radio. I think I'm good.$"
 
 Route37_Text_CamperIvanBeaten:
@@ -186,7 +186,7 @@ Route37_Text_CamperIvanBeaten:
 
 Route37_Text_CamperIvanAfter:
 	.string "Music on the radio changes the\n"
-	.string "moods of wild POKéMON.$"
+	.string "moods of wild Pokémon.$"
 
 Route37_Text_PicnickerBrookeSeen:
 	.string "My boyfriend's weak, so I can't rely\n"
@@ -196,7 +196,7 @@ Route37_Text_PicnickerBrookeBeaten:
 	.string "Oh, my! You're so strong!$"
 
 Route37_Text_PicnickerBrookeAfter:
-	.string "I can count on my POKéMON more than\n"
+	.string "I can count on my Pokémon more than\n"
 	.string "my boyfriend.$"
 
 Route37_Text_BirdKeeperBryanSeen:
@@ -206,7 +206,7 @@ Route37_Text_BirdKeeperBryanBeaten:
 	.string "Yikes! Not fast enough!$"
 
 Route37_Text_BirdKeeperBryanAfter:
-	.string "Some POKéMON flee right away.\p"
+	.string "Some Pokémon flee right away.\p"
 	.string "Try catching them with KURT's\n"
 	.string "FAST BALL.\p"
 	.string "Whenever I find a ASPEAR BERRY, I\n"
@@ -214,7 +214,7 @@ Route37_Text_BirdKeeperBryanAfter:
 	.string "He turns it into a custom BALL.$"
 
 Route37_Text_BugCatcherArnieSeen:
-	.string "I'll go anywhere if bug POKéMON\n"
+	.string "I'll go anywhere if bug Pokémon\n"
 	.string "appear there.$"
 
 Route37_Text_BugCatcherArnieBeaten:

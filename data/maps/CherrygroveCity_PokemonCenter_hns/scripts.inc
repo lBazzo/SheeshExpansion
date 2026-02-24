@@ -52,7 +52,7 @@ CherrygroveCity_PokemonCenter_EventScript_Nurse::
 
 CherryGrove_Pokecenter_Text_Fisher:
 	.string "It's great. I can store any number\n"
-	.string "of POKéMON, and it's all free.$"
+	.string "of Pokémon, and it's all free.$"
 
 CherryGrove_Pokecenter_Text_Gentleman:
 	.string "That PC is free for any\n"
@@ -157,18 +157,18 @@ CherryGrove_Pokecenter_Text_ScaleAttendantIntro::
 	.string "carefully before you spend them.\p"
 	.string "If you need any more information, don't\n"
 	.string "be afraid to ask. You can find us in any\l"
-	.string "POKéMON CENTER.$"
+	.string "Pokémon CENTER.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantPostIntro::
     .string "So, how may I help you today, {PLAYER}?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantChangeNickname::
     .string "You want to change a nickname? Which\n"
-	.string "POKéMON's nickname needs changing?$"
+	.string "Pokémon's nickname needs changing?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantDeclineToChangeNickname::	
 	.string "That's perfectly fine. I think your\n"
-	.string "POKéMON's current name suits it too.$"
+	.string "Pokémon's current name suits it too.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantChangeThisName::
 	.string "Its current name is {STR_VAR_1}.\n"	
@@ -180,7 +180,7 @@ CherryGrove_Pokecenter_Text_ScaleAttendantLetsChangeName::
 
 CherryGrove_Pokecenter_Text_ScaleAttendantNameHasBeenChanged::
 	.string "Splendid. Then it shall be done. Your\n"	
-	.string "POKéMON's new name is {STR_VAR_1}.$"
+	.string "Pokémon's new name is {STR_VAR_1}.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantCantNicknameEgg::
 	.string "Oh, dear me. I'm afraid that an EGG\n"
@@ -327,10 +327,10 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantCouldntApplyStatus::
 
 CherryGrove_Pokecenter_Text_ScaleAttendantApplyWhatStatus::
 	.string "Which status effect would you like me\n"
-	.string "to apply to your POKéMON?$"
+	.string "to apply to your Pokémon?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldBeStatused::
-	.string "I see. And which POKéMON would you like\n"
+	.string "I see. And which Pokémon would you like\n"
 	.string "me to apply said status to?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantStatusHasBeenApplied::
@@ -395,7 +395,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantTryForgetMove::
 	end
 
 CherryGrove_Pokecenter_Text_ScaleAttendantWhichMonShouldForget::
-	.string "Which POKéMON would you like forget\n"
+	.string "Which Pokémon would you like forget\n"
 	.string "a move?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantWhichMoveShouldBeForgotten::
@@ -472,19 +472,19 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantCantTeachEgg::
 	end
 
 CherryGrove_Pokecenter_Text_ScaleAttendantChooseRelearnMon::
-	.string "Which POKéMON would you like to teach a\n"
+	.string "Which Pokémon would you like to teach a\n"
 	.string "move to?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantTeachWhichMove::
 	.string "I see. And which move would you like\n"
-	.string "your POKéMON to learn?$"
+	.string "your Pokémon to learn?$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale::
 	.string "{PLAYER} handed over one HEART SCALE\n"
 	.string "in exchange.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantDontHaveMoveToTeachPokemon::
-	.string "Oh, dear me. I'm afraid that POKéMON has\n"
+	.string "Oh, dear me. I'm afraid that Pokémon has\n"
 	.string "no old moves that it can learn.$"
 
 CherryGrove_Pokecenter_Text_ScaleAttendantComeBackWithHeartScale::

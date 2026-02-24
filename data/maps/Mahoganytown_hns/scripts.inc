@@ -338,7 +338,7 @@ MahoganyTown_Text_RagecandybarSign:
     .string "a RAGECANDYBAR!$"
 
 MahoganyTown_Text_GymSign:
-    .string "MAHOGANY TOWN POKéMON GYM\p"
+    .string "MAHOGANY TOWN Pokémon GYM\p"
     .string "LEADER: PRYCE\p"
     .string "The Teacher of Winter's Harshness$"
 
@@ -463,25 +463,25 @@ MahoganyTown_Text_DarachHardAfter:
 	.string "your next fight?$"
 
 MahoganyTown_Text_DarachHealWhichMon:
-	.string "You wish to heal a POKéMON?\n"
+	.string "You wish to heal a Pokémon?\n"
 	.string "Of course. Who would you like to heal?$"
 
 MahoganyTown_Text_DarachMonHealed:
-	.string "Your POKéMON has been restored to full\n"
+	.string "Your Pokémon has been restored to full\n"
 	.string "health.$"
 	.string "I'll give you a small bonus for choosing\n"
 	.string "this option later as well, of course.$"
 
 MahoganyTown_Text_DarachCantHealFaintedMon:
 	.string "I'm afraid that's not possible. I cannot\n"
-	.string "heal a fainted POKéMON.$"
+	.string "heal a fainted Pokémon.$"
 
 MahoganyTown_Text_DarachGiveWhichItem:
 	.string "You'd like to equip an item to a\n"
-	.string "POKéMON? Which item would you like?$"
+	.string "Pokémon? Which item would you like?$"
 
 MahoganyTown_Text_DarachGiveItemToWhichMon:
-	.string "Of course. And which POKéMON should\n"
+	.string "Of course. And which Pokémon should\n"
 	.string "hold it?$"
 
 MahoganyTown_Text_DarachItemAndMonConfirmation:
@@ -494,11 +494,11 @@ MahoganyTown_Text_DarachItemGiven:
 
 MahoganyTown_Text_DarachCantGiveItemToFaintedMon:
 	.string "I'm afraid that's not possible. I cannot\n"
-	.string "give an item to a fainted POKéMON.$"
+	.string "give an item to a fainted Pokémon.$"
 
 MahoganyTown_Text_DarachCantGiveItemToMonHoldingAnItem:
 	.string "I'm afraid that's not possible. I cannot\n"
-	.string "give an item to a POKéMON holding one.$"
+	.string "give an item to a Pokémon holding one.$"
 
 MahoganyTown_Text_DarachConfirmDoNothing:
 	.string "You don't want me do anything for you?\n"
@@ -552,7 +552,7 @@ MahoganyTown_Text_DarachCaitlinNeedTwoMons:
 	.string "Darach: I respect your enthusiasm,\n"
 	.string "but...\p"
 	.string "It appears you don't have enough\n"
-	.string "POKéMON on you battle us in this way.\p"
+	.string "Pokémon on you battle us in this way.\p"
 	.string "Perhaps if you make some additions to\n"
 	.string "your party, we may do as you wish.$"
 

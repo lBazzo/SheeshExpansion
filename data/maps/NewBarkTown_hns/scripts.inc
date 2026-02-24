@@ -250,13 +250,13 @@ NewBarkTown_Movement_FaceDown:
 	step_end
 
 NewBarkTown_Text_LabSign:
-	.string "PROF.ELM's LAB$"
+	.string "Prof.Elm's Lab$"
 
 NewBarkTown_Text_Door:
 	.string "The door is locked.$"
 
 NewBarkTown_Text_Wooper:
-	.string "WOOPER: Woooooop.$"
+	.string "Wooper: Woooooop.$"
 
 NewBarkTown_Text_FatManState2:
 	.string "Wow, your POKéGEAR is impressive!\n"
@@ -264,28 +264,28 @@ NewBarkTown_Text_FatManState2:
 
 NewBarkTown_Text_FatManState3:
 	.string "Yo, {PLAYER}!\p"
-	.string "I hear PROF.ELM discovered\n"
-	.string "some new POKéMON.$"
+	.string "I hear Prof.Elm discovered\n"
+	.string "some new Pokémon.$"
 
 NewBarkTown_Text_GrassGirlState2:
 	.string "I'm standing guard. Your mum said it's\n"
 	.string "too dangerous to go this way until you\l"
-	.string "have your own POKéMON.$"
+	.string "have your own Pokémon.$"
 
 NewBarkTown_Text_GrassGirlState3:
 	.string "Hi, {PLAYER}!\p"
-	.string "I hear PROF.ELM gave you a new POKéMON.\n"
+	.string "I hear Prof.Elm gave you a new Pokémon.\n"
 	.string "Go right ahead!$"
 
 NewBarkTown_Text_LassState2:
 	.string "Wait, {PLAYER}!\p"
 	.string "It's dangerous to go out\n"
-	.string "without a POKéMON!\p"
-	.string "Wild POKéMON jump out of the grass\n"
+	.string "without a Pokémon!\p"
+	.string "Wild Pokémon jump out of the grass\n"
 	.string "on the way to the next town.$"
 
 NewBarkTown_Text_LassState3:
-	.string "Oh! Your POKéMON is adorable!\n"
+	.string "Oh! Your Pokémon is adorable!\n"
 	.string "I wish I had one!$"
 
 NewBarkTown_Text_LassState4:
@@ -294,19 +294,19 @@ NewBarkTown_Text_LassState4:
 	.string "you are leaving.$"
 
 NewBarkTown_Text_LassState5:
-	.string "Call your mom on your POKéGEAR\n"
+	.string "Call your mom on your Pokégear\n"
 	.string "to let her know how you're doing.$\p"
 
 NewBarkTown_Text_Silver1:
 	.string ". . .\p"
-	.string "So this is the famous ELM\n"
-	.string "POKéMON LAB…$"
+	.string "So this is the famous Elm\n"
+	.string "Pokémon Lab…$"
 
 NewBarkTown_Text_Silver2:
 	.string "…What are you staring at?$"
 
 NewBarkTown_Text_Sign:
-	.string "NEW BARK TOWN\p"
+	.string "New Bark Town\p"
 	.string "The Town Where the Winds of\n"
 	.string "a New Beginning Blow$"
 
@@ -322,7 +322,7 @@ NewBarkTown_Text_PlayersHouse:
 	.string "{PLAYER}'s House$"
 
 NewBarkTown_Text_ElmsHouse:
-	.string "PROF.ELM's House$"
+	.string "Prof.Elm's House$"
 
 @TEST FOR CHARLIE
 NewBarkTown_EventScript_CheckTotodile::

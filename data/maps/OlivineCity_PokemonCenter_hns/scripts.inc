@@ -27,7 +27,7 @@ OlivineCity_EventScript_Teacher::
 OlivineCity_Text_PokecenterFisher:
 	.string "The SAILOR in the OLIVINE CAFE\n"
 	.string "next door is really generous.\p"
-	.string "He taught my POKéMON STRENGTH.\p"
+	.string "He taught my Pokémon STRENGTH.\p"
 	.string "Now it can move big boulders\n"
 	.string "without breaking a sweat.$"
 
@@ -35,7 +35,7 @@ OlivineCity_Text_PokecenterTeacher:
 	.string "There's a person in CIANWOOD\n"
 	.string "CITY across the sea.\p"
 	.string "I heard him bragging about his\n"
-	.string "rare POKéMON all the time.$"
+	.string "rare Pokémon all the time.$"
 
 OlivineCity_EventScript_StarterFreeTutor::
 	lock
@@ -80,19 +80,19 @@ OlivineCity_EventScript_StarterFreeTutorExit::
 	end
 
 OlivineCity_Text_PokecenterStarterFreeTutorIntro:
-	.string "Your starter POKéMON is your best\n"
+	.string "Your starter Pokémon is your best\n"
 	.string "friend, am I right?\p"
 	.string "Yup, I'm right! You know what's good!\p"
-	.string "Maybe it's not the POKéMON you finish\n"
+	.string "Maybe it's not the Pokémon you finish\n"
 	.string "your journey with, or the one you bring\l"
 	.string "to the most battles, but no one knows\l"
 	.string "you like your stater does!\p"
 	.string "These days, though, trainers don't\n"
-	.string "always keep their starter POKéMON with\l"
+	.string "always keep their starter Pokémon with\l"
 	.string "them anymore.\p"
 	.string "That makes me sad...\p"
 	.string "Which is why I'm willing to teach your\n"
-	.string "starter POKéMON any move it can learn,\l"
+	.string "starter Pokémon any move it can learn,\l"
 	.string "free of charge.\p"
 	.string "This way, you two can fight alongside\n"
 	.string "each other as much as possible.\p"

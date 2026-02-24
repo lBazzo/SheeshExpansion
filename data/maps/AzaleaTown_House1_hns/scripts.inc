@@ -108,7 +108,7 @@ CharcoalKiln_Text_Apprentice2:
 CharcoalKiln_Text_Apprentice3:
 	.string "I'm sorry--I forgot to thank you.\p"
 	.string "This is a FIRE STONE.\p"
-	.string "Certain FIRE-type POKéMON would be\n"
+	.string "Certain FIRE-type Pokémon would be\n"
 	.string "happy to have that.$"
 
 CharcoalKiln_Text_Apprentice4:

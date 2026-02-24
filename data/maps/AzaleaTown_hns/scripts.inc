@@ -276,7 +276,7 @@ AzaleaTown_Text_BugsyAskForHelp:
 	.string "TOWN is away right now, so there's no\l"
 	.string "one here to stop them.\p"
 	.string "I'm worried about if they try to come to\n"
-	.string "ILEX FOREST and hurt the POKéMON there\l"
+	.string "ILEX FOREST and hurt the Pokémon there\l"
 	.string "too, so I've got to go over and keep\l"
 	.string "them safe...\p"
 	.string "You seem like a capable trainer. Would\n"
@@ -323,7 +323,7 @@ AzaleaTown_Text_Youngster:
 	.string "in ILEX FOREST.\p"
 	.string "But these skinny trees make it\n"
 	.string "impossible to get through.\p"
-	.string "The CHARCOAL MAN's POKéMON\n"
+	.string "The CHARCOAL MAN's Pokémon\n"
 	.string "can CUT down trees.$"
 
 AzaleaTown_Text_Slowpoke1:
@@ -343,7 +343,7 @@ AzaleaTown_Text_Kurt3:
 
 AzaleaTown_Text_Sign:
 	.string "AZALEA TOWN\n"
-	.string "Where People and POKéMON Live in\l"
+	.string "Where People and Pokémon Live in\l"
 	.string "Happy Harmony.$"
 
 AzaleaTown_Text_KurtsHouseSign:
@@ -351,7 +351,7 @@ AzaleaTown_Text_KurtsHouseSign:
 
 AzaleaTown_Text_GymSign:
 	.string "AZALEA TOWN\n"
-	.string "POKéMON GYM\p"
+	.string "Pokémon GYM\p"
 	.string "LEADER: MISTY\p"
 	.string "The Tomboyish Mermaid$"
 

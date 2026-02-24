@@ -81,15 +81,15 @@ SafariZone_Text_Kangaskhan:
 
 SafariZone_Text_JigglypuffTrainer:
 	.string "This SAFARI ZONE is great!\n"
-	.string "I just kept going after POKéMON!\p"
+	.string "I just kept going after Pokémon!\p"
 	.string "That made my JIGGLYPUFF upset though.$"
 
 SafariZone_Text_FirstCatch:
 	.string "I have always wanted to catch my first\n"
-	.string "POKéMON at the SAFARI ZONE.$"
+	.string "Pokémon at the SAFARI ZONE.$"
 
 SafariZone_Text_SlowpokeFan:
-	.string "There are many POKéMON to choose from,\n"
+	.string "There are many Pokémon to choose from,\n"
 	.string "but nothing beats the cuteness of\l"
 	.string "SLOWPOKE.\p"
 	.string "People often say that I look like one!$"
@@ -471,7 +471,7 @@ SafariZoneGate_Text_ChallengedByThorton:
 	.string "Thorton: I am the head of the Battle\n"
 	.string "Factory.\p"
 	.string "It's an environment where trainers use\n"
-	.string "rental POKéMON to build makeshift\l"
+	.string "rental Pokémon to build makeshift\l"
 	.string "teams and prove their mastery of\l"
 	.string "battles and adaptation.\p"
 	.string "My fellow facility heads Darach and\n"

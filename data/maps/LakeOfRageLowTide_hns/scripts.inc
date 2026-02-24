@@ -28,7 +28,7 @@ LakeOfRageLowTide_EventScript_Sage::
 	end
 
 LakeOfRageLowTide_Text_Sage::
-	.string "This cave contains a POKéMON\n"
+	.string "This cave contains a Pokémon\n"
 	.string "too strong for an ordinary\l"
 	.string "trainer.$"
 
@@ -266,14 +266,14 @@ LakeOfRage_Text_FishingGuruSign:
 
 LakeOfRage_Text_FisherRaymondSeen:
     .string "No matter what I do, all I catch\n"
-    .string "are the same POKéMON…$"
+    .string "are the same Pokémon…$"
 
 LakeOfRage_Text_FisherRaymondBeaten:
     .string "My line's all tangled up…$"
 
 LakeOfRage_Text_FisherRaymondAfter:
     .string "Why can't I catch any good\n"
-    .string "POKéMON?$"
+    .string "Pokémon?$"
 
 LakeOfRage_EventScript_Wesley::
 	lock
@@ -366,7 +366,7 @@ LakeOfRage_Text_CooltrainermAaronBeaten:
     .string "Whew… Good battle.$"
 
 LakeOfRage_Text_CooltrainermAaronAfter:
-    .string "POKéMON and their trainer become\n"
+    .string "Pokémon and their trainer become\n"
     .string "powerful through constant battling.$"
 
 LakeOfRage_EventScript_Hank::
@@ -375,14 +375,14 @@ LakeOfRage_EventScript_Hank::
 	end
 
 LakeOfRage_Text_BirdKeeperHank_Seen:
-	.string "I'm raising my POKéMON. Want to battle\n"
+	.string "I'm raising my Pokémon. Want to battle\n"
 	.string "with me?$"
 
 LakeOfRage_Text_BirdKeeperHank_Beaten:
 	.string "Ack! I lost that one…$"
 
 LakeOfRage_Text_BirdKeeperHank_AfterBattle:
-	.string "If you have a specific POKéMON that you\n"
+	.string "If you have a specific Pokémon that you\n"
 	.string "want to raise, put it out first, then\n"
 	.string "switch it right away.\p"
 	.string "That's how to do it.$"
@@ -393,14 +393,14 @@ LakeOfRage_EventScript_Rex::
 	end
 
 PokefanM_Text_RexSeen:
-	.string "My POKéMON is the cutest in the\n"
+	.string "My Pokémon is the cutest in the\n"
 	.string "world.$"
 
 PokefanM_Text_RexBeaten:
-	.string "My POKéMON!$"
+	.string "My Pokémon!$"
 
 PokefanM_Text_RexAfter:
-	.string "Look how adorable my POKéMON\n"
+	.string "Look how adorable my Pokémon\n"
 	.string "acts!\p"
 	.string "Isn't it cute enough to make\n"
 	.string "your heart melt?$"
@@ -411,11 +411,11 @@ LakeOfRage_EventScript_Allan::
 	end
 
 PokefanM_Text_AllanSeen:
-	.string "My POKéMON is the coolest in the\n"
+	.string "My Pokémon is the coolest in the\n"
 	.string "world.$"
 
 PokefanM_Text_AllanBeaten:
-	.string "My POKéMON!$"
+	.string "My Pokémon!$"
 
 PokefanM_Text_AllanAfter:
 	.string "Look how cool my GRANBULL\n"

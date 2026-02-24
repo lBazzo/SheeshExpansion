@@ -106,7 +106,7 @@ VictoryRoadKanto_B2F_Text_VictorSeen:
 	.string "...\p"
 	.string "Sorry, nope. I don't believe it.\p"
 	.string "There's no way a trainer like you has\n"
-	.string "what it takes to beat the POKéMON\l"
+	.string "what it takes to beat the Pokémon\l"
 	.string "LEAGUE.\p"
 	.string "Think I'm wrong? Then let's see you\n"
 	.string "prove it to us, here and now!$"
@@ -119,7 +119,7 @@ VictoryRoadKanto_B2F_Text_VictorAfter:
 	.string "project a great aura at first glance,\l"
 	.string "but seeing you battle made it painfully\l"
 	.string "obvious. You're not just any trainer.\p"
-	.string "Go on. See what the POKéMON LEAGUE\n"
+	.string "Go on. See what the Pokémon LEAGUE\n"
 	.string "has to offer.$"
 
 VictoryRoadKanto_B2F_Text_XerxesSeen:

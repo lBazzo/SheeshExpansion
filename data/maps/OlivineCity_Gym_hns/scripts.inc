@@ -207,7 +207,7 @@ OlivineCity_Gym_Text_GymGuideWinText:
 OlivineCity_Gym_Text_GymGuidePreText:
 	.string "JASMINE, the old GYM LEADER, is at\n"
 	.string "the LIGHTHOUSE.\p"
-	.string "She's been tending to a sick POKéMON.\p"
+	.string "She's been tending to a sick Pokémon.\p"
 	.string "A strong trainer has to be\n"
 	.string "compassionate.\p"
 	.string "The replacement leaders?\n"
@@ -292,7 +292,7 @@ OlivineCity_Gym_Text_ReceivedMineralBadge:
 	.string "{PLAYER} received MINERALBADGE.$"
 
 OlivineCity_Gym_Text_JasmineBadgeSpeech:
-	.string "MINERALBADGE raises POKéMON's \n"
+	.string "MINERALBADGE raises Pokémon's \n"
 	.string "SPECIAL DEFENSE.\p"
 	.string "…Um… Please take this too…$"
 
@@ -330,10 +330,10 @@ OlivineCity_Gym_EventScript_Statue2::
 	end
 
 OlivineCity_Gym_Text_GymStatue:
-	.string "OLIVINE CITY POKéMON GYM$"
+	.string "OLIVINE CITY Pokémon GYM$"
 
 OlivineCity_Gym_Text_GymStatueCertified:
-	.string "OLIVINE CITY POKéMON GYM\p"
+	.string "OLIVINE CITY Pokémon GYM\p"
 	.string "CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
@@ -356,8 +356,8 @@ OlivineCity_Gym_Text_BlaineIntro:
 	.string "If you want to get a BADGE from us,\n"
 	.string "you'll have to take us both on, one\l"
 	.string "after the other.\p"
-	.string "We'll heal your POKéMON between fights,\n"
-	.string "but any fainted POKéMON stay down, so\l"
+	.string "We'll heal your Pokémon between fights,\n"
+	.string "but any fainted Pokémon stay down, so\l"
 	.string "make sure you don't overcommit early.$"
 
 OlivineCity_Gym_Text_BlainePostIntro:
@@ -439,12 +439,12 @@ OlivineCity_Gym_Text_SurgeIntro:
 	.string "Fine then. Let me give you the rundown.\n"
 	.string "There's two of us, one of you.\p"
 	.string "You'll fight us in a row. I'll heal your\n"
-	.string "POKéMON that are still standing between\l"
+	.string "Pokémon that are still standing between\l"
 	.string "between battles, but anyone down for\l"
 	.string "the count will be left on the\l"
 	.string "battlefield.\p"
 	.string "Not that I'm planning on letting you go\n"
-	.string "until all your POKéMON are zapped into\l"
+	.string "until all your Pokémon are zapped into\l"
 	.string "submission!$"
 
 OlivineCity_Gym_Text_SurgePostIntro:
@@ -470,13 +470,13 @@ OlivineCity_Gym_Text_SurgePostSecondFight:
 OlivineCity_Gym_Text_SurgeBadgeSpeech:
 	.string "While we're at it, take this too.\p"
 	.string "Let the whole world know how terrifying\n"
-	.string "electric POKéMON can be.$"
+	.string "electric Pokémon can be.$"
 
 OlivineCity_Gym_Text_SurgeSecondTMSpeech:
 	.string "Now get out of here. You've got that\n"
 	.string "last BADGE to earn, don't ya?\p"
 	.string "If you lose before taking on the\n"
-	.string "POKéMON LEAGUE, I'll never forgive you.\l"
+	.string "Pokémon LEAGUE, I'll never forgive you.\l"
 	.string "Give em' hell for me, yeah?$"
 
 OlivineCity_Gym_Text_SurgeAskBlaineFirst:
@@ -828,7 +828,7 @@ OlivineCity_Gym_Text_CooltrainerKevinBeaten:
 
 OlivineCity_Gym_Text_CooltrainerKevinAfter:
 	.string "That was a great battle!\p"
-	.string "You and your POKéMON are truly\n"
+	.string "You and your Pokémon are truly\n"
 	.string "outstanding!$"
 
 OlivineCity_Gym_EventScript_Amy::
@@ -865,22 +865,22 @@ OlivineCity_Gym_Text_TwinsAmyMay2Beaten:
 	.string "goodness!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay2After:
-	.string "MAY: Our  POKéMON lost!\n"
+	.string "MAY: Our  Pokémon lost!\n"
 	.string "Oh, what a shame.$"
 
 OlivineCity_Gym_Text_BugCatcherBennySeen:
-	.string "POKéMON that evolve young\n"
+	.string "Pokémon that evolve young\n"
 	.string "get stronger much faster.$"
 
 OlivineCity_Gym_Text_BugCatcherBennyBeaten:
 	.string "Just evolving isn't enough!$"
 
 OlivineCity_Gym_Text_BugCatcherBennyAfter:
-	.string "POKéMON become stronger\n"
+	.string "Pokémon become stronger\n"
 	.string "if they evolve. Really!$"
 
 OlivineCity_Gym_Text_BugCatcherAlSeen:
-	.string "My POKéMON are cool and tough!\n"
+	.string "My Pokémon are cool and tough!\n"
 	.string "I'll prove it to you!$"
 
 OlivineCity_Gym_Text_BugCatcherAlBeaten:
@@ -888,12 +888,12 @@ OlivineCity_Gym_Text_BugCatcherAlBeaten:
 
 OlivineCity_Gym_Text_BugCatcherAlAfter:
 	.string "They're so cool, but most girls\n"
-	.string "don't like my POKéMON.\p"
+	.string "don't like my Pokémon.\p"
 	.string "I don't know why…$"
 
 OlivineCity_Gym_Text_BugCatcherJoshSeen:
 	.string "Whew, you look mighty!\p"
-	.string "But my grown-up POKéMON are\n"
+	.string "But my grown-up Pokémon are\n"
 	.string "pretty tough too!$"
 
 OlivineCity_Gym_Text_BugCatcherJoshBeaten:

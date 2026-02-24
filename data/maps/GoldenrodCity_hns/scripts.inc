@@ -201,13 +201,13 @@ GoldenrodCity_Text_Silver3:
 	.string "Then let's see how good you are.$"
 
 GoldenrodCity_Text_RivalWin:
-	.string "…Humph! Useless POKéMON!\p"
+	.string "…Humph! Useless Pokémon!\p"
 	.string "Listen, you. You only won because\n"
-	.string "my POKéMON were weak.$"
+	.string "my Pokémon were weak.$"
 
 GoldenrodCity_Text_RivalAfter:
 	.string "I hate the weak.\p"
-	.string "POKéMON, trainers. It doesn't\n"
+	.string "Pokémon, trainers. It doesn't\n"
 	.string "matter who or what.\p"
 	.string "I'm going to be strong and wipe\n"
 	.string "out the weak.\p"
@@ -546,7 +546,7 @@ GoldenrodCity_Text_Youngster2:
 
 GoldenrodCity_Text_Lass:
 	.string "That man inside rates your\n"
-	.string "POKéMON nicknames.\p"
+	.string "Pokémon nicknames.\p"
 	.string "He can even rename them.$"
 
 GoldenrodCity_Text_Gramps:
@@ -569,7 +569,7 @@ GoldenrodCity_Text_Rocket2:
 	.string "What? It's none of your business!$"
 
 GoldenrodCity_Text_Rocket3:
-	.string "POKéMON? They're just tools\n"
+	.string "Pokémon? They're just tools\n"
 	.string "we use to make money!$"
 
 GoldenrodCity_Text_Rocket4:
@@ -591,11 +591,11 @@ GoldenrodCity_Text_RadioTowerSign:
 	.string "GOLDENROD CITY RADIO TOWER$"
 
 GoldenrodCity_Text_DeptStoreSign:
-	.string "Full Selection of POKéMON Goods!\p"
+	.string "Full Selection of Pokémon Goods!\p"
 	.string "GOLDENROD CITY DEPT.STORE$"
 
 GoldenrodCity_Text_GymSign:
-	.string "GOLDENROD CITY POKéMON GYM\n"
+	.string "GOLDENROD CITY Pokémon GYM\n"
 	.string "LEADER: WHITNEY\p"
 	.string "The Incredibly Pretty Girl!$"
 
@@ -613,7 +613,7 @@ GoldenrodCity_Text_GameCornerSign:
 
 GoldenrodCity_Text_NameRaterSign:
 	.string "NAME RATER\p"
-	.string "Get Your POKéMON Nicknames Rated$"
+	.string "Get Your Pokémon Nicknames Rated$"
 
 GoldenrodCity_Text_UndergroundNorthSign:
 	.string "UNDERGROUND ENTRANCE$"
@@ -626,7 +626,7 @@ GoldenrodCity_Text_FlowerShopSign:
 	.string "Blooming Beautiful FLOWER SHOP$"
 
 GoldenrodCity_Text_MoveTutorAsk:
-	.string "I can teach your POKéMON some\n"
+	.string "I can teach your Pokémon some\n"
 	.string "amazing moves!\p"
 	.string "Should I teach one?$"
 
@@ -688,7 +688,7 @@ GoldenrodCity_Text_GameCornerGuardItemLove:
 	.string "Here, take these.$"
 
 GoldenrodCity_Text_GameCornerGuardGiven:
-	.string "Isn't gambling in POKéMON battles fun?\p"
+	.string "Isn't gambling in Pokémon battles fun?\p"
 	.string "Just remember, if someone else loses,\n"
 	.string "it's because they're bad.\p"
 	.string "If you lose, it's because you're\n"
@@ -961,7 +961,7 @@ GoldenrodCity_Text_PunchTutorLetMeTeach:
 	.string "That's the sound your hands make when\n"
 	.string "striking down your enemies -\l"
 	.string "with the proper technique, of course.\p"
-	.string "I can teach your POKéMON how to punch,\n"
+	.string "I can teach your Pokémon how to punch,\n"
 	.string "jab and chop their way to the top.\p"
 	.string "Come on! What are we waiting for? Let's\n"
 	.string "start training now!$"
@@ -999,7 +999,7 @@ GoldenrodCity_Text_PunchTutorTeachingMove:
 	.string "our friend here how to throw down!$"
 
 GoldenrodCity_Text_PunchTutorMoveTaught:
-	.string "Heh, your POKéMON aren't bad!\p"
+	.string "Heh, your Pokémon aren't bad!\p"
 	.string "With your training complete, you should\n"
 	.string "be able to use that move anytime.\p"
 	.string "I eagerly await our next sparring\n"
@@ -1287,9 +1287,9 @@ GoldenrodCity_Text_SpeedDropTutorMoveTaught:
 	.string "it to me, got it?$"
 
 GoldenrodCity_Text_SpeedDropTutorFriend:
-	.string "You and your POKéMON learn pretty\n"
+	.string "You and your Pokémon learn pretty\n"
 	.string "fast, you know that?\p"
-	.string "If your POKéMON moved as fast as they\n"
+	.string "If your Pokémon moved as fast as they\n"
 	.string "learned, you probably wouldn't need my\l"
 	.string "techniques at all!$"
 
@@ -1644,12 +1644,12 @@ GoldenrodCity_EventScript_NeverMissTutorDeclined::
 GoldenrodCity_Text_NeverMissTutorDeclined::
 	.string "I see. It seems that I miscalculated.\p"
 	.string "Clearly you aren't as invested in\n"
-	.string "POKéMON battles as I thought if you're\l"
+	.string "Pokémon battles as I thought if you're\l"
 	.string "willing to make such reckless decisions.$"
 
 GoldenrodCity_Text_NeverMissTutorLetMeTeach:
 	.string "I don't deal in if's and maybe's.\p"
-	.string "POKéMON battles are a science.\p"
+	.string "Pokémon battles are a science.\p"
 	.string "If a move isn't guaranteed to hit, then\n"
 	.string "it may as well be guaranteed to miss.\p"
 	.string "I can make sure every move you make is\n"
@@ -1660,55 +1660,55 @@ GoldenrodCity_Text_NeverMissTutorWhichMove:
 	.string "testing the theory at once, shall we?$"
 
 GoldenrodCity_Text_NeverMissTutorFeintAttackWhichMon:
-	.string "Feint Attack. And which POKéMON will be\n"
+	.string "Feint Attack. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorAuraSphereWhichMon:
-	.string "Aura Sphere. And which POKéMON will be\n"
+	.string "Aura Sphere. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorAerialAceWhichMon:
-	.string "Aerial Ace. And which POKéMON will be\n"
+	.string "Aerial Ace. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorShockWaveWhichMon:
-	.string "Shock Wave. And which POKéMON will be\n"
+	.string "Shock Wave. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorMagicalLeafWhichMon:
-	.string "Magical Leaf. And which POKéMON will be\n"
+	.string "Magical Leaf. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorSmartStrikeWhichMon:
-	.string "Smart Strike. And which POKéMON will be\n"
+	.string "Smart Strike. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorSwiftWhichMon:
-	.string "Swift. And which POKéMON will be\n"
+	.string "Swift. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorMagnetBombWhichMon:
-	.string "Magnet Bomb. And which POKéMON will be\n"
+	.string "Magnet Bomb. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorOdorSleuthWhichMon:
-	.string "Odor Sleuth. And which POKéMON will be\n"
+	.string "Odor Sleuth. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorForesightWhichMon:
-	.string "Foresight. And which POKéMON will be\n"
+	.string "Foresight. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorMiracleEyeWhichMon:
-	.string "Miracle Eye. And which POKéMON will be\n"
+	.string "Miracle Eye. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorSweetScentWhichMon:
-	.string "Sweet Scent. And which POKéMON will be\n"
+	.string "Sweet Scent. And which Pokémon will be\n"
 	.string "participating in our experiment?$"			
 
 GoldenrodCity_Text_NeverMissTutorLockOnWhichMon:
-	.string "Lock-On. And which POKéMON will be\n"
+	.string "Lock-On. And which Pokémon will be\n"
 	.string "participating in our experiment?$"	
 
 GoldenrodCity_Text_NeverMissTutorTeachingMove:

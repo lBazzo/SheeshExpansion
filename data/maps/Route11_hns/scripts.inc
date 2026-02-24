@@ -13,7 +13,7 @@ Route11_EventScript_Engineer::
 	end
 
 Route11_Text_Engineer:
-	.string "I saw a strange POKéMON climbing\n"
+	.string "I saw a strange Pokémon climbing\n"
 	.string "in the trees, but it didn't\l"
 	.string "look like MANKEY...$"
 

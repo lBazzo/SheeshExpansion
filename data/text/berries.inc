@@ -13,7 +13,7 @@ Route104_Text_PlantBerriesInSoilTakeThis:
 Route104_Text_TrainersOftenMakeMonHoldBerries:
 	.string "The way you look, you must be a\n"
 	.string "TRAINER, no?\p"
-	.string "TRAINERS often make POKéMON hold\n"
+	.string "TRAINERS often make Pokémon hold\n"
 	.string "BERRIES.\p"
 	.string "It's up to you whether to grow BERRIES\n"
 	.string "or use them.$"
@@ -86,7 +86,7 @@ LilycoveCity_Text_BecauseYoureTrainer:
 LilycoveCity_Text_PokeblocksSuitPokemon:
 	.string "When it gets right down to it…\p"
 	.string "The way dignified simplicity suits me,\n"
-	.string "{POKEBLOCK}S perfectly suit POKéMON.$"
+	.string "{POKEBLOCK}S perfectly suit Pokémon.$"
 
 Route123_BerryMastersHouse_Text_YoureDeservingOfBerry:
 	.string "You may call me the BERRY MASTER.\p"
@@ -197,12 +197,12 @@ Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers:
 	.string "It's for you!$"
 
 Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries:
-	.string "A POKéMON can eat a BERRY to heal,\n"
-	.string "or you can make a POKéMON hold it.\p"
+	.string "A Pokémon can eat a BERRY to heal,\n"
+	.string "or you can make a Pokémon hold it.\p"
 	.string "In a faraway region I visited,\n"
 	.string "they had a machine that mixes\l"
 	.string "up different BERRIES and makes candies\l"
-	.string "for POKéMON.\p"
+	.string "for Pokémon.\p"
 	.string "I want some candy, too.$"
 
 SootopolisCity_Text_NameIsKiriHaveOneOfThese:

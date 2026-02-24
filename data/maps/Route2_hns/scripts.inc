@@ -29,7 +29,7 @@ Route2_EventScript_Nugget::
     end
 
 Route2_Text_BugCatcherRob_Seen:
-	.string "My bug POKéMON are tough. Prepare to\n"
+	.string "My bug Pokémon are tough. Prepare to\n"
 	.string "lose!$"
 
 Route2_Text_BugCatcherRob_Beaten:
@@ -37,7 +37,7 @@ Route2_Text_BugCatcherRob_Beaten:
 
 Route2_Text_BugCatcherRob_AfterBattle:
 	.string "I'm going to look for stronger bug\n"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 
 Route2_Text_Sign:
 	.string "ROUTE 2\p"

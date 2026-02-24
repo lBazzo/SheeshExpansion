@@ -33,13 +33,13 @@ CianwoodPokemoncenter_EventScript_FisherGiveTentacool::
 	end
 
 CianwoodPokemoncenter_Text_Fisher1:
-	.string "As far as water POKéMON go,\n"
+	.string "As far as water Pokémon go,\n"
 	.string "tentacool is the best by a nautical\l"
 	.string "mile!$"
 
 CianwoodPokemoncenter_Text_Fisher2:
 	.string "You seem like you need a water\n"
-	.string "POKéMON.\p"
+	.string "Pokémon.\p"
 	.string "Here, take this one, I have plenty.$"
 
 CianwoodPokecenter_EventScript_Lass::
@@ -53,7 +53,7 @@ CianwoodPokecenter_EventScript_Lass::
 CianwoodCity_Text_PokecenterLass:
 	.string "Did you meet the POKéMANIAC?\p"
 	.string "He's always bragging about his\n"
-	.string "rare POKéMON.$"
+	.string "rare Pokémon.$"
 
 CianwoodPokecenter_EventScript_Nerd::
 	lock
@@ -64,8 +64,8 @@ CianwoodPokecenter_EventScript_Nerd::
 	end
 
 CianwoodCity_Text_PokecenterSuperNerd:
-	.string "I love showing off the POKéMON\n"
+	.string "I love showing off the Pokémon\n"
 	.string "that I've raised.\p"
 	.string "Don't you?\p"
 	.string "I'm going to get into a bunch of\n"
-	.string "battles, and show off my POKéMON!$"
+	.string "battles, and show off my Pokémon!$"

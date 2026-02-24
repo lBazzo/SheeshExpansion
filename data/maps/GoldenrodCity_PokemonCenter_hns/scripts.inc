@@ -82,17 +82,17 @@ EcruteakCity_PokemonCenter1F_Text_Bill1:
 
 EcruteakCity_PokemonCenter1F_Text_Bill2:
 	.string "I just finished adjustments on my\n"
-	.string "POKéMON STORAGE SYSTEM.\p"
+	.string "Pokémon STORAGE SYSTEM.\p"
 	.string "You know that PC you use to store\n"
-	.string "all your POKéMON?\p"
+	.string "all your Pokémon?\p"
 	.string "I developed that myself!\p"
 	.string "Now that I've installed this one,\n"
 	.string "my PC is running at all\l"
-	.string "POKéMON CENTERS in JOHTO and KANTO.\p"
+	.string "Pokémon CENTERS in JOHTO and KANTO.\p"
 	.string "I have to hurry on back home to see my\n"
 	.string "folks.\p"
 	.string "Feel free to visit my place anytime!\n"
-    .string "Just go up from the POKéMON CENTER and\l"
+    .string "Just go up from the Pokémon CENTER and\l"
     .string "take the first left. You can't miss it.\p"
 	.string "Buh-bye!$"
 
@@ -134,7 +134,7 @@ GoldenrodCity_PokemonCenter_GrannyText:
     .string "trainer, like you!$"
 
 GoldenrodCity_PokemonCenter_GameboyKidText1:
-    .string "This is a special POKéMON CENTER.\n"
+    .string "This is a special Pokémon CENTER.\n"
     .string "The roof is made of gold!$"
 
 GoldenrodCity_PokemonCenter_GameboyKidText2:
@@ -143,12 +143,12 @@ GoldenrodCity_PokemonCenter_GameboyKidText2:
 	.string "anything!$"
 
 GoldenrodCity_PokemonCenter_LassText:
-    .string "A higher level POKéMON doesn't\n"
+    .string "A higher level Pokémon doesn't\n"
     .string "always win.\p"
     .string "After all, it may have a type\n"
     .string "disadvantage.\p"
     .string "I don't think there is a single\n"
-    .string "POKéMON that is the toughest.$"
+    .string "Pokémon that is the toughest.$"
 
 GoldenrodPokeCenter_LinkReceptionistPleaseAcceptGSBallText:
     .string "{PLAYER}, isn't it?\p"

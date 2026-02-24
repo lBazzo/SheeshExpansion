@@ -111,7 +111,7 @@ Common_Text_ReceivedMon::
 
 Common_Text_PartyIsFull::
 	.string "Whoa, wait. You can't carry any\n"
-	.string "more POKéMON.$"	
+	.string "more Pokémon.$"	
 
 Common_Text_LookCloserAtMap::
 	.string "{PLAYER} took a closer look at the\n"

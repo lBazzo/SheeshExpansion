@@ -265,11 +265,11 @@ SlowpokeWell_Text_TutorTeachingMove:
 SlowpokeWell_Text_TutorMoveTaught:
 	.string "BAM! Wasn't that loud? I told you\n"
 	.string "Bonsly is the best!\p"
-	.string "You and your POKéMON make loud noise.\n"
+	.string "You and your Pokémon make loud noise.\n"
 	.string "Make noise with us again soon!$"
 
 SlowpokeWell_Text_WellTutorFriend:
-	.string "You and your POKéMON make almost as\n"
+	.string "You and your Pokémon make almost as\n"
 	.string "much noise as Bonsly!\p"
 	.string "Have you considered going pro?\p"
 	.string "My mom says I'm the noisiest person in\n"

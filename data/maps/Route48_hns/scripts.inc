@@ -22,7 +22,7 @@ Route48_EventScript_Fidel::
 	end
 
 Route48_Text_YoungsterOwenSeen:
-	.string "There's no cheating in POKéMON.\p"
+	.string "There's no cheating in Pokémon.\p"
 	.string "Let's keep it fair and square!$"
 
 Route48_Text_YoungsterOwenBeaten:
@@ -41,7 +41,7 @@ Route48_Text_YoungsterJasonBeaten:
 	.string "Aiyaaah! I got stomped!$"
 
 Route48_Text_YoungsterJasonAfterBattle:
-	.string "I'm going to catch more POKéMON in\n"
+	.string "I'm going to catch more Pokémon in\n"
 	.string "the grass.$"
 
 Route48_Text_PsychicHermanSeen:
@@ -64,7 +64,7 @@ Route48_Text_PsychicFidelBeaten:
 Route48_Text_PsychicFidelAfterBattle:
 	.string "Strength in conviction…\p"
 	.string "You're strong because you believe\n"
-	.string "in your POKéMON.$"
+	.string "in your Pokémon.$"
 
 Route48_EventScript_Perry::
 	trainerbattle_single TRAINER_PERRY Route48_Text_BirdKeeperPerrySeen, Route48_Text_BirdKeeperPerryBeaten
@@ -78,17 +78,17 @@ Route48_EventScript_Bret::
 
 Route48_Text_BirdKeeperPerrySeen:
 	.string "Agility is the key attribute of\n"
-	.string "bird POKéMON.$"
+	.string "bird Pokémon.$"
 
 Route48_Text_BirdKeeperPerryBeaten:
 	.string "You beat me with your speed…$"
 
 Route48_Text_BirdKeeperPerryAfterBattle:
-	.string "Your POKéMON are remarkably well-\n"
+	.string "Your Pokémon are remarkably well-\n"
 	.string "trained.$"
 
 Route48_Text_BirdKeeperBretSeen:
-	.string "Check out my POKéMON. Just look\n"
+	.string "Check out my Pokémon. Just look\n"
 	.string "at their coloring and their\l"
 	.string "plumage.$"
 
@@ -96,6 +96,6 @@ Route48_Text_BirdKeeperBretBeaten:
 	.string "Shoot! Not good enough!$"
 
 Route48_Text_BirdKeeperBretAfterBattle:
-	.string "If you groom them, POKéMON get\n"
+	.string "If you groom them, Pokémon get\n"
 	.string "happy.$"
 

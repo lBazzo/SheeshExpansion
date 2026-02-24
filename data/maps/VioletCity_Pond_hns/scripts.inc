@@ -119,13 +119,13 @@ VioletCity_Pond_EventScript_HPTutorDeclined::
 
 VioletCity_Pond_Text_HPTutorLetMeTeach:
 	.string "Wait...!\p"
-	.string "Your POKéMON's hidden potential...\n"
+	.string "Your Pokémon's hidden potential...\n"
 	.string "it's off the charts!\p"
 	.string "Please, let me teach Hidden Power to\n"
-	.string "your POKéMON! You'll let me, won't you?$"
+	.string "your Pokémon! You'll let me, won't you?$"
 
 VioletCity_Pond_Text_HPTutorDeclined:
-	.string "Oh, but your POKéMON...\p"
+	.string "Oh, but your Pokémon...\p"
 	.string "They could be so much more,\n"
 	.string "if only you believed in them...$"
 
@@ -138,7 +138,7 @@ VioletCity_Pond_Text_HPTutorTeachingHP:
 	.string "demonstrate your hidden technique!$"
 
 VioletCity_Pond_Text_HPTutorHPTaught:
-	.string "Congratulations! Your POKéMON's inner\n"
+	.string "Congratulations! Your Pokémon's inner\n"
 	.string "potential has been realised.\p"
 	.string "Do return here at once if you ever lose\n"
 	.string "your way. I will help you find it again.\p"
@@ -201,7 +201,7 @@ VioletCity_Pond_Text_BirdFeederGiveBerries:
 
 VioletCity_Pond_Text_BirdFeederAfterBerriesGiven:
 	.string "The magic lady over there and I tend to\n"
-	.string "get on better with POKéMON than we do\l"
+	.string "get on better with Pokémon than we do\l"
 	.string "with people.\p"
 	.string "I guess as a trainer, you must get along\n"
 	.string "well with both. That sounds fun!$"

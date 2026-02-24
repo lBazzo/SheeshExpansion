@@ -84,12 +84,12 @@ NationalPark_Normal_Text_Teacher1:
 	.string "Pay attention, please!\p"
 	.string "…Oops, I have to quit thinking like\n"
 	.string "a teacher all the time.\p"
-	.string "You must be a POKéMON trainer.\p"
+	.string "You must be a Pokémon trainer.\p"
 	.string "Since you're working so hard, I\n"
 	.string "want you to have these.$"
 
 NationalPark_Normal_Text_Teacher1_StickyBarbAndOrbs:
-	.string "A POKéMON holding those items will\n"
+	.string "A Pokémon holding those items will\n"
 	.string "experience adverse effects, but\l"
 	.string "sometimes, a negative can become a\l"
 	.string "positive.\p"
@@ -109,7 +109,7 @@ NationalPark_Normal_Text_Teacher2:
 	.string "never go into the grass.\p"
 	.string "Trainers always want to battle…\p"
 	.string "You must have been in many battles.\n"
-	.string "Let me heal your POKéMON for you.$"
+	.string "Let me heal your Pokémon for you.$"
 
 NationalPark_Normal_Text_Persian:
 	.string "PERSIAN: Fufushaa!$"

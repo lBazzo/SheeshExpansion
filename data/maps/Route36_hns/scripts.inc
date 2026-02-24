@@ -339,7 +339,7 @@ Route36_Text_Cherrim:
 
 Route36_Text_Lass1:
 	.string "Be careful at night on this route!\p"
-	.string "I saw a POKéMON that looked like\n"
+	.string "I saw a Pokémon that looked like\n"
 	.string "GROWLITHE, but it had a scary aura\l"
 	.string "to it.$"
 
@@ -347,7 +347,7 @@ Route36_Text_Lass2_ClearedSudowoodo:
 	.string "That odd tree disappeared without\n"
 	.string "a trace.\p"
 	.string "Oh! That tree was really a\n"
-	.string "POKéMON?\p"
+	.string "Pokémon?\p"
 	.string "Wow, I learned something new today!\p"
 	.string "I can teach you something as well.\n"
 	.string "Here, take these. And don't eat them!$"
@@ -400,7 +400,7 @@ Route36_Text_PsychicMarkAfter:
 
 Route36_Text_SchoolboyAlan1Seen:
 	.string "Thanks to my studies, I'm ready\n"
-	.string "for any POKéMON!$"
+	.string "for any Pokémon!$"
 
 Route36_Text_SchoolboyAlan1Beaten:
 	.string "Oops! Computation error?$"
@@ -435,11 +435,11 @@ Route36_Text_Sign_RuinsNorth:
 
 Route36_Text_Tips1:
 	.string "TRAINER TIPS\n"
-	.string "POKéMON stats vary--even within\l"
+	.string "Pokémon stats vary--even within\l"
 	.string "the same species.\p"
 	.string "Their stats may be similar at first.\p"
 	.string "However, differences will become\n"
-	.string "pronounced as the POKéMON grow.$"
+	.string "pronounced as the Pokémon grow.$"
 
 Route36_Text_Tips2:
 	.string "TRAINER TIPS\n"
@@ -454,7 +454,7 @@ Route36_EventScript_Jack::
 	end
 
 Route36_Text_SchoolboyJack1_Seen:
-	.string "The world of POKéMON is deep.\p"
+	.string "The world of Pokémon is deep.\p"
 	.string "There are still lots of things we\n"
 	.string "don't know.\p"
 	.string "But I know more than you do!$"
@@ -466,7 +466,7 @@ Route36_Text_SchoolboyJack_After:
 	.string "There is a lot to learn.\p"
 	.string "For example…\p"
 	.string "There are 50 kinds of TMs.\p"
-	.string "Traded POKéMON level up faster.$"
+	.string "Traded Pokémon level up faster.$"
 
 Route36_EventScript_Beverly::
 	trainerbattle_single TRAINER_BEVERLY Route36_Text_PokefanFBeverly1_Seen, Route36_Text_PokefanFBeverly1_Beaten
@@ -484,7 +484,7 @@ Route36_EventScript_Krise::
 	end
 
 Route36_Text_PokefanFBeverly1_Seen:
-	.string "My POKéMON are simply darling.\p"
+	.string "My Pokémon are simply darling.\p"
 	.string "Let me tell you how proud my\n"
 	.string "darlings make me.$"
 
@@ -492,19 +492,19 @@ Route36_Text_PokefanFBeverly1_Beaten:
 	.string "I can beat you in pride, but…$"
 
 Route36_Text_PokefanFBeverly_After:
-	.string "I must say, your POKéMON are quite\n"
+	.string "I must say, your Pokémon are quite\n"
 	.string "cute, too.$"
 
 Route36_Text_PokefanmWilliam_Seen:
-	.string "We adore our POKéMON, even if they\n"
+	.string "We adore our Pokémon, even if they\n"
 	.string "dislike us.\p"
 	.string "That's what being a FAN is about.$"
 
 Route36_Text_PokefanmWilliam_Beaten:
-	.string "M-my POKéMON!$"
+	.string "M-my Pokémon!$"
 
 Route36_Text_PokefanmWilliam_After:
-	.string "I lost the battle, but my POKéMON win\n"
+	.string "I lost the battle, but my Pokémon win\n"
 	.string "the prize for being most lovely.$"
 
 Route36_Text_LassKrise_Seen:

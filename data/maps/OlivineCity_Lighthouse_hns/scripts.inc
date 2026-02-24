@@ -177,7 +177,7 @@ OlivineCity_Text_StevenGivingGift:
 
 OlivineLighthouse_Text_FullParty:
 	.string "Oh, no. You can't carry any more\n"
-	.string "POKéMON with you.\p"
+	.string "Pokémon with you.\p"
 	.string "I'll wait here while you make\n"
 	.string "room for it.$"
 
@@ -195,7 +195,7 @@ OlivineCity_Text_StevenPostIntroReadyToGift:
 OlivineCity_Text_StevenAfterGift:
 	.string "I'm sure you'll take great care of it.\p"
 	.string "As for me, I'm afraid I've got to leave\n"
-	.string "on official POKéMON LEAGUE business in\l"
+	.string "on official Pokémon LEAGUE business in\l"
 	.string "HOENN.\p"
 	.string "I'm sure you won't have much trouble\n"
 	.string "delivering the medicine to JASMINE.\p"
@@ -212,7 +212,7 @@ OlivineCity_Text_StevenBlockingLighthouse:
 	.string "ask you to leave for the time being.\p"
 	.string "This city's old GYM LEADER, JASMINE, is\n"
 	.string "currently taking care of the sick\l"
-	.string "POKéMON that normally lights up this\l"
+	.string "Pokémon that normally lights up this\l"
 	.string "lighthouse.\p"
 	.string "We're not sure exactly what's wrong\n"
 	.string "with AMPHY, so it's too dangerous to let\l"
@@ -233,7 +233,7 @@ OlivineCity_Text_StevenReadyToGift:
 	.string "please excuse my past frankness.\p"
 	.string "I am STEVEN, a trainer such as yourself.\p"
 	.string "STEVEN: I am a fan of steel type\n"
-	.string "POKéMON, much like JASMINE. It is how we\l"
+	.string "Pokémon, much like JASMINE. It is how we\l"
 	.string "initially formed our bond, as a matter\l"
 	.string "of fact.\p"
 	.string "But I'm sure you didn't go to all this\n"
@@ -241,7 +241,7 @@ OlivineCity_Text_StevenReadyToGift:
 	.string "with me.\p"
 	.string "To show just how grateful I am, I'd like\n"
 	.string "you to have one of these steel type\l"
-	.string "POKéMON. Each of them will make a\l"
+	.string "Pokémon. Each of them will make a\l"
 	.string "powerful partner, so choose wisely.$"
 
 OlivineLighthouse_EventScript_StevenLeave1::
@@ -376,7 +376,7 @@ OlivineLighthouse_Text_1FSailorIntro:
 	.string "out until you beat all the trainers on\l"
 	.string "that floor.\p"
 	.string "You are of course allowed to heal your\n"
-	.string "POKéMON between fights, but there'll be\l"
+	.string "Pokémon between fights, but there'll be\l"
 	.string "no changing your team around.\p"
 	.string "And, of course, there's an INCREDIBLE\n"
 	.string "prize waiting for you at the top!$"
@@ -427,10 +427,10 @@ OlivineLighthouse_EventScript_AdjustLastTrainer1F::
     return
 
 OlivineLighthouse_Text_1FPokefanF:
-	.string "In the past, POKéMON used to light\n"
+	.string "In the past, Pokémon used to light\n"
 	.string "the sea around OLIVINE at night.\p"
 	.string "The LIGHTHOUSE was built in honor\n"
-	.string "of those noble POKéMON.$"
+	.string "of those noble Pokémon.$"
 
 OlivineLighthouse_Text_GentlemanAlfredSeen:
 	.string "Hm? This is no place for playing.$"
@@ -439,7 +439,7 @@ OlivineLighthouse_Text_GentlemanAlfredBeaten:
 	.string "Ah! I can see that you're serious.$"
 
 OlivineLighthouse_Text_GentlemanAlfredAfter:
-	.string "Up top is a POKéMON that keeps\n"
+	.string "Up top is a Pokémon that keeps\n"
 	.string "the LIGHTHOUSE lit.\p"
 	.string "But I hear that it's sick now,\n"
 	.string "and can't be cured normally.$"
@@ -459,7 +459,7 @@ OlivineLighthouse_EventScript_Martin::
 
 OlivineLighthouse_Text_FisherMartinSeen:
 	.string "Patience is the key to both\n"
-	.string "fishing and POKéMON.$"
+	.string "fishing and Pokémon.$"
 
 OlivineLighthouse_Text_FisherMartinBeaten:
 	.string "Gwaaah!$"
@@ -491,7 +491,7 @@ OlivineLighthouse_EventScript_Carter::
 
 OlivineLighthouse_Text_PokefanmCarterSeen:
 	.string "Let me tell you, I had a hard time\n"
-	.string "catching my prized POKéMON.$"
+	.string "catching my prized Pokémon.$"
 
 OlivineLighthouse_Text_PokefanmCarterBeaten:
 	.string "Awaaah!$"
@@ -506,16 +506,16 @@ OlivineLighthouse_EventScript_Trevor::
 
 OlivineLighthouse_Text_PokefanmTrevorSeen:
 	.string "Hi. Did you know…?\p"
-	.string "POKéMON get more friendly if you\n"
+	.string "Pokémon get more friendly if you\n"
 	.string "train them in a place that they\l"
 	.string "remember.$"
 
 OlivineLighthouse_Text_PokefanmTrevorBeaten:
-	.string "Where did I meet this POKéMON…?$"
+	.string "Where did I meet this Pokémon…?$"
 
 OlivineLighthouse_Text_PokefanmTrevorAfterBattle:
 	.string "If only there were an easy way to\n"
-	.string "identify where I got my POKéMON…$"
+	.string "identify where I got my Pokémon…$"
 
 @2nd floor==============================================================================================================================
 
@@ -621,7 +621,7 @@ OlivineLighthouse_Text_SchoolboyBillyBeaten:
 	.string "Oh, no! How could I lose?$"
 
 OlivineLighthouse_Text_SchoolboyBillyAfterBattle:
-	.string "If POKéMON were a subject at\n"
+	.string "If Pokémon were a subject at\n"
 	.string "school, I'd be the best!$"
 
 OlivineLighthouse_EventScript_BirdKeeperDenis::
@@ -631,13 +631,13 @@ OlivineLighthouse_EventScript_BirdKeeperDenis::
 
 OlivineLighthouse_Text_BirdKeeperDenisSeen:
 	.string "We're pretty high up here. My bird\n"
-	.string "POKéMON are in prime form.$"
+	.string "Pokémon are in prime form.$"
 
 OlivineLighthouse_Text_BirdKeeperDenisBeaten:
 	.string "Oops… They crashed…$"
 
 OlivineLighthouse_Text_BirdKeeperDenisAfter:
-	.string "My POKéMON learned how to use FLY in\n"
+	.string "My Pokémon learned how to use FLY in\n"
 	.string "CIANWOOD.\p"
 	.string "Well, since I'm a loser, I'll FLY\n"
 	.string "across the sea…$"
@@ -726,11 +726,11 @@ OlivineLighthouse_Text_BirdKeeperTheoSeen:
 
 OlivineLighthouse_Text_BirdKeeperTheoBeaten:
 	.string "You really are concerned about\n"
-	.string "the sick POKéMON…$"
+	.string "the sick Pokémon…$"
 
 OlivineLighthouse_Text_BirdKeeperTheoAfter:
 	.string "How the heck do you go up?\p"
-	.string "I want to visit the sick POKéMON,\n"
+	.string "I want to visit the sick Pokémon,\n"
 	.string "but I can't get up there…$"
 
 OlivineLighthouse_Text_SailorTerrellSeen:
@@ -743,19 +743,19 @@ OlivineLighthouse_Text_SailorTerrellBeaten:
 OlivineLighthouse_Text_SailorTerrellAfter:
 	.string "Every time I return to OLIVINE,\n"
 	.string "I visit the GYM.\p"
-	.string "The GYM LEADER’s POKéMON type\n"
+	.string "The GYM LEADER’s Pokémon type\n"
 	.string "changed without me noticing.$"
 
 OlivineLighthouse_Text_GentlemanPrestonSeen:
 	.string "I travel the world to train my\n"
-	.string "POKéMON. I wish to battle you.$"
+	.string "Pokémon. I wish to battle you.$"
 
 OlivineLighthouse_Text_GentlemanPrestonBeaten:
 	.string "…Sigh. I must train some more…$"
 
 OlivineLighthouse_Text_GentlemanPrestonAfter:
 	.string "JASMINE used to use rock-type\n"
-	.string "POKéMON like ONIX.$"
+	.string "Pokémon like ONIX.$"
 
 @4th floor==============================================================================================================================
 
@@ -831,7 +831,7 @@ OlivineLighthouse_EventScript_LassConnie::
 
 OlivineLighthouse_Text_SailorKentSeen:
 	.string "JASMINE must be worried sick about\n"
-	.string "the POKéMON here.\p"
+	.string "the Pokémon here.\p"
 	.string "She won't even smile these days.$"
 
 OlivineLighthouse_Text_SailorKentBeaten:
@@ -847,12 +847,12 @@ OlivineLighthouse_Text_LassConnieSeen:
 	.string "Nobody had better get in my way!$"
 
 OlivineLighthouse_Text_LassConnieBeaten:
-	.string "Aaack! My POKéMON!$"
+	.string "Aaack! My Pokémon!$"
 
 OlivineLighthouse_Text_LassConnieAfter:
 	.string "Right. Anybody would be worried if\n"
-	.string "his or her own POKéMON were hurt.\p"
-	.string "I'll pray for the POKéMON here, so\n"
+	.string "his or her own Pokémon were hurt.\p"
+	.string "I'll pray for the Pokémon here, so\n"
 	.string "JASMINE can get on with her life.$"
 
 OlivineLighthouse_EventScript_Kipp::
@@ -897,7 +897,7 @@ OlivineLighthouse_EventScript_Bob::
 	end
 
 OlivineLighthouse_Text_BirdKeeperBorisSeen:
-	.string "If you're looking for POKéMON,\n"
+	.string "If you're looking for Pokémon,\n"
 	.string "you have to look in the tall grass.$"
 
 OlivineLighthouse_Text_BirdKeeperBorisBeaten:
@@ -1292,7 +1292,7 @@ OlivineLighthouse_EventScript_AmpharosSick::
 	end
 
 OlivineLighthouse_Text_JasmineCianwoodPharmacy:
-	.string "JASMINE: …This POKéMON always kept\n"
+	.string "JASMINE: …This Pokémon always kept\n"
 	.string "the sea lit at night.\p"
 	.string "…But it suddenly got sick… It's\n"
 	.string "gasping for air…\p"

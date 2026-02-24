@@ -319,28 +319,28 @@ LakeOfRage_Text_CooltrainerF:
 
 
 LakeOfRage_Text_FisherAndreSeen:
-    .string "Let me battle with the POKéMON I\n"
+    .string "Let me battle with the Pokémon I\n"
     .string "just caught!$"
 
 LakeOfRage_Text_FisherAndreBeaten:
     .string "I might be an expert angler, but\n"
-    .string "I stink as a POKéMON trainer…$"
+    .string "I stink as a Pokémon trainer…$"
 
 LakeOfRage_Text_FisherAndreAfter:
     .string "I won't lose as an angler! I catch\n"
-    .string "POKéMON all day.$"
+    .string "Pokémon all day.$"
 
 
 LakeOfRage_Text_FisherRaymondSeen:
     .string "No matter what I do, all I catch\n"
-    .string "are the same POKéMON…$"
+    .string "are the same Pokémon…$"
 
 LakeOfRage_Text_FisherRaymondBeaten:
     .string "My line's all tangled up…$"
 
 LakeOfRage_Text_FisherRaymondAfter:
     .string "Why can't I catch any good\n"
-    .string "POKéMON?$"
+    .string "Pokémon?$"
 
 LakeOfRage_Text_CooltrainermAaronSeen:
     .string "If a trainer spots another trainer,\n"
@@ -351,7 +351,7 @@ LakeOfRage_Text_CooltrainermAaronBeaten:
     .string "Whew… Good battle.$"
 
 LakeOfRage_Text_CooltrainermAaronAfter:
-    .string "POKéMON and their trainer become\n"
+    .string "Pokémon and their trainer become\n"
     .string "powerful through constant battling.$"
 
 LakeOfRage_Text_CooltrainerfLoisSeen:

@@ -30,7 +30,7 @@ Route13_EventScript_DirectionsSign::
 	end
 
 Route13_Text_PokefanmAlexSeen:
-	.string "Bow down before my regal POKéMON!$"
+	.string "Bow down before my regal Pokémon!$"
 
 Route13_Text_PokefanmAlexBeaten:
 	.string "How… How dare you mock royalty!$"
@@ -48,7 +48,7 @@ Route13_Text_PokefanmJoshuaBeaten:
 
 Route13_Text_PokefanmJoshuaAfterBattle:
 	.string "You look like you have many\n"
-	.string "POKéMON,\p"
+	.string "Pokémon,\p"
 	.string "but PIKACHU is still the best.$"
 
 Route13_Text_TrainerTips:

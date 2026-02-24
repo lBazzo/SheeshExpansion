@@ -19,12 +19,12 @@ GoldenrodCity_House3_EventScript_Twin::
 
 GoldenrodHappinessRater_Text_PokefanM:
     .string "I keep losing in battles, and my\n"
-    .string "POKéMON end up fainting…\p"
-    .string "Maybe that's why my POKéMON don't\n"
+    .string "Pokémon end up fainting…\p"
+    .string "Maybe that's why my Pokémon don't\n"
     .string "like me much…$"
 
 GoldenrodHappinessRater_Text_Twin:
-    .string "When I use an item on my POKéMON,\n"
+    .string "When I use an item on my Pokémon,\n"
     .string "it acts really glad!$"
 
 GoldenrodHappinessRater_EventScript_FriendshipRater::
@@ -89,10 +89,10 @@ GoldenrodHappinessRater_EventScript_Pikachu::
 	end
 
 GoldenrodHappinessRater_Text_SeeHowMuchPokemonLikesYou:
-	.string "Let me see your POKéMON.\n"
+	.string "Let me see your Pokémon.\n"
 	.string "I'll check to see how much it likes you.\p"
 	.string "Oh.\n"
-	.string "Your POKéMON…$"
+	.string "Your Pokémon…$"
 
 GoldenrodHappinessRater_Text_AdoresYou:
 	.string "It adores you.\n"
@@ -122,7 +122,7 @@ GoldenrodHappinessRater_Text_VeryWary:
 
 GoldenrodHappinessRater_Text_DetestsYou:
 	.string "This is a little hard for me to say…\p"
-	.string "Your POKéMON simply detests you.\n"
+	.string "Your Pokémon simply detests you.\n"
 	.string "Doesn't that make you uncomfortable?$"
 
 GoldenrodHappinessRater_Text_Pikachu:

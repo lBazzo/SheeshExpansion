@@ -82,10 +82,10 @@ BattleTower_Outside_EventScript_Sailor::
 BattleTowerOutsideYoungsterText:
 	.string "Wow, the BATTLE TOWER is huge!\p"
 	.string "There must be many kinds of\n"
-	.string "POKéMON in there!$"
+	.string "Pokémon in there!$"
 
 BattleTowerOutsideBeautyText:
-	.string "You can use only three POKéMON.\p"
+	.string "You can use only three Pokémon.\p"
 	.string "It's so hard to decide which\n"
 	.string "three should go into battle…$"
 
@@ -504,7 +504,7 @@ BattleTower_Outside_Text_LeftTutorIntro:
 	.string "I'm not like that blowhard woman over\n"
 	.string "there. I'm actually talented!\p"
 	.string "Let me prove it to you.\n"
-	.string "I can teach your POKéMON special and\l"
+	.string "I can teach your Pokémon special and\l"
 	.string "yet cute moves.\p"
 	.string "But my lessons don't come free.\n"
 	.string "How about paying for the moves I teach\l"
@@ -513,7 +513,7 @@ BattleTower_Outside_Text_LeftTutorIntro:
 BattleTower_Outside_Text_LeftTutorWelcomeBack:
 	.string "Buhahaha!\p"
 	.string "Are you back to learn special and\n"
-	.string "yet cute POKéMON moves?$"
+	.string "yet cute Pokémon moves?$"
 
 BattleTower_Outside_Text_TeachWhichMove:
 	.string "Fine, fine, look here!\n"
@@ -524,7 +524,7 @@ BattleTower_Outside_Text_MoveWillBeXBattlePoints:
 	.string "That will be {STR_VAR_2} Battle Points, okay?$"
 
 BattleTower_Outside_Text_TeachMoveToWhichMon:
-	.string "Fine, fine, now pick the POKéMON\n"
+	.string "Fine, fine, now pick the Pokémon\n"
 	.string "I should teach the move to.$"
 
 BattleTower_Outside_Text_HaventGotEnoughPoints:
@@ -553,7 +553,7 @@ BattleTower_Outside_Text_RightTutorIntro:
 	.string "I'm not like that buffoonish woman over\n"
 	.string "there. I'm actually experienced!\p"
 	.string "I can prove it to you.\n"
-	.string "I can teach your POKéMON hard and\l"
+	.string "I can teach your Pokémon hard and\l"
 	.string "yet pretty moves.\p"
 	.string "But my lessons don't come free.\n"
 	.string "How about paying for the moves I teach\l"
@@ -562,7 +562,7 @@ BattleTower_Outside_Text_RightTutorIntro:
 BattleTower_Outside_Text_RightTutorWelcomeBack:
 	.string "Ihihihi!\p"
 	.string "Have you come to learn hard and\n"
-	.string "yet pretty POKéMON moves?$"
+	.string "yet pretty Pokémon moves?$"
 
 BattleTower_Outside_Text_ThinkLadiesDontGetAlong:
 	.string "Those ladies, the way they bad-mouth\n"
@@ -577,7 +577,7 @@ BattleTower_Outside_Text_LadiesWereStrongAndBeautiful:
 	.string "They were idols among us TRAINERS.\p"
 	.string "Even now, age hasn't dulled their\n"
 	.string "abilities.\p"
-	.string "In fact, their POKéMON moves have\n"
+	.string "In fact, their Pokémon moves have\n"
 	.string "grown even more polished.\p"
 	.string "But… For some reason, I can't help\n"
 	.string "but feel this…\p"
@@ -690,7 +690,7 @@ BattleTower_Outside_Text_ElementalTutorIntro::
 	.string "I'm the ELEMENTAL TUTOR.\p"
 	.string "I have the power to teach the most\n"
 	.string "powerful moves to GRASS, FIRE and\l"
-	.string "WATER TYPE POKéMON.\p"
+	.string "WATER TYPE Pokémon.\p"
 	.string "Did you come to learn such a strong\n"
 	.string "power?$"
 
@@ -702,7 +702,7 @@ BattleTower_Outside_Text_ElementalTutorWelcomeBack:
 
 BattleTower_Outside_Text_TeachWhichMoveElemental::
 	.string "Which move do you think is suitable\n"
-	.string "for your POKéMON?$"
+	.string "for your Pokémon?$"
 
 BattleTower_Outside_Text_StrongElementalMoveDesc::
 	.string "Powerful, but\n"
@@ -1158,7 +1158,7 @@ BattleTower_Outside_ExchangeServiceCorner_Text_YouAlreadyHaveThis:
 BattleTower_Outside_ExchangeServiceCorner_EventScript_OldWTMan_Text:
 	.string "Hi! If you are looking for the\n"
 	.string "WONDERTRADE, they're now located in\l"
-	.string "every POKéMON CENTER. Have fun!$"
+	.string "every Pokémon CENTER. Have fun!$"
 
 BattleTower_Outside_ExchangeServiceCorner_Text_WelcomePleaseChoosePrize:
 	.string "Hello, this is the EXCHANGE SERVICE\n"
@@ -1330,7 +1330,7 @@ BattleTower_Outside_ExchangeServiceCorner_Text_GetYouAnythingYouWant:
 
 BattleTower_Outside_ExchangeServiceCorner_Text_ItemsWillGetMonTougher:
 	.string "If I can get hold of the items here,\n"
-	.string "my POKéMON will get tougher.\p"
+	.string "my Pokémon will get tougher.\p"
 	.string "You bet they will!\n"
 	.string "No question about it!$"
 
@@ -1427,7 +1427,7 @@ BattleTower_Outside_ExchangeServiceCorner_Text_QuickClawDesc::
 	.string "the first strike.$"
 
 BattleTower_Outside_ExchangeServiceCorner_Text_MentalHerbDesc::
-	.string "A hold item that snaps POKéMON out\n"
+	.string "A hold item that snaps Pokémon out\n"
 	.string "of infatuation.$"
 
 BattleTower_Outside_ExchangeServiceCorner_Text_BrightpowderDesc::
@@ -1474,7 +1474,7 @@ BattleTower_Outside_EventScript_Grace::
 
 SageJeffreySeenText:
 	.string "I spent the spring with my\n"
-	.string "POKéMON.\p"
+	.string "Pokémon.\p"
 	.string "Then summer, fall, and winter...\p"
 	.string "Then spring came again.\n"
 	.string "We've been together a long time.$"
@@ -1484,7 +1484,7 @@ SageJeffreyBeatenText:
 	.string "them both.$"
 
 SageJeffreyAfterBattleText:
-	.string "Where did POKéMON come from?$"
+	.string "Where did Pokémon come from?$"
 
 SagePingSeenText:
 	.string "Terastallization adds a whole new level\n"

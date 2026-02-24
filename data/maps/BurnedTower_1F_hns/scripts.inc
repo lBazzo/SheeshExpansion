@@ -70,14 +70,14 @@ BurnedTower_1FSilverIntroText:
 	.string "..............................\p"
 	.string "...Oh, it's you.\p"
 	.string "I came looking for some\n"
-	.string "legendary POKéMON they say\l"
+	.string "legendary Pokémon they say\l"
 	.string "roost here.\p"
 	.string "But there's nothing here!\p"
 	.string "Nothing, after all the effort\n"
 	.string "of coming to this dump?\p"
 	.string "Hmph. It doesn't matter.\p"
 	.string "One way or another, I will get my hands\n"
-	.string "on a legendary POKéMON.\p"
+	.string "on a legendary Pokémon.\p"
 	.string "And when I do, I'm getting my revenge.\n"
 	.string "You stay out of my way until then.$"
 
@@ -156,7 +156,7 @@ BurnedTower_1F_EventScript_Eusine::
 
 BurnedTower_1FEusineIntroText:
 	.string "EUSINE: My name's EUSINE.\p"
-	.string "I'm on the trail of a POKéMON\n"
+	.string "I'm on the trail of a Pokémon\n"
 	.string "called SUICUNE.\p"
 	.string "And you are...?\p"
 	.string "{PLAYER}? Glad to meet you!\p"
@@ -169,11 +169,11 @@ BurnedTower_1FEusineIntroText:
 BurnedTower_1FMortyIntroText:
 	.string "MORTY: As EUSINE says, my name is\n"
 	.string "MORTY. I'm a trainer, just like you.\p"
-	.string "It's said that legendary POKéMON will\n"
+	.string "It's said that legendary Pokémon will\n"
 	.string "appear to the truly powerful trainers.\p"
 	.string "Then again...\p"
 	.string "Does the fact that the legendary\n"
-	.string "POKéMON haven't appeared yet mean\l"
+	.string "Pokémon haven't appeared yet mean\l"
 	.string "that we are not worthy of their\l"
 	.string "respect...?$"
 
@@ -186,7 +186,7 @@ BurnedTower_1FEusineIntroText2:
 	.string "the most deserving to meet SUICUNE out\l"
 	.string "of the three of us?\p"
 	.string "Let's fight two on one.\p"
-	.string "We'll only use three POKéMON each to\n"
+	.string "We'll only use three Pokémon each to\n"
 	.string "make things even, of course.$"
 
 BurnedTower_1FMortyIntroText2:
@@ -249,7 +249,7 @@ BurnedTower_1FEusineText:
 BurnedTower_1FMortyText:
 	.string "MORTY: ECRUTEAK's GYM LEADER\n"
 	.string "has to study what are said to\l"
-	.string "be the legendary POKéMON--\l"
+	.string "be the legendary Pokémon--\l"
 	.string "SUICUNE, ENTEI and RAIKOU.\p"
 	.string "EUSINE is here, so I've\n"
 	.string "decided to investigate the\l"

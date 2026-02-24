@@ -67,7 +67,7 @@ Route12_Text_FisherKyleBeaten:
 
 Route12_Text_FisherKyleAfterBattle:
 	.string "The tug you feel on the ROD when\n"
-	.string "you hook a POKéMON…\p"
+	.string "you hook a Pokémon…\p"
 	.string "That's the best feeling ever for\n"
 	.string "an angler like me.$"
 

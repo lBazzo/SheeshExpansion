@@ -669,11 +669,11 @@ IlexForest_Text_ApprenticeIntro:
 
 IlexForest_Text_ApprenticeAfter:
 	.string "Wow! Thanks a whole bunch!\p"
-	.string "My boss's POKéMON won't obey me\n"
+	.string "My boss's Pokémon won't obey me\n"
 	.string "because I don't have a BADGE.$"
 
 IlexForest_Text_ItsTheMissingPokemon:
-	.string "It's the missing POKéMON!$"
+	.string "It's the missing Pokémon!$"
 
 IlexForest_Text_Kwaaaa:
 	.string "FARFETCH'D: Kwaa!$"
@@ -689,7 +689,7 @@ IlexForest_Text_CharcoalMasterIntro:
 
 IlexForest_Text_CharcoalMasterOutro:
 	.string "That's the CUT HM.\n"
-	.string "Teach that to a POKéMON to clear\l"
+	.string "Teach that to a Pokémon to clear\l"
 	.string "small trees.\p"
 	.string "Of course, you have to have the\n"
 	.string "GYM BADGE from AZALEA to use it.$"
@@ -702,14 +702,14 @@ IlexForest_Text_CharcoalMasterTalkAfter:
 MoveTutor_Text_HeadbuttTeach:
 	.string "What am I doing?\p"
 	.string "I'm shaking trees using HEADBUTT.\p"
-	.string "Do you think your POKéMON will\n"
+	.string "Do you think your Pokémon will\n"
 	.string "want to HEADBUTT, too?\p"
 	.string "I can teach one the move HEADBUTT\n"
 	.string "if you'd like. It's fun!$"
 	
 MoveTutor_Text_HeadbuttWhichMon:
 	.string "Ehehe, sure thing! It'd be great if\n"
-	.string "the POKéMON looked like me.$"
+	.string "the Pokémon looked like me.$"
 
 MoveTutor_Text_HeadbuttDeclined:
 	.string "You don't need to be shy about it.\n"
@@ -717,7 +717,7 @@ MoveTutor_Text_HeadbuttDeclined:
 
 MoveTutor_Text_HeadbuttTaught:
 	.string "Rattle trees with HEADBUTT.\n"
-	.string "Sometimes, sleeping POKéMON fall out.$"
+	.string "Sometimes, sleeping Pokémon fall out.$"
 
 IlexForest_Text_Lass:
 	.string "Did something happen to the\n"
@@ -758,13 +758,13 @@ IlexForest_Text_KurtCaughtCelebi:
 
 IlexForest_Text_BugCatcherWayneSeen:
 	.string "Don't sneak up on me like that!\p"
-	.string "You frightened a POKéMON away!$"
+	.string "You frightened a Pokémon away!$"
 
 IlexForest_Text_BugCatcherWayneBeaten:
-	.string "I hadn't seen that POKéMON before…$"
+	.string "I hadn't seen that Pokémon before…$"
 
 IlexForest_Text_BugCatcherWayneAfter:
-	.string "A POKéMON I've never seen before\n"
+	.string "A Pokémon I've never seen before\n"
 	.string "fell out of the tree when I used\l"
 	.string "HEADBUTT.\p"
 	.string "I ought to use HEADBUTT in other\n"
@@ -788,7 +788,7 @@ IlexForest_Text_Kimono_Girl3:
 IlexForest_Text_Kimono_Girl4:
 	.string "Wow! Are you going to show me how\n"
 	.string "to get out?\p"
-	.string "You are such a smart POKéMON!$"
+	.string "You are such a smart Pokémon!$"
 
 IlexForest_Text_Kimono_Girl5:
 	.string "See you.$"
@@ -887,7 +887,7 @@ IlexForest_Text_BugsyPreWell:
 	.string "It's good to see you're alright. How is\n"
 	.string "the fight against TEAM ROCKET going?\p"
 	.string "I wish I could help you out, but the\n"
-	.string "POKéMON here need my protection...\p"
+	.string "Pokémon here need my protection...\p"
 	.string "But don't worry. You can do it! I just\n"
 	.string "know it!$"
 
@@ -896,7 +896,7 @@ IlexForest_Text_BugsyGiftTM:
 	.string "I mean, I knew you could do it, but you\n"
 	.string "should still be very proud!\p"
 	.string "I know it's not much compared to what\n"
-	.string "you've done for the people and POKéMON\l"
+	.string "you've done for the people and Pokémon\l"
 	.string "of AZALEA TOWN, but I want you to have\l"
 	.string "this TM.\p"
 	.string "It contains U-Turn. It lets you attack\n"
@@ -906,10 +906,10 @@ IlexForest_Text_BugsyGiftTM:
 IlexForest_Text_BugsyGiftStone:
 	.string "Say, you're probably going to challenge\n"
 	.string "the AZALEA GYM now, right?\p"
-	.string "Your POKéMON could maybe use a boost\n"
+	.string "Your Pokémon could maybe use a boost\n"
 	.string "from one of these evolution stones.\p"
 	.string "I find a bunch of these while looking\n"
-	.string "for POKéMON, so I have plenty to spare.\p"
+	.string "for Pokémon, so I have plenty to spare.\p"
 	.string "Which one would you like?$"
 
 IlexForest_Text_BugsyGiftStoneReceived:
@@ -922,7 +922,7 @@ IlexForest_Text_BugsyCheckOnMisty:
 	.string "The last time I was here, she was a\n"
 	.string "little down.\p"
 	.string "I tried to cheer her up by explaining to\n"
-	.string "her how awesome bug type POKéMON can\l"
+	.string "her how awesome bug type Pokémon can\l"
 	.string "be, and I gave her my little WIMPOD for\l"
 	.string "her to keep as a friend, since it's a\l"
 	.string "water type too.\p"

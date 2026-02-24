@@ -36,7 +36,7 @@ EcruteakCity_PokemonCenter1F_Text_PokefanM:
 	.string "The way the KIMONO GIRLS dance is\n"
 	.string "marvelous.\p"
 	.string "Just like the way they use their\n"
-	.string "POKéMON.$"
+	.string "Pokémon.$"
 
 EcruteakCity_PokemonCenter1F_Text_PokefanM_Mobile:
 	.string "You must be hoping to battle more\n"
@@ -49,7 +49,7 @@ EcruteakCity_PokemonCenter1F_Text_PokefanM_Mobile:
 EcruteakCity_PokemonCenter1F_Text_CooltrainerF:
 	.string "ERIKA, the GYM LEADER, is soooo\n"
 	.string "cool.\p"
-	.string "Her POKéMON are really tough too.$"
+	.string "Her Pokémon are really tough too.$"
 
 EcruteakCity_PokemonCenter1F_Text_GymGuide:
 	.string "LAKE OF RAGE…\p"

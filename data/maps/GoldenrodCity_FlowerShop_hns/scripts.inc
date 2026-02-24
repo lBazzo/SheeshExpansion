@@ -135,12 +135,12 @@ GoldenrodCity_FlowerShop_Text_ImGrowingFlowers:
 	.string "It's for you!$"
 
 GoldenrodCity_FlowerShop_Text_MachineMixesBerries:
-	.string "A POKéMON can eat a BERRY to heal,\n"
-	.string "or you can make a POKéMON hold it.\p"
+	.string "A Pokémon can eat a BERRY to heal,\n"
+	.string "or you can make a Pokémon hold it.\p"
 	.string "In a faraway region I visited,\n"
 	.string "they had a machine that mixes\l"
 	.string "up different BERRIES and makes candies\l"
-	.string "for POKéMON.\p"
+	.string "for Pokémon.\p"
 	.string "I want some candy, too.$"
 
 GoldenrodCity_FlowerShop_EventScript_Floria3::
@@ -196,7 +196,7 @@ GoldenrodCity_FlowerShop_Text_FloriaYouBeatWhitney:
     .string "Wow, you beat WHITNEY? Cool!$"
 
 GoldenrodCity_FlowerShop_Text_FloriaItWasAMon:
-    .string "So it really was a POKéMON!$"
+    .string "So it really was a Pokémon!$"
 
 GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	lock

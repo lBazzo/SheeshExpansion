@@ -332,7 +332,7 @@ RocketHideout_B1F_Text_CameraGrunt1Beaten:
 
 RocketHideout_B1F_Text_CameraGrunt2Beaten:
     .string "Surveillance cams are in the\n"
-    .string "POKéMON statues.\p"
+    .string "Pokémon statues.\p"
     .string "We'll keep appearing until you\n"
     .string "beat us all.$"
 
@@ -555,7 +555,7 @@ RocketHideout_B1F_Text_ScientistGrunt40Beaten:
 
 RocketHideout_B1F_Text_ScientistGrunt40After:
     .string "A radio signal that drives\n"
-    .string "POKéMON mad…\p"
+    .string "Pokémon mad…\p"
     .string "My experiment is a complete\n"
     .string "success.\p"
     .string "My promotion is assured. This\n"
@@ -567,7 +567,7 @@ RocketHideout_B1F_EventScript_Grunt42::
 	end
 
 RocketHideout_B1F_Text_ScientistGrunt42Seen:
-    .string "I don't care that POKéMON are hurt\n"
+    .string "I don't care that Pokémon are hurt\n"
     .string "by our experiment.$"
 
 RocketHideout_B1F_Text_ScientistGrunt42Beaten:

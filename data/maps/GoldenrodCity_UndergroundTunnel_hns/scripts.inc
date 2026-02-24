@@ -321,15 +321,15 @@ GoldenrodUnderground_HerbShop_Text_WelcomeToHerbShop:
 	.string "effective and inexpensive medicine!$"
 
 GoldenrodUnderground_Text_YoungerBrotherOffer:
-    .string "Welcome to the POKéMON SALON!\p"
+    .string "Welcome to the Pokémon SALON!\p"
     .string "I'm the younger and less expensive\n"
     .string "of the two HAIRCUT BROTHERS.\p"
-    .string "I'll spiff up your POKéMON for just\n"
+    .string "I'll spiff up your Pokémon for just\n"
     .string "¥300.\p"
     .string "So? How about it?$"
 
 GoldenrodUnderground_Text_YoungerBrotherAskWhich:
-    .string "OK, which POKéMON should I do?$"
+    .string "OK, which Pokémon should I do?$"
 
 GoldenrodUnderground_Text_YoungerBrotherLookCool:
     .string "OK! I'll make it look cool!$"
@@ -351,15 +351,15 @@ GoldenrodUnderground_Text_YoungerBrotherOnePerDay:
 
 GoldenrodUnderground_Text_OlderBrotherOffer:
     .string "Welcome!\p"
-    .string "I run the POKéMON SALON!\p"
+    .string "I run the Pokémon SALON!\p"
     .string "I'm the older and better of the two\n"
     .string "HAIRCUT BROTHERS.\p"
-    .string "I can make your POKéMON beautiful\n"
+    .string "I can make your Pokémon beautiful\n"
     .string "for just ¥500.\p"
     .string "Would you like me to do that?$"
 
 GoldenrodUnderground_Text_OlderBrotherAskWhich:
-    .string "Which POKéMON should I work on?$"
+    .string "Which Pokémon should I work on?$"
 
 GoldenrodUnderground_Text_OlderBrotherWatchItBeautiful:
     .string "OK! Watch it become beautiful!$"
@@ -383,7 +383,7 @@ GoldenrodUnderground_Text_PokemaniacDonaldAfterBattleOld:
     .string "The HIKER on ROUTE 33, ANTHONY, is a\n"
     .string "good guy.\p"
     .string "He'll phone you if he sees any rare\n"
-    .string "POKéMON.$"
+    .string "Pokémon.$"
 
 GoldenrodUnderground_Text_DoorsLocked:
     .string "The door's locked…$"
@@ -490,7 +490,7 @@ GoldenrodCity_UndergroundTunnel_Text_LucyIntro:
 	.string "Hm? The challenge? I suppose I could\n"
 	.string "think of one...\p"
 	.string "If you want to prove yourself, I will\n"
-	.string "afflict all your POKéMON with a random\l"
+	.string "afflict all your Pokémon with a random\l"
 	.string "status effect before the battle.$"
 
 GoldenrodCity_UndergroundTunnel_Text_LucyPostIntro:

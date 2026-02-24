@@ -121,11 +121,11 @@ BugContest_EventScript_SideEnd::
 
 BugContest_Text_Judging0::
 	.string "The contest has now concluded.\n"
-	.string "Please pick the POKéMON you would\l"
+	.string "Please pick the Pokémon you would\l"
 	.string "like to keep and have judged.$"
 
 BugContest_Text_Judging1::
-	.string "We will now judge the POKéMON\n"
+	.string "We will now judge the Pokémon\n"
 	.string "you've caught.\p"
 	.string "...................\n"
 	.string "...................\p"
@@ -133,11 +133,11 @@ BugContest_Text_Judging1::
 	.string "ready for this?$"
 
 BugContest_Text_WrongChoiceMon:
-	.string "Please pick the POKéMON you would\n"
+	.string "Please pick the Pokémon you would\n"
 	.string "like to keep and have judged.$"
 
 BugContest_Text_DidntCatch:
-	.string "Oh no! You didn't catch a POKéMON.\n"
+	.string "Oh no! You didn't catch a Pokémon.\n"
 	.string "You've forfeited the competition.\p"
 	.string "Your party will now be returned.$"
 
@@ -145,7 +145,7 @@ BugContest_Text_TimesUp:
 	.string "Ding-dong! Time's up!$"
 
 BugContest_Text_WhiteOut:
-	.string "{PLAYER} is out of useable POKéMON.\n"
+	.string "{PLAYER} is out of useable Pokémon.\n"
 	.string "{PLAYER} forfeited the contest.$"
 
 BugContest_Text_First1:
@@ -195,6 +195,6 @@ BugContest_Text_TakePartInFuture:
 	.string "future.$"
 
 BugContest_Text_TransferAndReturn:
-	.string "Your chosen BUG POKéMON will now\n"
+	.string "Your chosen BUG Pokémon will now\n"
 	.string "be sent to the PC and your party\l"
 	.string "will be returned to you.$"

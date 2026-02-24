@@ -46,7 +46,7 @@ CeladonCity_Gym_Text_ErikaBeforeBattle:
 	.string "However, don't mistake me for a\n"
 	.string "pushover simply because I'm covering for\l"
 	.string "him.\p"
-	.string "My grass POKéMON and I have honed our\n"
+	.string "My grass Pokémon and I have honed our\n"
 	.string "elegant fighting style in KANTO.\l"
 	.string "Allow me to demonstrate it to you now.$"
 
@@ -61,9 +61,9 @@ Text_ReceivedFogBadge:
 ErikaText_FogBadgeSpeech:
 	.string "ERIKA: That was a delightful\n"
 	.string "match. I felt inspired.\p" 
-	.string "Now you have the FOGBADGE, POKéMON up\n"
+	.string "Now you have the FOGBADGE, Pokémon up\n"
 	.string "to Level 50 will obey you.\p"
-	.string "Also, any POKéMON that knows\n"
+	.string "Also, any Pokémon that knows\n"
 	.string "SURF will be able to use it\l"
 	.string "anytime.\p"
 	.string "I want you to have this too.$"
@@ -74,16 +74,16 @@ CeladonCity_Gym_Text_PlayerReceivedRainbowBadge:
 CeladonCity_Gym_Text_ErikaExplainTM:
 	.string "ERIKA: That was a delightful\n"
 	.string "match. I felt inspired.\p"
-	.string "Now you have the FOGBADGE, POKéMON up\n"
+	.string "Now you have the FOGBADGE, Pokémon up\n"
 	.string "to Level 50 will obey you.\p"
-	.string "Also, any POKéMON that knows\n"
+	.string "Also, any Pokémon that knows\n"
 	.string "SURF will be able to use it\l"
 	.string "anytime.\p"
 	.string "I want you to have this too.\n"
 	.string "It is GIGA DRAIN.\p"
 	.string "It is a wonderful move that\n"
 	.string "drains half the damage it inflicts\l"
-	.string "to heal your POKéMON.\p"
+	.string "to heal your Pokémon.\p"
 	.string "Please use it if it pleases you…$"
 
 CeladonCity_Gym_Text_ErikaAfterBattle:
@@ -168,13 +168,13 @@ CeladonCity_Gym_EventScript_GymStatuePostVictory::
 	end
 
 CeladonCity_Gym_Text_GymStatue::
-    .string "ECRUTEAK POKéMON GYM\n"
+    .string "ECRUTEAK Pokémon GYM\n"
     .string "LEADER: ERIKA\p"
 	.string "WINNING TRAINERS:\n"
 	.string "BOFA, SUGMA$"
 
 CeladonCity_Gym_Text_GymStatuePlayerWon::
-    .string "ECRUTEAK POKéMON GYM\n"
+    .string "ECRUTEAK Pokémon GYM\n"
     .string "LEADER: ERIKA\p"
     .string "WINNING TRAINERS:\n"
 	.string "BOFA, SUGMA, {PLAYER}$"

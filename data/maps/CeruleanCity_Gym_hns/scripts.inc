@@ -163,13 +163,13 @@ CeruleanCity_Gym_EventScript_GymGuyAfter::
 	end
 
 CeruleanCity_Gym_Text_GymStatue::
-    .string "AZALEA POKéMON GYM\n"
+    .string "AZALEA Pokémon GYM\n"
     .string "LEADER: MISTY\p"
 	.string "WINNING TRAINERS:\n"
 	.string "DEEZ, DOZE$"
 
 CeruleanCity_Gym_Text_GymStatuePlayerWon::
-    .string "AZALEA POKéMON GYM\n"
+    .string "AZALEA Pokémon GYM\n"
     .string "LEADER: MISTY\p"
     .string "WINNING TRAINERS:\n"
 	.string "DEEZ, DOZE, {PLAYER}$"
@@ -222,10 +222,10 @@ AzaleaTown_Gym_Text_HiveBadgeSpeechMisty:
 	.string "isn't so bad.\p"
 	.string "Do you know the benefits\n"
 	.string "of the HIVEBADGE?\p"
-	.string "If you have it, POKéMON up\n"
+	.string "If you have it, Pokémon up\n"
 	.string "to L30 will obey you,\l"
 	.string "even traded ones.\p"
-	.string "POKéMON that know CUT will be able\n"
+	.string "Pokémon that know CUT will be able\n"
 	.string "to use it outside of battle too.$"
 
 CeruleanCity_Gym_SetSuicuneScene::
@@ -343,9 +343,9 @@ CeruleanGym_Text_SwimmermParkerAfter:
 CeruleanGym_Text_GuideIntro:
 	.string "Yo! CHAMP in making!\p"
 	.string "The new GYM LEADER here, MISTY, uses\n"
-	.string "WATER-type POKéMON.\p"
+	.string "WATER-type Pokémon.\p"
 	.string "If you have any GRASS-type or\n"
-	.string "ELECTRIC-type POKéMON, now is the time\l"
+	.string "ELECTRIC-type Pokémon, now is the time\l"
 	.string "to put them to good use!$"
 
 CeruleanGym_Text_GuideWin:

@@ -126,10 +126,10 @@ RadioTowerBasement_Text_DirectorAfter:
     .string "There's no telling what they'll do if\n"
     .string "they control the transmitter.\p"
     .string "They may even be able to control\n"
-    .string "POKéMON using a special signal!\p"
+    .string "Pokémon using a special signal!\p"
     .string "You're the only one I can call on.\p"
     .string "Please save the RADIO TOWER…\p"
-    .string "And all the POKéMON nationwide!$"
+    .string "And all the Pokémon nationwide!$"
 
 GoldenrodCity_UndergroundStorage_EventScript_B2B1::
 	lock
@@ -251,7 +251,7 @@ GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightBeaten:
     .string "what's inside them is driving me insane!$"
 
 GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightAfter:
-	.string "I really hope they have some POKéMON\n"
+	.string "I really hope they have some Pokémon\n"
 	.string "cards inside. Those damn scalpers are\l"
 	.string "ruining it for everyone else.\p"
     .string "And apparently we're the criminals!\n"

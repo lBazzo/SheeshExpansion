@@ -193,13 +193,13 @@ Route14_Text_Eusine:
 
 Route14_Text_BirdKeeperRoySeen:
 	.string "My dream is to fly with my beloved\n"
-	.string "bird POKéMON.$"
+	.string "bird Pokémon.$"
 
 Route14_Text_BirdKeeperRoyBeaten:
 	.string "I can dream, but I can't ever fly…$"
 
 Route14_Text_BirdKeeperRoyAfterBattle:
-	.string "You have POKéMON that know the HM\n"
+	.string "You have Pokémon that know the HM\n"
 	.string "move FLY, don't you? I envy you.$"
 
 Route14_EventScript_Pidgeotto::
