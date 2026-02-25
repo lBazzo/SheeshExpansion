@@ -33,7 +33,7 @@ EcruteakCity_PokemonCenter_EventScript_Nerd::
 	end
 
 EcruteakCity_PokemonCenter1F_Text_PokefanM:
-	.string "The way the KIMONO GIRLS dance is\n"
+	.string "The way the Kimono girls dance is\n"
 	.string "marvelous.\p"
 	.string "Just like the way they use their\n"
 	.string "Pokémon.$"
@@ -44,16 +44,16 @@ EcruteakCity_PokemonCenter1F_Text_PokefanM_Mobile:
 	.string "There's apparently some place where\n"
 	.string "trainers gather.\p"
 	.string "Where, you ask?\p"
-	.string "It's a little past OLIVINE CITY.$"
+	.string "It's a little past Olivine City.$"
 
 EcruteakCity_PokemonCenter1F_Text_CooltrainerF:
-	.string "ERIKA, the GYM LEADER, is soooo\n"
+	.string "Erika, the Gym Leader, is soooo\n"
 	.string "cool.\p"
 	.string "Her Pokémon are really tough too.$"
 
 EcruteakCity_PokemonCenter1F_Text_GymGuide:
-	.string "LAKE OF RAGE…\p"
-	.string "The appearance of a GYARADOS\n"
+	.string "Lake of Rage…\p"
+	.string "The appearance of a Gyarados\n"
 	.string "swarm…\p"
 	.string "I smell a conspiracy. I know it!$"
 

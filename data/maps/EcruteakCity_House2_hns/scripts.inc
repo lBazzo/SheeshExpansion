@@ -55,16 +55,16 @@ EcruteakCity_House2_EventScript_Book3::
 	end
 
 Ecruteak_Text_ItemFinderMan::
-	.string "ECRUTEAK is a very old city.\n"
+	.string "Ecruteak is a very old city.\n"
 	.string "Many generations passed down\l"
 	.string "their history in books like these.$"
 
 Ecruteak_Text_HistoryBook:
-	.string "HISTORY OF ECRUTEAK\p"
+	.string "History of Ecruteak\p"
 	.string "Want to read it?$"
 
 Ecruteak_Text_TwoTowers:
-	.string "In ECRUTEAK, there were two towers.\p"
+	.string "In Ecruteak, there were two towers.\p"
 	.string "Each tower was the roost of\n"
 	.string "powerful flying Pokémon.\p"
 	.string "But one of the towers burned to\n"
@@ -74,7 +74,7 @@ Ecruteak_Text_TwoTowers:
 	.string "Keep reading?$"
 
 Ecruteak_Text_ThreeMon:
-	.string "ECRUTEAK was also home to three\n"
+	.string "Ecruteak was also home to three\n"
 	.string "Pokémon that raced around the town.\p"
 	.string "They were said to have been born\n"
 	.string "of water, lightning and fire.\p"
