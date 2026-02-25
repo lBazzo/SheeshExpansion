@@ -96,7 +96,7 @@ Route34_EventScript_Item_SuperPotion::
 
 
 Route34_Text_YoungsterSamuel_Seen:
-	.string "Hey! I'm looking for MANKEY!$"
+	.string "Hey! I'm looking for Mankey!$"
 
 Route34_Text_YoungsterSamuel_Beaten:
 	.string "Beaten by a passing stranger!$"
@@ -104,7 +104,7 @@ Route34_Text_YoungsterSamuel_Beaten:
 Route34_Text_YoungsterSamuel_After:
 	.string "I'm going to train even harder.\p"
 	.string "After all, I'm trying to become\n"
-	.string "a GYM LEADER.$"
+	.string "a Gym Leader.$"
 
 Route34_Text_YoungsterIan_Seen:
 	.string "I'm the best in my class at\n"
@@ -126,8 +126,7 @@ Route34_Text_CamperTodd_Beaten:
 	.string "Did I screw up my training?$"
 
 Route34_Text_CamperTodd_After:
-	.string "Maybe I should take one to DAY-CARE,\n"
-	.string "or maybe use some items…$"
+	.string "Maybe I should use some items…$"
 
 Route34_Text_PicnickerGina_Seen:
 	.string "Are you a trainer?\p"
@@ -157,7 +156,7 @@ Route34_Text_OfficerKeith_Daytime:
 
 Route34_Text_PokefanBrandon_Seen:
 	.string "I just got my Pokémon back from\n"
-	.string "DAY-CARE.\p"
+	.string "a training course.\p"
 	.string "Let's see how much stronger it got!$"
 
 Route34_Text_PokefanBrandon_Beaten:
@@ -168,26 +167,26 @@ Route34_Text_PokefanBrandon_After:
 	.string "That confounded me to no end!$"
 
 Route34_Text_Sign_IlexForest:
-	.string "ILEX FOREST\n"
-	.string "THROUGH THE GATE$"
+	.string "Ilex Forest\n"
+	.string "Through the Gate$"
 
 Route34_Text_Sign_Route34:
-	.string "ROUTE 34\n"
-	.string "GOLDENROD CITY - AZALEA TOWN\p"
-	.string "ILEX FOREST SOMEWHERE BETWEEN$"
+	.string "Route 34\n"
+	.string "Goldenrod City - Azalea Town\p"
+	.string "Ilex Forest Somewhere Between$"
 
 Route34_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
-	.string "BERRY trees grow new BERRIES\n"
+	.string "Trainer Tips\p"
+	.string "Berry trees grow new Berries\n"
 	.string "several times a day.\p"
 	.string "Note which trees bear which\n"
-	.string "BERRIES.$"
+	.string "Berries.$"
 
 Route34_Text_CooltrainerIrene_Seen:
-	.string "IRENE: Kyaaah! Someone found us!$"
+	.string "Irene: Kyaaah! Someone found us!$"
 
 Route34_Text_CooltrainerIrene_Beaten:
-	.string "IRENE: Ohhh! You're too strong!$"
+	.string "Irene: Ohhh! You're too strong!$"
 
 Route34_Text_CooltrainerIrene_After1:
 	.string "IRENE: My sister KATE will get you\n"
@@ -231,5 +230,5 @@ Route34_Text_CooltrainerKate_After:
 
 
 Route34_Text_Sign_DayCare:
-	.string "DAY-CARE\p"
-	.string "LET US RAISE YOUR Pokémon FOR YOU!$"
+	.string "Day-Care\p"
+	.string "Now Closed.$"

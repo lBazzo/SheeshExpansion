@@ -154,8 +154,8 @@ Route37_Text_Sunny_NotSunday:
 	.string "Um… I forgot!$"
 
 Route37_Text_Sign:
-	.string "ROUTE 37\n"
-	.string "ECRUTEAK CITY AHEAD$"
+	.string "Route 37\n"
+	.string "Ecruteak City Ahead$"
 
 Route37_EventScript_CamperIvan::
 	trainerbattle_single TRAINER_IVAN Route37_Text_CamperIvanSeen, Route37_Text_CamperIvanBeaten
@@ -200,18 +200,18 @@ Route37_Text_PicnickerBrookeAfter:
 	.string "my boyfriend.$"
 
 Route37_Text_BirdKeeperBryanSeen:
-	.string "What kinds of BALLS do you use?$"
+	.string "What kinds of Balls do you use?$"
 
 Route37_Text_BirdKeeperBryanBeaten:
 	.string "Yikes! Not fast enough!$"
 
 Route37_Text_BirdKeeperBryanAfter:
 	.string "Some Pokémon flee right away.\p"
-	.string "Try catching them with KURT's\n"
-	.string "FAST BALL.\p"
-	.string "Whenever I find a ASPEAR BERRY, I\n"
-	.string "take it to KURT.\p"
-	.string "He turns it into a custom BALL.$"
+	.string "Try catching them with Kurt's\n"
+	.string "Fast Ball.\p"
+	.string "Whenever I find a Aspear Berry, I\n"
+	.string "take it to Kurt.\p"
+	.string "He turns it into a custom Ball.$"
 
 Route37_Text_BugCatcherArnieSeen:
 	.string "I'll go anywhere if bug Pokémon\n"
@@ -221,5 +221,5 @@ Route37_Text_BugCatcherArnieBeaten:
 	.string "Huh? I shouldn't have lost that…$"
 
 Route37_Text_BugCatcherArnieAfter:
-	.string "My VENONAT won me the Bug-Catching\n"
-	.string "Contest at the NATIONAL PARK.$"
+	.string "My Venonat won me the Bug-Catching\n"
+	.string "Contest at the National Park.$"

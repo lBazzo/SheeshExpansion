@@ -74,10 +74,10 @@ NationalPark_Normal_EventScript_Persian::
 NationalPark_Normal_Text_Lass:
 	.string "Look! Check out my bag!\p"
 	.string "I printed out my favorites from my\n"
-	.string "POKéDEX and stuck them on my bag.$"
+	.string "Pokédex and stuck them on my bag.$"
 
 NationalPark_Normal_Text_PokefanF:
-	.string "This is MAIL I got from my daughter.\n"
+	.string "This is Mail I got from my daughter.\n"
 	.string "It cheers me up.$"
 
 NationalPark_Normal_Text_Teacher1:
@@ -98,21 +98,21 @@ NationalPark_Normal_Text_Teacher1_StickyBarbAndOrbs:
 
 NationalPark_Normal_Text_Youngster1:
 	.string "I'm playing with stickers I printed\n"
-	.string "from my POKéDEX.$"
+	.string "from my Pokédex.$"
 
 NationalPark_Normal_Text_Youngster2:
-	.string "I get the other guy's POKéDEX sticker\n"
+	.string "I get the other guy's Pokédex sticker\n"
 	.string "if I win.$"
 
 NationalPark_Normal_Text_Teacher2:
-	.string "I take walks in the PARK, but I\n"
+	.string "I take walks in the Park, but I\n"
 	.string "never go into the grass.\p"
 	.string "Trainers always want to battle…\p"
 	.string "You must have been in many battles.\n"
 	.string "Let me heal your Pokémon for you.$"
 
 NationalPark_Normal_Text_Persian:
-	.string "PERSIAN: Fufushaa!$"
+	.string "Persian: Fufushaa!$"
 
 NationalPark_Normal_EventScript_Zoom_Lens::
 	finditem ITEM_ZOOM_LENS
@@ -123,15 +123,15 @@ NationalPark_Normal_EventScript_Item_Wide_Lens::
 	end
 
 NationalPark_Normal_Text_Sign_RelaxationSquare:
-	.string "RELAXATION SQUARE\n"
-	.string "NATIONAL PARK$"
+	.string "Relaxation Square\n"
+	.string "National Park$"
 
 NationalPark_Normal_Text_Sign_BattleNotice:
 	.string "What is this notice?\p"
 	.string "Please battle only in the grass.\p"
-	.string "NATIONAL PARK WARDEN'S OFFICE$"
+	.string "National Park Warden's Office$"
 
 NationalPark_Normal_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
-	.string "Print out MAIL by opening it then\n"
-	.string "pressing START.$"
+	.string "Trainer Tips\p"
+	.string "Print out Mail by opening it then\n"
+	.string "pressing Start.$"

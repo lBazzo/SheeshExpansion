@@ -734,8 +734,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     {
     case MAP_TYPE_TOWN:
     case MAP_TYPE_CITY:
+        return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_ROUTE:
-        break;
+        return BATTLE_ENVIRONMENT_GRASS;
     case MAP_TYPE_FOREST:
         return BATTLE_ENVIRONMENT_LONG_GRASS;
     case MAP_TYPE_UNDERGROUND:

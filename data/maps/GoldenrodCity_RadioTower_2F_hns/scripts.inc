@@ -99,8 +99,8 @@ GoldenrodCity_RadioTower_2F_EventScript_Jigglypuff::
 	end
 
 RadioTower2FBuenaPasswordIsHelpText:
-	.string "BUENA: Huh? Today's password?\n"
-	.string "HELP, of course!$"
+	.string "Buena: Huh? Today's password?\n"
+	.string "Help, of course!$"
 
 GoldenrodCity_RadioTower_2F_Text_SuperNerd:
 	.string "You can listen to the radio\n"
@@ -116,25 +116,25 @@ GoldenrodCity_RadioTower_2F_Text_Teacher:
 
 GoldenrodCity_RadioTower_2F_Text_TeacherRockets:
 	.string "Why would they want to take over\n"
-	.string "the RADIO TOWER?$"
+	.string "the Radio Tower?$"
 
 GoldenrodCity_RadioTower_2F_Text_Jigglypuff:
-	.string "JIGGLYPUFF: Jiggly…$"
+	.string "Jigglypuff: Jiggly…$"
 
 GoldenrodCity_RadioTower_2F_Text_BlackBelt1:
 	.string "Sorry. Authorized personnel only\n"
 	.string "beyond this point.\p"
 	.string "It wasn't that way before.\p"
 	.string "There's something wrong with the\n"
-	.string "DIRECTOR…$"
+	.string "Director…$"
 
 GoldenrodCity_RadioTower_2F_Text_BlackBelt2:
 	.string "Feel free to look around anywhere.\p"
-	.string "The DIRECTOR is nice again, just\n"
+	.string "The Director is nice again, just\n"
 	.string "as he was before.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM4Seen:
-	.string "Three years ago, TEAM ROCKET was\n"
+	.string "Three years ago, Team Rocket was\n"
 	.string "forced to disband.\p"
 	.string "But we're making a comeback here!$"
 
@@ -146,7 +146,7 @@ GoldenrodCity_RadioTower_2F_Text_GruntM4After:
 	.string "for our comeback!$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM5Seen:
-	.string "We're TEAM ROCKET, the exploiters\n"
+	.string "We're Team Rocket, the exploiters\n"
 	.string "of Pokémon!\p"
 	.string "We love being evil! Scared?$"
 
@@ -164,7 +164,7 @@ GoldenrodCity_RadioTower_2F_Text_GruntM6Beaten:
 	.string "Arggh. I give up.$"
 
 GoldenrodCity_RadioTower_2F_Text_GruntM6After:
-	.string "Our EXECUTIVES are trying to take\n"
+	.string "Our Executives are trying to take\n"
 	.string "this place over.\p"
 	.string "They have some big plan. I wonder\n"
 	.string "what that is?$"
@@ -183,14 +183,14 @@ GoldenrodCity_RadioTower_2F_Text_GruntF2After:
 	.string "it!$"
 
 GoldenrodCity_RadioTower_2F_Text_BuenaShowPromo:
-	.string "BUENA: Tune in to my PASSWORD\n"
-	.string "SHOW!$"
+	.string "Buena: Tune in to my Password\n"
+	.string "Show!$"
 
 GoldenrodCity_RadioTower_2F_Text_SalesSign:
-	.string "2F SALES$"
+	.string "2F Sales$"
 
 GoldenrodCity_RadioTower_2F_Text_OakTalkSign:
-	.string "PROF.OAK'S Pokémon TALK\p"
+	.string "Prof.Oak's Pokémon Talk\p"
 	.string "The Hottest Show on the Air!$"
 
 GoldenrodCity_RadioTower_2F_Text_PokemonRadioSign:
@@ -291,8 +291,8 @@ GoldenrodCity_RadioTower_2F_EventScript_B2BGruntBot::
 
 GoldenrodCity_RadioTower_2F_Text_B2BGruntBotAfter:
 	.string "Beating up an injured man, huh?\p"
-	.string "Why, you're even more evil than TEAM\n"
-	.string "ROCKET!$"
+	.string "Why, you're even more evil than Team\n"
+	.string "Rocket!$"
 
 GoldenrodCity_RadioTower_2F_Text_B2BGruntTopAfter:
 	.string "I'm surprised you even have the energy\n"

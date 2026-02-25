@@ -88,7 +88,7 @@ GoldenrodCity_DepartmentStore_6F_Text_YouWontTradeMe:
 	.string "You don't want to trade? Aww...$"
 
 GoldenrodCity_DepartmentStore_6F_Text_After:
-	.string "Hi, how's my old MACHOP doing?$"
+	.string "Hi, how's my old Machop doing?$"
 
 
 GoldenrodDeptStore6_EventScript_Lass::
@@ -116,7 +116,7 @@ GoldenrodDeptStore6_EventScript_Sign::
 	end
 
 GoldenrodDeptStore_Text_6FLass:
-    .string "Do you listen to LUCKY CHANNEL?\p"
+    .string "Do you listen to Lucky Channel?\p"
     .string "If you want to win, trade Pokémon\n"
     .string "with as many people as possible to\l"
     .string "get different ID numbers.$"
@@ -128,4 +128,4 @@ GoldenrodDeptStore_Text_6FSuperNerd:
 
 GoldenrodDeptStore_Text_6FDirectory:
     .string "Take a Break from Shopping!\p"
-    .string "6F TRANQUIL SQUARE$"
+    .string "6F Tranquil Square$"

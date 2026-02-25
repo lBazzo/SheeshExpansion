@@ -321,18 +321,18 @@ Route35NationalParkGate_EventScript_Beauty::
 
 Route35NationalParkGate_Text_Rocker:
 	.string "I love bird Pokémon! I found a\n"
-	.string "DARK-TYPE bird in the park\l"
+	.string "Dark-Type bird in the park\l"
 	.string "last night!$"
 
 Route35NationalParkGate_Text_BC2:
-	.string "I caught a whopping SCYTHER!$"
+	.string "I caught a whopping Scyther!$"
 
 Route35NationalParkGate_Text_Beauty:
 	.string "He always wins these contests!$"
 
 Route35NationalParkGate_Text_WeHoldContests:
 	.string "We hold Contests regularly in the\n"
-	.string "PARK. You should give it a shot.$"
+	.string "Park. You should give it a shot.$"
 
 Route35NationalParkGate_Text_YoungsterWonders:
 	.string "When is the next Bug-Catching Contest\n"

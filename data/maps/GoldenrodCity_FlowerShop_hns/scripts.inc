@@ -135,11 +135,11 @@ GoldenrodCity_FlowerShop_Text_ImGrowingFlowers:
 	.string "It's for you!$"
 
 GoldenrodCity_FlowerShop_Text_MachineMixesBerries:
-	.string "A Pokémon can eat a BERRY to heal,\n"
+	.string "A Pokémon can eat a Berry to heal,\n"
 	.string "or you can make a Pokémon hold it.\p"
 	.string "In a faraway region I visited,\n"
 	.string "they had a machine that mixes\l"
-	.string "up different BERRIES and makes candies\l"
+	.string "up different Berries and makes candies\l"
 	.string "for Pokémon.\p"
 	.string "I want some candy, too.$"
 
@@ -152,7 +152,7 @@ GoldenrodCity_FlowerShop_EventScript_Floria3::
 GoldenrodCity_FlowerShop_Text_Floria:
 	.string "When I told my sis about the jiggly\n"
 	.string "tree, she said it's dangerous.\p"
-	.string "If I beat WHITNEY, I wonder if\n"
+	.string "If I beat Whitney, I wonder if\n"
 	.string "she'll lend me her water bottle…$"
 
 GoldenrodCity_FlowerShop_Text_Owner1:
@@ -166,7 +166,7 @@ GoldenrodCity_FlowerShop_Text_Owner1:
 .string "But I cannot let you have one!\n"
 .string "It's too dangerous!\p"
 .string "Well, maybe if you manage to\n"
-.string "defeat gym leader WHITNEY, it\l"
+.string "defeat gym leader Whitney, it\l"
 .string "might be okay.$"
 
 GoldenrodCity_FlowerShop_Text_Owner2:
@@ -174,18 +174,18 @@ GoldenrodCity_FlowerShop_Text_Owner2:
 .string "on Route 36.\p"
 .string "They say it dances when you water\n"
 .string "it...\p"
-.string "Oh, that's a PLAINBADGE from\n"
-.string "The GOLDENROD GYM!\p"
-.string "Did you defeat WHITNEY?!\p"
+.string "Oh, that's a Plain Badge from\n"
+.string "The Goldenrod Gym!\p"
+.string "Did you defeat Whitney?!\p"
 .string "Well, then there's nothing to worry\n"
 .string "about, is there?\p"
-.string "I'll let you use this SQUIRTBOTTLE\n"
+.string "I'll let you use this Squirtbottle\n"
 .string "for a while then.\l"
 .string "...\p"
 .string "Oh, never mind. Keep it!$"
 
 GoldenrodCity_FlowerShop_Text_Owner3:
-.string "The odd tree is on ROUTE 36.\n"
+.string "The odd tree is on Route 36.\n"
 .string "Please be careful!$"
 
 GoldenrodCity_FlowerShop_Text_Owner4:
@@ -193,7 +193,7 @@ GoldenrodCity_FlowerShop_Text_Owner4:
     .string "water, my lovely!$"
 
 GoldenrodCity_FlowerShop_Text_FloriaYouBeatWhitney:
-    .string "Wow, you beat WHITNEY? Cool!$"
+    .string "Wow, you beat Whitney? Cool!$"
 
 GoldenrodCity_FlowerShop_Text_FloriaItWasAMon:
     .string "So it really was a Pokémon!$"

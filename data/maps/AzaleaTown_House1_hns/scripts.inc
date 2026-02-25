@@ -88,7 +88,7 @@ CharcoalKiln_Text_Boss2:
 
 CharcoalKiln_Text_Boss3:
 	.string "The Slowpoke have returned…\p"
-	.string "But my APPRENTICE hasn't come back\n"
+	.string "But my apprentice hasn't come back\n"
 	.string "from Ilex Forest.\p"
 	.string "Where in the world is that lazy guy?$"
 

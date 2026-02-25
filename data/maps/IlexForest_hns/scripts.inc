@@ -660,39 +660,39 @@ IlexForest_Movement_Kurt2:
 IlexForest_Text_ApprenticeIntro:
 	.string "Oh, man… My boss is going to be\n"
 	.string "steaming…\p"
-	.string "The FARFETCH'D that CUTS trees\n"
+	.string "The Farfetch'd that cuts trees\n"
 	.string "for charcoal took off on me.\p"
 	.string "I can't go looking for it here\n"
-	.string "in the ILEX FOREST.\p"
+	.string "in the Ilex Forest.\p"
 	.string "It's too big, dark and scary\n"
 	.string "for me…$"
 
 IlexForest_Text_ApprenticeAfter:
 	.string "Wow! Thanks a whole bunch!\p"
 	.string "My boss's Pokémon won't obey me\n"
-	.string "because I don't have a BADGE.$"
+	.string "because I don't have a Badge.$"
 
 IlexForest_Text_ItsTheMissingPokemon:
 	.string "It's the missing Pokémon!$"
 
 IlexForest_Text_Kwaaaa:
-	.string "FARFETCH'D: Kwaa!$"
+	.string "Farfetch'd: Kwaa!$"
 
 IlexForest_Text_CharcoalMasterIntro:
-	.string "Ah! My FARFETCH'D!\p"
+	.string "Ah! My Farfetch'd!\p"
 	.string "You found it for us, kid?\p"
 	.string "Without it, we wouldn't be able\n"
-	.string "to CUT trees for charcoal.\p"
+	.string "to Cut trees for charcoal.\p"
 	.string "Thanks, kid!\p"
 	.string "Now, how can I thank you…\p"
 	.string "I know! Here, take this.$"
 
 IlexForest_Text_CharcoalMasterOutro:
-	.string "That's the CUT HM.\n"
+	.string "That's the Cut HM.\n"
 	.string "Teach that to a Pokémon to clear\l"
 	.string "small trees.\p"
 	.string "Of course, you have to have the\n"
-	.string "GYM BADGE from AZALEA to use it.$"
+	.string "Gym Badge from Azalea to use it.$"
 
 IlexForest_Text_CharcoalMasterTalkAfter:
 	.string "Do you want to apprentice as a\n"
@@ -701,10 +701,10 @@ IlexForest_Text_CharcoalMasterTalkAfter:
 
 MoveTutor_Text_HeadbuttTeach:
 	.string "What am I doing?\p"
-	.string "I'm shaking trees using HEADBUTT.\p"
+	.string "I'm shaking trees using Headbutt.\p"
 	.string "Do you think your Pokémon will\n"
-	.string "want to HEADBUTT, too?\p"
-	.string "I can teach one the move HEADBUTT\n"
+	.string "want to Headbutt, too?\p"
+	.string "I can teach one the move Headbutt\n"
 	.string "if you'd like. It's fun!$"
 	
 MoveTutor_Text_HeadbuttWhichMon:
@@ -716,7 +716,7 @@ MoveTutor_Text_HeadbuttDeclined:
 	.string "Let's butt heads!$"
 
 MoveTutor_Text_HeadbuttTaught:
-	.string "Rattle trees with HEADBUTT.\n"
+	.string "Rattle trees with Headbutt.\n"
 	.string "Sometimes, sleeping Pokémon fall out.$"
 
 IlexForest_Text_Lass:
@@ -724,36 +724,36 @@ IlexForest_Text_Lass:
 	.string "forest's guardian?$"
 
 IlexForest_Text_Signpost:
-	.string "ILEX FOREST is so overgrown with\n"
+	.string "Ilex Forest is so overgrown with\n"
 	.string "trees that you can't see the sky.\p"
 	.string "Please watch out for items that may\n"
 	.string "have been dropped.$"
 
 IlexForest_Text_Shrine:
-	.string "ILEX FOREST SHRINE…\p"
+	.string "Ilex Forest Shrine…\p"
 	.string "It's in honor of the forest's\n"
 	.string "protector…$"
 
 IlexForest_Text_ShrineCelebiEvent:
-	.string "ILEX FOREST SHRINE…\p"
+	.string "Ilex Forest Shrine…\p"
 	.string "It's in honor of the forest's\n"
 	.string "protector…\p"
 	.string "Oh? What is this?\p"
 	.string "It's a hole.\n"
-	.string "It looks like the GS BALL would fit\l"
+	.string "It looks like the GS Ball would fit\l"
 	.string "inside it.\p"
-	.string "Want to put the GS BALL here?$"
+	.string "Want to put the GS Ball here?$"
 
 IlexForest_Text_InsertGSBall:
-	.string "{PLAYER} put in the GS BALL.$"
+	.string "{PLAYER} put in the GS Ball.$"
 
 IlexForest_Text_KurtCaughtCelebi:
 	.string "Whew, wasn't that something!\p"
 	.string "{PLAYER}, that was fantastic. Thanks!\p"
-	.string "The legends about that SHRINE were\n"
+	.string "The legends about that Shrine were\n"
 	.string "real after all.\p"
 	.string "I feel inspired by what I just saw.\p"
-	.string "It motivates me to make better BALLS!\p"
+	.string "It motivates me to make better Balls!\p"
 	.string "I'm going!$"
 
 IlexForest_Text_BugCatcherWayneSeen:
@@ -771,12 +771,12 @@ IlexForest_Text_BugCatcherWayneAfter:
 	.string "places too.$"
 
 IlexForest_Text_Kimono_Girl1:
-	.string "KIMONO GIRL, KIMONO GIRL, lost and\n"
+	.string "Kimono girl, Kimono girl, lost and\n"
 	.string "all alone. Poor girl lost in the\l"
-	.string "dark ILEX FOREST.$"
+	.string "dark Ilex Forest.$"
 
 IlexForest_Text_Kimono_Girl2:
-	.string "You remember me from VIOLET CITY?\n"
+	.string "You remember me from Violet City?\n"
 	.string "You must be imagining.\p"
 	.string "Anyway, will you show me how to\n"
 	.string "get out of this forest?$"
@@ -885,7 +885,7 @@ IlexForest_EventScript_BugsyCheckOnMisty::
 IlexForest_Text_BugsyPreWell:
 	.string "Oh, hi again, {PLAYER}.\p"
 	.string "It's good to see you're alright. How is\n"
-	.string "the fight against TEAM ROCKET going?\p"
+	.string "the fight against Team Rocket going?\p"
 	.string "I wish I could help you out, but the\n"
 	.string "Pokémon here need my protection...\p"
 	.string "But don't worry. You can do it! I just\n"
@@ -897,7 +897,7 @@ IlexForest_Text_BugsyGiftTM:
 	.string "should still be very proud!\p"
 	.string "I know it's not much compared to what\n"
 	.string "you've done for the people and Pokémon\l"
-	.string "of AZALEA TOWN, but I want you to have\l"
+	.string "of Azalea Town, but I want you to have\l"
 	.string "this TM.\p"
 	.string "It contains U-Turn. It lets you attack\n"
 	.string "and then reposition quickly during a\l"
@@ -905,7 +905,7 @@ IlexForest_Text_BugsyGiftTM:
 
 IlexForest_Text_BugsyGiftStone:
 	.string "Say, you're probably going to challenge\n"
-	.string "the AZALEA GYM now, right?\p"
+	.string "the Azalea Gym now, right?\p"
 	.string "Your Pokémon could maybe use a boost\n"
 	.string "from one of these evolution stones.\p"
 	.string "I find a bunch of these while looking\n"
@@ -914,21 +914,21 @@ IlexForest_Text_BugsyGiftStone:
 
 IlexForest_Text_BugsyGiftStoneReceived:
 	.string "Okay then, here you go! Just don't tell\n"
-	.string "MISTY I gave you this, okay?$"
+	.string "Misty I gave you this, okay?$"
 
 IlexForest_Text_BugsyCheckOnMisty:
 	.string "Not that it's any of my business, but do\n"
-	.string "you know how MISTY's getting on?\p"
+	.string "you know how Misty's getting on?\p"
 	.string "The last time I was here, she was a\n"
 	.string "little down.\p"
 	.string "I tried to cheer her up by explaining to\n"
 	.string "her how awesome bug type Pokémon can\l"
-	.string "be, and I gave her my little WIMPOD for\l"
+	.string "be, and I gave her my little Wimpod for\l"
 	.string "her to keep as a friend, since it's a\l"
 	.string "water type too.\p"
 	.string "She got mad at me for it though...\p"
 	.string "I'm not upset or anything. I just hope\n"
-	.string "her and WIMPOD are getting along.$"
+	.string "her and Wimpod are getting along.$"
 
 IlexForest_Text_BugsyGiftStoneDeclined:
 	.string "Oh, you still need time to decide?\n"

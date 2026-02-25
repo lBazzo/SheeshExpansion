@@ -385,27 +385,27 @@ BlackthornGym_EventScript_GymGuy2::
 	end	
 
 BlackthornGym_Text_GuideText:
-    .string "Yo! CHAMP in making!\p"
+    .string "Yo! Champ in the making!\p"
     .string "It's been a long journey, but we\n"
     .string "are almost done! Count on me!\p"
-    .string "While CLAIR looks up to the Dragon\n"
-    .string "Master, LANCE, she's managed to\l"
+    .string "While Clair looks up to the Dragon\n"
+    .string "Master, Lance, she's managed to\l"
     .string "create her own identity with a\l"
     .string "team consisting of dragons from\l"
     .string "the sea.\p"
     .string "Dragons are supposed to be\n"
-    .string "weak against ICE-type moves,\l"
-    .string "but you'll need some DRAGON-type\l"
-	.string "or FAIRY-type moves of your own if\l"
+    .string "weak against Ice-type moves,\l"
+    .string "but you'll need some Dragon-type\l"
+	.string "or Fairy-type moves of your own if\l"
     .string "you want to win.$"
     .string "You got this!$"
 
 BlackthornGym_Text_GuideWinText:
-    .string "You were great to beat CLAIR!\p"
+    .string "You were great to beat Clair!\p"
     .string "All that's left is the Pokémon\n"
-    .string "LEAGUE challenge.\p"
+    .string "League challenge.\p"
     .string "You're on the way to becoming the\n"
-    .string "Pokémon CHAMPION!$"
+    .string "Pokémon Champion!$"
 
 
 BlackthornGym_EventScript_Statue::

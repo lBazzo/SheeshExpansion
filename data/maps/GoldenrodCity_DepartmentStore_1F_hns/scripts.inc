@@ -79,11 +79,11 @@ GoldenrodDeptStor1_Text_ReceptionistLuckyDay1:
 
 GoldenrodDeptStor1_Text_ReceptionistLuckyDay2:
 	.string "Is that you, {PLAYER}?\p"
-	.string "It's me! Your MOM's friend from\n"
-	.string "NEWBARKTOWN!\p"
+	.string "It's me! Your Mom's friend from\n"
+	.string "New Bark Town!\p"
 	.string "To think you've made it all the way\n"
 	.string "here...\p"
-	.string "Your MOM will be so proud.\p"
+	.string "Your Mom will be so proud.\p"
 	.string "I've got a few little goodies from her\n"
 	.string "to give to you. Promise you'll go back\l"
 	.string "sometime to thank her in person, 'kay?$"
@@ -93,13 +93,13 @@ GoldenrodDeptStor1_Text_ReceptionistLuckyDay3:
 	.string "We'll always be rooting for you!$"
 
 GoldenrodDeptStor1_Text_Receptionist:
-    .string "Welcome to GOLDENROD DEPT.STORE.$"
+    .string "Welcome to Goldenrod Dept.Store.$"
 
 GoldenrodDeptStore1_Text_Gentleman:
-    .string "The DEPT.STORE has a decent\n"
+    .string "The Dept.Store has a decent\n"
     .string "selection.\p"
     .string "But some items are only available\n"
-    .string "as GAME CORNER prizes.$"
+    .string "as Game Corner prizes.$"
 
 GoldenrodDeptStore1_Text_PokefanF:
     .string "I'm raring to shop again today!$"
@@ -110,10 +110,10 @@ GoldenrodDeptStore1_Text_BugCatcher:
     .string "prices.$"
 
 GoldenrodDeptStore1_Text_Directory:
-    .string "<1F SERVICE COUNTER>\p"
-    .string "2F TRAINER'S MARKET\p"
-    .string "3F BATTLE COLLECTION\p"
-    .string "4F MEDICINE BOX\p"
-    .string "5F TM CORNER\p"
-    .string "6F TRANQUIL SQUARE\p"
-    .string "ROOFTOP LOOKOUT$"
+    .string "1F Service Counter\p"
+    .string "2F Trainer's Market\p"
+    .string "3F Stone Collection\p"
+    .string "4F Unique Evolution\p"
+    .string "5F Species Treasures\p"
+    .string "6F Tranquil Square\p"
+    .string "Rooftop Lookout$"

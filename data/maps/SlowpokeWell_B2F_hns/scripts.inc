@@ -101,7 +101,7 @@ SlowpokeWell_EventScript_Bonsly::
 	end
 
 SlowpokeWell_Text_Bonsly:
-	.string "BooBeeeee!$"
+	.string "Bonsly: BooBeeeee!$"
 
 SlowpokeWell_EventScript_Tutor::
 	lock

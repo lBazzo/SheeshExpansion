@@ -85,15 +85,14 @@ Route35_Text_CamperIvanAfter:
 	.string "moods of wild Pokémon.$"
 
 Route35_Text_CamperElliotSeen:
-	.string "I'm gonna show my girlfriend I'm\n"
+	.string "I'm gonna show my you that I'm\n"
 	.string "hot stuff!$"
 
 Route35_Text_CamperElliotBeaten:
 	.string "I wish you would have lost for me…$"
 
 Route35_Text_CamperElliotAfter:
-	.string "I was humiliated in front of my\n"
-	.string "girlfriend…$"
+	.string "I was humiliated…$"
 
 Route35_Text_PicnickerBrookeSeen:
 	.string "My boyfriend's weak, so I can't rely\n"
@@ -113,25 +112,25 @@ Route35_Text_PicnickerKimBeaten:
 	.string "Oh. I couldn't win…$"
 
 Route35_Text_PicnickerKimAfter:
-	.string "The GYM BADGES are pretty. I collect\n"
+	.string "The Gym Badges are pretty. I collect\n"
 	.string "them.$"
 
 Route35_Text_BirdKeeperBryanSeen:
-	.string "What kinds of BALLS do you use?$"
+	.string "What kinds of Balls do you use?$"
 
 Route35_Text_BirdKeeperBryanBeaten:
 	.string "Yikes! Not fast enough!$"
 
 Route35_Text_BirdKeeperBryanAfter:
 	.string "Some Pokémon flee right away.\p"
-	.string "Try catching them with KURT's\n"
-	.string "FAST BALL.\p"
-	.string "Whenever I find a ASPEAR BERRY, I\n"
-	.string "take it to KURT.\p"
-	.string "He turns it into a custom BALL.$"
+	.string "Try catching them with Kurt's\n"
+	.string "Fast Ball.\p"
+	.string "Whenever I find a Aspear Berry, I\n"
+	.string "take it to Kurt.\p"
+	.string "He turns it into a custom Ball.$"
 
 Route35_Text_JugglerIrwinSeen:
-	.string "Behold my graceful BALL dexterity!$"
+	.string "Behold my graceful Ball dexterity!$"
 
 Route35_Text_JugglerIrwinBeaten:
 	.string "Whew! That was a jolt!$"
@@ -149,11 +148,11 @@ Route35_Text_BugCatcherArnieBeaten:
 	.string "Huh? I shouldn't have lost that…$"
 
 Route35_Text_BugCatcherArnieAfter:
-	.string "My VENONAT won me the Bug-Catching\n"
-	.string "Contest at the NATIONAL PARK.$"
+	.string "My Venonat won me the Bug-Catching\n"
+	.string "Contest at the National Park.$"
 
 Route35_Text_BugCatcherArnieYanma:
-	.string "Wow… Look at all those YANMA!\p"
+	.string "Wow… Look at all those Yanma!\p"
 	.string "I'm so blown away, I can't move.$"
 
 Route35_Text_FirebreatherWaltSeen:
@@ -167,7 +166,7 @@ Route35_Text_FirebreatherWaltAfter:
 	.string "lures wild Pokémon.$"
 
 Route35_Text_Sign:
-	.string "ROUTE 35$"
+	.string "Route 35$"
 
 Route35_Text_Sign2:
-	.string "NATIONAL PARK GATE$"
+	.string "National Park Gate$"

@@ -28,18 +28,18 @@ GoldenrodDeptStore3_EventScript_Rocker::
 
 GoldenrodDeptStore_Text_3FSuperNerd:
     .string "I, I, I'm really impatient!\p"
-    .string "I use X SPEED in battle to speed up\n"
+    .string "I use X Speed in battle to speed up\n"
     .string "my Pokémon.$"
 
 GoldenrodDeptStore_Text_3FRocker:
     .string "Hey! When you battle, do you use X\n"
-    .string "SPECIAL?\p"
+    .string "Special?\p"
     .string "It's awesome. It really jacks up\n"
-    .string "SPECIAL ATTACK!$"
+    .string "Special Attack!$"
 
 GoldenrodDeptStore_Text_3FDirectory:
     .string "For Victory Seekers\p"
-    .string "3F BATTLE COLLECTION$"
+    .string "3F Battle Collection$"
 
 LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft::
 	lock

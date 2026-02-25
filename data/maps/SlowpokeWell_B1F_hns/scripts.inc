@@ -46,7 +46,7 @@ SlowpokeWell_B1F_EventScript_B2B::
 	waitmovement 0 
 	msgbox SlowpokeWell_B1F_Text_Grunt24PreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_UNION_CAVE, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, SlowpokeWell_B1F_Text_Grunt24Beaten
+	trainerbattle_no_intro TRAINER_GRUNT_35, SlowpokeWell_B1F_Text_Grunt24Beaten
 	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 2
 	release
 	end
@@ -153,11 +153,11 @@ SlowpokeWell_B1F_Movement_Kurt:
 	step_end
 
 SlowpokeWell_B1F_Text_KurtIntro:
-	.string "KURT: Hey there, {PLAYER}!\p"
+	.string "Kurt: Hey there, {PLAYER}!\p"
 	.string "The guard up top took off when\n"
 	.string "I shouted at him.\p"
 	.string "But then I took a tumble down\n"
-	.string "the WELL.\p"
+	.string "the Well.\p"
 	.string "I slammed down hard on my back,\n"
 	.string "so I can't move.\p"
 	.string "Rats! If I were fit, my Pokémon\n"
@@ -167,8 +167,8 @@ SlowpokeWell_B1F_Text_KurtIntro:
 	.string "you are in my place!$"
 
 SlowpokeWell_B1F_Text_KurtAfter:
-	.string "KURT: Way to go, {PLAYER}!\p"
-	.string "TEAM ROCKET has taken off.\p"
+	.string "Kurt: Way to go, {PLAYER}!\p"
+	.string "Team Rocket has taken off.\p"
 	.string "My back's better too.\n"
 	.string "Let's get out of here.$"
 
@@ -186,10 +186,10 @@ SlowpokeWell_B1F_Text_GruntM29Beaten:
 
 SlowpokeWell_B1F_Text_GruntM29After:
 	.string "Sure, we've been hacking the\n"
-	.string "tails off SLOWPOKE and selling\l"
+	.string "tails off Slowpoke and selling\l"
 	.string "them.\p"
 	.string "Everything we do is for profit.\p"
-	.string "That's right! We're TEAM ROCKET,\n"
+	.string "That's right! We're Team Rocket,\n"
 	.string "and we'll do anything for money!$"
 
 SlowpokeWell_B1F_Text_ProtonSeen:
@@ -202,7 +202,7 @@ SlowpokeWell_B1F_Text_ProtonBeaten:
 	.string "but wait till next time!$"
 
 SlowpokeWell_B1F_Text_ProtonAfter:
-	.string "Yeah, TEAM ROCKET was broken up\n"
+	.string "Yeah, Team Rocket was broken up\n"
 	.string "three years ago.\p"
 	.string "The boss went into hiding.\p"
 	.string "But we continued our activities\n"
@@ -214,9 +214,9 @@ SlowpokeWell_B1F_Text_ProtonAfter:
 
 SlowpokeWell_B1F_Text_GruntM2Seen:
 	.string "Hyuck-hyuck-hyuck!\n"
-	.string "Quit taking SLOWPOKETAILS?\p"
+	.string "Quit taking Slowpoketails?\p"
 	.string "You're nuts!\n"
-	.string "If we obeyed you, TEAM ROCKET's\l"
+	.string "If we obeyed you, Team Rocket's\l"
 	.string "rep would be ruined!$"
 
 SlowpokeWell_B1F_Text_GruntM2Beaten:
@@ -225,8 +225,8 @@ SlowpokeWell_B1F_Text_GruntM2Beaten:
 
 SlowpokeWell_B1F_Text_GruntM2After:
 	.string "We need the money,\n"
-	.string "but selling SLOWPOKETAILS?\p"
-	.string "It's tough being a ROCKET GRUNT!$"
+	.string "but selling Slowpoketails?\p"
+	.string "It's tough being a Rocket Grunt!$"
 
 SlowpokeWell_B1F_Text_JoeySeen:
 	.string "Wrahhhh! Feel Team Rocket's Wrath!$"
@@ -241,7 +241,7 @@ SlowpokeWell_B1F_Text_JoeyAfter:
 	.string "that I was losing.$"
 
 SlowpokeWell_B1F_Text_GruntF1Seen:
-	.string "Stop taking TAILS?\p"
+	.string "Stop taking tails?\p"
 	.string "Yeah, just try to defeat all\n"
 	.string "of us!$"
 
@@ -249,19 +249,19 @@ SlowpokeWell_B1F_Text_GruntF1Beaten:
 	.string "You rotten brat!$"
 
 SlowpokeWell_B1F_Text_GruntF1After:
-	.string "SLOWPOKETAILS grow back fast!\p"
+	.string "Slowpoketails grow back fast!\p"
 	.string "What's wrong with selling them?$"
 
 SlowpokeWell_B1F_Text_SlowpokeWithMail:
-	.string "A SLOWPOKE with its TAIL cut off…\p"
-	.string "Huh? It has MAIL.\n"
+	.string "A Slowpoke with its tail cut off…\p"
+	.string "Huh? It has mail.\n"
 	.string "Read it?$"
 
 SlowpokeWell_B1F_Text_SlowpokeMail:
-	.string "{PLAYER} read the MAIL.\p"
+	.string "{PLAYER} read the mail.\p"
 	.string "Be good and look after the\n"
-	.string "house with Grandpa and SLOWPOKE.\p"
+	.string "house with Grandpa and Slowpoke.\p"
 	.string "Love, Dad$"
 
 SlowpokeWell_B1F_Text_TaillessSlowpoke:
-	.string "A SLOWPOKE with its TAIL cut off…$"
+	.string "A Slowpoke with its tail cut off…$"

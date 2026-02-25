@@ -7,21 +7,23 @@ Gate_GoldenrodCity_Route35_EventScript_Randy::
 	goto_if_eq VAR_KENYA, 3, Gate_GoldenrodCity_Route35_EventScript_RandyPostKenya
 	goto_if_eq VAR_KENYA, 2, Gate_GoldenrodCity_Route35_EventScript_RandyDeliveredKenya
 	goto_if_eq VAR_KENYA, 1, Gate_GoldenrodCity_Route35_EventScript_RandyHaveKenya
-	msgbox Route35GoldenrodGate_Text_RandyAskFavor, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, FALSE, Gate_GoldenrodCity_Route35_EventScript_RandyCancel
+	msgbox Route35GoldenrodGate_Text_RandyAskFavor, MSGBOX_DEFAULT
+	@goto_if_eq VAR_RESULT, FALSE, Gate_GoldenrodCity_Route35_EventScript_RandyCancel
 	closemessage
-
-	msgbox Route35GoldenrodGate_Text_RandyThanks, MSGBOX_DEFAULT
-
-	@HnS named gift pokemon setup
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SPEAROW
-	bufferspeciesname STR_VAR_1, SPECIES_SPEAROW
-	givenamedmon 1
-	call Common_EventScript_GiftMonNamed
-
-	setvar VAR_KENYA, 1
 	release
 	end
+
+	@msgbox Route35GoldenrodGate_Text_RandyThanks, MSGBOX_DEFAULT
+
+	@HnS named gift pokemon setup
+	@setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SPEAROW
+	@bufferspeciesname STR_VAR_1, SPECIES_SPEAROW
+	@givenamedmon 1
+	@call Common_EventScript_GiftMonNamed
+
+	@setvar VAR_KENYA, 1
+	@release
+	@end
 
 Gate_GoldenrodCity_Route35_EventScript_RandyCancel::
 	msgbox Route35GoldenrodGate_Text_RandyNeverMind, MSGBOX_DEFAULT
@@ -76,11 +78,8 @@ Gate_GoldenrodCity_Route35_EventScript_Fisher::
 	end
 
 Route35GoldenrodGate_Text_RandyAskFavor:
-	.string "Excuse me, kid! Can you do a guy\n"
-	.string "a favor?\p"
-	.string "Can you take this Pokémon with MAIL\n"
-	.string "to my friend?\p"
-	.string "He's on ROUTE 31.$"
+	.string "Huh? You want Kenya?\n"
+	.string "Kenya tell me who you're talking about?$"
 
 Route35GoldenrodGate_Text_RandyThanks:
 	.string "You will? Perfect! Thanks, kid!\p"
@@ -118,7 +117,7 @@ Route35GoldenrodGate_Text_PokefanF_TreeBlocking:
 	.string "A strange tree is blocking the road.\p"
 	.string "It wriggles around if you talk to it.\p"
 	.string "I heard it became wild when someone\n"
-	.string "watered it with a SQUIRTBOTTLE.$"
+	.string "watered it with a Squirtbottle.$"
 
 Route35GoldenrodGate_Text_PokefanF_Lullaby:
 	.string "I like the Pokémon Lullaby they play\n"
@@ -127,7 +126,7 @@ Route35GoldenrodGate_Text_PokefanF_Lullaby:
 Route35GoldenrodGate_Text_Fisher:
 	.string "I wonder how many kinds of Pokémon\n"
 	.string "there are in the world.\p"
-	.string "Three years ago, PROF.OAK said that\n"
+	.string "Three years ago, Prof.Oak said that\n"
 	.string "there were 150 different kinds.\p"
 	.string "But recently I heard there's\n"
 	.string "over 400!$"

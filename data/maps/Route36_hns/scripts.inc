@@ -498,7 +498,7 @@ Route36_Text_PokefanFBeverly_After:
 Route36_Text_PokefanmWilliam_Seen:
 	.string "We adore our Pokémon, even if they\n"
 	.string "dislike us.\p"
-	.string "That's what being a FAN is about.$"
+	.string "That's what being a Fan is about.$"
 
 Route36_Text_PokefanmWilliam_Beaten:
 	.string "M-my Pokémon!$"

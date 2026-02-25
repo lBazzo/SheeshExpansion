@@ -487,11 +487,11 @@ Route34_DayCare_EventScript_TwoMonsInDaycare::
 	end
 
 Route34_Text_SeeWifeIfYoudLikeMeToRaiseMon:
-	.string "I'm the DAY-CARE MAN.\p"
+	.string "I'm the Day-Care man.\p"
 	.string "I help take care of the precious\n"
-	.string "Pokémon of TRAINERS.\p"
-	.string "If you'd like me to raise your Pokémon,\n"
-	.string "have a word with my wife.$"
+	.string "Pokémon of Trainers.\p"
+	.string "Or at least, I used to.\n"
+	.string "These days I just try to relax.$"
 
 Route34_Text_DoYouWantEgg:
 	.string "Ah, it's you!\p"

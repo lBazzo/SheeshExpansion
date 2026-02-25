@@ -15,7 +15,7 @@
 
 GoldenrodCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, GoldenrodCity_MapScript_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodCity_OnFrame
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodCity_MapScript_OnFrame
 	.byte 0
 
 GoldenrodCity_EventScript_MoveGameCornerGuard::
@@ -24,20 +24,22 @@ GoldenrodCity_EventScript_MoveGameCornerGuard::
 
 GoldenrodCity_MapScript_OnTransition::
 	call_if_set FLAG_LIGHTHOUSE_TOO_DARK, GoldenrodCity_MapScript_UnsetLighthouseTooDarkFlag
+	call_if_eq VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_EventScript_Hide_Silver
 	end
 
 GoldenrodCity_MapScript_UnsetLighthouseTooDarkFlag::
 	clearflag FLAG_LIGHTHOUSE_TOO_DARK
 	return
 
-GoldenrodCity_OnFrame::
-	map_script_2 VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_MapScript_Hide_Silver
+GoldenrodCity_MapScript_OnFrame::
+	@map_script_2 VAR_GOLDENROD_SILVER_STATE, 1, GoldenrodCity_EventScript_Hide_Silver
 	map_script_2 VAR_GOLDENROD_SILVER_STATE, 3, GoldenrodCity_EventScript_Giovanni
 	.2byte 0
 
-GoldenrodCity_MapScript_Hide_Silver:
+GoldenrodCity_EventScript_Hide_Silver::
 	setflag FLAG_HIDE_GOLDENROD_CITY_SILVER
 	removeobject LOCALID_GOLDENROD_CITY_SILVER
+	release
 	end
 
 GoldenrodCity_EventScript_Trigger:: @flagheap
@@ -123,7 +125,7 @@ GoldenrodCity_Trigger_Silver::
 	call_if_eq VAR_STARTER_MON, 0, GoldenrodCity_Silver_Battle_Cyndaquil
 	call_if_eq VAR_STARTER_MON, 1, GoldenrodCity_Silver_Battle_Totodile
 	call_if_eq VAR_STARTER_MON, 2, GoldenrodCity_Silver_Battle_Chikorita
-	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
+	@playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
 	msgbox GoldenrodCity_Text_RivalAfter, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_GOLDENROD_CITY_SILVER, GoldenrodCity_Movement_Silver_Leave
@@ -178,7 +180,7 @@ GoldenrodCity_Text_Silver1:
 	.string "Bump!$"
 
 GoldenrodCity_Text_Silver2:
-	.string "SILVER: Stupid receptionist and her\n"
+	.string "Silver: Stupid receptionist and her\n"
 	.string "stupid quiz...\p"
 	.string "How am I supposed to know who this\n"
 	.string "'Kurt' guy is without a last name?\p"
@@ -186,14 +188,14 @@ GoldenrodCity_Text_Silver2:
 	.string "what appears on some slot machines?$"
 
 GoldenrodCity_Text_Silver3:
-	.string "SILVER: Oh, it's you.\p"
+	.string "Silver: Oh, it's you.\p"
 	.string "...\p"
-	.string "Yeah, well, I didn't want that RADIO\n"
+	.string "Yeah, well, I didn't want that Radio\n"
 	.string "anyway.\p"
 	.string "If I couldn't get it right, there's no\n"
 	.string "way they'd give one to an idiot like you.\p"
 	.string "More importantly...\p"
-	.string "Is it true that TEAM ROCKET\n"
+	.string "Is it true that Team Rocket\n"
 	.string "has returned?\p"
 	.string "What? You beat them? Hah! Quit\n"
 	.string "lying.\p"
@@ -211,7 +213,7 @@ GoldenrodCity_Text_RivalAfter:
 	.string "matter who or what.\p"
 	.string "I'm going to be strong and wipe\n"
 	.string "out the weak.\p"
-	.string "That goes for TEAM ROCKET too.\p"
+	.string "That goes for Team Rocket too.\p"
 	.string "They act big and tough in a group.\p"
 	.string "But get them alone, and they're weak.\n"
 	.string "I hate them all.\p"
@@ -452,10 +454,10 @@ GoldenrodCity_EventScript_Beauty::
 	end
 
 GoldenrodCity_Text_Beauty:
-	.string "This is the GOLDENROD GYM!\p"
-	.string "Our leader WHITNEY is not here\n"
+	.string "This is the Goldenrod Gym!\p"
+	.string "Our leader Whitney is not here\n"
 	.string "right now. She might be at the\l"
-	.string "RADIO TOWER.$"
+	.string "Radio Tower.$"
 
 GoldenrodCity_EventScript_LittleGirl::
 	lock
@@ -467,15 +469,18 @@ GoldenrodCity_EventScript_LittleGirl::
 
 GoldenrodCity_Text_LittleGirl:
 	.string "Yo, check this out!\p"
-	.string "Whenever I play music with my POKéGEAR,\n"
+	.string "Whenever I play music with my Pokégear,\n"
 	.string "my Azurill starts dancing!\p"
-	.string "Maybe if you get a RADIO, yours will\n"
+	.string "Maybe if you get a Radio, yours will\n"
 	.string "too!$"
 
 GoldenrodCity_EventScript_Azurill::
 	lock
 	faceplayer
+	waitse
+	playmoncry SPECIES_AZURILL, CRY_MODE_NORMAL
 	msgbox GoldenrodCity_Text_Azurill, MSGBOX_DEFAULT
+	waitmoncry
 	closemessage
 	release
 	end
@@ -484,65 +489,65 @@ GoldenrodCity_Text_Azurill:
 	.string "Azu! Azurill!$"
 
 GoldenrodCity_Text_Woman:
-	.string "I used to train in WHITNEY's GYM,\n"
+	.string "I used to train in Whitney's Gym,\n"
 	.string "but all her crying gave me a\l"
 	.string "headache.$"
 
 GoldenrodCity_Text_HikerDay:
-	.string "When I went into the GAME CORNER\n"
+	.string "When I went into the Game Corner\n"
 	.string "it was night time... How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_HikerNight:
-	.string "When I went into the GAME CORNER\n"
+	.string "When I went into the Game Corner\n"
 	.string "it was day time... How long was I\l"
 	.string "in there?!$"
 
 GoldenrodCity_Text_Snubbull:
-	.string "SNUBBULL: SNUUUBUUUULL!$"
+	.string "Snubbull: SNUUUBUUUULL!$"
 
 GoldenrodCity_Text_MrMime:
 	.string "............................$"
 
-GoldenrodCity_Text_ElmCall:
-	.string "ELM: Hello, {PLAYER}?\n"
+GoldenrodCity_Text_ElmCall::
+	.string "Elm: Hello, {PLAYER}?\n"
 	.string "Has that egg hatched yet?\p"
 	.string "Once it hatches, don't forget to\n"
 	.string "bring it by the lab! I need to\l"
 	.string "see it!$"
 
 GoldenrodCity_Text_PokefanM:
-	.string "They built the new RADIO TOWER\n"
+	.string "They built the new Radio Tower\n"
 	.string "to replace the old creaky one.$"
 
 GoldenrodCity_Text_Youngster1:
-	.string "I know there's a new BIKE SHOP,\n"
+	.string "I know there's a new Bike Shop,\n"
 	.string "but I can't find it anywhere.$"
 
 GoldenrodCity_Text_CooltrainerF1:
 	.string "Is that man in black dressed up\n"
-	.string "like a TEAM ROCKET member?\p"
+	.string "like a Team Rocket member?\p"
 	.string "How silly!$"
 
 GoldenrodCity_Text_CooltrainerF1_Cleared:
 	.string "Was that man in black really part\n"
-	.string "of TEAM ROCKET? I can't believe it!$"
+	.string "of Team Rocket? I can't believe it!$"
 
 GoldenrodCity_Text_CooltrainerF2:
-	.string "The RADIO TOWER in GOLDENROD CITY\n"
+	.string "The Radio Tower in Goldenrod City\n"
 	.string "is quite the landmark.\p"
 	.string "They're running a campaign now.\p"
 	.string "They'll give you a shiny new\n"
-	.string "RADIO if you can pass their quiz.$"
+	.string "Radio if you can pass their quiz.$"
 
 GoldenrodCity_Text_CooltrainerF2_GotCard:
-	.string "Oh, your POKéGEAR already works\n"
+	.string "Oh, your Pokégear already works\n"
 	.string "as a radio!$"
 
 GoldenrodCity_Text_Youngster2:
 	.string "E-he-he-he…\p"
 	.string "I got in trouble for playing in\n"
-	.string "the DEPT.STORE basement.$"
+	.string "the Dept.Store basement.$"
 
 GoldenrodCity_Text_Lass:
 	.string "That man inside rates your\n"
@@ -554,7 +559,7 @@ GoldenrodCity_Text_Gramps:
 	.string "I can't find anything at all.$"
 
 GoldenrodCity_Text_RocketScout1:
-	.string "So this is the RADIO TOWER…$"
+	.string "So this is the Radio Tower…$"
 
 GoldenrodCity_Text_RocketScout2:
 	.string "What do you want, pest?\n"
@@ -565,7 +570,7 @@ GoldenrodCity_Text_Rocket1:
 	.string "Beat it, kid!$"
 
 GoldenrodCity_Text_Rocket2:
-	.string "Take over the RADIO TOWER…\p"
+	.string "Take over the Radio Tower…\p"
 	.string "What? It's none of your business!$"
 
 GoldenrodCity_Text_Rocket3:
@@ -582,48 +587,48 @@ GoldenrodCity_Text_Rocket5:
 
 GoldenrodCity_Text_Rocket6:
 	.string "Come and taste the terror of\n"
-	.string "TEAM ROCKET!$"
+	.string "Team Rocket!$"
 
 GoldenrodCity_Text_StationSign:
-	.string "GOLDENROD CITY STATION$"
+	.string "Goldenrod City Station$"
 
 GoldenrodCity_Text_RadioTowerSign:
-	.string "GOLDENROD CITY RADIO TOWER$"
+	.string "Goldenrod City Radio Tower$"
 
 GoldenrodCity_Text_DeptStoreSign:
 	.string "Full Selection of Pokémon Goods!\p"
-	.string "GOLDENROD CITY DEPT.STORE$"
+	.string "Goldenrod City Dept.Store$"
 
 GoldenrodCity_Text_GymSign:
-	.string "GOLDENROD CITY Pokémon GYM\n"
-	.string "LEADER: WHITNEY\p"
+	.string "Goldenrod City Pokémon Gym\n"
+	.string "Leader: Whitney\p"
 	.string "The Incredibly Pretty Girl!$"
 
 GoldenrodCity_Text_CitySign:
-	.string "GOLDENROD CITY\p"
+	.string "Goldenrod City\p"
 	.string "The Festive City of Opulent Charm$"
 
 GoldenrodCity_Text_BikeShopSign:
 	.string "The World is a Cycle Path!\n"
-	.string "BIKE SHOP$"
+	.string "Bike Shop$"
 
 GoldenrodCity_Text_GameCornerSign:
 	.string "Your Playground!\p"
-	.string "GOLDENROD CITY GAME CORNER$"
+	.string "Goldenrod City Game Corner$"
 
 GoldenrodCity_Text_NameRaterSign:
-	.string "NAME RATER\p"
+	.string "Name Rater\p"
 	.string "Get Your Pokémon Nicknames Rated$"
 
 GoldenrodCity_Text_UndergroundNorthSign:
-	.string "UNDERGROUND ENTRANCE$"
+	.string "Underground Entrance$"
 
 GoldenrodCity_Text_UndergroundSouthSign:
-	.string "UNDERGROUND ENTRANCE$"
+	.string "Underground Entrance$"
 
 
 GoldenrodCity_Text_FlowerShopSign:
-	.string "Blooming Beautiful FLOWER SHOP$"
+	.string "Blooming Beautiful Flower Shop$"
 
 GoldenrodCity_Text_MoveTutorAsk:
 	.string "I can teach your Pokémon some\n"
@@ -2050,15 +2055,15 @@ GoldenrodCity_Text_GiovanniMeetPlayer:
 	.string "specific.\p"
 	.string "...\p"
 	.string "You just battled a guy like that?\p"
-	.string "Then you must be trying to stop TEAM\n"
-	.string "ROCKET.\p"
+	.string "Then you must be trying to stop Team\n"
+	.string "Rocket.\p"
 	.string "Then I'm afraid you leave me with no\n"
 	.string "other option.\p"
-	.string "I, GIOVANNI, the BOSS of TEAM ROCKET,\n"
+	.string "I, Giovanni, the Boss of Team Rocket,\n"
 	.string "will have to...$"
 
 GoldenrodCity_Text_GiovanniGiveBasementKey:
-	.string "GIOVANNI: Ask for your help, of course!\p"
+	.string "Giovanni: Ask for your help, of course!\p"
 	.string "Fwahahahaha! Did you expect something\n"
 	.string "else?\p"
 	.string "Sorry, but my days as a criminal\n"
@@ -2066,32 +2071,32 @@ GoldenrodCity_Text_GiovanniGiveBasementKey:
 	.string "Which brings us to the crux of the\n"
 	.string "matter.\p"
 	.string "Not only is that complete buffoon\n"
-	.string "PETREL still going around disguised as\l"
-	.string "me, the rest of TEAM ROCKET can't seem\l"
+	.string "Petrel still going around disguised as\l"
+	.string "me, the rest of Team Rocket can't seem\l"
 	.string "to accept that I've moved on either.\p"
 	.string "I knew they relied on me, but I never\n"
 	.string "suspected that they would all be so\l"
 	.string "aimless without my guidance.\p"
-	.string "It's no wonder that TEAM ROCKET has\n"
+	.string "It's no wonder that Team Rocket has\n"
 	.string "become a shell of its former self.\p"
 	.string "Regardless, this is the part where you\n"
 	.string "come in.\p"
 	.string "I'd expected to see a different kid\n"
-	.string "here from the way the TEAM ROCKET\l"
-	.string "GRUNTS were whispering about your\l"
-	.string "infiltration of the RADIO TOWER, but it\l"
+	.string "here from the way the Team Rocket\l"
+	.string "grunts were whispering about your\l"
+	.string "infiltration of the Radio Tower, but it\l"
 	.string "sounds like you're just as exceptional\l"
 	.string "as the one I knew from way back when.\p"
 	.string "Since I'm asking you to do my dirty\n"
 	.string "work, it's only fair I help you out.\p"
 	.string "Here. This should give you access to\n"
 	.string "the underground where they've stashed\l"
-	.string "away the DIRECTOR.$"
+	.string "away the Director.$"
 
 GoldenrodCity_Text_GiovanniGoodLuck:
 	.string "Well, best of luck, kid.\p"
-	.string "If you're capable of taking down TEAM\n"
-	.string "ROCKET, then this probably won't be the\l"
+	.string "If you're capable of taking down Team\n"
+	.string "Rocket, then this probably won't be the\l"
 	.string "last we see of each other.\p"
-	.string "Give 'em hell for me, yeah?$"
+	.string "Give 'em hell for me, will ya?$"
 

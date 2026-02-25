@@ -39,7 +39,7 @@ GoldenrodDeptStore5_EventScript_Receptionist::
 	lock
 	faceplayer
 	goto_if_unset FLAG_GOT_RETURN, GoldenrodDeptStore5_EventScript_Receptionist_GiveReturn
-	goto_if_unset FLAG_GOT_FRUSTRATION, GoldenrodDeptStore5_EventScript_Receptionist_GiveFrustration
+	@goto_if_unset FLAG_GOT_FRUSTRATION, GoldenrodDeptStore5_EventScript_Receptionist_GiveFrustration
 	msgbox GoldenrodDeptStore_Text_5FReceptionistThereAreTMsPerfectForMon, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -77,12 +77,12 @@ GoldenrodDeptStore_Text_5FPokefanM:
     .string "original trainer's feelings for it.$"
 
 GoldenrodDeptStore_Text_Girl:
-	.string "The lady gave me RETURN!\n"
+	.string "The lady gave me Return!\n"
     .string "My Pokémon must really like me!$"
 
 GoldenrodDeptStore_Text_5FDirectory:
     .string "Give Pokémon unique items\p"
-    .string "5F SPECIES CORNER$"
+    .string "5F Species Corner$"
 
 GoldenrodDeptStore_5F_EventScript_ClerkRight::
 	lock
