@@ -6256,6 +6256,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_LEADER_KANTO:
             return MUS_HG_VS_GYM_LEADER_KANTO;
         case TRAINER_CLASS_TEAM_ROCKET:
+        case TRAINER_CLASS_ROCKET_ADMIN:
             return MUS_HG_VS_ROCKET;
         case TRAINER_CLASS_MYSTERY_MAN:
             return MUS_HG_VS_SUICUNE;

@@ -9647,7 +9647,7 @@
     [DIFFICULTY_NORMAL][TRAINER_SAMANTHA] =
     {
 #line 3845
-        .trainerName = _("SAMANTHA"),
+        .trainerName = _("Samantha"),
 #line 3846
         .trainerClass = TRAINER_CLASS_BEAUTY,
 #line 3847
@@ -18479,7 +18479,7 @@
     [DIFFICULTY_NORMAL][TRAINER_HENRY] =
     {
 #line 7275
-        .trainerName = _("HENRY"),
+        .trainerName = _("Henry"),
 #line 7276
         .trainerClass = TRAINER_CLASS_FISHERMAN,
 #line 7277
@@ -25555,7 +25555,7 @@
     [DIFFICULTY_NORMAL][TRAINER_RUSSELL] =
     {
 #line 10010
-        .trainerName = _("RUSSELL"),
+        .trainerName = _("Russell"),
 #line 10011
         .trainerClass = TRAINER_CLASS_HIKER,
 #line 10012
@@ -27144,7 +27144,7 @@
     [DIFFICULTY_NORMAL][TRAINER_DANIEL] =
     {
 #line 10627
-        .trainerName = _("DANIEL"),
+        .trainerName = _("Daniel"),
 #line 10628
         .trainerClass = TRAINER_CLASS_HIKER,
 #line 10629
@@ -29110,7 +29110,7 @@
     [DIFFICULTY_NORMAL][TRAINER_RAY] =
     {
 #line 11390
-        .trainerName = _("RAY"),
+        .trainerName = _("Ray"),
 #line 11391
         .trainerClass = TRAINER_CLASS_FIREBREATHER,
 #line 11392
@@ -30753,9 +30753,9 @@
 #line 12023
         .trainerName = _("Greg"),
 #line 12024
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_GENTLEMAN,
 #line 12025
-        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerPic = TRAINER_PIC_GENTLEMAN,
         .encounterMusic_gender =
 #line 12027
             TRAINER_ENCOUNTER_MUSIC_RICH,
@@ -30764,7 +30764,7 @@
 #line 12029
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_EXPERT_M,
+        .trainerBackPic = TRAINER_PIC_GENTLEMAN,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -31670,7 +31670,7 @@
     [DIFFICULTY_NORMAL][TRAINER_LIZ] =
     {
 #line 12382
-        .trainerName = _("LIZ"),
+        .trainerName = _("Liz"),
 #line 12383
         .trainerClass = TRAINER_CLASS_PICNICKER,
 #line 12384
@@ -31785,7 +31785,7 @@
     [DIFFICULTY_NORMAL][TRAINER_GINA] =
     {
 #line 12427
-        .trainerName = _("GINA"),
+        .trainerName = _("Gina"),
 #line 12428
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 12429

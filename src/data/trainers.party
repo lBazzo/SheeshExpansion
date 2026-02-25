@@ -3842,7 +3842,7 @@ Jolly Nature
 - Power-Up Punch  
 
 === TRAINER_SAMANTHA ===
-Name: SAMANTHA
+Name: Samantha
 Class: Beauty
 Pic: Beauty
 Gender: Male
@@ -12021,8 +12021,8 @@ Hasty Nature
 
 === TRAINER_GREG ===
 Name: Greg
-Class: Expert
-Pic: Expert M
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -12424,7 +12424,7 @@ Timid Nature
 - Stored Power  
 
 === TRAINER_GINA ===
-Name: GINA
+Name: Gina
 Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male

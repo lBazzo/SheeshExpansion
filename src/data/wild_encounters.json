@@ -699,36 +699,6 @@
                 "species": "SPECIES_PINECO"
               }
             ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              }
-            ]
           }
         },
         {
@@ -1126,36 +1096,6 @@
               }
             ]
           },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
@@ -1511,36 +1451,6 @@
                 "min_level": 20,
                 "max_level": 24,
                 "species": "SPECIES_PIKACHU"
-              }
-            ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -2311,36 +2221,6 @@
                 "species": "SPECIES_KOFFING"
               }
             ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              }
-            ]
           }
         },
         {
@@ -2964,36 +2844,6 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_TAUROS_PALDEA_AQUA"
-              }
-            ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
               }
             ]
           },
@@ -3816,36 +3666,6 @@
                 "species": "SPECIES_LOTAD"
               }
             ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              }
-            ]
           }
         },
         {
@@ -4370,36 +4190,6 @@
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_SOBBLE"
-              }
-            ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 60,
-            "mons": [
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 10,
-                "max_level": 10,
-                "species": "SPECIES_NONE"
               }
             ]
           },
