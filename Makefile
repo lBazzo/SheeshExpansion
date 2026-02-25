@@ -10,18 +10,22 @@ ifeq (emerald,$(MAKECMDGOALS))
 	GAME_CODE   	:= BPEE
 	BUILD_NAME  	:= emerald
 	MAP_VERSION 	:= emerald
-else ifeq (firered,$(MAKECMDGOALS))
+else
+ifeq (firered,$(MAKECMDGOALS))
   	GAME_VERSION 	:= FIRERED
 	TITLE       	:= POKEMON FIRE
 	GAME_CODE   	:= BPRE
 	BUILD_NAME  	:= firered
 	MAP_VERSION 	:= firered
-else ifeq (leafgreen,$(MAKECMDGOALS))
+else
+ifeq (leafgreen,$(MAKECMDGOALS))
 	GAME_VERSION 	:= LEAFGREEN
 	TITLE       	:= POKEMON LEAF
 	GAME_CODE   	:= BPGE
 	BUILD_NAME  	:= leafgreen
 	MAP_VERSION 	:= firered
+endif
+endif
 endif
 
 
@@ -162,7 +166,7 @@ O_LEVEL ?= 2
 endif
 CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=1 -DTESTING=$(TEST) -D$(GAME_VERSION) -std=gnu17
 
-# Preprocessor flags for preproc #ifs in assembly files
+# Preproc flags for preproc #ifs in assembly files
 CPP_ASFLAGS := -D$(GAME_VERSION)
 
 ifeq ($(RELEASE),1)
@@ -303,8 +307,7 @@ ifeq ($(SETUP_PREREQS),1)
     $(error Errors occurred while building tools. See error messages above for more details)
   endif
   # Oh and also generate mapjson sources before we use `SCANINC`.
-  # GAME_VERSION used to define the IS_HNS preproc check
-  $(foreach line, $(shell $(MAKE) GAME_VERSION=$(GAME_VERSION) MAP_VERSION=$(MAP_VERSION) generated | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
+  $(foreach line, $(shell $(MAKE) MAP_VERSION=$(MAP_VERSION) generated | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
   ifneq ($(.SHELLSTATUS),0)
     $(error Errors occurred while generating map-related sources. See error messages above for more details)
   endif
@@ -379,7 +382,7 @@ check: $(TESTELF)
 	$(ROMTESTHYDRA) $(ROMTEST) $(OBJCOPY) $(HEADLESSELF)
 
 # Other rules
-rom: versioned-json $(ROM)
+rom: versioned-json-build $(ROM)
 ifeq ($(COMPARE),1)
 	@$(SHA1) rom.sha1
 endif
@@ -430,19 +433,8 @@ include trainer_rules.mk
 # for any invoked build target except clean-related ones, removing need to call
 # `make generated` explicitly. Skip for clean/tidy to avoid needless regeneration.
 ifneq ($(MAKECMDGOALS),)
-# Exclude clean-related goals plus generated + versioned-json to avoid circular deps.
-NEEDS_GENERATED := $(filter-out clean tidy clean-% generated versioned-json,$(MAKECMDGOALS))
-ifneq ($(NEEDS_GENERATED),)
-$(NEEDS_GENERATED): generated
-endif
-endif
-
-# Automatically generate versioned JSON-derived outputs (groups/layouts headers, etc.)
-# for any invoked build target except clean-related ones, removing need to call
-# `make generated` explicitly. Skip for clean/tidy to avoid needless regeneration.
-ifneq ($(MAKECMDGOALS),)
-# Exclude clean-related goals plus generated + versioned-json to avoid circular deps.
-NEEDS_GENERATED := $(filter-out clean tidy clean-% generated versioned-json,$(MAKECMDGOALS))
+# Exclude clean-related goals plus generated + versioned-json-build to avoid circular deps.
+NEEDS_GENERATED := $(filter-out clean tidy clean-% generated versioned-json-build,$(MAKECMDGOALS))
 ifneq ($(NEEDS_GENERATED),)
 $(NEEDS_GENERATED): generated
 endif
@@ -470,7 +462,7 @@ generated: .versioned_json.stamp $(AUTO_GEN_TARGETS)
 %.smol:     %      ; $(SMOL) -w $< $@
 %.rl:       %      ; $(GFX) $< $@
 
-clean-generated:
+clean-generated: versioned-json-clean
 	@rm -f $(AUTO_GEN_TARGETS)
 	@echo "rm -f <AUTO_GEN_TARGETS>"
 	@rm -f $(ALL_LEARNABLES_JSON)
@@ -484,7 +476,7 @@ clean-generated:
 # Generated via tools/gen_versioned_json.py.
 # -----------------------------------------------------------------------------
 
-VERSIONED_JSON_SCRIPT := tools/gen_versioned_json.py
+VERSIONED_JSON_SCRIPT := tools/gen_versioned_json/gen_versioned_json.py
 VERSIONED_JSON_TARGETS := \
 	data/layouts/layouts.json \
 	data/maps/map_groups.json \
@@ -499,16 +491,23 @@ VERSIONED_JSON_SOURCES := \
 
 # Stamp-based single invocation.
 .versioned_json.stamp: $(VERSIONED_JSON_SOURCES) $(VERSIONED_JSON_SCRIPT)
-	python3 $(VERSIONED_JSON_SCRIPT) --build $(MAP_VERSION)
+	@VERSIONED_JSON_CLEAN=$(VERSIONED_JSON_CLEAN) MAP_VERSION=$(MAP_VERSION) python3 $(VERSIONED_JSON_SCRIPT) --build $(MAP_VERSION)
+	@rm -f map_version.s
+	@echo "$(MAP_VERSION)" > map_version.s
 	@echo "Versioned JSON generation complete for build $(MAP_VERSION)."
 	@touch $@
 
 $(VERSIONED_JSON_TARGETS): .versioned_json.stamp
 	@:
 
-versioned-json: .versioned_json.stamp
+versioned-json-build: VERSIONED_JSON_CLEAN=0
+versioned-json-build: .versioned_json.stamp
 
-.PHONY: versioned-json
+versioned-json-clean: VERSIONED_JSON_CLEAN=1 MAP_VERSION=$(shell [ -f map_version.s ] && cat map_version.s || echo)
+versioned-json-clean: $(VERSIONED_JSON_SOURCES) $(VERSIONED_JSON_SCRIPT)
+	@VERSIONED_JSON_CLEAN=$(VERSIONED_JSON_CLEAN) MAP_VERSION=$(MAP_VERSION) python3 $(VERSIONED_JSON_SCRIPT) --build $(MAP_VERSION)
+	@rm -f map_version.s
+	@echo "Versioned JSON generation complete for clean $(MAP_VERSION)."
 
 $(C_BUILDDIR)/librfu_intr.o: CFLAGS := -mthumb-interwork -O2 -mabi=apcs-gnu -mtune=arm7tdmi -march=armv4t -fno-toplevel-reorder -Wno-pointer-to-int-cast
 $(C_BUILDDIR)/berry_crush.o: override CFLAGS += -Wno-address-of-packed-member

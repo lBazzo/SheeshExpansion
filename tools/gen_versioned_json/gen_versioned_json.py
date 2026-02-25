@@ -10,7 +10,7 @@ This script copies (or optionally merges in the future) the content of
   src/data/wild_encounters.json        <- src/data/wild_encounters_<build>.json
 
 Determination of <build>:
-  1. Command line argument `--build <name>` if supplied.
+  1. Command line argument `--build <name> <clean>` if supplied.
   2. Environment variable BUILD_NAME.
   3. Environment variable MAP_VERSION (fallback).
 
@@ -20,7 +20,7 @@ missing.
 
 Usage examples (from project root Makefile):
 
-  python3 tools/gen_versioned_json.py --build $(BUILD_NAME)
+  python3 tools/gen_versioned_json.py --build $(BUILD_NAME) $(VERSIONED_JSON_CLEAN)
   # or rely on env
   BUILD_NAME=$(BUILD_NAME) python3 tools/gen_versioned_json.py
 """
@@ -37,7 +37,31 @@ ROOT = os.path.dirname(ROOT)  # project root (contains Makefile)
 
 Task = Tuple[str, str]  # (source, target)
 
-def detect_build_name(cli_build: str | None) -> str | None:
+def read_map_version_file() -> str | None:
+    path = os.path.join(ROOT, "../map_version.s")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            val = f.read().strip()
+            return val or None
+    except (FileNotFoundError, OSError):
+        return None
+
+def read_map_group_core() -> str | None:
+    path = os.path.join(ROOT, "../data/maps/map_groups.json")
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            val = f.read().strip()
+            return val or None
+    except (FileNotFoundError, OSError):
+        return None
+
+def detect_build_name(cli_build: str | None, clean: bool) -> str | None:
+    if clean is True:
+        """if map_version.s exists, that is the build being 'cleaned', else return None"""
+        env = read_map_version_file() or os.environ.get("MAP_VERSION")
+        if env:
+            return env
+        return None
     if cli_build:
         return cli_build
     env = os.environ.get("BUILD_NAME")
@@ -48,13 +72,42 @@ def detect_build_name(cli_build: str | None) -> str | None:
         return env
     return None
 
-def build_tasks(build: str) -> List[Task]:
-    return [
-        (f"data/layouts/layouts_{build}.json", "data/layouts/layouts.json"),
-        (f"data/maps/map_groups_{build}.json", "data/maps/map_groups.json"),
-        (f"src/data/heal_locations_{build}.json", "src/data/heal_locations.json"),
-        (f"src/data/wild_encounters_{build}.json", "src/data/wild_encounters.json"),
-    ]
+def detect_clean(cli_clean: bool | None) -> bool:
+    if cli_clean is not None:
+        return cli_clean
+    val = os.environ.get("VERSIONED_JSON_CLEAN")
+    if not val:
+        return False
+    return val not in ("0", "false", "False", "no", "NO")
+
+def build_tasks(build: str, clean: bool) -> List[Task]:
+    if build is None:
+        return []
+    else:
+        """if map_groups.json exists, then we are not building after 'clean'"""
+        if clean is True:
+            return [
+                ("../data/layouts/layouts.json", f"../data/layouts/layouts_{build}.json"),
+                ("../data/maps/map_groups.json", f"../data/maps/map_groups_{build}.json"),
+                ("../src/data/heal_locations.json", f"../src/data/heal_locations_{build}.json"),
+                ("../src/data/wild_encounters.json", f"../src/data/wild_encounters_{build}.json"),
+            ]
+        else:
+            notFresh = read_map_group_core()
+            if notFresh is not None:
+                return [
+                    ("../data/layouts/layouts.json", f"../data/layouts/layouts_{build}.json"),
+                    ("../data/maps/map_groups.json", f"../data/maps/map_groups_{build}.json"),
+                    ("../src/data/heal_locations.json", f"../src/data/heal_locations_{build}.json"),
+                    ("../src/data/wild_encounters.json", f"../src/data/wild_encounters_{build}.json"),
+                ]
+            else:
+                return [
+                    (f"../data/layouts/layouts_{build}.json", "../data/layouts/layouts.json"),
+                    (f"../data/maps/map_groups_{build}.json", "../data/maps/map_groups.json"),
+                    (f"../src/data/heal_locations_{build}.json", "../src/data/heal_locations.json"),
+                    (f"../src/data/wild_encounters_{build}.json", "../src/data/wild_encounters.json"),
+                ]
 
 def copy_json(src: str, dst: str) -> str:
     """Load + dump to ensure valid JSON; preserve formatting (compact)."""
@@ -71,14 +124,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Generate unsuffixed JSON data files from version-specific sources.")
     parser.add_argument("--build", help="Build/version name (emerald, hns, etc). Overrides env BUILD_NAME/MAP_VERSION.")
     parser.add_argument("--strict", action="store_true", help="Fail if any expected source file is missing.")
+    parser.add_argument("--clean", dest="clean", action="store_true", help="Force clean mode (overrides env).")
+    parser.add_argument("--no-clean", dest="clean", action="store_false", help="Disable clean mode.")
+    parser.set_defaults(clean=None)
     args = parser.parse_args()
 
-    build = detect_build_name(args.build)
+    clean = detect_clean(args.clean)
+    build = detect_build_name(args.build, clean)
     if not build:
         print("[ERROR] No build name supplied (use --build or set BUILD_NAME/MAP_VERSION).", file=sys.stderr)
         return 2
 
-    tasks = build_tasks(build)
+    tasks = build_tasks(build, clean)
     missing: List[str] = []
     actions: List[str] = []
 
@@ -89,8 +146,7 @@ def main() -> int:
             missing.append(rel_src)
             continue
         try:
-            # Skip if up-to-date and identical (simple size & mtime heuristic followed by content check)
-            if os.path.exists(dst):
+            if not clean and os.path.exists(dst):
                 try:
                     src_stat = os.stat(src)
                     dst_stat = os.stat(dst)

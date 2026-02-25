@@ -59,13 +59,26 @@
 
 #ifdef HEARTGOLD
     #define GAME_VERSION (VERSION_HEART_GOLD)
+    #define IS_FRLG 0
+    #define IS_HNS 1
 #else
-    #define GAME_VERSION (VERSION_EMERALD)
+    #ifdef FIRERED
+        #define GAME_VERSION (VERSION_FIRE_RED)
+        #define IS_FRLG 1
+        #define IS_HNS 0
+    #else
+        #ifdef LEAFGREEN
+        #define GAME_VERSION (VERSION_LEAF_GREEN)
+        #define IS_FRLG 1
+        #define IS_HNS 0
+        #else
+        #define GAME_VERSION (VERSION_EMERALD)
+        #define IS_FRLG 0
+        #define IS_HNS 0
+        #endif
+    #endif
 #endif
-
 #define GAME_LANGUAGE (LANGUAGE_ENGLISH)
-
-#define IS_HNS (GAME_VERSION == VERSION_HEART_GOLD)
 
 // party sizes
 #define PARTY_SIZE 6

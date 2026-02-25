@@ -1,4 +1,7 @@
 {
+  "build_name": [
+    "hns"
+  ],
   "heal_locations": [
     {
       "id": "HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR",

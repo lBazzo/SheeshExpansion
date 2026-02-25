@@ -1,4 +1,7 @@
 {
+  "build_name": [
+    "emerald"
+  ],
   "layouts_table_label": "gMapLayouts",
   "layouts": [
     {
