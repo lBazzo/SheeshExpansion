@@ -650,6 +650,34 @@ static void LoadBattleEnvironmentEntryGfx(u16 terrain)
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
+bool32 IsGrassBackgroundTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_BRANDON:
+        case TRAINER_SAMUEL:
+        case TRAINER_IAN:
+        case TRAINER_TODD:
+        case TRAINER_GINA:
+            return TRUE;
+    }
+    return FALSE;
+}
+
+bool32 IsSandBackgroundTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_ARNIE:
+        case TRAINER_GREG:
+        case TRAINER_BROOKE:
+        case TRAINER_IVAN:
+        case TRAINER_BRYAN:
+            return TRUE;
+    }
+    return FALSE;
+}
+
 static u8 GetBattleEnvironmentOverride(void)
 {
     u8 battleScene = GetCurrentMapBattleScene();
@@ -684,6 +712,16 @@ static u8 GetBattleEnvironmentOverride(void)
             return BATTLE_ENVIRONMENT_LEADER;
         else if (trainerClass == TRAINER_CLASS_CHAMPION)
             return BATTLE_ENVIRONMENT_CHAMPION;
+        else if (trainerClass == TRAINER_CLASS_ARCADE_STAR)
+            return BATTLE_ENVIRONMENT_AQUA;
+    }
+    else if (IsGrassBackgroundTrainer(TRAINER_BATTLE_PARAM.opponentA))
+    {
+        return BATTLE_ENVIRONMENT_GRASS;
+    }
+    else if (IsSandBackgroundTrainer(TRAINER_BATTLE_PARAM.opponentA))
+    {
+        return BATTLE_ENVIRONMENT_SAND;
     }
 
     if (battleScene == MAP_BATTLE_SCENE_NORMAL)

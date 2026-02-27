@@ -100,7 +100,7 @@ MoveTutor_Text_MetronomeTeach:
 	.string "a spell that made money appear when\l"
 	.string "you waggle a finger?\p"
 	.string "If you want, I can teach your Pokémon\n"
-	.string "the move METRONOME.\p"
+	.string "the move Metronome.\p"
 	.string "Money won't appear, but your Pokémon\n"
 	.string "will waggle a finger. Yes?$"
 
@@ -114,7 +114,7 @@ MoveTutor_Text_MetronomeWhichMon:
 
 MoveTutor_Text_MetronomeTaught:
 	.string "When a Pokémon waggles its finger\n"
-	.string "like a METRONOME, all sorts of nice\l"
+	.string "like a Metronome, all sorts of nice\l"
 	.string "things happen.\p"
 	.string "Wouldn't it be nice if we could\n"
 	.string "use it, too?$"

@@ -6111,7 +6111,7 @@ Sassy Nature
 - Play Rough  
 - Mirror Coat  
 
-Weezing-Galar @ Payapa Berry  
+Weezing-Galar @ Babiri Berry  
 Ability: Levitate  
 Level: 43  
 Modest Nature   
@@ -11767,7 +11767,7 @@ Level: 57
 Jolly Nature  
 - Meteor Assault  
 - Knock Off  
-- Poison Jab  
+- Iron Head  
 - Bolt Beak  
 
 Emboar @ Choice Scarf  
@@ -19572,7 +19572,7 @@ Hasty Nature
 
 === TRAINER_DAHLIA_NORMAL ===
 Name: Dahlia
-Class: Arcade Star
+Class: TRAINER_CLASS_ARCADE_STAR
 Pic: Ariana
 Gender: Male
 Music: Rocket
@@ -19638,7 +19638,7 @@ IVs: 1 Atk / 30 SpA / 30 SpD
 
 === TRAINER_DAHLIA_HARD ===
 Name: Dahlia
-Class: Arcade Star
+Class: TRAINER_CLASS_ARCADE_STAR
 Pic: Ariana
 Gender: Male
 Music: Rocket

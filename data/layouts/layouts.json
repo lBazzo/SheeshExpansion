@@ -1,7 +1,4 @@
 {
-  "build_name": [
-    "hns"
-  ],
   "layouts_table_label": "gMapLayouts",
   "layouts": [
     {
@@ -5504,5 +5501,8 @@
       "blockdata_filepath": "data/layouts/HiddenGrove_hns/map.bin",
       "layout_version": "hns"
     }
+  ],
+  "build_name": [
+    "hns"
   ]
 }

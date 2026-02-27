@@ -15491,7 +15491,7 @@
             .species = SPECIES_WEEZING_GALAR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 6114
-            .heldItem = ITEM_PAYAPA_BERRY,
+            .heldItem = ITEM_BABIRI_BERRY,
 #line 6118
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 6115
@@ -30100,7 +30100,7 @@
 #line 11768
                 MOVE_METEOR_ASSAULT,
                 MOVE_KNOCK_OFF,
-                MOVE_POISON_JAB,
+                MOVE_IRON_HEAD,
                 MOVE_BOLT_BEAK,
             },
             },

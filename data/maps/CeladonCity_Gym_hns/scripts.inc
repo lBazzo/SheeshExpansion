@@ -33,68 +33,67 @@ CeladonCity_Gym_EventScript_Erika_Defeated::
 	end
 
 CeladonCity_Gym_Text_ErikaBeforeBattle:
-	.string "ERIKA: Hello… Lovely weather,\n"
+	.string "Erika: Hello… Lovely weather,\n"
 	.string "isn't it? It's so pleasant…\p"
 	.string "…I'm afraid I may doze off…\p"
-	.string "My name is ERIKA. I am the temporary\n"
-	.string "LEADER of ECRUTEAK GYM.\p"
+	.string "My name is Erika. I am the temporary\n"
+	.string "Leader of Ecruteak City.\p"
 	.string "A little bird told me you managed to\n"
-	.string "defeat MORTY in battle...\p"
+	.string "defeat Morty in battle...\p"
 	.string "An incredible achievement, considering\n"
-	.string "I have taken his place as GYM LEADER\l"
+	.string "I have taken his place as Gym Leader\l"
 	.string "here so he may chase greater ambitions.\p"
-	.string "However, don't mistake me for a\n"
-	.string "pushover simply because I'm covering for\l"
-	.string "him.\p"
+	.string "However, don't mistake me for a push-\n"
+	.string "over just because I'm covering for him.\p"
 	.string "My grass Pokémon and I have honed our\n"
-	.string "elegant fighting style in KANTO.\l"
+	.string "elegant fighting style in Kanto.\l"
 	.string "Allow me to demonstrate it to you now.$"
 
 CeladonCity_Gym_Text_ErikaBeaten:
-	.string "ERIKA: Oh! I concede defeat…\p"
+	.string "Erika: Oh! I concede defeat…\p"
 	.string "You are remarkably strong…\p"
-	.string "I shall give you the FOGBADGE…$"
+	.string "I shall give you the Fog Badge.$"
 
 Text_ReceivedFogBadge:
-	.string "{PLAYER} received the FOGBADGE.$"
+	.string "{PLAYER} received the Fog Badge.$"
 
 ErikaText_FogBadgeSpeech:
-	.string "ERIKA: That was a delightful\n"
+	.string "Erika: That was a delightful\n"
 	.string "match. I felt inspired.\p" 
-	.string "Now you have the FOGBADGE, Pokémon up\n"
-	.string "to Level 50 will obey you.\p"
+	.string "Now you have the Fog Badge, Pokémon\n"
+	.string "up to Level 50 will obey you.\p"
 	.string "Also, any Pokémon that knows\n"
-	.string "SURF will be able to use it\l"
+	.string "Surf will be able to use it\l"
 	.string "anytime.\p"
 	.string "I want you to have this too.$"
 
 CeladonCity_Gym_Text_PlayerReceivedRainbowBadge:
-	.string "{PLAYER} received FOGBADGE.$"
+	.string "{PLAYER} received Fog Badge.$"
 
 CeladonCity_Gym_Text_ErikaExplainTM:
-	.string "ERIKA: That was a delightful\n"
+	.string "Erika: That was a delightful\n"
 	.string "match. I felt inspired.\p"
-	.string "Now you have the FOGBADGE, Pokémon up\n"
-	.string "to Level 50 will obey you.\p"
+	.string "Now you have the Fog Badge, Pokémon\n"
+	.string "up to Level 50 will obey you.\p"
 	.string "Also, any Pokémon that knows\n"
-	.string "SURF will be able to use it\l"
+	.string "Surf will be able to use it\l"
 	.string "anytime.\p"
 	.string "I want you to have this too.\n"
-	.string "It is GIGA DRAIN.\p"
+	.string "It is Giga Drain.\p"
 	.string "It is a wonderful move that\n"
 	.string "drains half the damage it inflicts\l"
 	.string "to heal your Pokémon.\p"
 	.string "Please use it if it pleases you…$"
 
 CeladonCity_Gym_Text_ErikaAfterBattle:
-	.string "ERIKA: Losing leaves a bitter\n"
+	.string "Erika: Losing leaves a bitter\n"
 	.string "aftertaste…\p"
 	.string "But knowing that there are strong\n"
 	.string "trainers spurs me to do better…$"
 
 CeladonCity_Gym_Text_ErikaRematch:
-	.string "ERIKA: Oh, hello.\p"
-	.string "What a surprise, KANTO CHAMPION!\p"
+	.string "Erika: Oh, hello.\p"
+	.string "What a surprise, Kanto Champion!\p"
 	.string "It's so lovely to see you again.\p"
 	.string "Your journey must have been so\n"
 	.string "exciting.\p"
@@ -102,7 +101,7 @@ CeladonCity_Gym_Text_ErikaRematch:
 	.string "Want to have a rematch with me?$"
 
 CeladonCity_Gym_Text_ErikaRematchDefeat:
-	.string "ERIKA: Losing still leaves a\n"
+	.string "Erika: Losing still leaves a\n"
 	.string "bitter aftertaste…\p"
 	.string "But knowing that there are strong\n"
 	.string "trainers spurs me to do better…$"
@@ -113,7 +112,7 @@ CeladonCity_Gym_EventScript_Michelle::
 	end
 
 CeladonCity_Gym_Text_LassMichelleSeen:
-	.string "Do you think a girls-only GYM is\n"
+	.string "Do you think a girls-only Gym is\n"
 	.string "rare?$"
 
 CeladonCity_Gym_Text_LassMichelleBeaten:
@@ -136,7 +135,7 @@ CeladonCity_Gym_Text_PicnickerTanyaBeaten:
 	.string "Oh, that's it?$"
 
 CeladonCity_Gym_Text_PicnickerTanyaAfter:
-	.string "Oh, look at all your BADGES. No\n"
+	.string "Oh, look at all your Badges. No\n"
 	.string "wonder I couldn't win!$"
 
 CeladonCity_Gym_EventScript_Julia::
@@ -153,7 +152,7 @@ CeladonCity_Gym_Text_BeautyJuliaBeaten:
 
 CeladonCity_Gym_Text_BeautyJuliaAfter:
 	.string "How do I go about becoming\n"
-	.string "ladylike like ERIKA?$"
+	.string "ladylike like Erika?$"
 
 CeladonCity_Gym_EventScript_GymStatue::
 	lockall
@@ -168,16 +167,16 @@ CeladonCity_Gym_EventScript_GymStatuePostVictory::
 	end
 
 CeladonCity_Gym_Text_GymStatue::
-    .string "ECRUTEAK Pokémon GYM\n"
-    .string "LEADER: ERIKA\p"
-	.string "WINNING TRAINERS:\n"
-	.string "BOFA, SUGMA$"
+    .string "Ecruteak Pokémon Gym\n"
+    .string "Leader: Erika\p"
+	.string "Winning Trainers:\n"
+	.string "Bofa, Sugma$"
 
 CeladonCity_Gym_Text_GymStatuePlayerWon::
-    .string "ECRUTEAK Pokémon GYM\n"
-    .string "LEADER: ERIKA\p"
-    .string "WINNING TRAINERS:\n"
-	.string "BOFA, SUGMA, {PLAYER}$"
+    .string "Ecruteak Pokémon Gym\n"
+    .string "Leader: Erika\p"
+	.string "Winning Trainers:\n"
+	.string "Bofa, Sugma, {PLAYER}$"
 
 CeladonCity_Gym_EventScript_Quinn::
 	trainerbattle_single TRAINER_QUINN, CeladonCity_Gym_Text_CooltrainerFQuinn_Seen, CeladonCity_Gym_Text_CooltrainerFQuinn_Beaten
@@ -213,7 +212,7 @@ CeladonCity_Gym_Text_PicnickerHope_Beaten:
 	.string "Aww, you are too strong.$"
 
 CeladonCity_Gym_Text_PicnickerHope_AfterBattle:
-	.string "Sigh... being a GYM trainer is hard work.$"
+	.string "Sigh... being a Gym trainer is hard work.$"
 
 CeladonCity_Gym_Text_PicnickerSharon_Seen:
 	.string "Um…\n"

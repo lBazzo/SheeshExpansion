@@ -64,8 +64,8 @@ Route38_Text_BirdKeeperTobyBeaten:
 	.string "away now.$"
 
 Route38_Text_BirdKeeperTobyAfter:
-	.string "I plan to train in CIANWOOD CITY\n"
-	.string "to teach my Pokémon how to FLY.$"
+	.string "I plan to train in Cianwood City\n"
+	.string "to teach my Pokémon how to Fly.$"
 
 Route38_Text_SchoolboyChad1Seen:
 	.string "Let me try something\n"
@@ -94,7 +94,7 @@ Route38_Text_LassDana1Beaten:
 
 Route38_Text_LassDanaAfter:
 	.string "I know something good!\p"
-	.string "MOOMOO FARM's milk is\n"
+	.string "Moomoo Farm's milk is\n"
 	.string "famous for its flavor.$"
 
 Route38_Text_BeautyValerieSeen:
@@ -112,37 +112,35 @@ Route38_Text_BeautyValerieAfter:
 
 Route38_Text_SailorHarrySeen:
 	.string "I've been overseas, so I\n"
-	.string "know about all sorts of\l"
-	.string "Pokémon!$"
+	.string "know about all sorts of Pokémon!$"
 
 Route38_Text_SailorHarryBeaten:
 	.string "Your skill is world class!$"
 
 Route38_Text_SailorHarryAfter:
 	.string "All kinds of people around\n"
-	.string "the world live happily with\l"
-	.string "Pokémon.$"
+	.string "the world live happily with Pokémon.$"
 
 Route38_Text_BeautyOliviaSeen:
 	.string "Don't you think my Pokémon\n"
 	.string "and I are beautiful?$"
 
 Route38_Text_BeautyOliviaBeaten:
-	.string "We drink MOOMOO MILK every\n"
+	.string "We drink Moomoo Milk every\n"
 	.string "day.$"
 
 Route38_Text_BeautyOliviaAfter:
-	.string "MOOMOO MILK is good for\n"
+	.string "Moomoo Milk is good for\n"
 	.string "beauty and health,\p"
 	.string "but inconveniently, they\n"
 	.string "only sell one bottle at a time.$"
 
 Route38_Text_Sign:
-	.string "ROUTE 38\p"
-	.string "OLIVINE CITY - ECRUTEAK CITY$"
+	.string "Route 38\p"
+	.string "Olivine City - Ecruteak City$"
 
 Route38_Text_TrainerTips:
-	.string "TRAINER TIPS\p"
+	.string "Trainer Tips\p"
 	.string "If a Pokémon is trying to\n"
 	.string "evolve, you can stop it.\p"
 	.string "Press the B Button during\n"
@@ -154,7 +152,7 @@ Route38_Text_TrainerTips:
 Route38_Text_WaterSign:
 	.string "NO SWIMMING OR FISHING.\n"
 	.string "WATER FOR FARMING ONLY.\p"
-	.string "-ECRUTEAK COUNCIL$"
+	.string "-Ecruteak Council$"
 
 Route38_EventScript_PolicemanDirk::
 	trainerbattle_single TRAINER_DIRK Route38_Text_OfficerDirkSeen, Route38_Text_OfficerDirkBeaten

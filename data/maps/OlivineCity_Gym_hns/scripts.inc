@@ -205,15 +205,15 @@ OlivineCity_Gym_Text_GymGuideWinText:
 	.string "those two!$"
 
 OlivineCity_Gym_Text_GymGuidePreText:
-	.string "JASMINE, the old GYM LEADER, is at\n"
-	.string "the LIGHTHOUSE.\p"
+	.string "Jasmine, the old Gym Leader, is at\n"
+	.string "the Lighthouse.\p"
 	.string "She's been tending to a sick Pokémon.\p"
 	.string "A strong trainer has to be\n"
 	.string "compassionate.\p"
-	.string "The replacement leaders?\n"
-	.string "They were held up in KANTO, so now even\n"
+	.string "The replacement leaders?\p"
+	.string "They were held up in Kanto, so even\n"
 	.string "if we do get the emergency power\l"
-	.string "running up in the LIGHTHOUSE, it's too\l"
+	.string "running up in the Lighthouse, it's too\l"
 	.string "long a journey for it to reliably hold.$"
 
 OlivineCity_Gym_EventScript_Jasmine::
@@ -346,14 +346,14 @@ OlivineCity_Gym_Text_BlainePostLoss:
 	.string "your victory to an old man?$"
 
 OlivineCity_Gym_Text_BlaineIntro:
-	.string "BLAINE: Hmm... You're a little young to\n"
+	.string "Blaine: Hmm... You're a little young to\n"
 	.string "be taking this challenge, aren't you?\p"
-	.string "Bah, who cares? Maybe the new JOHTO\n"
+	.string "Bah, who cares? Maybe the new Johto\n"
 	.string "generation has a stronger spine than\l"
 	.string "the other sorry challengers we've had\l"
 	.string "here thus far.\p"
 	.string "Here's the deal, kid.\p"
-	.string "If you want to get a BADGE from us,\n"
+	.string "If you want to get a Badge from us,\n"
 	.string "you'll have to take us both on, one\l"
 	.string "after the other.\p"
 	.string "We'll heal your Pokémon between fights,\n"
@@ -387,7 +387,7 @@ OlivineCity_Gym_Text_BlaineReactionToBeingSecond:
 
 OlivineCity_Gym_Text_BlainePreFirstFight:
 	.string "Wahaha! You better have brought some\n"
-	.string "BURN HEAL!$"
+	.string "Burn Heal!$"
 
 OlivineCity_Gym_Text_BlaineWin:
 	.string "Dang. Blown to smithereens.$"
@@ -399,23 +399,23 @@ OlivineCity_Gym_Text_BlainePostFirstFight:
 	.string "here to save my behind...$"
 
 OlivineCity_Gym_Text_BlainePreTMLine:
-	.string "BLAINE: Here, take this. You've got\n"
+	.string "Blaine: Here, take this. You've got\n"
 	.string "enough fiery hot passion to handle it.$"
 
 OlivineCity_Gym_Text_BlaineFirstTMSpeech:
-	.string "You'd better get that last BADGE, you\n"
+	.string "You'd better get that last Badge, you\n"
 	.string "hear? We can't be having folks thinking\l"
-	.string "that us KANTO leaders are just all talk!$"
+	.string "that us Kanto leaders are just all talk!$"
 
 OlivineCity_Gym_Text_BlainePreSecondFight:
-	.string "BLAINE: Heh, you've got style kid, I'll\n"
+	.string "Blaine: Heh, you've got style kid, I'll\n"
 	.string "give you that.\p"
 	.string "Let's see if you can still keep up when\n"
 	.string "things start to get hot!$"
 
 OlivineCity_Gym_Text_BlainePostSecondFight:
 	.string "Man, what a battle! Alright, that made\n"
-	.string "me feel alive again. Take this BADGE.$"
+	.string "me feel alive again. Take this Badge.$"
 
 OlivineCity_Gym_Text_BlaineBadgeSpeech:
 	.string "Here, take this too. You've got enough\n"
@@ -425,17 +425,17 @@ OlivineCity_Gym_Text_BlaineBadgeSpeech:
 
 
 OlivineCity_Gym_Text_SurgePostLoss:
-	.string "You already got a BADGE, what else do\n"
+	.string "You already got a Badge, what else do\n"
 	.string "you want?\p"
 	.string "Scram! Learn when to get lost!$"
 
 OlivineCity_Gym_Text_SurgeIntro:
-	.string "SURGE: Aww, did the little JOHTO baby\n"
+	.string "Surge: Aww, did the little Johto baby\n"
 	.string "get lost? Want me to walk you back to\l"
-	.string "the TRAINER SCHOOL?\p"
+	.string "the Trainer School?\p"
 	.string "...\p"
-	.string "Those badges- You beat ERIKA and\n"
-	.string "MISTY?\p"
+	.string "Those badges-- You beat Erika and\n"
+	.string "Misty?\p"
 	.string "Fine then. Let me give you the rundown.\n"
 	.string "There's two of us, one of you.\p"
 	.string "You'll fight us in a row. I'll heal your\n"
@@ -452,7 +452,7 @@ OlivineCity_Gym_Text_SurgePostIntro:
 	.string "who's it gonna be first?$"
 
 OlivineCity_Gym_Text_SurgePreSecondFight:
-	.string "SURGE: Hahaha! No more delaying to save\n"
+	.string "Surge: Hahaha! No more delaying to save\n"
 	.string "you now. You're gonna get fried!$"
 
 OlivineCity_Gym_Text_SurgeDeclineChallenge:
@@ -465,7 +465,7 @@ OlivineCity_Gym_Text_SurgeWin:
 OlivineCity_Gym_Text_SurgePostSecondFight:
 	.string "I hate to admit it, but you're crazy\n"
 	.string "strong. Fine then.\l"
-	.string "Take this BADGE and wear it with pride.$"
+	.string "Take this Badge and wear it with pride.$"
 
 OlivineCity_Gym_Text_SurgeBadgeSpeech:
 	.string "While we're at it, take this too.\p"
@@ -474,9 +474,9 @@ OlivineCity_Gym_Text_SurgeBadgeSpeech:
 
 OlivineCity_Gym_Text_SurgeSecondTMSpeech:
 	.string "Now get out of here. You've got that\n"
-	.string "last BADGE to earn, don't ya?\p"
+	.string "last Badge to earn, don't ya?\p"
 	.string "If you lose before taking on the\n"
-	.string "Pokémon LEAGUE, I'll never forgive you.\l"
+	.string "Pokémon League, I'll never forgive you.\l"
 	.string "Give em' hell for me, yeah?$"
 
 OlivineCity_Gym_Text_SurgeAskBlaineFirst:
@@ -846,26 +846,26 @@ OlivineCity_Gym_EventScript_May::
 	end
 
 OlivineCity_Gym_Text_TwinsAmyMay1Seen:
-	.string "AMY: Hi! Are you challenging\n"
-	.string "the LEADER? No way!$"
+	.string "Amy: Hi! Are you challenging\n"
+	.string "the Gym Leaders? No way!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay1Beaten:
-	.string "AMY & MAY: Oh, double\n"
+	.string "Amy & May: Oh, double\n"
 	.string "goodness!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay1After:
-	.string "AMY: You're really strong!$"
+	.string "Amy: You're really strong!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay2Seen:
-	.string "MAY: You want to see the\n"
-	.string "LEADER? Good luck!$"
+	.string "May: You want to see the\n"
+	.string "Gym Leaders? Good luck!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay2Beaten:
-	.string "AMY & MAY: Oh, double\n"
+	.string "Amy & May: Oh, double\n"
 	.string "goodness!$"
 
 OlivineCity_Gym_Text_TwinsAmyMay2After:
-	.string "MAY: Our  Pokémon lost!\n"
+	.string "May: Our  Pokémon lost!\n"
 	.string "Oh, what a shame.$"
 
 OlivineCity_Gym_Text_BugCatcherBennySeen:
@@ -932,6 +932,6 @@ OlivineCity_Gym_Text_FisherStephenBeaten:
 	.string "My stupid radio distracted me!$"
 
 OlivineCity_Gym_Text_FisherStephenAfterBattle:
-	.string "Have you checked out JOHTO's radio\n"
+	.string "Have you checked out Johto's radio\n"
 	.string "programs? We get a good variety\l"
 	.string "here.$"

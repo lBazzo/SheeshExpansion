@@ -1,7 +1,4 @@
 {
-  "build_name": [
-    "hns"
-  ],
   "heal_locations": [
     {
       "id": "HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR",
@@ -248,5 +245,8 @@
       "respawn_map": "MAP_INDIGO_PLATEAU_POKEMON_CENTER",
       "respawn_npc": "LOCALID_INDIGO_PLATEAU_NURSE"
     }
+  ],
+  "build_name": [
+    "hns"
   ]
 }

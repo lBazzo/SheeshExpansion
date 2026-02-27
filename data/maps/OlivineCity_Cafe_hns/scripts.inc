@@ -62,7 +62,7 @@ OlivineCity_Text_CafeSailorStrength:
 	.string "They don't have the power to\n"
 	.string "move boulders aside.\p"
 	.string "Here, use this and teach them\n"
-	.string "STRENGTH!$"
+	.string "Strength!$"
 
 OlivineCity_Text_CafeSailorGotStrength:
 	.string "On the sea, the only thing you\n"
@@ -71,13 +71,13 @@ OlivineCity_Text_CafeSailorGotStrength:
 	.string "You should train like me!$"
 
 OlivineCity_Text_CafeFishingGuru:
-	.string "OLIVINE CAFE's menu is packed\n"
+	.string "Olivine Cafe's menu is packed\n"
 	.string "with hearty fare for beefy\l"
-	.string "SAILORS like me!$"
+	.string "sailors like me!$"
 
 OlivineCity_Text_CafeSailor:
 	.string "Whenever I roll into this town,\n"
-	.string "I always visit the OLIVINE CAFE.\p"
+	.string "I always visit the Olivine Cafe.\p"
 	.string "Everything on the menu makes me\n"
 	.string "feel stronger. I can't stop eating!$"
 

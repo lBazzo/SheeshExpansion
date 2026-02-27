@@ -25,15 +25,15 @@ OlivineCity_EventScript_Teacher::
 	end
 
 OlivineCity_Text_PokecenterFisher:
-	.string "The SAILOR in the OLIVINE CAFE\n"
+	.string "The sailor in the Olivine Cafe\n"
 	.string "next door is really generous.\p"
-	.string "He taught my Pokémon STRENGTH.\p"
+	.string "He taught my Pokémon Strength.\p"
 	.string "Now it can move big boulders\n"
 	.string "without breaking a sweat.$"
 
 OlivineCity_Text_PokecenterTeacher:
-	.string "There's a person in CIANWOOD\n"
-	.string "CITY across the sea.\p"
+	.string "There's a person in Cianwood\n"
+	.string "City across the sea.\p"
 	.string "I heard him bragging about his\n"
 	.string "rare Pokémon all the time.$"
 
@@ -99,8 +99,8 @@ OlivineCity_Text_PokecenterStarterFreeTutorIntro:
 	.string "Just don't tell that stingy attendant\n"
 	.string "over there about our deal, capiche?\p"
 	.string "He won't be very happy to hear I'm\n"
-	.string "depriving him of his precious HEART\l"
-	.string "SCALES.\p"
+	.string "depriving him of his precious Heart\l"
+	.string "Scales.\p"
 	.string "Not that I have any idea what he does\n"
 	.string "with them all...$"
 

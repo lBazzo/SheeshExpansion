@@ -302,7 +302,7 @@ Movement_JumpLeft:
 	jump_in_place_left
 	step_end
 
-Movement_SmashRock:
+Movement_SmashRock::
 	rock_smash_break
 	step_end
 

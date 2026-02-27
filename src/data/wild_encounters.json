@@ -1,7 +1,4 @@
 {
-  "build_name": [
-    "hns"
-  ],
   "wild_encounter_groups": [
     {
       "label": "gWildMonHeaders",
@@ -36717,5 +36714,8 @@
         }
       ]
     }
+  ],
+  "build_name": [
+    "hns"
   ]
 }

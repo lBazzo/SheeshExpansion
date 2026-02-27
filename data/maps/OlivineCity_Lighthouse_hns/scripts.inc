@@ -210,29 +210,29 @@ OlivineCity_Text_StevenBlockingLighthouse:
 	.string "Hello there. Sorry for the brisk\n"
 	.string "introduction, but I'm going to have to\l"
 	.string "ask you to leave for the time being.\p"
-	.string "This city's old GYM LEADER, JASMINE, is\n"
+	.string "This city's old Gym Leader, Jasmine, is\n"
 	.string "currently taking care of the sick\l"
 	.string "Pokémon that normally lights up this\l"
 	.string "lighthouse.\p"
 	.string "We're not sure exactly what's wrong\n"
-	.string "with AMPHY, so it's too dangerous to let\l"
+	.string "with Amphy, so it's too dangerous to let\l"
 	.string "other people up there right now.\p"
 	.string "If you have a spare moment, might I ask\n"
 	.string "you to gather some medicine for me?\p"
-	.string "The pharmacist in the SAFARI ZONE GATE\n"
+	.string "The pharmacist in the Safari Zone Gate\n"
 	.string "should have something. If you tell him I\l"
 	.string "sent you, I'm sure he'll cooperate.$"
 
 OlivineCity_Text_StevenReadyToGift:
-	.string "Is that... the SECRET POTION?\p"
+	.string "Is that... the Secret Potion?\p"
 	.string "Brilliant! That's exactly what the\n"
 	.string "doctor ordered! I can't thank you\l"
 	.string "enough!\p"
 	.string "{PLAYER}, is it? A pleasure to meet you.\n"
 	.string "Let me introduce myself properly, and\l"
 	.string "please excuse my past frankness.\p"
-	.string "I am STEVEN, a trainer such as yourself.\p"
-	.string "STEVEN: I am a fan of steel type\n"
+	.string "I am Steven, a trainer such as yourself.\p"
+	.string "Steven: I am a fan of steel type\n"
 	.string "Pokémon, much like JASMINE. It is how we\l"
 	.string "initially formed our bond, as a matter\l"
 	.string "of fact.\p"
@@ -378,7 +378,7 @@ OlivineLighthouse_Text_1FSailorIntro:
 	.string "You are of course allowed to heal your\n"
 	.string "Pokémon between fights, but there'll be\l"
 	.string "no changing your team around.\p"
-	.string "And, of course, there's an INCREDIBLE\n"
+	.string "And, of course, there's an incredible\n"
 	.string "prize waiting for you at the top!$"
 
 OlivineLighthouse_Text_SailorPostIntro:
@@ -428,8 +428,8 @@ OlivineLighthouse_EventScript_AdjustLastTrainer1F::
 
 OlivineLighthouse_Text_1FPokefanF:
 	.string "In the past, Pokémon used to light\n"
-	.string "the sea around OLIVINE at night.\p"
-	.string "The LIGHTHOUSE was built in honor\n"
+	.string "the sea around Olivine at night.\p"
+	.string "The Lighthouse was built in honor\n"
 	.string "of those noble Pokémon.$"
 
 OlivineLighthouse_Text_GentlemanAlfredSeen:
@@ -440,7 +440,7 @@ OlivineLighthouse_Text_GentlemanAlfredBeaten:
 
 OlivineLighthouse_Text_GentlemanAlfredAfter:
 	.string "Up top is a Pokémon that keeps\n"
-	.string "the LIGHTHOUSE lit.\p"
+	.string "the Lighthouse lit.\p"
 	.string "But I hear that it's sick now,\n"
 	.string "and can't be cured normally.$"
 
@@ -473,7 +473,7 @@ OlivineLighthouse_EventScript_Kenny::
 	end
 
 OlivineLighthouse_Text_HikerKennySeen:
-	.string "I should get myself an ONIX.$"
+	.string "I should get myself an Onix.$"
 
 OlivineLighthouse_Text_HikerKennyBeaten:
 	.string "I lost…$"
@@ -637,9 +637,9 @@ OlivineLighthouse_Text_BirdKeeperDenisBeaten:
 	.string "Oops… They crashed…$"
 
 OlivineLighthouse_Text_BirdKeeperDenisAfter:
-	.string "My Pokémon learned how to use FLY in\n"
-	.string "CIANWOOD.\p"
-	.string "Well, since I'm a loser, I'll FLY\n"
+	.string "My Pokémon learned how to use Fly in\n"
+	.string "Cianwood.\p"
+	.string "Well, since I'm a loser, I'll Fly\n"
 	.string "across the sea…$"
 
 @3rd floor==============================================================================================================================
@@ -741,9 +741,9 @@ OlivineLighthouse_Text_SailorTerrellBeaten:
 	.string "You are both kind and strong…$"
 
 OlivineLighthouse_Text_SailorTerrellAfter:
-	.string "Every time I return to OLIVINE,\n"
-	.string "I visit the GYM.\p"
-	.string "The GYM LEADER’s Pokémon type\n"
+	.string "Every time I return to Olivine,\n"
+	.string "I visit the Gym.\p"
+	.string "The Gym Leader’s Pokémon type\n"
 	.string "changed without me noticing.$"
 
 OlivineLighthouse_Text_GentlemanPrestonSeen:
@@ -754,8 +754,8 @@ OlivineLighthouse_Text_GentlemanPrestonBeaten:
 	.string "…Sigh. I must train some more…$"
 
 OlivineLighthouse_Text_GentlemanPrestonAfter:
-	.string "JASMINE used to use rock-type\n"
-	.string "Pokémon like ONIX.$"
+	.string "Jasmine used to use rock-type\n"
+	.string "Pokémon like Onix.$"
 
 @4th floor==============================================================================================================================
 
@@ -830,7 +830,7 @@ OlivineLighthouse_EventScript_LassConnie::
     end
 
 OlivineLighthouse_Text_SailorKentSeen:
-	.string "JASMINE must be worried sick about\n"
+	.string "Jasmine must be worried sick about\n"
 	.string "the Pokémon here.\p"
 	.string "She won't even smile these days.$"
 
@@ -839,10 +839,10 @@ OlivineLighthouse_Text_SailorKentBeaten:
 
 OlivineLighthouse_Text_SailorKentAfter:
 	.string "Speaking of sick, I've heard there's\n"
-	.string "a good PHARMACY near CIANWOOD.$"
+	.string "a good Pharmacy past Cianwood.$"
 
 OlivineLighthouse_Text_LassConnieSeen:
-	.string "JASMINE was this city's GYM LEADER.\p"
+	.string "Jasmine was this city's Gym Leader.\p"
 	.string "I mean to bring her back with me.\p"
 	.string "Nobody had better get in my way!$"
 
@@ -853,7 +853,7 @@ OlivineLighthouse_Text_LassConnieAfter:
 	.string "Right. Anybody would be worried if\n"
 	.string "his or her own Pokémon were hurt.\p"
 	.string "I'll pray for the Pokémon here, so\n"
-	.string "JASMINE can get on with her life.$"
+	.string "Jasmine can get on with her life.$"
 
 OlivineLighthouse_EventScript_Kipp::
 	trainerbattle_single TRAINER_KIPP OlivineLighthouse_Text_SchoolboyKippSeen, OlivineLighthouse_Text_SchoolboyKippBeaten
@@ -876,8 +876,8 @@ OlivineLighthouse_EventScript_Johnny::
 	end
 
 OlivineLighthouse_Text_SchoolboyJohnnySeen:
-	.string "We're on a field trip to OLIVINE\n"
-	.string "LIGHTHOUSE for science studies.$"
+	.string "We're on a field trip to Olivine\n"
+	.string "Lighthouse for science studies.$"
 
 OlivineLighthouse_Text_SchoolboyJohnnyBeaten:
 	.string "You're wickedly tough!$"
@@ -910,7 +910,7 @@ OlivineLighthouse_Text_BirdKeeperBorisAfterBattle:
 OlivineLighthouse_Text_BirdKeeperBobSeen:
 	.string "It feels a little dispiriting to be just\n"
 	.string "one of many trainers lined up like this.\p"
-	.string "I'm not some TEAM ROCKET grunt... \n"
+	.string "I'm not some Team Rocket grunt... \n"
 	.string "I want to be the main character!$"
 
 OlivineLighthouse_Text_BirdKeeperBobBeaten:
@@ -928,14 +928,14 @@ OlivineLighthouse_EventScript_Arnold::
 	end
 
 OlivineLighthouse_Text_FisherArnoldSeen:
-	.string "I'm bored by fishing. Let's battle!$"
+	.string "I'm bored by waiting. Let's battle!$"
 
 OlivineLighthouse_Text_FisherArnoldBeaten:
 	.string "Utter failure…$"
 
 OlivineLighthouse_Text_FisherArnoldAfterBattle:
-	.string "I'll just go back to fishing…\n"
-	.string "But there's no water here…$"
+	.string "I'll just go back to waiting…\n"
+	.string "But there's nothing to do…$"
 
 OlivineLighthouse_EventScript_Dudley::
 	trainerbattle_single TRAINER_DUDLEY OlivineLighthouse_Text_SchoolboyDudleySeen, OlivineLighthouse_Text_SchoolboyDudleyBeaten
@@ -1019,7 +1019,7 @@ OlivineLighthouse_EventScript_SailorErnest::
     end
 
 OlivineLighthouse_Text_SailorErnestSeen:
-	.string "I wanted to battle JASMINE, but she's\n"
+	.string "I wanted to battle Jasmine, but she's\n"
 	.string "not up to it now.\p"
 	.string "So, how about you?$"
 
@@ -1027,9 +1027,9 @@ OlivineLighthouse_Text_SailorErnestBeaten:
 	.string "Whoa, whoa. You're overwhelming!$"
 
 OlivineLighthouse_Text_SailorErnestAfter:
-	.string "A GYM LEADER isn't just about being\n"
+	.string "A Gym Leader isn't just about being\n"
 	.string "strong.\p"
-	.string "A LEADER also needs to be\n"
+	.string "A Leader also needs to be\n"
 	.string "compassionate.$"
 
 OlivineLighthouse_EventScript_RewardSailor::
@@ -1140,8 +1140,8 @@ OlivineLighthouse_Movement_RewardSailorLeave3::
 OlivineLighthouse_Text_RewardSailorIntro:
 	.string "Huh? Who the heck are you?\p"
 	.string "No way someone actually made it all the\n"
-	.string "way to the top-\p"
-	.string "Er, I mean, congratulations, trainer!\n"
+	.string "way to the top--\p"
+	.string "Er, I mean, congratulations trainer!\n"
 	.string "We've been expecting you!\p"
 	.string "For your impressive display of\n"
 	.string "endurance, I hereby award you...\l"
@@ -1149,13 +1149,13 @@ OlivineLighthouse_Text_RewardSailorIntro:
 	.string "Let's see, I've got to have something in\n"
 	.string "my pockets for this...\p"
 	.string "Aha! This delectable combination of\n"
-	.string "LEFTOVERS and BLACK SLUDGE!\l"
+	.string "Leftovers and Black Sludge!\l"
 	.string "You've earned it! Really...$"
 
 OlivineLighthouse_Text_RewardSailorLeaving:
 	.string "Anyway, I'll just be leaving now.\p"
 	.string "It might be better to avoid telling\n"
-	.string "JASMINE that we were blocking the way\l"
+	.string "Jasmine that we were blocking the way\l"
 	.string "of the person with the medicine, hey?\p"
 	.string "What? Did we get her permission to do\n"
 	.string "this?\p"
@@ -1292,30 +1292,30 @@ OlivineLighthouse_EventScript_AmpharosSick::
 	end
 
 OlivineLighthouse_Text_JasmineCianwoodPharmacy:
-	.string "JASMINE: …This Pokémon always kept\n"
+	.string "Jasmine: …This Pokémon always kept\n"
 	.string "the sea lit at night.\p"
 	.string "…But it suddenly got sick… It's\n"
 	.string "gasping for air…\p"
 	.string "…I understand that there is a\n"
-	.string "wonderful PHARMACY in CIANWOOD…\p"
+	.string "wonderful pharmacy past Cianwood…\p"
 	.string "But that's across the sea…\n"
-	.string "And I can't leave AMPHY unattended…$"
+	.string "And I can't leave Amphy unattended…$"
 
 OlivineLighthouse_Text_JasmineGetMedicine:
 	.string "…May I ask you to get some medicine\n"
 	.string "for me? Please?$"
 
 OlivineLighthouse_Text_JasmineGetMedicine2:
-	.string "There is a wonderful PHARMACY\n"
-	.string "in CIANWOOD…\p"
+	.string "There is a wonderful pharmacy\n"
+	.string "past Cianwood…\p"
 	.string "But that's across the sea…\n"
-	.string "And I can't leave AMPHY unattended…\p"
+	.string "And I can't leave Amphy unattended…\p"
 	.string "…May I ask you to get some medicine\n"
 	.string "for me? Please?$"
 
 OlivineLighthouse_Text_JasmineCureAmphy:
-	.string "JASMINE: …Will that medicine cure\n"
-	.string "AMPHY?$"
+	.string "Jasmine: …Will that medicine cure\n"
+	.string "Amphy?$"
 
 
 OlivineLighthouse_EventScript_JasmineDeliverPotion::
@@ -1382,34 +1382,34 @@ OlivineLighthouse_EventScript_JasmineRefuse::
 	end
 
 OlivineLighthouse_Text_PlayerHandedSecretpotion:
-	.string "{PLAYER} handed the SECRETPOTION to\n"
-	.string "JASMINE.$"
+	.string "{PLAYER} handed the Secretpotion to\n"
+	.string "Jasmine.$"
 
 OlivineLighthouse_Text_JasmineDontBeOffended:
-	.string "JASMINE: …Um, please don't be\n"
+	.string "Jasmine: …Um, please don't be\n"
 	.string "offended…\p"
-	.string "…AMPHY will not take anything from\n"
+	.string "…Amphy will not take anything from\n"
 	.string "anyone but me…$"
 
 OlivineLighthouse_Text_JasmineAmphyHowFeeling:
-	.string "JASMINE: …\p"
-	.string "AMPHY, how are you feeling?$"
+	.string "Jasmine: …\p"
+	.string "Amphy, how are you feeling?$"
 
 OlivineLighthouse_Text_JasmineThankYou:
-	.string "JASMINE: …Oh, I'm so relieved…\p"
+	.string "Jasmine: …Oh, I'm so relieved…\p"
 	.string "This is just so wonderful…\p"
 	.string "Thank you so very, very much.\p"
-	.string "Oh… You're taking the GYM challenge?\p"
+	.string "Oh… You're taking the Gym challenge?\p"
 	.string "Maybe if you continue to do well, we'll\n"
 	.string "run into each other again in the future.$"
 	.string "Bye for now…$"
 
 OlivineLighthouse_Text_JasmineISee:
-	.string "JASMINE: …I see…\n"
-	.string "…AMPHY, hang on!$"
+	.string "Jasmine: …I see…\n"
+	.string "…Amphy, hang on!$"
 
 OlivineLighthouse_Text_AmphyPalPaloo:
-	.string "AMPHY: …\n"
+	.string "Amphy: …\n"
 	.string "…Pa… paloo…$"
 
 OlivineLighthouse_Text_AmphyBreathingLabored:
@@ -1417,4 +1417,4 @@ OlivineLighthouse_Text_AmphyBreathingLabored:
 	.string "labored…$"
 
 OlivineLighthouse_Text_AmphyPaluPalulu:
-	.string "AMPHY: Palu! Palulu!$"
+	.string "Amphy: Palu! Palulu!$"

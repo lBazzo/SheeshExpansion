@@ -80,7 +80,7 @@ BattleTower_Outside_EventScript_Sailor::
 	end
 
 BattleTowerOutsideYoungsterText:
-	.string "Wow, the BATTLE TOWER is huge!\p"
+	.string "Wow, the Battle Tower is huge!\p"
 	.string "There must be many kinds of\n"
 	.string "Pokémon in there!$"
 
@@ -95,16 +95,16 @@ BattleTowerOutsideSailorText:
 	.string "I have to win it all. That I must!$"
 
 BattleTowerOutsideSignText:
-	.string "BATTLE TOWER\p"
+	.string "Battle Tower\p"
 	.string "Take the Ultimate Trainer\n"
 	.string "Challenge!$"
 
 PreBattleTowerOutsideSignText:
 	.string "Up Ahead:\n"
-	.string "The BATTLE TOWER$"
+	.string "The Battle Tower$"
 
 BattleTowerOutsideText_Closed:
-	.string "The BATTLE TOWER is currently\n"
+	.string "The Battle Tower is currently\n"
 	.string "closed for repairs.$"
 
 BattleTower_Outside_EventScript_FatMan::
@@ -1496,7 +1496,7 @@ SagePingBeatenText:
 
 SagePingAfterBattleText:
 	.string "You truly are an expert in using\n"
-	.string "terastallization. I have much to learn.$"
+	.string "terastallization. I have mu ch to learn.$"
 
 MediumMarthaSeenText:
 	.string "I shall win!$"
@@ -1568,7 +1568,7 @@ BattleTower_Outside_Text_CooltrainermRenjiBeaten:
     .string "Gaah! Life is even tougher!$"
 
 BattleTower_Outside_Text_CooltrainermRenjiAfter:
-    .string "To get to DAHLIA, you have\n"
+    .string "To get to Dahlia, you have\n"
     .string "to be tough!$"
 
 
@@ -1619,19 +1619,19 @@ BattleTower_Outside_EventScript_LizzieDeclined::
 
 BattleTower_Outside_EventScript_B2B2B::
 	msgbox BattleTower_Outside_Text_LizziePreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_LizzieBeaten
+	trainerbattle_no_intro TRAINER_LIZZIE, BattleTower_Outside_Text_LizzieBeaten
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_BATTLETOWER_MIRANDA, Common_Movement_WalkInPlaceRight
 	waitmovement 0
 	waitmovement 0
 	msgbox BattleTower_Outside_Text_MirandaPreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_MirandaBeaten
+	trainerbattle_no_intro TRAINER_MIRANDA, BattleTower_Outside_Text_MirandaBeaten
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	applymovement LOCALID_BATTLETOWER_GORDO, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
 	waitmovement 0
 	msgbox BattleTower_Outside_Text_GordoPreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, BattleTower_Outside_Text_GordoBeaten
+	trainerbattle_no_intro TRAINER_GORDO, BattleTower_Outside_Text_GordoBeaten
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	applymovement LOCALID_BATTLETOWER_LIZZIE, Common_Movement_WalkInPlaceDown
 	waitmovement 0
@@ -1696,7 +1696,7 @@ BattleTower_Outside_Text_LizzieAskIfReady:
 	.string "Halt, trainer.\p"
 	.string "We've been tasked with testing you.\p"
 	.string "If you're planning on challenging\n"
-	.string "DAHLIA, you have to get through the\l"
+	.string "Dahlia, you have to get through the\l"
 	.string "three of us first.\p"
 	.string "How about it? Think you can take all of\n"
 	.string "us on?$"
@@ -1716,10 +1716,10 @@ BattleTower_Outside_Text_MirandaPreFight:
 
 BattleTower_Outside_Text_MirandaBeaten:
 	.string "Wow! Incredible! No wonder you beat\n"
-	.string "LIZZIE!$"
+	.string "Lizzie!$"
 
 BattleTower_Outside_Text_GordoPreFight:
-	.string "You beat LIZZIE and MIRANDA...\n"
+	.string "You beat Lizzie and Miranda...\n"
 	.string "Could you maybe go easy on me?$"
 
 BattleTower_Outside_Text_GordoBeaten:
@@ -1727,13 +1727,13 @@ BattleTower_Outside_Text_GordoBeaten:
 	.string "guess.$"
 
 BattleTower_Outside_Text_LizzieGoFightDahlia:
-	.string "To earn DAHLIA's respect is an\n"
+	.string "To earn Dahlia's respect is an\n"
 	.string "achievement in and of itself.\p"
 	.string "You should be very proud.$"
 
 BattleTower_Outside_Text_MirandaTalkToLizzie:
-	.string "Uhh, if you want to fight DAHLIA, you'd\n"
-	.string "better talk to LIZZIE first...$"
+	.string "Uhh, if you want to fight Dahlia, you'd\n"
+	.string "better talk to Lizzie first...$"
 
 BattleTower_Outside_Text_MirandaGoFightDahlia:
 	.string "Man, it feels a different kind of\n"
@@ -1903,11 +1903,11 @@ BattleTower_Outside_Movement_DahliaLeave::
 	step_end
 
 BattleTower_Outside_Text_DahliaIntro:
-	.string "DAHLIA: I knew you'd make it here\n"
+	.string "Dahlia: I knew you'd make it here\n"
 	.string "without an issue.\p"
 	.string "You remind me of a trainer I met back at\n"
-	.string "my BATTLE ARCADE in SINNOH.\p"
-	.string "The BATTLE ARCADE is a facility I run\n"
+	.string "my Battle Arcade in Sinnoh.\p"
+	.string "The Battle Arcade is a facility I run\n"
 	.string "where trainers battle under randomly\l"
 	.string "chosen conditions, testing both their\l"
 	.string "luck and skill.\p"
@@ -1978,8 +1978,8 @@ BattleTower_Outside_Text_DahliaHardAfter:
 BattleTower_Outside_Text_DahliaLeaving:	
 	.string "The real luck I had was running into you\n"
 	.string "today, {PLAYER}.\p"
-	.string "You know, I think the other FRONTIER\n"
-	.string "BRAINS would love to meet you.\p"
+	.string "You know, I think the other Frontier\n"
+	.string "Brains would love to meet you.\p"
 	.string "Maybe keep an eye out for them on the\n"
 	.string "rest of your journey.\p"
 	.string "Who knows? Maybe I'll be lucky enough\n"
@@ -1987,7 +1987,7 @@ BattleTower_Outside_Text_DahliaLeaving:
 	.string "Bye bye for now!$"
 
 BattleTower_Outside_Text_DahliaInstructEngineer:
-	.string "It looks like the OLIVINE LIGHTHOUSE\n"
+	.string "It looks like the Olivine Lighthouse\n"
 	.string "has sorted out its emergency power\l"
 	.string "now, so we might get an influx of people\l"
 	.string "coming over here soon.\p"

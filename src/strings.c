@@ -486,7 +486,7 @@ const u8 gText_Beauty[] = _("BEAUTY");
 const u8 gText_Cute[] = _("CUTE");
 const u8 gText_Smart[] = _("SMART");
 const u8 gText_Tough[] = _("TOUGH");
-const u8 gText_Normal[] = _("NORMAL");
+const u8 gText_Normal[] = _("Normal");
 const u8 gText_Super[] = _("SUPER");
 const u8 gText_Hyper[] = _("HYPER");
 const u8 gText_Master[] = _("MASTER");
@@ -1930,7 +1930,7 @@ const u8 gText_HydroCannon64BP[] = _("HYDRO CANNON{CLEAR_TO 0x4E}64BP");
 const u8 gText_PkmnSurvived_FldPsn[] = _("{STR_VAR_1} survived the poisoning.\nThe poison faded away!\p");
 
 const u8 gText_Easy[] = _("EASY");
-const u8 gText_Hard[] = _("HARD");
+const u8 gText_Hard[] = _("Hard");
 const u8 gText_Modern[] = _("MODERN");
 const u8 gText_Classic[] = _("CLASSIC");
 //crystal texts

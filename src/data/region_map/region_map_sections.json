@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_NEW_BARK_TOWN",
-      "name": "NEW BARK TOWN",
+      "name": "New Bark Town",
       "x": 19,
       "y": 10,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_CHERRYGROVE_CITY",
-      "name": "CHERRYGROVE CITY",
+      "name": "Cherrygrove City",
       "x": 14,
       "y": 10,
       "width": 1,
@@ -18,7 +18,7 @@
     },
     {
       "id": "MAPSEC_VIOLET_CITY",
-      "name": "VIOLET CITY",
+      "name": "Violet City",
       "x": 12,
       "y": 4,
       "width": 1,
@@ -26,7 +26,7 @@
     },
     {
       "id": "MAPSEC_AZALEA_TOWN",
-      "name": "AZALEA TOWN",
+      "name": "Azalea Town",
       "x": 10,
       "y": 13,
       "width": 1,
@@ -34,7 +34,7 @@
     },
     {
       "id": "MAPSEC_GOLDENROD_CITY",
-      "name": "GOLDENROD CITY",
+      "name": "Goldenrod City",
       "x": 8,
       "y": 8,
       "width": 1,
@@ -42,7 +42,7 @@
     },
     {
       "id": "MAPSEC_ECRUTEAK_CITY",
-      "name": "ECRUTEAK CITY",
+      "name": "Ecruteak City",
       "x": 10,
       "y": 2,
       "width": 1,
@@ -50,7 +50,7 @@
     },
     {
       "id": "MAPSEC_OLIVINE_CITY",
-      "name": "OLIVINE CITY",
+      "name": "Olivine City",
       "x": 6,
       "y": 4,
       "width": 1,
@@ -58,7 +58,7 @@
     },
     {
       "id": "MAPSEC_CIANWOOD_CITY",
-      "name": "CIANWOOD CITY",
+      "name": "Cianwood City",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -222,7 +222,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_38",
-      "name": "ROUTE 38",
+      "name": "Route 38",
       "x": 7,
       "y": 2,
       "width": 3,
@@ -230,7 +230,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_39",
-      "name": "ROUTE 39",
+      "name": "Route 39",
       "x": 6,
       "y": 2,
       "width": 1,
@@ -238,7 +238,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_40",
-      "name": "ROUTE 40",
+      "name": "Route 40",
       "x": 5,
       "y": 4,
       "width": 1,
@@ -246,7 +246,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_41",
-      "name": "ROUTE 41",
+      "name": "Route 41",
       "x": 5,
       "y": 9,
       "width": 1,
@@ -286,7 +286,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_46",
-      "name": "ROUTE 46",
+      "name": "Route 46",
       "x": 17,
       "y": 6,
       "width": 1,
@@ -310,7 +310,7 @@
     },
     {
       "id": "MAPSEC_DARK_CAVE",
-      "name": "DARK CAVE",
+      "name": "Dark Cave",
       "x": 15,
       "y": 4,
       "width": 3,
@@ -318,7 +318,7 @@
     },
     {
       "id": "MAPSEC_UNION_CAVE",
-      "name": "UNION CAVE",
+      "name": "Union Cave",
       "x": 12,
       "y": 11,
       "width": 1,
@@ -326,7 +326,7 @@
     },
     {
       "id": "MAPSEC_ILEX_FOREST",
-      "name": "ILEX FOREST",
+      "name": "Ilex Forest",
       "x": 8,
       "y": 12,
       "width": 2,
@@ -334,7 +334,7 @@
     },
     {
       "id": "MAPSEC_NATIONAL_PARK",
-      "name": "NATIONAL PARK",
+      "name": "National Park",
       "x": 8,
       "y": 4,
       "width": 1,
@@ -366,7 +366,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_27",
-      "name": "ROUTE 27",
+      "name": "Route 27",
       "x": 20,
       "y": 10,
       "width": 4,
@@ -398,7 +398,7 @@
     },
     {
       "id": "MAPSEC_SPROUT_TOWER",
-      "name": "SPROUT TOWER",
+      "name": "Sprout Tower",
       "x": 12,
       "y": 3,
       "width": 1,
@@ -406,7 +406,7 @@
     },
     {
       "id": "MAPSEC_SLOWPOKE_WELL",
-      "name": "SLOWPOKE WELL",
+      "name": "Slowpoke Well",
       "x": 10,
       "y": 12,
       "width": 1,
@@ -701,7 +701,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_29",
-      "name": "ROUTE 29",
+      "name": "Route 29",
       "x": 10,
       "y": 11,
       "width": 3,
@@ -709,7 +709,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_30",
-      "name": "ROUTE 30",
+      "name": "Route 30",
       "x": 9,
       "y": 6,
       "width": 1,
@@ -717,7 +717,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_31",
-      "name": "ROUTE 31",
+      "name": "Route 31",
       "x": 8,
       "y": 5,
       "width": 2,
@@ -725,7 +725,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_32",
-      "name": "ROUTE 32",
+      "name": "Route 32",
       "x": 7,
       "y": 6,
       "width": 1,
@@ -733,7 +733,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_33",
-      "name": "ROUTE 33",
+      "name": "Route 33",
       "x": 7,
       "y": 12,
       "width": 1,
@@ -741,7 +741,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_34",
-      "name": "ROUTE 34",
+      "name": "Route 34",
       "x": 5,
       "y": 9,
       "width": 1,
@@ -749,7 +749,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_35",
-      "name": "ROUTE 35",
+      "name": "Route 35",
       "x": 5,
       "y": 6,
       "width": 1,
@@ -757,7 +757,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_36",
-      "name": "ROUTE 36",
+      "name": "Route 36",
       "x": 6,
       "y": 5,
       "width": 1,
@@ -1355,7 +1355,7 @@
     },
     {
       "id": "MAPSEC_INNER_DARK_CAVE",
-      "name": "INNER DARK CAVE",
+      "name": "Inner Dark Cave",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1363,7 +1363,7 @@
     },
     {
       "id": "MAPSEC_VIOLET_CITY_POND",
-      "name": "VIOLET CITY POND",
+      "name": "Violet City Pond",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1371,7 +1371,7 @@
     },
     {
       "id": "MAPSEC_LOWER_RUINS",
-      "name": "LOWER RUINS",
+      "name": "Lower Ruins",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1379,7 +1379,7 @@
     },
     {
       "id": "MAPSEC_INNER_UNION_CAVE",
-      "name": "INNER UNION CAVE",
+      "name": "Inner Union Cave",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1387,7 +1387,7 @@
     },
     {
       "id": "MAPSEC_WELL_DEPTHS",
-      "name": "WELL DEPTHS",
+      "name": "Well Depths",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1395,7 +1395,7 @@
     },
     {
       "id": "MAPSEC_INNER_ILEX_FOREST",
-      "name": "INNER ILEX FOREST",
+      "name": "Inner Ilex Forest",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1403,7 +1403,7 @@
     },
     {
       "id": "MAPSEC_HIDDEN_GROVE",
-      "name": "HIDDEN GROVE",
+      "name": "Hidden Grove",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1427,7 +1427,7 @@
     },
     {
       "id": "MAPSEC_BATTLE_TOWER",
-      "name": "BATTLE TOWER",
+      "name": "Battle Tower",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1451,7 +1451,7 @@
     },
     {
       "id": "MAPSEC_VIOLET_PCENTER",
-      "name": "VIOLET POKEMON CENTER",
+      "name": "Violet Pokecenter",
       "x": 0,
       "y": 0,
       "width": 1,

@@ -1,7 +1,4 @@
 {
-  "build_name": [
-    "hns"
-  ],
   "group_order": [
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorNewBark",
@@ -603,5 +600,8 @@
     "BattleFrontier_PokemonCenter_1F_hns",
     "BattleFrontier_PokemonCenter_2F_hns",
     "BattleFrontier_Mart_hns"
+  ],
+  "build_name": [
+    "hns"
   ]
 }

@@ -129,7 +129,7 @@ Route41_Text_SwimmerfKaraBeaten:
 
 Route41_Text_SwimmerfKaraAfter:
 	.string "I heard roars from deep inside\n"
-	.string "the ISLANDS.$"
+	.string "Whirl Islands.$"
 
 Route41_EventScript_Wendy::
 	trainerbattle_single TRAINER_WENDY, Route41_Text_SwimmerfWendySeen, Route41_Text_SwimmerfWendyBeaten
@@ -137,14 +137,14 @@ Route41_EventScript_Wendy::
 	end
 
 Route41_Text_SwimmerfWendySeen:
-	.string "At night, STARYU gather near\n"
+	.string "At night, Staryu gather near\n"
 	.string "the water's surface.$"
 
 Route41_Text_SwimmerfWendyBeaten:
 	.string "Oh, dear…$"
 
 Route41_Text_SwimmerfWendyAfter:
-	.string "The clusters of STARYU light up\n"
+	.string "The clusters of Staryu light up\n"
 	.string "at the same time.\p"
 	.string "It's so beautiful, it's scary.$"
 
@@ -249,11 +249,11 @@ Route41_EventScript_TentacruelAttack4::
 	end
 
 Route41_Text_Tentacruel:
-	.string "TENTACRUEL: Cruooo...$"
+	.string "Tentacruel: Cruooo...$"
 
 Route41_Text_TentacruelAttack:
-	.string "TENTACRUEL: CRUOOOOOO!$"
+	.string "Tentacruel: CRUOOOOOO!$"
 
 Route41_Text_TentacruelHeal:
-	.string "The TENTACRUEL used RECOVER!\n"
+	.string "The Tentacruel used RECOVER!\n"
 	.string "It is fully healed!$"

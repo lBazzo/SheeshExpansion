@@ -1,6 +1,6 @@
 .set LOCALID_CIANWOOD_CHUCK, 1
-.set LOCALID_CIANWOOD_CHUCK_ROCK_LEFT, 10
-.set LOCALID_CIANWOOD_CHUCK_ROCK_RIGHT, 9
+.set LOCALID_CIANWOOD_CHUCK_ROCK_LEFT, 7
+.set LOCALID_CIANWOOD_CHUCK_ROCK_RIGHT, 6
 
 CianwoodGym_hns_MapScripts::
 	.byte 0
@@ -21,11 +21,11 @@ CianwoodGym_EventScript_Statue2::
 	end
 
 CianwoodGym_Text_GymStatue:
-	.string "CIANWOOD CITY Pokémon GYM$"
+	.string "Cianwood City Pokémon Gym$"
 
 CianwoodGym_Text_GymStatueCertified:
-	.string "CIANWOOD CITY Pokémon GYM\p"
-	.string "CHUCK'S CERTIFIED TRAINERS:\n"
+	.string "Cianwood City Pokémon Gym\p"
+	.string "Chuck's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 CianwoodGym_EventScript_Chuck::
@@ -136,7 +136,7 @@ CianwoodGym_Movement_ChuckRight:
 	step_end
 
 CianwoodGym_Text_ChuckIntro1:
-	.string "WAHAHAH!\p"
+	.string "Wahahah!\p"
 	.string "So you've come this far!\p"
 	.string "Let me tell you, I'm tough!\p"
 	.string "My Pokémon will crush stones and\n"
@@ -144,7 +144,7 @@ CianwoodGym_Text_ChuckIntro1:
 	.string "Watch this!$"
 
 CianwoodGym_Text_ChuckIntro2:
-	.string "CHUCK: Urggh!\n"
+	.string "Chuck: Urggh!\n"
 	.string "…\p"
 	.string "Oooarrgh!$"
 
@@ -152,22 +152,21 @@ CianwoodGym_Text_ChuckIntro3:
 	.string "There! Scared now, are you?\p"
 	.string "What? It has nothing to do with\n"
 	.string "Pokémon?\p"
+	.string "...\p"
 	.string "That's true!\p"
 	.string "Come on. We shall do battle!$"
 
 CianwoodGym_Text_ChuckLoss:
 	.string "Wha? Huh? I lost?\p"
 	.string "How about that!\n"
-	.string "You're worthy of STORMBADGE!$"
+	.string "You're worthy of Storm Badge!$"
 
 CianwoodGym_Text_GetStormBadge:
-	.string "{PLAYER} received STORMBADGE.$"
+	.string "{PLAYER} received Storm Badge.$"
 
 CianwoodGym_Text_ChuckBadgeSpeech:
-	.string "STORMBADGE makes all Pokémon up to\n"
-	.string "L70 obey, even traded ones.\p"
-	.string "It also lets your Pokémon use FLY\n"
-	.string "when you're not in a battle.\p"
+	.string "The Storm Badge lets you use \n"
+	.string "Fly when you're not in a battle.\p"
 	.string "Here, take this too!$"
 
 CianwoodGym_Text_ChuckTMSpeech:
@@ -176,7 +175,7 @@ CianwoodGym_Text_ChuckTMSpeech:
 	.string "on the offensive.$"
 
 CianwoodGym_Text_ChuckAfter:
-	.string "WAHAHAH! I enjoyed battling you!\p"
+	.string "Wahahah! I enjoyed battling you!\p"
 	.string "But a loss is a loss!\p"
 	.string "From now on, I'm going to train\n"
 	.string "24 hours a day!$"
@@ -288,12 +287,12 @@ CianwoodGym_EventScript_GymGuideAfter::
 	end
 
 CianwoodCity_Text_GymGuide:
-	.string "The Pokémon GYM trainers here are\n"
+	.string "The Pokémon Gym trainers here are\n"
 	.string "macho bullies.\p"
 	.string "If I stick around, they might\n"
 	.string "come after me.\p"
-	.string "Here's some advice: the GYM LEADER\n"
-	.string "uses the FIGHTING-type.\p"
+	.string "Here's some advice: the Gym Leader\n"
+	.string "uses the Fighting-type.\p"
 	.string "So you should confound him with\n"
 	.string "psychic Pokémon.\p"
 	.string "Wipe out his Pokémon before they\n"

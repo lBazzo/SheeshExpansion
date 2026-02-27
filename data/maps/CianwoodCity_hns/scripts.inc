@@ -96,22 +96,22 @@ CianwoodCity_Text_ChucksWifeEasierToFly:
 	.string "You crossed the sea to get here?\p"
 	.string "That must have been hard.\p"
 	.string "It would be much easier if your\n"
-	.string "Pokémon knew how to FLY...$"
+	.string "Pokémon knew how to Fly...$"
 
 CianwoodCity_Text_ChucksWifeBeatChuck:
-	.string "But you can't use FLY without this\n"
-	.string "city's GYM BADGE.\p"
-	.string "If you beat the GYM LEADER here,\n"
+	.string "But you can't use Fly without this\n"
+	.string "city's Gym Badge.\p"
+	.string "If you beat the Gym Leader here,\n"
 	.string "come see me.\p"
 	.string "I'll have a nice gift for you.$"
 
 CianwoodCity_Text_ChucksWifeGiveHM:
-	.string "That's CIANWOOD's GYM BADGE!\p"
+	.string "That's Cianwood's Gym Badge!\p"
 	.string "Then you should take this HM.$"
 
 CianwoodCity_Text_ChucksWifeFlySpeech:
-	.string "Teach FLY to your Pokémon.\p"
-	.string "You will be able to FLY instantly\n"
+	.string "Teach Fly to your Pokémon.\p"
+	.string "You will be able to Fly instantly\n"
 	.string "to anywhere you have visited.$"
 
 CianwoodCity_Text_ChucksWifeChubby:
@@ -129,8 +129,8 @@ CianwoodCity_EventScript_Youngster::
 	end
 
 CianwoodCity_Text_Youngster:
-	.string "If you use FLY, you can get back\n"
-	.string "to OLIVINE instantly.$"
+	.string "If you use Fly, you can get back\n"
+	.string "to Olivine instantly.$"
 
 CianwoodCity_EventScript_PokefanM::
 	lock
@@ -144,7 +144,7 @@ CianwoodCity_Text_PokefanM:
 	.string "Boulders to the north of town can\n"
 	.string "be crushed.\p"
 	.string "They may be hiding something.\p"
-	.string "Your Pokémon could use ROCK SMASH\n"
+	.string "Your Pokémon could use Rock Smash\n"
 	.string "to break them.$"
 
 CianwoodCity_EventScript_Lass::
@@ -156,7 +156,7 @@ CianwoodCity_EventScript_Lass::
 	end
 
 CianwoodCity_Text_Lass:
-	.string "CHUCK, the GYM LEADER, spars with\n"
+	.string "Chuck, the Gym Leader, spars with\n"
 	.string "his fighting Pokémon.$"
 
 CianwoodCity_EventScript_SuicuneTrigger::
@@ -298,19 +298,19 @@ CianwoodCity_Movement_Suicune6:
 	step_end
 
 CianwoodCity_Text_EusineSuicune:
-	.string "EUSINE: Yo, {PLAYER}!\p"
+	.string "Eusine: Yo, {PLAYER}!\p"
 	.string "We meet again at last.\p"
 	.string "You may have bested me the last time we\n"
 	.string "met, but things are different now.\p"
 	.string "Behold!\p"
-	.string "I have convinced SUICUNE to join my\n"
+	.string "I have convinced Suicune to join my\n"
 	.string "side and earned its respect, and I owe\l"
 	.string "it all to you!\p"
 	.string "I was able to learn a lot in our last\n"
 	.string "battle. I'm still not sure if I can beat\l"
 	.string "you, {PLAYER}, but I must ask you to\l"
 	.string "face me one more time.\p"
-	.string "Let's do this, SUICUNE!$"
+	.string "Let's do this, Suicune!$"
 
 CianwoodCity_Text_EusineBeaten:
 	.string "I hate to admit it, but you win.$"
@@ -324,7 +324,7 @@ CianwoodCity_Text_EusineAfter:
 
 CianwoodCity_Text_EusineAfter2:	
 	.string "I'm going to keep training with\n"
-	.string "SUICUNE.\p"
+	.string "Suicune.\p"
 	.string "I'm sure we'll see each other again.\p"
 	.string "See you around!$"
 
@@ -336,7 +336,7 @@ CianwoodCity_EventScript_CitySign::
 	end
 
 CianwoodCity_Text_Sign:
-	.string "CIANWOOD CITY\p"
+	.string "Cianwood City\p"
 	.string "A Port Surrounded by Rough Seas$"
 
 CianwoodCity_EventScript_GymSign::
@@ -347,8 +347,8 @@ CianwoodCity_EventScript_GymSign::
 	end
 
 CianwoodCity_Text_GymSign:
-	.string "CIANWOOD CITY Pokémon GYM\p"
-	.string "LEADER: CHUCK\p"
+	.string "Cianwood City Pokémon Gym\p"
+	.string "Leader: Chuck\p"
 	.string "His Roaring Fists Do the Talking$"
 
 CianwoodCity_EventScript_PharmacyBlocked::
@@ -359,10 +359,10 @@ CianwoodCity_EventScript_PharmacyBlocked::
 	end
 
 CianwoodCity_Text_PharmacyBlockedSign:
-	.string "CIANWOOD PHARMACY\n"
+	.string "Cianwood Pharmacy\n"
 	.string "Notice for visitors:\p"
-	.string "We have now moved shop to the SAFARI\n"
-	.string "ZONE GATE.\p"
+	.string "We have now moved shop to the Safari\n"
+	.string "Zone Gate.\p"
 	.string "We apologise for any inconvenience\n"
 	.string "caused.$"
 
@@ -382,12 +382,12 @@ CianwoodCity_EventScript_Engineer::
 	end
 
 CianwoodCity_Text_Safari:
-	.string "CLIFF EDGE CAVE\n"
-	.string "Road to the SAFARI ZONE.$"
+	.string "Cliff Edge Gate\n"
+	.string "Road to the Safari Zone.$"
 
 CianwoodCity_Text_Engineer:
 	.string "This path is under construction.\n"
-	.string "We're getting the new SAFARI ZONE\l"
+	.string "We're getting the new Safari Zone\l"
 	.string "up and running!$"
 
 
@@ -651,8 +651,8 @@ CianwoodCity_EventScript_MultiHitTutorDeclined::
 	end
 
 CianwoodCity_Text_MultiHitTutorDeclined::
-	.string "Tut tut. I suppose the common OLIVINE\n"
-	.string "DINER would suit your tastes, yes?$"
+	.string "Tut tut. I suppose the common Olivine\n"
+	.string "Diner would suit your tastes, yes?$"
 
 CianwoodCity_Text_MultiHitTutorLetMeTeach:
 	.string "The world's greatest meal cannot be\n"

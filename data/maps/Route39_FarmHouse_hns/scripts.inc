@@ -12,10 +12,10 @@ Route39House_EventScript_FarmerF::
 	end
 
 Route39House_EventScript_FarmerFAfter::
-	goto_if_set FLAG_GOT_TM_SNATCH, Route39House_EventScript_FarmerFAfterTM
+	@goto_if_set FLAG_GOT_TM_SNATCH, Route39House_EventScript_FarmerFAfterTM
 	msgbox Route39_Text_FarmerFHealedMiltank, MSGBOX_DEFAULT
 	@giveitem ITEM_TM_SNATCH
-	msgbox Route39_Text_FarmerFSnatchSpeech, MSGBOX_DEFAULT
+	@msgbox Route39_Text_FarmerFSnatchSpeech, MSGBOX_DEFAULT
 	closemessage 
 	setflag FLAG_GOT_TM_SNATCH
 	release
@@ -80,16 +80,16 @@ Route39_FarmHouse_EventScript_FarmerM_NotEnough::
 	end
 
 Route39_Text_FarmerMSickCow:
-	.string "My MILTANK ain't givin' me\n"
+	.string "My Miltank ain't givin' me\n"
 	.string "milk no more.\p"
-	.string "This here FARM's got famous milk.\p"
+	.string "This here farm's got famous milk.\p"
 	.string "Most everyone wants a drink.\p"
 	.string "It'll give me lots o' milk if'n\n"
-	.string "I feed it lots o' BERRIES,\l"
+	.string "I feed it lots o' Berries,\l"
 	.string "I reckon.$"
 
 Route39_Text_FarmerMBuyMilk:
-	.string "How'd you like my MOOMOO MILK?\p"
+	.string "How'd you like my Moomoo Milk?\p"
 	.string "It's my pride and joy, there.\p"
 	.string "Give it to Pokémon to restore HP!\p"
 	.string "I'll give it to ya fer just\n"
@@ -104,7 +104,7 @@ Route39_Text_FarmerMNoMoney:
 	.string "No cash, no sale!$"
 
 Route39_Text_FarmerMNoRoom:
-	.string "I reckon yer PACK's full.$"
+	.string "I reckon yer Bag's full.$"
 
 Route39_Text_FarmerMNoSale:
 	.string "You don't want it?\n"
@@ -114,20 +114,20 @@ Route39FarmHouse_Text_WouldYouLikeAnother:
 	.string "How bout another?$"
 
 Route39_Text_GotMilk:
-	.string "{PLAYER} got MOOMOO MILK.$"
+	.string "{PLAYER} got Moomoo Milk.$"
 
 Route39_Text_FarmerMMilking:
 	.string "I best go do my milkin'.$"
 
 Route39_Text_FarmerFInTrouble:
 	.string "Our milk even goes out to\n"
-	.string "KANTO.\p"
-	.string "So if our own MILTANK won't\n"
+	.string "Kanto.\p"
+	.string "So if our own Miltank won't\n"
 	.string "give us any milk, we're in trouble.$"
 
 Route39_Text_FarmerFHealedMiltank:
-	.string "You fixed our MILTANK, hon.\n"
-	.string "Now it gives MOOMOO MILK again.\p"
+	.string "You fixed our Miltank, hon.\n"
+	.string "Now it gives Moomoo Milk again.\p"
 	.string "Here's somethin' fer your trouble.$"
 
 Route39_Text_FarmerFSnatchSpeech:

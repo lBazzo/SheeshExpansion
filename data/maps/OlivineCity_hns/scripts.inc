@@ -145,7 +145,7 @@ OlivineCity_Text_SilverEncounter:
 	.string "I don't bother with wimps\n"
 	.string "like you.\p"
 	.string "Speaking of weaklings, the\n"
-	.string "city's Gym Leader isn't here,\l"
+	.string "old Gym Leader isn't here,\l"
 	.string "and is supposedly taking care\l"
 	.string "of a sick Pokémon at the\l"
 	.string "Lighthouse.\p"
@@ -241,13 +241,13 @@ OlivineCity_Text_DahliaEncounter:
 	.string "I knew it! A strong trainer, lucky me!\p"
 	.string "You're exactly the kind of person I was\n"
 	.string "looking to run into. Let me explain.\p"
-	.string "My name is DAHLIA. I run the BATTLE\n"
-	.string "ARCADE in a land far away from here.\p"
-	.string "DAHLIA: You've seen how the OLIVINE\n"
-	.string "LIGHTHOUSE has gone dark, right?\p"
+	.string "My name is Dahlia. I run the Battle\n"
+	.string "Arcade in a land far away from here.\p"
+	.string "Dahlia: You've seen how the Olivine\n"
+	.string "Lighthouse has gone dark, right?\p"
 	.string "Well, not to make this all about me or\n"
-	.string "anything, but we'd actually just set up\p"
-	.string "a new area south of the BATTLE TOWER\n"
+	.string "anything, but we'd actually just set up\l"
+	.string "a new area south of the Battle Tower\l"
 	.string "hoping to test out a new type of battle\l"
 	.string "style using terastallization!\p"
 	.string "But with the sea being so dark, it's far\n"
@@ -262,7 +262,7 @@ OlivineCity_Text_DahliaEncounter:
 
 OlivineCity_Text_DahliaEncounter2:
 	.string "Its just straight ahead from here to\n"
-	.string "the BATTLE TOWER. You can't miss it.$"
+	.string "the Battle Tower. You can't miss it.$"
 
 OlivineCity_Text_DahliaEncounter3:
 	.string "Don't keep me waiting too long! I look\n"
@@ -364,19 +364,19 @@ OlivineCity_EventScript_EonTicketWomanAfter::
 	end
 
 OlivineCity_Text_CafeSign:
-	.string "OLIVINE CAFE\n"
-	.string "WHERE STRONG SAILORS ENJOY\l"
-	.string "HEARTY MEALS OF STRENGTH$"
+	.string "Olivine Cafe\n"
+	.string "Where Strong Sailors Enjoy\l"
+	.string "Hearty Meals of Strength$"
 
 OlivineCity_Text_EonTicketWoman1:
-	.string "My name is MARY!\p"
-	.string "Just kidding, but I love MARY's\n"
+	.string "My name is Mary!\p"
+	.string "Just kidding, but I love Mary's\n"
 	.string "radio show!$"
 
 OlivineCity_Text_EonTicketWoman2:
 	.string "You must be {PLAYER}!!!\p"
 	.string "Oh my goodness! The champion!\p"
-	.string "I heard about you on MARY's\n"
+	.string "I heard about you on Mary's\n"
 	.string "radio show!\p"
 	.string "Here, take this!$"
 
@@ -391,54 +391,56 @@ OlivineCity_Text_Sailor1:
 	.string "night, the sea is even more\l"
 	.string "treacherous!\p"
 	.string "Without the beacon of the\n"
-	.string "LIGHTHOUSE to guide it,\l"
+	.string "Lighthouse to guide it,\l"
 	.string "no ship can sail.$"
 
 OlivineCity_Text_YoungsterPokegear:
 	.string "That thing you have--\n"
-	.string "it's a POKéGEAR, right?\l"
+	.string "it's a Pokégear, right?\l"
 	.string "Wow, that's cool.$"
 
 OlivineCity_Text_YoungsterPokedex:
-	.string "Wow, you have a POKéDEX!\p"
+	.string "Wow, you have a Pokédex!\p"
 	.string "That is just so awesome.$"
 
 OlivineCity_Text_Sailor2:
-	.string "The league has JASMINE\n"
+	.string "The league had Jasmine\n"
 	.string "pegged as the sixth\l"
-	.string "strongest GYM LEADER!\p"
+	.string "strongest Gym Leader!\p"
 	.string "Hah! That's a load of crud.\p"
-	.string "There's no way PRYCE could\n"
-	.string "hurt JASMINE's Steel-type\l"
+	.string "There's no way Pryce could\n"
+	.string "hurt Jasmine's Steel-type\l"
 	.string "Pokémon!\p"
 	.string "Bureaucracy if you ask me.\p"
 	.string "She's something to be feared,\n"
-	.string "that's for sure!$"
+	.string "that's for sure!\p"
+	.string "It's not surprising that she's\n"
+	.string "part of the Elite Four now.$"
 
 OlivineCity_Text_Sign:
-	.string "OLIVINE CITY\p"
+	.string "Olivine City\p"
 	.string "The Port Closest to Foreign Lands$"
 
 OlivineCity_Text_PortSign:
-	.string "OLIVINE PORT\n"
-	.string "FAST SHIP PIER$"
+	.string "Olivine Port\n"
+	.string "Fast Ship Pier$"
 
 OlivineCity_Text_GymSign:
-	.string "OLIVINE CITY Pokémon GYM\n"
-	.string "LEADER: JASMINE\p"
-	.string "The Steel-Clad Defense Girl$"
+	.string "Olivine City Pokémon Gym\n"
+	.string "Leaders: Blaine & Surge\p"
+	.string "The Hot and Shocking Duo$"
 
 OlivineCity_Text_LighthouseSign:
-	.string "OLIVINE LIGHTHOUSE\n"
-	.string "Also known as the GLITTER\l"
-	.string "LIGHTHOUSE$"
+	.string "Olivine Lighthouse\n"
+	.string "Also known as the Glitter\l"
+	.string "Lighthouse$"
 
 OlivineCity_Text_BattleTowerSign:
-	.string "BATTLE TOWER AHEAD\n"
+	.string "Battle Tower Ahead\n"
 	.string "Opening Now!$"
 
 OlivineCity_Text_Machoke:
-	.string "MACHOKE: CHO!$"
+	.string "Machoke: Cho!$"
 
 
 

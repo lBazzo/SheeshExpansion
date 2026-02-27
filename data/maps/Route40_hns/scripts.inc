@@ -29,7 +29,7 @@ Route40_Text_SwimmermSimonBeaten:
 	.string "OK! Uncle! I give!$"
 
 Route40_Text_SwimmermSimonAfter:
-	.string "CIANWOOD CITY is a good\n"
+	.string "Cianwood City is a good\n"
 	.string "distance away from here.$"
 
 Route40_EventScript_Randall::
@@ -55,7 +55,7 @@ Route40_EventScript_Elaine::
 	end
 
 Route40_Text_SwimmerfElaineSeen:
-	.string "Are you going to CIANWOOD?\p"
+	.string "Are you going to Cianwood?\p"
 	.string "How about a quick battle\n"
 	.string "first?$"
 
@@ -126,7 +126,7 @@ Route40_EventScript_Woman2::
 	end
 
 Route40_Text_Lass2:
-	.string "I came to OLIVINE by ship to see\n"
+	.string "I came to Olivine by ship to see\n"
 	.string "the sights and soak up the\l"
 	.string "atmosphere.\p"
 	.string "Being a port, it feels so\n"
@@ -141,17 +141,17 @@ Route40_EventScript_Youngster::
 	end
 
 Route40_Text_StandingYoungster:
-	.string "Have you gone to the BATTLE\n"
-	.string "TOWER?\p"
+	.string "Have you gone to the Battle\n"
+	.string "Tower?\p"
 	.string "I think a lot of tough trainers\n"
 	.string "have gathered there already.\p"
 	.string "But since you have so many\n"
-	.string "BADGES,\p"
+	.string "Badges,\p"
 	.string "you shouldn't do badly\n"
 	.string "at all.$"
 
 Route40_Text_Monica:
-	.string "MONICA: Glad to meet you.\n"
+	.string "Monica: Glad to meet you.\n"
 	.string "I'm MONICA of the WEEKDAY FAMILY.\p"
 	.string "I bet you can't guess my favorite\n"
 	.string "day of the week!$"
@@ -275,7 +275,7 @@ Route40_EventScript_PolicemanYouCanGo::
 
 Route40_Text_PolicemanItsNotSafe:
 	.string "Sorry kid, but there's no surfing until\n"
-	.string "the OLIVINE LIGHTHOUSE has its\l"
+	.string "the Olivine Lightouse has its\l"
 	.string "emergency power up and running.\p"
 	.string "Promise you won't try and go anyway,\n"
 	.string "yeah?\p"
