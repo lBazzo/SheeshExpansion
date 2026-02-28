@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "graphics_id": "OBJ_EVENT_GFX_COOLTRAINER_M",
       "x": 11,
       "y": 7,
       "elevation": 0,
@@ -144,7 +144,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 14,
+      "x": 1,
       "y": 27,
       "elevation": 0,
       "var": "VAR_GYM_WEATHER_STATE",

@@ -1609,7 +1609,7 @@
 #line 711
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 708
-            .ability = ABILITY_FLOWER_BLOCK,
+            .ability = ABILITY_CONTRARY,
 #line 709
             .lvl = 61,
 #line 710
@@ -10974,11 +10974,11 @@
     [DIFFICULTY_NORMAL][TRAINER_RON] =
     {
 #line 4355
-        .trainerName = _("Ronald"),
+        .trainerName = _("Ron"),
 #line 4356
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_POKEMANIAC,
 #line 4357
-        .trainerPic = TRAINER_PIC_EXPERT_M,
+        .trainerPic = TRAINER_PIC_POKEMANIAC,
         .encounterMusic_gender =
 #line 4359
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -10987,7 +10987,7 @@
 #line 4361
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_EXPERT_M,
+        .trainerBackPic = TRAINER_PIC_POKEMANIAC,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -24450,9 +24450,9 @@
 #line 9581
         .trainerName = _("Sam"),
 #line 9582
-        .trainerClass = TRAINER_CLASS_SUPER_NERD,
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 9583
-        .trainerPic = TRAINER_PIC_SUPER_NERD,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_F,
         .encounterMusic_gender =
 #line 9585
             TRAINER_ENCOUNTER_MUSIC_HG_SUSPICIOUS_1,
@@ -24461,7 +24461,7 @@
 #line 9587
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SUPER_NERD,
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_F,
         .partySize = 3,
         .party = (const struct TrainerMon[])
         {
@@ -27293,7 +27293,7 @@
 #line 10683
         .trainerClass = TRAINER_CLASS_TEAM_ROCKET,
 #line 10684
-        .trainerPic = TRAINER_PIC_ROCKET_GRUNT_M,
+        .trainerPic = TRAINER_PIC_ROCKET_GRUNT_F,
         .encounterMusic_gender =
 #line 10686
             TRAINER_ENCOUNTER_MUSIC_ROCKET,
@@ -27302,7 +27302,7 @@
 #line 10688
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_ROCKET_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_ROCKET_GRUNT_F,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -34008,9 +34008,9 @@
 #line 13293
         .trainerName = _("Sid"),
 #line 13294
-        .trainerClass = TRAINER_CLASS_CAMPER,
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 13295
-        .trainerPic = TRAINER_PIC_CAMPER,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
 #line 13297
             TRAINER_ENCOUNTER_MUSIC_HG_BOY_1,
@@ -34019,7 +34019,7 @@
 #line 13299
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_CAMPER,
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 4,
         .party = (const struct TrainerMon[])
         {
@@ -37570,7 +37570,7 @@
     [DIFFICULTY_NORMAL][TRAINER_REX] =
     {
 #line 14664
-        .trainerName = _("REX"),
+        .trainerName = _("Rex"),
 #line 14665
         .trainerClass = TRAINER_CLASS_POKEFAN,
 #line 14666
@@ -39968,7 +39968,7 @@
     [DIFFICULTY_NORMAL][TRAINER_DARACH_CAIT] =
     {
 #line 15593
-        .trainerName = _("DarachCait"),
+        .trainerName = _("& Caitlin"),
 #line 15594
         .trainerClass = TRAINER_CLASS_CASTLE_DUO,
 #line 15595
@@ -45566,7 +45566,7 @@
 #line 17782
             .lvl = 65,
 #line 17783
-            .nature = NATURE_BRAVE,
+            .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17785
@@ -46548,7 +46548,7 @@
 #line 18172
             .lvl = 65,
 #line 18173
-            .nature = NATURE_BRAVE,
+            .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18174
@@ -47530,7 +47530,7 @@
 #line 18560
             .lvl = 65,
 #line 18561
-            .nature = NATURE_BRAVE,
+            .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 18562

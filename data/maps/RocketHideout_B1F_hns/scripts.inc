@@ -406,7 +406,7 @@ RocketHideout_B1F_EventScript_Persian::
 	end
 
 RocketHideout_B1F_Text_SecurityCameraStatue:
-    .string "It's a PERSIAN statue…$"
+    .string "It's a Persian statue…$"
 
 RocketHideout_B1F_EventScript_DummyPanel::
 	msgbox RocketHideout_B1F_Text_NothingThere, MSGBOX_SIGN
@@ -487,7 +487,7 @@ RocketHideout_B1F_Text_Grunt39Beaten:
 RocketHideout_B1F_Text_Grunt39After:
 	.string "You know, I guess our boss doesn't care\n"
 	.string "about us enough to even get mad if I\l"
-	.string "slack off on company time\p"
+	.string "slack off on company time.\p"
 	.string "That's it. Time to reignite my Words With\n"
 	.string "Friends rivalry with Grunt 8!$"
 
@@ -524,7 +524,7 @@ RocketHideout_B1F_EventScript_Grunt43::
 	end
 
 RocketHideout_B1F_Text_Grunt43Seen:
-	.string "Yo! Wanna join TEAM ROCKET? We get to\n"
+	.string "Yo! Wanna join Team Rocket? We get to\n"
 	.string "wear this cool uniform and stay up late!$"
 
 RocketHideout_B1F_Text_Grunt43Beaten:
@@ -535,7 +535,7 @@ RocketHideout_B1F_Text_Grunt43AfterBattle:
 	.string "If I just get two more people to join,\n"
 	.string "and they get two more people to join\l"
 	.string "too, then I'll be rich!\p"
-	.string "That's what ARCHER told me, at least.\p"
+	.string "That's what Archer told me, at least.\p"
 	.string "Why would a guy successful enough to\n"
 	.string "to lead his own organisation lie?$"
 
@@ -545,8 +545,8 @@ RocketHideout_B1F_EventScript_Grunt40::
 	end
 
 RocketHideout_B1F_Text_ScientistGrunt40Seen:
-    .string "I used to work for SILPH, but now\n"
-    .string "I run research for TEAM ROCKET.\p"
+    .string "I used to work for Silph, but now\n"
+    .string "I run research for Team Rocket.\p"
     .string "A meddlesome child like you needs\n"
     .string "to be punished.$"
 

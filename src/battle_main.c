@@ -329,7 +329,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RICH_BOY] = { _("Rich Boy") },
     [TRAINER_CLASS_POKEMANIAC] = { _("Pokémaniac") },
     [TRAINER_CLASS_GUITARIST] = { _("Guitarist") },
-    [TRAINER_CLASS_SUPER_NERD] = { _("Super Nerd") },
+    [TRAINER_CLASS_SUPER_NERD] = { _("Supernerd") },
     [TRAINER_CLASS_CAMPER] = { _("Camper") },
     [TRAINER_CLASS_PICNICKER] = { _("Picnicker") },
     [TRAINER_CLASS_BUG_MANIAC] = { _("Bug Maniac") },
@@ -391,7 +391,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_ARCADE_STAR] = { _("Arcade Star") },
     [TRAINER_CLASS_CASTLE_VALET] = { _("Castle Valet") },
     [TRAINER_CLASS_CASTLE_ROYAL] = { _("Castle Royal") },
-    [TRAINER_CLASS_CASTLE_DUO] = { _("Castle Duo") },
+    [TRAINER_CLASS_CASTLE_DUO] = { _("Duo Darach") },
     [TRAINER_CLASS_POTTER] = { _("Trainer") },
 };
 
@@ -5513,6 +5513,7 @@ static void HandleEndTurn_BattleWon(void)
 
 static void HandleEndTurn_BattleLost(void)
 {
+    FlagClear(P_FLAG_FORCE_SHINY);
     gCurrentActionFuncId = 0;
 
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))

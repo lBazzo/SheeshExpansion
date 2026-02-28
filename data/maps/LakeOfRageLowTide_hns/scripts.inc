@@ -40,13 +40,16 @@ LakeOfRage_EventScript_Gyarados::
 	playmoncry SPECIES_GYARADOS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
+	setflag FLAG_MAKE_GYARADOS_SHINY
 	setwildbattleshiny SPECIES_GYARADOS, 30
 	dowildbattle
+	clearflag FLAG_MAKE_GYARADOS_SHINY
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, LakeOfRage_EventScript_Defeated_Gyarados
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, LakeOfRage_EventScript_Ran_Gyarados
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, LakeOfRage_EventScript_Ran_Gyarados
 LakeOfRage_EventScript_Defeated_Gyarados::
+	clearflag FLAG_MAKE_GYARADOS_SHINY
 	setflag FLAG_HIDE_LAKE_OF_RAGE_GYARADOS
 	clearflag FLAG_TEMP_1
 	removeobject LOCALID_LAKEOFRAGE_GYARADOS
@@ -59,6 +62,7 @@ LakeOfRage_EventScript_Defeated_Gyarados::
 	end
 
 LakeOfRage_EventScript_Ran_Gyarados::
+	clearflag FLAG_MAKE_GYARADOS_SHINY
 	release
 	end
 
@@ -189,18 +193,18 @@ LakeOfRage_Movement_DragoniteLeave:
 	step_end
 
 LakeOfRage_Text_Dragonite:
-	.string "DRAGONITE: Gyafooha!$"
+	.string "Dragonite: Gyafooha!$"
 
 LakeOfRage_Text_LanceForcedToEvolve:
-    .string "This lake is full of GYARADOS\n"
+    .string "This lake is full of Gyarados\n"
     .string "but nothing else…\p"
-    .string "So the MAGIKARP are being forced\n"
+    .string "So the Magikarp are being forced\n"
     .string "to evolve…$"
 
 LakeOfRage_Text_LanceIntro1:
     .string "Did you come here because of\n"
     .string "the rumors?\p"
-    .string "You're {PLAYER}? I'm LANCE, a\n"
+    .string "You're {PLAYER}? I'm Lance, a\n"
     .string "trainer like you.$"
 
 LakeOfRage_Text_LanceIntro2:
@@ -217,11 +221,11 @@ LakeOfRage_Text_LanceIntro3:
     .string "us investigate?$"
 
 LakeOfRage_Text_LanceRadioSignal:
-    .string "LANCE: Excellent!\p"
-    .string "It seems that the LAKE's MAGIKARP\n"
+    .string "Lance: Excellent!\p"
+    .string "It seems that the lake's Magikarp\n"
     .string "are being forced to evolve.\p"
     .string "A mysterious radio broadcast\n"
-    .string "coming from MAHOGANY is the cause.\p"
+    .string "coming from Mahogany is the cause.\p"
     .string "We'll be waiting for you,\n"
     .string "{PLAYER}.$"
 
@@ -230,23 +234,23 @@ LakeOfRage_Text_LanceRefused:
     .string "please help us.$"
 
 LakeOfRage_Text_LanceAskHelp:
-    .string "LANCE: Hm? Are you going to help\n"
+    .string "Lance: Hm? Are you going to help\n"
     .string "us?$"
 
 LakeOfRage_Text_GyaradosCry:
-    .string "GYARADOS: Gyashaa!$"
+    .string "Gyarados: Gyashaa!$"
 
 LakeOfRage_Text_Gramps:
-    .string "The GYARADOS are angry!\p"
+    .string "The Gyarados are angry!\p"
     .string "It's a bad omen!$"
 
 LakeOfRage_Text_GrampsCleared:
-    .string "Hahah! The MAGIKARP are biting!$"
+    .string "Hahah! The Magikarp are biting!$"
 
 LakeOfRage_Text_CooltrainerF:
     .string "Did my eyes deceive me? I saw a\n"
-    .string "red GYARADOS in the LAKE…\p"
-    .string "But I thought GYARADOS were\n"
+    .string "red Gyarados in the lake…\p"
+    .string "But I thought Gyarados were\n"
     .string "usually blue?$"
 
 LakeOfRage_EventScript_Sign1::
@@ -258,11 +262,11 @@ LakeOfRage_EventScript_Sign2::
 	end
 
 LakeOfRage_Text_Sign:
-    .string "LAKE OF RAGE,\n"
-    .string "also known as GYARADOS LAKE.$"
+    .string "Lake of Rage,\n"
+    .string "also known as Gyarados Lake.$"
 
 LakeOfRage_Text_FishingGuruSign:
-    .string "FISHING GURU'S HOUSE$"
+    .string "Fishing Guru's House$"
 
 LakeOfRage_Text_FisherRaymondSeen:
     .string "No matter what I do, all I catch\n"
@@ -343,14 +347,14 @@ LakeOfRage_Text_WesleyNotWednesday:
 
 LakeOfRage_Text_CooltrainerfLoisSeen:
     .string "What happened to make the red\n"
-    .string "GYARADOS... red?$"
+    .string "Gyarados... red?$"
 
 LakeOfRage_Text_CooltrainerfLoisBeaten:
     .string "Good going!$"
 
 LakeOfRage_Text_CooltrainerfLoisAfter:
     .string "Come to think of it, I've seen a\n"
-    .string "pink BUTTERFREE.$"
+    .string "pink Butterfree.$"
 
 LakeOfRage_EventScript_Aaron::
 	trainerbattle_single TRAINER_AARON LakeOfRage_Text_CooltrainermAaronSeen, LakeOfRage_Text_CooltrainermAaronBeaten
@@ -418,7 +422,7 @@ PokefanM_Text_AllanBeaten:
 	.string "My Pokémon!$"
 
 PokefanM_Text_AllanAfter:
-	.string "Look how cool my GRANBULL\n"
+	.string "Look how cool my Granbull\n"
 	.string "acts!\p"
 	.string "Isn't it cool enough to make\n"
 	.string "your heart race?$"
@@ -429,13 +433,13 @@ LakeOfRage_EventScript_Tom::
 	end
 
 LakeOfRage_Text_SupernerdTomSeen:
-	.string "Hm… You've got many GYM BADGES.$"
+	.string "Hm… You've got many Gym Badges.$"
 
 LakeOfRage_Text_SupernerdTomBeaten:
 	.string "Just as I thought… You're tough!$"
 
 LakeOfRage_Text_SupernerdTomAfter:
-	.string "GYM BADGES give you advantages in\n"
+	.string "Gym Badges give you advantages in\n"
 	.string "battles.$"
 
 LakeOfRage_EventScript_Sam::
@@ -447,14 +451,14 @@ LakeOfRage_EventScript_Sam::
 	end
 
 LakeOfRage_Text_SupernerdSamSeen:
-	.string "You came here for the red GYARADOS?\n"
+	.string "You came here for the red Gyarados?\n"
 	.string "Me too!$"
 
 LakeOfRage_Text_SupernerdSamBeaten:
-	.string "I just want to see the red GYARADOS...$"
+	.string "I just want to see the red Gyarados...$"
 
 LakeOfRage_Text_SupernerdSamAfter:
-	.string "The red GYARADOS is awesome!$"
+	.string "The red Gyarados is awesome!$"
 
 LakeOfRage_EventScript_Sid::
 	lock

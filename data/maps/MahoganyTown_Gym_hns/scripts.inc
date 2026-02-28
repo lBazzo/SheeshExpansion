@@ -131,7 +131,7 @@ MahoganyTown_Gym_Text_PryceIntro:
     .string "I have been with Pokémon since\n"
     .string "before you were born.\p"
     .string "I do not lose easily.\p"
-    .string "I, PRYCE--the winter trainer--\n"
+    .string "I, Pryce--the winter trainer--\n"
     .string "shall demonstrate my power!$"
 
 MahoganyTown_Gym_Text_PryceImpressed:
@@ -139,17 +139,14 @@ MahoganyTown_Gym_Text_PryceImpressed:
     .string "prowess.\p"
     .string "With your strong will, I know you\n"
     .string "will overcome all life's obstacles.\p"
-    .string "You are worthy of this BADGE!$"
+    .string "You are worthy of this Badge!$"
 
 MahoganyTown_Gym_Text_ReceivedBadge:
-    .string "{PLAYER} received GLACIERBADGE.$"
+    .string "{PLAYER} received the Glacier Badge.$"
 
 MahoganyTown_Gym_Text_GlacierBadgeSpeech:
-    .string "That BADGE will raise the SPECIAL\n"
-    .string "ATTACK of Pokémon.\p"
-    .string "It also lets your Pokémon use\n"
-    .string "WHIRLPOOL to get across\l"
-    .string "real whirlpools.\p"
+    .string "That Badge serves as proof of you\n"
+    .string "and your Pokémon's victory today.\p"
     .string "And this… This is a gift from me!$"
 
 MahoganyTown_Gym_Text_HailSpeech:
@@ -182,7 +179,7 @@ MahoganyTown_Gym_Text_PryceRematchDefeat:
     .string "will overcome all life's obstacles.$"
 
 MahoganyTown_Gym_Text_Guide:
-    .string "PRYCE is a veteran who has\n"
+    .string "Pryce is a veteran who has\n"
     .string "trained Pokémon for some 50 years.\p"
     .string "He's got a solid lineup of\n"
     .string "Pokémon to cover whatever\l"
@@ -190,7 +187,7 @@ MahoganyTown_Gym_Text_Guide:
     .string "Fire is a good place to start.$"
 
 MahoganyTown_Gym_Text_GuideWin:
-    .string "PRYCE is something, but you're\n"
+    .string "Pryce is something, but you're\n"
     .string "something else!\p"
     .string "That was a hot battle that\n"
     .string "bridged the generation gap!$"
@@ -208,7 +205,7 @@ MahoganyTown_Gym_Text_BoarderRonaldAfter:
     .string "frozen.$"
 
 MahoganyTown_Gym_Text_BoarderBradSeen:
-    .string "This GYM has a slippery floor.\p"
+    .string "This Gym has a slippery floor.\p"
     .string "It's fun, isn't it?\p"
     .string "But hey--we're not playing\n"
     .string "games here!$"
@@ -217,24 +214,24 @@ MahoganyTown_Gym_Text_BoarderBradBeaten:
     .string "Do you see how serious we are?$"
 
 MahoganyTown_Gym_Text_BoarderBradAfter:
-    .string "This GYM is great.\n"
+    .string "This Gym is great.\n"
     .string "I love boarding with my\l"
     .string "Pokémon!$"
 
 MahoganyTown_Gym_Text_BoarderDouglasSeen:
-    .string "I know PRYCE's secret.$"
+    .string "I know Pryce's secret.$"
 
 MahoganyTown_Gym_Text_BoarderDouglasBeaten:
-    .string "OK. I'll tell you PRYCE's secret.$"
+    .string "OK. I'll tell you Pryce's secret.$"
 
 MahoganyTown_Gym_Text_BoarderDouglasAfter:
-    .string "The secret behind PRYCE's power…\p"
+    .string "The secret behind Pryce's power…\p"
     .string "He meditates under a waterfall\n"
     .string "daily to strengthen his mind\l"
     .string "and body.$"
 
 MahoganyTown_Gym_Text_SkierRoxanneSeen:
-    .string "To get to PRYCE, our GYM LEADER,\n"
+    .string "To get to Pryce, our Gym Leader,\n"
     .string "you need to think before you skate.$"
 
 MahoganyTown_Gym_Text_SkierRoxanneBeaten:
@@ -242,7 +239,7 @@ MahoganyTown_Gym_Text_SkierRoxanneBeaten:
 
 MahoganyTown_Gym_Text_SkierRoxanneAfter:
     .string "If you don't skate with precision,\n"
-    .string "you won't get far in this GYM.$"
+    .string "you won't get far in this Gym.$"
 
 MahoganyTown_Gym_Text_SkierClarissaSeen:
     .string "Check out my parallel turn!$"
@@ -260,16 +257,16 @@ MahoganyTown_Gym_EventScript_Dean::
 	end
 
 MahoganyTown_Gym_Text_CamperDeanSeen:
-	.string "Think you're ready to take on PRYCE?\n"
+	.string "Think you're ready to take on Pryce?\n"
 	.string "We'll see about that!$"
 
 MahoganyTown_Gym_Text_CamperDeanBeaten:
 	.string "Whoa! You're the real deal!$"
 
 MahoganyTown_Gym_Text_CamperDeanAfter:
-	.string "If you open a Pokémon GYM someday, can\n"
+	.string "If you open a Pokémon Gym someday, can\n"
 	.string "I be a trainer there?\p"
-	.string "PRYCE is kind of strict with us...$"
+	.string "Pryce is kind of strict with us...$"
 
 MahoganyTown_Gym_EventScript_ChangeWeatherHailState1::
     setweather WEATHER_SNOW

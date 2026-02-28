@@ -74,7 +74,7 @@
     },
     {
       "id": "MAPSEC_MAHOGANY_TOWN",
-      "name": "MAHOGANY TOWN",
+      "name": "Mahogany Town",
       "x": 15,
       "y": 2,
       "width": 1,
@@ -82,7 +82,7 @@
     },
     {
       "id": "MAPSEC_LAKE_OF_RAGE",
-      "name": "LAKE OF RAGE",
+      "name": "Lake of Rage",
       "x": 15,
       "y": 0,
       "width": 1,
@@ -254,7 +254,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_42",
-      "name": "ROUTE 42",
+      "name": "Route 42",
       "x": 11,
       "y": 2,
       "width": 4,
@@ -262,7 +262,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_43",
-      "name": "ROUTE 43",
+      "name": "Route 43",
       "x": 15,
       "y": 1,
       "width": 1,
@@ -358,7 +358,7 @@
     },
     {
       "id": "MAPSEC_MT_MORTAR",
-      "name": "MT MORTAR",
+      "name": "Mt Mortar",
       "x": 12,
       "y": 1,
       "width": 1,

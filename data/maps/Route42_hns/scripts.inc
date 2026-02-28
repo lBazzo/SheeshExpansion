@@ -210,7 +210,7 @@ Route42_Text_FisherTullyBeaten:
 
 Route42_Text_FisherTullyAfter:
 	.string "I want to become the trainer\n"
-	.string "CHAMP using the Pokémon I\l"
+	.string "champ using the Pokémon I\l"
 	.string "caught myself.\p"
 	.string "That's the best part of fishing!$"
 
@@ -227,28 +227,27 @@ Route42_Text_HikerBenjaminAfter:
 	.string "if you look up at the big sky!$"
 
 Route42_Text_PokemaniacShaneSeen:
-	.string "HEY!\p"
+	.string "Hey!\p"
 	.string "This is my secret place!\n"
 	.string "Get lost, you outsider!$"
 
 Route42_Text_PokemaniacShaneBeaten:
-	.string "I should have used my\n"
-	.string "MOON STONE…$"
+	.string "No, my Nidoking...!$"
 
 Route42_Text_PokemaniacShaneAfter:
-	.string "You're working on a POKéDEX?\p"
+	.string "You're working on a Pokédex?\p"
 	.string "Wow, you must know some\n"
 	.string "pretty rare Pokémon!\p"
 	.string "May I please see it?\n"
 	.string "Please?$"
 
 Route42_Text_Sign1:
-	.string "ROUTE 42\p"
-	.string "ECRUTEAK CITY - MAHOGANY TOWN$"
+	.string "Route 42\p"
+	.string "Ecruteak City - Mahogany Town$"
 
 Route42_Text_MtMortarSign1:
-	.string "MT.MORTAR\p"
-	.string "WATERFALL CAVE INSIDE$"
+	.string "Mt.Mortar\p"
+	.string "Waterfall Cave inside$"
 
 Route42_EventScript_TeaPartyMom::
 	lock
@@ -288,7 +287,7 @@ Route42_Text_TeaPartyMom:
 	.string "make a new friend!$"
 
 Route42_Text_TeaPartyGirl1:
-	.string "Waiter! Waiter! There's a FLYGON in my\n"
+	.string "Waiter! Waiter! There's a Flygon in my\n"
 	.string "soup!$"
 
 Route42_Text_TeaPartyGirl2:
@@ -304,14 +303,14 @@ Route42_2F_EventScript_Nerd::
 	end
 
 Route42_2F_Text_SupernerdHughSeen::
-	.string "Yo! MARKUS!$"
+	.string "Yo! Markus!$"
 
 Route42_2F_Text_SupernerdHughBeaten:
 	.string "Sorry, my mistake.\n"
 	.string "I misjudged you.$"
 
 Route42_2F_Text_SupernerdHughAfter:
-	.string "I was investigating MT.MORTAR,\n"
+	.string "I was investigating Mt.Mortar,\n"
 	.string "but my pal's gone AWOL.\p"
 	.string "I came out here to look for him, but\n"
 	.string "what if he's still inside...?$"

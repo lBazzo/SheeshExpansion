@@ -20,8 +20,8 @@ EventScript_CutTree::
 	@setfieldeffectargument 0, VAR_RESULT
 	@bufferpartymonnick STR_VAR_1, VAR_RESULT	@ loads the lead pokemon's nickname into STR_VAR_1
 	@buffermovename STR_VAR_2, MOVE_CUT			@ loads the HM name Cut into STR_VAR_2
-	msgbox Text_WantToCut, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
+	@msgbox Text_WantToCut, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, NO, EventScript_CancelCut
 	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_CutTreeCommon: @ fallthrough
@@ -88,8 +88,8 @@ EventScript_RockSmash::
 	@setfieldeffectargument 0, VAR_RESULT
 	@bufferpartymonnick STR_VAR_1, VAR_RESULT
 	@buffermovename STR_VAR_2, MOVE_ROCK_SMASH
-	msgbox Text_WantToSmash, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	@msgbox Text_WantToSmash, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
 	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_RockSmashCommon: @ fallthrough
@@ -122,8 +122,8 @@ EventScript_Headbutt::
 	@setfieldeffectargument 0, VAR_RESULT
 	@bufferpartymonnick STR_VAR_1, VAR_RESULT
 	@buffermovename STR_VAR_2, MOVE_HEADBUTT
-	msgbox Text_WantToHeadbutt, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
+	@msgbox Text_WantToHeadbutt, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, NO, EventScript_CancelHeadbutt
 	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 EventScript_HeadbuttCommon:
@@ -344,8 +344,8 @@ EventScript_StrengthBoulder::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
-	msgbox Text_WantToStrength, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
+	@msgbox Text_WantToStrength, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
 	@closemessage
 	@dofieldeffect FLDEFF_USE_STRENGTH
 	@waitstate
@@ -413,8 +413,8 @@ EventScript_UseWaterfall::
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
-	msgbox Text_WantToWaterfall, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
+	@msgbox Text_WantToWaterfall, MSGBOX_YESNO
+	@goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	@msgbox Text_MonUsedWaterfall, MSGBOX_DEFAULT
 	buffermovename STR_VAR_2, MOVE_WATERFALL
 	@msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT

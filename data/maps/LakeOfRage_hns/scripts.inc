@@ -250,18 +250,18 @@ LakeOfRage_Movement_DragoniteLeave:
 	step_end
 
 LakeOfRage_Text_Dragonite:
-	.string "DRAGONITE: Gyafooha!$"
+	.string "Dragonite: Gyafooha!$"
 
 LakeOfRage_Text_LanceForcedToEvolve:
-    .string "This lake is full of GYARADOS\n"
+    .string "This lake is full of Gyarados\n"
     .string "but nothing else…\p"
-    .string "So the MAGIKARP are being forced\n"
+    .string "So the Magikarp are being forced\n"
     .string "to evolve…$"
 
 LakeOfRage_Text_LanceIntro1:
     .string "Did you come here because of\n"
     .string "the rumors?\p"
-    .string "You're {PLAYER}? I'm LANCE, a\n"
+    .string "You're {PLAYER}? I'm Lance, a\n"
     .string "trainer like you.$"
 
 LakeOfRage_Text_LanceIntro2:
@@ -278,11 +278,11 @@ LakeOfRage_Text_LanceIntro3:
     .string "us investigate?$"
 
 LakeOfRage_Text_LanceRadioSignal:
-    .string "LANCE: Excellent!\p"
-    .string "It seems that the LAKE's MAGIKARP\n"
+    .string "Lance: Excellent!\p"
+    .string "It seems that the Lake's Magikarp\n"
     .string "are being forced to evolve.\p"
     .string "A mysterious radio broadcast\n"
-    .string "coming from MAHOGANY is the cause.\p"
+    .string "coming from Mahogany is the cause.\p"
     .string "We'll be waiting for you,\n"
     .string "{PLAYER}.$"
 
@@ -291,30 +291,30 @@ LakeOfRage_Text_LanceRefused:
     .string "please help us.$"
 
 LakeOfRage_Text_LanceAskHelp:
-    .string "LANCE: Hm? Are you going to help\n"
+    .string "Lance: Hm? Are you going to help\n"
     .string "us?$"
 
 LakeOfRage_Text_GyaradosCry:
-    .string "GYARADOS: Gyashaa!$"
+    .string "Gyarados: Gyashaa!$"
 
 LakeOfRage_Text_Gramps:
-    .string "The GYARADOS are angry!\p"
+    .string "The Gyarados are angry!\p"
     .string "It's a bad omen!$"
 
 LakeOfRage_Text_GrampsCleared:
-    .string "Hahah! The MAGIKARP are biting!$"
+    .string "Hahah! The Magikarp are biting!$"
 
 LakeOfRage_Text_SuperNerd:
     .string "I heard this lake was made by\n"
-    .string "rampaging GYARADOS.\p"
+    .string "rampaging Gyarados.\p"
     .string "I wonder if there is any\n"
     .string "connection to their mass outbreak\l"
     .string "now?$"
 
 LakeOfRage_Text_CooltrainerF:
     .string "Did my eyes deceive me? I saw a\n"
-    .string "red GYARADOS in the LAKE…\p"
-    .string "But I thought GYARADOS were\n"
+    .string "red Gyarados in the lake…\p"
+    .string "But I thought Gyarados were\n"
     .string "usually blue?$"
 
 
@@ -356,7 +356,7 @@ LakeOfRage_Text_CooltrainermAaronAfter:
 
 LakeOfRage_Text_CooltrainerfLoisSeen:
     .string "What happened to the red\n"
-    .string "GYARADOS?\p"
+    .string "Gyarados?\p"
     .string "It's gone?\p"
     .string "Oh, darn. I came here for\n"
     .string "nothing?\p"
@@ -367,7 +367,7 @@ LakeOfRage_Text_CooltrainerfLoisBeaten:
 
 LakeOfRage_Text_CooltrainerfLoisAfter:
     .string "Come to think of it, I've seen a\n"
-    .string "pink BUTTERFREE.$"
+    .string "pink Butterfree.$"
 
 
 

@@ -705,7 +705,7 @@ Rash Nature
 - Psychic  
 
 Serperior @ Dragon Gem  
-Ability: Flower Block  
+Ability: Contrary  
 Level: 61   
 Timid Nature   
 - Leaf Storm  
@@ -4352,9 +4352,9 @@ Impish Nature
 - Stone Edge  
 
 === TRAINER_RON ===
-Name: Ronald
-Class: Expert
-Pic: Expert M
+Name: Ron
+Class: Pokemaniac
+Pic: Pokemaniac
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6481,7 +6481,7 @@ Name: Roxanne
 Class: Expert
 Pic: Expert F
 Gender: Male
-Music: Hg Girl 2
+Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -6517,7 +6517,7 @@ Name: Clarissa
 Class: Expert
 Pic: Expert F
 Gender: Male
-Music: Hg Girl 2
+Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -9579,8 +9579,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SAM ===
 Name: Sam
-Class: Super Nerd
-Pic: Super Nerd
+Class: Cooltrainer
+Pic: Cooltrainer F
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
@@ -10681,7 +10681,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_GRUNT_39 ===
 Name: Grunt
 Class: Team Rocket
-Pic: Rocket Grunt M
+Pic: Rocket Grunt F
 Gender: Male
 Music: Rocket
 Double Battle: No
@@ -13228,8 +13228,8 @@ Timid Nature
 
 === TRAINER_DEAN ===
 Name: Dean
-Class: Gentleman
-Pic: Gentleman
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -13291,8 +13291,8 @@ Impish Nature
 
 === TRAINER_SID ===
 Name: Sid
-Class: Camper
-Pic: Camper
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14215,7 +14215,7 @@ Name: Ronald
 Class: Expert
 Pic: Expert M
 Gender: Male
-Music: Male
+Music: Rich
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -14269,7 +14269,7 @@ Name: Brad
 Class: Expert
 Pic: Expert M
 Gender: Male
-Music: Male
+Music: Rich
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -14296,7 +14296,7 @@ Name: Douglas
 Class: Expert
 Pic: Expert M
 Gender: Male
-Music: Male
+Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -14661,7 +14661,7 @@ Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_REX ===
-Name: REX
+Name: Rex
 Class: Pokefan
 Pic: Pokefan M
 Gender: Male
@@ -15590,7 +15590,7 @@ Calm Nature
 - Vacuum Wave  
 
 === TRAINER_DARACH_CAIT ===
-Name: DarachCait
+Name: & Caitlin
 Class: TRAINER_CLASS_CASTLE_DUO
 Pic: Leader Whitney
 Gender: Male
@@ -17780,7 +17780,7 @@ Mugshot: DarkRed
 Dusknoir @ Weakness Policy  
 Ability: Sticky Hold  
 Level: 65    
-Brave Nature  
+Relaxed Nature  
 IVs: 0 Spe  
 - Payback  
 - Drain Punch  
@@ -18170,7 +18170,7 @@ Mugshot: DarkRed
 Dusknoir @ Weakness Policy  
 Ability: Sticky Hold  
 Level: 65   
-Brave Nature   
+Relaxed Nature   
 - Payback  
 - Drain Punch  
 - Shadow Sneak  
@@ -18558,7 +18558,7 @@ Mugshot: DarkRed
 Dusknoir @ Weakness Policy  
 Ability: Sticky Hold  
 Level: 65   
-Brave Nature   
+Relaxed Nature   
 - Payback  
 - Drain Punch  
 - Shadow Sneak  
