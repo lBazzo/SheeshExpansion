@@ -7,7 +7,7 @@ VictoryRoadKanto_B2F_hns_MapScripts::
 	.byte 0
 
 VictoryRoadKanto_B2F_OnTransition::
-	call_if_ge VAR_ALL_B2B_STATE, 14, VictoryRoadKanto_B2F_EventScript_MoveBeatenTrainers
+	call_if_ge VAR_ALL_B2B_STATE, 15, VictoryRoadKanto_B2F_EventScript_MoveBeatenTrainers
 	end
 
 VictoryRoadKanto_B2F_EventScript_MoveBeatenTrainers::
@@ -56,7 +56,7 @@ VictoryRoadKanto_B2F_EventScript_B2B2B::
 	setobjectxyperm LOCALID_VICTORYROAD_TOPVICTOR, 18, 30
 	setobjectxyperm LOCALID_VICTORYROAD_LEFTXERXES, 16, 32
 	setobjectxyperm LOCALID_VICTORYROAD_RIGHTJACOBI, 20, 32
-	setvar VAR_ALL_B2B_STATE, 14
+	setvar VAR_ALL_B2B_STATE, 15
 	release
 	end
 
@@ -107,9 +107,9 @@ VictoryRoadKanto_B2F_Text_VictorSeen:
 	.string "Sorry, nope. I don't believe it.\p"
 	.string "There's no way a trainer like you has\n"
 	.string "what it takes to beat the Pokémon\l"
-	.string "LEAGUE.\p"
+	.string "League.\p"
 	.string "Think I'm wrong? Then let's see you\n"
-	.string "prove it to us, here and now!$"
+	.string "prove it!$"
 
 VictoryRoadKanto_B2F_Text_VictorBeaten:
 	.string "H-huh? Wait, that one didn't count!$"
@@ -119,11 +119,11 @@ VictoryRoadKanto_B2F_Text_VictorAfter:
 	.string "project a great aura at first glance,\l"
 	.string "but seeing you battle made it painfully\l"
 	.string "obvious. You're not just any trainer.\p"
-	.string "Go on. See what the Pokémon LEAGUE\n"
+	.string "Go on. See what the Pokémon League\n"
 	.string "has to offer.$"
 
 VictoryRoadKanto_B2F_Text_XerxesSeen:
-	.string "You beat VICTOR? Then you must be\n"
+	.string "You beat Victor? Then you must be\n"
 	.string "pretty good. Battle with me next.$"
 
 VictoryRoadKanto_B2F_Text_XerxesBeaten:

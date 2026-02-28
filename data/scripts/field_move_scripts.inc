@@ -398,7 +398,7 @@ Text_CantStrength:
 	.string "may be able to push it aside.$"
 
 Text_StrengthActivated:
-	.string "STRENGTH made it possible to move\n"
+	.string "Strength made it possible to move\n"
 	.string "boulders around.$"
 
 @ HnS PORT TODO - make waterfall like strength - only interact with "a" once, then just movement
@@ -510,7 +510,7 @@ EventScript_Whirlpool::
 	goto_if_unset FLAG_BADGE07_GET, EventScript_CantWhirlpool
 	goto_if_unset FLAG_RECEIVED_HM_WHIRLPOOL, EventScript_CantWhirlpool
 	@checkitem ITEM_HM_WHIRLPOOL @ HnS PORT NOTE - why not FLAG_RECEIVED_HM_WHIRLPOOL?
-	goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
+	@goto_if_eq VAR_RESULT, FALSE, EventScript_CantWhirlpool
 	playse SE_M_WHIRLPOOL
 	@ buffermovename STR_VAR_2, MOVE_WHIRLPOOL
 	@ msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT

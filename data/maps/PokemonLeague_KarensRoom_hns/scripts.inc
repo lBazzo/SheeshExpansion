@@ -110,7 +110,7 @@ PokemonLeague_KarensRoom_EventScript_KarenDefeatedMorty::
 	end
 
 PokemonLeague_KarensRoom_Text_Rematch:
-    .string "KAREN: Ah, it's you again.\p"
+    .string "Karen: Ah, it's you again.\p"
     .string "I trust you haven't forgotten\n"
     .string "my belief:\p"
     .string "True strength arises from trust\n"
@@ -124,9 +124,9 @@ PokemonLeague_KarensRoom_Text_Rematch:
     .string "with your Pokémon.$"
 
 PokemonLeague_KarensRoom_Text_BeforeIntro:
-    .string "I am KAREN of the ELITE FOUR.\p"
+    .string "I am Karen of the Elite Four.\p"
     .string "You're {PLAYER}? How amusing.\p"
-    .string "I love DARK-type Pokémon.\p"
+    .string "I love Dark-type Pokémon.\p"
     .string "I find their wild, tough image\n"
     .string "to be so appealing. And they're\l"
     .string "so strong.\p"
@@ -157,7 +157,7 @@ PokemonLeague_KarensRoom_Text_Defeat:
     .string "try to win with their favorites.\p"
     .string "I like your style. You understand\n"
     .string "what's important.\p"
-    .string "Go on--the CHAMPION is waiting.$"
+    .string "Go on--the Champion is waiting.$"
 
 PokemonLeague_KarensRoom_Text_KarenDefeatedMorty:
     .string "Strong Pokémon.\p"
@@ -168,7 +168,7 @@ PokemonLeague_KarensRoom_Text_KarenDefeatedMorty:
     .string "try to win with their favorites.\p"
     .string "I like your style. You understand\n"
     .string "what's important.\p"
-    .string "Go on--the CHAMPION is waiting.$"
+    .string "Go on--the Champion is waiting.$"
 
 
 
@@ -265,7 +265,7 @@ PokemonLeague_KarensRoom_EventScript_MortyDefeatedKaren::
 PokemonLeague_KarensRoom_Text_MortyBeforeIntro:
     .string "We meet again, {PLAYER}.\p"
 	.string "I must say, I was impressed by your\n"
-	.string "skill back in BURNED TOWER.\p"
+	.string "skill back in Burned Tower.\p"
 	.string "I would like to say you won because I\n"
 	.string "held back, but truthfully, you showed\l"
 	.string "me real promise.\p"
@@ -273,7 +273,7 @@ PokemonLeague_KarensRoom_Text_MortyBeforeIntro:
 	.string "trainer I was back then.\p"
 	.string "After a lifetime of preparation, I have\n"
 	.string "finally realised the future in which I\l"
-	.string "tamed the LEGENDARY Pokémon.\p"
+	.string "tamed the Legendary Pokémon.\p"
 	.string "Tell me, {PLAYER}. Do you still think you\n"
 	.string "are on our level?$"
 
@@ -300,9 +300,9 @@ PokemonLeague_KarensRoom_Text_MortyDefeat:
 	.string "I don't think our potentials are so\n"
 	.string "different. But you seem to have\l"
 	.string "something more than that... So be it.\p"
-	.string "The CHAMPION is waiting. Go and show\n"
+	.string "The Champion is waiting. Go and show\n"
 	.string "him what you're made of.$"
 
 PokemonLeague_KarensRoom_Text_MortyDefeatedKaren:
-	.string "The CHAMPION is waiting. Go and show\n"
+	.string "The Champion is waiting. Go and show\n"
 	.string "him what you're made of.$"

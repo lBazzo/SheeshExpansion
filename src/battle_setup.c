@@ -757,6 +757,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     case MAP_TYPE_NONE:
         if (GetCurrentRegionMapSectionId() == MAPSEC_OLIVINE_LIGHTHOUSE)
             return BATTLE_ENVIRONMENT_BUILDING;
+        else if (GetCurrentRegionMapSectionId() == MAPSEC_DRAGONS_DEN
+              || GetCurrentRegionMapSectionId() == MAPSEC_VICTORY_ROAD)
+            return BATTLE_ENVIRONMENT_CAVE;
 
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))

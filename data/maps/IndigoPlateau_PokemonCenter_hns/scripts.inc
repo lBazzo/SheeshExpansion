@@ -201,31 +201,20 @@ IndigoPlateau_PokemonCenter_Movement_SpencerLeavePlayer:
 IndigoPlateau_PokemonCenter_Text_SpencerExplainBP:
 	.string "Ah, I wondered when we'd be seeing you,\n"
     .string "{PLAYER}.\p"
-    .string "Hm?\p"
-    .string "Oh, no. Well, I am a trainer, that is true.\n"
-    .string "But I'm not here to challenge you.\p"
-    .string "I'm SPENCER, the head of the BATTLE\n"
-    .string "PALACE.\p"
-    .string "SPENCER: I've heard great things about\n"
-    .string "your battles with the other facility\l"
-    .string "heads.\p"
-    .string "While there is some part of me that is\n"
-    .string "curious as to how I would fare against\l"
-    .string "you, now is not the time for that.\p"
     .string "You're here to challenge the Pokémon\n"
-    .string "LEAGUE, aren't you?\p"
+    .string "League, aren't you?\p"
     .string "In that case, let us lend you some\n"
     .string "assistance.\p"
-    .string "I'm going to give you 32 BATTLE POINTS.\p"
-    .string "BATTLE POINTS is a type of currency\n"
-    .string "that we use at the BATTLE FRONTIER.\p"
+    .string "I'm going to give you 32 Battle Points.\p"
+    .string "Battle Points are a type of currency\n"
+    .string "that we use at the Battle Frontier.\p"
     .string "They can be exchanged for various\n"
     .string "powerful items.\p"
-    .string "Since you've already beaten so many of\n"
+    .string "Since you've already beaten all of\n"
     .string "us, it's only fair that you be rewarded\l"
     .string "accordingly for your triumphs.\p"
     .string "Plus, it wouldn't be a good look for us\n"
-    .string "if you failed to defeat the ELITE FOUR\l"
+    .string "if you failed to defeat the Elite Four\l"
     .string "now...\p"
     .string "Ohoho! I'm just joking, of course.\p"
     .string "Come and speak to us when you've\n"
@@ -263,7 +252,7 @@ IndigoPlateau_Text_SpencerPostIntro:
     .string "Some cheaper items are more powerful\n"
     .string "during the fight you use them, but you\l"
     .string "won't be able to keep them for all the\l"
-    .string "ELITE FOUR. Choose wisely.$"
+    .string "Elite Four. Choose wisely.$"
 
 @Dahlia
 
@@ -376,7 +365,7 @@ IndigoPlateau_EventScript_JabocaBerry::
     msgbox IndigoPlateau_Text_ConfirmJabocaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 3
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_JABOCA_BERRY
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -384,7 +373,7 @@ IndigoPlateau_EventScript_RowapBerry::
     msgbox IndigoPlateau_Text_ConfirmRowapBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 3
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ROWAP_BERRY
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -392,7 +381,7 @@ IndigoPlateau_EventScript_RockyHelmet::
     msgbox IndigoPlateau_Text_ConfirmRockyHelmet, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ROCKY_HELMET
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -408,7 +397,7 @@ IndigoPlateau_EventScript_BlackSludge::
     msgbox IndigoPlateau_Text_ConfirmBlackSludge, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_BLACK_SLUDGE
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -416,7 +405,7 @@ IndigoPlateau_EventScript_FireGem::
     msgbox IndigoPlateau_Text_ConfirmFireGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_FIRE_GEM
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -424,7 +413,7 @@ IndigoPlateau_EventScript_WaterGem::
     msgbox IndigoPlateau_Text_ConfirmWaterGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_WATER_GEM
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -432,7 +421,7 @@ IndigoPlateau_EventScript_ElectricGem::
     msgbox IndigoPlateau_Text_ConfirmElectricGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ELECTRIC_GEM
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
@@ -440,17 +429,17 @@ IndigoPlateau_EventScript_GrassGem::
     msgbox IndigoPlateau_Text_ConfirmGrassGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DahliaPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_GRASS_GEM
     goto IndigoPlateau_EventScript_DahliaTryPurchasePrize
     end
 
 
 
 IndigoPlateau_Text_DahliaIntro:
-	.string "DAHLIA: Well, look who it is! I hope\n"
+	.string "Dahlia: Well, look who it is! I hope\n"
     .string "you've been keeping well!\p"
     .string "I knew you'd end up here eventually\n"
-    .string "since our battle at OLIVINE CITY.\p"
+    .string "since our battle at the Battle Tower.\p"
     .string "Have you been thinking about what we\n"
     .string "talked about back then?\p"
     .string "You know, about taking on a harder\n"
@@ -460,7 +449,7 @@ IndigoPlateau_Text_DahliaIntro:
     .string "made now... Or maybe not!$"
 
 IndigoPlateau_Text_DahliaPostIntro:
-	.string "DAHLIA: So, what'll it be?$"
+	.string "Dahlia: So, what'll it be?$"
 
 IndigoPlateau_Text_DahliaDontHaveEnoughPoints:
 	.string "Whoops! Looks like you spent all your\n"
@@ -471,46 +460,46 @@ IndigoPlateau_Text_DahliaHereIsYourPrize:
     .string "of battle!$"
 
 IndigoPlateau_Text_ConfirmApicotBerry:
-	.string "Want the APICOT BERRY, yeah?$"
+	.string "Want the Apicot Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmGanlonBerry:
-	.string "Want the GANLON BERRY, yeah?$"
+	.string "Want the Ganlon Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmLiechiBerry:
-	.string "Want the LIECHI BERRY, yeah?$"
+	.string "Want the Liechi Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmPetayaBerry:
-	.string "Want the PETAYA BERRY, yeah?$"
+	.string "Want the Petaya Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmSalacBerry:
-	.string "Want the SALAC BERRY, yeah?$"
+	.string "Want the Salac Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmJabocaBerry:
-	.string "Want the JABOCA BERRY, yeah?$"
+	.string "Want the Jaboca Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmRowapBerry:
-	.string "Want the ROWAP BERRY, yeah?$"
+	.string "Want the Rowap Berry, yeah?$"
 
 IndigoPlateau_Text_ConfirmRockyHelmet:
-	.string "Want the ROCKY HELMET, yeah?$"
+	.string "Want the Rocky Helmet, yeah?$"
 
 IndigoPlateau_Text_ConfirmLeftovers:
-	.string "Want the LEFTOVERS, yeah?$"
+	.string "Want the Leftovers, yeah?$"
 
 IndigoPlateau_Text_ConfirmBlackSludge:
-	.string "Want the BLACK SLUDGE, yeah?$"
+	.string "Want the Black Sludge, yeah?$"
 
 IndigoPlateau_Text_ConfirmFireGem:
-	.string "Want the FIRE GEM, yeah?$"
+	.string "Want the Fire Gem, yeah?$"
 
 IndigoPlateau_Text_ConfirmWaterGem:
-	.string "Want the WATER GEM, yeah?$"
+	.string "Want the Water Gem, yeah?$"
 
 IndigoPlateau_Text_ConfirmElectricGem:
-	.string "Want the ELECTRIC GEM, yeah?$"
+	.string "Want the Electric Gem, yeah?$"
 
 IndigoPlateau_Text_ConfirmGrassGem:
-	.string "Want the GRASS GEM, yeah?$"
+	.string "Want the Grass Gem, yeah?$"
 
 IndigoPlateau_Text_DahliaBye:
 	.string "No worries! Let me know if anything else\n"
@@ -587,7 +576,7 @@ IndigoPlateau_EventScript_BabiriBerry::
     msgbox IndigoPlateau_Text_ConfirmBabiriBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_BABIRI_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -595,7 +584,7 @@ IndigoPlateau_EventScript_ChartiBerry::
     msgbox IndigoPlateau_Text_ConfirmChartiBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CHARTI_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -603,7 +592,7 @@ IndigoPlateau_EventScript_ChilanBerry::
     msgbox IndigoPlateau_Text_ConfirmChilanBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CHILAN_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -611,7 +600,7 @@ IndigoPlateau_EventScript_ChopleBerry::
     msgbox IndigoPlateau_Text_ConfirmChopleBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CHOPLE_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -619,7 +608,7 @@ IndigoPlateau_EventScript_CobaBerry::
     msgbox IndigoPlateau_Text_ConfirmCobaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_COBA_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -627,7 +616,7 @@ IndigoPlateau_EventScript_ColburBerry::
     msgbox IndigoPlateau_Text_ConfirmColburBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_COLBUR_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -635,7 +624,7 @@ IndigoPlateau_EventScript_HabanBerry::
     msgbox IndigoPlateau_Text_ConfirmHabanBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_HABAN_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -643,7 +632,7 @@ IndigoPlateau_EventScript_KasibBerry::
     msgbox IndigoPlateau_Text_ConfirmKasibBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_KASIB_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -651,7 +640,7 @@ IndigoPlateau_EventScript_KebiaBerry::
     msgbox IndigoPlateau_Text_ConfirmKebiaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_KEBIA_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -659,7 +648,7 @@ IndigoPlateau_EventScript_OccaBerry::
     msgbox IndigoPlateau_Text_ConfirmOccaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_OCCA_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -667,7 +656,7 @@ IndigoPlateau_EventScript_PasshoBerry::
     msgbox IndigoPlateau_Text_ConfirmPasshoBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_PASSHO_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -675,7 +664,7 @@ IndigoPlateau_EventScript_PayapaBerry::
     msgbox IndigoPlateau_Text_ConfirmPayapaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_PAYAPA_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -683,7 +672,7 @@ IndigoPlateau_EventScript_RindoBerry::
     msgbox IndigoPlateau_Text_ConfirmRindoBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_RINDO_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
@@ -691,14 +680,14 @@ IndigoPlateau_EventScript_RoseliBerry::
     msgbox IndigoPlateau_Text_ConfirmRoseliBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_DarachPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ROSELI_BERRY
     goto IndigoPlateau_EventScript_DarachTryPurchasePrize
     end
 
 
 
 IndigoPlateau_Text_DarachIntro:
-    .string "DARACH: It's a pleasure to be in one\n"
+    .string "Darach: It's a pleasure to be in one\n"
     .string "another's company once more, {PLAYER}.\p"
     .string "I see you've been making quite the\n"
     .string "progress since our last meeting.\l"
@@ -706,14 +695,14 @@ IndigoPlateau_Text_DarachIntro:
     .string "As for us, there have been some ups and\n"
     .string "downs. That is life, of course.\p"
     .string "Though I am still in your debt for\n"
-    .string "helping CAITLIN and I to work on our\l"
+    .string "helping Caitlin and I to work on our\l"
     .string "team synergy.\p"
     .string "Even if it only helps a small amount,\n"
     .string "I hope these items will make a\l"
     .string "difference in your upcoming battles.$"
 
 IndigoPlateau_Text_DarachPostIntro:
-    .string "DARACH: So, what can I help you with\n"
+    .string "Darach: So, what can I help you with\n"
     .string "today, {PLAYER}?$"
 
 IndigoPlateau_Text_DarachDontHaveEnoughPoints:
@@ -725,46 +714,46 @@ IndigoPlateau_Text_DarachHereIsYourPrize:
     .string "make excellent use of this.$"
 
 IndigoPlateau_Text_ConfirmBabiriBerry:
-    .string "You want the BABIRI BERRY?$"
+    .string "You want the Babiri Berry?$"
 
 IndigoPlateau_Text_ConfirmChartiBerry:
-    .string "You want the CHARTI BERRY?$"
+    .string "You want the Charti Berry?$"
 
 IndigoPlateau_Text_ConfirmChilanBerry:
-    .string "You want the CHILAN BERRY?$"
+    .string "You want the Chilan Berry?$"
 
 IndigoPlateau_Text_ConfirmChopleBerry:
-    .string "You want the CHOPLE BERRY?$"
+    .string "You want the Chople Berry?$"
 
 IndigoPlateau_Text_ConfirmCobaBerry:
-    .string "You want the COBA BERRY?$"
+    .string "You want the Coba Berry?$"
 
 IndigoPlateau_Text_ConfirmColburBerry:
-    .string "You want the COLBUR BERRY?$"
+    .string "You want the Colbur Berry?$"
 
 IndigoPlateau_Text_ConfirmHabanBerry:
-    .string "You want the HABAN BERRY?$"
+    .string "You want the Haban Berry?$"
 
 IndigoPlateau_Text_ConfirmKasibBerry:
-    .string "You want the KASIB BERRY?$"
+    .string "You want the Kasib Berry?$"
 
 IndigoPlateau_Text_ConfirmKebiaBerry:
-    .string "You want the KEBIA BERRY?$"
+    .string "You want the Kebia Berry?$"
 
 IndigoPlateau_Text_ConfirmOccaBerry:
-    .string "You want the OCCA BERRY?$"
+    .string "You want the Occa Berry?$"
 
 IndigoPlateau_Text_ConfirmPasshoBerry:
-    .string "You want the PASSHO BERRY?$"
+    .string "You want the Passho Berry?$"
 
 IndigoPlateau_Text_ConfirmPayapaBerry:
-    .string "You want the PAYAPA BERRY?$"
+    .string "You want the Payapa Berry?$"
 
 IndigoPlateau_Text_ConfirmRindoBerry:
-    .string "You want the RINDO BERRY?$"
+    .string "You want the Rindo Berry?$"
 
 IndigoPlateau_Text_ConfirmRoseliBerry:
-    .string "You want the ROSELI BERRY?$"
+    .string "You want the Roseli Berry?$"
 
 IndigoPlateau_Text_DarachBye:
     .string "Until next time, then. May you see\n"
@@ -841,7 +830,7 @@ IndigoPlateau_EventScript_ShucaBerry::
     msgbox IndigoPlateau_Text_ConfirmShucaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_SHUCA_BERRY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -849,7 +838,7 @@ IndigoPlateau_EventScript_TangaBerry::
     msgbox IndigoPlateau_Text_ConfirmTangaBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_TANGA_BERRY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -857,7 +846,7 @@ IndigoPlateau_EventScript_WacanBerry::
     msgbox IndigoPlateau_Text_ConfirmWacanBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_WACAN_BERRY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -865,7 +854,7 @@ IndigoPlateau_EventScript_YacheBerry::
     msgbox IndigoPlateau_Text_ConfirmYacheBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 1
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_YACHE_BERRY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -881,7 +870,7 @@ IndigoPlateau_EventScript_ClearAmulet::
     msgbox IndigoPlateau_Text_ConfirmClearAmulet, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CLEAR_AMULET
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -889,7 +878,7 @@ IndigoPlateau_EventScript_AirBalloon::
     msgbox IndigoPlateau_Text_ConfirmAirBalloon, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_AIR_BALLOON
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -897,7 +886,7 @@ IndigoPlateau_EventScript_Snowball::
     msgbox IndigoPlateau_Text_ConfirmSnowball, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_SNOWBALL
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -905,7 +894,7 @@ IndigoPlateau_EventScript_LuminousMoss::
     msgbox IndigoPlateau_Text_ConfirmLuminousMoss, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_LUMINOUS_MOSS
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -913,7 +902,7 @@ IndigoPlateau_EventScript_CellBattery::
     msgbox IndigoPlateau_Text_ConfirmCellBattery, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CELL_BATTERY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -921,7 +910,7 @@ IndigoPlateau_EventScript_AbsorbBulb::
     msgbox IndigoPlateau_Text_ConfirmAbsorbBulb, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ABSORB_BULB
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -929,7 +918,7 @@ IndigoPlateau_EventScript_ExpertBelt::
     msgbox IndigoPlateau_Text_ConfirmExpertBelt, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_EXPERT_BELT
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -937,7 +926,7 @@ IndigoPlateau_EventScript_RedCard::
     msgbox IndigoPlateau_Text_ConfirmRedCard, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 2
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_RED_CARD
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
@@ -945,16 +934,16 @@ IndigoPlateau_EventScript_BoosterEnergy::
     msgbox IndigoPlateau_Text_ConfirmBoosterEnergy, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_CaitlinPostIntro
     setvar VAR_0x8008, 3
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_BOOSTER_ENERGY
     goto IndigoPlateau_EventScript_CaitlinTryPurchasePrize
     end
 
 
 
 IndigoPlateau_Text_CaitlinIntro:
-    .string "...\p"
+    .string "Caitlin: ...\p"
     .string "Hello.\p"
-    .string "DARACH said I could watch you battle if\n"
+    .string "Darach said I could watch you battle if\n"
     .string "I came here, so I did.\p"
     .string "Please win, {PLAYER}...\p"
     .string "...$"
@@ -970,46 +959,46 @@ IndigoPlateau_Text_CaitlinHereIsYourPrize:
     .string "...$"
 
 IndigoPlateau_Text_ConfirmShucaBerry:
-    .string "...SHUCA BERRY?$"
+    .string "...Shuca Berry?$"
 
 IndigoPlateau_Text_ConfirmTangaBerry:
-    .string "...TANGA BERRY?$"
+    .string "...Tanga Berry?$"
 
 IndigoPlateau_Text_ConfirmWacanBerry:
-    .string "...WACAN BERRY?$"
+    .string "...Wacan Berry?$"
 
 IndigoPlateau_Text_ConfirmYacheBerry:
-    .string "...YACHE BERRY?$"
+    .string "...Yache Berry?$"
 
 IndigoPlateau_Text_ConfirmHeartScale:
-    .string "...HEART SCALE?$"
+    .string "...Heart Scale?$"
 
 IndigoPlateau_Text_ConfirmClearAmulet:
-    .string "...CLEAR AMULET?$"
+    .string "...Clear Amulet?$"
 
 IndigoPlateau_Text_ConfirmAirBalloon:
-    .string "...AIR BALLOON?$"
+    .string "...Air Balloon?$"
 
 IndigoPlateau_Text_ConfirmSnowball:
-    .string "...SNOWBALL?$"
+    .string "...Snowball?$"
 
 IndigoPlateau_Text_ConfirmLuminousMoss:
-    .string "...LUMINOUS MOSS?$"
+    .string "...Luminous Moss?$"
 
 IndigoPlateau_Text_ConfirmCellBattery:
-    .string "...CELL BATTERY?$"
+    .string "...Cell Battery?$"
 
 IndigoPlateau_Text_ConfirmAbsorbBulb:
-    .string "...ABSORB BULB?$"
+    .string "...Absorb Bulb?$"
 
 IndigoPlateau_Text_ConfirmExpertBelt:
-    .string "...EXPERT BELT?$"
+    .string "...Expert Belt?$"
 
 IndigoPlateau_Text_ConfirmRedCard:
-    .string "...RED CARD?$"
+    .string "...Red Card?$"
 
 IndigoPlateau_Text_ConfirmBoosterEnergy:
-    .string "...BOOSTER ENERGY?$"
+    .string "...Booster Energy?$"
 
 IndigoPlateau_Text_CaitlinBye:
     .string "Okay then... I'll be here...$"
@@ -1084,7 +1073,7 @@ IndigoPlateau_EventScript_IceGem::
     msgbox IndigoPlateau_Text_ConfirmIceGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ICE_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1092,7 +1081,7 @@ IndigoPlateau_EventScript_FightingGem::
     msgbox IndigoPlateau_Text_ConfirmFightingGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_FIGHTING_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1100,7 +1089,7 @@ IndigoPlateau_EventScript_PoisonGem::
     msgbox IndigoPlateau_Text_ConfirmPoisonGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_POISON_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1108,7 +1097,7 @@ IndigoPlateau_EventScript_GroundGem::
     msgbox IndigoPlateau_Text_ConfirmGroundGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_GROUND_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1116,7 +1105,7 @@ IndigoPlateau_EventScript_FlyingGem::
     msgbox IndigoPlateau_Text_ConfirmFlyingGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_FLYING_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1124,7 +1113,7 @@ IndigoPlateau_EventScript_PsychicGem::
     msgbox IndigoPlateau_Text_ConfirmPsychicGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_PSYCHIC_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1132,7 +1121,7 @@ IndigoPlateau_EventScript_BugGem::
     msgbox IndigoPlateau_Text_ConfirmBugGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_BUG_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1140,7 +1129,7 @@ IndigoPlateau_EventScript_RockGem::
     msgbox IndigoPlateau_Text_ConfirmRockGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ROCK_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1148,7 +1137,7 @@ IndigoPlateau_EventScript_GhostGem::
     msgbox IndigoPlateau_Text_ConfirmGhostGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_GHOST_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1156,7 +1145,7 @@ IndigoPlateau_EventScript_DragonGem::
     msgbox IndigoPlateau_Text_ConfirmDragonGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_DRAGON_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1164,7 +1153,7 @@ IndigoPlateau_EventScript_DarkGem::
     msgbox IndigoPlateau_Text_ConfirmDarkGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_DARK_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1172,7 +1161,7 @@ IndigoPlateau_EventScript_SteelGem::
     msgbox IndigoPlateau_Text_ConfirmSteelGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_STEEL_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1180,7 +1169,7 @@ IndigoPlateau_EventScript_NormalGem::
     msgbox IndigoPlateau_Text_ConfirmNormalGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_NORMAL_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
@@ -1188,21 +1177,21 @@ IndigoPlateau_EventScript_FairyGem::
     msgbox IndigoPlateau_Text_ConfirmFairyGem, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_LucyPostIntro
     setvar VAR_0x8008, 5
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_FAIRY_GEM
     goto IndigoPlateau_EventScript_LucyTryPurchasePrize
     end
 
 
 
 IndigoPlateau_Text_LucyIntro:
-    .string "LUCY: Hmph. Here you are. Not that I'm\n"
+    .string "Lucy: Hmph. Here you are. Not that I'm\n"
     .string "surprised.\p"
     .string "Sorry, but our rematch will have to wait.\n"
     .string "I could beat you right now, but...\p"
-    .string "If you beat the ELITE FOUR, and I beat\n"
-    .string "you, that makes me the CHAMPION.\p"
+    .string "If you beat the Elite Four, and I beat\n"
+    .string "you, that makes me the Champion.\p"
     .string "Heh heh...\p"
-    .string "Not that I'd struggle to beat LANCE.\p"
+    .string "Not that I'd struggle to beat Lance.\p"
     .string "I'd still win if we battled now, just so\n"
     .string "you know.\p"
     .string "Still, I guess I'll let you off for now.\n"
@@ -1218,46 +1207,46 @@ IndigoPlateau_Text_LucyHereIsYourPrize:
     .string "Fine then. Take it... Hurry up!$"
 
 IndigoPlateau_Text_ConfirmIceGem:
-    .string "The ICE GEM. You sure?$"
+    .string "The Ice GEm. You sure?$"
 
 IndigoPlateau_Text_ConfirmFightingGem:
-    .string "The FIGHTING GEM. You sure?$"
+    .string "The Fighting Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmPoisonGem:
-    .string "The POISON GEM. You sure?$"
+    .string "The Poison Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmGroundGem:
-    .string "The GROUND GEM. You sure?$"
+    .string "The Ground Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmFlyingGem:
-    .string "The FLYING GEM. You sure?$"
+    .string "The Flying Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmPsychicGem:
-    .string "The PSYCHIC GEM. You sure?$"
+    .string "The Psychic Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmBugGem:
-    .string "The BUG GEM. You sure?$"
+    .string "The Bug Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmRockGem:
-    .string "The ROCK GEM. You sure?$"
+    .string "The Rock Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmGhostGem:
-    .string "The GHOST GEM. You sure?$"
+    .string "The Ghost Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmDragonGem:
-    .string "The DRAGON GEM. You sure?$"
+    .string "The Dragon Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmDarkGem:
-    .string "The DARK GEM. You sure?$"
+    .string "The Dark Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmSteelGem:
-    .string "The STEEL GEM. You sure?$"
+    .string "The Steel Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmNormalGem:
-    .string "The NORMAL GEM. You sure?$"
+    .string "The Normal Gem. You sure?$"
 
 IndigoPlateau_Text_ConfirmFairyGem:
-    .string "The FAIRY GEM. You sure?$"
+    .string "The Fairy Gem. You sure?$"
 
 IndigoPlateau_Text_LucyBye:
     .string "Go, then. Don't forget, I'll be waiting\n"
@@ -1332,7 +1321,7 @@ IndigoPlateau_EventScript_CustapBerry::
     msgbox IndigoPlateau_Text_ConfirmCustapBerry, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 6
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CUSTAP_BERRY
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1340,7 +1329,7 @@ IndigoPlateau_EventScript_CovertCloak::
     msgbox IndigoPlateau_Text_ConfirmCovertCloak, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 6
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_COVERT_CLOAK
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1348,7 +1337,7 @@ IndigoPlateau_EventScript_ThroatSpray::
     msgbox IndigoPlateau_Text_ConfirmThroatSpray, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 6
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_THROAT_SPRAY
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1356,7 +1345,7 @@ IndigoPlateau_EventScript_FocusSash::
     msgbox IndigoPlateau_Text_ConfirmFocusSash, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 7
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_FOCUS_SASH
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1364,7 +1353,7 @@ IndigoPlateau_EventScript_EjectPack::
     msgbox IndigoPlateau_Text_ConfirmEjectPack, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 7
-    setvar VAR_0x8009, ITEM_HEART_SCALE
+    setvar VAR_0x8009, ITEM_EJECT_PACK
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1372,7 +1361,7 @@ IndigoPlateau_EventScript_EjectButton::
     msgbox IndigoPlateau_Text_ConfirmEjectButton, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 7
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_EJECT_BUTTON
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1380,7 +1369,7 @@ IndigoPlateau_EventScript_AssaultVest::
     msgbox IndigoPlateau_Text_ConfirmAssaultVest, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 10
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_ASSAULT_VEST
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1388,7 +1377,7 @@ IndigoPlateau_EventScript_LifeOrb::
     msgbox IndigoPlateau_Text_ConfirmLifeOrb, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 10
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_LIFE_ORB
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1396,7 +1385,7 @@ IndigoPlateau_EventScript_WeaknessPolicy::
     msgbox IndigoPlateau_Text_ConfirmWeaknessPolicy, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 10
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_WEAKNESS_POLICY
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1404,7 +1393,7 @@ IndigoPlateau_EventScript_ChoiceScarf::
     msgbox IndigoPlateau_Text_ConfirmChoiceScarf, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 16
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CHOICE_SCARF
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1412,7 +1401,7 @@ IndigoPlateau_EventScript_ChoiceSpecs::
     msgbox IndigoPlateau_Text_ConfirmChoiceSpecs, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, IndigoPlateau_EventScript_ThortonPostIntro
     setvar VAR_0x8008, 16
-    setvar VAR_0x8009, ITEM_ORAN_BERRY
+    setvar VAR_0x8009, ITEM_CHOICE_SPECS
     goto IndigoPlateau_EventScript_ThortonTryPurchasePrize
     end
 
@@ -1427,12 +1416,12 @@ IndigoPlateau_EventScript_ChoiceBand::
 
 
 IndigoPlateau_Text_ThortonIntro:
-    .string "THORTON: Aaaaaaaaaand now!\p"
+    .string "Thorton: Aaaaaaaaaand now!\p"
     .string "My data predicted you'd talk to me at\n"
     .string "precisely this moment, {PLAYER}.\p"
     .string "I'll bet you've already decided on what\n"
     .string "team you're bringing to challenge the\l"
-    .string "Pokémon LEAGUE, haven't you?\p"
+    .string "Pokémon League, haven't you?\p"
     .string "Personally, I've already analysed all of\n"
     .string "their weaknesses.\p"
     .string "It's not very interesting when the\n"
@@ -1441,7 +1430,7 @@ IndigoPlateau_Text_ThortonIntro:
     .string "I'm sure you've found the same thing.\p"
     .string "Well, don't worry. You can continue\n"
     .string "helping me in my testing once you're\l"
-    .string "crowned the CHAMPION.$"
+    .string "crowned the Champion.$"
 
 IndigoPlateau_Text_ThortonPostIntro:
     .string "Tell me then, {PLAYER}. Which of these\n"
@@ -1459,37 +1448,37 @@ IndigoPlateau_Text_ConfirmCustapBerry:
     .string "Curious! The CUSTAP BERRY, is it?$"
 
 IndigoPlateau_Text_ConfirmCovertCloak:
-    .string "Curious! The COVERT CLOAK, is it?$"
+    .string "Curious! The Covert Cloak, is it?$"
 
 IndigoPlateau_Text_ConfirmThroatSpray:
-    .string "Curious! The THROAT SPRAY, is it?$"
+    .string "Curious! The Throat Spray, is it?$"
 
 IndigoPlateau_Text_ConfirmFocusSash:
-    .string "Curious! The FOCUS SASH, is it?$"
+    .string "Curious! The Focus Sash, is it?$"
 
 IndigoPlateau_Text_ConfirmEjectPack:
-    .string "Curious! The EJECT PACK, is it?$"
+    .string "Curious! The Eject Pack, is it?$"
 
 IndigoPlateau_Text_ConfirmEjectButton:
-    .string "Curious! The EJECT BUTTON, is it?$"
+    .string "Curious! The Eject Button, is it?$"
 
 IndigoPlateau_Text_ConfirmAssaultVest:
-    .string "Curious! The ASSAULT VEST, is it?$"
+    .string "Curious! The Assault Vest, is it?$"
 
 IndigoPlateau_Text_ConfirmLifeOrb:
-    .string "Curious! The LIFE ORB, is it?$"
+    .string "Curious! The Life Orb, is it?$"
 
 IndigoPlateau_Text_ConfirmWeaknessPolicy:
-    .string "Curious! The WEAKNESS POLICY, is it?$"
+    .string "Curious! The Weakness Policy, is it?$"
 
 IndigoPlateau_Text_ConfirmChoiceScarf:
-    .string "Curious! The CHOICE SCARF, is it?$"
+    .string "Curious! The Choice Scarf, is it?$"
 
 IndigoPlateau_Text_ConfirmChoiceSpecs:
-    .string "Curious! The CHOICE SPECS, is it?$"
+    .string "Curious! The Choice Specs, is it?$"
 
 IndigoPlateau_Text_ConfirmChoiceBand:
-    .string "Curious! The CHOICE BAND, is it?$"
+    .string "Curious! The Choice Band, is it?$"
 
 IndigoPlateau_Text_ThortonBye:
     .string "Seems like you're all set. If you want to\n"
@@ -1679,19 +1668,19 @@ IndigoPlateau_Text_AirBalloonDesc::
 	.string "It bursts if the holder is attacked.$"
 	
 IndigoPlateau_Text_SnowballDesc::
-	.string "Boosts the holder's ATTACK when hit by\n"
+	.string "Boosts the holder's Attack when hit by\n"
 	.string "an Ice-type move.$"
 
 IndigoPlateau_Text_LuminousMossDesc::
-	.string "Boosts the holder's SP. DEF when hit by\n"
+	.string "Boosts the holder's Sp.Def when hit by\n"
 	.string "a Water-type move.$"
 
 IndigoPlateau_Text_CellBatteryDesc::
-	.string "Boosts the holder's ATTACK when hit by\n"
+	.string "Boosts the holder's Attack when hit by\n"
 	.string "an Electric-type move.$"
 
 IndigoPlateau_Text_AbsorbBulbDesc::
-	.string "Boosts the holder's SP. ATK when hit by\n"
+	.string "Boosts the holder's Sp.Atk when hit by\n"
 	.string "a Water-type move.$"
 
 IndigoPlateau_Text_ExpertBeltDesc::
@@ -1711,43 +1700,43 @@ IndigoPlateau_Text_BoosterEnergyDesc::
 @Dahlia
 
 IndigoPlateau_Text_ApicotBerryDesc::
-	.string "A hold item that raises SP. DEF in a\n"
+	.string "A hold item that raises Sp.Def in a\n"
 	.string "pinch.$"
 
 IndigoPlateau_Text_GanlonBerryDesc::
-	.string "A hold item that raises DEFENCE in a\n"
+	.string "A hold item that raises Defense in a\n"
 	.string "pinch.$"
 
 IndigoPlateau_Text_LiechiBerryDesc::
-	.string "A hold item that raises ATTACK in a\n"
+	.string "A hold item that raises Attack in a\n"
 	.string "pinch.$"
 
 IndigoPlateau_Text_PetayaBerryDesc::
-	.string "A hold item that raises SP. ATK in a\n"
+	.string "A hold item that raises Sp.Atk in a\n"
 	.string "pinch.$"
 
 IndigoPlateau_Text_SalacBerryDesc::
-	.string "A hold item that raises SPEED in a\n"
+	.string "A hold item that raises Speed in a\n"
 	.string "pinch.$"
 
 IndigoPlateau_Text_JabocaBerryDesc::
 	.string "When holder is hit by a physical attack,\n"
-	.string "the attacker loses 1/8th of its max HP.$"
+	.string "the attacker loses 1/8th of its Max HP.$"
 
 IndigoPlateau_Text_RowapBerryDesc::
 	.string "When holder is hit by a special attack,\n"
-	.string "the attacker loses 1/8th of its max HP.$"
+	.string "the attacker loses 1/8th of its Max HP.$"
 
 IndigoPlateau_Text_RockyHelmetDesc::
 	.string "When hit by a physical contact attack,\n"
-	.string "the attacker loses 1/6th of its max HP.$"
+	.string "the attacker loses 1/6th of its Max HP.$"
 
 IndigoPlateau_Text_LeftoversDesc::
-	.string "Heals holder for 1/16th max HP\n"
+	.string "Heals holder for 1/16th Max HP\n"
 	.string "on turn end.$"
 
 IndigoPlateau_Text_BlackSludgeDesc::
-	.string "Heals Poison-types for 1/16th max HP\n"
+	.string "Heals Poison-types for 1/16th Max HP\n"
 	.string "on turn end. Damages others for 1/8th.$"
 
 IndigoPlateau_Text_FireGemDesc::
@@ -1839,7 +1828,7 @@ IndigoPlateau_Text_CovertCloakDesc::
 	.string "effects of damaging moves.$"
 
 IndigoPlateau_Text_ThroatSprayDesc::
-	.string "Boosts SP. ATK by one stage after using\n"
+	.string "Boosts Sp.Atk by one stage after using\n"
 	.string "a sound-based move.$"
 
 IndigoPlateau_Text_FocusSashDesc::
@@ -1855,7 +1844,7 @@ IndigoPlateau_Text_EjectButtonDesc::
 	.string "switch out after being hit.$"
 
 IndigoPlateau_Text_AssaultVestDesc::
-	.string "Raises SP. DEF by 50%, but prevents the\n"
+	.string "Raises Sp.Def by 50%, but prevents the\n"
 	.string "holder from selecting status moves.$"
 
 IndigoPlateau_Text_LifeOrbDesc::
@@ -1864,18 +1853,18 @@ IndigoPlateau_Text_LifeOrbDesc::
 
 IndigoPlateau_Text_WeaknessPolicyDesc::
 	.string "If hit by a supereffective attack,\n"
-	.string "doubles ATTACK and SP. ATK.$"
+	.string "doubles Attack and Sp.Atk.$"
 
 IndigoPlateau_Text_ChoiceScarfDesc::
-	.string "Boosts SPEED by 50%, but only allows\n"
+	.string "Boosts Speed by 50%, but only allows\n"
 	.string "the use of the first move selected.$"
 
 IndigoPlateau_Text_ChoiceSpecsDesc::
-	.string "Boosts SP. ATK by 50%, but only allows\n"
+	.string "Boosts Sp.Atk by 50%, but only allows\n"
 	.string "the use of the first move selected.$"
 
 IndigoPlateau_Text_ChoiceBandDesc::
-	.string "Boosts ATTACK by 50%, but only allows\n"
+	.string "Boosts Attack by 50%, but only allows\n"
 	.string "the use of the first move selected.$"
 
 

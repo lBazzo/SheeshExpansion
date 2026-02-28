@@ -1744,8 +1744,8 @@ Modest Nature
 
 === TRAINER_JOSE ===
 Name: Jose
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Cooltrainer
+Pic: Cooltrainer M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -14755,7 +14755,7 @@ Adamant Nature
 - Jet Punch  
 
 === TRAINER_NAOKO ===
-Name: NAOKO
+Name: Naoko
 Class: Kimono Girl
 Pic: Kimono Girl
 Gender: Male
@@ -20599,7 +20599,7 @@ Adamant Nature
 
 === TRAINER_SPENSER_1 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
@@ -20663,7 +20663,7 @@ Adamant Nature
 
 === TRAINER_SPENSER_2 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
@@ -20728,7 +20728,7 @@ Adamant Nature
 
 === TRAINER_SPENSER_3 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
@@ -20794,7 +20794,7 @@ Adamant Nature
 
 === TRAINER_SPENSER_4 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
@@ -20861,7 +20861,7 @@ Adamant Nature
 
 === TRAINER_SPENSER_5 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
@@ -20929,14 +20929,14 @@ Adamant Nature
 
 === TRAINER_SPENSER_6 ===
 Name: Spenser
-Class: Expert
+Class: Palace Maven
 Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SPENCER_TERA
 
-Necrozma-Dusk-Mane @ Clear Amulet  
+SPECIES_NECROZMA_DUSK_MANE @ Clear Amulet  
 Ability: Prism Armor  
 Level: 88  
 Tera Type: Rock  
@@ -20997,7 +20997,7 @@ Adamant Nature
 - Knock Off  
 
 === TRAINER_CRASHER_WAKE ===
-Name: Spenser
+Name: Wake
 Class: Leader
 Pic: Expert M
 Gender: Male

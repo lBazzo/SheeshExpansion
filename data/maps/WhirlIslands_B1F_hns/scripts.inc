@@ -29,7 +29,7 @@ WhirlIslands_B1F_EventScript_CrasherWake::
 	trainerbattle_no_intro TRAINER_CRASHER_WAKE, WhirlIslands_B1F_Text_CrasherWakeBeaten
 	msgbox WhirlIslands_B1F_Text_CrasherWakeAfter, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_ALL_B2B_STATE, 12
+	setvar VAR_ALL_B2B_STATE, 13
 	release
 	end
 
@@ -51,16 +51,16 @@ WhirlIslands_B1F_EventScript_PlayerFaceWakeLeft::
 
 WhirlIslands_B1F_Text_CrasherWakeSeen:
 	.string "Oh, hey there! Come to see the\n"
-	.string "LEGENDARY Pokémon as well? Ha ha!\p"
+	.string "Legendary Pokémon as well? Ha ha!\p"
 	.string "Whoops! I'd better tell you who I am!\p"
 	.string "I'm the triple-threat in Pokémon,\n"
 	.string "wrestling, and song.\l"
-	.string "That's right, I'm CRASHER WAKE!\p"
-	.string "WAKE: You don't look like much of a\n"
+	.string "That's right, I'm Crasher Wake!\p"
+	.string "Wake: You don't look like much of a\n"
 	.string "wrestler, and I'm not sure your vocal\l"
 	.string "chords are fully developed yet, so why\l"
 	.string "don't we compete in a battle, eh?\p"
-	.string "The winner gets the LEGENDARY Pokémon,\n"
+	.string "The winner gets the Legendary Pokémon,\n"
 	.string "and the loser can sing them a victory\l"
 	.string "song. Sounds good, right?\p"
 	.string "C'mon, let me see what you're made of!$"

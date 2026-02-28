@@ -110,7 +110,7 @@ PokemonLeague_KogasRoom_EventScript_KogaDefeatedGiovanni::
 	end
 
 PokemonLeague_KogasRoom_Text_Rematch:
-    .string "KOGA: Fwahahahaha!\p"
+    .string "Koga: Fwahahahaha!\p"
     .string "You return, brave challenger.\p"
     .string "My ninja skills have sharpened.\p"
     .string "New sinister traps await you.\p"
@@ -125,7 +125,7 @@ PokemonLeague_KogasRoom_Text_KogaDeclined:
 
 PokemonLeague_KogasRoom_Text_BeforeIntro:
     .string "Fwahahahaha!\p"
-    .string "I am KOGA of the ELITE FOUR.\p"
+    .string "I am Koga of the Elite Four.\p"
     .string "I live in shadows, a ninja!\p"
     .string "My intricate style will confound\n"
     .string "and destroy you!\p"
@@ -255,19 +255,17 @@ PokemonLeague_KogasRoom_EventScript_GiovanniDefeatedKoga::
 	end
 
 PokemonLeague_KogasRoom_Text_GiovanniBeforeIntro:
-    .string "Hah! What have we here? A child dares\n"
-	.string "to challenge the ELITE FOUR?\p"
-	.string "I jest, of course. I have had my fair\n"
+    .string "Hah! What have we here? I knew you\n"
+	.string "would come through!\p"
+	.string "You know, I have had my fair\n"
 	.string "share of run-ins with child prodigies.\p"
-	.string "Hmm? You believe you know me?\p"
-	.string "Your assumption is correct. I am the\n"
-	.string "former BOSS of TEAM ROCKET.\p"
+	.string "Don't think I underestimate you by\n"
+	.string "saying this, but I won't lose here.\p"
 	.string "I have spent the last three years\n"
-	.string "training in isolation, but it has not\l"
-	.string "been to return to that organisation.\p"
-	.string "I simply wish to enjoy the highs and\n"
-	.string "lows of Pokémon battles as I did once\l"
-	.string "before.\p"
+	.string "training in isolation, and it hasn't\l"
+	.string "been for naught.\p"
+	.string "Not only have I gotten stronger, but my\n"
+	.string "love for battling has grown, too.\p"
 	.string "You managed to clear the first room, so\n"
 	.string "clearly there is something in you that\l"
 	.string "is worth getting invested for.\p"
@@ -287,7 +285,7 @@ PokemonLeague_KogasRoom_Text_GiovanniFightConfirmed:
 	.string "Haha! Bring it on!$"
 
 PokemonLeague_KogasRoom_Text_GiovanniPreFight:
-	.string "You may have beaten TEAM ROCKET, but\n"
+	.string "You may have beaten Team Rocket, but\n"
 	.string "fighting me is another story! I'll show\l"
 	.string "you the results of my training!$"
 

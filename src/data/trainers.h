@@ -4267,9 +4267,9 @@
 #line 1746
         .trainerName = _("Jose"),
 #line 1747
-        .trainerClass = TRAINER_CLASS_BIRD_KEEPER,
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 1748
-        .trainerPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
         .encounterMusic_gender =
 #line 1750
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -4278,7 +4278,7 @@
 #line 1752
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 0
-        .trainerBackPic = TRAINER_PIC_BIRD_KEEPER,
+        .trainerBackPic = TRAINER_PIC_COOLTRAINER_M,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -37802,7 +37802,7 @@
     [DIFFICULTY_NORMAL][TRAINER_NAOKO] =
     {
 #line 14758
-        .trainerName = _("NAOKO"),
+        .trainerName = _("Naoko"),
 #line 14759
         .trainerClass = TRAINER_CLASS_KIMONO_GIRL,
 #line 14760
@@ -52705,7 +52705,7 @@ F_TRAINER_FEMALE |
 #line 20601
         .trainerName = _("Spenser"),
 #line 20602
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20603
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -52868,7 +52868,7 @@ F_TRAINER_FEMALE |
 #line 20665
         .trainerName = _("Spenser"),
 #line 20666
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20667
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -53033,7 +53033,7 @@ F_TRAINER_FEMALE |
 #line 20730
         .trainerName = _("Spenser"),
 #line 20731
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20732
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -53200,7 +53200,7 @@ F_TRAINER_FEMALE |
 #line 20796
         .trainerName = _("Spenser"),
 #line 20797
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20798
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -53369,7 +53369,7 @@ F_TRAINER_FEMALE |
 #line 20863
         .trainerName = _("Spenser"),
 #line 20864
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20865
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -53540,7 +53540,7 @@ F_TRAINER_FEMALE |
 #line 20931
         .trainerName = _("Spenser"),
 #line 20932
-        .trainerClass = TRAINER_CLASS_EXPERT,
+        .trainerClass = TRAINER_CLASS_PALACE_MAVEN,
 #line 20933
         .trainerPic = TRAINER_PIC_EXPERT_M,
         .encounterMusic_gender =
@@ -53711,7 +53711,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_CRASHER_WAKE] =
     {
 #line 21000
-        .trainerName = _("Spenser"),
+        .trainerName = _("Wake"),
 #line 21001
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 21002

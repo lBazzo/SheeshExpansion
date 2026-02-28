@@ -1,5 +1,5 @@
-.set LOCALID_ROUTE26_LOLA, 17
-.set LOCALID_ROUTE26_MIKE, 18
+.set LOCALID_ROUTE26_LOLA, 16
+.set LOCALID_ROUTE26_MIKE, 17
 
 Route26_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route26_OnTransition
@@ -36,7 +36,7 @@ Route26_EventScript_Gaven::
 	end
 
 Route26_Text_CooltrainermGavenSeen:
-    .string "Aiming for the Pokémon LEAGUE?\n"
+    .string "Aiming for the Pokémon League?\n"
     .string "Hah! Don't make me laugh!$"
 
 Route26_Text_CooltrainermGavenBeaten:
@@ -47,17 +47,17 @@ Route26_Text_CooltrainermGavenAfter:
 
 Route26_Text_CooltrainermJakeSeen:
     .string "I'm making my final preparations\n"
-    .string "for the Pokémon LEAGUE.$"
+    .string "for the Pokémon League.$"
 
 Route26_Text_CooltrainermJakeBeaten:
     .string "I blew it!$"
 
 Route26_Text_CooltrainermJakeAfter:
     .string "It's going to be tough to win at\n"
-    .string "the LEAGUE.\p"
+    .string "the League.\p"
     .string "I need to do some more training.\p"
-    .string "I hear that the LEAGUE's ELITE\n"
-    .string "FOUR are tougher than GYM LEADERS.$"
+    .string "I hear that the League's Elite\n"
+    .string "FOUR are tougher than Gym Leaders.$"
 
 Route26_Text_CooltrainerfJoyceSeen:
     .string "Since you've come this far,\n"
@@ -69,12 +69,12 @@ Route26_Text_CooltrainerfJoyceBeaten:
     .string "No! I don't believe this!$"
 
 Route26_Text_CooltrainerfJoyceAfter:
-    .string "I've defeated eight GYM LEADERS,\n"
+    .string "I've defeated eight Gym Leaders,\n"
     .string "so I was feeling confident.\p"
     .string "I'll have to try harder next time.$"
 
 Route26_Text_CooltrainerfBethSeen:
-    .string "I lost to a trainer named SILVER.\p"
+    .string "I lost to a trainer named Silver.\p"
     .string "He was really strong, but…\p"
     .string "It was as if he absolutely had to\n"
     .string "win at any cost.\p"
@@ -88,7 +88,7 @@ Route26_Text_CooltrainerfBethAfter:
     .string "partners.$"
 
 Route26_Text_PsychicRichardSeen:
-    .string "Wow, look at all those BADGES!\n"
+    .string "Wow, look at all those Badges!\n"
     .string "I'm impressed.\p"
     .string "But you're not satisfied by just\n"
     .string "collecting them, right?$"
@@ -102,9 +102,9 @@ Route26_Text_PsychicRichardAfter:
     .string "Don't get lazy and complacent.$"
 
 Route26_Text_Sign:
-    .string "ROUTE 26\p"
-    .string "Pokémon LEAGUE\n"
-    .string "RECEPTION GATE$"
+    .string "Route 26\p"
+    .string "Pokémon League\n"
+    .string "Reception Gate$"
 
 
 
@@ -116,7 +116,7 @@ Route26_Text_Sign:
 
 Route26_EventScript_B2B::
     lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
     playse SE_PIN
 	applymovement LOCALID_ROUTE26_LOLA, Common_Movement_ExclamationMark
 	delay 60
@@ -126,9 +126,9 @@ Route26_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox Route26_Text_LolaSeenText, MSGBOX_DEFAULT
-    playbgm MUS_HG_ROUTE26, TRUE
+    playbgm MUS_HG_ROUTE26, FALSE
     trainerbattle_no_intro TRAINER_LOLA, Route26_Text_LolaBeatenText
-    playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
+    playbgm MUS_HG_ENCOUNTER_BOY_1, FALSE
     playse SE_PIN
 	applymovement LOCALID_ROUTE26_MIKE, Common_Movement_ExclamationMark
 	delay 60
@@ -138,9 +138,9 @@ Route26_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
     msgbox Route26_Text_MikeSeenText, MSGBOX_DEFAULT
-    playbgm MUS_HG_ROUTE26, TRUE
+    playbgm MUS_HG_ROUTE26, FALSE
     trainerbattle_no_intro TRAINER_MIKE, Route26_Text_MikeBeatenText
-    setvar VAR_ALL_B2B_STATE, 13
+    setvar VAR_ALL_B2B_STATE, 14
     release
     end
 

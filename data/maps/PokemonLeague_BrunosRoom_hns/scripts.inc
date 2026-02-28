@@ -123,7 +123,7 @@ PokemonLeague_BrunosRoom_Text_Rematch:
     .string "Hoo hah!$"
 
 PokemonLeague_BrunosRoom_Text_BeforeIntro:
-    .string "I am BRUNO of the ELITE FOUR.\p"
+    .string "I am Bruno of the Elite Four.\p"
     .string "I always train to the extreme be-\n"
     .string "cause I believe in our potential.\p"
     .string "That is how we became strong.\p"
@@ -253,7 +253,7 @@ PokemonLeague_BrunosRoom_Text_JasmineBeforeIntro:
     .string "Thank you for your help at the\n"
     .string "Lighthouse... But this is different.\p"
 	.string "Please allow me to introduce myself.\p"
-	.string "I'm Jasmine, a former GYM LEADER.\n"
+	.string "I'm Jasmine, a former Gym Leader.\n"
 	.string "I use the...clang! Steel type!\p"
 	.string "...Do you know about the Steel type?\p"
 	.string "They are very hard, cold, sharp, and\n"

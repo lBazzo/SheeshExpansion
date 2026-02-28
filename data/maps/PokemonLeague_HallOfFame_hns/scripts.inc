@@ -131,22 +131,22 @@ PokemonLeague_HallOfFame_Movement_PlayerEnter:
 	step_end
 
 PokemonLeague_HallOfFame_LanceText:
-    .string "LANCE: It's been a long time since I\n"
+    .string "Lance: It's been a long time since I\n"
     .string "last came here.\p"
-    .string "This is where we honor the LEAGUE\n"
-    .string "CHAMPIONS for all eternity.\p"
+    .string "This is where we honor the League\n"
+    .string "Champions for all eternity.\p"
     .string "Their courageous Pokémon are also\n"
     .string "inducted.\p"
     .string "Here today, we witnessed the rise\n"
-    .string "of a new LEAGUE CHAMPION--a\p"
+    .string "of a new League Champion--a\p"
     .string "trainer who feels compassion for,\n"
     .string "and trust toward, all Pokémon.\p"
     .string "A trainer who succeeded through\n"
     .string "perseverance and determination.\p"
-    .string "The new LEAGUE CHAMPION who has\n"
+    .string "The new League Champion who has\n"
     .string "all the makings of greatness!\p"
     .string "{PLAYER}, allow me to register you\n"
-    .string "and your partners as CHAMPIONS!$"
+    .string "and your partners as Champions!$"
 
 PokemonLeague_HallOfFame_Rematch_LanceText:
     .string "LANCE: I remember, it wasn't long ago\n"

@@ -6,42 +6,42 @@
 #define GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_JOHTO_H
 
 
-static const u8 sJMapName_VIOLET_CITY[] = _("VIOLET CITY");
-static const u8 sJMapName_AZALEA_TOWN[] = _("AZALEA TOWN");
+static const u8 sJMapName_Violet_City[] = _("Violet City");
+static const u8 sJMapName_Azalea_Town[] = _("Azalea Town");
 static const u8 sJMapName_Goldenrod_City[] = _("Goldenrod City");
-static const u8 sJMapName_ECRUTEAK_CITY[] = _("ECRUTEAK CITY");
-static const u8 sJMapName_OLIVINE_CITY[] = _("OLIVINE CITY");
+static const u8 sJMapName_Ecruteak_City[] = _("Ecruteak City");
+static const u8 sJMapName_Olivine_City[] = _("Olivine City");
 static const u8 sJMapName_Cianwood_City[] = _("Cianwood City");
-static const u8 sJMapName_SAFARI_ZONE_GATE[] = _("SAFARI ZONE GATE");
+static const u8 sJMapName_Safari_Zone_Gate[] = _("Safari Zone Gate");
 static const u8 sJMapName_Mahogany_Town[] = _("Mahogany Town");
 static const u8 sJMapName_Blackthorn_City[] = _("Blackthorn City");
-static const u8 sJMapName_CHERRYGROVE_CITY[] = _("CHERRYGROVE CITY");
-static const u8 sJMapName_INDIGO_PLATEAU[] = _("INDIGO PLATEAU");
-static const u8 sJMapName_ROUTE_26[] = _("ROUTE 26");
-static const u8 sJMapName_ROUTE_27[] = _("ROUTE 27");
-static const u8 sJMapName_ROUTE_28[] = _("ROUTE 28");
-static const u8 sJMapName_ROUTE_29[] = _("ROUTE 29");
-static const u8 sJMapName_ROUTE_30[] = _("ROUTE 30");
-static const u8 sJMapName_ROUTE_31[] = _("ROUTE 31");
-static const u8 sJMapName_ROUTE_32[] = _("ROUTE 32");
-static const u8 sJMapName_ROUTE_33[] = _("ROUTE 33");
-static const u8 sJMapName_ROUTE_34[] = _("ROUTE 34");
-static const u8 sJMapName_ROUTE_35[] = _("ROUTE 35");
-static const u8 sJMapName_ROUTE_36[] = _("ROUTE 36");
-static const u8 sJMapName_ROUTE_37[] = _("ROUTE 37");
-static const u8 sJMapName_ROUTE_38[] = _("ROUTE 38");
-static const u8 sJMapName_ROUTE_39[] = _("ROUTE 39");
-static const u8 sJMapName_ROUTE_40[] = _("ROUTE 40");
-static const u8 sJMapName_ROUTE_41[] = _("ROUTE 41");
-static const u8 sJMapName_ROUTE_42[] = _("ROUTE 42");
-static const u8 sJMapName_ROUTE_43[] = _("ROUTE 43");
-static const u8 sJMapName_ROUTE_44[] = _("ROUTE 44");
-static const u8 sJMapName_ROUTE_45[] = _("ROUTE 45");
-static const u8 sJMapName_ROUTE_46[] = _("ROUTE 46");
-static const u8 sJMapName_ROUTE_47[] = _("ROUTE 47");
-static const u8 sJMapName_ROUTE_48[] = _("ROUTE 48");
-static const u8 sJMapName_SAFARI_ZONE[] = _("SAFARI ZONE");
-static const u8 sJMapName_VICTORY_ROAD[] = _("VICTORY ROAD");
+static const u8 sJMapName_Cherrygrove_City[] = _("Cherrygrove City");
+static const u8 sJMapName_Indigo_Plateau[] = _("Indigo Plateau");
+static const u8 sJMapName_Route_26[] = _("Route 26");
+static const u8 sJMapName_Route_27[] = _("Route 27");
+static const u8 sJMapName_Route_28[] = _("Route 28");
+static const u8 sJMapName_Route_29[] = _("Route 29");
+static const u8 sJMapName_Route_30[] = _("Route 30");
+static const u8 sJMapName_Route_31[] = _("Route 31");
+static const u8 sJMapName_Route_32[] = _("Route 32");
+static const u8 sJMapName_Route_33[] = _("Route 33");
+static const u8 sJMapName_Route_34[] = _("Route 34");
+static const u8 sJMapName_Route_35[] = _("Route 35");
+static const u8 sJMapName_Route_36[] = _("Route 36");
+static const u8 sJMapName_Route_37[] = _("Route 37");
+static const u8 sJMapName_Route_38[] = _("Route 38");
+static const u8 sJMapName_Route_39[] = _("Route 39");
+static const u8 sJMapName_Route_40[] = _("Route 40");
+static const u8 sJMapName_Route_41[] = _("Route 41");
+static const u8 sJMapName_Route_42[] = _("Route 42");
+static const u8 sJMapName_Route_43[] = _("Route 43");
+static const u8 sJMapName_Route_44[] = _("Route 44");
+static const u8 sJMapName_Route_45[] = _("Route 45");
+static const u8 sJMapName_Route_46[] = _("Route 46");
+static const u8 sJMapName_Route_47[] = _("Route 47");
+static const u8 sJMapName_Route_48[] = _("Route 48");
+static const u8 sJMapName_Safari_Zone[] = _("Safari Zone");
+static const u8 sJMapName_Victory_Road[] = _("Victory Road");
 static const u8 sJMapName_PALLET_TOWN[] = _("PALLET TOWN");
 static const u8 sJMapName_VIRIDIAN_CITY[] = _("VIRIDIAN CITY");
 static const u8 sJMapName_PEWTER_CITY[] = _("PEWTER CITY");
@@ -84,48 +84,48 @@ static const u8 sJMapName_MT__MOON[] = _("MT. MOON");
 static const u8 sJMapName_S_S__ANNE[] = _("S.S. ANNE");
 static const u8 sJMapName_UNDERGROUND_PATH[] = _("UNDERGROUND PATH");
 static const u8 sJMapName_DIGLETT_S_CAVE[] = _("DIGLETT'S CAVE");
-static const u8 sJMapName_ROCKET_HIDEOUT[] = _("ROCKET HIDEOUT");
+static const u8 sJMapName_Rocket_Hideout[] = _("Rocket Hideout");
 static const u8 sJMapName_SILPH_CO_[] = _("SILPH CO.");
 static const u8 sJMapName_ROCK_TUNNEL[] = _("ROCK TUNNEL");
 static const u8 sJMapName_SEAFOAM_ISLANDS[] = _("SEAFOAM ISLANDS");
 static const u8 sJMapName_POK__MON_TOWER[] = _("POKéMON TOWER");
 static const u8 sJMapName_CERULEAN_CAVE[] = _("CERULEAN CAVE");
 static const u8 sJMapName_POWER_PLANT[] = _("POWER PLANT");
-static const u8 sJMapName_NEW_BARK_TOWN[] = _("NEW BARK TOWN");
+static const u8 sJMapName_New_Bark_Town[] = _("New Bark Town");
 static const u8 sJMapName_[] = _("");
-static const u8 sJMapName_DARK_CAVE[] = _("DARK CAVE");
-static const u8 sJMapName_UNION_CAVE[] = _("UNION CAVE");
-static const u8 sJMapName_ILEX_FOREST[] = _("ILEX FOREST");
-static const u8 sJMapName_NATIONAL_PARK[] = _("NATIONAL PARK");
-static const u8 sJMapName_WHIRL_ISLANDS[] = _("WHIRL ISLANDS");
-static const u8 sJMapName_CLIFF_CAVE[] = _("CLIFF CAVE");
-static const u8 sJMapName_MT_MORTAR[] = _("MT MORTAR");
-static const u8 sJMapName_LAKE_OF_RAGE[] = _("LAKE OF RAGE");
+static const u8 sJMapName_Dark_Cave[] = _("Dark Cave");
+static const u8 sJMapName_Union_Cave[] = _("Union Cave");
+static const u8 sJMapName_Ilex_Forest[] = _("Ilex Forest");
+static const u8 sJMapName_National_Park[] = _("National Park");
+static const u8 sJMapName_Whirl_Islands[] = _("Whirl Islands");
+static const u8 sJMapName_Cliff_Cave[] = _("Cliff Cave");
+static const u8 sJMapName_Mr_Mortar[] = _("Mr Mortar");
+static const u8 sJMapName_Lake_of_Rage[] = _("Lake of Rage");
 static const u8 sJMapName_Ice_Path[] = _("Ice Path");
-static const u8 sJMapName_MT__SILVER[] = _("MT. SILVER");
-static const u8 sJMapName_TOHJO_FALLS[] = _("TOHJO FALLS");
-static const u8 sJMapName_SPROUT_TOWER[] = _("SPROUT TOWER");
-static const u8 sJMapName_SLOWPOKE_WELL[] = _("SLOWPOKE WELL");
-static const u8 sJMapName_BURNED_TOWER[] = _("BURNED TOWER");
-static const u8 sJMapName_TIN_TOWER[] = _("TIN TOWER");
+static const u8 sJMapName_Mt__Silver[] = _("Mt. Silver");
+static const u8 sJMapName_Tohjo_Falls[] = _("Tohjo Falls");
+static const u8 sJMapName_Sprout_Tower[] = _("Sprout Tower");
+static const u8 sJMapName_Slowpoke_Well[] = _("Slowpoke Well");
+static const u8 sJMapName_Burned_Tower[] = _("Burned Tower");
+static const u8 sJMapName_Tin_Tower[] = _("Tin Tower");
 static const u8 sJMapName_Dragon_s_Den[] = _("Dragon's Den");
 static const u8 sJMapName_Ruins_of_Alph[] = _("Ruins of Alph");
 static const u8 sJMapName_S_S__AQUA[] = _("S.S. AQUA");
-static const u8 sJMapName_EMBEDDED_TOWER[] = _("EMBEDDED TOWER");
-static const u8 sJMapName_LIGHTHOUSE[] = _("LIGHTHOUSE");
-static const u8 sJMapName_INNER_DARK_CAVE[] = _("INNER DARK CAVE");
-static const u8 sJMapName_VIOLET_CITY_POND[] = _("VIOLET CITY POND");
-static const u8 sJMapName_LOWER_RUINS[] = _("LOWER RUINS");
-static const u8 sJMapName_INNER_UNION_CAVE[] = _("INNER UNION CAVE");
-static const u8 sJMapName_WELL_DEPTHS[] = _("WELL DEPTHS");
-static const u8 sJMapName_INNER_ILEX_FOREST[] = _("INNER ILEX FOREST");
-static const u8 sJMapName_HIDDEN_GROVE[] = _("HIDDEN GROVE");
-static const u8 sJMapName_BILLS_HOUSE[] = _("BILLS HOUSE");
-static const u8 sJMapName_ASHEN_CRYPT[] = _("ASHEN CRYPT");
-static const u8 sJMapName_BATTLE_TOWER[] = _("BATTLE TOWER");
-static const u8 sJMapName_RADIO_ROOM[] = _("RADIO ROOM");
-static const u8 sJMapName_PROF_ELMS_LAB[] = _("PROF ELMS LAB");
-static const u8 sJMapName_VIOLET_POKEMON_CENTER[] = _("VIOLET POKEMON CENTER");
+static const u8 sJMapName_Embedded_Tower[] = _("Embedded Tower");
+static const u8 sJMapName_Olivine_Lighthouse[] = _("Olivine Lighthouse");
+static const u8 sJMapName_Inner_Dark_Cave[] = _("Inner Dark Cave");
+static const u8 sJMapName_Violet_City_Pond[] = _("Violet City Pond");
+static const u8 sJMapName_Lower_Ruins[] = _("Lower Ruins");
+static const u8 sJMapName_Inner_Union_Cave[] = _("Inner Union Cave");
+static const u8 sJMapName_Well_Depths[] = _("Well Depths");
+static const u8 sJMapName_Inner_Ilex_Forest[] = _("Inner Ilex Forest");
+static const u8 sJMapName_Hidden_Grove[] = _("Hidden Grove");
+static const u8 sJMapName_Bills_House[] = _("Bills House");
+static const u8 sJMapName_Ashen_Crypt[] = _("Ashen Crypt");
+static const u8 sJMapName_Battle_Tower[] = _("Battle Tower");
+static const u8 sJMapName_Radio_Room[] = _("Radio Room");
+static const u8 sJMapName_Prof_Elms_Lab[] = _("Prof Elms Lab");
+static const u8 sJMapName_Violet_Pokecentre[] = _("Violet Pokecentre");
 
 const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     [MAPSEC_VIOLET_CITY] = {
@@ -133,14 +133,14 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sJMapName_VIOLET_CITY,
+        .name = sJMapName_Violet_City,
     },
     [MAPSEC_AZALEA_TOWN] = {
         .x = 10,
         .y = 13,
         .width = 1,
         .height = 1,
-        .name = sJMapName_AZALEA_TOWN,
+        .name = sJMapName_Azalea_Town,
     },
     [MAPSEC_GOLDENROD_CITY] = {
         .x = 8,
@@ -154,14 +154,14 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ECRUTEAK_CITY,
+        .name = sJMapName_Ecruteak_City,
     },
     [MAPSEC_OLIVINE_CITY] = {
         .x = 6,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sJMapName_OLIVINE_CITY,
+        .name = sJMapName_Olivine_City,
     },
     [MAPSEC_CIANWOOD_CITY] = {
         .x = 4,
@@ -175,7 +175,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sJMapName_SAFARI_ZONE_GATE,
+        .name = sJMapName_Safari_Zone_Gate,
     },
     [MAPSEC_MAHOGANY_TOWN] = {
         .x = 15,
@@ -196,189 +196,189 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sJMapName_CHERRYGROVE_CITY,
+        .name = sJMapName_Cherrygrove_City,
     },
     [MAPSEC_INDIGO_PLATEAU] = {
         .x = 24,
         .y = 3,
         .width = 1,
         .height = 2,
-        .name = sJMapName_INDIGO_PLATEAU,
+        .name = sJMapName_Indigo_Plateau,
     },
     [MAPSEC_ROUTE_26] = {
         .x = 24,
         .y = 6,
         .width = 1,
         .height = 5,
-        .name = sJMapName_ROUTE_26,
+        .name = sJMapName_Route_26,
     },
     [MAPSEC_ROUTE_27] = {
         .x = 20,
         .y = 10,
         .width = 4,
         .height = 1,
-        .name = sJMapName_ROUTE_27,
+        .name = sJMapName_Route_27,
     },
     [MAPSEC_ROUTE_28] = {
         .x = 21,
         .y = 5,
         .width = 3,
         .height = 1,
-        .name = sJMapName_ROUTE_28,
+        .name = sJMapName_Route_28,
     },
     [MAPSEC_ROUTE_29] = {
         .x = 10,
         .y = 11,
         .width = 3,
         .height = 1,
-        .name = sJMapName_ROUTE_29,
+        .name = sJMapName_Route_29,
     },
     [MAPSEC_ROUTE_30] = {
         .x = 9,
         .y = 6,
         .width = 1,
         .height = 5,
-        .name = sJMapName_ROUTE_30,
+        .name = sJMapName_Route_30,
     },
     [MAPSEC_ROUTE_31] = {
         .x = 8,
         .y = 5,
         .width = 2,
         .height = 1,
-        .name = sJMapName_ROUTE_31,
+        .name = sJMapName_Route_31,
     },
     [MAPSEC_ROUTE_32] = {
         .x = 7,
         .y = 6,
         .width = 1,
         .height = 5,
-        .name = sJMapName_ROUTE_32,
+        .name = sJMapName_Route_32,
     },
     [MAPSEC_ROUTE_33] = {
         .x = 7,
         .y = 12,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_33,
+        .name = sJMapName_Route_33,
     },
     [MAPSEC_ROUTE_34] = {
         .x = 5,
         .y = 9,
         .width = 1,
         .height = 2,
-        .name = sJMapName_ROUTE_34,
+        .name = sJMapName_Route_34,
     },
     [MAPSEC_ROUTE_35] = {
         .x = 5,
         .y = 6,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_35,
+        .name = sJMapName_Route_35,
     },
     [MAPSEC_ROUTE_36] = {
         .x = 6,
         .y = 5,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_36,
+        .name = sJMapName_Route_36,
     },
     [MAPSEC_ROUTE_37] = {
         .x = 6,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_37,
+        .name = sJMapName_Route_37,
     },
     [MAPSEC_ROUTE_38] = {
         .x = 7,
         .y = 2,
         .width = 3,
         .height = 1,
-        .name = sJMapName_ROUTE_38,
+        .name = sJMapName_Route_38,
     },
     [MAPSEC_ROUTE_39] = {
         .x = 6,
         .y = 2,
         .width = 1,
         .height = 2,
-        .name = sJMapName_ROUTE_39,
+        .name = sJMapName_Route_39,
     },
     [MAPSEC_ROUTE_40] = {
         .x = 5,
         .y = 4,
         .width = 1,
         .height = 5,
-        .name = sJMapName_ROUTE_40,
+        .name = sJMapName_Route_40,
     },
     [MAPSEC_ROUTE_41] = {
         .x = 5,
         .y = 9,
         .width = 1,
         .height = 3,
-        .name = sJMapName_ROUTE_41,
+        .name = sJMapName_Route_41,
     },
     [MAPSEC_ROUTE_42] = {
         .x = 11,
         .y = 2,
         .width = 4,
         .height = 1,
-        .name = sJMapName_ROUTE_42,
+        .name = sJMapName_Route_42,
     },
     [MAPSEC_ROUTE_43] = {
         .x = 15,
         .y = 1,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_43,
+        .name = sJMapName_Route_43,
     },
     [MAPSEC_ROUTE_44] = {
         .x = 16,
         .y = 2,
         .width = 2,
         .height = 1,
-        .name = sJMapName_ROUTE_44,
+        .name = sJMapName_Route_44,
     },
     [MAPSEC_ROUTE_45] = {
         .x = 18,
         .y = 3,
         .width = 1,
         .height = 4,
-        .name = sJMapName_ROUTE_45,
+        .name = sJMapName_Route_45,
     },
     [MAPSEC_ROUTE_46] = {
         .x = 17,
         .y = 6,
         .width = 1,
         .height = 4,
-        .name = sJMapName_ROUTE_46,
+        .name = sJMapName_Route_46,
     },
     [MAPSEC_ROUTE_47] = {
         .x = 2,
         .y = 11,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_47,
+        .name = sJMapName_Route_47,
     },
     [MAPSEC_ROUTE_48] = {
         .x = 2,
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROUTE_48,
+        .name = sJMapName_Route_48,
     },
     [MAPSEC_SAFARI_ZONE] = {
         .x = 0,
         .y = 6,
         .width = 1,
         .height = 1,
-        .name = sJMapName_SAFARI_ZONE,
+        .name = sJMapName_Safari_Zone,
     },
     [MAPSEC_VICTORY_ROAD] = {
         .x = 24,
         .y = 5,
         .width = 1,
         .height = 1,
-        .name = sJMapName_VICTORY_ROAD,
+        .name = sJMapName_Victory_Road,
     },
     [MAPSEC_PALLET_TOWN] = {
         .x = 19,
@@ -686,7 +686,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ROCKET_HIDEOUT,
+        .name = sJMapName_Rocket_Hideout,
     },
     [MAPSEC_SILPH_CO] = {
         .x = 24,
@@ -735,7 +735,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 10,
         .width = 1,
         .height = 1,
-        .name = sJMapName_NEW_BARK_TOWN,
+        .name = sJMapName_New_Bark_Town,
     },
     [MAPSEC_INDIGO_PLATEAU2] = {
         .x = 16,
@@ -756,56 +756,56 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 4,
         .width = 3,
         .height = 2,
-        .name = sJMapName_DARK_CAVE,
+        .name = sJMapName_Dark_Cave,
     },
     [MAPSEC_UNION_CAVE] = {
         .x = 12,
         .y = 11,
         .width = 1,
         .height = 2,
-        .name = sJMapName_UNION_CAVE,
+        .name = sJMapName_Union_Cave,
     },
     [MAPSEC_ILEX_FOREST] = {
         .x = 8,
         .y = 12,
         .width = 2,
         .height = 2,
-        .name = sJMapName_ILEX_FOREST,
+        .name = sJMapName_Ilex_Forest,
     },
     [MAPSEC_NATIONAL_PARK] = {
         .x = 8,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sJMapName_NATIONAL_PARK,
+        .name = sJMapName_National_Park,
     },
     [MAPSEC_WHIRL_ISLANDS] = {
         .x = 6,
         .y = 11,
         .width = 1,
         .height = 1,
-        .name = sJMapName_WHIRL_ISLANDS,
+        .name = sJMapName_Whirl_Islands,
     },
     [MAPSEC_CLIFF_CAVE] = {
         .x = 3,
         .y = 11,
         .width = 1,
         .height = 1,
-        .name = sJMapName_CLIFF_CAVE,
+        .name = sJMapName_Cliff_Cave,
     },
     [MAPSEC_MT_MORTAR] = {
         .x = 12,
         .y = 1,
         .width = 1,
         .height = 1,
-        .name = sJMapName_MT_MORTAR,
+        .name = sJMapName_Mr_Mortar,
     },
     [MAPSEC_LAKE_OF_RAGE] = {
         .x = 15,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_LAKE_OF_RAGE,
+        .name = sJMapName_Lake_of_Rage,
     },
     [MAPSEC_ICE_PATH] = {
         .x = 17,
@@ -819,42 +819,42 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 7,
         .width = 1,
         .height = 1,
-        .name = sJMapName_MT__SILVER,
+        .name = sJMapName_Mt__Silver,
     },
     [MAPSEC_TOHJO_FALLS] = {
         .x = 20,
         .y = 9,
         .width = 1,
         .height = 1,
-        .name = sJMapName_TOHJO_FALLS,
+        .name = sJMapName_Tohjo_Falls,
     },
     [MAPSEC_SPROUT_TOWER] = {
         .x = 12,
         .y = 3,
         .width = 1,
         .height = 1,
-        .name = sJMapName_SPROUT_TOWER,
+        .name = sJMapName_Sprout_Tower,
     },
     [MAPSEC_SLOWPOKE_WELL] = {
         .x = 10,
         .y = 12,
         .width = 1,
         .height = 1,
-        .name = sJMapName_SLOWPOKE_WELL,
+        .name = sJMapName_Slowpoke_Well,
     },
     [MAPSEC_BURNED_TOWER] = {
         .x = 9,
         .y = 1,
         .width = 1,
         .height = 1,
-        .name = sJMapName_BURNED_TOWER,
+        .name = sJMapName_Burned_Tower,
     },
     [MAPSEC_TIN_TOWER] = {
         .x = 10,
         .y = 1,
         .width = 1,
         .height = 1,
-        .name = sJMapName_TIN_TOWER,
+        .name = sJMapName_Tin_Tower,
     },
     [MAPSEC_DRAGONS_DEN] = {
         .x = 12,
@@ -882,14 +882,14 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 10,
         .width = 1,
         .height = 2,
-        .name = sJMapName_EMBEDDED_TOWER,
+        .name = sJMapName_Embedded_Tower,
     },
     [MAPSEC_OLIVINE_LIGHTHOUSE] = {
         .x = 7,
         .y = 4,
         .width = 1,
         .height = 1,
-        .name = sJMapName_LIGHTHOUSE,
+        .name = sJMapName_Olivine_Lighthouse,
     },
     [MAPSEC_BATTLE_FRONTIER] = {
         .x = 0,
@@ -931,91 +931,91 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_INNER_DARK_CAVE,
+        .name = sJMapName_Inner_Dark_Cave,
     },
     [MAPSEC_VIOLET_CITY_POND] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_VIOLET_CITY_POND,
+        .name = sJMapName_Violet_City_Pond,
     },
     [MAPSEC_LOWER_RUINS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_LOWER_RUINS,
+        .name = sJMapName_Lower_Ruins,
     },
     [MAPSEC_INNER_UNION_CAVE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_INNER_UNION_CAVE,
+        .name = sJMapName_Inner_Union_Cave,
     },
     [MAPSEC_WELL_DEPTHS] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_WELL_DEPTHS,
+        .name = sJMapName_Well_Depths,
     },
     [MAPSEC_INNER_ILEX_FOREST] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_INNER_ILEX_FOREST,
+        .name = sJMapName_Inner_Ilex_Forest,
     },
     [MAPSEC_HIDDEN_GROVE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_HIDDEN_GROVE,
+        .name = sJMapName_Hidden_Grove,
     },
     [MAPSEC_BILLS_HOUSE] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_BILLS_HOUSE,
+        .name = sJMapName_Bills_House,
     },
     [MAPSEC_ASHEN_CRYPT] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ASHEN_CRYPT,
+        .name = sJMapName_Ashen_Crypt,
     },
     [MAPSEC_BATTLE_TOWER] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_BATTLE_TOWER,
+        .name = sJMapName_Battle_Tower,
     },
     [MAPSEC_RADIO_ROOM] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_RADIO_ROOM,
+        .name = sJMapName_Radio_Room,
     },
     [MAPSEC_PROF_ELMS_LAB] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_PROF_ELMS_LAB,
+        .name = sJMapName_Prof_Elms_Lab,
     },
     [MAPSEC_VIOLET_PCENTER] = {
         .x = 0,
         .y = 0,
         .width = 1,
         .height = 1,
-        .name = sJMapName_VIOLET_POKEMON_CENTER,
+        .name = sJMapName_Violet_Pokecentre,
     },
 };
 

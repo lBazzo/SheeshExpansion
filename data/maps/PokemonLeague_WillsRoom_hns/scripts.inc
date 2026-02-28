@@ -152,15 +152,15 @@ PokemonLeague_WillsRoom_EventScript_WillDefeatedBugsy::
 	end
 
 PokemonLeague_WillsRoom_Text_BeforeIntro:
-    .string "Welcome to Pokémon LEAGUE,\n"
+    .string "Welcome to the Pokémon League,\n"
     .string "{PLAYER}.\p"
     .string "Allow me to introduce myself.\n"
-    .string "I am WILL.\p"
+    .string "I am Will.\p"
     .string "I have trained all around the\n"
     .string "world, making my psychic\l"
     .string "Pokémon powerful.\p"
     .string "And, at last, I've been accepted\n"
-    .string "into the ELITE FOUR.\p"
+    .string "into the Elite Four.\p"
     .string "I can only keep getting better!\p"
     .string "Losing is not an option!\p"
     .string "So, {PLAYER}. Are you prepared to face\n"
@@ -197,7 +197,7 @@ PokemonLeague_WillsRoom_Text_WillDefeat:
     .string "stand above all trainers!\p"
     .string "Now, {PLAYER}, move on and\n"
     .string "experience the true ferocity of\l"
-    .string "the ELITE FOUR.$"
+    .string "the Elite Four.$"
 
 PokemonLeague_WillsRoom_Text_RematchBefore:
     .string "WILL: Ah, welcome back.\p"
@@ -300,12 +300,12 @@ PokemonLeague_WillsRoom_EventScript_BugsyDefeatedBugsy::
 	end
 
 PokemonLeague_WillsRoom_Text_BugsyBeforeIntro:
-    .string "Welcome to Pokémon LEAGUE,\n"
+    .string "Welcome to the Pokémon League,\n"
     .string "{PLAYER}.\p"
     .string "Thank you again for your help back in\n"
-    .string "AZALEA TOWN.\p"
+    .string "Azalea Town.\p"
 	.string "Though I don't get to visit that much\n"
-	.string "now I'm part of the ELITE FOUR, it means\l"
+	.string "now I'm part of the Elite Four, it means\l"
 	.string "the world to me to know that there are\l"
 	.string "other people watching over my home\l"
 	.string "town.\p"

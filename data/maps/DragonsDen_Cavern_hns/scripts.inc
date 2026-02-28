@@ -109,6 +109,7 @@ DragonsDen_Cavern_EventScript_Clair::
 	giveitem ITEM_TM_DRACO_METEOR
 	giveitem ITEM_HM_WHIRLPOOL
 	setflag FLAG_RECEIVED_HM_WHIRLPOOL
+	setflag FLAG_RECEIVED_HM_DIVE
 	msgbox DragonsDen_Cavern_Text_ClairDescribeDragonclaw, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -155,7 +156,7 @@ DragonsDen_Cavern_Movement_ClairLeaveRight:
 	step_end
 
 DragonsDen_Cavern_Text_ClairGiveDragonclaw:
-    .string "CLAIR: WAIT!\p"
+    .string "Clair: Wait!\p"
 	.string "I'm sorry about this.\n"
     .string "Here, take these as my apology.$"
 
@@ -163,23 +164,23 @@ DragonsDen_Cavern_Text_ClairDescribeDragonclaw:
     .string "That contains Draco Meteor.\p"
     .string "It's one of the most powerful Dragon\n"
     .string "moves there is.\p"
-	.string "The other one is WHIRLPOOL. It will\n"
+	.string "The other one is Whirlpool. It will\n"
 	.string "allow you to cross whirlpools at sea.$"
 
 DragonsDen_Cavern_Text_ClairWhatsTheMatter:
     .string "What's the matter? Aren't\n"
     .string "you going on to the Pokémon\l"
-    .string "LEAGUE?\p"
-    .string "After you become CHAMPION, you\n"
-    .string "can rematch any GYM LEADER you\l"
+    .string "League?\p"
+    .string "After you become Champion, you\n"
+    .string "can rematch any Gym League you\l"
     .string "want.\p"
-    .string "Go to the Pokémon LEAGUE.\p"
+    .string "Go to the Pokémon League.\p"
     .string "Do you know how to get there?\p"
-    .string "From here, go to NEW BARK TOWN.\p"
-    .string "Then SURF east to Pokémon LEAGUE.\p"
+    .string "From here, go to New Bark Town.\p"
+    .string "Then Surf east to Pokémon League.\p"
     .string "The route there is very tough.\p"
     .string "Don't you dare lose at the Pokémon\n"
-    .string "LEAGUE!\p"
+    .string "League!\p"
     .string "If you do, I'll feel even worse\n"
     .string "about having lost to you!\p"
     .string "Give it everything you've got.$"
@@ -221,11 +222,11 @@ DragonsDen_Cavern_EventScript_Item_PP_Max::
 
 
 DragonsDen_Cavern_Text_DragonShrineSign:
-    .string "DRAGON SHRINE\p"
+    .string "Dragon Shrine\p"
     .string "A shrine honoring the dragon\n"
     .string "Pokémon\p"
-    .string "said to have lived in DRAGON'S\n"
-    .string "DEN.$"
+    .string "said to have lived in Dragon'S\n"
+    .string "Den.$"
 
 DragonsDen_Cavern_Text_SilverTraining1:
     .string "…\n"
@@ -250,8 +251,8 @@ DragonsDen_Cavern_Text_CooltrainermDarinBeaten:
     .string "S-strong!$"
 
 DragonsDen_Cavern_Text_CooltrainermDarinAfter:
-    .string "The SHRINE ahead is home to the\n"
-    .string "MASTER of our dragon-user clan.\p"
+    .string "The Shrine ahead is home to the\n"
+    .string "Master of our dragon-user clan.\p"
     .string "You're not allowed to just go in!$"
 
 DragonsDen_Cavern_Text_CooltrainerfCaraSeen:
@@ -262,10 +263,10 @@ DragonsDen_Cavern_Text_CooltrainerfCaraBeaten:
 
 DragonsDen_Cavern_Text_CooltrainerfCaraAfter:
     .string "Soon I'm going to get permission\n"
-    .string "from our MASTER to use dragons.\p"
+    .string "from our Master to use dragons.\p"
     .string "When I do, I'm going to become an\n"
     .string "admirable dragon trainer and gain\l"
-    .string "our MASTER's approval.$"
+    .string "our Master's approval.$"
 
 DragonsDen_Cavern_Text_TwinsLeaandPia1Seen:
     .string "It's a stranger we don't know.$"
@@ -275,7 +276,7 @@ DragonsDen_Cavern_Text_TwinsLeaandPia1Beaten:
 
 DragonsDen_Cavern_Text_TwinsLeaandPia1After:
     .string "It was like having to battle\n"
-    .string "LANCE.$"
+    .string "Lance.$"
 
 DragonsDen_Cavern_Text_TwinsLeaandPia2Seen:
     .string "Who are you?$"
@@ -285,7 +286,7 @@ DragonsDen_Cavern_Text_TwinsLeaandPia2Beaten:
 
 DragonsDen_Cavern_Text_TwinsLeaandPia2After:
     .string "We'll tell on you.\p"
-    .string "MASTER will be angry with you.$"
+    .string "Master will be angry with you.$"
 
 @ NEWLY ADDED 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -334,7 +335,7 @@ DragonsDen_Cavern_Text_FisherJonahBeaten:
 
 DragonsDen_Cavern_Text_FisherJonahAfter:
 	.string "I plan to fish off\n"
-	.string "VERMILION's pier.$"
+	.string "Vermilion's pier.$"
 
 DragonsDen_Cavern_EventScript_Miller::
 	trainerbattle_single TRAINER_MILLER DragonsDen_Cavern_Text_PokemaniacMillerSeen, DragonsDen_Cavern_Text_PokemaniacMillerBeaten
@@ -362,18 +363,18 @@ DragonsDen_Cavern_Text_PokemaniacMillerAfter:
 	.string "I wonder how he is?$"
 
 DragonsDen_Cavern_Text_SupernerdMarkusSeen:
-	.string "Hey! HUGH!$"
+	.string "Hey! Hugh!$"
 
 DragonsDen_Cavern_Text_SupernerdMarkusBeaten:
 	.string "I mistook you for someone\n"
 	.string "else…$"
 
 DragonsDen_Cavern_Text_SupernerdMarkusAfter:
-	.string "You look a lot like HUGH...$"
+	.string "You look a lot like Hugh...$"
 
 DragonsDen_Cavern_EventScript_B2B::
 	lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
     playse SE_PIN
 	applymovement LOCALID_DRAGONSDEN_WANDA, Common_Movement_ExclamationMark
 	delay 60
@@ -383,9 +384,9 @@ DragonsDen_Cavern_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox DragonsDen_Cavern_Text_CooltrainerWanda_Before, MSGBOX_DEFAULT
-	playbgm MUS_HG_DRAGONS_DEN, TRUE
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_CooltrainerWanda_Beaten
-	playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
+	playbgm MUS_HG_DRAGONS_DEN, FALSE
+	trainerbattle_no_intro TRAINER_WANDA, DragonsDen_Cavern_Text_CooltrainerWanda_Beaten
+	playbgm MUS_HG_ENCOUNTER_BOY_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_DRAGONSDEN_COSMO, Common_Movement_ExclamationMark
 	delay 60
@@ -395,8 +396,8 @@ DragonsDen_Cavern_EventScript_B2B::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox DragonsDen_Cavern_Text_CooltrainerCosmo_Before, MSGBOX_DEFAULT
-	playbgm MUS_HG_DRAGONS_DEN, TRUE
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, DragonsDen_Cavern_Text_CooltrainerCosmo_Beaten
+	playbgm MUS_HG_DRAGONS_DEN, FALSE
+	trainerbattle_no_intro TRAINER_COSMO, DragonsDen_Cavern_Text_CooltrainerCosmo_Beaten
 	setvar VAR_TERA_B2B_COUNTER, 4
 	release
 	end
@@ -723,11 +724,11 @@ DragonsDen_Cavern_Text_EraChallengedToB2B2B2B2B:
 	.string "Wait.\p"
 	.string "I know why you're here.\p"
 	.string "The only outsiders permitted to enter\n"
-	.string "are trainers who have beaten CLAIR.\p"
+	.string "are trainers who have beaten Clair.\p"
 	.string "Sorry, but we're going to have to test\n"
 	.string "you once more.\p"
 	.string "It's easier this way than trying to\n"
-	.string "convince CLAIR she's wrong. Trust me.\p"
+	.string "convince Clair she's wrong. Trust me.\p"
 	.string "So then, champion-to-be... It's five\n"
 	.string "versus one. Still fancy your odds here?$"
 
@@ -735,7 +736,7 @@ DragonsDen_Cavern_Text_DeclinedB2B2B2B2B:
 	.string "...\p"
 	.string "Oh. Okay.\p"
 	.string "Sorry, I just- I thought the trainer\n"
-	.string "that beat CLAIR would have a bit more\l"
+	.string "that beat Clair would have a bit more\l"
 	.string "confidence than that.$"
 
 DragonsDen_Cavern_Text_AcceptedB2B2B2B2B:
@@ -761,7 +762,7 @@ DragonsDen_Cavern_Text_EraReadyForSpenser:
 	.string "To be honest, I'm sort of relieved.\p"
 	.string "It's not my way of doing things to gang\n"
 	.string "up on one person this way, but now not\l"
-	.string "even CLAIR can dispute your potential.\p"
+	.string "even Clair can dispute your potential.\p"
 	.string "...\p"
 	.string "Although... there's one more thing.\p"
 	.string "There's some pushy old man in front of\n"
@@ -778,7 +779,7 @@ DragonsDen_Cavern_EventScript_Spenser::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_SPENSER, DragonsDen_Cavern_EventScript_SpenserAlreadyDefeated
-	playbgm MUS_B_PALACE, TRUE
+	playbgm MUS_B_PALACE, FALSE
 	goto_if_set FLAG_TALKED_DRAGONSDEN_SPENSER, DragonsDen_Cavern_EventScript_SpenserPostIntro
 	setflag FLAG_TALKED_DRAGONSDEN_SPENSER
 	msgbox DragonsDen_Cavern_Text_SpenserIntro, MSGBOX_DEFAULT
@@ -942,9 +943,9 @@ DragonsDen_Cavern_Text_SpenserIntro:
 	.string "whatever silly scheme that Clair girl\l"
 	.string "likes to call a test of character.\p"
 	.string "I'm here of my own accord.\p"
-	.string "I am Spenser, head of the BATTLE\n"
-	.string "PALACE.\p"
-	.string "SPENSER: Trainers are far too obsessed\n"
+	.string "I am Spenser, head of the Battle\n"
+	.string "Palace.\p"
+	.string "Spenser: Trainers are far too obsessed\n"
 	.string "with perfect strategy these days.\p"
 	.string "They forget that in the heat of battle,\n"
 	.string "those who can think on their feet and\l"

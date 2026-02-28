@@ -97,7 +97,7 @@ IcePath_Movement_KimonoLeave:
 	step_end
 
 IcePath_1F_Text_Leave:
-	.string "KIMONO GIRL: .....................$"
+	.string "Kimono Girl: .....................$"
 
 IcePath_1F_Text_Stuck1:
     .string "Me oh my... Is that you, {PLAYER}?\n"
