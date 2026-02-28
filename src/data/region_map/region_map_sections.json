@@ -66,7 +66,7 @@
     },
     {
       "id": "MAPSEC_SAFARI_ZONE_GATE",
-      "name": "SAFARI ZONE GATE",
+      "name": "Safari Zone Gate",
       "x": 2,
       "y": 9,
       "width": 1,
@@ -90,7 +90,7 @@
     },
     {
       "id": "MAPSEC_BLACKTHORN_CITY",
-      "name": "BLACKTHORN CITY",
+      "name": "Blackthorn City",
       "x": 18,
       "y": 2,
       "width": 1,
@@ -270,7 +270,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_44",
-      "name": "ROUTE 44",
+      "name": "Route 44",
       "x": 16,
       "y": 2,
       "width": 2,
@@ -278,7 +278,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_45",
-      "name": "ROUTE 45",
+      "name": "Route 45",
       "x": 18,
       "y": 3,
       "width": 1,
@@ -294,7 +294,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_47",
-      "name": "ROUTE 47",
+      "name": "Route 47",
       "x": 2,
       "y": 11,
       "width": 1,
@@ -302,7 +302,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_48",
-      "name": "ROUTE 48",
+      "name": "Route 48",
       "x": 2,
       "y": 10,
       "width": 1,
@@ -350,7 +350,7 @@
     },
     {
       "id": "MAPSEC_CLIFF_CAVE",
-      "name": "CLIFF CAVE",
+      "name": "Cliff Cave",
       "x": 3,
       "y": 11,
       "width": 1,
@@ -374,7 +374,7 @@
     },
     {
       "id": "MAPSEC_ICE_PATH",
-      "name": "ICE PATH",
+      "name": "Ice Path",
       "x": 17,
       "y": 1,
       "width": 1,
@@ -422,7 +422,7 @@
     },
     {
       "id": "MAPSEC_OLIVINE_LIGHTHOUSE",
-      "name": "LIGHTHOUSE",
+      "name": "Olivine Lighthouse",
       "x": 7,
       "y": 4,
       "width": 1,
@@ -501,7 +501,7 @@
     },
     {
       "id": "MAPSEC_EMBEDDED_TOWER",
-      "name": "EMBEDDED TOWER",
+      "name": "Embedded Tower",
       "x": 1,
       "y": 10,
       "width": 1,
@@ -1411,7 +1411,7 @@
     },
     {
       "id": "MAPSEC_BILLS_HOUSE",
-      "name": "BILLS HOUSE",
+      "name": "Bills House",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -1443,7 +1443,7 @@
     },
     {
       "id": "MAPSEC_PROF_ELMS_LAB",
-      "name": "PROF ELMS LAB",
+      "name": "Prof Elms Lab",
       "x": 0,
       "y": 0,
       "width": 1,

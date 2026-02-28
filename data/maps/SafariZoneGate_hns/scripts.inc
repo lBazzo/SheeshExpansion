@@ -67,7 +67,7 @@ SafariZoneGate_EventScript_SlowpokeLady::
 
 
 SafariZone_Text_ForeignFeeling:
-	.string "SAFARI ZONE...\n"
+	.string "The Safari Zone...\n"
 	.string "It makes me feel like I am in a\l"
 	.string "foreign country.\p"
 	.string "It brings up a strange feeling.$"
@@ -77,31 +77,31 @@ SafariZone_Text_SilentNPC:
 	.string "(I am not a talker.)$"
 
 SafariZone_Text_Kangaskhan:
-	.string "KANGASKHAN: ..................$"
+	.string "Kangaskhan: ..................$"
 
 SafariZone_Text_JigglypuffTrainer:
-	.string "This SAFARI ZONE is great!\n"
+	.string "This Safari Zone is great!\n"
 	.string "I just kept going after Pokémon!\p"
-	.string "That made my JIGGLYPUFF upset though.$"
+	.string "That made my Jigglypuff upset though.$"
 
 SafariZone_Text_FirstCatch:
 	.string "I have always wanted to catch my first\n"
-	.string "Pokémon at the SAFARI ZONE.$"
+	.string "Pokémon at the Safari Zone.$"
 
 SafariZone_Text_SlowpokeFan:
 	.string "There are many Pokémon to choose from,\n"
 	.string "but nothing beats the cuteness of\l"
-	.string "SLOWPOKE.\p"
+	.string "Slowpoke.\p"
 	.string "People often say that I look like one!$"
 
 SafariZone_Text_CustomSystem:
 	.string "You may be under the impression there\n"
 	.string "is a sophisticated system to\l"
-	.string "customizing the SAFARI ZONE, right?\p"
+	.string "customizing the Safari Zone, right?\p"
 	.string "The real truth is that...$"
 
 SafariZone_Text_Sign:
-	.string "SAFARI ZONE\n"
+	.string "Safari Zone\n"
 	.string "This is where everything is thrilling.\p"
 	.string "Feel free to come by and experience\n"
 	.string "the wild!$"
@@ -184,14 +184,14 @@ SafariZoneGate_EventScript_Pharmacy::
 
 SafariZoneGate_Text_PharmacySign:
 	.string "500 Years of Tradition\p"
-	.string "SAFARI ZONE GATE PHARMACY\n"
-	.string "(Formerly CIANWOOD CITY PHARMACY)\p"
+	.string "Safari Zone Gate Pharmacy\n"
+	.string "(Formerly Cianwood City Pharmacy)\p"
 	.string "We Await Your Medicinal Queries$"
 
 SafariZoneGate_EventScript_Thorton::
 	lock
 	faceplayer
-	playbgm MUS_B_FACTORY, TRUE
+	playbgm MUS_B_FACTORY, FALSE
 	goto_if_eq VAR_THORTON_STATE, 1, SafariZoneGate_EventScript_ThortonState1
 	goto_if_eq VAR_THORTON_STATE, 2, SafariZoneGate_EventScript_ThortonState2
 	goto_if_eq VAR_THORTON_STATE, 3, SafariZoneGate_EventScript_ThortonState3
@@ -259,8 +259,8 @@ SafariZoneGate_EventScript_ThortonState3::
 SafariZone_EventScript_FightNormalVariantA::
 	msgbox SafariZone_Text_ThortonPreFight, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, SafariZoneGate_Text_ThortonWin
-	playbgm MUS_B_FACTORY, TRUE
+	trainerbattle_no_intro TRAINER_THORTON_A, SafariZoneGate_Text_ThortonWin
+	playbgm MUS_B_FACTORY, FALSE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
@@ -295,8 +295,8 @@ SafariZoneGate_EventScript_ThortonState4::
 SafariZone_EventScript_FightNormalVariantB::
 	msgbox SafariZone_Text_ThortonPreFight, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, SafariZoneGate_Text_ThortonWin
-	playbgm MUS_B_FACTORY, TRUE
+	trainerbattle_no_intro TRAINER_THORTON_B, SafariZoneGate_Text_ThortonWin
+	playbgm MUS_B_FACTORY, FALSE
 	msgbox SafariZoneGate_Text_ThortonNormalAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
@@ -360,8 +360,8 @@ SafariZone_EventScript_ThortonChooseHardFight::
 SafariZone_EventScript_ThortonHardVariantAChosen::
 	msgbox SafariZone_Text_ThortonPreFight, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, SafariZoneGate_Text_ThortonWin
-	playbgm MUS_B_FACTORY, TRUE
+	trainerbattle_no_intro TRAINER_THORTON_A, SafariZoneGate_Text_ThortonWin
+	playbgm MUS_B_FACTORY, FALSE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
@@ -379,8 +379,8 @@ SafariZone_EventScript_ThortonHardVariantAChosen::
 SafariZone_EventScript_ThortonHardVariantBChosen::
 	msgbox SafariZone_Text_ThortonPreFight, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_CHIKORITA_1, SafariZoneGate_Text_ThortonWin
-	playbgm MUS_B_FACTORY, TRUE
+	trainerbattle_no_intro TRAINER_THORTON_B, SafariZoneGate_Text_ThortonWin
+	playbgm MUS_B_FACTORY, FALSE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT
@@ -398,8 +398,8 @@ SafariZone_EventScript_ThortonHardVariantBChosen::
 SafariZone_EventScript_ThortonHardVariantCChosen::
 	msgbox SafariZone_Text_ThortonPreFight, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, SafariZoneGate_Text_ThortonWin
-	playbgm MUS_B_FACTORY, TRUE
+	trainerbattle_no_intro TRAINER_THORTON_C, SafariZoneGate_Text_ThortonWin
+	playbgm MUS_B_FACTORY, FALSE
 	msgbox SafariZoneGate_Text_ThortonHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 5
 	msgbox SafariZoneGate_Text_ThortonLeaving, MSGBOX_DEFAULT

@@ -189,16 +189,16 @@ OlivineLighthouse_Text_Nickname:
 	.string "{STR_VAR_1} a nickname?$"
 
 OlivineCity_Text_StevenPostIntroReadyToGift:
-	.string "So, I have CORVIKNIGHT, ESCAVALIER and\n"
-	.string "TINKATON. Which would you prefer?$"
+	.string "So, I have Corviknight, Escavalier and\n"
+	.string "Tinkaton. Which would you prefer?$"
 
 OlivineCity_Text_StevenAfterGift:
 	.string "I'm sure you'll take great care of it.\p"
 	.string "As for me, I'm afraid I've got to leave\n"
-	.string "on official Pokémon LEAGUE business in\l"
-	.string "HOENN.\p"
+	.string "on official Pokémon League business in\l"
+	.string "Hoenn.\p"
 	.string "I'm sure you won't have much trouble\n"
-	.string "delivering the medicine to JASMINE.\p"
+	.string "delivering the medicine to Jasmine.\p"
 	.string "Thanks again for your help.\n"
 	.string "Until next time!$"
 
@@ -233,7 +233,7 @@ OlivineCity_Text_StevenReadyToGift:
 	.string "please excuse my past frankness.\p"
 	.string "I am Steven, a trainer such as yourself.\p"
 	.string "Steven: I am a fan of steel type\n"
-	.string "Pokémon, much like JASMINE. It is how we\l"
+	.string "Pokémon, much like Jasmine. It is how we\l"
 	.string "initially formed our bond, as a matter\l"
 	.string "of fact.\p"
 	.string "But I'm sure you didn't go to all this\n"
@@ -407,7 +407,7 @@ OlivineLighthouse_Text_SailorGauntletBeaten:
 
 OlivineLighthouse_EventScript_1FLastTrainerTrigger::
 	lock
-	playbgm MUS_ENCOUNTER_RICH, TRUE
+	playbgm MUS_ENCOUNTER_RICH, FALSE
 	playse SE_PIN
 	applymovement LOCALID_LIGHTHOUSE_ALFRED, Common_Movement_ExclamationMark
 	delay 60
@@ -555,7 +555,7 @@ OlivineLighthouse_EventScript_2FSailorBlockPlayer::
 
 OlivineLighthouse_EventScript_2FLastTrainerTrigger::
 	lock
-	playbgm MUS_HG_ENCOUNTER_BOY_2, TRUE
+	playbgm MUS_HG_ENCOUNTER_BOY_2, FALSE
 	playse SE_PIN
 	applymovement LOCALID_LIGHTHOUSE_HUEY, Common_Movement_ExclamationMark
 	delay 60
@@ -680,7 +680,7 @@ OlivineLighthouse_EventScript_3FSailorBlockPlayer::
 
 OlivineLighthouse_EventScript_3FLastTrainerTrigger::
 	lock
-	playbgm MUS_ENCOUNTER_MALE, TRUE
+	playbgm MUS_ENCOUNTER_MALE, FALSE
 	playse SE_PIN
 	applymovement LOCALID_LIGHTHOUSE_THEO, Common_Movement_ExclamationMark
 	delay 60
@@ -795,7 +795,7 @@ OlivineLighthouse_EventScript_4FSailorBlockPlayer::
 
 OlivineLighthouse_EventScript_4FLastTrainerTrigger::
 	lock
-	playbgm MUS_HG_ENCOUNTER_BOY_2, TRUE
+	playbgm MUS_HG_ENCOUNTER_BOY_2, FALSE
 	playse SE_PIN
 	applymovement LOCALID_LIGHTHOUSE_KENT, Common_Movement_ExclamationMark
 	delay 60
@@ -991,7 +991,7 @@ OlivineLighthouse_EventScript_5FSailorBlockPlayer::
 
 OlivineLighthouse_EventScript_5FLastTrainerTrigger::
 	lock
-	playbgm MUS_HG_ENCOUNTER_BOY_2, TRUE
+	playbgm MUS_HG_ENCOUNTER_BOY_2, FALSE
 	playse SE_PIN
 	applymovement LOCALID_LIGHTHOUSE_ERNEST, Common_Movement_ExclamationMark
 	delay 60
@@ -1091,50 +1091,50 @@ OlivineLighthouse_EventScript_RewardSailorLeave3::
 	return
 
 OlivineLighthouse_Movement_RewardSailorLeave1::
-	walk_right
-	walk_right
-	walk_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	step_end
 
 OlivineLighthouse_Movement_RewardSailorLeave2::
-	walk_right
-	walk_up
-	walk_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	walk_slow_right
+	walk_slow_up
+	walk_slow_up
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	step_end
 
 
 OlivineLighthouse_Movement_RewardSailorLeave3::
-	walk_left
-	walk_up
-	walk_up
+	walk_slow_left
+	walk_slow_up
+	walk_slow_up
 	walk_fast_right
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	step_end
 
 OlivineLighthouse_Text_RewardSailorIntro:

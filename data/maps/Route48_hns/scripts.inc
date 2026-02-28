@@ -55,16 +55,15 @@ Route48_Text_PsychicHermanAfterBattle:
 	.string "I lost while I had my eyes closed…$"
 
 Route48_Text_PsychicFidelSeen:
-	.string "I can see it…\p"
-	.string "Everything to see about you…$"
+	.string "The taste of the mountain air…\n"
+	.string "Isn't it wonderful?$"
 
 Route48_Text_PsychicFidelBeaten:
-	.string "I couldn't foresee your power…$"
+	.string "Ah well…$"
 
 Route48_Text_PsychicFidelAfterBattle:
-	.string "Strength in conviction…\p"
-	.string "You're strong because you believe\n"
-	.string "in your Pokémon.$"
+	.string "It's hard to be in a bad mood when\n"
+	.string "It's such a nice day out, isn't it?$"
 
 Route48_EventScript_Perry::
 	trainerbattle_single TRAINER_PERRY Route48_Text_BirdKeeperPerrySeen, Route48_Text_BirdKeeperPerryBeaten
@@ -78,7 +77,7 @@ Route48_EventScript_Bret::
 
 Route48_Text_BirdKeeperPerrySeen:
 	.string "Agility is the key attribute of\n"
-	.string "bird Pokémon.$"
+	.string "my Pokémon.$"
 
 Route48_Text_BirdKeeperPerryBeaten:
 	.string "You beat me with your speed…$"

@@ -198,7 +198,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	setflag FLAG_TM_CLERK_COLLECTION_POST_MISTY
 	addvar VAR_NUM_BADGES, 1
 	setvar VAR_0x8008, 2
-	call Common_EventScript_SetGymTrainers
+	@call Common_EventScript_SetGymTrainers
 	msgbox CeruleanGym_Text_MistyTm, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 4
 	giveitem ITEM_TM_FLIP_TURN

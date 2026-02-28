@@ -5,7 +5,7 @@ BlackthornCity_House2_EventScript_Emy::
 	lock
 	faceplayer
 	goto_if_set FLAG_BLACKTHORN_NPC_TRADE_COMPLETED, BlackthornCity_House2_EventScript_TradeCompleted
-	setvar VAR_0x8008, INGAME_TRADE_MR_MIME
+	setvar VAR_0x8008, INGAME_TRADE_MIMIKYU
 	copyvar VAR_0x8004, VAR_0x8008
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
 	copyvar VAR_0x8009, VAR_RESULT

@@ -1426,8 +1426,8 @@ Calm Nature
 
 === TRAINER_THEO ===
 Name: Theo
-Class: Expert
-Pic: Expert M
+Class: Bird Keeper
+Pic: Bird Keeper
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1690,7 +1690,7 @@ Name: Boris
 Class: Juggler
 Pic: Juggler
 Gender: Male
-Music: Male
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -1714,10 +1714,10 @@ Modest Nature
 
 === TRAINER_BOB ===
 Name: Bob
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Juggler
+Pic: Juggler
 Gender: Male
-Music: Male
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -1867,7 +1867,7 @@ Name: Perry
 Class: Juggler
 Pic: Juggler
 Gender: Male
-Music: Male
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -2198,7 +2198,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Tyranitar @ Leftovers  
-Ability: Intimidate  
+Ability: Unnerve  
 Level: 76  
 Tera Type: Rock  
 Adamant Nature  
@@ -6305,7 +6305,7 @@ Name: Preston
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
-Music: Male
+Music: Rich
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -6433,8 +6433,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALFRED ===
 Name: Alfred
-Class: Expert
-Pic: Expert M
+Class: Gentleman
+Pic: Gentleman
 Gender: Male
 Music: Male
 Double Battle: No
@@ -7471,7 +7471,7 @@ Name: Wilton
 Class: Gentleman
 Pic: Gentleman
 Gender: Male
-Music: Hg Boy 2
+Music: Rich
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -7766,8 +7766,8 @@ Adamant Nature
 - Stomping Tantrum  
 - Agility  
 
-Tyranitar @ Black Glasses  
-Ability: Unnerve  
+Tyranitar @ Enigma Berry  
+Ability: Solid Rock  
 Level: 92    
 Jolly Nature  
 - Stone Edge  
@@ -14553,7 +14553,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Ceruledge @ Focus Sash  
 Ability: Weak Armor  
-Level: 67   
+Level: 77   
 Adamant Nature  
 - Bitter Blade  
 - Shadow Claw  
@@ -14562,7 +14562,7 @@ Adamant Nature
 
 Mabosstiff @ Choice Scarf  
 Ability: Stakeout  
-Level: 66   
+Level: 76   
 Jolly Nature  
 - Crunch  
 - Play Rough  
@@ -15947,7 +15947,8 @@ IVs: 0 Spe
 
 === TRAINER_POTTER ===
 Name: Potter
-Pic: Leader Pryce
+Class: Potter
+Pic: Psychic M
 Gender: Male
 Music: Male
 Double Battle: No

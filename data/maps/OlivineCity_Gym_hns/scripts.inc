@@ -289,10 +289,10 @@ OlivineCity_Gym_Text_JasmineBetterTrainer:
 	.string "I confer upon you this BADGE.$"
 
 OlivineCity_Gym_Text_ReceivedMineralBadge:
-	.string "{PLAYER} received MINERALBADGE.$"
+	.string "{PLAYER} received the Mineral Badge.$"
 
 OlivineCity_Gym_Text_JasmineBadgeSpeech:
-	.string "MINERALBADGE raises Pokémon's \n"
+	.string "The Mineral Badge raises Pokémon's \n"
 	.string "SPECIAL DEFENSE.\p"
 	.string "…Um… Please take this too…$"
 
@@ -330,11 +330,11 @@ OlivineCity_Gym_EventScript_Statue2::
 	end
 
 OlivineCity_Gym_Text_GymStatue:
-	.string "OLIVINE CITY Pokémon GYM$"
+	.string "Olivine City Pokémon Gym$"
 
 OlivineCity_Gym_Text_GymStatueCertified:
-	.string "OLIVINE CITY Pokémon GYM\p"
-	.string "CERTIFIED TRAINERS:\n"
+	.string "Olivine City Pokémon Gym\p"
+	.string "Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 
@@ -403,8 +403,8 @@ OlivineCity_Gym_Text_BlainePreTMLine:
 	.string "enough fiery hot passion to handle it.$"
 
 OlivineCity_Gym_Text_BlaineFirstTMSpeech:
-	.string "You'd better get that last Badge, you\n"
-	.string "hear? We can't be having folks thinking\l"
+	.string "You'd better earn that last Badge, kid.\n"
+	.string "We can't be having folks thinking\l"
 	.string "that us Kanto leaders are just all talk!$"
 
 OlivineCity_Gym_Text_BlainePreSecondFight:
@@ -584,7 +584,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineForwardMovement
 	waitmovement 0
 	special HealPlayerParty
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, OlivineCity_Gym_Text_BlaineWin
+	trainerbattle_no_intro TRAINER_BLAINE, OlivineCity_Gym_Text_BlaineWin
 	msgbox OlivineCity_Gym_Text_BlainePostFirstFight, MSGBOX_DEFAULT
 	closemessage
 	special HealNoneFaintedPartyMons
@@ -596,7 +596,7 @@ OlivineCity_Gym_EventScript_GymFightBlaineFirst::
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeForwardMovement
 	waitmovement 0
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, OlivineCity_Gym_Text_SurgeWin
+	trainerbattle_no_intro TRAINER_LTSURGE, OlivineCity_Gym_Text_SurgeWin
 	msgbox OlivineCity_Gym_Text_SurgePostSecondFight, MSGBOX_DEFAULT
 	message OlivineCity_Gym_Text_ReceivedMineralBadge
 	waitmessage
@@ -702,7 +702,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	applymovement LOCALID_OLIVINE_CITY_GYM_SURGE, OlivineCity_Gym_Movement_SurgeForwardMovement
 	waitmovement 0
 	special HealPlayerParty
-	trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, OlivineCity_Gym_Text_SurgeWin
+	trainerbattle_no_intro TRAINER_LTSURGE, OlivineCity_Gym_Text_SurgeWin
 	msgbox OlivineCity_Gym_Text_SurgePostFirstFight, MSGBOX_DEFAULT
 	closemessage
 	special HealNoneFaintedPartyMons
@@ -714,7 +714,7 @@ OlivineCity_Gym_EventScript_GymFightSurgeFirst::
 	closemessage
 	applymovement LOCALID_OLIVINE_CITY_GYM_BLAINE, OlivineCity_Gym_Movement_BlaineForwardMovement
 	waitmovement 0
-	trainerbattle_no_intro TRAINER_RIVAL_CYNDAQUIL_1, OlivineCity_Gym_Text_BlaineWin
+	trainerbattle_no_intro TRAINER_BLAINE, OlivineCity_Gym_Text_BlaineWin
 	msgbox OlivineCity_Gym_Text_BlainePostSecondFight, MSGBOX_DEFAULT
 	message OlivineCity_Gym_Text_ReceivedMineralBadge
 	waitmessage

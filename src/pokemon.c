@@ -6252,6 +6252,7 @@ u16 GetBattleBGM(void)
             return MUS_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_COOLTRAINER:
         case TRAINER_CLASS_COOLTRAINER_2:
+        case TRAINER_CLASS_DRAGON_TAMER:
             return MUS_HG_VS_TRAINER_KANTO;
         case TRAINER_CLASS_LEADER_KANTO:
             return MUS_HG_VS_GYM_LEADER_KANTO;

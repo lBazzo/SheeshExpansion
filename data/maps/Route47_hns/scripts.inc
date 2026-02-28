@@ -27,8 +27,7 @@ Route47_EventScript_Camper::
 
 Route47_Text_CamperSeen::
 	.string "I'm not good with large crowds, so\n"
-	.string "I'm camping out here with my\l"
-	.string "Pokémon!$"
+	.string "I'm camping here with my Pokémon!$"
 
 Route47_Text_CamperBeaten::
 	.string "I should be headed deeper into the\n"
@@ -50,22 +49,22 @@ Route47_EventScript_Kae::
 	end
 
 Route47_Text_Couple1Seen::
-	.string "THOM: One plus one is two. But the\n"
+	.string "Thom: One plus one is two. But the\n"
 	.string "two of us together is much\l"
 	.string "stronger!\p"
-	.string "KAE: The two of us aren't just some\n"
+	.string "Kae: The two of us aren't just some\n"
 	.string "boring pair!$"
 
 Route47_Text_Couple1Beaten::
-	.string "THOM: That wasn't what I expected.\l"
-	.string "KAE: You're unusual too!$"
+	.string "Thom: That wasn't what I expected.\l"
+	.string "Kae: You're unusual too!$"
 
 Route47_Text_Couple1After1::
-	.string "THOM: It seems your power is\n"
+	.string "Thom: It seems your power is\n"
 	.string "impossible to predict!$"
 
 Route47_Text_Couple1After2::
-	.string "KAE: I figured you were an ordinary\n"
+	.string "Kae: I figured you were an ordinary\n"
 	.string "lone trainer. Boy was I wrong!$"
 
 Route47_EventScript_Duff::
@@ -80,22 +79,22 @@ Route47_EventScript_Eda::
 	end
 
 Route47_Text_Couple2Seen::
-	.string "DUFF: Watching over my girlfriend\n"
+	.string "Duff: Watching over my girlfriend\n"
 	.string "makes my heart soar!\p"
-	.string "EDA: My heart's feelings for my\n"
+	.string "Eda: My heart's feelings for my\n"
 	.string "boyfriend are as wide and deep\l"
 	.string "the ocean!$"
 
 Route47_Text_Couple2Beaten::
-	.string "DUFF: I was no match for you...\l"
-	.string "EDA: You are really something...$"
+	.string "Duff: I was no match for you...\l"
+	.string "Eda: You are really something...$"
 
 Route47_Text_Couple2After1::
-	.string "DUFF: Thank you for the awe-\n"
+	.string "Duff: Thank you for the awe-\n"
 	.string "inspiring battle! Bye!$"
 
 Route47_Text_Couple2After2::
-	.string "EDA: You should really find a\n"
+	.string "Eda: You should really find a\n"
 	.string "wonderful partner, too!$"
 
 Route47_EventScript_Sage::
@@ -158,7 +157,7 @@ Route47_EventScript_Chinchou::
 	end
 
 Route47_Text_Chinchou:
-	.string "CHINCHOU: Chou!$"
+	.string "Chinchou: Chou!$"
 
 Route47_EventScript_Heidi::
 	trainerbattle_single TRAINER_HEIDI Route47_Text_PicnickerHeidiSeen, Route47_Text_PicnickerHeidiBeaten
@@ -205,9 +204,9 @@ Route47_Text_PicnickerEdnaAfter:
 	.string "vital.$"
 
 Route47_Text_HikerTimSeen:
-	.string "She'll be coming 'round MT.SILVER\n"
+	.string "She'll be coming 'round Mt.Silver\n"
 	.string "when she comes…\p"
-	.string "MT.SILVER is in JOHTO, right?$"
+	.string "Mt.Silver is in Johto, right?$"
 
 Route47_Text_HikerTimBeaten:
 	.string "I was too busy singing…$"
@@ -223,4 +222,4 @@ Route47_Text_HikerSidneyBeaten:
 	.string "Oh, dang! I lost that…$"
 
 Route47_Text_HikerSidneyAfter:
-	.string "The SAFARI ZONE is just up ahead.$"
+	.string "The Safari Zone is just up ahead.$"

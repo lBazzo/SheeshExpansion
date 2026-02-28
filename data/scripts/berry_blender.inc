@@ -171,7 +171,7 @@ BerryBlender_Text_DontHavePokeblockCase3:
 
 BerryBlender_Text_SetNewBlenderRecord:
 	.string "Okay! Today's going to be the day that\n"
-	.string "I set a new BLENDER speed record!$"
+	.string "I set a new Blender speed record!$"
 
 BerryBlender_Text_LookGoodAtBlendingJoinUs:
 	.string "Oh, dear!\n"

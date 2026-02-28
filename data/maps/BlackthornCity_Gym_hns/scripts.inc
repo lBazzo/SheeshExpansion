@@ -236,13 +236,13 @@ BlackthornGym_EventScript_ClairAfterLeague::
 	end
 
 BlackthornGym_Text_ClairIntroText:
-    .string "I am CLAIR.\p"
+    .string "I am Clair.\p"
     .string "The world's best dragon master.\p"
     .string "I can hold my own against even the\n"
-    .string "Pokémon LEAGUE's ELITE FOUR.\p"
+    .string "Pokémon League's Elite Four.\p"
     .string "Do you still want to take me on?\p"
     .string "…Fine. Let's do it!\p"
-    .string "As a GYM LEADER, I will use my full\n"
+    .string "As a Gym Leader, I will use my full\n"
     .string "power against any opponent!$"
 
 BlackthornGym_Text_ClairWinText:
@@ -253,17 +253,17 @@ BlackthornGym_Text_ClairWinText:
 BlackthornGym_Text_ClairText_GoToDragonsDen:
     .string "I won't admit this.\p"
     .string "I may have lost, but you're still\n"
-    .string "not ready for the Pokémon LEAGUE.\p"
+    .string "not ready for the Pokémon League.\p"
     .string "I know. You should take the dragon\n"
     .string "user challenge.\p"
-    .string "Behind this GYM is a place called\n"
-    .string "DRAGON'S DEN.\p"
+    .string "Behind this Gym is a place called\n"
+    .string "Dragon's Den.\p"
     .string "There is a small shrine at its\n"
     .string "center. Go there.\p"
     .string "If you can prove that you've lost\n"
     .string "your lazy ideals, I will recognize\l"
-    .string "you as a trainer worthy of a GYM\l"
-    .string "BADGE!$"
+    .string "you as a trainer worthy of a Gym\l"
+    .string "Badge!$"
 
 BlackthornGym_Text_ClairText_TooMuchToExpect:
     .string "What's the matter?\p"
@@ -280,13 +280,13 @@ BlackthornGym_Text_ClairText_DescribeTM:
 BlackthornGym_Text_ClairText_League:
     .string "What's the matter?\p"
     .string "Aren't you headed to the Pokémon\n"
-    .string "LEAGUE?\p"
+    .string "League?\p"
     .string "Don't you know where it is?\p"
-    .string "From here, go to NEW BARK TOWN.\p"
+    .string "From here, go to New Bark Town.\p"
     .string "Then SURF east. The route there is\n"
     .string "very tough.\p"
     .string "Don't you dare lose at the Pokémon\n"
-    .string "LEAGUE!\p"
+    .string "League!\p"
     .string "If you do, I'll feel even worse\n"
     .string "about having lost to you!\p"
     .string "Give it everything you've got.$"
@@ -312,27 +312,27 @@ BlackthornGym_Text_ClairRematchDefeatText:
     .string "some mistake…$"
 
 BlackthornGym_Text_CooltrainermCodySeenText:
-    .string "I just got access to use DRAGON-\n"
+    .string "I just got access to use Dragon-\n"
     .string "type Pokémon!$"
 
 BlackthornGym_Text_CooltrainermCodyBeatenText:
-    .string "Rats! If only I had a DRAGONITE!$"
+    .string "Rats! If only I had a Dragonite!$"
 
 BlackthornGym_Text_CooltrainermCodyAfterBattleText:
     .string "Members of our dragon-user clan\n"
     .string "can use dragon Pokémon only after\l"
-    .string "our MASTER allows it.$"
+    .string "our Master allows it.$"
 
 BlackthornGym_Text_CooltrainerfFranSeenText:
     .string "I can't allow a nameless trainer\n"
     .string "past me!\p"
-    .string "CLAIR would be livid if I did!$"
+    .string "Clair would be livid if I did!$"
 
 BlackthornGym_Text_CooltrainerfFranBeatenText:
     .string "Awww… I lost…$"
 
 BlackthornGym_Text_CooltrainerfFranAfterBattleText:
-    .string "Uh-oh… CLAIR is going to be mad…$"
+    .string "Uh-oh… Clair is going to be mad…$"
 
 BlackthornGym_Text_CooltrainermPaulSeenText:
     .string "Your first battle against dragons?\p"
@@ -342,7 +342,7 @@ BlackthornGym_Text_CooltrainermPaulBeatenText:
     .string "My dragon Pokémon lost?$"
 
 BlackthornGym_Text_CooltrainermPaulAfterBattleText:
-    .string "LANCE told you that he'd like to\n"
+    .string "Lance told you that he'd like to\n"
     .string "see you again?\p"
     .string "Not a chance!$"
 
@@ -367,7 +367,7 @@ BlackthornGym_Text_CooltrainerfLolaBeatenText:
     .string "Way to go!$"
 
 BlackthornGym_Text_CooltrainerfLolaAfterBattleText:
-    .string "Dragons are weak against DRAGON-\n"
+    .string "Dragons are weak against Dragon-\n"
     .string "type moves.$"
 
 BlackthornGym_EventScript_GymGuy::
@@ -423,11 +423,11 @@ BlackthornGym_EventScript_Statue2::
 	end
 
 BlackthornGym_Text_GymStatue:
-	.string "BLACKTHORN CITY Pokémon GYM$"
+	.string "Blackthorn City Pokémon Gym$"
 
 BlackthornGym_Text_GymStatueCertified:
-	.string "BLACKTHORN CITY Pokémon GYM\p"
-	.string "CLAIR'S CERTIFIED TRAINERS:\n"
+	.string "Blackthorn City Pokémon Gym\p"
+	.string "Clair's Certified Trainers:\n"
 	.string "{PLAYER}$"
 
 
@@ -440,7 +440,7 @@ BlackthornGym_Text_GymStatueCertified:
 
 BlackthornGym_EventScript_B2B::
     lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
     playse SE_PIN
 	applymovement LOCALID_BLACKTHORNGYM_IRIS, Common_Movement_ExclamationMark
 	delay 60
@@ -450,8 +450,8 @@ BlackthornGym_EventScript_B2B::
     applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox BlackthornGym_Text_IrisSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
-    trainerbattle_no_intro TRAINER_SPENCER, BlackthornGym_Text_IrisBeaten
+	playbgm MUS_HG_GYM, FALSE
+    trainerbattle_no_intro TRAINER_IRIS, BlackthornGym_Text_IrisBeaten
     playbgm MUS_ENCOUNTER_RICH, TRUE
     playse SE_PIN
 	applymovement LOCALID_BLACKTHORNGYM_DRAYDEN, Common_Movement_ExclamationMark
@@ -466,7 +466,7 @@ BlackthornGym_EventScript_B2B::
 	special HealNoneFaintedPartyMons
 	msgbox BlackthornGym_Text_DraydenSeen2, MSGBOX_DEFAULT
 	playbgm MUS_HG_GYM, TRUE
-    trainerbattle_no_intro TRAINER_RON, BlackthornGym_Text_DraydenBeaten
+    trainerbattle_no_intro TRAINER_DRAYDEN, BlackthornGym_Text_DraydenBeaten
     setvar VAR_ALL_B2B_STATE, 11
     release
     end
@@ -523,24 +523,24 @@ BlackthornGym_EventScript_Drayden::
 	end
 
 BlackthornGym_Text_IrisSeen:
-    .string "IRIS: Man, I'm peeved!\p"
-    .string "How is it that CLAIR starts bossing us\n"
+    .string "Iris: Man, I'm peeved!\p"
+    .string "How is it that Clair starts bossing us\n"
 	.string "around after WE were the ones offering\l"
-	.string "to help HER out by filling in as GYM\l"
+	.string "to help HER out by filling in as Gym\l"
 	.string "trainers?\p"
 	.string "Just who does she think she is?\p"
-	.string "Doesn't she know I used to be a GYM\n"
-	.string "LEADER too?\p"
+	.string "Doesn't she know I used to be a Gym\n"
+	.string "Leader too?\p"
 	.string "You believe me, right?\p"
 	.string "Here, I'll show you. She did ask us to\n"
 	.string "battle any challengers, after all!$"
 
 BlackthornGym_Text_IrisBeaten:
-    .string "Wow! JOHTO trainers are super strong!$"
+    .string "Wow! Johto trainers are super strong!$"
 
 BlackthornGym_Text_IrisAfter:
     .string "Hey, do me a favour, would you?\p"
-    .string "Wipe the floor with CLAIR when you two\n"
+    .string "Wipe the floor with Clair when you two\n"
 	.string "battle.\p"
 	.string "I'll be cheering you on from over here!\p"
 	.string "I'll bet you anything she's a sore\n"
@@ -552,8 +552,8 @@ BlackthornGym_Text_IrisAfter2:
 	.string "though, or he'll chew me out...$"
 
 BlackthornGym_Text_DraydenSeen1:
-    .string "DRAYDEN: Welcome. Thank you for coming\n"
-    .string "to the GYM.\p"
+    .string "Drayden: Welcome. Thank you for coming\n"
+    .string "to the Gym.\p"
     .string "Your Pokémon are injured, are they not?\p"
     .string "Please, allow me to heal them for you\n"
 	.string "before we fight.$"
@@ -577,13 +577,13 @@ BlackthornGym_Text_DraydenAfter:
 	.string "It's a more tightly knit community than\n"
 	.string "you might think.\p"
 	.string "That being said, I'd appreciate if you\n"
-	.string "didn't share this with IRIS, but...\p"
+	.string "didn't share this with Iris, but...\p"
 	.string "I believe she has a point about this\n"
-	.string "city's GYM LEADER.\p"
+	.string "city's Gym Leader.\p"
 	.string "She has the talent, but her attitude\n"
 	.string "leaves a lot to be desired, in my humble\l"
 	.string "opinion.\p"
-	.string "LANCE is supposed to be her mentor, is\n"
+	.string "Lance is supposed to be her mentor, is\n"
 	.string "he not?\p"
 	.string "You have to wonder what sorts of\n"
 	.string "things he's been teaching her...$"

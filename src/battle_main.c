@@ -5498,6 +5498,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_CASTLE_ROYAL:
         case TRAINER_CLASS_CASTLE_DUO:
             PlayBGM(MUS_HG_VICTORY_FRONTIER_BRAIN);
+            break;
         default:
             PlayBGM(MUS_HG_VICTORY_TRAINER);
             break;

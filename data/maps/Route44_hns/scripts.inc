@@ -59,17 +59,16 @@ Route44_EventScript_Item_Elixir::
 
 Route44_Text_FisherWilton1Seen:
     .string "Aack!\p"
-    .string "You made me lose a POLIWAG!\n"
+    .string "You made me lose my focus!\n"
     .string "What are you going to do about it?$"
 
 Route44_Text_FisherWilton1Beaten:
     .string "Just forget about it.$"
 
 Route44_Text_FisherWiltonHugePoliwag:
-    .string "That POLIWAG that got away…\n"
-    .string "it was huge.\p"
-    .string "I swear it must've been\n"
-    .string "16 feet long!$"
+    .string "It's hard for me to get in the\n"
+    .string "right mindset for anything these days.\p"
+    .string "I suppose it comes with age...$"
 
 Route44_Text_FisherEdgarSeen:
     .string "I fish until I can't anymore.\p"
@@ -92,7 +91,7 @@ Route44_Text_BirdKeeperVance1Beaten:
     .string "Whew! You're hot stuff.$"
 
 Route44_Text_BirdKeeperVanceBirds:
-    .string "ARTICUNO, ZAPDOS and MOLTRES are\n"
+    .string "Articuno, Zapdos and Moltres are\n"
     .string "the three legendary bird Pokémon.\p"
     .string "I heard there are other legendary\n"
     .string "birds, though.$"
@@ -130,17 +129,17 @@ Route44_Text_CooltrainermAllenBeaten:
     .string "Tch! It's a total loss on my part.$"
 
 Route44_Text_CooltrainermAllenAfter:
-    .string "Wow. You have a lot of BADGES.\p"
+    .string "Wow. You have a lot of Badges.\p"
     .string "No wonder you're so tough.\p"
-    .string "I wonder if ECRUTEAK GYM's MORTY\n"
+    .string "I wonder if Ecruteak Gym's Morty\n"
     .string "is still in training?\p"
     .string "He really hammered me.$"
 
 Route44_Text_Sign1:
-    .string "ROUTE 44\n"
-    .string "ICE PATH AHEAD$"
+    .string "Route 44\n"
+    .string "Ice Path Ahead$"
 
 Route44_Text_Sign2:
-    .string "ROUTE 44\p"
-    .string "MAHOGANY TOWN - BLACKTHORN CITY$"
+    .string "Route 44\p"
+    .string "Mahogany Town - Blackthorn City$"
 

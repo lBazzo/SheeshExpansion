@@ -420,7 +420,7 @@
 #define TRAINER_DANNY                      414
 #define TRAINER_YASU                       415 // UNUSED
 #define TRAINER_TAKASHI                    416 // UNUSED
-#define TRAINER_KENJI               417
+#define TRAINER_KENJI                      417
 #define TRAINER_JANI                       418 // UNUSED
 #define TRAINER_LAO_1                      419 // UNUSED
 #define TRAINER_DONATELLO                  420

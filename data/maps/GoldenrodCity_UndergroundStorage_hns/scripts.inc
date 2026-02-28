@@ -42,7 +42,7 @@ GoldenrodCity_UndergroundStorage_EventScript_Director2::
     end
 
 GoldenrodCity_UndergroundStorage_EventScript_Grunt19::
-    trainerbattle_single TRAINER_GRUNT_19, RadioTowerBasement_Text_GruntM24Seen, RadioTowerBasement_Text_GruntM24Beaten
+    trainerbattle_single TRAINER_GRUNT_54, RadioTowerBasement_Text_GruntM24Seen, RadioTowerBasement_Text_GruntM24Beaten
 	msgbox RadioTowerBasement_Text_GruntM24After, MSGBOX_AUTOCLOSE
 	end
 
@@ -133,24 +133,24 @@ RadioTowerBasement_Text_DirectorAfter:
 
 GoldenrodCity_UndergroundStorage_EventScript_B2B1::
 	lock
-	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	playse SE_PIN
 	applymovement LOCALID_UNDERGROUND_STORAGE_B2B1GRUNTTOP, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B1GruntTopPreFight, MSGBOX_DEFAULT
-    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B1GruntTopBeaten
-	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+    playbgm MUS_HG_TEAM_ROCKET_HQ, FALSE
+	trainerbattle_no_intro TRAINER_GRUNT_55, GoldenrodCity_UndergroundStorage_Text_B2B1GruntTopBeaten
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	playse SE_PIN
 	applymovement LOCALID_UNDERGROUND_STORAGE_B2B1GRUNTBOT, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B1GruntBotPreFight, MSGBOX_DEFAULT
-    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_UndergroundStorage_Text_B2B1GruntBotBeaten
+    playbgm MUS_HG_TEAM_ROCKET_HQ, FALSE
+	trainerbattle_no_intro TRAINER_GRUNT_56, GoldenrodCity_UndergroundStorage_Text_B2B1GruntBotBeaten
 	setvar VAR_ALL_B2B_STATE, 7
 	release
 	end
@@ -202,30 +202,30 @@ GoldenrodCity_UndergroundStorage_EventScript_B2B1GruntBot::
 
 GoldenrodCity_UndergroundStorage_EventScript_B2B2::
 	lock
-	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	playse SE_PIN
 	applymovement LOCALID_UNDERGROUND_STORAGE_B2B2GRUNTLEFT, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftPreFight, MSGBOX_DEFAULT
-    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
+    playbgm MUS_HG_TEAM_ROCKET_HQ, FALSE
 	trainerbattle_no_intro TRAINER_GRUNT_57, GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftBeaten
-	playbgm MUS_HG_ENCOUNTER_ROCKET, TRUE
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	playse SE_PIN
 	applymovement LOCALID_UNDERGROUND_STORAGE_B2B2GRUNTRIGHT, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
 	msgbox GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightPreFight, MSGBOX_DEFAULT
-    playbgm MUS_HG_TEAM_ROCKET_HQ, TRUE
+    playbgm MUS_HG_TEAM_ROCKET_HQ, FALSE
 	trainerbattle_no_intro TRAINER_GRUNT_58, GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightBeaten
 	setvar VAR_ALL_B2B_STATE, 8
 	release
 	end
 
 GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftPreFight:
-	.string "Where's the DIRECTOR?\p"
+	.string "Where's the Director?\p"
     .string "What, did you think we'd just direct you\n"
     .string "towards him, or...?$"
 
@@ -236,10 +236,10 @@ GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftBeaten:
 GoldenrodCity_UndergroundStorage_Text_B2B2GruntLeftAfter:
 	.string "Well, my girlfriend thinks I'm hilarious!\p"
     .string "You wouldn't know her, though.\n"
-    .string "She, uh... She lives in GALAR.$"
+    .string "She, uh... She lives in Galar.$"
 
 GoldenrodCity_UndergroundStorage_Text_B2B2GruntRightPreFight:
-	.string "ARCHER says we're not allowed to look\n"
+	.string "Archer says we're not allowed to look\n"
     .string "through these big storage boxes,\l"
     .string "and I have no idea why.\p"
     .string "We're already in big trouble if this\n"
@@ -342,7 +342,7 @@ GoldenrodCity_UndergroundStorage_Movement_B2B2BGruntRightBeaten::
 	step_end
 
 GoldenrodCity_UndergroundStorage_Text_B2B2BGruntDownAskIfReady:
-    .string "Come for the DIRECTOR, have you?\p"
+    .string "Come for the Director, have you?\p"
     .string "Well aren't you adorable, trying to play\n"
     .string "the hero.\p"
     .string "Still feeling brave even though there's\n"
@@ -384,7 +384,7 @@ GoldenrodCity_UndergroundStorage_Text_B2B2BGruntRightBeaten:
 	.string "Oh. I wish I trained a little harder now.$"
 
 GoldenrodCity_UndergroundStorage_Text_B2B2BGruntRightAfter:
-	.string "The DIRECTOR is lucky he has people\n"
+	.string "The Director is lucky he has people\n"
 	.string "like you willing to fight for him.\p"
 	.string "If someone kidnapped me, I think I'd\n"
     .string "just get left there...$"

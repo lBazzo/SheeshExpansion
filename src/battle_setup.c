@@ -754,6 +754,10 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_WATER;
         return BATTLE_ENVIRONMENT_PLAIN;
+    case MAP_TYPE_NONE:
+        if (GetCurrentRegionMapSectionId() == MAPSEC_OLIVINE_LIGHTHOUSE)
+            return BATTLE_ENVIRONMENT_BUILDING;
+
     }
     if (MetatileBehavior_IsDeepOrOceanWater(tileBehavior))
         return BATTLE_ENVIRONMENT_WATER;

@@ -1,8 +1,8 @@
 .set LOCALID_RADIOTOWER_3F_B2B2BGRUNTTOP, 10
 .set LOCALID_RADIOTOWER_3F_B2B2BGRUNTRIGHT, 11
 .set LOCALID_RADIOTOWER_3F_B2B2BGRUNTBOT, 9
-.set LOCALID_RADIOTOWER_3F_B2BGRUNTLEFT, 14
-.set LOCALID_RADIOTOWER_3F_B2BGRUNTRIGHT, 15
+.set LOCALID_RADIOTOWER_3F_B2BGRUNTLEFT, 13
+.set LOCALID_RADIOTOWER_3F_B2BGRUNTRIGHT, 14
 
 
 
@@ -12,7 +12,7 @@ GoldenrodCity_RadioTower_3F_hns_MapScripts::
 	.byte 0
 
 GoldenrodCity_RadioTower_3F_OnTransition::
-	call_if_ge VAR_ALL_B2B_STATE, 9, GoldenrodRadioTower3_EventScript_MoveBeatenGrunts
+	call_if_gt VAR_ALL_B2B_STATE, 9, GoldenrodRadioTower3_EventScript_MoveBeatenGrunts
 	end
 
 GoldenrodCity_RadioTower_3F_OnLoad::
@@ -86,9 +86,9 @@ GoldenrodCity_RadioTower_3F_EventScript_Cooltrainer2::
 	msgbox GoldenrodCity_RadioTower_3F_Text_CooltrainerFHeroGift, MSGBOX_DEFAULT
 	closemessage
 	@giveitem ITEM_TM_SKILL_SWAP
-	setflag FLAG_GOT_SKILL_SWAP
-	msgbox GoldenrodCity_RadioTower_3F_Text_CooltrainerFSunnyDay, MSGBOX_DEFAULT
-	closemessage
+	@setflag FLAG_GOT_SKILL_SWAP
+	@msgbox GoldenrodCity_RadioTower_3F_Text_CooltrainerFSunnyDay, MSGBOX_DEFAULT
+	@closemessage
 	release
 	end
 
@@ -149,30 +149,30 @@ GoldenrodCity_RadioTower_3F_EventScript_Sign2::
 	end
 
 GoldenrodCity_RadioTower_3F_Text_CardKeySlot:
-	.string "It's the CARD KEY slot.$"
+	.string "It's the Card Key slot.$"
 
 GoldenrodCity_RadioTower_3F_Text_InsertedCardKey:
-	.string "{PLAYER} inserted the CARD KEY.$"
+	.string "{PLAYER} inserted the Card Key.$"
  
 GoldenrodCity_RadioTower_3F_Text_Open:
 	.string "The gate is open.$"
 
 GoldenrodCity_RadioTower_3F_Text_PersonnelSign:
-	.string "3F PERSONNEL$"
+	.string "3F Personnel$"
 
 GoldenrodCity_RadioTower_3F_Text_PokemonMusicSign:
-	.string "Pokémon MUSIC with Host DJ BEN$"
+	.string "Pokémon Music with Host DJ Ben$"
 
 GoldenrodCity_RadioTower_3F_Text_SuperNerd:
 	.string "We have recordings of the cries\n"
 	.string "of all Pokémon that have been\l"
 	.string "found.\p"
-	.string "We must have about 400 kinds.$"
+	.string "We must have about 1000 kinds.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuideRockets:
 	.string "To trainers, Pokémon are their\n"
 	.string "beloved partners.\p"
-	.string "It's terrible how TEAM ROCKET is\n"
+	.string "It's terrible how Team Rocket is\n"
 	.string "trying to control Pokémon.$"
 
 GoldenrodCity_RadioTower_3F_Text_GymGuide:
@@ -182,18 +182,17 @@ GoldenrodCity_RadioTower_3F_Text_GymGuide:
 	.string "clock too!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFPleaseSave:
-	.string "The TEAM ROCKET boss has locked\n"
+	.string "The Team Rocket boss has locked\n"
 	.string "himself in.\p"
-	.string "But the DIRECTOR can open it.\p"
+	.string "But the Director can open it.\p"
 	.string "He's up on the fifth floor.\p"
 	.string "Please save him!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFDirectorSafe:
-	.string "Is the DIRECTOR safe?$"
+	.string "Is the Director safe?$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFHeroGift:
-	.string "Thank you! You're my hero!\p"
-	.string "This is a token of my appreciation.$"
+	.string "Thank you! You're my hero!$"
 
 GoldenrodCity_RadioTower_3F_Text_CooltrainerFSunnyDay:
 	.string "It's SKILL SWAP. It swaps the ability\n"
@@ -205,14 +204,14 @@ GoldenrodCity_RadioTower_3F_Text_CooltrainerFMarvelous:
 GoldenrodCity_RadioTower_3F_Text_GruntM7Seen:
 	.string "I've been given strict orders.\p"
 	.string "I'm to crush anyone who challenges\n"
-	.string "TEAM ROCKET!$"
+	.string "Team Rocket!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7Beaten:
 	.string "What?!$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM7After:
 	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "Archer will be so upset...$"
 
 GoldenrodCity_RadioTower_3F_Text_GruntM8Seen:
 	.string "It feels great ordering Pokémon\n"
@@ -234,7 +233,7 @@ GoldenrodCity_RadioTower_3F_Text_GruntM9Beaten:
 
 GoldenrodCity_RadioTower_3F_Text_GruntM9After:
 	.string "What?! You made it past our men in\n"
-	.string "the UNDERGROUND?\p"
+	.string "the Underground?\p"
 	.string "How could you?$"
 
 GoldenrodCity_RadioTower_3F_Text_Grunt50MarcSeen:
@@ -261,11 +260,11 @@ GoldenrodCity_RadioTower_3F_Text_BlockingRocket:
 .string "Oh man, oh man, oh man...\p"
 .string "It's my first day and I already screwed\n"
 .string "up big time!\p"
-.string "I think I lost my CARD KEY somewhere in\n"
+.string "I think I lost my Card Key somewhere in\n"
 .string "the underground, and now I can't\l"
 .string "actually get to my station.\p"
-.string "If ARIANA finds out what I did,\n"
-.string "going to- to...\p"
+.string "If Ariana finds out what I did,\n"
+.string "I'm going to- to...\p"
 .string "do something!\p"
 .string "Do you think you could help me out and,\n"
 .string "say, create a big diversion by rescuing\l"
@@ -314,8 +313,8 @@ GoldenrodCity_RadioTower_3F_Text_PokemaniacIssacAfterBattle:
 	.string "shockwave that obliterates the\l"
 	.string "entirety of Springfield.\p"
 	.string "Does no one see any issues with that?\p"
-	.string "And did GIOVANNI just delete\n"
-	.string "everyone's number from his POKéGEAR?\l"
+	.string "And did Giovanni just delete\n"
+	.string "everyone's number from his Pokégear?\l"
 	.string "If so, they should really respect his\l"
 	.string "privacy and leave him alone.\p"
 	.string "That's just my opinion, I guess...$"
@@ -331,7 +330,7 @@ GoldenrodCity_RadioTower_3F_EventScript_B2B2B::
 	waitmovement 0
 	msgbox GoldenrodCity_RadioTower_3F_Text_B2B2BGruntRightPreFight, MSGBOX_DEFAULT
 	playbgm MUS_HG_ROCKET_TAKEOVER, TRUE
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntRightBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_63, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntRightBeaten
 	applymovement LOCALID_RADIOTOWER_3F_B2B2BGRUNTRIGHT, GoldenrodCity_RadioTower_3F_Movement_B2B2BGruntRightBeaten
     waitmovement 0
 	applymovement LOCALID_RADIOTOWER_3F_B2B2BGRUNTTOP, Common_Movement_WalkInPlaceDown
@@ -339,7 +338,7 @@ GoldenrodCity_RadioTower_3F_EventScript_B2B2B::
 	waitmovement 0 
     waitmovement 0
 	msgbox GoldenrodCity_RadioTower_3F_Text_B2B2BGruntTopPreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntTopBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_64, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntTopBeaten
     applymovement LOCALID_RADIOTOWER_3F_B2B2BGRUNTTOP, Common_Movement_WalkInPlaceDown
     waitmovement 0
     applymovement LOCALID_RADIOTOWER_3F_B2B2BGRUNTBOT, Common_Movement_WalkInPlaceUp
@@ -347,7 +346,7 @@ GoldenrodCity_RadioTower_3F_EventScript_B2B2B::
 	waitmovement 0 
     waitmovement 0
 	msgbox GoldenrodCity_RadioTower_3F_Text_B2B2BGruntBotPreFight, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_21, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntBotBeaten
+	trainerbattle_no_intro TRAINER_GRUNT_65, GoldenrodCity_RadioTower_3F_Text_B2B2BGruntBotBeaten
     applymovement LOCALID_RADIOTOWER_3F_B2B2BGRUNTBOT, GoldenrodCity_RadioTower_3F_Movement_B2B2BGruntBotBeaten
     waitmovement 0
     setobjectxyperm LOCALID_RADIOTOWER_3F_B2B2BGRUNTRIGHT, 27, 11
@@ -370,7 +369,7 @@ GoldenrodCity_RadioTower_3F_Movement_B2B2BGruntBotBeaten::
 
 GoldenrodCity_RadioTower_3F_Text_B2B2BGruntRightPreFight:
 	.string "Hey! It's you! Remember us? We're the\n"
-	.string "ROCKET TRIO!\p"
+	.string "Grunt Trio!\p"
 	.string "...\p"
 	.string "What, really? You don't remember-\p"
 	.string "You know what, nevermind! The point is,\n"
@@ -402,7 +401,7 @@ GoldenrodCity_RadioTower_3F_Text_B2B2BGruntTopAfter:
     .string "have to go things alone again.$"
 
 GoldenrodCity_RadioTower_3F_Text_B2B2BGruntBotPreFight:
-    .string "I'm the slowest of the GRUNT TRIO!\p"
+    .string "I'm the slowest of the Grunt Trio!\p"
     .string "Ah wait, that was the intro for last\n"
 	.string "time... What was I meant to say again?$"
 
@@ -509,14 +508,14 @@ GoldenrodCity_RadioTower_3F_Movement_AdjustGruntRight2:
 GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftPreFight:
 	.string "I've been given strict orders.\p"
 	.string "I'm to crush anyone who challenges\n"
-	.string "TEAM ROCKET!$"
+	.string "Team Rocket!$"
 
 GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftBeaten:
 	.string "What?!$"
 
 GoldenrodCity_RadioTower_3F_Text_B2BGruntLeftAfter:
 	.string "I failed in my duties…\p"
-	.string "ARCHER will be so upset...$"
+	.string "Archer will be so upset...$"
 
 GoldenrodCity_RadioTower_3F_Text_B2BGruntRightPreFight:
 	.string "It feels great ordering Pokémon\n"

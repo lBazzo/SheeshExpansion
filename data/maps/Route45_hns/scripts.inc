@@ -72,8 +72,8 @@ Route45_Text_HikerErikBeaten:
     .string "Oh, I lost that!$"
 
 Route45_Text_HikerErikAfter:
-    .string "I'll head back to BLACKTHORN's\n"
-    .string "ICE PATH and train some more.$"
+    .string "I'll head back to Blackthorn's\n"
+    .string "Ice Path and train some more.$"
 
 Route45_Text_HikerMichaelSeen:
     .string "Yo! You're spunky! But you know\n"
@@ -173,10 +173,10 @@ Route45_Text_CamperQuentinSeen:
     .string "I'm really, really tough!$"
 
 Route45_Text_CamperQuentinBeaten:
-    .string "I was tough at the BATTLE TOWER…$"
+    .string "I was tough at the Battle Tower…$"
 
 Route45_Text_CamperQuentinAfter:
-    .string "Have you been to the BATTLE TOWER?\p"
+    .string "Have you been to the Battle Tower?\p"
     .string "I never, ever lose there, but…$"
 
 Route45_Text_Sign:
@@ -191,7 +191,7 @@ Route45_EventScript_Potter::
     faceplayer
     msgbox Route45_Text_PotterBefore, MSGBOX_DEFAULT
     closemessage
-    trainerbattle_no_intro TRAINER_RIVAL_TOTODILE_1, Route45_Text_PotterWin
+    trainerbattle_no_intro TRAINER_POTTER, Route45_Text_PotterWin
     msgbox Route45_Text_PotterAfter, MSGBOX_DEFAULT
     giveitem ITEM_CLEAR_BELL
     closemessage
@@ -221,16 +221,16 @@ Route45_EventScript_RocketTrigger::
 	end
 
 ElmPhoneRadioTowerRocketTakeoverText:
-	.string "PROF.ELM: {PLAYER}, how are\n"
+	.string "Prof.Elm: {PLAYER}, how are\n"
 	.string "things going?\p"
 	.string "I called because something weird\n"
 	.string "is happening with the radio\l"
 	.string "broadcasts.\p"
-	.string "They were talking about TEAM\n"
-	.string "ROCKET.\p"
+	.string "They were talking about Team\n"
+	.string "Rocket.\p"
 	.string "{PLAYER}, do you know anything\n"
 	.string "about it?\p"
-	.string "Maybe TEAM ROCKET has returned.\n"
+	.string "Maybe Team Rocket has returned.\n"
 	.string "No, that just can't be true.\p"
 	.string "Sorry to bug you.\n"
 	.string "Take care!$"
@@ -242,7 +242,7 @@ Route45_Text_PotterBefore:
     .string "I see. Well, I'm just Harry. It's good to\n"
     .string "meet you.\p"
     .string "I knew I'd run into you here, {PLAYER}.\n"
-    .string "I just felt like ROUTE 45 was the place\l"
+    .string "I just felt like Route 45 was the place\l"
     .string "to be, do you know what I mean?\p"
     .string "Anyway, it's fascinating, isn't it?\p"
     .string "How the people here get animals to use\n"
@@ -266,4 +266,4 @@ Route45_Text_PotterAfter:
     .string "but something tells me you're going to\l"
     .string "become pretty busy right about now.\p"
     .string "Why don't you take this with you? It\n"
-    .string "feels like it belongs to you, somehow.$"
+    .string "feels like it belongs to you.$"

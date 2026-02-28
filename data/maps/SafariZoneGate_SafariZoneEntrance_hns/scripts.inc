@@ -372,25 +372,25 @@ SafariZoneGate_SafariZoneEntrance_Text_BaobaWelcome:
 	.string "Hi {PLAYER}!\n"
 	.string "I've been waiting for you.\n"
 	.string "What do you think?\p"
-	.string "This is a brand new SAFARI ZONE\n"
+	.string "This is a brand new Safari Zone\n"
 	.string "by the way...\p"
 	.string "And it's still expanding!\p"
-	.string "So far, we have two zones open\n"
-	.string "and 4 more on the way!\p"
-	.string "Enjoy the SAFARI ZONE! I'll\n"
+	.string "So far, we have four zones open\n"
+	.string "and many more on the way!\p"
+	.string "Enjoy the Safari Zone! I'll\n"
 	.string "call you when the other zones\l"
 	.string "are ready!$"
 
 SafariZoneGate_SafariZoneEntrance_Text_BaobaPokeblocks:
 	.string "Oh! I almost forgot.\p"
-	.string "POKéBLOCKS are an essential\n"
-	.string "feature of my SAFARI ZONE, so\l"
+	.string "Pokéblocks are an essential\n"
+	.string "feature of my Safari Zone, so\l"
 	.string "you'd better have one of these!$"
 
 SafariZoneGate_SafariZoneEntrance_Text_Baoba:
 	.string "Hi {PLAYER}!\p"
-	.string "How are you enjoying the SAFARI\n"
-	.string "ZONE?$"
+	.string "How are you enjoying the Safari\n"
+	.string "Zone?$"
 
 SafariZoneGate_SafariZoneEntrance_Text_Boy:
 	.string "I heard the new zone they\n"

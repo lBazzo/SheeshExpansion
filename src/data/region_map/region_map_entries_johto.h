@@ -8,13 +8,13 @@
 
 static const u8 sJMapName_VIOLET_CITY[] = _("VIOLET CITY");
 static const u8 sJMapName_AZALEA_TOWN[] = _("AZALEA TOWN");
-static const u8 sJMapName_GOLDENROD_CITY[] = _("GOLDENROD CITY");
+static const u8 sJMapName_Goldenrod_City[] = _("Goldenrod City");
 static const u8 sJMapName_ECRUTEAK_CITY[] = _("ECRUTEAK CITY");
 static const u8 sJMapName_OLIVINE_CITY[] = _("OLIVINE CITY");
-static const u8 sJMapName_CIANWOOD_CITY[] = _("CIANWOOD CITY");
+static const u8 sJMapName_Cianwood_City[] = _("Cianwood City");
 static const u8 sJMapName_SAFARI_ZONE_GATE[] = _("SAFARI ZONE GATE");
-static const u8 sJMapName_MAHOGANY_TOWN[] = _("MAHOGANY TOWN");
-static const u8 sJMapName_BLACKTHORN_CITY[] = _("BLACKTHORN CITY");
+static const u8 sJMapName_Mahogany_Town[] = _("Mahogany Town");
+static const u8 sJMapName_Blackthorn_City[] = _("Blackthorn City");
 static const u8 sJMapName_CHERRYGROVE_CITY[] = _("CHERRYGROVE CITY");
 static const u8 sJMapName_INDIGO_PLATEAU[] = _("INDIGO PLATEAU");
 static const u8 sJMapName_ROUTE_26[] = _("ROUTE 26");
@@ -101,7 +101,7 @@ static const u8 sJMapName_WHIRL_ISLANDS[] = _("WHIRL ISLANDS");
 static const u8 sJMapName_CLIFF_CAVE[] = _("CLIFF CAVE");
 static const u8 sJMapName_MT_MORTAR[] = _("MT MORTAR");
 static const u8 sJMapName_LAKE_OF_RAGE[] = _("LAKE OF RAGE");
-static const u8 sJMapName_ICE_PATH[] = _("ICE PATH");
+static const u8 sJMapName_Ice_Path[] = _("Ice Path");
 static const u8 sJMapName_MT__SILVER[] = _("MT. SILVER");
 static const u8 sJMapName_TOHJO_FALLS[] = _("TOHJO FALLS");
 static const u8 sJMapName_SPROUT_TOWER[] = _("SPROUT TOWER");
@@ -147,7 +147,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 8,
         .width = 1,
         .height = 2,
-        .name = sJMapName_GOLDENROD_CITY,
+        .name = sJMapName_Goldenrod_City,
     },
     [MAPSEC_ECRUTEAK_CITY] = {
         .x = 10,
@@ -168,7 +168,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 11,
         .width = 1,
         .height = 1,
-        .name = sJMapName_CIANWOOD_CITY,
+        .name = sJMapName_Cianwood_City,
     },
     [MAPSEC_SAFARI_ZONE_GATE] = {
         .x = 2,
@@ -182,14 +182,14 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sJMapName_MAHOGANY_TOWN,
+        .name = sJMapName_Mahogany_Town,
     },
     [MAPSEC_BLACKTHORN_CITY] = {
         .x = 18,
         .y = 2,
         .width = 1,
         .height = 1,
-        .name = sJMapName_BLACKTHORN_CITY,
+        .name = sJMapName_Blackthorn_City,
     },
     [MAPSEC_CHERRYGROVE_CITY] = {
         .x = 14,
@@ -812,7 +812,7 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .y = 1,
         .width = 1,
         .height = 1,
-        .name = sJMapName_ICE_PATH,
+        .name = sJMapName_Ice_Path,
     },
     [MAPSEC_MT_SILVER] = {
         .x = 14,

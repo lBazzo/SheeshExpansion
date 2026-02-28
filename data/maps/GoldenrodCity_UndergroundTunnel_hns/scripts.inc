@@ -106,6 +106,7 @@ GoldenrodCity_UndergroundTunnel_Movement_Kimono_Leave2:
 	walk_up
 	walk_up
 	walk_up
+	walk_up
 	step_end
 
 
@@ -116,7 +117,7 @@ GoldenrodCity_UndergroundTunnel_Text_Kimono1:
 	.string "So, you took on Team Rocket?\l"
 	.string "You are impressive!\p"
 	.string "You may be able to face the\n"
-	.string "legendary POKé...$"
+	.string "legendary Poké...$"
 
 GoldenrodCity_UndergroundTunnel_Text_Kimono2:
 	.string "Hahaha! Never mind.\n"
@@ -317,13 +318,13 @@ GoldenrodUnderground_HerbShop_Pokemart:
 	pokemartlistend
 
 GoldenrodUnderground_HerbShop_Text_WelcomeToHerbShop:
-	.string "Welcome to the HERB SHOP, home of\n"
+	.string "Welcome to the Herb Shop, home of\n"
 	.string "effective and inexpensive medicine!$"
 
 GoldenrodUnderground_Text_YoungerBrotherOffer:
-    .string "Welcome to the Pokémon SALON!\p"
+    .string "Welcome to the Pokémon Salon!\p"
     .string "I'm the younger and less expensive\n"
-    .string "of the two HAIRCUT BROTHERS.\p"
+    .string "of the two Haircut Brothers.\p"
     .string "I'll spiff up your Pokémon for just\n"
     .string "¥300.\p"
     .string "So? How about it?$"
@@ -351,9 +352,9 @@ GoldenrodUnderground_Text_YoungerBrotherOnePerDay:
 
 GoldenrodUnderground_Text_OlderBrotherOffer:
     .string "Welcome!\p"
-    .string "I run the Pokémon SALON!\p"
+    .string "I run the Pokémon Salon!\p"
     .string "I'm the older and better of the two\n"
-    .string "HAIRCUT BROTHERS.\p"
+    .string "Haircut Brothers.\p"
     .string "I can make your Pokémon beautiful\n"
     .string "for just ¥500.\p"
     .string "Would you like me to do that?$"
@@ -392,10 +393,10 @@ GoldenrodUnderground_Text_DoorIsOpen:
     .string "The door is open.$"
 
 GoldenrodUnderground_Text_KeyOpenedDoor:
-    .string "The BASEMENT KEY opened the door.$"
+    .string "The Basement Key opened the door.$"
 
 GoldenrodUnderground_Text_NoEntry:
-    .string "NO ENTRY BEYOND THIS POINT$"
+    .string "No Entry Beyond This Point$"
 
 
 
@@ -409,7 +410,7 @@ GoldenrodUnderground_Text_NoEntry:
 GoldenrodCity_UndergroundTunnel_EventScript_Lucy::
 	lock
 	faceplayer
-	playbgm MUS_B_PIKE, TRUE
+	playbgm MUS_B_PIKE, FALSE
 	goto_if_set FLAG_LUCY_CHALLENGE_EXPLAINED, GoldenrodCity_UndergroundTunnel_EventScript_LucyPostIntro
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyIntro, MSGBOX_DEFAULT
 	closemessage
@@ -434,7 +435,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleNormal::
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyPreBattleNormal, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_LUCY, GoldenrodCity_UndergroundTunnel_Text_LucyWin
-	playbgm MUS_B_PIKE, TRUE
+	@playbgm MUS_B_PIKE, TRUE
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyNormalAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 2
 	giveitem ITEM_SERIOUS_MINT
@@ -455,7 +456,7 @@ GoldenrodCity_UndergroundTunnel_EventScript_LucyBattleHard::
 	closemessage
 	special SetRandomStatus
 	trainerbattle_no_intro TRAINER_LUCY, GoldenrodCity_UndergroundTunnel_Text_LucyWin
-	playbgm MUS_B_PIKE, TRUE
+	@playbgm MUS_B_PIKE, TRUE
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 5
 	msgbox GoldenrodCity_UndergroundTunnel_Text_LucyLeaving, MSGBOX_DEFAULT
@@ -480,13 +481,14 @@ GoldenrodCity_UndergroundTunnel_EventScript_DeclineLucyChallenge::
 
 GoldenrodCity_UndergroundTunnel_Text_LucyIntro:
     .string "Listen. I'm not one for chit chat.\n"
-	.string "My name is Lucy.\p"
-	.string "LUCY: The other FRONTIER heads all had\n"
+	.string "I'm Lucy.\p"
+	.string "Lucy: The other Frontier heads all had\n"
 	.string "some deep, introspective reason for\l"
 	.string "challenging you, didn't they?\p"
 	.string "Sorry to disappoint. I only want to\n"
 	.string "fight you because you beat them.\p"
-	.string "If I win, that makes me the strongest...\p"
+	.string "If I win, that makes me the strongest...\n"
+	.string "Heh heh...\p"
 	.string "Hm? The challenge? I suppose I could\n"
 	.string "think of one...\p"
 	.string "If you want to prove yourself, I will\n"
@@ -509,7 +511,7 @@ GoldenrodCity_UndergroundTunnel_Text_LucyNormalAfter:
 
 GoldenrodCity_UndergroundTunnel_Text_LucyLeaving:
     .string "I'm not going to forget this...\p"
-	.string "Come to the BATTLE PYKE soon. I'll get\n"
+	.string "Come to the Battle Pyke soon. I'll get\n"
 	.string "my revenge there.\p"
 	.string "...You'd better not keep me waiting.$"
 

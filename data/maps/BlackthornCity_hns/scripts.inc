@@ -158,22 +158,22 @@ BlackthornCity_EventScript_SantosCompleted::
 
 
 BlackthornCity_Text_ClairNotReady:
-	.string "CLAIR, our GYM LEADER, has been\n"
+	.string "Clair, our Gym Leader, has been\n"
 	.string "following your progress.\p"
 	.string "However, she only battles trainers\n"
 	.string "who have proven themselves worthy.$"
 
 BlackthornCity_Text_ClairIsIn:
-	.string "CLAIR, our GYM LEADER, is waiting\n"
+	.string "Clair, our Gym Leader, is waiting\n"
 	.string "for you.\p"
 	.string "However, it would be impossible for\n"
 	.string "a run-of-the-mill trainer to win.$"
 
 BlackthornCity_Text_ClairIsBeaten:
-	.string "You defeated CLAIR?\p"
+	.string "You defeated Clair?\p"
 	.string "That's amazing!\p"
 	.string "I've never heard of her losing to\n"
-	.string "anyone other than LANCE.$"
+	.string "anyone other than Lance.$"
 
 BlackthornGrampsRefusesEntryText:
 	.string "No. Only chosen trainers may train\n"
@@ -181,8 +181,8 @@ BlackthornGrampsRefusesEntryText:
 	.string "Please leave.$"
 
 BlackthornGrampsGrantsEntryText:
-	.string "If CLAIR allows it, her grand-\n"
-	.string "father--our MASTER--will also.\p"
+	.string "If Clair allows it, her grand-\n"
+	.string "father--our Master--will also.\p"
 	.string "You may enter.$"
 
 BlackBeltText_VoicesInMyHead:
@@ -195,7 +195,7 @@ BlackthornCooltrainerF1Text:
 
 BlackthornYoungsterText:
 	.string "Dragon masters all come from the city\n"
-	.string "of BLACKTHORN.$"
+	.string "of Blackthorn.$"
 
 BlackthornCity_MeetSantosText:
 	.string "SANTOS: …\p"
@@ -220,21 +220,21 @@ BlackthornCity_SantosNopeText:
 	.string "SANTOS: No.$"
 
 BlackthornCooltrainerF2Text:
-	.string "Wow, you came through the ICE PATH?\p"
+	.string "Wow, you came through the Ice Path?\p"
 	.string "You must be a real hotshot trainer!$"
 
 BlackthornCitySignText:
-	.string "BLACKTHORN CITY\p"
+	.string "Blackthorn City\p"
 	.string "A Quiet Mountain Retreat$"
 
 BlackthornGymSignText:
-	.string "BLACKTHORN CITY Pokémon GYM\n"
-	.string "LEADER: CLAIR\p"
+	.string "Blackthorn City Pokémon Gym\n"
+	.string "Leader: Clair\p"
 	.string "The Blessed User of Dragon Pokémon$"
 
 BlackthornCity_Text_MoveDeletersHouseSign:
-	.string "MOVE BROS' HOUSE$"
+	.string "Move Tutor's House$"
 
 BlackthornCity_Text_DragonDenSign:
-	.string "DRAGON'S DEN AHEAD$"
+	.string "Dragon's Den Ahead$"
 

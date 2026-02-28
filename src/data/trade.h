@@ -1013,7 +1013,7 @@ static const struct InGameTrade sIngameTrades[] =
     },
     [INGAME_TRADE_ONIX] =
     {
-        .nickname = _("ROCKY"),
+        .nickname = _("Rocky"),
         .species = SPECIES_ONIX,
         .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 1,
@@ -1022,7 +1022,7 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x96,
         .heldItem = ITEM_PERSIM_BERRY,
         .mailNum = 0,
-        .otName = _("RUDY"),
+        .otName = _("Rudy"),
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_ODDISH
@@ -1061,23 +1061,23 @@ static const struct InGameTrade sIngameTrades[] =
     },
     [INGAME_TRADE_MACHOP] =
     {
-        .nickname = _("MUSCLE"),
+        .nickname = _("Muscle"),
         .species = SPECIES_MACHOP,
         .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 0,
         .otId = 44312,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x19,
-        .heldItem = ITEM_MACHO_BRACE,
+        .heldItem = ITEM_IAPAPA_BERRY,
         .mailNum = 0,
-        .otName = _("JOSE"),
+        .otName = _("Jose"),
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_FURRET
     },
     [INGAME_TRADE_VOLTORB] =
     {
-        .nickname = _("VOLTY"),
+        .nickname = _("Volty"),
         .species = SPECIES_VOLTORB,
         .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 1,
@@ -1086,26 +1086,26 @@ static const struct InGameTrade sIngameTrades[] =
         .personality = 0x00000000,
         .heldItem = ITEM_CHERI_BERRY,
         .mailNum = 0,
-        .otName = _("TIM"),
+        .otName = _("Tim"),
         .otGender = MALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_CORSOLA
     },
-    [INGAME_TRADE_MR_MIME] =
+    [INGAME_TRADE_MIMIKYU] =
     {
-        .nickname = _("MIMIEN"),
-        .species = SPECIES_MR_MIME,
-        .ivs = {4, 4, 4, 5, 5, 4},
+        .nickname = _("Mimi"),
+        .species = SPECIES_MIMIKYU,
+        .ivs = {16, 16, 16, 16, 16, 16},
         .abilityNum = 0,
         .otId = 10283,
         .conditions = {5, 5, 30, 5, 5},
         .personality = 0x00000008,
-        .heldItem = ITEM_SMOKE_BALL,
+        .heldItem = ITEM_SOOTHE_BELL,
         .mailNum = 0,
-        .otName = _("EMY"),
+        .otName = _("Emy"),
         .otGender = FEMALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_DODRIO
+        .requestedSpecies = SPECIES_CYCLIZAR
     },
     [INGAME_TRADE_MAGNETON] =
     {

@@ -660,6 +660,8 @@ bool32 IsGrassBackgroundTrainer(u16 trainerId)
         case TRAINER_TODD:
         case TRAINER_GINA:
             return TRUE;
+        default:
+            return FALSE;
     }
     return FALSE;
 }
@@ -674,9 +676,48 @@ bool32 IsSandBackgroundTrainer(u16 trainerId)
         case TRAINER_IVAN:
         case TRAINER_BRYAN:
             return TRUE;
+        default:
+            return FALSE;
     }
     return FALSE;
 }
+/*
+bool32 IsBuildingBackgroundTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_KENNY:
+        case TRAINER_MARTIN:
+        case TRAINER_CARTER:
+        case TRAINER_TREVOR:
+        case TRAINER_ALFRED:
+        case TRAINER_DENIS:
+        case TRAINER_TOMMY:
+        case TRAINER_BILLY:
+        case TRAINER_HUEY:
+        case TRAINER_PRESTON:
+        case TRAINER_TERRELL:
+        case TRAINER_THEO:
+        case TRAINER_KIPP:
+        case TRAINER_BORIS:
+        case TRAINER_JOHNNY:
+        case TRAINER_CONNIE:
+        case TRAINER_ARNOLD:
+        case TRAINER_BOB:
+        case TRAINER_DUDLEY:
+        case TRAINER_KENT:
+        case TRAINER_JOE:
+        case TRAINER_SHANNON:
+        case TRAINER_LAURA:
+        case TRAINER_LLOYD:
+        case TRAINER_ELLEN:
+        case TRAINER_ERNEST:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+    return FALSE;
+}*/
 
 static u8 GetBattleEnvironmentOverride(void)
 {
@@ -723,6 +764,10 @@ static u8 GetBattleEnvironmentOverride(void)
     {
         return BATTLE_ENVIRONMENT_SAND;
     }
+    /*else if (IsBuildingBackgroundTrainer(TRAINER_BATTLE_PARAM.opponentA))
+    {
+        return BATTLE_ENVIRONMENT_PLAIN;
+    }*/
 
     if (battleScene == MAP_BATTLE_SCENE_NORMAL)
         return gBattleEnvironment;
