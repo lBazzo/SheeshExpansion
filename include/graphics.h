@@ -1826,6 +1826,10 @@ extern const u16 gItemIconPalette_TwiceSpicedRadish[];
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];
 
+//gb player
+extern const u32 gItemIcon_GBPlayer[];
+extern const u16 gItemIconPalette_GBPlayer[];
+
 //menu graphics
 extern const u16 gMenuInfoElements1_Pal[16];
 extern const u16 gMenuInfoElements2_Pal[16];

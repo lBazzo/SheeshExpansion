@@ -420,7 +420,7 @@ gSongTable::
 	song mus_contest, MUSIC_PLAYER_BGM, 0
 	song mus_encounter_magma, MUSIC_PLAYER_BGM, 0
 	song mus_intro_battle, MUSIC_PLAYER_BGM, 0
-	song mus_weather_kyogre, MUSIC_PLAYER_BGM, 0
+	@song mus_weather_kyogre, MUSIC_PLAYER_BGM, 0
 	song mus_weather_groudon, MUSIC_PLAYER_BGM, 0
 	song mus_sootopolis, MUSIC_PLAYER_BGM, 0
 	song mus_contest_results, MUSIC_PLAYER_BGM, 0
@@ -724,6 +724,7 @@ gGBSSongTable:: @ "gbs_hg_" tracks are new tracks that were transcribed from HGS
 	@ Fanfares (src/sound.c)
 	song_gbs MUS_LEVEL_UP, gbs_sfx_levelup_Header, 2, 2	@ Used for more than just Leveling Up TODO: Pinpoint
 	song_gbs MUS_EVOLVED, gbs_sfx_caughtmon_Header, 2, 2	@ Finish Evolving/Hatching & Pokémon Caught (Fanfare mapped to HGSS Version) TODO: Test
+	song_gbs MUS_RG_CAUGHT_INTRO, gbs_sfx_caughtmon_Header, 2, 2 @ Finish Evolving/Hatching & Pokémon Caught (Fanfare mapped to RG Version) TODO: Test
 	song_gbs MUS_OBTAIN_SYMBOL, gbs_sfx_getbadge_Header, 2, 2	@ Obtain Symbol Fanfare TODO: GBS CONVERSION
 
 	song_gbs MUS_HEAL, gbs_healpokemon_Header, 2, 2	@ Healing & Goldenrod Haircuts Fanfare -> Techically didn't need to be mapped due to how fanfares are handled
@@ -978,7 +979,7 @@ gGBSSongTable:: @ "gbs_hg_" tracks are new tracks that were transcribed from HGS
 	
 	song_gbs MUS_EVOLUTION_INTRO, gbs_sfx_evolutionintro_Header, 2, 2	@ Evolution/Hatching Intro
 	song_gbs MUS_EVOLUTION, gbs_evolution_Header, 0, 0	@ Evolution/Hatching/Trading BGM
-	@ TODO: song_gbs MUS_HG_CAUGHT, gbs_successfulcapture_Header 0, 0 @ Unused in HnS (possible mapping?)
+	song_gbs MUS_HG_CAUGHT, gbs_successfulcapture_Header 0, 0
 	@ TODO: song_gbs MUS_HG_EVOLUTION, gbs_evolution_Header, 0, 0 @ Unused in HnS (possible mapping?)
 	@ TODO: song_gbs MUS_HG_EVOLUTION_NO_INTRO, 0, 0 @ Unused in HnS
 	
@@ -986,7 +987,7 @@ gGBSSongTable:: @ "gbs_hg_" tracks are new tracks that were transcribed from HGS
 	@ Misc
 	song_gbs MUS_HG_MOVE_DELETED, gbs_sfx_movedeleted_Header, 2, 2	@ Move Deleter - Blackthorn
 	song_gbs MUS_HG_CYCLING, gbs_bicycle_Header, 0, 0	@ Route 17 (Kanto Bike Path) (Cycling music was cut in favor of having location/map music play.) TODO: Test
-	@song_gbs MUS_HG_SURF, gbs_surf_Header, 0, 0 @ Unused in HnS - Surf music was cut in favor of having location/map music play.
+	song_gbs MUS_HG_SURF, gbs_surf_Header, 0, 0 
 
 
 	@ Unused Music

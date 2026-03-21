@@ -313,6 +313,7 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 0
 
 	@additem ITEM_EXP_SHARE
+	additem ITEM_GB_PLAYER
 	setflag FLAG_EXP_SHARE
 #else
 	setflag FLAG_HIDE_CONTEST_POKE_BALL

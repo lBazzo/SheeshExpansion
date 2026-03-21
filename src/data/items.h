@@ -6863,8 +6863,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_GBPlayer,
         .importance = 1,
-        .iconPic = gItemIcon_PokeBall,
-        .iconPalette = gItemIconPalette_PokeBall,
+        .iconPic = gItemIcon_GBPlayer,
+        .iconPalette = gItemIconPalette_GBPlayer,
     },
 
 // Gems
