@@ -60,6 +60,12 @@ struct LinkPlayerObjectEvent
 //   u16 altWeight;
 // };
 
+enum {
+    MUSIC_DISABLE_OFF,
+    MUSIC_DISABLE_STOP,
+    MUSIC_DISABLE_KEEP,
+};
+
 // Exported RAM declarations
 extern struct WarpData gLastUsedWarp;
 extern struct LinkPlayerObjectEvent gLinkPlayerObjectEvents[4];
@@ -77,6 +83,7 @@ extern bool8 gSkipShowMonAnim;
 extern u8 gTimeOfDay;
 extern s16 gTimeUpdateCounter;
 extern u8 gGlobalFieldTintMode; // HnS
+extern u8 gDisableMapMusicChangeOnMapLoad;
 
 extern struct TimeBlendSettings gTimeBlend;
 

@@ -13,6 +13,7 @@
 #include "save.h"
 #include "new_game.h"
 #include "m4a.h"
+#include "event_data.h"
 #include "random.h"
 #include "decompress.h"
 #include "constants/songs.h"
@@ -1102,7 +1103,7 @@ static u8 SetUpCopyrightScreen(void)
         SetSerialCallback(SerialCB_CopyrightScreen);
         GameCubeMultiBoot_Init(&gMultibootProgramStruct);
 #if IS_HNS
-        m4aSongNumStart(MUS_HG_INTRO);
+        m4aSongNumStart(MUS_HG_INTRO, FlagGet(FLAG_SYS_GBS_ENABLED));
 #endif // IS_HNS
     // Expansion
     // REG_DISPCNT needs to be overwritten the second time, because otherwise the intro won't show up on VBA 1.7.2 and John GBA Lite emulators.
@@ -1232,7 +1233,7 @@ static void Task_Scene1_FadeIn(u8 taskId)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON);
     gTasks[taskId].func = Task_Scene1_WaterDrops;
     gIntroFrameCounter = 0;
-    m4aSongNumStart(MUS_INTRO);
+    m4aSongNumStart(MUS_INTRO, FlagGet(FLAG_SYS_GBS_ENABLED));
     ResetSerial();
 }
 
@@ -1755,7 +1756,7 @@ static void Task_Scene3_Load(u8 taskId)
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_1 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG2_ON | DISPCNT_OBJ_ON);
     gTasks[taskId].func = Task_Scene3_SpinPokeball;
     gIntroFrameCounter = 0;
-    m4aSongNumStart(MUS_INTRO_BATTLE);
+    m4aSongNumStart(MUS_INTRO_BATTLE, FlagGet(FLAG_SYS_GBS_ENABLED));
 }
 static void Task_Scene3_SpinPokeball(u8 taskId)
 {

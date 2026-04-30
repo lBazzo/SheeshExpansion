@@ -9,12 +9,16 @@
 #include "constants/songs.h"
 #include "task.h"
 #include "test_runner.h"
+#include "event_data.h"
+#include "load_save.h"
 
 struct Fanfare
 {
     u16 songNum;
     u16 duration;
 };
+
+extern u8 gDisableMapMusicChangeOnMapLoad;
 
 EWRAM_DATA struct MusicPlayerInfo *gMPlay_PokemonCry = NULL;
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
@@ -217,10 +221,12 @@ bool8 IsNotWaitingForBGMStop(void)
 void PlayFanfareByFanfareNum(enum FanfareId fanfareNum)
 {
     u16 songNum;
+    bool32 isGBSEnabled = FlagGet(FLAG_SYS_GBS_ENABLED);
     m4aMPlayStop(&gMPlayInfo_BGM);
+    m4aMPlayStop(&gMPlayInfo_SE2);
     songNum = sFanfares[fanfareNum].songNum;
     sFanfareCounter = sFanfares[fanfareNum].duration;
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, isGBSEnabled);
 }
 
 bool8 WaitFanfare(bool8 stop)
@@ -235,7 +241,7 @@ bool8 WaitFanfare(bool8 stop)
         if (!stop)
             m4aMPlayContinue(&gMPlayInfo_BGM);
         else
-            m4aSongNumStart(MUS_DUMMY);
+            m4aSongNumStart(MUS_DUMMY, FALSE);
 
         return TRUE;
     }
@@ -244,7 +250,7 @@ bool8 WaitFanfare(bool8 stop)
 // Unused
 void StopFanfareByFanfareNum(u8 fanfareNum)
 {
-    m4aSongNumStop(sFanfares[fanfareNum].songNum);
+    m4aSongNumStop(sFanfares[fanfareNum].songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
 }
 
 void PlayFanfare(u16 songNum)
@@ -301,14 +307,15 @@ static void CreateFanfareTask(void)
 
 void FadeInNewBGM(u16 songNum, u8 speed)
 {
+    bool32 isGBSEnabled = FlagGet(FLAG_SYS_GBS_ENABLED);
     if (gDisableMusic)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, isGBSEnabled);
     m4aMPlayImmInit(&gMPlayInfo_BGM);
     m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
-    m4aSongNumStop(songNum);
+    m4aSongNumStop(songNum, isGBSEnabled);
     m4aMPlayFadeIn(&gMPlayInfo_BGM, speed);
 }
 
@@ -590,17 +597,44 @@ void PlayBGM(u16 songNum)
         songNum = 0;
     if (songNum == MUS_NONE)
         songNum = 0;
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
+}
+
+static void ClearPlayerForGBSSoundEffect(u16 songNum, bool32 isGBSEnabled)
+{
+    const struct Song *song;
+
+    if (!isGBSEnabled)
+        return;
+
+    song = GetSong(songNum, TRUE);
+    if (song == &gSongTable[songNum])
+        return; // No GBS mapping - leave m4a to mix it as usual.
+
+    m4aMPlayStop(gMPlayTable[song->ms].info);
 }
 
 void PlaySE(u16 songNum)
 {
-    m4aSongNumStart(songNum);
+    if (gDisableMapMusicChangeOnMapLoad == 0)
+    {
+        bool32 isGBSEnabled = FlagGet(FLAG_SYS_GBS_ENABLED);
+
+        ClearPlayerForGBSSoundEffect(songNum, isGBSEnabled);
+        m4aSongNumStart(songNum, isGBSEnabled);
+    }
+}
+
+void PlaySECursorMove(u16 songNum)
+{
+    if (FlagGet(FLAG_SYS_GBS_ENABLED))
+        return;
+    m4aSongNumStart(songNum, FALSE);
 }
 
 void PlaySE12WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE1);
     m4aMPlayImmInit(&gMPlayInfo_SE2);
     m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
@@ -609,14 +643,14 @@ void PlaySE12WithPanning(u16 songNum, s8 pan)
 
 void PlaySE1WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE1);
     m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
 }
 
 void PlaySE2WithPanning(u16 songNum, s8 pan)
 {
-    m4aSongNumStart(songNum);
+    m4aSongNumStart(songNum, FlagGet(FLAG_SYS_GBS_ENABLED));
     m4aMPlayImmInit(&gMPlayInfo_SE2);
     m4aMPlayPanpotControl(&gMPlayInfo_SE2, TRACKS_ALL, pan);
 }

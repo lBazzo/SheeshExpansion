@@ -3758,4 +3758,7 @@ extern const u8 gText_Var1DotVar2_Metric[];
 // end HnS
 
 
+extern const u8 gText_GBPlayerOn[];
+extern const u8 gText_GBPlayerOff[];
+
 #endif // GUARD_STRINGS_H

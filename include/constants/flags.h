@@ -764,8 +764,8 @@
 #define FLAG_HIDE_GAME_CORNER_OWNER  0x2B5 // Unused Flag
 #define FLAG_GOT_SILVALLY  0x2B6 // Unused Flag
 #define FLAG_GOT_ROTOM  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
+#define FLAG_ITEM_PLAYER_ROOM_GB_PLAYER  0x2B8 // Unused Flag
+#define FLAG_SYS_GBS_ENABLED  0x2B9 // Unused Flag
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
 #define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
 
