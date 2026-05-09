@@ -11,11 +11,6 @@ Route48_EventScript_Jason::
 	msgbox Route48_Text_YoungsterJasonAfterBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route48_EventScript_Herman::
-	trainerbattle_single TRAINER_HERMAN Route48_Text_PsychicHermanSeen, Route48_Text_PsychicHermanBeaten
-	msgbox Route48_Text_PsychicHermanAfterBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route48_EventScript_Fidel::
 	trainerbattle_single TRAINER_FIDEL Route48_Text_PsychicFidelSeen, Route48_Text_PsychicFidelBeaten
 	msgbox Route48_Text_PsychicFidelAfterBattle, MSGBOX_AUTOCLOSE
@@ -43,16 +38,6 @@ Route48_Text_YoungsterJasonBeaten:
 Route48_Text_YoungsterJasonAfterBattle:
 	.string "I'm going to catch more Pokémon in\n"
 	.string "the grass.$"
-
-Route48_Text_PsychicHermanSeen:
-	.string "…$"
-
-Route48_Text_PsychicHermanBeaten:
-	.string "…$"
-
-Route48_Text_PsychicHermanAfterBattle:
-	.string "…\p"
-	.string "I lost while I had my eyes closed…$"
 
 Route48_Text_PsychicFidelSeen:
 	.string "The taste of the mountain air…\n"

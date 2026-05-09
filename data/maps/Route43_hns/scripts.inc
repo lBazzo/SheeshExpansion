@@ -206,35 +206,6 @@ Route43_Text_SchoolboyDanny_AfterBattle:
 	.string "For trainers, it's a given that\n"
 	.string "we'll battle whenever we meet.$"
 
-Route43_EventScript_Jimmy::
-	trainerbattle_single TRAINER_JIMMY, Route43_Text_YoungsterJimmy_Seen, Route43_Text_YoungsterJimmy_Beaten
-	msgbox Route43_Text_YoungsterJimmy_AfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route43_Text_YoungsterJimmy_Seen:
-	.string "I can run like the wind!$"
-
-Route43_Text_YoungsterJimmy_Beaten:
-	.string "Blown away!$"
-
-Route43_Text_YoungsterJimmy_AfterBattle:
-	.string "I wear shorts the whole year round.\p"
-	.string "That's my fashion policy.$"
-
-Route43_EventScript_Warren::
-	trainerbattle_single TRAINER_WARREN, Route43_Text_YoungsterWarren_Seen, Route43_Text_YoungsterWarren_Beaten
-	msgbox Route43_Text_YoungsterWarren_AfterBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route43_Text_YoungsterWarren_Seen:
-	.string "Hmmm… I don't know what to do…$"
-
-Route43_Text_YoungsterWarren_Beaten:
-	.string "I knew I'd lose…$"
-
-Route43_Text_YoungsterWarren_AfterBattle:
-	.string "You looked strong.\p"
-	.string "I was afraid to take you on…$"
 
 
 

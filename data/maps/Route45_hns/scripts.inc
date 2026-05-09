@@ -18,11 +18,6 @@ Route45_EventScript_Parry::
 	msgbox Route45_Text_HikerParryAfter, MSGBOX_AUTOCLOSE
 	end
 
-Route45_EventScript_Timothy::
-	trainerbattle_single TRAINER_TIMOTHY Route45_Text_HikerTimothySeen, Route45_Text_HikerTimothyBeaten
-	msgbox Route45_Text_HikerTimothyAfter, MSGBOX_AUTOCLOSE
-	end
-
 Route45_EventScript_Kenji::
 	trainerbattle_single TRAINER_MIKEY Route45_Text_BlackbeltKenjiSeen, Route45_Text_BlackbeltKenjiBeaten
 	msgbox Route45_Text_BlackbeltKenjiAfter, MSGBOX_AUTOCLOSE
@@ -36,11 +31,6 @@ Route45_EventScript_Ryan::
 Route45_EventScript_Kelly::
 	trainerbattle_single TRAINER_KELLY Route45_Text_CooltrainerfKellySeen, Route45_Text_CooltrainerfKellyBeaten
 	msgbox Route45_Text_CooltrainerfKellyAfter, MSGBOX_AUTOCLOSE
-	end
-
-Route45_EventScript_Quentin::
-	trainerbattle_single TRAINER_QUENTIN Route45_Text_CamperQuentinSeen, Route45_Text_CamperQuentinBeaten
-	msgbox Route45_Text_CamperQuentinAfter, MSGBOX_AUTOCLOSE
 	end
 
 Route45_EventScript_Sign::
@@ -100,20 +90,6 @@ Route45_Text_HikerParryAfter:
     .string "see?\p"
     .string "So, I just plow ahead with power!$"
 
-
-Route45_Text_HikerTimothySeen:
-    .string "Why do I climb mountains?\p"
-    .string "Because they're there.\p"
-    .string "Why do I train Pokémon?\p"
-    .string "Because they're there!$"
-
-Route45_Text_HikerTimothyBeaten:
-    .string "Losses… They're there too!$"
-
-Route45_Text_HikerTimothyAfter:
-    .string "The best thing to ever happen to\n"
-    .string "me was discovering Pokémon.$"
-
 Route45_Text_HikerParryGivesIron:
     .string "I just can't find a way to win!\p"
     .string "Keep it up!\p"
@@ -168,16 +144,6 @@ Route45_Text_CooltrainerfKellyAfter:
     .string "powerful moves.\p"
     .string "I want to win, but I also don't\n"
     .string "want to harm Pokémon.$"
-
-Route45_Text_CamperQuentinSeen:
-    .string "I'm really, really tough!$"
-
-Route45_Text_CamperQuentinBeaten:
-    .string "I was tough at the Battle Tower…$"
-
-Route45_Text_CamperQuentinAfter:
-    .string "Have you been to the Battle Tower?\p"
-    .string "I never, ever lose there, but…$"
 
 Route45_Text_Sign:
     .string "Route 45\n"
