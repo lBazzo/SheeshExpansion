@@ -740,7 +740,7 @@ AI_SINGLE_BATTLE_TEST("AI score for Mean Look will be decreased if target can es
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SMART_SWITCHING: AI considers Focus Sash when determining if it should switch out")
 {
     GIVEN {
-        KNOWN_FAILING; //Bazzo note : changed switch ai
+        //KNOWN_FAILING; //Bazzo note : this test actually works in making the rom for it, no clue why it times out?
         ASSUME(gItemsInfo[ITEM_FOCUS_SASH].holdEffect == HOLD_EFFECT_FOCUS_SASH);
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SMART_MON_CHOICES | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_BEAUTIFLY) { Speed(10); Moves(MOVE_AIR_SLASH); }

@@ -5384,7 +5384,7 @@
 #line 2171
             .ability = ABILITY_STURDY,
 #line 2172
-            .lvl = 75,
+            .lvl = 80,
 #line 2174
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -10932,7 +10932,7 @@
                 MOVE_GRAVITY,
                 MOVE_ROCK_SLIDE,
                 MOVE_HIGH_HORSEPOWER,
-                MOVE_WIDE_GUARD,
+                MOVE_PROTECT,
             },
             },
         },
@@ -15443,7 +15443,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 6082
-                MOVE_TRI_ATTACK,
+                MOVE_DARK_PULSE,
                 MOVE_REVELATION_DANCE,
                 MOVE_QUIVER_DANCE,
                 MOVE_CONVERSION_2,

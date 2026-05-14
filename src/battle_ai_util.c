@@ -8,6 +8,7 @@
 #include "battle_ai_main.h"
 #include "battle_ai_switch_items.h"
 #include "battle_factory.h"
+#include "battle_main.h"
 #include "battle_setup.h"
 #include "event_data.h"
 #include "data.h"
@@ -1373,6 +1374,29 @@ u32 GetBestNoOfHitsToKO(u32 battlerAtk, u32 battlerDef, enum DamageCalcContext c
     return result;
 }
 
+u32 GetBestNoOfHitsToKOFromDmg(u32 battlerAtk, u32 battlerDef, u32 dmg, enum DamageCalcContext calcContext)
+{
+    u32 result = 100;
+    u32 tempResult = 0;
+
+    struct AiLogicData *aiData = gAiLogicData;
+    s32 moveIndex;
+    u16 *moves = GetMovesArray(battlerAtk);
+    u32 moveLimitations = aiData->moveLimitations[battlerAtk];
+
+    for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
+    {
+        if (IsMoveUnusable(moveIndex, moves[moveIndex], moveLimitations))
+            continue;
+
+        tempResult = GetNoOfHitsToKOBattlerDmg(dmg, gBattleMons[battlerDef].hp);
+        if (tempResult != 0 && tempResult < result)
+            result = tempResult;
+    }
+
+    return result;
+}
+
 u32 GetCurrDamageHpPercent(u32 battlerAtk, u32 battlerDef, enum DamageCalcContext calcContext)
 {
     int bestDmg = AI_GetDamage(battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex, calcContext, gAiLogicData);
@@ -2424,6 +2448,150 @@ static bool32 AnyUsefulStatIsRaised(u32 battler)
     return FALSE;
 }
 
+u32 GetBattlerTotalSpeedStatArgs(u32 battler, enum Ability ability, enum HoldEffect holdEffect, s32 speedStatModifier)
+{
+    u32 speed = gBattleMons[battler].speed;
+    s32 modifiedStage = (gBattleMons[battler].statStages[STAT_SPEED] + speedStatModifier);
+
+    if (modifiedStage > MAX_STAT_STAGE)
+        modifiedStage = MAX_STAT_STAGE;
+
+    if (modifiedStage < MIN_STAT_STAGE)
+        modifiedStage = MIN_STAT_STAGE;
+    // stat stages
+    speed *= gStatStageRatios[modifiedStage][0];
+    speed /= gStatStageRatios[modifiedStage][1];
+
+    // weather abilities
+    if (HasWeatherEffect())
+    {
+        if (ability == ABILITY_SWIFT_SWIM       && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_RAIN)
+            speed *= 2;
+        else if (ability == ABILITY_CHLOROPHYLL && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
+            speed *= 2;
+        else if (ability == ABILITY_SAND_RUSH   && gBattleWeather & B_WEATHER_SANDSTORM)
+            speed *= 2;
+        else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+            speed *= 2;
+    }
+
+    // other abilities
+    if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
+        speed = (speed * 150) / 100;
+    else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        speed *= 2;
+    else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
+        speed /= 2;
+    else if (ability == ABILITY_PROTOSYNTHESIS && !(gBattleMons[battler].volatiles.transformed) && ((gBattleWeather & B_WEATHER_SUN && HasWeatherEffect()) || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_QUARK_DRIVE && !(gBattleMons[battler].volatiles.transformed) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivated))
+        speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+    else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)
+        speed *= 2;
+
+    // player's badge boost
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
+        && ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_SPEED, battler)
+        && IsOnPlayerSide(battler))
+    {
+        speed = uq4_12_multiply_by_int_half_down(GetBadgeBoostModifier(), speed);
+    }
+
+    // item effects
+    if (holdEffect == HOLD_EFFECT_MACHO_BRACE || holdEffect == HOLD_EFFECT_POWER_ITEM)
+        speed /= 2;
+    else if (holdEffect == HOLD_EFFECT_IRON_BALL)
+        speed /= 2;
+    else if (holdEffect == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+        speed = (speed * 150) / 100;
+    else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].volatiles.transformed))
+        speed *= 2;
+
+    // various effects
+    if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND)
+        speed *= 2;
+
+    // paralysis drop
+    if (gBattleMons[battler].status1 & STATUS1_PARALYSIS && ability != ABILITY_QUICK_FEET)
+        speed /= GetConfig(CONFIG_PARALYSIS_SPEED) >= GEN_7 ? 2 : 4;
+
+    if (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SWAMP)
+        speed /= 4;
+
+    return speed;
+}
+/*
+u32 GetBattlerTotalAttackStatArgs(u32 battler, enum Ability ability, enum HoldEffect holdEffect, s32 attackStatModifier);
+{
+    u32 attack = gBattleMons[battler].attack;
+    s32 modifiedStage = (gBattleMons[battler].statStages[STAT_ATTACK] + attackStatModifier);
+
+    if (modifiedStage > MAX_STAT_STAGE)
+        modifiedStage = MAX_STAT_STAGE;
+
+    if (modifiedStage < MIN_STAT_STAGE)
+        modifiedStage = MIN_STAT_STAGE;
+    // stat stages
+    attack *= gStatStageRatios[modifiedStage][0];
+    attack /= gStatStageRatios[modifiedStage][1];
+
+    // abilities
+
+    if (ability == ABILITY_GUTS && gBattleMons[battler].status1 & STATUS1_ANY)
+        attack = (attack * 150) / 100;
+    else if (ability == ABILITY_TOXIC_BOOST && gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
+        attack = (attack * 150) / 100;
+    else if (ability == ABILITY_GORILLA_TACTICS || ability == ABILITY_HUSTLE)
+        attack = (attack * 150) / 100;
+    else if (ability == ABILITY_HUGE_POWER || ability == ABILITY_PURE_POWER)
+        attack *= 2;    
+    else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
+        attack /= 2;
+
+    // item effects
+
+
+
+    // status
+    if (gBattleMons[battler].status1 & STATUS1_BURN && ability != ABILITY_GUTS)
+        attack /= 2;
+
+    return attack;
+}
+
+u32 GetBattlerTotalSpecialAttackStatArgs(u32 battler, enum Ability ability, enum HoldEffect holdEffect, s32 specialAttackStatModifier);
+{
+    u32 specialAttack = gBattleMons[battler].spAttack;
+    s32 modifiedStage = (gBattleMons[battler].statStages[STAT_SPATK] + specialAttackStatModifier);
+
+    if (modifiedStage > MAX_STAT_STAGE)
+        modifiedStage = MAX_STAT_STAGE;
+
+    if (modifiedStage < MIN_STAT_STAGE)
+        modifiedStage = MIN_STAT_STAGE;
+    // stat stages
+    specialAttack *= gStatStageRatios[modifiedStage][0];
+    specialAttack /= gStatStageRatios[modifiedStage][1];
+
+    // weather abilities
+
+
+
+    // other abilities
+
+    if (ability == ABILITY_FLARE_BOOST && gBattleMons[battler].status1 & STATUS1_ANY)
+        specialAttack = (specialAttack * 150) / 100;
+
+    // item effects
+
+
+
+    // status
+
+    
+    return specialAttack;
+}*/
+
 u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChange, u32 move)
 {
     u32 tempScore = NO_INCREASE;
@@ -2487,14 +2655,26 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     case STAT_CHANGE_SPEED:
     {
         u32 predictedMoveSpeedCheck = MOVE_TACKLE;
+        u32 playerSpeed = GetBattlerTotalSpeedStatArgs(battlerDef, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], -1);
+        u32 AISpeed = GetBattlerTotalSpeedStatArgs(battlerAtk, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], 0);
+        DebugPrintf(" playerSpeed %d AISpeed%d", playerSpeed, AISpeed);
+        //if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        //&& (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
+        //&& (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])
+        //&& (statDownMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp)))
+        //    tempScore += DECENT_EFFECT;
+        //else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        //&& (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
+        //&& (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])))
+        //    tempScore += WEAK_EFFECT;
         if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
-        && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])
-        && (statDownMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp)))
+         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+         && (AISpeed >= playerSpeed)
+         && (statDownMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp))
             tempScore += DECENT_EFFECT;
         else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
-        && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])))
+         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+         && (AISpeed >= playerSpeed))
             tempScore += WEAK_EFFECT;
         else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
@@ -2509,11 +2689,17 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
     }
     case STAT_CHANGE_SPEED_2:
     {
-        u32 predictedMoveSpeedCheck = MOVE_TACKLE;
+        u32 playerSpeed2 = GetBattlerTotalSpeedStatArgs(battlerDef, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], -2);
+        u32 AISpeed2 = GetBattlerTotalSpeedStatArgs(battlerAtk, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], 0);
+        u32 predictedMoveSpeedCheck = MOVE_TACKLE;        
         if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
-        && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef])))
+         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+         && (AISpeed2 >= playerSpeed2))
             tempScore += WEAK_EFFECT;
+        //if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        //&& (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
+        //&& (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef])))
+        //   tempScore += WEAK_EFFECT;
         else if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
         && (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
             tempScore += BEST_DAMAGE_MOVE;
@@ -5165,6 +5351,7 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
     u32 i;
     enum Stat statId = GetStatBeingChanged(statChange);
     u32 stages = GetStagesOfStatChange(statChange);
+    //u32 movesetIndex = gAiThinkingStruct->movesetIndex;
 
     u32 bestMoves[MAX_MON_MOVES] = {0};
     GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING, bestMoves);
@@ -5253,22 +5440,22 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
             {
             if (stages == 1)
             {
-                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL) 
+                /*if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp 
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+                else */if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
             }
             else if (stages == 2)
             {
-                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL)
+                /*if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_PHYSICAL)
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 + statUpMoveDamage >= gBattleMons[battlerDef].hp 
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+                else */if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5295,12 +5482,14 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
         {
             if (stages == 1)
             {
+                u32 playerSpeed = GetBattlerTotalSpeedStatArgs(battlerDef, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], 0);
+                u32 AISpeed = GetBattlerTotalSpeedStatArgs(battlerAtk, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], +1);
                 if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
-                && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])
+                && (AISpeed >= playerSpeed)
                 && (statUpMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp))
                     tempScore += DECENT_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
-                && (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef]))
+                && (AISpeed >= playerSpeed))
                     tempScore += WEAK_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5309,12 +5498,14 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
             }
             if (stages == 2)
             {
+                u32 playerSpeed2 = GetBattlerTotalSpeedStatArgs(battlerDef, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], 0);
+                u32 AISpeed2 = GetBattlerTotalSpeedStatArgs(battlerAtk, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], +2);
                 if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
-                && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef])
+                && (AISpeed2 >= playerSpeed2)
                 && (statUpMoveDamage + GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) >= gBattleMons[battlerDef].hp))
                     tempScore += DECENT_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef]
-                && (gAiLogicData->speedStats[battlerAtk] * 2 >= gAiLogicData->speedStats[battlerDef]))
+                && (AISpeed2 >= playerSpeed2))
                     tempScore += WEAK_EFFECT;
                 else if (gAiLogicData->speedStats[battlerAtk] < gAiLogicData->speedStats[battlerDef])
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5328,33 +5519,33 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
         {
             if (stages == 1)
             {
-                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
+                /*if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+                else */if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
             }
             else if (stages == 2)
             {
-                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
+                /*if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+                else */if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
             }
             else if (stages == 3)
             {
-                if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
+                /*if (BestDmgMoveHasCategory(bestMoves, DAMAGE_CATEGORY_SPECIAL) 
                 && GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 2.5 + statUpMoveDamage >= gBattleMons[battlerDef].hp
                 && gAiLogicData->speedStats[battlerAtk] >= gAiLogicData->speedStats[battlerDef])
                     tempScore += DECENT_EFFECT;
-                else if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
+                else */if (noOfHitsToFaint > 3 || noOfHitsToFaint == UNKNOWN_NO_OF_HITS)
                     tempScore += WEAK_EFFECT;
                 else
                     tempScore += BEST_DAMAGE_MOVE;
@@ -5993,8 +6184,79 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
             anyDefensiveDrawback = TRUE;
     }
 */
-// NEW Check for outdamage before and after Tera
 
+// NEWEST!!! Checking for number of hits to KO before and after Tera for both Player and AI 
+
+    bool32 AIFasterAndWinningMatchupBeforeTera = FALSE;
+    bool32 AIFasterAndWinningMatchupAfterTera = FALSE;
+    bool32 AISlowerAndWinningMatchupBeforeTera = FALSE;
+    bool32 AISlowerAndWinningMatchupAfterTera = FALSE;
+
+    u32 noOfHitsForAIToKillPlayerBeforeTera = 1000;
+    u32 noOfHitsForAIToKillPlayerAfterTera = 1000;
+    u32 noOfHitsForPlayerToKillAIBeforeTera = 1000;
+    u32 noOfHitsForPlayerToKillAIAfterTera = 1000;
+    u32 TEMPnoOfHitsForAIToKillPlayerBeforeTera = 0;
+    u32 TEMPnoOfHitsForAIToKillPlayerAfterTera = 0;
+    u32 TEMPnoOfHitsForPlayerToKillAIBeforeTera = 0;
+    u32 TEMPnoOfHitsForPlayerToKillAIAfterTera = 0;
+
+    for (int i = 0; i < MAX_MON_MOVES; i++)
+    {
+        TEMPnoOfHitsForAIToKillPlayerBeforeTera = GetNoOfHitsToKOBattlerDmg(dealtWithoutTera[i].maximum, opposingBattler);
+            if (TEMPnoOfHitsForAIToKillPlayerBeforeTera != 0 && TEMPnoOfHitsForAIToKillPlayerBeforeTera < noOfHitsForAIToKillPlayerBeforeTera)
+                noOfHitsForAIToKillPlayerBeforeTera = TEMPnoOfHitsForAIToKillPlayerBeforeTera;
+
+        TEMPnoOfHitsForAIToKillPlayerAfterTera = GetNoOfHitsToKOBattlerDmg(dealtWithTera[i].maximum, opposingBattler);
+            if (TEMPnoOfHitsForAIToKillPlayerAfterTera != 0 && TEMPnoOfHitsForAIToKillPlayerAfterTera < noOfHitsForAIToKillPlayerAfterTera)
+                noOfHitsForAIToKillPlayerAfterTera = TEMPnoOfHitsForAIToKillPlayerAfterTera;
+
+        TEMPnoOfHitsForPlayerToKillAIBeforeTera = GetNoOfHitsToKOBattlerDmg(takenWithoutTera[i].maximum, opposingBattler);
+            if (TEMPnoOfHitsForPlayerToKillAIBeforeTera != 0 && TEMPnoOfHitsForPlayerToKillAIBeforeTera < noOfHitsForPlayerToKillAIBeforeTera)
+                noOfHitsForPlayerToKillAIBeforeTera = TEMPnoOfHitsForPlayerToKillAIBeforeTera; 
+
+        TEMPnoOfHitsForPlayerToKillAIAfterTera =  GetNoOfHitsToKOBattlerDmg(takenWithTera[i].maximum, opposingBattler);
+            if (TEMPnoOfHitsForPlayerToKillAIAfterTera != 0 && TEMPnoOfHitsForPlayerToKillAIAfterTera < noOfHitsForPlayerToKillAIAfterTera)
+                noOfHitsForPlayerToKillAIAfterTera = TEMPnoOfHitsForPlayerToKillAIAfterTera; 
+        
+        //        noOfHitsForPlayerToKillAIAfterTera = GetBestNoOfHitsToKOFromDmg(battler, opposingBattler, takenWithTera[i].maximum, AI_DEFENDING);               //GetNoOfHitsToKOBattlerDmg(takenWithTera[i].maximum, opposingBattler);
+    
+        DebugPrintf("noOfHitsForAIToKillPlayerBeforeTera %d noOfHitsForAIToKillPlayerAfterTera %d noOfHitsForPlayerToKillAIBeforeTera %d noOfHitsForPlayerToKillAIAfterTera  %d", noOfHitsForAIToKillPlayerBeforeTera, noOfHitsForAIToKillPlayerAfterTera, noOfHitsForPlayerToKillAIBeforeTera, noOfHitsForPlayerToKillAIAfterTera);
+
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
+
+    if (AI_IsFaster(battler, opposingBattler, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+    {
+        DebugPrintf("AI CONFIRMED FASTER");
+        if (noOfHitsForAIToKillPlayerBeforeTera <= noOfHitsForPlayerToKillAIBeforeTera)
+            AIFasterAndWinningMatchupBeforeTera = TRUE;
+        if (noOfHitsForAIToKillPlayerAfterTera <= noOfHitsForPlayerToKillAIAfterTera)
+            AIFasterAndWinningMatchupAfterTera = TRUE;
+    }
+    if (!(AI_IsFaster(battler, opposingBattler, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
+    {
+        DebugPrintf("AI CONFIRMED slower");
+        if (noOfHitsForAIToKillPlayerBeforeTera < noOfHitsForPlayerToKillAIBeforeTera)
+            AISlowerAndWinningMatchupBeforeTera = TRUE;
+        if (noOfHitsForAIToKillPlayerAfterTera < noOfHitsForPlayerToKillAIAfterTera)
+            AISlowerAndWinningMatchupAfterTera = TRUE;
+    }
+    DebugPrintf("AIFasterAndWinningMatchupBeforeTera %d AIFasterAndWinningMatchupAfterTera %d AISlowerAndWinningMatchupBeforeTera %d AISlowerAndWinningMatchupAfterTera  %d", AIFasterAndWinningMatchupBeforeTera, AIFasterAndWinningMatchupAfterTera, AISlowerAndWinningMatchupBeforeTera, AISlowerAndWinningMatchupAfterTera);
+    }
+    if (noOfHitsForAIToKillPlayerBeforeTera == 1000)
+        noOfHitsForAIToKillPlayerBeforeTera = 0;
+    if (noOfHitsForPlayerToKillAIBeforeTera == 1000)
+        noOfHitsForPlayerToKillAIBeforeTera = 0;
+    if (noOfHitsForAIToKillPlayerAfterTera == 1000)
+        noOfHitsForAIToKillPlayerAfterTera = 0;
+    if (noOfHitsForPlayerToKillAIAfterTera == 1000)
+        noOfHitsForPlayerToKillAIAfterTera = 0;
+
+
+    DebugPrintf("AIFasterAndWinningMatchupBeforeTera %d AIFasterAndWinningMatchupAfterTera %d AISlowerAndWinningMatchupBeforeTera %d AISlowerAndWinningMatchupAfterTera  %d", AIFasterAndWinningMatchupBeforeTera, AIFasterAndWinningMatchupAfterTera, AISlowerAndWinningMatchupBeforeTera, AISlowerAndWinningMatchupAfterTera);
+    DebugPrintf("noOfHitsForAIToKillPlayerBeforeTera %d noOfHitsForAIToKillPlayerAfterTera %d noOfHitsForPlayerToKillAIBeforeTera %d noOfHitsForPlayerToKillAIAfterTera  %d", noOfHitsForAIToKillPlayerBeforeTera, noOfHitsForAIToKillPlayerAfterTera, noOfHitsForPlayerToKillAIBeforeTera, noOfHitsForPlayerToKillAIAfterTera);
+// NEW Check for outdamage before and after Tera
+/*
     bool32 outdamageBeforeTera = FALSE;
     bool32 outdamageAfterTera = FALSE;
 
@@ -6007,30 +6269,30 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     {
 
         if (takenWithoutTera[i].maximum >= aiHp)
-            percentAIDamageTakenWithoutTera = aiHp /* * 1000 */;
-        else 
-            percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum/* * 1000 */ / aiHp;
-
-        if (takenWithTera[i].maximum >= aiHp)
-            percentAIDamageTakenWithTera = aiHp /* * 1000 */;    
-        else
-            percentAIDamageTakenWithTera = takenWithTera[i].maximum /* * 1000 */ / aiHp;
-
-        if (dealtWithoutTera[i].maximum >= oppHp)
-            percentOpponentDamageTakenWithoutTera = oppHp /* * 1000 */;  
-        else
-            percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum /* * 1000 */ / oppHp;
-
-        if (dealtWithTera[i].maximum >= oppHp)
-            percentOpponentDamageTakenWithTera = oppHp/* * 1000 */;
-        else
-            percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum /* * 1000 */ / oppHp;
-
-        if (percentOpponentDamageTakenWithoutTera >= percentAIDamageTakenWithoutTera)
-            outdamageBeforeTera = TRUE;
-
-        if (percentOpponentDamageTakenWithTera >= percentAIDamageTakenWithTera)
-            outdamageAfterTera = TRUE;
+//            percentAIDamageTakenWithoutTera = aiHp /* * 1000 */;
+//        else 
+//            percentAIDamageTakenWithoutTera = takenWithoutTera[i].maximum/* * 1000 */ / aiHp;
+//
+//        if (takenWithTera[i].maximum >= aiHp)
+//           percentAIDamageTakenWithTera = aiHp /* * 1000 */;    
+//        else
+//            percentAIDamageTakenWithTera = takenWithTera[i].maximum /* * 1000 */ / aiHp;
+//
+//        if (dealtWithoutTera[i].maximum >= oppHp)
+//            percentOpponentDamageTakenWithoutTera = oppHp /* * 1000 */;  
+//        else
+//            percentOpponentDamageTakenWithoutTera = dealtWithoutTera[i].maximum /* * 1000 */ / oppHp;
+//
+//        if (dealtWithTera[i].maximum >= oppHp)
+//            percentOpponentDamageTakenWithTera = oppHp/* * 1000 */;
+//        else
+//           percentOpponentDamageTakenWithTera = dealtWithTera[i].maximum /* * 1000 */ / oppHp;
+//
+//        if (percentOpponentDamageTakenWithoutTera >= percentAIDamageTakenWithoutTera)
+//            outdamageBeforeTera = TRUE;
+//
+//        if (percentOpponentDamageTakenWithTera >= percentAIDamageTakenWithTera)
+//            outdamageAfterTera = TRUE;
 
 /*        
         if (takenWithoutTera[i].maximum >= aiHp)
@@ -6064,7 +6326,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
             percentOpponentDamageTakenWithTera = 1000;  
 */
 
-    }
+//    }*/
 
     
 
@@ -6099,6 +6361,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     // When Tera gives KO: 100% if Player can't KO AI after Tera, or AI is faster. 50% otherwise
     if (enablesKo)
     {
+        DebugPrintf("KO ENABLED");
         u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
 
         if (hardPunishingMove == MOVE_NONE)
@@ -6170,12 +6433,86 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
 
     // TODO: Effects other than direct damage are not yet considered. For example, may want to tera poison to avoid a Toxic.
 
-    if (!(outdamageBeforeTera)
+    /*if (!(outdamageBeforeTera)
     && (outdamageAfterTera))
     {
         DebugPrintf("AI outdamages only with tera");
         return USE_GIMMICK;
+    }*/
+    DebugPrintf("AIFasterAndWinningMatchupBeforeTera %d AIFasterAndWinningMatchupAfterTera %d AISlowerAndWinningMatchupBeforeTera %d AISlowerAndWinningMatchupAfterTera  %d", AIFasterAndWinningMatchupBeforeTera, AIFasterAndWinningMatchupAfterTera, AISlowerAndWinningMatchupBeforeTera, AISlowerAndWinningMatchupAfterTera);
+
+    u32 predictedMoveSpeedCheck = GetIncomingMoveSpeedCheck(battler, opposingBattler, gAiLogicData);
+
+    DebugPrintf("AIFasterAndWinningMatchupBeforeTera %d AIFasterAndWinningMatchupAfterTera %d AISlowerAndWinningMatchupBeforeTera %d AISlowerAndWinningMatchupAfterTera  %d", AIFasterAndWinningMatchupBeforeTera, AIFasterAndWinningMatchupAfterTera, AISlowerAndWinningMatchupBeforeTera, AISlowerAndWinningMatchupAfterTera);
+
+    if (AI_IsFaster(battler, opposingBattler, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+    {
+        if ((!AIFasterAndWinningMatchupBeforeTera) 
+         && (AIFasterAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is faster and goes from losing to winning matchup by using Tera");
+                return USE_GIMMICK;
+        }
+        else if ((!AIFasterAndWinningMatchupBeforeTera) 
+              && (!AIFasterAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is faster and loses matchup both with and without using Tera");
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return USE_GIMMICK;
+            else 
+                return NO_GIMMICK;
+        }
+        else if ((AIFasterAndWinningMatchupBeforeTera) 
+              && (AIFasterAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AIFasterAndWinningMatchupBeforeTera %d AIFasterAndWinningMatchupAfterTera %d AISlowerAndWinningMatchupBeforeTera %d AISlowerAndWinningMatchupAfterTera  %d", AIFasterAndWinningMatchupBeforeTera, AIFasterAndWinningMatchupAfterTera, AISlowerAndWinningMatchupBeforeTera, AISlowerAndWinningMatchupAfterTera);
+            DebugPrintf("AI is faster and wins matchup both with and without using Tera");
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return USE_GIMMICK;
+            else 
+                return NO_GIMMICK;
+        }
+        else if ((AIFasterAndWinningMatchupBeforeTera) 
+              && (!AIFasterAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is faster and goes from winning to losing matchup by using Tera");
+                return NO_GIMMICK;
+        }
     }
+    else if (!(AI_IsFaster(battler, opposingBattler, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
+    {
+        if ((!AISlowerAndWinningMatchupBeforeTera )
+         && (AISlowerAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is slower and goes from losing to winning matchup by using Tera");
+                return USE_GIMMICK;
+        }
+        else if ((!AISlowerAndWinningMatchupBeforeTera) 
+              && (!AISlowerAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is slower and loses matchup both with and without using Tera");
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return USE_GIMMICK;
+            else 
+                return NO_GIMMICK;
+        }
+        else if ((AISlowerAndWinningMatchupBeforeTera) 
+              && (AISlowerAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is slower and wins matchup both with and without using Tera");
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return USE_GIMMICK;
+            else 
+                return NO_GIMMICK;
+        }
+        else if ((AISlowerAndWinningMatchupBeforeTera) 
+              && (!AISlowerAndWinningMatchupAfterTera))
+        {
+            DebugPrintf("AI is slower and goes from winning to losing matchup by using Tera");
+                return NO_GIMMICK;
+        }
+    }
+
 /*
     if (((outdamageBeforeTera) && (outdamageAfterTera))
     || ((!(outdamageBeforeTera)) && (!(outdamageAfterTera))))
@@ -6194,20 +6531,24 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
         }
     }
 */
-    if (outdamageBeforeTera && outdamageAfterTera)
+    /*if (outdamageBeforeTera && outdamageAfterTera)
     {
         DebugPrintf("AI outdamages before and after tera");
         if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
             return USE_GIMMICK;
+        else 
+            return NO_GIMMICK;
     }
     if (!outdamageBeforeTera && !outdamageAfterTera)
     {
         DebugPrintf("AI is outdamaged by player before and after tera");
         if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
             return USE_GIMMICK;
-    }
+        else 
+            return NO_GIMMICK;
+    }*/
 
-     DebugPrintf("No tera criteria met, no chance to tera");
+    DebugPrintf("No tera criteria met, no chance to tera");
     return NO_GIMMICK;
 }
 #undef dealtWithTera

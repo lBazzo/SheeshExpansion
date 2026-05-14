@@ -2366,9 +2366,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_METRONOME:
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
             break;
-
         case EFFECT_CONVERSION_2:
-            //TODO
+            if (aiData->lastUsedMove[battlerDef] == MOVE_NONE
+             && AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             break;
         case EFFECT_LOCK_ON:
             if (gBattleMons[battlerDef].volatiles.lockOn
@@ -4311,7 +4312,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 
     return score;
 }
-/*
+
 static bool32 IsPinchBerryItemEffect(enum HoldEffect holdEffect)
 {
     switch (holdEffect)
@@ -4330,7 +4331,7 @@ static bool32 IsPinchBerryItemEffect(enum HoldEffect holdEffect)
         return FALSE;
     }
 }
-*/
+
 /*
 static enum MoveComparisonResult CompareMoveAccuracies(u32 battlerAtk, u32 battlerDef, u32 moveSlot1, u32 moveSlot2)
 {
@@ -5014,6 +5015,24 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(BEST_EFFECT);
         }
         break;
+    case EFFECT_CONVERSION_2:
+        if (aiData->lastUsedMove[battlerAtk] != MOVE_NONE
+         || AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+            {
+                if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NORMAL)
+                && (RandomPercentage(RNG_AI_CUSTOM_AI_FOURTY_PERCENT, CUSTOM_AI_FOURTY_PERCENT)))
+                {
+                    DebugPrintf("40 percent");
+                    ADJUST_SCORE(WEAK_EFFECT);
+                }
+                else if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NORMAL)
+                && (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)))
+                {
+                    DebugPrintf("20 percent");
+                    ADJUST_SCORE(WEAK_EFFECT);
+                }
+            }
+        break;
     case EFFECT_SWALLOW:
         u32 atkStat = gBattleMons[battlerDef].attack;
         u32 atkStage = gBattleMons[battlerDef].statStages[STAT_ATK];
@@ -5207,36 +5226,83 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         //fallthrough
     case EFFECT_HIT_ESCAPE:
     //uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
-
+        // Never use if last mon and not highest damage
+        
         if (CountUsablePartyMons(battlerAtk) == 0
         && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
         {
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            break;
         }    
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
-        if (effectiveness < UQ_4_12(1.0))
-            ADJUST_SCORE(-1);
-        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
-        && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) >= (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp)))
-            ADJUST_SCORE(-2);
+        // If last mon and highest damage while AI can't kill, give it highest damage to trump regular highest damage)
+        else if (CountUsablePartyMons(battlerAtk) == 0
+        && (IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        && (!CanAIFaintTarget(battlerAtk, battlerDef, 1)))
         {
-            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-            && (CanTargetFaintAi(battlerDef, battlerAtk)))
-                ADJUST_SCORE(+1);
-            else if (((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
-            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
-                ADJUST_SCORE(+1);
+            ADJUST_AND_RETURN_SCORE(GOOD_EFFECT);
+            break;
         }
+        // If last mon and AI can kill player, give it the usual hdm scoring so it can tie with other killing moves
+        else if (CountUsablePartyMons(battlerAtk) == 0
+        && (CanAIFaintTarget(battlerAtk, battlerDef, 1)))
+        {
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT))
+            {
+                ADJUST_SCORE(+2);
+                break;
+            }
+            break;
+        }
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        //if (effectiveness < UQ_4_12(1.0))
+        //    ADJUST_SCORE(-1);
+        u32 AIHitsToKOPlayer = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING);
+        u32 PlayerHitsToKOAI = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING);
+        DebugPrintf("AIHitsToKOPlayer %d PlayerHitsToKOAI %d", AIHitsToKOPlayer, PlayerHitsToKOAI);
+        //if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        //&& (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+        //&& ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) >= (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp)))
+        //    ADJUST_SCORE(-2);
+
+        // Give -2 if AI wins the matchup vs Player
+        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            ADJUST_SCORE(-2);
+        else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            ADJUST_SCORE(-2);
+
+        //{
+
+        // Give +2 if Player can slow kill AI
+        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (CanTargetFaintAi(battlerDef, battlerAtk)))
+            ADJUST_SCORE(+2);
+        //else if (((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
+        //&& (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        //    ADJUST_SCORE(+1);
+        //}
+        // Give +2 sometimes if Player wins the matchup
+        else if (AIHitsToKOPlayer > PlayerHitsToKOAI)
+        {
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                ADJUST_SCORE(+2);
+        }
+
+        // Give +2 for kill, and +3 for fast kill (makes it guaranteed while fast killing, very likely while slow killing, to prevent abusable AI)
         if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING))
         {
-            ADJUST_SCORE(+2);
-            if (effectiveness > UQ_4_12(1.0)
-            && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
-            ADJUST_SCORE(+1);
+                ADJUST_SCORE(+2);
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+                ADJUST_SCORE(+1);
         }
-        if (AnyStatIsLowered(battlerAtk)
-        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        if (AnyStatIsLowered(battlerAtk))
+        //&& (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
             ADJUST_SCORE(+1);
             break;
     case EFFECT_PARTING_SHOT:
@@ -5489,20 +5555,22 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
     case EFFECT_ENDURE:
-    /*
         if (CanTargetFaintAi(battlerDef, battlerAtk))
         {
             if (gBattleMons[battlerAtk].hp > gBattleMons[battlerAtk].maxHP / 4 // Pinch berry couldn't have activated yet
              && IsPinchBerryItemEffect(aiData->holdEffects[battlerAtk]))
-                ADJUST_SCORE(GOOD_EFFECT);
-            else if ((gBattleMons[battlerAtk].hp > 1) // Only spam endure for Flail/Reversal if you're not at Min Health
-             && (HasMoveWithEffect(battlerAtk, EFFECT_FLAIL) || HasMoveWithEffect(battlerAtk, EFFECT_ENDEAVOR)))
-                ADJUST_SCORE(GOOD_EFFECT);
-        }
-        break;
-    */
-        if (CanTargetFaintAi(battlerDef, battlerAtk))
+            { 
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL);
+                else
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                break;
+            }
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            //else if ((gBattleMons[battlerAtk].hp > 1) // Only spam endure for Flail/Reversal if you're not at Min Health
+            // && (HasMoveWithEffect(battlerAtk, EFFECT_FLAIL) || HasMoveWithEffect(battlerAtk, EFFECT_ENDEAVOR)))
+            //    ADJUST_SCORE(GOOD_EFFECT);
+        }
         break;
     case EFFECT_SPIKES:
     case EFFECT_STEALTH_ROCK:
@@ -6572,9 +6640,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT); // Get some super effective moves
         break;
     */
-        if (!IS_BATTLER_OF_TYPE(battlerDef, TYPE_PSYCHIC))
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
-        else
         break;
     case EFFECT_THIRD_TYPE:
         if (aiData->abilities[battlerDef] == ABILITY_WONDER_GUARD)
@@ -6746,11 +6812,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_REVIVAL_BLESSING:
         if (GetFirstFaintedPartyIndex(battlerAtk) != PARTY_SIZE)
         {
-            ADJUST_SCORE(DECENT_EFFECT);
-            if (aiData->shouldSwitch & (1u << battlerAtk)) // Bad matchup
-                ADJUST_SCORE(WEAK_EFFECT);
-            if (aiData->mostSuitableMonId[battlerAtk] != PARTY_SIZE) // Good mon to send in after
-                ADJUST_SCORE(WEAK_EFFECT);
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            //if (aiData->shouldSwitch & (1u << battlerAtk)) // Bad matchup
+            //    ADJUST_SCORE(WEAK_EFFECT);
+            //if (aiData->mostSuitableMonId[battlerAtk] != PARTY_SIZE) // Good mon to send in after
+            //    ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
     //case EFFECT_EXTREME_EVOBOOST: // TODO

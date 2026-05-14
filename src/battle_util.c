@@ -10963,6 +10963,7 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     {
     case ABILITY_COMPOUND_EYES:
     case ABILITY_ILLUMINATE:
+    case ABILITY_KEEN_EYE:
         calc = (calc * 130) / 100; // 1.3 compound eyes boost
         break;
     case ABILITY_VICTORY_STAR:

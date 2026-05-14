@@ -104,7 +104,7 @@ u32 GetSwitchChance(enum ShouldSwitchScenario shouldSwitchScenario)
         case SHOULD_SWITCH_ALL_SCORES_BAD:
             return SHOULD_SWITCH_ALL_SCORES_BAD_PERCENTAGE;
         default:
-            return 100;
+            return 0;
     }
 }
 
@@ -678,7 +678,9 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
         && gDisableStructs[battler].perishSongTimer == 0
         && monAbility != ABILITY_SOUNDPROOF
         && RandomPercentage(RNG_AI_SWITCH_PERISH_SONG, GetSwitchChance(SHOULD_SWITCH_PERISH_SONG)))
-        return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
+        { DebugPrintf("perish song test");
+            return GetMostSuitableMonToSwitchInto(battler, SWITCH_AFTER_KO);
+        }
 
     if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING)
     {
@@ -1820,25 +1822,25 @@ static u32 GetSwitchinStatusDamage(u32 battler)
 }
 */
 
-/*
+
 // Gets number of hits to KO factoring in hazards, healing held items, status, and weather
 static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
 {
-    u32 startingHP = gAiLogicData->switchinCandidate.battleMon.hp - GetSwitchinHazardsDamage(battler, &gAiLogicData->switchinCandidate.battleMon);
-    s32 weatherImpact = GetSwitchinWeatherImpact(); // Signed to handle both damage and healing in the same value
-    u32 recurringDamage = GetSwitchinRecurringDamage();
-    u32 recurringHealing = GetSwitchinRecurringHealing();
-    u32 statusDamage = GetSwitchinStatusDamage(battler);
+    u32 startingHP = gAiLogicData->switchinCandidate.battleMon.hp;// - GetSwitchinHazardsDamage(battler, &gAiLogicData->switchinCandidate.battleMon);
+    //s32 weatherImpact = GetSwitchinWeatherImpact(); // Signed to handle both damage and healing in the same value
+    //u32 recurringDamage = GetSwitchinRecurringDamage();
+    //u32 recurringHealing = GetSwitchinRecurringHealing();
+    //u32 statusDamage = GetSwitchinStatusDamage(battler);
     u32 hitsToKO = 0;
     u16 maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP, item = gAiLogicData->switchinCandidate.battleMon.item, heldItemEffect = GetItemHoldEffect(item);
-    u8 weatherDuration = gWishFutureKnock.weatherDuration, holdEffectParam = GetItemHoldEffectParam(item);
+    //u8 weatherDuration = gWishFutureKnock.weatherDuration, holdEffectParam = GetItemHoldEffectParam(item);
     u32 opposingBattler = GetOppositeBattler(battler);
     enum Ability opposingAbility = gAiLogicData->abilities[opposingBattler], ability = gAiLogicData->switchinCandidate.battleMon.ability;
-    bool32 usedSingleUseHealingItem = FALSE, opponentCanBreakMold = IsMoldBreakerTypeAbility(opposingBattler, opposingAbility);
-    s32 currentHP = startingHP, singleUseItemHeal = 0;
+    bool32 /*usedSingleUseHealingItem = FALSE, */opponentCanBreakMold = IsMoldBreakerTypeAbility(opposingBattler, opposingAbility);
+    s32 currentHP = startingHP;//, singleUseItemHeal = 0;
 
     // No damage being dealt
-    if ((damageTaken + statusDamage + recurringDamage <= recurringHealing) || damageTaken + statusDamage + recurringDamage == 0)
+    if (damageTaken  == 0)
         return hitsToKO;
 
     // Mon fainted to hazards
@@ -1849,8 +1851,8 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
     while (currentHP > 0)
     {
         // Remove weather damage when it would run out
-        if (weatherImpact != 0 && weatherDuration == 0)
-            weatherImpact = 0;
+        //if (weatherImpact != 0 && weatherDuration == 0)
+        //    weatherImpact = 0;
 
         // Take attack damage for the turn
         currentHP = currentHP - damageTaken;
@@ -1860,11 +1862,11 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
             currentHP = 1;
 
         // If mon is still alive, apply weather impact first, as it might KO the mon before it can heal with its item (order is weather -> item -> status)
-        if (currentHP > 0)
-            currentHP = currentHP - weatherImpact;
+        //if (currentHP > 0)
+        //    currentHP = currentHP - weatherImpact;
 
         // Check if we're at a single use healing item threshold
-        if (currentHP > 0 && gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_KLUTZ && usedSingleUseHealingItem == FALSE
+        /*if (currentHP > 0 && gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_KLUTZ && usedSingleUseHealingItem == FALSE
          && !(opposingAbility == ABILITY_UNNERVE && GetItemPocket(item) == POCKET_BERRIES))
         {
             switch (heldItemEffect)
@@ -1917,7 +1919,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
         // Reduce weather duration
         if (weatherDuration != 0)
             weatherDuration--;
-
+        */
         hitsToKO++;
     }
 
@@ -1926,14 +1928,14 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
         hitsToKO++;
 
     // If mon had a hypothetical status from TSpikes, clear it
-    if (gAiLogicData->switchinCandidate.hypotheticalStatus == TRUE)
+    /*if (gAiLogicData->switchinCandidate.hypotheticalStatus == TRUE)
     {
         gAiLogicData->switchinCandidate.battleMon.status1 = 0;
         gAiLogicData->switchinCandidate.hypotheticalStatus = FALSE;
-    }
+    }*/
     return hitsToKO;
 }
-*/
+
 
 static u32 GetBattleMonTypeMatchup(struct BattlePokemon opposingBattleMon, struct BattlePokemon battleMon)
 {
@@ -2339,13 +2341,14 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
 static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int lastId, u32 battler, u32 opposingBattler, u32 battlerIn1, u32 battlerIn2, enum SwitchType switchType)
 {
     int i, j, aliveCount = 0;
-    int AIFastOHKOId = PARTY_SIZE, AISlowOHKOId = PARTY_SIZE, AIFastOutdamageId = PARTY_SIZE, AISlowOutdamageOrDittoWobbId = PARTY_SIZE, AIJustFasterId = PARTY_SIZE;
+    int AIFastOHKOId = PARTY_SIZE, AISlowOHKOId = PARTY_SIZE, AIFastWin1v1Id = PARTY_SIZE, AISlowWin1v1id = PARTY_SIZE, AIDittoOrWobbId = PARTY_SIZE, AIJustFasterId = PARTY_SIZE;
     int PlayerFastOHKOsId = PARTY_SIZE, AIDefaultId = PARTY_SIZE; 
     //s32 playerMonHP = gBattleMons[opposingBattler].hp, AIMonHP = gBattleMons[battler].hp, monMaxDamage = 0;
     //s32 playerMonMaxHP = gBattleMons[opposingBattler].maxHP, AIMonMaxHP = gBattleMons[battler].maxHP;
-    
-    u32 aiMove;//, hitsToKOAI, hitsToKOPlayer;
-    bool32 isSwitchinFirst;
+    bool32 isFreeSwitch = IsFreeSwitch(switchType, battlerIn1, opposingBattler), isSwitchinFirst, /*isSwitchinFirstPriority, */canSwitchinWin1v1;
+
+    u32 aiMove, hitsToKOAI, hitsToKOPlayer;
+    //bool32 isSwitchinFirst;
     u32 invalidMons = 0;
     uq4_12_t effectiveness = UQ_4_12(1.0);
 
@@ -2370,9 +2373,9 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         u32 bestPlayerMove = MOVE_NONE;
         s32 playerMonHP = gBattleMons[opposingBattler].hp, AIMonHP = gAiLogicData->switchinCandidate.battleMon.hp, monMaxDamage = 0;
         //s32 playerMonMaxHP = gBattleMons[opposingBattler].maxHP, AIMonMaxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
-        u32 playerDamagePercentToAI = 0, AIDamagePercentToPlayer = 0, playerRawDamageToAI = 0, AIRawDamageToPlayer = 0;
+        u32 /*playerDamagePercentToAI = 0, AIDamagePercentToPlayer = 0, */playerRawDamageToAI = 0, AIRawDamageToPlayer = 0;
         // Get max number of hits for player to KO AI mon and type matchup for defensive switching
-        //hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove), battler);
+        hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove), battler);
 
         // NEW DAMAGE TESTING - works out Player damage to AI mon in raw numbers and then %    
         playerRawDamageToAI = GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove);
@@ -2380,7 +2383,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         //if (playerRawDamageToAI >= AIMonHP) 
         //    playerDamagePercentToAI = 1;
         //else 
-            playerDamagePercentToAI = playerRawDamageToAI * 1000 / AIMonHP;
+            //playerDamagePercentToAI = playerRawDamageToAI * 1000 / AIMonHP;
 
 
 
@@ -2400,18 +2403,18 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
                 continue;
 
             AIRawDamageToPlayer = AI_CalcPartyMonDamage(aiMove, battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &effectiveness, AI_ATTACKING);
-            //hitsToKOPlayer = GetNoOfHitsToKOBattlerDmg(AIRawDamageToPlayer, opposingBattler);
-
+            hitsToKOPlayer = GetNoOfHitsToKOBattlerDmg(AIRawDamageToPlayer, opposingBattler);
+            isSwitchinFirst = AI_IsPartyMonFaster(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, aiMove, bestPlayerMove, DONT_CONSIDER_PRIORITY);
             //if (AIRawDamageToPlayer >= playerMonHP)
             //    AIDamagePercentToPlayer = 1;
             //else damageDealt
-                AIDamagePercentToPlayer = AIRawDamageToPlayer * 1000 / playerMonHP;
+                //AIDamagePercentToPlayer = AIRawDamageToPlayer * 1000 / playerMonHP;
 
+            canSwitchinWin1v1 = CanSwitchinWin1v1(hitsToKOAI, hitsToKOPlayer, isSwitchinFirst, isFreeSwitch);
 
             // NEW DAMAGE TESTING - works out AI damage to Player mon in %    
 
             // Checks for if SwitchIn mon is faster than Player mon
-            isSwitchinFirst = AI_IsPartyMonFaster(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, aiMove, bestPlayerMove, DONT_CONSIDER_PRIORITY);
             // Checks for AI mon being faster than Player mon + OHKOing
             /*if (isSwitchinFirst
             && (hitsToKOPlayer = 1))
@@ -2437,39 +2440,53 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
             }*/
             else if (!isSwitchinFirst
                 && (AIRawDamageToPlayer >= playerMonHP)
-                && (playerRawDamageToAI < AIMonHP)
+                && (hitsToKOAI > 1)
                 && (AISlowOHKOId == PARTY_SIZE))
                 {
                     DebugPrintf("Slow OHKO by AI without being OHKOd itself i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
                     AISlowOHKOId = i;
                 }
-            // Checks for AI mon fast outdamaging Player mon while no one sees kill - note outdamage can mean equal here
-            else if (isSwitchinFirst
+            // Checks for AI mon being faster while killing player in equal or less hits
+            /*else if (isSwitchinFirst
             && (AIRawDamageToPlayer < playerMonHP)
             && (playerRawDamageToAI < AIMonHP)
             && (AIDamagePercentToPlayer >= playerDamagePercentToAI)
-            && (AIFastOutdamageId == PARTY_SIZE))
+            && (AIFastWin1v1Id == PARTY_SIZE))
             {
                 DebugPrintf("Fast outdamage by AI i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
-                AIFastOutdamageId = i;
+                AIFastWin1v1Id = i;
+            }*/
+            else if (isSwitchinFirst
+            && (canSwitchinWin1v1)
+            && (AIFastWin1v1Id == PARTY_SIZE))
+            {
+                DebugPrintf("Faster + less/equal hits for AI to KO - i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AIFastWin1v1Id = i;
             }
             // Checks for AI mon fast outdamaging Player mon while no one sees kill - note outdamage can mean equal here
-            else if (!isSwitchinFirst
+            /*else if (!isSwitchinFirst
             && (AIRawDamageToPlayer < playerMonHP)
             && (playerRawDamageToAI < AIMonHP)
             && (AIDamagePercentToPlayer >= playerDamagePercentToAI)
             && (AISlowOutdamageOrDittoWobbId == PARTY_SIZE))
             {
-                DebugPrintf("Slow outdamage by AI OR DITTO/WOBB - slow outdamage i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                DebugPrintf("Slower + less hits for AI to KO - slow outdamage i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
                 AISlowOutdamageOrDittoWobbId = i;
+            }*/
+            else if (!isSwitchinFirst
+            && (canSwitchinWin1v1)
+            && (AISlowWin1v1id == PARTY_SIZE))
+            {
+                DebugPrintf("Slower + less hits for AI to KO - slow outdamage i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AISlowWin1v1id = i;
             }
             // Check if AI mon is ditto/wobb
             else if ((species == SPECIES_DITTO
              || species == SPECIES_WOBBUFFET)
-            && (AISlowOutdamageOrDittoWobbId == PARTY_SIZE))
+            && (AIDittoOrWobbId == PARTY_SIZE))
             {
-                DebugPrintf("Slow outdamage by AI OR DITTO/WOBB - wobb and ditto i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
-                AISlowOutdamageOrDittoWobbId = i;
+                DebugPrintf("DITTO/WOBB - wobb and ditto i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                AIDittoOrWobbId = i;
             } 
             else if (isSwitchinFirst
             && (AIJustFasterId == PARTY_SIZE))
@@ -2485,9 +2502,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
                 PlayerFastOHKOsId = i;
             }*/
             else if (!isSwitchinFirst
-            && (AIDamagePercentToPlayer < playerDamagePercentToAI)
-            && (playerRawDamageToAI < AIMonHP)
-            && (AIRawDamageToPlayer < playerMonHP)
+            && (!canSwitchinWin1v1)
             && (AIDefaultId == PARTY_SIZE))
             {
                 DebugPrintf("default i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
@@ -2510,8 +2525,9 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         // Return Fast OHKO, slow OHKO, fast oudamage, slow outdamage/wobb/ditto, faster, default, ai gets fast OHKO'd
         if (AIFastOHKOId != PARTY_SIZE)                      return AIFastOHKOId;
         else if (AISlowOHKOId != PARTY_SIZE)                 return AISlowOHKOId;
-        else if (AIFastOutdamageId != PARTY_SIZE)            return AIFastOutdamageId;
-        else if (AISlowOutdamageOrDittoWobbId != PARTY_SIZE) return AISlowOutdamageOrDittoWobbId;
+        else if (AIFastWin1v1Id != PARTY_SIZE)               return AIFastWin1v1Id;
+        else if (AISlowWin1v1id != PARTY_SIZE)               return AISlowWin1v1id;
+        else if (AIDittoOrWobbId != PARTY_SIZE)              return AIDittoOrWobbId;
         else if (AIJustFasterId != PARTY_SIZE)               return AIJustFasterId;
         else if (AIDefaultId != PARTY_SIZE)                  return AIDefaultId;
         else                                                 return PlayerFastOHKOsId;    

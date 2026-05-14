@@ -2169,7 +2169,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Donphan @ Covert Cloak  
 Ability: Sturdy  
-Level: 75  
+Level: 80  
 Tera Type: Ground  
 Adamant Nature  
 - Fissure  
@@ -4330,7 +4330,7 @@ Jolly Nature
 - Gravity  
 - Rock Slide  
 - High Horsepower  
-- Wide Guard  
+- Protect  
 
 === TRAINER_BEN ===
 Name: Ben
@@ -6079,7 +6079,7 @@ Porygon-Z @ Focus Band
 Ability: Adaptability  
 Level: 81  
 Timid Nature    
-- Tri Attack  
+- Dark Pulse 
 - Revelation Dance  
 - Quiver Dance  
 - Conversion 2  
