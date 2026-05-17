@@ -2477,4 +2477,25 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Powers up Dragon moves."),
         .aiRating = 6,
     },
+
+    [ABILITY_FORCEFIELD] =
+    {
+        .name = _("Forcefield"),
+        .description = COMPOUND_STRING("Hurts non-contact."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_BUG_EYED] =
+    {
+        .name = _("Bug Eyed"),
+        .description = COMPOUND_STRING("Powers up Bug moves."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_AMPHIBIAN] =
+    {
+        .name = _("Amphibian"),
+        .description = COMPOUND_STRING("Powers up Water moves."),
+        .aiRating = 6,
+    },
 };

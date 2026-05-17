@@ -432,7 +432,7 @@ Jolly Nature
 - Fake Out  
 - Poison Jab  
 - Cross Chop  
-- Throat Chop  
+- Sucker Punch  
 
 Golisopod @ Assault Vest  
 Ability: Emergency Exit  
@@ -1647,7 +1647,7 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Bastiodon @ Leftovers  
+Bastiodon @ Leppa Berry  
 Ability: Sturdy  
 Level: 84  
 Sassy Nature  
@@ -1656,23 +1656,23 @@ Sassy Nature
 - Ancient Power  
 - Roar  
 
+Dragapult @ Focus Sash  
+Ability: Cursed Body  
+Level: 82   
+Hasty Nature  
+- Mean Look  
+- Baton Pass  
+- Double Team  
+- Dragon Darts  
+
 Porygon2 @ Eviolite  
 Ability: Download  
-Level: 81    
+Level: 81  
 Bold Nature   
 - Tri Attack  
 - Psychic  
 - Foul Play  
 - Recover  
-
-Weavile @ Expert Belt  
-Ability: Technician  
-Level: 82   
-Adamant Nature  
-- Feint Attack  
-- Pursuit  
-- Ice Shard  
-- Swords Dance  
 
 Braviary-Hisui @ Life Orb  
 Ability: Sheer Force  
@@ -1685,12 +1685,21 @@ Timid Nature
 
 Armarouge @ Colbur Berry  
 Ability: Weak Armor  
-Level: 81    
+Level: 81  
 Timid Nature  
-- Temper Flare  
+- Mind Flare  
 - Expanding Force  
 - Focus Blast  
 - Acid Spray  
+
+Empoleon @ Weakness Policy  
+Ability: Competitive  
+Level: 82  
+Naive Nature  
+- Work Up 
+- Agility  
+- Power Trip  
+- Scald  
 
 === TRAINER_HANK ===
 Name: Hank
@@ -3078,7 +3087,7 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Avalugg-Hisui @ Lum Berry  
+Avalugg-Hisui @ Ice Gem 
 Ability: Sturdy  
 Level: 81   
 Brave Nature  
@@ -3418,11 +3427,11 @@ Modest Nature
 - Sludge Bomb  
 
 Rapidash-Galar @ Choice Band  
-Ability: Pastel Veil  
+Ability: Pixilate  
 Level: 81   
 Jolly Nature  
-- Play Rough  
-- Zen Headbutt  
+- Extreme Speed  
+- Flare Blitz  
 - Megahorn  
 - High Jump Kick  
 
@@ -4306,7 +4315,7 @@ Naive Nature
 - Focus Blast  
 
 Togedemaru @ Eject Button  
-Ability: Iron Barbs  
+Ability: Sturdy  
 Level: 63   
 Jolly Nature  
 - Gravity  
@@ -4314,14 +4323,14 @@ Jolly Nature
 - Iron Tail  
 - Bolt Strike 
 
-Dugtrio @ Focus Sash  
+Dugtrio @ Ground Gem  
 Ability: Arena Trap  
 Level: 62   
 Jolly Nature  
 - Stomping Tantrum  
 - Sucker Punch  
 - Rock Slide  
-- Reversal  
+- Poison Jab  
 
 Stonjourner @ Red Card  
 Ability: Power Spot  
@@ -4592,7 +4601,7 @@ Level: 83
 Relaxed Nature  
 - Leaf Storm  
 - Fleur Cannon  
-- Body Press  
+- Terrain Pulse  
 - Bulldoze  
 
 Sableye @ Roseli Berry  
@@ -5636,7 +5645,7 @@ Talonflame @ Power Herb
 Ability: Gale Wings  
 Level: 62   
 Hasty Nature  
-- Hurricane  
+- Sky Attack  
 - Fire Blast  
 - Solar Beam  
 - U-turn  
@@ -7487,7 +7496,7 @@ Ability: Sniper
 Level: 64    
 Quiet Nature  
 - Water Shuriken  
-- Bullet Punch  
+- Bullet Seed  
 - Rock Blast  
 - Twin Beam  
 
@@ -7773,7 +7782,7 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Flygon @ Roseli Berry  
+Flygon @ Normal Gem 
 Ability: Levitate  
 Level: 76  
 Hasty Nature  
@@ -7809,7 +7818,7 @@ Hasty Nature
 - U-turn  
 - Grass Knot  
 
-Bellibolt @ Assault Vest  
+Bellibolt @ Iapapa Berry  
 Ability: Electromorphosis  
 Level: 79  
 Bold Nature    
@@ -10210,7 +10219,7 @@ Careful Nature
 - Dragon Tail  
 - Spiky Shield
 
-Archeops @ Bug Gem  
+Archeops @ Hard Stone  
 Ability: Defeatist  
 Level: 80   
 Jolly Nature  
@@ -10273,11 +10282,11 @@ Hasty Nature
 - Icicle Spear  
 - Shadow Ball  
 
-Mantine @ Choice Specs  
+Mantine @ Choice Scarf  
 Ability: No Guard  
 Level: 81   
 Modest Nature   
-- Hydro Pump  
+- Inferno  
 - Hurricane  
 - Blizzard  
 - Signal Beam  
@@ -10340,8 +10349,8 @@ Sandslash-Alola @ Metal Coat
 Ability: Snow Cloak  
 Level: 81   
 Jolly Nature  
-- Steel Roller  
 - Spin Out  
+- Bullet Punch  
 - Ice Shard  
 - Earthquake  
 
@@ -10349,7 +10358,7 @@ Claydol @ Power Herb
 Ability: Levitate  
 Level: 80   
 Relaxed Nature  
-- Explosion  
+- Trick Room  
 - Meteor Beam  
 - Psychic  
 - Earth Power  
@@ -10375,7 +10384,7 @@ Adamant Nature
 Haxorus @ Roseli Berry  
 Ability: Mold Breaker  
 Level: 80   
-Jolly Nature  
+Adamant Nature  
 - Outrage  
 - Close Combat  
 - Iron Head  
@@ -12450,7 +12459,7 @@ Modest Nature
 - Flash Cannon  
 - Psychic  
 - Meteor Beam  
-- Iron Defense  
+- Amnesia  
 
 === TRAINER_RICHARD ===
 Name: Richard
@@ -13849,7 +13858,7 @@ Level: 77
 Relaxed Nature  
 IVs: 0 Spe  
 - Trick Room  
-- Explosion  
+- Body Press  
 - Gyro Ball  
 - Zen Headbutt  
 
@@ -15141,7 +15150,7 @@ Muk-Alola @ Assault Vest
 Ability: Poison Touch  
 Level: 78    
 Adamant Nature  
-- Gunk Shot  
+- Acid Spray  
 - Knock Off  
 - Pursuit  
 - Thunder Punch  
@@ -15846,7 +15855,7 @@ Level: 38
 Jolly Nature  
 IVs: 29 HP  
 - Spirit Break  
-- Shadow Claw  
+- Bitter Malice 
 - Curse  
 - Night Shade  
 
@@ -16966,7 +16975,7 @@ Bold Nature
 Ambipom @ Loaded Dice  
 Ability: Technician  
 Level: 80    
-Jolly Nature  
+Adamant Nature  
 - Tail Slap  
 - Rock Blast  
 - Bullet Seed  
@@ -16994,7 +17003,7 @@ Pikachu @ Light Ball
 Ability: Surge Surfer  
 Level: 80   
 Modest Nature   
-- Thunder  
+- Rising Voltage  
 - Surf  
 - Grass Knot  
 - Alluring Voice  
@@ -17204,7 +17213,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Ninetales @ Fire Gem  
+Ninetales @ Expert Belt  
 Ability: Drought  
 Level: 80   
 Timid Nature  
@@ -17213,7 +17222,7 @@ Timid Nature
 - Shadow Ball  
 - Extrasensory  
 
-Leafeon @ Muscle Band  
+Leafeon @ Grass Gem  
 Ability: Chlorophyll  
 Level: 80    
 Adamant Nature  
@@ -17254,7 +17263,7 @@ Modest Nature
 - Armor Cannon  
 - Thunderbolt  
 - Solar Beam  
-- Focus Blast  
+- Aura Sphere  
 
 === TRAINER_BLUE ===
 Name: BLUE
@@ -18059,8 +18068,8 @@ Mugshot: DarkRed
 
 Dusknoir @ Weakness Policy  
 Ability: Iron Fist  
-Level: 65    
-Relaxed Nature  
+Level: 65   
+Brave Nature  
 IVs: 0 Spe  
 - Payback  
 - Drain Punch  
@@ -18069,7 +18078,7 @@ IVs: 0 Spe
 
 Chesnaught @ Coba Berry  
 Ability: Shell Armor  
-Level: 65   
+Level: 65  
 Adamant Nature  
 - Power Whip  
 - Close Combat  
@@ -18078,7 +18087,7 @@ Adamant Nature
 
 Aggron @ Covert Cloak  
 Ability: Sturdy  
-Level: 65    
+Level: 65  
 Adamant Nature  
 - Stone Edge  
 - Iron Tail  
@@ -18087,30 +18096,30 @@ Adamant Nature
 
 Thundurus @ Flying Gem  
 Ability: Defiant  
-Level: 65   
+Level: 65  
 Naive Nature  
 - Thunderbolt  
 - Volt Switch  
 - Acrobatics  
 - Dark Pulse  
 
-Kingdra @ Loaded Dice  
-Ability: Swift Swim  
-Level: 65    
-Adamant Nature  
-- Scale Shot  
-- Waterfall  
-- Agility  
-- Smokescreen  
+Turtonator @ Assault Vest  
+Ability: Multiscale  
+Level: 65  
+Relaxed Nature  
+- Shell Trap  
+- Mirror Coat  
+- Magma Storm  
+- Dragon Tail  
 
-Tyranitar @ Chople Berry  
+Tyranitar @ Choice Scarf  
 Ability: Solid Rock  
-Level: 65    
+Level: 65   
 Jolly Nature  
-- Dragon Dance  
-- Knock Off  
+- Ice Fang  
+- Crunch  
 - Stone Edge  
-- Superpower  
+- Play Rough   
 
 === TRAINER_RIVAL_CHIKORITA_4 ===
 Name: Silver
@@ -18448,9 +18457,10 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 Mugshot: DarkRed
 
 Dusknoir @ Weakness Policy  
-Ability: Iron Fist 
-Level: 65   
-Relaxed Nature   
+Ability: Iron Fist  
+Level: 65    
+Brave Nature  
+IVs: 0 Spe  
 - Payback  
 - Drain Punch  
 - Shadow Sneak  
@@ -18458,16 +18468,16 @@ Relaxed Nature
 
 Delphox @ Eject Pack  
 Ability: Magician  
-Level: 65    
+Level: 65  
 Timid Nature   
 - Overheat  
-- Psycho Boost  
+- Psychic  
 - Grass Knot  
 - Hypnosis  
 
 Lucario @ Focus Sash  
 Ability: Inner Focus  
-Level: 65    
+Level: 65  
 Jolly Nature  
 - Reversal  
 - Trailblaze  
@@ -18483,23 +18493,23 @@ Timid Nature
 - Focus Blast  
 - U-turn  
 
-Exeggutor-Alola @ Custap Berry  
-Ability: Harvest  
-Level: 65   
-Modest Nature   
-- Draco Meteor  
-- Leaf Storm  
-- Sleep Powder  
-- Endure  
+Kingdra @ Loaded Dice  
+Ability: Sniper  
+Level: 65  
+Adamant Nature  
+- Scale Shot  
+- Liquidation  
+- Agility  
+- Iron Head  
 
-Tyranitar @ Chople Berry  
+Tyranitar @ Choice Scarf  
 Ability: Solid Rock  
 Level: 65   
 Jolly Nature  
-- Dragon Dance  
-- Knock Off  
+- Ice Fang  
+- Crunch  
 - Stone Edge  
-- Superpower  
+- Play Rough  
 
 === TRAINER_RIVAL_CYNDAQUIL_4 ===
 Name: Silver
@@ -18836,9 +18846,10 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 Mugshot: DarkRed
 
 Dusknoir @ Weakness Policy  
-Ability: Iron Fist 
+Ability: Iron Fist  
 Level: 65   
-Relaxed Nature   
+Brave Nature  
+IVs: 0 Spe  
 - Payback  
 - Drain Punch  
 - Shadow Sneak  
@@ -18846,8 +18857,8 @@ Relaxed Nature
 
 Greninja @ Black Glasses  
 Ability: Protean  
-Level: 65   
-Timid Nature  
+Level: 65  
+Timid Nature   
 - Surf  
 - Ice Beam  
 - Dark Pulse  
@@ -18855,8 +18866,8 @@ Timid Nature
 
 Magnezone @ Rocky Helmet  
 Ability: Sturdy  
-Level: 65    
-Modest Nature   
+Level: 65  
+Modest Nature  
 - Thunderbolt  
 - Volt Switch  
 - Flash Cannon  
@@ -18864,30 +18875,30 @@ Modest Nature
 
 Landorus @ Life Orb  
 Ability: Sheer Force  
-Level: 65    
+Level: 65  
 Hasty Nature  
 - Earth Power  
 - Psychic  
 - Rock Slide  
 - U-turn  
 
-Turtonator @ Assault Vest  
-Ability: Multiscale  
-Level: 65    
-Relaxed Nature  
-- Shell Trap  
-- Mirror Coat  
-- Magma Storm  
-- Dragon Tail  
-
-Tyranitar @ Chople Berry  
-Ability: Solid Rock  
+Exeggutor-Alola @ Custap Berry  
+Ability: Harvest  
 Level: 65   
+Modest Nature   
+- Draco Meteor  
+- Leaf Storm  
+- Sleep Powder  
+- Endure  
+
+Tyranitar @ Choice Scarf  
+Ability: Solid Rock  
+Level: 65    
 Jolly Nature  
-- Dragon Dance  
-- Knock Off  
-- Rock Slide  
-- Superpower  
+- Ice Fang  
+- Crunch  
+- Stone Edge  
+- Play Rough   
 
 === TRAINER_RIVAL_TOTODILE_4 ===
 Name: Silver
@@ -19630,12 +19641,12 @@ Mugshot: DarkRed
 Claydol @ Focus Sash  
 Ability: Levitate  
 Level: 65   
-Relaxed Nature  
+Quiet Nature  
 IVs: 0 Spe  
 - Trick Room  
 - Explosion  
 - Extrasensory  
-- Ancient Power  
+- Blizzard  
 
 Bronzong @ Occa Berry  
 Ability: Levitate  
@@ -19682,7 +19693,7 @@ Ability: Clear Body
 Level: 65   
 Quiet Nature  
 IVs: 0 Spe  
-- Blizzard  
+- Freeze-Dry  
 - Ancient Power  
 - Zap Cannon  
 - Focus Blast  
@@ -19697,9 +19708,10 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
-Electrode-Hisui @ Wide Lens  
+Electrode-Hisui @ Tanga Berry  
 Ability: Aftermath  
-Level: 85   
+Level: 85  
+IVs: 30 HP 
 Rash Nature  
 - Explosion  
 - Zap Cannon  
@@ -19742,12 +19754,13 @@ Adamant Nature
 - Pursuit  
 - Rock Tomb  
 
-Wigglytuff @ Life Orb  
+Wigglytuff @ Focus Sash  
 Ability: Unseen Fist  
 Level: 85   
 Quiet Nature  
 - Misty Explosion  
 - Explosion  
+- Revival Blessing
 
 === TRAINER_ARIANA_1 ===
 Name: Ariana

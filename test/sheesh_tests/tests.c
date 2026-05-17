@@ -3358,3 +3358,26 @@ AI_SINGLE_BATTLE_TEST("AI Correctly recognises different speed drop move scoring
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("Forcefield ability functions properly")
+{
+    u32 playerMove;
+    
+    PARAMETRIZE { playerMove = MOVE_TACKLE; }
+    PARAMETRIZE { playerMove = MOVE_WATER_GUN; }
+
+    GIVEN { 
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(playerMove); Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Speed(1); Ability(ABILITY_FORCEFIELD); }
+    } WHEN {
+        if (playerMove == MOVE_TACKLE)
+        {
+            TURN { MOVE(player, playerMove); NOT MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Forcefield!"); }
+        }
+        else if (playerMove == MOVE_WATER_GUN)
+        {
+            TURN { MOVE(player, playerMove); MESSAGE("Wobbuffet was hurt by the opposing Wobbuffet's Forcefield!"); }
+        }
+    }
+}
