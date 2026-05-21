@@ -1045,12 +1045,13 @@
 #define ITEM_SUPER_CANDY 867
 #define ITEM_INFINITE_CANDY 868
 #define ITEM_REPELLENT 869
+#define ITEM_POKE_VIAL 870
 
 // difficulty items
 //#define ITEM_INFINITE_REPEL 866
 //#define ITEM_INFINITE_RARE_CANDIES 867
 
-#define ITEMS_COUNT 870
+#define ITEMS_COUNT 871
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

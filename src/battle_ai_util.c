@@ -6339,7 +6339,7 @@ enum AIConsiderGimmick ShouldTeraFromCalcs(u32 battler, u32 opposingBattler, str
     //Spencer Tera specific: NOTE HE NEEDS AI_FLAG_SMART_TERA FLAG ALSO SET TO GET TO THIS POINT!!!
     if (gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SPENCER_TERA)
     {
-        if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT))
+        if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
             return USE_GIMMICK;
         else 
             return NO_GIMMICK;

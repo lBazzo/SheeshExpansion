@@ -15357,6 +15357,21 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Repel,
         .iconPalette = gItemIconPalette_MaxRepel,
     },
+
+    [ITEM_POKE_VIAL] =
+    {
+        .name = ITEM_NAME("Poke Vial"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Heals all party\n"
+            "Pokémon."), 
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial, 
+        .iconPic = gItemIcon_Flute,
+        .iconPalette = gItemIconPalette_RedFlute,
+    },
 };
 
 #undef ITEM_NAME

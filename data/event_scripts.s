@@ -1778,3 +1778,13 @@ EventScript_VsSeekerChargingDone::
 	special VsSeekerResetObjectMovementAfterChargeComplete
 	releaseall
 	end
+
+PokeVialHealScript::
+	special HealPlayerParty
+	playse SE_USE_ITEM
+	msgbox PokeVialText, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PokeVialText::
+	.string "Your party has been fully healed.$"

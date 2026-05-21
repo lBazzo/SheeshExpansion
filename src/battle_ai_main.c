@@ -3036,6 +3036,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_SHELL_TRAP:
             if (!HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            else if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
             break;
         //case EFFECT_BEAK_BLAST:
             //break;
@@ -3202,7 +3204,7 @@ static s32 AI_TryToFaint(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     
     enum BattleMoveEffects effect = GetMoveEffect(move);
     if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING)
-        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION && effect != EFFECT_FINAL_GAMBIT)
+        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION && effect != EFFECT_FINAL_GAMBIT && effect != EFFECT_SHELL_TRAP)
     { 
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY))
             ADJUST_SCORE(FAST_KILL);
@@ -3323,8 +3325,10 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (CanTargetFaintAi(LEFT_FOE(battlerAtk), battlerAtk) && CanTargetFaintAi(RIGHT_FOE(battlerAtk), battlerAtk)
                  && AI_IsSlower(battlerAtk, LEFT_FOE(battlerAtk), move, predictedMove, DONT_CONSIDER_PRIORITY)
                  && AI_IsSlower(battlerAtk, RIGHT_FOE(battlerAtk), move, predictedMove, DONT_CONSIDER_PRIORITY))
-                    ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2); // Bazzo note: this should make it score the same as last chance ai
-
+                { 
+                    if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                        ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2); // Bazzo note: this should make it score the same as last chance ai
+                }
                 else if (ownHitsToKOFoe1 > partnerHitsToKOFoe1 && partnerHitsToKOFoe1 > 1
                  && ownHitsToKOFoe2 > partnerHitsToKOFoe2 && partnerHitsToKOFoe2 > 1)
                     ADJUST_SCORE(BEST_DAMAGE_MOVE + 1);
@@ -6544,7 +6548,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
         */
         if (!(gFieldStatuses & STATUS_FIELD_GRAVITY))
-            ADJUST_SCORE(+13);
+        {
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                ADJUST_SCORE(BEST_DAMAGE_MOVE + FAST_KILL);
+            else
+                ADJUST_SCORE(GOOD_EFFECT);
+        }
         break;
     case EFFECT_ION_DELUGE:
         if ((aiData->abilities[battlerAtk] == ABILITY_VOLT_ABSORB
@@ -6810,14 +6819,17 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break; */
     case EFFECT_REVIVAL_BLESSING:
-        if (GetFirstFaintedPartyIndex(battlerAtk) != PARTY_SIZE)
+        if (GetFirstFaintedPartyIndex(battlerAtk) != PARTY_SIZE
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
         {
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            ADJUST_SCORE(GOOD_EFFECT);
             //if (aiData->shouldSwitch & (1u << battlerAtk)) // Bad matchup
             //    ADJUST_SCORE(WEAK_EFFECT);
             //if (aiData->mostSuitableMonId[battlerAtk] != PARTY_SIZE) // Good mon to send in after
             //    ADJUST_SCORE(WEAK_EFFECT);
         }
+        else
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     //case EFFECT_EXTREME_EVOBOOST: // TODO
         //break;
@@ -7443,7 +7455,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
                     && effect != EFFECT_SHEER_COLD
                     && effect != EFFECT_MIRROR_COAT
                     && effect != EFFECT_COUNTER
-                    && effect != EFFECT_METAL_BURST)
+                    && effect != EFFECT_METAL_BURST
+                    && effect != EFFECT_SHELL_TRAP)
             {
                 ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)) // newly added rnb +2

@@ -1733,10 +1733,10 @@ void ItemUseOutOfBattle_Radio(u8 taskId)
 
 void ItemUseOutOfBattle_Repellent(u8 taskId)
 {
-    bool8 repellentOn = FlagGet(OW_FLAG_NO_ENCOUNTER);
+    bool8 repellentOn = FlagGet(FLAG_SYS_NO_ENCOUNTER);
     if (!repellentOn)
     {
-        FlagToggle(OW_FLAG_NO_ENCOUNTER);
+        FlagToggle(FLAG_SYS_NO_ENCOUNTER);
         PlaySE(SE_REPEL);
         if(gTasks[taskId].tUsingRegisteredKeyItem)
             DisplayItemMessageOnField(taskId, gText_RepellentOn, Task_CloseCantUseKeyItemMessage);
@@ -1745,8 +1745,8 @@ void ItemUseOutOfBattle_Repellent(u8 taskId)
     }
     else
     {
-        FlagToggle(OW_FLAG_NO_ENCOUNTER);
-        PlaySE(SE_PC_OFF);
+        FlagToggle(FLAG_SYS_NO_ENCOUNTER);
+        PlaySE(SE_REPEL);
         if (gTasks[taskId].tUsingRegisteredKeyItem)
             DisplayItemMessageOnField(taskId, gText_RepellentOff, Task_CloseCantUseKeyItemMessage);
         else
@@ -1758,6 +1758,28 @@ void ItemUseOutOfBattle_InfiniteCandy (u8 taskId)
 {
     gItemUseCB = ItemUseCB_InfiniteCandy;
     SetUpItemUseCallback(taskId);
+}
+
+void ItemUseCB_PokeVial (u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(PokeVialHealScript);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_PokeVial (u8 taskId)
+{
+    if (!gTasks[taskId].tUsingRegisteredKeyItem)
+    {
+        sItemUseOnFieldCB = ItemUseCB_PokeVial;
+        gFieldCallback = FieldCB_UseItemOnField;
+        gBagMenu->newScreenCallback = CB2_ReturnToField;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else 
+    {
+       gTasks[taskId].func = ItemUseCB_PokeVial;
+    }
 }
 
 #undef tUsingRegisteredKeyItem

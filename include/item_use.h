@@ -52,6 +52,7 @@ void ItemUseOutOfBattle_TownMap(u8 taskId);
 bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
 u8 GetDirectionToHiddenItem(s16, s16);
 void ItemUseOutOfBattle_Radio(u8);
+void ItemUseOutOfBattle_PokeVial(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

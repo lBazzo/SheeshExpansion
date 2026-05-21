@@ -318,6 +318,7 @@ NewBarkTown_Lab_EventScript_TriggerAideGivePotion::
 	giveitem ITEM_SUPER_CANDY
 	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_REPELLENT
+	giveitem ITEM_POKE_VIAL
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FIRST_POTION
 	setvar VAR_NEWBARKTOWN_LABSTATE, 3
