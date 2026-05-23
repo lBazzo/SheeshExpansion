@@ -3800,8 +3800,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     for (u32 evo = 0; evolutions[evo].method != EVOLUTIONS_END; evo++)
                     {
                         u32 evoLevelUp = evolutions[evo].param;
+                        u32 isEvoLevel = evolutions[evo].param == EVO_LEVEL;
 
-                        if (evoLevelUp <= monLevel && evoLevelUp != 0)
+                        if (evoLevelUp <= monLevel && evoLevelUp != 0  && isEvoLevel)
                         {
                             dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
                             blockLevelUp = TRUE;
@@ -3812,7 +3813,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         if (SanitizeSpeciesId(evolutions[evo].targetSpecies) == SPECIES_NONE)
                             break;
 
-                        if (evoLevelUp < levelUpThreshold && monLevel < levelUpThreshold)
+                        if (evoLevelUp < levelUpThreshold && monLevel < levelUpThreshold && isEvoLevel)
                             levelUpThreshold = evoLevelUp;
                     }
 
@@ -6760,9 +6761,9 @@ u16 FacilityClassToPicIndex(u16 facilityClass)
 u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
 {
     if (playerGender != MALE)
-        return FacilityClassToPicIndex(IS_HNS ? FACILITY_CLASS_LEAF : FACILITY_CLASS_MAY);
+        return FacilityClassToPicIndex(IS_HNS ? FACILITY_CLASS_MAY : FACILITY_CLASS_MAY);
     else
-        return FacilityClassToPicIndex(IS_HNS ? FACILITY_CLASS_RED : FACILITY_CLASS_BRENDAN);
+        return FacilityClassToPicIndex(IS_HNS ? FACILITY_CLASS_BRENDAN : FACILITY_CLASS_BRENDAN);
 }
 
 void HandleSetPokedexFlag(enum NationalDexOrder nationalNum, u8 caseId, u32 personality)
