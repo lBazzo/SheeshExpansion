@@ -245,7 +245,8 @@ static u32 HandleRegionMapInput(struct Pokenav_RegionMapMenu *state)
         return POKENAV_MAP_FUNC_EXIT;
     case MAP_INPUT_R_BUTTON:
         if (regionMap->mapSecType == MAPSECTYPE_CITY_CANFLY && FlagGet(OW_FLAG_POKE_RIDER) 
-        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE
+        && (!FlagGet(FLAG_IN_GAUNTLET)))
             return POKENAV_MAP_FUNC_FLY;
     }
 
@@ -812,7 +813,8 @@ void UpdateRegionMapHelpBarText(void)
     struct RegionMap* regionMap = GetSubstructPtr(POKENAV_SUBSTRUCT_REGION_MAP);
 
     if (regionMap->mapSecType == MAPSECTYPE_CITY_CANFLY && FlagGet(OW_FLAG_POKE_RIDER) 
-        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE
+        && (!FlagGet(FLAG_IN_GAUNTLET)))
     {
         if (IsRegionMapZoomed())
             PrintHelpBarText(HELPBAR_MAP_ZOOMED_IN_CANFLY);

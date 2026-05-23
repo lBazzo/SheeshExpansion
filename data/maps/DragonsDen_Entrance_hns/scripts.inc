@@ -3,7 +3,27 @@
 .set LOCALID_DRAGONSDEN_SHEGO, 5
 
 DragonsDen_Entrance_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, DragonsDen_Entrance_OnResume
 	.byte 0
+
+DragonsDen_Entrance_OnResume:
+	call DragonsDen_Entrance_EventScript_GauntletCheck
+	end
+
+DragonsDen_Entrance_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_SHEGO), DragonsDen_Entrance_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_CYBIL), DragonsDen_Entrance_EventScript_GauntletStarted
+	@callnative SetTimeBasedEncounters
+	end
+	
+DragonsDen_Entrance_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	@callnative SetTimeBasedEncounters
+	end
+
+DragonsDen_Entrance_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
+	return
 
 DragonsDen_Entrance_EventScript_Sage::
 	lock

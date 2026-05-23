@@ -1,5 +1,25 @@
 VictoryRoadKanto_B1F_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, VictoryRoadKanto_B1F_OnResume
 	.byte 0
+
+VictoryRoadKanto_B1F_OnResume:
+	call VictoryRoadKanto_B1F_EventScript_GauntletCheck
+	end
+
+VictoryRoadKanto_B1F_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_FRANKLIN), VictoryRoadKanto_B1F_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_HORTON), VictoryRoadKanto_B1F_EventScript_GauntletStarted
+	callnative SetTimeBasedEncounters
+	end
+	
+VictoryRoadKanto_B1F_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	callnative SetTimeBasedEncounters
+	end
+
+VictoryRoadKanto_B1F_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
+	return
 
 VictoryRoadKanto_B1F_EventScript_Item_FullRestore::
 	finditem ITEM_FULL_RESTORE

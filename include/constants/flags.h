@@ -759,7 +759,7 @@
 #define FLAG_DEFEATED_RADIO_TOWER_ARCHER  0x2B0 // Unused Flag
 #define FLAG_DEFEATED_VICTORY_ROAD_SILVER  0x2B1 // Unused Flag
 #define FLAG_LIGHTHOUSE_BREAK_USED  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
+#define FLAG_IN_GAUNTLET  0x2B3 // Unused Flag
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag

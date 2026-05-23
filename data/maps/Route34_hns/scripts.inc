@@ -2,7 +2,7 @@
 
 Route34_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route34_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+	map_script MAP_SCRIPT_ON_RESUME, Route34_OnResume @SetTimeEncounters
 	.byte 0
 
 Route34_OnTransition: 
@@ -13,6 +13,25 @@ Route34_OnTransition:
 
 Route34_MapScript_EggReady::
 	setobjectxyperm LOCALID_ROUTE34_DAYCAREMAN, 30, 34
+	return
+
+Route34_OnResume:
+	call Route34_EventScript_GauntletCheck
+	end
+
+Route34_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_IAN), Route34_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_BRANDON), Route34_EventScript_GauntletStarted
+	callnative SetTimeBasedEncounters
+	end
+	
+Route34_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	callnative SetTimeBasedEncounters
+	end
+
+Route34_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
 	return
 
 Route34_EventScript_YoungsterSamuel::

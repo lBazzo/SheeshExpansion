@@ -1181,6 +1181,7 @@ gStdScripts_End::
 EventScript_WhiteOut::
 	call HallOfFame_EventScript_ResetEliteFour
 	@ goto EventScript_ResetMrBriney
+	clearflag FLAG_IN_GAUNTLET
 	end
 
 @ HnS PORT TODO - Disabled different Pre-Roxanne whiteout message
@@ -1195,6 +1196,7 @@ EventScript_AfterWhiteOutHeal::
 	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
 	waitmovement 0
 	fadedefaultbgm
+	clearflag FLAG_IN_GAUNTLET
 	releaseall
 	end
 

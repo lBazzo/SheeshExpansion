@@ -3,12 +3,32 @@
 
 Route26_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route26_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+	map_script MAP_SCRIPT_ON_RESUME, Route26_OnResume @SetTimeEncounters
 	.byte 0
 
 Route26_OnTransition: 
 	callnative SetTimeBasedEncounters
 	end
+
+Route26_OnResume:
+	call Route26_EventScript_GauntletCheck
+	end
+
+Route26_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_JOYCE), Route26_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_BETH), Route26_EventScript_GauntletStarted
+	callnative SetTimeBasedEncounters
+	end
+	
+Route26_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	callnative SetTimeBasedEncounters
+	end
+
+Route26_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
+	return
+
 
 Route26_EventScript_Jake::
 	trainerbattle_single TRAINER_JAKE Route26_Text_CooltrainermJakeSeen, Route26_Text_CooltrainermJakeBeaten

@@ -1,11 +1,30 @@
 Route38_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route38_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+	map_script MAP_SCRIPT_ON_RESUME, Route38_OnResume @SetTimeEncounters
 	.byte 0
 
 Route38_OnTransition: 
 	callnative SetTimeBasedEncounters
 	end
+
+Route38_OnResume:
+	call Route38_EventScript_GauntletCheck
+	end
+
+Route38_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_OLIVIA), Route38_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_VALERIE), Route38_EventScript_GauntletStarted
+	callnative SetTimeBasedEncounters
+	end
+	
+Route38_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	callnative SetTimeBasedEncounters
+	end
+
+Route38_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
+	return
 
 Route38_EventScript_Toby::
 	trainerbattle_single TRAINER_TOBY, Route38_Text_BirdKeeperTobySeen, Route38_Text_BirdKeeperTobyBeaten

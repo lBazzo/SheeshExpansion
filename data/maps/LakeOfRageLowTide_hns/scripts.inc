@@ -9,6 +9,7 @@
 
 LakeOfRageLowTide_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LakeOfRage_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, LakeOfRage_OnResume
 	.byte 0
 
 LakeOfRage_OnTransition::
@@ -21,6 +22,34 @@ LakeOfRage_OnTransition::
 LakeOfRage_EventScript_SetLowTide::
 	setweather WEATHER_NONE
 	setmaplayoutindex LAYOUT_LAKE_OF_RAGE_LOW_TIDE
+	end
+
+LakeOfRage_OnResume:
+	call LakeOfRage_EventScript_Gauntlet1Check
+	call LakeOfRage_EventScript_Gauntlet2Check
+	end
+
+LakeOfRage_EventScript_Gauntlet1Check::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_REX), LakeOfRage_EventScript_SkipGauntlet1Check
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_HANK), LakeOfRage_EventScript_GauntletStarted
+	return
+
+LakeOfRage_EventScript_SkipGauntlet1Check::
+	clearflag FLAG_IN_GAUNTLET
+	goto LakeOfRage_EventScript_Gauntlet2Check
+	end
+
+LakeOfRage_EventScript_Gauntlet2Check::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_TOM), LakeOfRage_EventScript_SkipGauntlet2Check
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_ALLAN), LakeOfRage_EventScript_GauntletStarted
+	end
+
+LakeOfRage_EventScript_SkipGauntlet2Check::
+	clearflag FLAG_IN_GAUNTLET
+	end
+
+LakeOfRage_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
 	end
 
 LakeOfRageLowTide_EventScript_Sage::

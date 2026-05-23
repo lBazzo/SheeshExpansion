@@ -54,6 +54,7 @@ EliteFourRoom_CloseDoor::
 	clearflag FLAG_DEFEATED_WILL                                          
 	clearflag FLAG_DEFEATED_BUGSY
 	setvar VAR_WILLS_ROOM_STATE, 1
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 

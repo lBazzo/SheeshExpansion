@@ -347,6 +347,7 @@ OlivineLighthouse_EventScript_1FSailorWantToTakeBreak::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	setflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	release
 	end
 	
@@ -380,6 +381,7 @@ OlivineLighthouse_EventScript_SailorDeclinedReenterGauntlet::
 OlivineLighthouse_EventScript_SailorAcceptedReenterGauntlet::
 	msgbox OlivineLighthouse_Text_SailorAcceptedReenterGauntlet, MSGBOX_DEFAULT
 	closemessage
+	setflag FLAG_IN_GAUNTLET
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
@@ -393,6 +395,7 @@ OlivineLighthouse_EventScript_1FSailorAcceptedGauntlet::
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 2
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -429,6 +432,7 @@ OlivineLighthouse_EventScript_1FSailorBlockReadjustPlayerLeft::
 OlivineLighthouse_EventScript_MarkCurrentGauntletComplete::
 	addvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 1
 	clearflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	return
 
 OlivineLighthouse_EventScript_MovePlayerBack::
@@ -855,6 +859,7 @@ OlivineLighthouse_EventScript_2FSailorAcceptedGauntlet::
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 4
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -910,6 +915,7 @@ OlivineLighthouse_EventScript_2FSailorWantToTakeBreak::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	setflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -1179,6 +1185,7 @@ OlivineLighthouse_EventScript_3FSailorAcceptedGauntlet::
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 6
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -1234,6 +1241,7 @@ OlivineLighthouse_EventScript_3FSailorWantToTakeBreak::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	setflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -1482,6 +1490,7 @@ OlivineLighthouse_EventScript_4FSailorAcceptedGauntlet::
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 8
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -1537,6 +1546,7 @@ OlivineLighthouse_EventScript_4FSailorWantToTakeBreak::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	setflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -1995,6 +2005,7 @@ OlivineLighthouse_EventScript_5FSailorAcceptedGauntlet::
 	call_if_eq VAR_TEMP_1, 5, OlivineLighthouse_EventScript_MovePlayerIntoGauntletLeft
 	call_if_eq VAR_TEMP_1, 6, OlivineLighthouse_EventScript_MovePlayerIntoGauntletRight
 	setvar VAR_LIGHTHOUSE_GAUNTLET_SAILOR, 10
+	setflag FLAG_IN_GAUNTLET
 	release
 	end
 
@@ -2050,6 +2061,7 @@ OlivineLighthouse_EventScript_5FSailorWantToTakeBreak::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown1
 	waitmovement 0
 	setflag FLAG_LIGHTHOUSE_BREAK_USED
+	clearflag FLAG_IN_GAUNTLET
 	release
 	end
 

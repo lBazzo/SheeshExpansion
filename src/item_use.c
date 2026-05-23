@@ -841,10 +841,14 @@ static void Task_OpenRegisteredPokeblockCase(u8 taskId)
 
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId)
 {
-    if (!Overworld_MapTypeAllowsPortaPC(gMapHeader.mapType))
+    //if (!Overworld_MapTypeAllowsPortaPC(gMapHeader.mapType))
+    //{
+    //    DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    //}    
+    if (FlagGet(FLAG_IN_GAUNTLET))
     {
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }    
+    }
     else
     {
         sItemUseOnFieldCB = Task_AccessPokemonBoxLink;
@@ -1219,7 +1223,8 @@ bool8 CanUseDigOrEscapeRopeOnCurMap(void)
     if (!CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;
 
-    if (gMapHeader.allowEscaping)
+    if (gMapHeader.allowEscaping
+    && (!FlagGet(FLAG_IN_GAUNTLET)))
         return TRUE;
     else
         return FALSE;

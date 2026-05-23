@@ -2,12 +2,31 @@
 
 Route27_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route27_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, SetTimeEncounters
+	map_script MAP_SCRIPT_ON_RESUME, Route27_OnResume @SetTimeEncounters
 	.byte 0
 
 Route27_OnTransition: 
 	callnative SetTimeBasedEncounters
 	end
+
+Route27_OnResume:
+    call Route37_EventScript_GauntletCheck
+	end
+
+Route37_EventScript_GauntletCheck::
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_BLAKE), Route37_EventScript_SkipGauntletCheck
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_GILBERT), Route37_EventScript_GauntletStarted
+	callnative SetTimeBasedEncounters
+	end
+	
+Route37_EventScript_SkipGauntletCheck::
+	clearflag FLAG_IN_GAUNTLET
+	callnative SetTimeBasedEncounters
+	end
+
+Route37_EventScript_GauntletStarted::
+	setflag FLAG_IN_GAUNTLET
+	return
 
 Route27_EventScript_BaobaCall::
 	pokenavcall BlackthornCity_Text_BaobaCall
