@@ -84,7 +84,7 @@ Double Battle: No
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -419,7 +419,7 @@ Lonely Nature
 === TRAINER_KENJI ===
 Name: Kenji
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -980,7 +980,7 @@ Timid Nature
 === TRAINER_JOHNNY ===
 Name: Johnny
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -1332,7 +1332,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ROD ===
 Name: Rod
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1374,7 +1374,7 @@ Timid Nature
 === TRAINER_ABE ===
 Name: Abe
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1425,7 +1425,7 @@ Naive Nature
 === TRAINER_BRYAN ===
 Name: Bryan
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1488,7 +1488,7 @@ Calm Nature
 === TRAINER_THEO ===
 Name: Theo
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1551,7 +1551,7 @@ Hasty Nature
 === TRAINER_TOBY ===
 Name: Toby
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1588,7 +1588,7 @@ Modest Nature
 === TRAINER_DENIS ===
 Name: Denis
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1641,7 +1641,7 @@ Jolly Nature
 === TRAINER_VANCE ===
 Name: Vance
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1704,7 +1704,7 @@ Naive Nature
 === TRAINER_HANK ===
 Name: Hank
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1842,7 +1842,7 @@ Jolly Nature
 === TRAINER_JOSE ===
 Name: Jose
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -2034,7 +2034,7 @@ Relaxed Nature
 === TRAINER_CARRIE ===
 Name: Carrie
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2077,7 +2077,7 @@ Timid Nature
 === TRAINER_BRIDGET ===
 Name: Bridget
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2122,7 +2122,7 @@ Adamant Nature
 === TRAINER_ALICE ===
 Name: ALICE
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2143,7 +2143,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_KRISE ===
 Name: Krise
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2170,7 +2170,7 @@ Modest Nature
 === TRAINER_CONNIE ===
 Name: Connie
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2199,7 +2199,7 @@ Jolly Nature
 === TRAINER_LINDA ===
 Name: Linda
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2245,7 +2245,7 @@ Modest Nature
 === TRAINER_LAURA ===
 Name: Laura
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2318,7 +2318,7 @@ Jolly Nature
 === TRAINER_MICHELLE ===
 Name: Michelle
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2363,7 +2363,7 @@ Modest Nature
 === TRAINER_DANA ===
 Name: Dana
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2399,7 +2399,7 @@ Modest Nature
 === TRAINER_ELLEN ===
 Name: Ellen
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -2435,7 +2435,7 @@ Adamant Nature
 === TRAINER_NICK ===
 Name: NICK
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2456,7 +2456,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_AARON ===
 Name: Aaron
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: Yes
@@ -2641,7 +2641,7 @@ Modest Nature
 === TRAINER_MIKE ===
 Name: Mike
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -2687,7 +2687,7 @@ Adamant Nature
 === TRAINER_GAVEN ===
 Name: Gaven
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2733,7 +2733,7 @@ Hasty Nature
 === TRAINER_RYAN ===
 Name: Ryan
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2796,7 +2796,7 @@ Jolly Nature
 === TRAINER_JAKE ===
 Name: Jake
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2833,7 +2833,7 @@ Adamant Nature
 === TRAINER_BLAKE ===
 Name: Blake
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2887,7 +2887,7 @@ Hasty Nature
 === TRAINER_BRIAN ===
 Name: Brian
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2950,7 +2950,7 @@ Adamant Nature
 === TRAINER_ERICK ===
 Name: ERICK
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2971,7 +2971,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ANDY ===
 Name: ANDY
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -2992,7 +2992,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TYLER ===
 Name: TYLER
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3013,7 +3013,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_SEAN ===
 Name: SEAN
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3034,7 +3034,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_KEVIN ===
 Name: Kevin
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3070,7 +3070,7 @@ Timid Nature
 === TRAINER_STEVE ===
 Name: STEVE
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3091,7 +3091,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ALLEN ===
 Name: Allen
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -3898,7 +3898,7 @@ Timid Nature
 === TRAINER_VICTORIA ===
 Name: Victoria
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -3943,7 +3943,7 @@ Jolly Nature
 === TRAINER_SAMANTHA ===
 Name: Samantha
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -3989,7 +3989,7 @@ Jolly Nature
 === TRAINER_JULIE ===
 Name: JULIE
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4002,7 +4002,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_JACLYN ===
 Name: JACLYN
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4015,7 +4015,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BRENDA ===
 Name: BRENDA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4028,7 +4028,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_CASSIE ===
 Name: CASSIE
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4045,7 +4045,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_CAROLINE ===
 Name: CAROLINE
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4066,7 +4066,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_CARLENE ===
 Name: CARLENE
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4079,7 +4079,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_JESSICA ===
 Name: JESSICA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4092,7 +4092,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_RACHAEL ===
 Name: RACHAEL
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4105,7 +4105,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ANGELICA ===
 Name: ANGELICA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4118,7 +4118,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_KENDRA ===
 Name: KENDRA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4131,7 +4131,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_VERONICA ===
 Name: VERONICA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4144,7 +4144,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_JULIA ===
 Name: Julia
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4172,7 +4172,7 @@ Brave Nature
 === TRAINER_THERESA ===
 Name: THERESA
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4185,7 +4185,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_VALERIE ===
 Name: Valerie
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4203,7 +4203,7 @@ Mild Nature
 === TRAINER_OLIVIA ===
 Name: Olivia
 Class: Beauty
-Pic: Beauty
+Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -4257,7 +4257,7 @@ Timid Nature
 === TRAINER_LARRY ===
 Name: LARRY
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4270,7 +4270,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ANDREW ===
 Name: ANDREW
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4287,7 +4287,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_CALVIN ===
 Name: CALVIN
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4300,7 +4300,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_SHANE ===
 Name: Shane
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: Yes
@@ -4363,7 +4363,7 @@ Jolly Nature
 === TRAINER_BEN ===
 Name: Ben
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4415,7 +4415,7 @@ Timid Nature
 === TRAINER_BRENT ===
 Name: Brent
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4469,7 +4469,7 @@ Impish Nature
 === TRAINER_RON ===
 Name: Ron
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4505,7 +4505,7 @@ Jolly Nature
 === TRAINER_ETHAN ===
 Name: ETHAN
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4522,7 +4522,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ISSAC ===
 Name: ISSAC
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -4635,7 +4635,7 @@ Sassy Nature
 === TRAINER_MILLER ===
 Name: Miller
 Class: Pokemaniac
-Pic: Pokemaniac
+Pic: Pokemaniac2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6418,7 +6418,7 @@ Jolly Nature
 === TRAINER_PRESTON ===
 Name: Preston
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -6459,7 +6459,7 @@ Level: 79
 === TRAINER_EDWARD ===
 Name: EDWARD
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6472,7 +6472,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_GREGORY ===
 Name: Gregory
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -6535,7 +6535,7 @@ Timid Nature
 === TRAINER_VIRGIL ===
 Name: VIRGIL
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6548,7 +6548,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ALFRED ===
 Name: Alfred
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6787,7 +6787,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DON ===
 Name: Don
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6829,7 +6829,7 @@ Jolly Nature
 === TRAINER_ROB ===
 Name: ROB
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6846,7 +6846,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ED ===
 Name: Ed
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -6910,7 +6910,7 @@ Adamant Nature
 === TRAINER_WADE ===
 Name: Wade
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -7008,7 +7008,7 @@ Jolly Nature
 === TRAINER_AL ===
 Name: Al
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -7134,7 +7134,7 @@ Modest Nature
 === TRAINER_ARNIE ===
 Name: Arnie
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -7179,7 +7179,7 @@ Jolly Nature
 === TRAINER_KEN ===
 Name: KEN
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -7196,7 +7196,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DOUG ===
 Name: Doug
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -7260,7 +7260,7 @@ Modest Nature
 === TRAINER_WAYNE ===
 Name: WAYNE
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -7313,7 +7313,7 @@ Jolly Nature
 === TRAINER_RALPH ===
 Name: Ralph
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -7364,7 +7364,7 @@ Adamant Nature
 === TRAINER_ARNOLD ===
 Name: Arnold
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7399,7 +7399,7 @@ Jolly Nature
 === TRAINER_KYLE ===
 Name: KYLE
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7420,7 +7420,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_HENRY ===
 Name: Henry
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7471,7 +7471,7 @@ Adamant Nature
 === TRAINER_MARVIN ===
 Name: Marvin
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7504,7 +7504,7 @@ Bold Nature
 === TRAINER_TULLY ===
 Name: Tully
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7558,7 +7558,7 @@ Adamant Nature
 === TRAINER_ANDRE ===
 Name: ANDRE
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7615,7 +7615,7 @@ Timid Nature
 === TRAINER_WILTON ===
 Name: Wilton
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -7651,7 +7651,7 @@ Jolly Nature
 === TRAINER_EDGAR ===
 Name: Edgar
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7687,7 +7687,7 @@ Adamant Nature
 === TRAINER_JONAH ===
 Name: Jonah
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7750,7 +7750,7 @@ Adamant Nature
 === TRAINER_MARTIN ===
 Name: Martin
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7858,7 +7858,7 @@ Modest Nature
 === TRAINER_BARNEY ===
 Name: BARNEY
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7879,7 +7879,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_SCOTT ===
 Name: Scott
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -7942,7 +7942,7 @@ Modest Nature
 === TRAINER_GORDO ===
 Name: Gordo
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -8485,7 +8485,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_RENJI ===
 Name: Renji
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -9402,7 +9402,7 @@ Timid Nature
 === TRAINER_KENT ===
 Name: Kent
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -9991,7 +9991,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_VINCENT ===
 Name: Vincent
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10089,7 +10089,7 @@ Jolly Nature
 === TRAINER_RUSSELL ===
 Name: Russell
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10132,7 +10132,7 @@ Sassy Nature
 === TRAINER_PHILLIP ===
 Name: PHILLIP
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10153,7 +10153,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_LEONARD ===
 Name: LEONARD
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10170,7 +10170,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BENJAMIN ===
 Name: Benjamin
 Class: Bird Keeper
-Pic: Bird Keeper
+Pic: Bird Keeper2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10223,7 +10223,7 @@ Adamant Nature
 === TRAINER_ERIK ===
 Name: Erik
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10286,7 +10286,7 @@ Bold Nature
 === TRAINER_MICHAEL ===
 Name: Michael
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10349,7 +10349,7 @@ Adamant Nature
 === TRAINER_PARRY ===
 Name: Parry
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10412,7 +10412,7 @@ Adamant Nature
 === TRAINER_TIMOTHY ===
 Name: Timothy
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10519,7 +10519,7 @@ Modest Nature
 === TRAINER_TIM ===
 Name: Tim
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10573,7 +10573,7 @@ Jolly Nature
 === TRAINER_NOLAND ===
 Name: Noland
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10637,7 +10637,7 @@ IVs: 30 Def / 30 SpA
 === TRAINER_SIDNEY ===
 Name: Sidney
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10702,7 +10702,7 @@ Adamant Nature
 === TRAINER_KENNY ===
 Name: Kenny
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10747,7 +10747,7 @@ Sassy Nature
 === TRAINER_JIM ===
 Name: Jim
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10774,7 +10774,7 @@ Modest Nature
 === TRAINER_DEVIN ===
 Name: Devin
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -10829,7 +10829,7 @@ Rash Nature
 === TRAINER_DANIEL ===
 Name: Daniel
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11059,7 +11059,7 @@ Timid Nature
 === TRAINER_CHARLES ===
 Name: Charles
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11429,7 +11429,7 @@ Jolly Nature
 === TRAINER_COREY ===
 Name: Corey
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11598,7 +11598,7 @@ Modest Nature
 === TRAINER_BILL ===
 Name: Bill
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11815,7 +11815,7 @@ Timid Nature
 === TRAINER_MIKEY ===
 Name: Mikey
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11869,7 +11869,7 @@ Jolly Nature
 === TRAINER_RAPHAEL ===
 Name: Raphael
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: Yes
@@ -11931,7 +11931,7 @@ Naive Nature
 === TRAINER_LEONARDO ===
 Name: Leonardo
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -11994,7 +11994,7 @@ Adamant Nature
 === TRAINER_NOB ===
 Name: Nob
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -12054,7 +12054,7 @@ Jolly Nature
 === TRAINER_KIYO ===
 Name: KIYO
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -12071,7 +12071,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DONATELLO ===
 Name: Donatello
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -12134,7 +12134,7 @@ Adamant Nature
 === TRAINER_WAI ===
 Name: WAI
 Class: Black Belt
-Pic: Black Belt
+Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -12231,7 +12231,7 @@ Jolly Nature
 === TRAINER_FIDEL ===
 Name: Fidel
 Class: Hiker
-Pic: Hiker
+Pic: Hiker2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12285,7 +12285,7 @@ Hasty Nature
 === TRAINER_GREG ===
 Name: Greg
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -12483,7 +12483,7 @@ Modest Nature
 === TRAINER_RICHARD ===
 Name: Richard
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12600,7 +12600,7 @@ Impish Nature
 === TRAINER_JARED ===
 Name: Jared
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -12653,7 +12653,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_LIZ ===
 Name: Liz
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12698,7 +12698,7 @@ Calm Nature
 === TRAINER_GINA ===
 Name: Gina
 Class: Cooltrainer
-Pic: Cooltrainer F
+Pic: Cooltrainer F2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -12752,7 +12752,7 @@ Timid Nature
 === TRAINER_BROOKE ===
 Name: Brooke
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12860,7 +12860,7 @@ Careful Nature
 === TRAINER_CINDY ===
 Name: Cindy
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12907,7 +12907,7 @@ Modest Nature
 === TRAINER_HOPE ===
 Name: Hope
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -12962,7 +12962,7 @@ Bold Nature
 === TRAINER_SHARON ===
 Name: Sharon
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13016,7 +13016,7 @@ Adamant Nature
 === TRAINER_DEBRA ===
 Name: Debra
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13053,7 +13053,7 @@ Timid Nature
 === TRAINER_ERIN ===
 Name: ERIN
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13078,7 +13078,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_HEIDI ===
 Name: Heidi
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13132,7 +13132,7 @@ Modest Nature
 === TRAINER_EDNA ===
 Name: Edna
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13187,7 +13187,7 @@ IVs: 30 Atk / 30 Def
 === TRAINER_TIFFANY ===
 Name: Tiffany
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13220,7 +13220,7 @@ Timid Nature
 === TRAINER_TANYA ===
 Name: Tanya
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -13247,7 +13247,7 @@ Timid Nature
 === TRAINER_ROLAND ===
 Name: Roland
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13303,7 +13303,7 @@ Adamant Nature
 === TRAINER_TODD ===
 Name: Todd
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13346,7 +13346,7 @@ Jolly Nature
 === TRAINER_IVAN ===
 Name: Ivan
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13398,7 +13398,7 @@ Timid Nature
 === TRAINER_ELLIOT ===
 Name: Elliot
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13443,7 +13443,7 @@ Timid Nature
 === TRAINER_BARRY ===
 Name: BARRY
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13460,7 +13460,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_LLOYD ===
 Name: Lloyd
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13478,7 +13478,7 @@ Adamant Nature
 === TRAINER_DEAN ===
 Name: Dean
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Rich
 Double Battle: No
@@ -13541,7 +13541,7 @@ Impish Nature
 === TRAINER_SID ===
 Name: Sid
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13587,7 +13587,7 @@ Modest Nature
 === TRAINER_HARVEY ===
 Name: HARVEY
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13600,7 +13600,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DALE ===
 Name: DALE
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13613,7 +13613,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_TED ===
 Name: TED
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13634,7 +13634,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_THOMAS ===
 Name: THOMAS
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13659,7 +13659,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_LEROY ===
 Name: LEROY
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13684,7 +13684,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DAVID ===
 Name: DAVID
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13709,7 +13709,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_JOHN ===
 Name: JOHN
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13734,7 +13734,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_JERRY ===
 Name: JERRY
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13755,7 +13755,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_GRANT ===
 Name: Grant
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13809,7 +13809,7 @@ Adamant Nature
 === TRAINER_SPENCER ===
 Name: Spencer
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -13854,7 +13854,7 @@ Careful Nature
 === TRAINER_QUENTIN ===
 Name: Quentin
 Class: Camper
-Pic: Camper
+Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -14308,7 +14308,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_KOJI ===
 Name: KOJI
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Male
 Double Battle: No
@@ -14329,7 +14329,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_MARTHA ===
 Name: Martha
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14364,7 +14364,7 @@ Timid Nature
 === TRAINER_GRACE ===
 Name: Grace
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14399,7 +14399,7 @@ Jolly Nature
 === TRAINER_BETHANY ===
 Name: BETHANY
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14412,7 +14412,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_MARGRET ===
 Name: MARGRET
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14425,7 +14425,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ETHEL ===
 Name: ETHEL
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14438,7 +14438,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_REBECCA ===
 Name: Rebecca
 Class: Hex Maniac
-Pic: Hex Maniac
+Pic: Medium
 Gender: Male
 Music: Female
 Double Battle: No
@@ -14638,7 +14638,7 @@ Adamant Nature
 === TRAINER_WILLIAM ===
 Name: William
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -14693,7 +14693,7 @@ Adamant Nature
 === TRAINER_DEREK ===
 Name: Derek
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -15661,7 +15661,7 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FALKNER_1 ===
-Name: FALKNER
+Name: Falkner
 Class: Leader
 Pic: Leader Falkner
 Gender: Male
@@ -15908,7 +15908,7 @@ Calm Nature
 === TRAINER_DARACH_CAIT ===
 Name: & Caitlin
 Class: TRAINER_CLASS_CASTLE_DUO
-Pic: Leader Whitney
+Pic: Darach
 Gender: Male
 Music: Male
 Double Battle: Yes
@@ -16132,7 +16132,7 @@ Jolly Nature
 === TRAINER_THORTON_B ===
 Name: Thorton
 Class: Factory Head
-Pic: Leader Chuck
+Pic: Thorton
 Gender: Male
 Music: Male
 Double Battle: No
@@ -16198,7 +16198,7 @@ IVs: 0 Spe
 === TRAINER_THORTON_C ===
 Name: Thorton
 Class: Factory Head
-Pic: Leader Chuck
+Pic: Thorton
 Gender: Male
 Music: Male
 Double Battle: No
@@ -16582,7 +16582,7 @@ Jolly Nature
 === TRAINER_DARACH ===
 Name: Darach
 Class: TRAINER_CLASS_CASTLE_VALET
-Pic: Leader Chuck
+Pic: Darach
 Gender: Male
 Music: Male
 Double Battle: No
@@ -16629,7 +16629,7 @@ Adamant Nature
 === TRAINER_CAITLIN_CASTLE ===
 Name: Caitlin
 Class: TRAINER_CLASS_CASTLE_ROYAL
-Pic: Leader Chuck
+Pic: Darach
 Gender: Male
 Music: Male
 Double Battle: No
@@ -16676,7 +16676,7 @@ Adamant Nature
 === TRAINER_THORTON_A ===
 Name: Thorton
 Class: Factory Head
-Pic: Leader Chuck
+Pic: Thorton
 Gender: Male
 Music: Male
 Double Battle: No
@@ -20025,7 +20025,7 @@ IVs: 1 Atk / 30 SpA / 30 SpD
 === TRAINER_LUCY ===
 Name: Lucy
 Class: Pike Queen
-Pic: Ariana
+Pic: Lucy
 Gender: Female
 Music: Male
 Double Battle: No
@@ -20487,7 +20487,7 @@ Bold Nature
 === TRAINER_IRIS ===
 Name: Iris
 Class: Lass
-Pic: Lass
+Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
@@ -20541,7 +20541,7 @@ Modest Nature
 === TRAINER_DRAYDEN ===
 Name: Drayden
 Class: Gentleman
-Pic: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Male
 Double Battle: No
@@ -20638,7 +20638,7 @@ Careful Nature
 === TRAINER_COSMO ===
 Name: Cosmo
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
@@ -20821,7 +20821,7 @@ Timid Nature
 === TRAINER_ATLAS ===
 Name: Atlas
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -20849,7 +20849,7 @@ Adamant Nature
 === TRAINER_DUBU ===
 Name: Dubu
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -20928,7 +20928,7 @@ Adamant Nature
 === TRAINER_SPENSER_1 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -20992,7 +20992,7 @@ Adamant Nature
 === TRAINER_SPENSER_2 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -21057,7 +21057,7 @@ Adamant Nature
 === TRAINER_SPENSER_3 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -21123,7 +21123,7 @@ Adamant Nature
 === TRAINER_SPENSER_4 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -21190,7 +21190,7 @@ Adamant Nature
 === TRAINER_SPENSER_5 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -21258,7 +21258,7 @@ Adamant Nature
 === TRAINER_SPENSER_6 ===
 Name: Spenser
 Class: Palace Maven
-Pic: Expert M
+Pic: Spenser
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -21390,7 +21390,7 @@ Timid Nature
 === TRAINER_VICTOR_VR ===
 Name: Victor
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -21426,7 +21426,7 @@ Jolly Nature
 === TRAINER_XERXES_VR ===
 Name: Xerxes
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
@@ -21445,7 +21445,7 @@ IVs: 30 Atk / 30 Def
 === TRAINER_JACOBI_VR ===
 Name: Jacobi
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
