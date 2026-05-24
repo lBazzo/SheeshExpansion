@@ -45,6 +45,13 @@ void HealPlayerParty(void)
         FlagSet(B_FLAG_TERA_ORB_CHARGED);
 }
 
+void HealPlayerPartyStatusOnly(void)
+{
+    u32 i;
+    for (i = 0; i < gPlayerPartyCount; i++)
+        HealStatusOnly(&gPlayerParty[i]);
+}
+
 static void HealPlayerBoxes(void)
 {
     int boxId, boxPosition;

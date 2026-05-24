@@ -51,6 +51,7 @@
 #include "safari_zone.h"
 #include "scanline_effect.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -487,6 +488,16 @@ void CB2_InitBattle(void)
     }
 }
 
+static bool16 IsPokemonGym(void)
+{
+    u16 music = GetLocationMusic(&gSaveBlock1Ptr->location);
+
+    if (music == MUS_HG_GYM)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 static void CB2_InitBattleInternal(void)
 {
     s32 i;
@@ -565,6 +576,9 @@ static void CB2_InitBattleInternal(void)
             break;
         }
     }
+
+    if (IsPokemonGym())
+        HealPlayerPartyStatusOnly();
 
     InitBattleBgsVideo();
     LoadBattleTextboxAndBackground();

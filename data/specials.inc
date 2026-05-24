@@ -649,5 +649,6 @@ gSpecials::
 	def_special BufferPokemonNicknameAndCastleItem
 	def_special GiveMonSelectedCastleItem
 	def_special CheckSpecificMonHasAnyHeldItem
+	def_special HealPlayerPartyStatusOnly
 
 	

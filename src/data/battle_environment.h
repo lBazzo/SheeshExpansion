@@ -116,10 +116,10 @@ const u16 gBattleEnvironmentPalette_BuildingGym_Evening[] = INCBIN_U16("graphics
 const u16 gBattleEnvironmentPalette_BuildingGym_Night[]   = INCBIN_U16("graphics/battle_environment/building/palette2.gbapal");
 
 
-const u16 gBattleEnvironmentPalette_BuildingLeader_Morning[] = INCBIN_U16("graphics/battle_environment/building/palette3.gbapal");
-const u16 gBattleEnvironmentPalette_BuildingLeader_Day[]     = INCBIN_U16("graphics/battle_environment/building/palette3.gbapal");
-const u16 gBattleEnvironmentPalette_BuildingLeader_Evening[] = INCBIN_U16("graphics/battle_environment/building/palette3.gbapal");
-const u16 gBattleEnvironmentPalette_BuildingLeader_Night[]   = INCBIN_U16("graphics/battle_environment/building/palette3.gbapal");
+const u16 gBattleEnvironmentPalette_BuildingLeader_Morning[] = INCBIN_U16("graphics/battle_environment/building_2/palette.gbapal");
+const u16 gBattleEnvironmentPalette_BuildingLeader_Day[]     = INCBIN_U16("graphics/battle_environment/building_2/palette.gbapal");
+const u16 gBattleEnvironmentPalette_BuildingLeader_Evening[] = INCBIN_U16("graphics/battle_environment/building_2/palette.gbapal");
+const u16 gBattleEnvironmentPalette_BuildingLeader_Night[]   = INCBIN_U16("graphics/battle_environment/building_2/palette.gbapal");
 
 
 const u16 gBattleEnvironmentPalette_StadiumAqua_Morning[] = INCBIN_U16("graphics/battle_environment/stadium/palette1.gbapal");

@@ -3702,6 +3702,40 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(enum ScrollMulti menu, u
             break;
         }
     }
+
+    if (menu >= SCROLL_MULTI_E4_ITEMS_DARACH && menu <=  SCROLL_MULTI_TEST123)
+    {
+        FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
+        switch (menu)
+        {
+        case SCROLL_MULTI_E4_ITEMS_DARACH:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sDarach_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sDarach_HoldItems[selection]);
+            break;
+        case SCROLL_MULTI_E4_ITEMS_CAITLIN:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sCaitlin_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sCaitlin_HoldItems[selection]);
+            break;
+        case SCROLL_MULTI_E4_ITEMS_DAHLIA:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sDahlia_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sDahlia_HoldItems[selection]);
+            break;
+        case SCROLL_MULTI_E4_ITEMS_LUCY:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sLucy_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sLucy_HoldItems[selection]);
+            break;
+        case SCROLL_MULTI_E4_ITEMS_THORTON:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sThorton_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sThorton_HoldItems[selection]);
+            break;
+        case SCROLL_MULTI_TEST123:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sTest123_HoldItemsDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sTest123_HoldItems[selection]);
+            break;
+        default:
+            break;
+        }
+    }
 }
 
 static void ShowFrontierExchangeCornerItemIcon(u16 item)
@@ -3728,6 +3762,12 @@ static void HideFrontierExchangeCornerItemIcon(enum ScrollMulti menu, u16 unused
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
+        case SCROLL_MULTI_E4_ITEMS_DARACH:
+        case SCROLL_MULTI_E4_ITEMS_CAITLIN:
+        case SCROLL_MULTI_E4_ITEMS_DAHLIA:
+        case SCROLL_MULTI_E4_ITEMS_LUCY:
+        case SCROLL_MULTI_E4_ITEMS_THORTON:
+        case SCROLL_MULTI_TEST123:
             // This makes sure deleting the icon will not clear palettes in use by object events
             FieldEffectFreeGraphicsResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
