@@ -299,6 +299,7 @@ void SetOamMatrixRotationScaling(u8 matrixNum, s16 xScale, s16 yScale, u16 rotat
 u16 LoadSpriteSheet(const struct SpriteSheet *sheet);
 u16 LoadSpriteSheetByTemplate(const struct SpriteTemplate *template, u32 frame, s32 offset);
 void LoadSpriteSheets(const struct SpriteSheet *sheets);
+u16 LoadSpriteSheetByTemplateNew(const struct SpriteTemplate *template, u8 frame);
 s16 AllocSpriteTiles(u16 tileCount);
 void FreeSpriteTilesByTag(u16 tag);
 void FreeSpriteTileRanges(void);

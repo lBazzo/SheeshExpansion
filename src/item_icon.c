@@ -5,8 +5,10 @@
 #include "item.h"
 #include "item_icon.h"
 #include "malloc.h"
+#include "palette.h"
 #include "move.h"
 #include "sprite.h"
+#include "window.h"
 #include "constants/items.h"
 
 // EWRAM vars
@@ -123,6 +125,26 @@ u8 AddItemIconSprite(u16 tilesTag, u16 paletteTag, u16 itemId)
     }
 }
 
+u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDest) {
+    if (!AllocItemIconTemporaryBuffers())
+        return 16;
+
+    DecompressDataWithHeaderWram(GetItemIconPic(itemId), gItemIconDecompressionBuffer);
+    CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
+    BlitBitmapToWindow(windowId, gItemIcon4x4Buffer, x, y, 32, 32);
+
+    // if paletteDest is nonzero, copies the decompressed palette directly into it
+    // otherwise, loads the compressed palette into the windowId's BG palette ID
+    if (paletteDest) {
+        DecompressDataWithHeaderWram(GetItemIconPaletteTwo(itemId), gItemIconDecompressionBuffer);
+        CpuFastCopy(gItemIconDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
+    } else {
+        LoadPalette(GetItemIconPaletteTwo(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+    }
+    FreeItemIconTemporaryBuffers();
+    return 0;
+}
+
 u8 AddCustomItemIconSprite(const struct SpriteTemplate *customSpriteTemplate, u16 tilesTag, u16 paletteTag, u16 itemId)
 {
     if (!AllocItemIconTemporaryBuffers())
@@ -177,6 +199,18 @@ const void *GetItemIconPic(u16 itemId)
 }
 
 const u16 *GetItemIconPalette(u16 itemId)
+{
+    if (itemId == ITEM_LIST_END)
+        return gItemIconPalette_ReturnToFieldArrow;
+    if (itemId >= ITEMS_COUNT)
+        return gItemsInfo[0].iconPalette;
+    if (gItemsInfo[itemId].pocket == POCKET_TM_HM)
+        return gTypesInfo[GetMoveType(GetItemTMHMMoveId(itemId))].paletteTMHM;
+
+    return gItemsInfo[itemId].iconPalette;
+}
+
+const void *GetItemIconPaletteTwo(u16 itemId)
 {
     if (itemId == ITEM_LIST_END)
         return gItemIconPalette_ReturnToFieldArrow;
