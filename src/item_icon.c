@@ -136,8 +136,9 @@ u8 BlitItemIconToWindow(u16 itemId, u8 windowId, u16 x, u16 y, void * paletteDes
     // if paletteDest is nonzero, copies the decompressed palette directly into it
     // otherwise, loads the compressed palette into the windowId's BG palette ID
     if (paletteDest) {
-        DecompressDataWithHeaderWram(GetItemIconPaletteTwo(itemId), gItemIconDecompressionBuffer);
-        CpuFastCopy(gItemIconDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
+        //DecompressDataWithHeaderWram(GetItemIconPaletteTwo(itemId), gItemIconDecompressionBuffer);
+        //CpuFastCopy(gItemIconDecompressionBuffer, paletteDest, PLTT_SIZE_4BPP);
+        CpuFastCopy(GetItemIconPaletteTwo(itemId), paletteDest, PLTT_SIZE_4BPP);
     } else {
         LoadPalette(GetItemIconPaletteTwo(itemId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
     }
