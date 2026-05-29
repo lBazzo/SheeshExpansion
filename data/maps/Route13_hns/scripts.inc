@@ -13,7 +13,7 @@ Route13_EventScript_Alex::
 	end
 
 Route13_EventScript_Joshua::
-	trainerbattle_single TRAINER_JOSHUA Route13_Text_PokefanmJoshuaSeen, Route13_Text_PokefanmJoshuaBeaten
+	trainerbattle_single TRAINER_SETZER Route13_Text_PokefanmJoshuaSeen, Route13_Text_PokefanmJoshuaBeaten
 	msgbox Route13_Text_PokefanmJoshuaAfterBattle, MSGBOX_AUTOCLOSE
 	end
 

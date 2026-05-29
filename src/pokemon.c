@@ -3800,9 +3800,9 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     for (u32 evo = 0; evolutions[evo].method != EVOLUTIONS_END; evo++)
                     {
                         u32 evoLevelUp = evolutions[evo].param;
-                        u32 isEvoLevel = evolutions[evo].param == EVO_LEVEL;
+                        //u32 isEvoLevel = evolutions[evo].param == EVO_LEVEL;
 
-                        if (evoLevelUp <= monLevel && evoLevelUp != 0  && isEvoLevel)
+                        if (evoLevelUp <= monLevel && evoLevelUp != 0)
                         {
                             dataUnsigned = gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES, NULL)].growthRate][GetMonData(mon, MON_DATA_LEVEL, NULL) + 1];
                             blockLevelUp = TRUE;
@@ -3813,7 +3813,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         if (SanitizeSpeciesId(evolutions[evo].targetSpecies) == SPECIES_NONE)
                             break;
 
-                        if (evoLevelUp < levelUpThreshold && monLevel < levelUpThreshold && isEvoLevel)
+                        if (evoLevelUp < levelUpThreshold && monLevel < levelUpThreshold && evoLevelUp != 0)
                             levelUpThreshold = evoLevelUp;
                     }
 

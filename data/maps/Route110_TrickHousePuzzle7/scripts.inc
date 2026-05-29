@@ -285,7 +285,7 @@ Route110_TrickHousePuzzle7_EventScript_RedButton::
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Joshua::
-	trainerbattle_single TRAINER_JOSHUA, Route110_TrickHousePuzzle7_Text_JoshuaIntro, Route110_TrickHousePuzzle7_Text_JoshuaDefeat
+	trainerbattle_single TRAINER_SETZER, Route110_TrickHousePuzzle7_Text_JoshuaIntro, Route110_TrickHousePuzzle7_Text_JoshuaDefeat
 	msgbox Route110_TrickHousePuzzle7_Text_JoshuaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

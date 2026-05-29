@@ -355,7 +355,19 @@ MahoganyTown_Text_Baoba:
 	.string "a short while, you should soon see\l"
 	.string "the Safari Zone!\p"
 	.string "We're a little out of the way, but\n"
-	.string "please come visit!$"
+	.string "please come visit!\p"
+	.string "Oh, and one more thing.\p"
+	.string "A friend of mine has informed me of\n"
+	.string "a special promotion being offered\l"
+	.string "at the Goldenrod City Game Corner.\p"
+	.string "Since you're already looking to\n"
+	.string "collect Pokémon and are experienced\l"
+	.string "in battling, why don't you go and\l"
+	.string "take a look?\p"
+	.string "It's a limited time offer, so maybe\n"
+	.string "head over there first if it piques\l"
+	.string "your curiosity at all.\p"
+	.string "Toodles!$"
 
 
 

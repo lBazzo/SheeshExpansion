@@ -89,7 +89,10 @@ MahoganyTown_Gym_EventScript_PryceVictory::
     giveitem ITEM_HEART_SCALE, 4
 	msgbox MahoganyTown_Gym_Text_HailSpeech, MSGBOX_DEFAULT
     setvar VAR_SAFARI_ZONE_GATE_STATE, 1
+    setvar VAR_GAMECORNER_STATE, 1
     setflag FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS
+    setflag FLAG_OPEN_GAMECORNER
+    clearflag FLAG_HIDE_GAME_CORNER_OWNER
     setrespawn HEAL_LOCATION_MAHOGANYTOWN
 	closemessage
 	release

@@ -55,7 +55,7 @@ Route34_EventScript_PicnickerGina::
 	end
 
 Route34_EventScript_OfficerKeith::
-	trainerbattle_single TRAINER_KEITH Route34_Text_OfficerKeith_Seen, Route34_Text_OfficerKeith_Win
+	trainerbattle_single TRAINER_GRAVES Route34_Text_OfficerKeith_Seen, Route34_Text_OfficerKeith_Win
 	msgbox Route34_Text_OfficerKeith_After, MSGBOX_AUTOCLOSE
 	end
 

@@ -1,5 +1,65 @@
+.set LOCALID_GAMECORNEROWNER, 12
+
 GoldenrodCity_GameCorner_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, GoldenrodCity_GameCorner_OnFrame
 	.byte 0
+
+GoldenrodCity_GameCorner_OnFrame::
+	map_script_2 VAR_GAMECORNER_STATE, 1, GoldenrodCity_GameCorner_EventScript_MeetGameCornerOwner
+	.2byte 0
+
+GoldenrodCity_GameCorner_EventScript_MeetGameCornerOwner::
+	lock
+	playse SE_PIN
+	applymovement LOCALID_GAMECORNEROWNER, Common_Movement_ExclamationMark
+	delay 60
+	applymovement LOCALID_GAMECORNEROWNER, GoldenrodCity_GameCorner_Movement_GameCornerOwnerApproachPlayer
+	waitmovement 0
+	msgbox GoldenrodCity_GameCorner_Text_GameCornerOwnerIntro, MSGBOX_DEFAULT
+	giveitem ITEM_COIN_CASE
+	msgbox GoldenrodCity_GameCorner_Text_GameCornerOwnerOutro, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GAMECORNEROWNER, GoldenrodCity_GameCorner_Movement_GameCornerOwnerLeavePlayer
+	waitmovement 0
+	removeobject LOCALID_GAMECORNEROWNER
+	setvar VAR_GAMECORNER_STATE, 2
+	setflag FLAG_HIDE_GAME_CORNER_OWNER
+	removeobject LOCALID_GAMECORNEROWNER
+	release
+	end
+
+GoldenrodCity_GameCorner_Movement_GameCornerOwnerApproachPlayer::
+	walk_down
+	walk_down
+	step_end
+
+GoldenrodCity_GameCorner_Movement_GameCornerOwnerLeavePlayer::
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+GoldenrodCity_GameCorner_Text_GameCornerOwnerIntro::
+	.string "Aha!\p"
+	.string "I know a fellow gambler when I see one!\p"
+	.string "Fancy joining our little game to\n"
+	.string "promote gambling to kid-\p"
+	.string "Err, I mean, to promote Pokémon\n"
+	.string "battling in a super cool and fun way?\p"
+	.string "The idea is simple, little trainer.\p"
+	.string "Fight some trainers and earn some coins\n"
+	.string "when you win.\p"
+	.string "If you fight enough of them, we'll sell\n"
+	.string "you a super unique Pokémon as a reward.\p"
+	.string "Doesn't that sound fun?\p"
+	.string "Oh, one more thing.\n"
+	.string "You'll need one of these, of course.$"
+
+GoldenrodCity_GameCorner_Text_GameCornerOwnerOutro::
+	.string "Just talk to the clerk when you've had\n"
+	.string "enough, alright? Happy battling!$"
 
     @ Game Corner prices
 	.set TM_DOUBLE_TEAM_COINS, 1500
@@ -9,12 +69,80 @@ GoldenrodCity_GameCorner_hns_MapScripts::
 	.set TM_ICE_BEAM_COINS, 4000
 	.set DOLL_COINS, 1000
 	.set DOLL2_COINS,  9000
+	.set SILVALLY_COINS, 200
 
 	.set COINS_PRICE_50,  500
 	.set COINS_PRICE_500, 5000
 	.set COINS_PRICE_1000, 10000
 	.set COINS_PRICE_2500, 25000
 	.set COINS_PRICE_5000, 50000
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkSilvally::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_SILVALLY, GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkSilvallyAfter
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, GoldenrodCity_GameCorner_EventScript_NeedCoinCase
+	msgbox GoldenrodCity_GameCorner_Text_ExchangeCoinsForSilvally, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkSilvallyDeclined
+	setvar VAR_TEMP_2, SILVALLY_COINS
+	checkcoins VAR_RESULT
+	goto_if_lt VAR_RESULT, VAR_TEMP_2, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoins
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, GoldenrodCity_GameCorner_PrizeRoom_EventScript_PartyFull
+	removecoins SILVALLY_COINS
+	playfanfare MUS_OBTAIN_ITEM
+	givemon SPECIES_SILVALLY, 5
+	bufferspeciesname STR_VAR_1, SPECIES_SILVALLY 
+	message GoldenrodCity_GameCorner_Text_ReceivedSilvally
+	waitfanfare
+	msgbox GoldenrodCity_GameCorner_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, GoldenrodCity_GameCorner_PrizeRoom_EventScript_NicknameSilvally
+	setflag FLAG_GOT_SILVALLY
+	msgbox GoldenrodCity_GameCorner_Text_SilvallyAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkSilvallyDeclined::
+	msgbox GoldenrodCity_GameCorner_Text_SilvallyLetMeKnow, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_SilvallyLetMeKnow::
+	.string "Alright then. Let me know if you want to\n"
+	.string "reconsider.$"
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkSilvallyAfter::
+	msgbox GoldenrodCity_GameCorner_Text_SilvallyAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_PrizeRoom_EventScript_NicknameSilvally::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMonFull
+	return
+
+GoldenrodCity_GameCorner_Text_ReceivedSilvally:
+	.string "{PLAYER} received {STR_VAR_1}!$"
+
+GoldenrodCity_GameCorner_Text_Nickname:
+	.string "Would you like to give your\n"
+	.string "{STR_VAR_1} a nickname?$"
+
+GoldenrodCity_GameCorner_Text_SilvallyAfter:
+	.string "Thank you for taking part. We hope you\n"
+	.string "and Silvally get along nicely!\p"
+	.string "Hm? Somewhere else to spend your\n"
+	.string "remaining coins?\p"
+	.string "I think I heard someone mumbling about\n"
+	.string "wanting coins in the Pokémon Center...$"
+
+GoldenrodCity_GameCorner_Text_ExchangeCoinsForSilvally:
+	.string "Would you like to buy Silvally? It'll\n"
+	.string "cost you 200 coins.$"
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_PrizeClerkMons::
 	lock
@@ -41,7 +169,7 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange::
-	hidecoinsbox 0, 0
+	@hidecoinsbox 0, 0
 	closemessage
 	release
 	end
@@ -131,11 +259,14 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_PartyFull::
-	msgbox GoldenrodCity_GameCorner_Text_NeedCoinCaseForCoins
+	msgbox GoldenrodCity_GameCorner_Text_PartyFull, MSGBOX_DEFAULT
 	hidecoinsbox 0, 0
 	closemessage
 	release
 	end
+
+GoldenrodCity_GameCorner_Text_PartyFull::
+	.string "Oh, but you have no room...$"
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_NicknamePartyMon::
 	getpartysize
@@ -152,7 +283,8 @@ GoldenrodCity_GameCorner_PrizeRoom_EventScript_NeedCoinCase::
 	end
 
 GoldenrodCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoins::
-	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorNeedMoreCoins
+	msgbox GoldenrodCity_GameCorner_Text_PrizeVendorNeedMoreCoins, MSGBOX_DEFAULT
+	closemessage
 	goto GoldenrodCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
@@ -208,6 +340,18 @@ GoldenrodCity_GameCorner_EventScript_SendMon::
 	hidecoinsbox 0, 0
 	release
 	end
+
+GoldenrodCity_GameCorner_EventScript_GameCornerOwner::
+	lock
+	faceplayer
+	msgbox GoldenrodCity_GameCorner_Text_GameCornerOwner, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_GameCornerOwner::
+	.string "Hey there, sport! Having fun gamblin-\n"
+	.string "err, I mean battling?$"
 
 GoldenrodCity_GameCorner_EventScript_PokefanM::
 	lock
@@ -295,7 +439,7 @@ GoldenrodCity_GameCorner_EventScript_CoinsClerk::
 	goto GoldenrodCity_GameCorner_EventScript_ChooseCoinsDefault50
 
 GoldenrodCity_GameCorner_Text_ThisIsGoldenrodGameCorner:
-	.string "This is the GAME CORNER.$"
+	.string "This is the Game Corner.$"
 
 GoldenrodCity_GameCorner_EventScript_NoRoomFor50Coins::
 	msgbox GoldenrodCity_GameCorner_Text_NoRoomFor50Coins, MSGBOX_DEFAULT
@@ -1130,3 +1274,245 @@ GoldenrodCity_GameCorner_Text_NoRoomForCoins:
 	.string "Oh?\n"
 	.string "Your COIN CASE can't fit those COINS...$"
 
+
+
+
+
+
+GoldenrodCity_GameCorner_EventScript_Wheeler::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_WHEELER), GoldenrodCity_GameCorner_EventScript_Wheeler_PostBattle
+	playbgm MUS_HG_ENCOUNTER_BOY_1, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_Wheeler_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_no_intro TRAINER_WHEELER, GoldenrodCity_GameCorner_Text_Wheeler_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_Wheeler_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Wheeler_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_Wheeler_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_PlayerReceived100Coins:
+	.string "{PLAYER} received 100 coins!$"
+
+GoldenrodCity_GameCorner_Text_Wheeler_Seen:
+	.string "Think you can keep up with me in a duel?\n"
+	.string "Nyeh! Let's see how lucky you are!$"
+
+GoldenrodCity_GameCorner_Text_Wheeler_Beaten:
+	.string "What? Hey, you're as good as Yuug!$"
+
+GoldenrodCity_GameCorner_Text_Wheeler_AfterBattle:
+	.string "What, another duel? Sorry, I gotta\n"
+	.string "practice my luck!$"
+
+GoldenrodCity_GameCorner_Text_Wheeler_HaveCoins:
+	.string "Man, sometimes a win just isn't in the\n"
+	.string "cards.\p"
+	.string "Well, whatever. Here, you've earned\n"
+	.string "these. Thanks for a good battle!$"
+
+GoldenrodCity_GameCorner_EventScript_Yumeko::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_YUMEKO), GoldenrodCity_GameCorner_EventScript_Yumeko_PostBattle
+	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_Yumeko_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_no_intro TRAINER_YUMEKO, GoldenrodCity_GameCorner_Text_Yumeko_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_Yumeko_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Yumeko_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_Yumeko_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_Yumeko_Seen:
+	.string "I dislike situations where I know I'm\n"
+	.string "going to win or lose.\l"
+	.string "That isn't gambling, you know?$"
+
+GoldenrodCity_GameCorner_Text_Yumeko_Beaten:
+	.string "Did you know? Choosing how you lose is\n"
+	.string "the same as choosing how you win!$"
+
+GoldenrodCity_GameCorner_Text_Yumeko_AfterBattle:
+	.string "3$"
+
+GoldenrodCity_GameCorner_Text_Yumeko_HaveCoins:
+	.string "Oh, what an exquisite gamble!\p"
+	.string "Doesn't it feel incredible to lay\n"
+	.string "everything on the line?\p"
+	.string "May your capitalist dreams grow ever\n"
+	.string "more with this!$"
+
+GoldenrodCity_GameCorner_EventScript_Sartorius::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_SARTORIUS), GoldenrodCity_GameCorner_EventScript_Sartorius_PostBattle
+	playbgm MUS_HG_ENCOUNTER_SUSPICIOUS_1, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_Sartorius_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_no_intro TRAINER_SARTORIUS, GoldenrodCity_GameCorner_Text_Sartorius_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_Sartorius_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Sartorius_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_Sartorius_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_Sartorius_Seen:
+	.string "I've been expecting you, {PLAYER}.\n"
+	.string "Interested in joining the light?$"
+
+GoldenrodCity_GameCorner_Text_Sartorius_Beaten:
+	.string "The darkness in you is overpowering...$"
+
+GoldenrodCity_GameCorner_Text_Sartorius_AfterBattle:
+	.string "...$"
+
+GoldenrodCity_GameCorner_Text_Sartorius_HaveCoins:
+	.string "Light and dark complement one another,\n"
+	.string "much like winning and losing, yes?\p"
+	.string "To keep the cycle alive, I must do my\n"
+	.string "part and award you these.$"
+
+GoldenrodCity_GameCorner_EventScript_Graves::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_GRAVES), GoldenrodCity_GameCorner_EventScript_Graves_PostBattle
+	playbgm MUS_HG_ENCOUNTER_SUSPICIOUS_2, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_Graves_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_two_trainers TRAINER_GRAVES, GoldenrodCity_GameCorner_Text_Graves_Beaten, TRAINER_TF, GoldenrodCity_GameCorner_Text_TF_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_Graves_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Graves_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_Graves_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_Graves_Seen:
+	.string "Sorry, squirt. End of the line.$"
+
+GoldenrodCity_GameCorner_Text_Graves_Beaten:
+	.string "Aww, what in tarnation?$"
+
+GoldenrodCity_GameCorner_Text_Graves_AfterBattle:
+	.string "Get lost.$"
+
+GoldenrodCity_GameCorner_Text_Graves_HaveCoins:
+	.string "Yeah, yeah. Take your coin and keep\n"
+	.string "walkin'.$"
+
+GoldenrodCity_GameCorner_EventScript_TF::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_TF), GoldenrodCity_GameCorner_EventScript_TF_PostBattle
+	playbgm MUS_HG_ENCOUNTER_SUSPICIOUS_2, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_TF_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_two_trainers TRAINER_GRAVES, GoldenrodCity_GameCorner_Text_Graves_Beaten, TRAINER_TF, GoldenrodCity_GameCorner_Text_TF_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_TF_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_TF_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_TF_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_TF_Seen:
+	.string "Charmed, I'm sure.$"
+
+GoldenrodCity_GameCorner_Text_TF_Beaten:
+	.string "You weren't bluffing...$"
+
+GoldenrodCity_GameCorner_Text_TF_AfterBattle:
+	.string "Buzz off.$"
+
+GoldenrodCity_GameCorner_Text_TF_HaveCoins:
+	.string "A deal's a deal. Take 'em and go.$"
+
+GoldenrodCity_GameCorner_EventScript_Setzer::
+	lock
+	faceplayer
+	goto_if_set (TRAINER_FLAGS_START + TRAINER_SETZER), GoldenrodCity_GameCorner_EventScript_Setzer_PostBattle
+	playbgm MUS_ENCOUNTER_RICH, TRUE
+	msgbox GoldenrodCity_GameCorner_Text_Setzer_Seen, MSGBOX_DEFAULT
+	playbgm MUS_HG_GAME_CORNER, TRUE
+	trainerbattle_no_intro TRAINER_SETZER, GoldenrodCity_GameCorner_Text_Setzer_Beaten
+	msgbox GoldenrodCity_GameCorner_Text_Setzer_HaveCoins, MSGBOX_DEFAULT
+	closemessage
+	playfanfare MUS_OBTAIN_ITEM
+	addcoins 100
+	msgbox GoldenrodCity_GameCorner_Text_PlayerReceived100Coins, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_EventScript_Setzer_PostBattle::
+	msgbox GoldenrodCity_GameCorner_Text_Setzer_AfterBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_Setzer_Seen:
+	.string "I can't be attached to anything.\n"
+	.string "Otherwise I couldn't be a gambler.$"
+
+GoldenrodCity_GameCorner_Text_Setzer_Beaten:
+	.string "I just want to be left alone...$"
+
+GoldenrodCity_GameCorner_Text_Setzer_AfterBattle:
+	.string "I've lost. What more is there to say?$"
+
+GoldenrodCity_GameCorner_Text_Setzer_HaveCoins:
+	.string "Bah! Oh well. Nothing for me to lose but\n"
+	.string "my life, and I got that for free.$"

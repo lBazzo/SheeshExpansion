@@ -186,3 +186,100 @@ GoldenrodCity_PokemonCenter_PokefanFAnotherTimeThenText:
 
 GoldenrodCity_PokemonCenter_PlayerGaveAwayTheEonMailText:
     .string "{PLAYER} gave away the Eon Mail.$"
+
+
+
+
+GoldenrodCity_PokemonCenter_EventScript_SuperNerdRotom::
+	lock
+	faceplayer
+	goto_if_set FLAG_GOT_ROTOM, GoldenrodCity_PokemonCenter_EventScript_SuperNerdRotomAfter
+	msgbox GoldenrodCity_PokemonCenter_Text_ExchangeCoinsForRotom, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, GoldenrodCity_PokemonCenter_EventScript_SuperNerdRotomDeclined
+	setvar VAR_TEMP_2, 300
+	checkcoins VAR_RESULT
+	goto_if_lt VAR_RESULT, VAR_TEMP_2, GoldenrodCity_PokemonCenter_EventScript_NotEnoughCoins
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, GoldenrodCity_PokemonCenter_EventScript_PartyFull
+	giveitem ITEM_ROTOM_CATALOG
+	removecoins 300
+	playfanfare MUS_OBTAIN_ITEM
+	givemon SPECIES_ROTOM, 5
+	bufferspeciesname STR_VAR_1, SPECIES_ROTOM 
+	message GoldenrodCity_PokemonCenter_Text_ReceivedRotom
+	waitfanfare
+	msgbox GoldenrodCity_PokemonCenter_Text_Nickname, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, GoldenrodCity_PokemonCenter_EventScript_NicknameRotom
+	setflag FLAG_GOT_ROTOM
+	msgbox GoldenrodCity_PokemonCenter_Text_RotomAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_PokemonCenter_EventScript_SuperNerdRotomAfter::
+	msgbox GoldenrodCity_PokemonCenter_Text_SuperNerdRotomAfter, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_PokemonCenter_EventScript_SuperNerdRotomDeclined::
+	msgbox GoldenrodCity_PokemonCenter_Text_SuperNerdRotomDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_PokemonCenter_EventScript_NotEnoughCoins::
+	msgbox GoldenrodCity_PokemonCenter_Text_SuperNerdRotomNotEnoughCoins, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_PokemonCenter_EventScript_PartyFull::
+	msgbox GoldenrodCity_PokemonCenter_Text_SuperNerdRotomPartyFull, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+GoldenrodCity_PokemonCenter_EventScript_NicknameRotom::
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMonFull
+	return
+
+GoldenrodCity_PokemonCenter_Text_SuperNerdRotomAfter:
+	.string "Oh. It's you. Say... How is Rotom doing?$"
+
+GoldenrodCity_PokemonCenter_Text_ReceivedRotom:
+	.string "{PLAYER} received Rotom!$"
+
+GoldenrodCity_PokemonCenter_Text_ExchangeCoinsForRotom:
+	.string "You're a trainer, right?\p"
+	.string "I got this Rotom to try and cheat the\n"
+	.string "slot machines in the Game Corner, but I\l"
+	.string "chickened out in the end.\p"
+	.string "I don't want to go to jail, but now I\n"
+	.string "have no money for the slot machines.\p"
+	.string "Plus, I think Rotom seems like it wants\n"
+	.string "to have fun in battles instead.\p"
+	.string "Do you think you could take it off my\n"
+	.string "hands? Say, for 300 coins?$"
+
+GoldenrodCity_PokemonCenter_Text_RotomAfter:
+	.string "Wow, thank you! Now I just need to make\n"
+	.string "these coins last...$"
+
+GoldenrodCity_PokemonCenter_Text_SuperNerdRotomDeclined:
+	.string "Right...\n"
+	.string "Well, if you ever change your mind...$"
+
+GoldenrodCity_PokemonCenter_Text_SuperNerdRotomNotEnoughCoins:
+	.string "I'd love to give you Rotom, but I do\n"
+	.string "really want those coins... Sorry.$"
+
+GoldenrodCity_PokemonCenter_Text_SuperNerdRotomPartyFull:
+	.string "You don't have room in your party. Come\n"
+	.string "back soon, okay? I'll be waiting...$"
+
+GoldenrodCity_PokemonCenter_Text_Nickname:
+	.string "Would you like to give your\n"
+	.string "{STR_VAR_1} a nickname?$"
+

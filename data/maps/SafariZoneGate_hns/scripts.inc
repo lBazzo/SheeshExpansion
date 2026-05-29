@@ -271,6 +271,7 @@ SafariZone_EventScript_FightNormalVariantA::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release
@@ -307,6 +308,7 @@ SafariZone_EventScript_FightNormalVariantB::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release
@@ -343,6 +345,7 @@ SafariZone_EventScript_FightNormalVariantC::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release
@@ -371,6 +374,7 @@ SafariZone_EventScript_ThortonHardVariantAChosen::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release
@@ -390,6 +394,7 @@ SafariZone_EventScript_ThortonHardVariantBChosen::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release
@@ -409,6 +414,7 @@ SafariZone_EventScript_ThortonHardVariantCChosen::
 	call_if_eq VAR_TEMP_0, 20, SafariZoneGate_EventScript_ThortonLeave2
 	waitmovement 0
 	setflag FLAG_HIDE_SAFARIZONEGATE_THORTON
+	clearflag FLAG_OPEN_GAMECORNER
 	removeobject LOCALID_SAFARIZONEGATE_THORTON
 	fadedefaultbgm
 	release

@@ -81,18 +81,68 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker2
+=== TRAINER_WHEELER ===
+Name: Wheeler
+Class: Youngster
+Pic: Youngster
 Gender: Male
-Music: Hg Boy 2
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+Music: Hg Boy 1
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Geodude
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Shuckle @ Quick Claw  
+Ability: Sturdy  
+Level: 75  
+Careful Nature  
+- Acupressure  
+- Infestation  
+- Final Gambit  
+- Mud-Slap  
+
+Swoobat @ Berserk Gene  
+Ability: Simple  
+Level: 75   
+Jolly Nature  
+- Acrobatics  
+- Power Trip  
+- Baton Pass  
+- Substitute  
+
+Overqwil @ Shuca Berry  
+Ability: Intimidate  
+Level: 75   
+Lonely Nature  
+- Acupressure  
+- Knock Off  
+- Gunk Shot  
+- Blizzard  
+
+Barraskewda @ Focus Sash  
+Ability: Propeller Tail  
+Level: 75   
+Jolly Nature  
+- Acupressure  
+- Liquidation  
+- Close Combat  
+- Substitute  
+
+Glalie @ Blunder Policy  
+Ability: Moody  
+Level: 75   
+Jolly Nature  
+- Acupressure  
+- Astonish  
+- Mountain Gale  
+- Protect  
+
+Banette @ Colbur Berry  
+Ability: Prankster  
+Level: 75    
+Adamant Nature  
+- Acupressure  
+- Sucker Punch  
+- Play Rough  
+- Confuse Ray  
 
 === TRAINER_GRUNT_40 ===
 Name: Grunt
@@ -14767,26 +14817,66 @@ Kangaskhan
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_JOSHUA ===
-Name: JOSHUA
-Class: Pokefan
-Pic: Pokefan M
+=== TRAINER_SETZER ===
+Name: Setzer
+Class: Gentleman
+Pic: Gentleman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Pikachu
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tyranitar @ Assault Vest  
+Ability: Solid Rock  
+Level: 75   
+Relaxed Nature  
+- Stone Axe  
+- Ceaseless Edge  
+- Focus Blast  
+- Fire Blast  
 
-Pikachu
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Primarina @ Petaya Berry  
+Ability: Torrent  
+Level: 75  
+Bold Nature  
+- Springtide Storm  
+- Hydro Pump  
+- Calm Mind  
+- Sing  
 
-Pikachu
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Raticate-Alola @ Blunder Policy  
+Ability: Hustle  
+Level: 75  
+Adamant Nature  
+- Extreme Speed  
+- Hyper Fang  
+- Bite  
+- Iron Tail  
+
+Eelektross @ Leftovers  
+Ability: Levitate  
+Level: 75   
+Relaxed Nature  
+- Thunder Cage  
+- Stockpile  
+- Triple Axel  
+- Power Whip  
+
+Jumpluff @ Choice Scarf  
+Ability: Cotton Down  
+Level: 75   
+Modest Nature  
+- Seed Flare  
+- Hurricane  
+
+Crobat @ Black Sludge  
+Ability: Moody  
+Level: 75   
+Hasty Nature  
+- Stored Power  
+- Power Trip  
+- Double Team  
+- Baneful Bunker  
 
 === TRAINER_CARTER ===
 Name: Carter
@@ -14912,39 +15002,127 @@ Modest Nature
 - Body Press  
 - Block  
 
-=== TRAINER_JEREMY ===
-Name: JEREMY
-Class: Pokefan
-Pic: Pokefan M
+=== TRAINER_SARTORIUS ===
+Name: Sartorius
+Class: Psychic
+Pic: Psychic M
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Meowth
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Annihilape @ Bright Powder  
+Ability: Defiant  
+Level: 75  
+Adamant Nature  
+- Counter  
+- Power-Up Punch  
+- Rage Fist  
+- Knock Off  
 
-Persian
-Level: 60
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Heatmor @ Starf Berry  
+Ability: Gluttony  
+Level: 75   
+Modest Nature  
+IVs: 29 HP 
+- Mind Blown  
+- Chloroblast  
+- Steel Beam  
+- Baton Pass  
 
-Meowth
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Drampa @ Rusted Shield  
+Ability: Berserk  
+Level: 75   
+Modest Nature  
+- Mirror Shot  
+- Fickle Beam  
+- Charge Beam  
+- Roost  
 
-=== TRAINER_COLIN ===
-Name: COLIN
-Class: Pokefan
-Pic: Pokefan M
-Gender: Male
-Music: Hg Boy 2
+Milotic @ Rocky Helmet  
+Ability: Competitive  
+Level: 75  
+Bold Nature  
+- Calm Mind  
+- Lunar Blessing  
+- Scald  
+- Ice Beam  
+
+Krookodile @ Focus Band  
+Ability: Anger Point  
+Level: 75   
+Adamant Nature  
+- Power Trip  
+- Facade  
+- Sand Tomb  
+- Dragon Dance  
+
+Minior @ Clear Amulet  
+Ability: Shields Down  
+Level: 75  
+Modest Nature   
+- Ancient Power  
+- Air Slash  
+- Cosmic Power  
+- Rock Polish  
+
+=== TRAINER_YUMEKO ===
+Name: Yumeko
+Class: Beauty
+Pic: Beauty2
+Gender: Female
+Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Delibird
-Level: 56
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Exploud @ Faulty Shield  
+Ability: Scrappy  
+Level: 75  
+Adamant Nature  
+- Present  
+- Magnitude  
+
+Flygon @ Yache Berry  
+Ability: Levitate  
+Level: 75    
+Naive Nature  
+- Fickle Beam  
+- Magnitude  
+- Rock Blast  
+- U-turn  
+
+Kingdra @ Loaded Dice  
+Ability: Sniper  
+Level: 75  
+Rash Nature  
+- Water Shuriken  
+- Scale Shot  
+- Rock Blast  
+- Icicle Spear  
+
+Lilligant-Hisui @ Blunder Policy  
+Ability: Hustle  
+Level: 75    
+Adamant Nature  
+- Sleep Powder  
+- Bullet Seed  
+- Arm Thrust  
+- Triple Axel  
+
+Ariados @ Bright Powder  
+Ability: Sniper  
+Level: 75   
+Adamant Nature  
+- Pin Missile  
+- Cross Poison  
+- Knock Off  
+- U-turn  
+
+Slaking @ Choice Scarf  
+Ability: Truant  
+Level: 75   
+Quirky Nature  
+- Metronome  
 
 === TRAINER_ALEX ===
 Name: ALEX
@@ -15450,34 +15628,42 @@ Jolly Nature
 - Shadow Claw  
 - Payback  
 
-=== TRAINER_GEORGIA ===
-Name: GEORGIA
-Class: Parasol Lady
-Pic: Parasol Lady
+=== TRAINER_TF ===
+Name: TF
+Class: Juggler
+Pic: Juggler
 Gender: Male
-Music: Hg Girl 2
+Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Sentret
-Level: 61
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sceptile @ Weakness Policy  
+Ability: Unburden  
+Level: 75   
+Lonely Nature  
+IVs: 30 Spe  
+- Acrobatics  
+- Petal Dance  
+- Rock Slide  
+- Detect  
 
-Sentret
-Level: 61
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Grumpig @ Lum Berry  
+Ability: Unburden  
+Level: 75   
+Modest Nature  
+- Teeter Dance  
+- Fake Out  
+- Extrasensory  
+- Dazzling Gleam  
 
-Sentret
-Level: 61
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Furret
-Level: 63
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sentret
-Level: 61
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Politoed @ King's Rock  
+Ability: Quick Feet  
+Level: 75   
+Timid Nature   
+- Teeter Dance  
+- Muddy Water  
+- Blizzard  
+- Icy Wind  
 
 === TRAINER_JAMIE ===
 Name: Jaime
@@ -15534,18 +15720,39 @@ Modest Nature
 - Focus Blast  
 - Confuse Ray  
 
-=== TRAINER_KEITH ===
-Name: KEITH
+=== TRAINER_GRAVES ===
+Name: Graves
 Class: Policeman
 Pic: Policeman
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Growlithe
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Oricorio @ Choice Scarf  
+Ability: Dancer  
+Level: 75  
+Timid Nature  
+- Searing Shot  
+
+Gengar @ Bright Powder  
+Ability: Cursed Body  
+Level: 75  
+Timid Nature  
+IVs: 26 Spe  
+- Sludge Wave  
+- Hex  
+- Acid Spray  
+- Dark Void  
+
+Salazzle @ Focus Sash  
+Ability: Corrosion  
+Level: 75   
+Timid Nature   
+- Searing Shot  
+- Sludge Wave  
+- Acid Spray  
+- Baneful Bunker  
 
 === TRAINER_DIRK ===
 Name: Dirk
@@ -15643,14 +15850,14 @@ Timid Nature
 - Expanding Force  
 - Dazzling Gleam
 
-=== TRAINER_DUFF_AND_EDA ===
-Name: DUFF & EDA
+=== TRAINER_GRAVES_AND_TF ===
+Name: Graves&TF
 Class: Young Couple
 Pic: Young Couple
 Gender: Male
 Music: Girl
 Double Battle: Yes
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Onix
 Level: 26

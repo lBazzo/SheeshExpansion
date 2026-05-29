@@ -760,10 +760,10 @@
 #define FLAG_DEFEATED_VICTORY_ROAD_SILVER  0x2B1 // Unused Flag
 #define FLAG_LIGHTHOUSE_BREAK_USED  0x2B2 // Unused Flag
 #define FLAG_IN_GAUNTLET  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
+#define FLAG_OPEN_GAMECORNER  0x2B4 // Unused Flag
+#define FLAG_HIDE_GAME_CORNER_OWNER  0x2B5 // Unused Flag
+#define FLAG_GOT_SILVALLY  0x2B6 // Unused Flag
+#define FLAG_GOT_ROTOM  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag

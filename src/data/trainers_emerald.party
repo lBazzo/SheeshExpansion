@@ -81,7 +81,7 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
+=== TRAINER_WHEELER ===
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
@@ -4172,7 +4172,7 @@ Kirlia
 Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_JOSHUA ===
+=== TRAINER_SETZER ===
 Name: JOSHUA
 Class: Psychic
 Pic: Psychic M
@@ -5256,7 +5256,7 @@ Shroomish
 Level: 9
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_GEORGIA ===
+=== TRAINER_TF ===
 Name: GEORGIA
 Class: School Kid
 Pic: School Kid F
@@ -7408,7 +7408,7 @@ Pelipper
 Level: 29
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_COLIN ===
+=== TRAINER_YUMEKO ===
 Name: COLIN
 Class: Bird Keeper
 Pic: Bird Keeper

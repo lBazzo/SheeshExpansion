@@ -4,7 +4,7 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                       0
-#define TRAINER_SAWYER_1                   1 // UNUSED
+#define TRAINER_WHEELER                   1 // UNUSED
 #define TRAINER_SAYO                       2
 #define TRAINER_SCOTT                      3
 #define TRAINER_SEAN                       4
@@ -200,7 +200,7 @@
 #define TRAINER_SHAWN                      194 // UNUSED
 #define TRAINER_NORTON                     195 // UNUSED
 #define TRAINER_JENN                       196
-#define TRAINER_JEREMY                     197 // UNUSED
+#define TRAINER_SARTORIUS                     197 // UNUSED
 #define TRAINER_JERRY                      198
 #define TRAINER_JESSICA                    199 // UNUSED
 #define TRAINER_JILL                       200 // UNUSED
@@ -240,7 +240,7 @@
 #define TRAINER_VIRGIL                     234 // UNUSED
 #define TRAINER_BLAKE                      235
 #define TRAINER_WILLIAM                    236
-#define TRAINER_JOSHUA                     237
+#define TRAINER_SETZER                     237
 #define TRAINER_GAVEN                      238
 #define TRAINER_GINA                       239
 #define TRAINER_GLENN                      240
@@ -284,7 +284,7 @@
 #define TRAINER_PETREL_2                   278
 #define TRAINER_PROTON_2                   279
 #define TRAINER_UNUSEDNAME_2               280 // UNUSED
-#define TRAINER_GEORGIA                    281 // UNUSED
+#define TRAINER_TF                    281 // UNUSED
 #define TRAINER_BLUE_2                     282 // UNUSED
 #define TRAINER_KAREN_3                    283 // UNUSED
 #define TRAINER_KAREN_4                    284 // UNUSED
@@ -408,7 +408,7 @@
 #define TRAINER_DARACH                     402
 #define TRAINER_PRESLEY                    403 // UNUSED
 #define TRAINER_LOIS                       404
-#define TRAINER_COLIN                      405
+#define TRAINER_YUMEKO                      405
 #define TRAINER_ROBERT_1                   406 // UNUSED
 #define TRAINER_BENNY                      407
 #define TRAINER_GRUNT_15                   408
@@ -480,7 +480,7 @@
 #define TRAINER_KAZU                       474 // UNUSED
 #define TRAINER_GRUNT_8                    475
 #define TRAINER_IRENE                      476
-#define TRAINER_KEITH                      477
+#define TRAINER_GRAVES                      477
 #define TRAINER_KELLY                      478
 #define TRAINER_KEN                        479
 #define TRAINER_KEANDRA                    480 // UNUSED
@@ -524,7 +524,7 @@
 #define TRAINER_MARTIN                     518
 #define TRAINER_WALLY_VR_1                 519 // UNUSED
 #define TRAINER_THOM_AND_KAE               520
-#define TRAINER_DUFF_AND_EDA               521
+#define TRAINER_GRAVES_AND_TF               521
 #define TRAINER_GRUNT_64                   522 
 #define TRAINER_GRUNT_65                   523 
 #define TRAINER_IRIS                       524 

@@ -4,7 +4,7 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                          0
-#define TRAINER_SAWYER_1                      1
+#define TRAINER_WHEELER                      1
 #define TRAINER_GRUNT_AQUA_HIDEOUT_1          2
 #define TRAINER_GRUNT_AQUA_HIDEOUT_2          3
 #define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
@@ -240,7 +240,7 @@
 #define TRAINER_VIRGIL                      234
 #define TRAINER_BLAKE                       235
 #define TRAINER_WILLIAM                     236
-#define TRAINER_JOSHUA                      237
+#define TRAINER_SETZER                      237
 #define TRAINER_CAMERON_1                   238
 #define TRAINER_CAMERON_2                   239
 #define TRAINER_CAMERON_3                   240
@@ -284,7 +284,7 @@
 #define TRAINER_JERRY_4                     278
 #define TRAINER_JERRY_5                     279
 #define TRAINER_KAREN_1                     280
-#define TRAINER_GEORGIA                     281
+#define TRAINER_TF                     281
 #define TRAINER_KAREN_2                     282
 #define TRAINER_KAREN_3                     283
 #define TRAINER_KAREN_4                     284
@@ -408,7 +408,7 @@
 #define TRAINER_HUMBERTO                    402
 #define TRAINER_PRESLEY                     403
 #define TRAINER_EDWARDO                     404
-#define TRAINER_COLIN                       405
+#define TRAINER_YUMEKO                       405
 #define TRAINER_ROBERT_1                    406
 #define TRAINER_BENNY                       407
 #define TRAINER_CHESTER                     408
