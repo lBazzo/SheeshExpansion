@@ -25,6 +25,22 @@
       "height": 2
     },
     {
+      "id": "MAPSEC_GOLDENROD_PCENTER",
+      "name": "Goldenrod Pokecenter",
+      "x": 8,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_GOLDENROD_GAMECORNER",
+      "name": "Goldenrod Game Corner",
+      "x": 8,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_ECRUTEAK_CITY",
       "name": "Ecruteak City",
       "x": 10,

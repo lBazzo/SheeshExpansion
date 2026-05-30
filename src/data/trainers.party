@@ -1411,7 +1411,7 @@ Naive Nature
 - Draining Kiss  
 - Bug Bite  
 - Magical Leaf  
-- Charm  
+- Flash  
 
 Murkrow @ Shiny Stone  
 Ability: Prankster  
@@ -17152,15 +17152,6 @@ Impish Nature
 - Sucker Punch  
 - Last Resort  
 
-Clodsire @ Sitrus Berry  
-Ability: Water Absorb  
-Level: 32    
-Sassy Nature  
-- Stomping Tantrum  
-- Venoshock  
-- Smack Down  
-- Baneful Bunker  
-
 Abomasnow @ Leftovers  
 Ability: Thick Fat  
 Level: 29    
@@ -17169,6 +17160,15 @@ Relaxed Nature
 - Giga Drain  
 - Revenge  
 - Substitute  
+
+Togekiss @ Throat Spray  
+Ability: Super Luck  
+Level: 31  
+Bold Nature   
+- Uproar  
+- Water Pulse  
+- Mystical Fire  
+- Roost
 
 Relicanth @ Salac Berry  
 Ability: Sturdy  

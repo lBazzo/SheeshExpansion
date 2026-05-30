@@ -1456,6 +1456,14 @@
       "y": 0,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_GOLDENROD_PCENTER",
+      "name": "Goldenrod Pokecenter"
+    },
+    {
+      "id": "MAPSEC_GOLDENROD_GAMECORNER",
+      "name": "Goldenrod Game Corner"
     }
   ]
 }

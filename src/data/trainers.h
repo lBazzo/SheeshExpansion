@@ -3432,7 +3432,7 @@
                 MOVE_DRAINING_KISS,
                 MOVE_BUG_BITE,
                 MOVE_MAGICAL_LEAF,
-                MOVE_CHARM,
+                MOVE_FLASH,
             },
             },
             {
@@ -43948,48 +43948,48 @@ F_TRAINER_FEMALE |
             },
             {
 #line 17155
-            .species = SPECIES_CLODSIRE,
+            .species = SPECIES_ABOMASNOW,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 17155
-            .heldItem = ITEM_SITRUS_BERRY,
+            .heldItem = ITEM_LEFTOVERS,
 #line 17159
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17156
-            .ability = ABILITY_WATER_ABSORB,
-#line 17157
-            .lvl = 32,
-#line 17158
-            .nature = NATURE_SASSY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 17159
-                MOVE_STOMPING_TANTRUM,
-                MOVE_VENOSHOCK,
-                MOVE_SMACK_DOWN,
-                MOVE_BANEFUL_BUNKER,
-            },
-            },
-            {
-#line 17164
-            .species = SPECIES_ABOMASNOW,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 17164
-            .heldItem = ITEM_LEFTOVERS,
-#line 17168
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 17165
             .ability = ABILITY_THICK_FAT,
-#line 17166
+#line 17157
             .lvl = 29,
-#line 17167
+#line 17158
             .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 17168
+#line 17159
                 MOVE_AVALANCHE,
                 MOVE_GIGA_DRAIN,
                 MOVE_REVENGE,
                 MOVE_SUBSTITUTE,
+            },
+            },
+            {
+#line 17164
+            .species = SPECIES_TOGEKISS,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 17164
+            .heldItem = ITEM_THROAT_SPRAY,
+#line 17168
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 17165
+            .ability = ABILITY_SUPER_LUCK,
+#line 17166
+            .lvl = 31,
+#line 17167
+            .nature = NATURE_BOLD,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 17168
+                MOVE_UPROAR,
+                MOVE_WATER_PULSE,
+                MOVE_MYSTICAL_FIRE,
+                MOVE_ROOST,
             },
             },
             {

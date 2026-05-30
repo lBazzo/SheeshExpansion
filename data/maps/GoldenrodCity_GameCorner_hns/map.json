@@ -3,7 +3,7 @@
   "name": "GoldenrodCity_GameCorner_hns",
   "layout": "LAYOUT_GOLDENROD_CITY_GAME_CORNER",
   "music": "MUS_HG_GAME_CORNER",
-  "region_map_section": "MAPSEC_GOLDENROD_CITY",
+  "region_map_section": "MAPSEC_GOLDENROD_GAMECORNER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -276,7 +276,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 6,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine1"
@@ -284,7 +284,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 7,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine2"
@@ -292,7 +292,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 8,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine3"
@@ -300,7 +300,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 10,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine4"
@@ -308,7 +308,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 6,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine11"
@@ -316,7 +316,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 6,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine9"
@@ -324,7 +324,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 6,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine10"
@@ -332,7 +332,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 7,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine11"
@@ -340,7 +340,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 9,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine1"
@@ -348,7 +348,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 10,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine2"
@@ -356,7 +356,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 10,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine3"
@@ -364,7 +364,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 9,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine4"
@@ -372,7 +372,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 7,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine5"
@@ -380,7 +380,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 6,
+      "y": 19,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine6"
@@ -388,7 +388,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 10,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine5"
@@ -396,7 +396,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 9,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine6"
@@ -404,7 +404,7 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 8,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine7"
@@ -412,14 +412,14 @@
     {
       "type": "sign",
       "x": 6,
-      "y": 7,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine8"
     },
     {
       "type": "sign",
-      "x": 19,
+      "x": 29,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -427,7 +427,7 @@
     },
     {
       "type": "sign",
-      "x": 18,
+      "x": 28,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -435,7 +435,7 @@
     },
     {
       "type": "sign",
-      "x": 18,
+      "x": 28,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -443,7 +443,7 @@
     },
     {
       "type": "sign",
-      "x": 19,
+      "x": 29,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -452,7 +452,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 9,
+      "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine3"
@@ -460,7 +460,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 8,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine3"
@@ -468,10 +468,170 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 8,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
       "script": "MauvilleCity_GameCorner_EventScript_SlotMachine5"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "GoldenrodCity_GameCorner_EventScript_SignSlotMachine"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "name": "GoldenrodCity_PokemonCenter_hns",
   "layout": "LAYOUT_GOLDENROD_CITY_POKEMON_CENTER",
   "music": "MUS_HG_POKE_CENTER",
-  "region_map_section": "MAPSEC_GOLDENROD_CITY",
+  "region_map_section": "MAPSEC_GOLDENROD_PCENTER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

@@ -8,6 +8,18 @@ GoldenrodCity_GameCorner_OnFrame::
 	map_script_2 VAR_GAMECORNER_STATE, 1, GoldenrodCity_GameCorner_EventScript_MeetGameCornerOwner
 	.2byte 0
 
+GoldenrodCity_GameCorner_EventScript_SignSlotMachine::
+	lock
+	msgbox GoldenrodCity_GameCorner_Text_NewSlotMachine, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+GoldenrodCity_GameCorner_Text_NewSlotMachine::
+	.string "It's a slot machine with lots of\n"
+	.string "flashing lights!\p"
+	.string "Maybe when you're older...$"
+
 GoldenrodCity_GameCorner_EventScript_MeetGameCornerOwner::
 	lock
 	playse SE_PIN
@@ -1357,7 +1369,7 @@ GoldenrodCity_GameCorner_Text_Yumeko_Beaten:
 	.string "the same as choosing how you win!$"
 
 GoldenrodCity_GameCorner_Text_Yumeko_AfterBattle:
-	.string "3$"
+	.string "Ah, what a rush...$"
 
 GoldenrodCity_GameCorner_Text_Yumeko_HaveCoins:
 	.string "Oh, what an exquisite gamble!\p"
