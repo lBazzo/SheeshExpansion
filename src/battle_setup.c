@@ -734,7 +734,11 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     {
     case MAP_TYPE_TOWN:
     case MAP_TYPE_CITY:
-        return BATTLE_ENVIRONMENT_BUILDING;
+        if (ShouldUseFishingEnvironmentInBattle())
+            return BATTLE_ENVIRONMENT_POND;
+        if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
+            return BATTLE_ENVIRONMENT_WATER;
+        return BATTLE_ENVIRONMENT_GRASS;
     case MAP_TYPE_ROUTE:
         return BATTLE_ENVIRONMENT_GRASS;
     case MAP_TYPE_FOREST:
