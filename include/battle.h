@@ -585,6 +585,7 @@ struct BattlerState
     u32 usedMicleBerry:1;
     u32 pursuitTarget:1;
     u32 stompingTantrumTimer:2;
+    u32 suckerPunchTimer:2;
     u32 canPickupItem:1;
     u32 ateBoost:1;
     u32 wasAboveHalfHp:1; // For Berserk, Emergency Exit, Wimp Out and Anger Shell.

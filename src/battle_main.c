@@ -3279,6 +3279,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     gBattleStruct->lastTakenMoveFrom[battler][2] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][3] = 0;
     gBattleStruct->battlerState[battler].stompingTantrumTimer = 0;
+    gBattleStruct->battlerState[battler].suckerPunchTimer = 0;
     gBattleStruct->palaceFlags &= ~(1u << battler);
     gBattleStruct->battlerState[battler].canPickupItem = FALSE;
     gBattleStruct->battlerState[battler].wasAboveHalfHp = gBattleMons[battler].hp > gBattleMons[battler].maxHP / 2;
@@ -4078,6 +4079,8 @@ void BattleTurnPassed(void)
 
         if (gBattleStruct->battlerState[i].stompingTantrumTimer > 0)
             gBattleStruct->battlerState[i].stompingTantrumTimer--;
+        if (gBattleStruct->battlerState[i].suckerPunchTimer > 0)
+            gBattleStruct->battlerState[i].suckerPunchTimer--;
     }
 
     for (i = 0; i < NUM_BATTLE_SIDES; i++)

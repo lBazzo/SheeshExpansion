@@ -2988,7 +2988,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             || AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)) // Opponent going first
                 ADJUST_SCORE(-10);
             break; */
-        if ((gLastMoves[battlerAtk] == move) && (gBattleStruct->battlerState[battlerAtk].stompingTantrumTimer > 0) && RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+        //if ((gLastMoves[battlerAtk] == move) && (gBattleStruct->battlerState[battlerAtk].stompingTantrumTimer > 0) && RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+        if ((gLastMoves[battlerAtk] == move) && (gBattleStruct->battlerState[battlerAtk].suckerPunchTimer > 0) && RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                     ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
                 break;
         case EFFECT_TAILWIND:
