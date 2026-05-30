@@ -342,7 +342,7 @@
     },
     {
       "id": "MAPSEC_WHIRL_ISLANDS",
-      "name": "WHIRL ISLANDS",
+      "name": "Whirl Islands",
       "x": 6,
       "y": 11,
       "width": 1,
@@ -390,7 +390,7 @@
     },
     {
       "id": "MAPSEC_TOHJO_FALLS",
-      "name": "TOHJO FALLS",
+      "name": "Tohjo Falls",
       "x": 20,
       "y": 9,
       "width": 1,
@@ -414,7 +414,7 @@
     },
     {
       "id": "MAPSEC_BURNED_TOWER",
-      "name": "BURNED TOWER",
+      "name": "Burned Tower",
       "x": 9,
       "y": 1,
       "width": 1,
@@ -430,7 +430,7 @@
     },
     {
       "id": "MAPSEC_TIN_TOWER",
-      "name": "TIN TOWER",
+      "name": "Tin Tower",
       "x": 10,
       "y": 1,
       "width": 1,
