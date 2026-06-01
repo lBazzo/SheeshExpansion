@@ -414,7 +414,7 @@
     },
     {
       "id": "MAPSEC_BURNED_TOWER",
-      "name": "BURNED TOWER",
+      "name": "Burned Tower",
       "x": 9,
       "y": 1,
       "width": 1,
@@ -1419,7 +1419,7 @@
     },
     {
       "id": "MAPSEC_ASHEN_CRYPT",
-      "name": "ASHEN CRYPT",
+      "name": "Ashen Crypt",
       "x": 0,
       "y": 0,
       "width": 1,
