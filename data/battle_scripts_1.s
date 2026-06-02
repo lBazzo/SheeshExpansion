@@ -4831,6 +4831,7 @@ BattleScript_OverworldTerrain::
 BattleScript_OverworldHazard::
 	printfromtable gStartingStatusStringIds
 	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_TARGET, sB_ANIM_ARG1
 	end3
 
 BattleScript_SideStatusWoreOff::

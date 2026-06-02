@@ -441,6 +441,7 @@ void BattleTv_SetDataBasedOnString(enum StringID stringId)
         tvPtr->side[atkSide].faintCause = FNT_CONFUSION;
         break;
     case STRINGID_SPIKESSCATTERED:
+    case STRINGID_SPIKESARESCATTERED:
         tvPtr->side[defSide].spikesMonId = gBattlerPartyIndexes[gBattlerAttacker] + 1;
         tvPtr->side[defSide].spikesMoveSlot = moveSlot;
         break;
