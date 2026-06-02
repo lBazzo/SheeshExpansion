@@ -2873,3 +2873,9 @@
 	callnative ScrCmd_istmrelearneractive, requests_effects=1
 	.4byte \destination
 	.endm
+
+	@ Sets a starting status for the next battle. Can be stacked.
+	.macro setstartingstatus status:req
+	callnative ScrCmd_setstartingstatus
+	.byte \status
+	.endm
