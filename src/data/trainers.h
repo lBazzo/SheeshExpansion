@@ -28292,7 +28292,7 @@
 #line 11062
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES,
 #line 11063
-        .startingStatus = STARTING_STATUS_PSYCHIC_TERRAIN,
+        .startingStatus = { .psychicTerrain = TRUE, },
 #line 0
         .trainerBackPic = TRAINER_PIC_ROCKET_GRUNT_M,
         .partySize = 5,
