@@ -9,7 +9,7 @@ SINGLE_BATTLE_TEST("SetStartingStatus can start Spikes on the opposing side", s1
 
     PARAMETRIZE { startingHazard = STARTING_STATUS_SPIKES_OPPONENT_L1; divisor = 8; }
     PARAMETRIZE { startingHazard = STARTING_STATUS_SPIKES_OPPONENT_L2; divisor = 6; }
-    PARAMETRIZE { startingHazard = STARTING_STATUS_SPIKES_OPPONENT_L3; divisor = 4; }Expand commentComment on lines R10 to R12Resolved
+    PARAMETRIZE { startingHazard = STARTING_STATUS_SPIKES_OPPONENT_L3; divisor = 4; }
 
     SetStartingStatus(startingHazard);
 
@@ -94,7 +94,7 @@ SINGLE_BATTLE_TEST("Starting Stealth Rock damages the opposing switch-in")
     GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_CHARIZARD].types[0] == TYPE_FIRE);
         ASSUME(gSpeciesInfo[SPECIES_CHARIZARD].types[1] == TYPE_FLYING);
-        PLAYER(SPECIES_WOBBUFFET);Expand commentComment on line R97Resolved
+        PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_CHARIZARD);
     } WHEN {
@@ -113,7 +113,7 @@ SINGLE_BATTLE_TEST("Starting sharp steel damages the opposing switch-in")
 {
     SetStartingStatus(STARTING_STATUS_SHARP_STEEL_OPPONENT);
 
-    GIVEN {Expand commentComment on line R116Resolved
+    GIVEN {
         ASSUME(gSpeciesInfo[SPECIES_SYLVEON].types[0] == TYPE_FAIRY);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

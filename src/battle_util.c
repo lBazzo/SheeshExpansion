@@ -3705,7 +3705,7 @@ static inline bool32 SetStartingSideStatus(u32 flag, u32 side, u32 message, u32 
     return FALSE;
 }
 
-static bool32 SetStartingHazardStatus(enum Hazards hazard, u32 targetSide, u8 layers, enum StartingStatusStringID messageId)
+static bool32 SetStartingHazardStatus(enum Hazards hazard, u32 targetSide, u32 anim, u8 layers, enum StartingStatusStringID messageId)
 {
     bool32 effect = FALSE;
     u32 setterSide = (targetSide == B_SIDE_PLAYER) ? B_SIDE_OPPONENT : B_SIDE_PLAYER;
@@ -3760,6 +3760,7 @@ static bool32 SetStartingHazardStatus(enum Hazards hazard, u32 targetSide, u8 la
 
     if (effect)
     {
+        gBattleScripting.animArg1 = anim;
         gBattlerAttacker = GetFirstBattlerOnSide(setterSide);
         gBattleScripting.battler = gBattlerAttacker;
         gBattlerTarget = GetFirstBattlerOnSide(targetSide);
@@ -3955,42 +3956,42 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         // Hazards - Spikes
         else if (gStartingStatuses.spikesPlayerL1)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, 1, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, B_ANIM_SPIKES, 1, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesPlayerL1 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.spikesPlayerL2)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, 2, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, B_ANIM_SPIKES, 2, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesPlayerL2 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.spikesPlayerL3)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, 3, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_PLAYER, B_ANIM_SPIKES, 3, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesPlayerL3 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.spikesOpponentL1)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, 1, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, B_ANIM_SPIKES, 1, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesOpponentL1 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.spikesOpponentL2)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, 2, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, B_ANIM_SPIKES, 2, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesOpponentL2 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.spikesOpponentL3)
         {
-            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, 3, B_MSG_SET_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_SPIKES, B_SIDE_OPPONENT, B_ANIM_SPIKES, 3, B_MSG_SET_SPIKES);
             gStartingStatuses.spikesOpponentL3 = FALSE;
             if (effect)
                 return TRUE;
@@ -3998,28 +3999,28 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         // Hazards - Toxic Spikes
         else if (gStartingStatuses.toxicSpikesPlayerL1)
         {
-            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_PLAYER, 1, B_MSG_SET_POISON_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_PLAYER, B_ANIM_SPIKES, 1, B_MSG_SET_POISON_SPIKES);
             gStartingStatuses.toxicSpikesPlayerL1 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.toxicSpikesPlayerL2)
         {
-            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_PLAYER, 2, B_MSG_SET_POISON_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_PLAYER, B_ANIM_SPIKES, 2, B_MSG_SET_POISON_SPIKES);
             gStartingStatuses.toxicSpikesPlayerL2 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.toxicSpikesOpponentL1)
         {
-            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_OPPONENT, 1, B_MSG_SET_POISON_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_OPPONENT, B_ANIM_SPIKES, 1, B_MSG_SET_POISON_SPIKES);
             gStartingStatuses.toxicSpikesOpponentL1 = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.toxicSpikesOpponentL2)
         {
-            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_OPPONENT, 2, B_MSG_SET_POISON_SPIKES);
+            effect = SetStartingHazardStatus(HAZARDS_TOXIC_SPIKES, B_SIDE_OPPONENT, B_ANIM_SPIKES, 2, B_MSG_SET_POISON_SPIKES);
             gStartingStatuses.toxicSpikesOpponentL2 = FALSE;
             if (effect)
                 return TRUE;
@@ -4027,14 +4028,14 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         // Hazards - Sticky Web
         else if (gStartingStatuses.stickyWebPlayer)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STICKY_WEB, B_SIDE_PLAYER, 1, B_MSG_SET_STICKY_WEB);
+            effect = SetStartingHazardStatus(HAZARDS_STICKY_WEB, B_SIDE_PLAYER, B_ANIM_SPIKES, 1, B_MSG_SET_STICKY_WEB);
             gStartingStatuses.stickyWebPlayer = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.stickyWebOpponent)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STICKY_WEB, B_SIDE_OPPONENT, 1, B_MSG_SET_STICKY_WEB);
+            effect = SetStartingHazardStatus(HAZARDS_STICKY_WEB, B_SIDE_OPPONENT, B_ANIM_SPIKES, 1, B_MSG_SET_STICKY_WEB);
             gStartingStatuses.stickyWebOpponent = FALSE;
             if (effect)
                 return TRUE;
@@ -4042,14 +4043,14 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         // Hazards - Stealth Rock
         else if (gStartingStatuses.stealthRockPlayer)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STEALTH_ROCK, B_SIDE_PLAYER, 1, B_MSG_SET_STEALTH_ROCK);
+            effect = SetStartingHazardStatus(HAZARDS_STEALTH_ROCK, B_SIDE_PLAYER, B_ANIM_SPIKES, 1, B_MSG_SET_STEALTH_ROCK);
             gStartingStatuses.stealthRockPlayer = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.stealthRockOpponent)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STEALTH_ROCK, B_SIDE_OPPONENT, 1, B_MSG_SET_STEALTH_ROCK);
+            effect = SetStartingHazardStatus(HAZARDS_STEALTH_ROCK, B_SIDE_OPPONENT, B_ANIM_SPIKES, 1, B_MSG_SET_STEALTH_ROCK);
             gStartingStatuses.stealthRockOpponent = FALSE;
             if (effect)
                 return TRUE;
@@ -4057,14 +4058,14 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         // Hazards - Steelsurge
         else if (gStartingStatuses.sharpSteelPlayer)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STEELSURGE, B_SIDE_PLAYER, 1, B_MSG_SET_SHARP_STEEL);
+            effect = SetStartingHazardStatus(HAZARDS_STEELSURGE, B_SIDE_PLAYER, B_ANIM_SPIKES, 1, B_MSG_SET_SHARP_STEEL);
             gStartingStatuses.sharpSteelPlayer = FALSE;
             if (effect)
                 return TRUE;
         }
         else if (gStartingStatuses.sharpSteelOpponent)
         {
-            effect = SetStartingHazardStatus(HAZARDS_STEELSURGE, B_SIDE_OPPONENT, 1, B_MSG_SET_SHARP_STEEL);
+            effect = SetStartingHazardStatus(HAZARDS_STEELSURGE, B_SIDE_OPPONENT, B_ANIM_SPIKES, 1, B_MSG_SET_SHARP_STEEL);
             gStartingStatuses.sharpSteelOpponent = FALSE;
             if (effect)
                 return TRUE;
