@@ -477,6 +477,7 @@ Pic: Black Belt2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
+Starting Status: Hail
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Toxicroak @ Focus Sash  
@@ -1424,6 +1425,7 @@ Timid Nature
 - Pursuit  
 - Wing Attack  
 - Night Shade  
+- Astonish   
 
 === TRAINER_ABE ===
 Name: Abe
@@ -2637,6 +2639,7 @@ Pic: Dragon Tamer
 Gender: Male
 Music: Male
 Double Battle: No
+Starting Status: Rain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Gorebyss @ Focus Sash  
@@ -2792,6 +2795,7 @@ Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: Misty Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Talonflame @ Power Herb  
@@ -3093,6 +3097,7 @@ Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Typhlosion @ Focus Sash  
@@ -3970,7 +3975,7 @@ Jolly Nature
 - Rollout  
 
 Sylveon @ Fairy Feather  
-Ability: Cute Charm  
+Ability: Serene Grace  
 Level: 36  
 Modest Nature  
 - Draining Kiss  
@@ -6693,6 +6698,7 @@ Pic: Expert F
 Gender: Male
 Music: Intense
 Double Battle: No
+Starting Status: Snow
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Frosmoth @ Silver Powder  
@@ -6729,6 +6735,7 @@ Pic: Expert F
 Gender: Male
 Music: Intense
 Double Battle: No
+Starting Status: Snow
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Glalie @ Focus Sash  
@@ -6798,7 +6805,7 @@ Exploud @ Lum Berry
 Ability: Soundproof  
 Level: 37   
 Jolly Nature  
-- Take Down  
+- Crush Claw 
 - Ice Fang  
 - Fire Fang  
 - Thunder Fang  
@@ -7044,6 +7051,7 @@ Pic: Juggler
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
+Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Electrode-Hisui @ Life Orb  
@@ -7108,6 +7116,7 @@ Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
+Starting Status: electric Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Boltund @ Life Orb  
@@ -7171,6 +7180,7 @@ Pic: Firebreather
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
+Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Arboliva @ Ability Shield  
@@ -7897,6 +7907,7 @@ Pic: Super Nerd
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: electric Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Flygon @ Normal Gem 
@@ -8788,6 +8799,7 @@ Pic: Swimmer F
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
+Starting Status: Sandstorm
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Tentacruel @ Black Sludge  
@@ -9845,6 +9857,7 @@ Pic: Super Nerd
 Gender: Male
 Music: Hg Suspicious 1
 Double Battle: No
+Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Venusaur @ Assault Vest  
@@ -10455,6 +10468,7 @@ Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: Misty Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Scyther @ Eviolite  
@@ -10518,6 +10532,7 @@ Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Ceruledge @ Focus Sash  
@@ -10743,6 +10758,7 @@ Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Hitmontop @ Rowap Berry  
@@ -10880,6 +10896,7 @@ Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Cradily @ Chople Berry  
@@ -12070,7 +12087,7 @@ Adamant Nature
 - Fire Punch  
 - Thunder Punch  
 
-Gallade @ Life Orb  
+Gallade @ Expert Belt  
 Ability: Sharpness  
 Level: 55  
 Jolly Nature  
@@ -12961,7 +12978,7 @@ Level: 37
 Careful Nature  
 - Thrash  
 - Crunch  
-- Scary Face  
+- Dragon Dance 
 - Amnesia  
 
 === TRAINER_CINDY ===
@@ -13189,6 +13206,7 @@ Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Komala @ Flying Gem  
@@ -13243,6 +13261,7 @@ Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Butterfree @ Focus Sash  
@@ -13589,6 +13608,7 @@ Pic: Cooltrainer M2
 Gender: Male
 Music: Rich
 Double Battle: No
+Starting Status: Hail
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Alakazam @ Focus Sash  
@@ -13866,6 +13886,7 @@ Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Lanturn @ Lum Berry  
@@ -14097,7 +14118,7 @@ Modest Nature
 Drowzee @ Leftovers  
 Ability: Bad Dreams  
 Level: 11   
-Bold Nature   
+Bold Nature
 - Hypnosis  
 - Dream Eater  
 - Seismic Toss  
@@ -14660,6 +14681,7 @@ Pic: Expert M
 Gender: Male
 Music: Rich
 Double Battle: No
+Starting Status: Snow
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Mr. Rime @ Focus Sash  
@@ -14696,6 +14718,7 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
+Starting Status: Hail
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Eiscue @ Occa Berry  
@@ -15398,6 +15421,7 @@ Pic: Twins
 Gender: Male
 Music: Hg Girl 1
 Double Battle: Yes
+Starting Status: electric Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Raichu-Alola @ Focus Sash  
@@ -15827,6 +15851,7 @@ Pic: Young Couple
 Gender: Male
 Music: Girl
 Double Battle: Yes
+Starting Status: tailwind Opponent
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Carbink @ Covert Cloak  
@@ -16313,6 +16338,7 @@ Pic: Leader Pryce
 Gender: Male
 Music: Male
 Double Battle: Yes
+Starting Status: Hail
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 Mugshot: LightBlue
 
@@ -16507,6 +16533,7 @@ Pic: Psychic M
 Gender: Male
 Music: Male
 Double Battle: No
+Starting Status: Misty Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
 
@@ -17027,7 +17054,7 @@ Kingdra @ Scope Lens
 Ability: Sniper  
 Level: 90   
 Timid Nature   
-- Draco Meteor  
+- Spacial Rend
 - Hydro Pump  
 - Hurricane  
 - Blizzard  
@@ -20206,6 +20233,7 @@ Pic: Ariana
 Gender: Male
 Music: Rocket
 Double Battle: No
+Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Yellow
 
@@ -21641,6 +21669,7 @@ Pic: Expert M
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
+Starting Status: Rain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Palafin @ Choice Scarf  

@@ -722,6 +722,17 @@ enum FaintedActions
     F(STARTING_STATUS_STEALTH_ROCK_OPPONENT,          stealthRockOpponent,        (u32, 1)) /* Stealth Rock Opponent */                    \
     F(STARTING_STATUS_SHARP_STEEL_PLAYER,             sharpSteelPlayer,           (u32, 1)) /* Sharp Steel Player */                       \
     F(STARTING_STATUS_SHARP_STEEL_OPPONENT,           sharpSteelOpponent,         (u32, 1)) /* Sharp Steel Opponent */                     \
+     /* Weather */                                                                                                                          \
+    F(STARTING_STATUS_HAIL,                           hail,                       (u32, 1)) /* Hail (Permanent) */                         \
+    F(STARTING_STATUS_HAIL_TEMPORARY,                 hailTemporary,              (u32, 1)) /* Hail Temporary (5 turns) */                 \
+    F(STARTING_STATUS_SNOW,                           snow,                       (u32, 1)) /* Snow (Permanent) */                         \
+    F(STARTING_STATUS_SNOW_TEMPORARY,                 snowTemporary,              (u32, 1)) /* Snow Temporary (5 turns) */                 \
+    F(STARTING_STATUS_SUN,                            sun,                        (u32, 1)) /* Sun (Permanent) */                          \
+    F(STARTING_STATUS_SUN_TEMPORARY,                  sunTemporary,               (u32, 1)) /* Sun Temporary (5 turns) */                  \
+    F(STARTING_STATUS_SANDSTORM,                      sandstorm,                  (u32, 1)) /* Sandstorm (Permanent) */                    \
+    F(STARTING_STATUS_SANDSTORM_TEMPORARY,            sandstormTemporary,         (u32, 1)) /* Sandstorm Temporary (5 turns) */            \
+    F(STARTING_STATUS_RAIN,                           rain,                       (u32, 1)) /* Rain (Permanent) */                         \
+    F(STARTING_STATUS_RAIN_TEMPORARY,                 rainTemporary,              (u32, 1)) /* Rain Temporary (5 turns) */                 \
 
 #define UNPACK_STARTING_STATUS_ENUMS(_enum, ...) _enum,
 

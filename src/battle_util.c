@@ -3771,6 +3771,16 @@ static bool32 SetStartingHazardStatus(enum Hazards hazard, u32 targetSide, u32 a
     return effect;
 }
 
+static bool32 SetStartingWeatherStatus(u32 battleWeatherId, u16 time)
+{
+    if (!TryChangeBattleWeather(0, battleWeatherId, ABILITY_NONE))
+        return FALSE;
+    //DebugPrintf("starting weather here");
+    gBattleStruct->weatherDuration = time;
+    gBattleScripting.animArg1 = sBattleWeatherInfo[battleWeatherId].animation;
+    return TRUE;
+}
+
 bool32 TryFieldEffects(enum FieldEffectCases caseId)
 {
     bool32 effect = FALSE;
@@ -4077,6 +4087,57 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
             else
                 BattleScriptPushCursorAndCallback(BattleScript_OverworldStatusStarts);
         }
+        // Weather - only snow and hail atm
+        if (gStartingStatuses.hail || gStartingStatuses.hailTemporary)
+        {
+            effect = SetStartingWeatherStatus(BATTLE_WEATHER_HAIL, gStartingStatuses.hail ? 0 : 5);
+            gStartingStatuses.hailTemporary = gStartingStatuses.hail = FALSE;
+            if (effect)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_StartingHailWeatherStarts);
+                return TRUE;
+            }
+        }
+        if (gStartingStatuses.snow || gStartingStatuses.snowTemporary)
+        {
+            effect = SetStartingWeatherStatus(BATTLE_WEATHER_SNOW, gStartingStatuses.snow ? 0 : 5);
+            gStartingStatuses.snowTemporary = gStartingStatuses.snow = FALSE;
+            if (effect)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_StartingSnowWeatherStarts);
+                return TRUE;
+            }
+        }
+        if (gStartingStatuses.sun || gStartingStatuses.sunTemporary)
+        {
+            effect = SetStartingWeatherStatus(BATTLE_WEATHER_SUN, gStartingStatuses.sun ? 0 : 5);
+            gStartingStatuses.sunTemporary = gStartingStatuses.sun = FALSE;
+            if (effect)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_StartingSunWeatherStarts);
+                return TRUE;
+            }
+        }
+        if (gStartingStatuses.sandstorm || gStartingStatuses.sandstormTemporary)
+        {
+            effect = SetStartingWeatherStatus(BATTLE_WEATHER_SANDSTORM, gStartingStatuses.sandstorm ? 0 : 5);
+            gStartingStatuses.sandstormTemporary = gStartingStatuses.sandstorm = FALSE;
+            if (effect)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_StartingSandstormWeatherStarts);
+                return TRUE;
+            }
+        }
+        if (gStartingStatuses.rain || gStartingStatuses.rainTemporary)
+        {
+            effect = SetStartingWeatherStatus(BATTLE_WEATHER_RAIN, gStartingStatuses.rain ? 0 : 5);
+            gStartingStatuses.rainTemporary = gStartingStatuses.rain = FALSE;
+            if (effect)
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_StartingRainWeatherStarts);
+                return TRUE;
+            }
+        }
         break;
     case FIELD_EFFECT_OVERWORLD_TERRAIN:   // terrain starting from overworld weather
         if (B_THUNDERSTORM_TERRAIN == TRUE
@@ -4134,11 +4195,13 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                 break;
             case WEATHER_SNOW:
                 if (!(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+                //if (!(gBattleWeather & B_WEATHER_SNOW))
                 {
                     if (B_OVERWORLD_SNOW >= GEN_9)
                     {
                         gBattleWeather = B_WEATHER_SNOW;
                         gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
+                        effect = TRUE;
                     }
                     else
                     {
@@ -4148,6 +4211,14 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                     effect = TRUE;
                 }
                 break;
+            /*case WEATHER_HAIL:
+                if (!(gBattleWeather & B_WEATHER_HAIL))
+                {
+                    gBattleWeather = B_WEATHER_HAIL;
+                    gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
+                    effect = TRUE;
+                }
+                break;*/
             case WEATHER_FOG_DIAGONAL:
             case WEATHER_FOG_HORIZONTAL:
                 if (B_OVERWORLD_FOG == GEN_4 && !(gBattleWeather & B_WEATHER_FOG))

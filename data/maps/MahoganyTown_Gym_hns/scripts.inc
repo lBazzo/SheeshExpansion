@@ -1,5 +1,21 @@
+.set LOCALID_MAHOGANY_GYM_RONALD, 3
+.set LOCALID_MAHOGANY_GYM_ROXANNE, 5
+.set LOCALID_MAHOGANY_GYM_BRAD, 2
+.set LOCALID_MAHOGANY_GYM_CLARISSA, 1
+.set LOCALID_MAHOGANY_GYM_DOUGLAS, 4
+.set LOCALID_MAHOGANY_GYM_DEAN, 9 
+
 MahoganyTown_Gym_hns_MapScripts::
+    map_script MAP_SCRIPT_ON_LOAD, MahoganyTown_Gym_OnLoad
     .byte 0
+
+MahoganyTown_Gym_OnLoad::
+    call_if_eq VAR_GYM_WEATHER_STATE, 0, MahoganyTown_Gym_EventScript_SetUpGymWeatherState
+    end
+
+MahoganyTown_Gym_EventScript_SetUpGymWeatherState::
+    setvar VAR_GYM_WEATHER_STATE, 1
+    return
 
 MahoganyTown_Gym_EventScript_Statue::
 	lock
@@ -16,11 +32,11 @@ MahoganyTown_Gym_EventScript_Statue2::
 	end
 
 MahoganyTown_Gym_Text_GymStatue:
-	.string "MAHOGANY TOWN Pokémon GYM$"
+	.string "Mahogany Town Pokémon Gym$"
 
 MahoganyTown_Gym_Text_GymStatueCertified:
-	.string "MAHOGANY TOWN Pokémon GYM\p"
-	.string "PRYCE'S CERTIFIED TRAINERS:\n"
+	.string "Mahogany Town Pokémon Gym\p"
+	.string "Pryce's certified trainers:\n"
 	.string "{PLAYER}$"
 
 
@@ -30,7 +46,7 @@ MahoganyTown_GymEventScript_GymGuy::
 	goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, MahoganyTown_Gym_EventScript_GymGuy2
 	msgbox MahoganyTown_Gym_Text_Guide, MSGBOX_DEFAULT
 	closemessage
-    setvar VAR_GYM_WEATHER_STATE, 1
+    @setvar VAR_GYM_WEATHER_STATE, 1
 	release
 	end
 	
@@ -39,30 +55,15 @@ MahoganyTown_Gym_EventScript_GymGuy2::
 	release
 	end	
 
-MahoganyTown_Gym_EventScript_Ronald::
-	trainerbattle_single TRAINER_RONALD MahoganyTown_Gym_Text_BoarderRonaldSeen, MahoganyTown_Gym_Text_BoarderRonaldBeaten
-	msgbox MahoganyTown_Gym_Text_BoarderRonaldAfter, MSGBOX_AUTOCLOSE
-	end
+@MahoganyTown_Gym_EventScript_Douglas::
+@	trainerbattle_single TRAINER_DOUGLAS MahoganyTown_Gym_Text_BoarderDouglasSeen, MahoganyTown_Gym_Text_BoarderDouglasBeaten
+@	msgbox MahoganyTown_Gym_Text_BoarderDouglasAfter, MSGBOX_AUTOCLOSE
+@	end
 
-MahoganyTown_Gym_EventScript_Brad::
-	trainerbattle_single TRAINER_BRAD MahoganyTown_Gym_Text_BoarderBradSeen, MahoganyTown_Gym_Text_BoarderBradBeaten
-	msgbox MahoganyTown_Gym_Text_BoarderBradAfter, MSGBOX_AUTOCLOSE
-	end
-
-MahoganyTown_Gym_EventScript_Douglas::
-	trainerbattle_single TRAINER_DOUGLAS MahoganyTown_Gym_Text_BoarderDouglasSeen, MahoganyTown_Gym_Text_BoarderDouglasBeaten
-	msgbox MahoganyTown_Gym_Text_BoarderDouglasAfter, MSGBOX_AUTOCLOSE
-	end
-
-MahoganyTown_Gym_EventScript_Roxanne::
-    trainerbattle_single TRAINER_ROXANNE MahoganyTown_Gym_Text_SkierRoxanneSeen, MahoganyTown_Gym_Text_SkierRoxanneBeaten
-	msgbox MahoganyTown_Gym_Text_SkierRoxanneAfter, MSGBOX_AUTOCLOSE
-	end
-
-MahoganyTown_Gym_EventScript_Clarissa::
-	trainerbattle_single TRAINER_CLARISSA MahoganyTown_Gym_Text_SkierClarissaSeen, MahoganyTown_Gym_Text_SkierClarissaBeaten
-	msgbox MahoganyTown_Gym_Text_SkierClarissaAfter, MSGBOX_AUTOCLOSE
-	end
+@MahoganyTown_Gym_EventScript_Clarissa::
+@	trainerbattle_single TRAINER_CLARISSA MahoganyTown_Gym_Text_SkierClarissaSeen, MahoganyTown_Gym_Text_SkierClarissaBeaten
+@	msgbox MahoganyTown_Gym_Text_SkierClarissaAfter, MSGBOX_AUTOCLOSE
+@	end
 
 MahoganyTown_Gym_EventScript_Pryce::
 	lock
@@ -71,7 +72,7 @@ MahoganyTown_Gym_EventScript_Pryce::
 	msgbox MahoganyTown_Gym_Text_PryceIntro, MSGBOX_DEFAULT
 	@goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, MahoganyTown_Gym_EventScript_OlivineCheckCianwood
 	@goto_if_set FLAG_DEFEATED_CIANWOOD_GYM, MahoganyTown_Gym_EventScript_CianwoodCheckOlivine
-    special HealPlayerParty
+    special HealPlayerPartyStatusOnly
 	goto MahoganyTown_Gym_EventScript_Pryce_Battle1
 
 MahoganyTown_Gym_EventScript_PryceVictory::
@@ -195,6 +196,41 @@ MahoganyTown_Gym_Text_GuideWin:
     .string "That was a hot battle that\n"
     .string "bridged the generation gap!$"
 
+@MahoganyTown_Gym_EventScript_Ronald::
+@	trainerbattle_single TRAINER_RONALD MahoganyTown_Gym_Text_BoarderRonaldSeen, MahoganyTown_Gym_Text_BoarderRonaldBeaten
+@	msgbox MahoganyTown_Gym_Text_BoarderRonaldAfter, MSGBOX_AUTOCLOSE
+@	end
+
+MahoganyTown_Gym_EventScript_Ronald::
+    lock
+    faceplayer
+    goto_if_gt VAR_GYM_WEATHER_STATE, 1, MahoganyTown_Gym_EventScript_RonaldAfterFight
+    playbgm MUS_ENCOUNTER_RICH, FALSE
+    specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_NORTH, MahoganyTown_Gym_EventScript_RonaldSimulateTrainerPing
+    msgbox MahoganyTown_Gym_Text_BoarderRonaldSeen, MSGBOX_DEFAULT
+    setweather WEATHER_SNOW
+    doweather
+    special HealPlayerPartyStatusOnly
+    trainerbattle_no_intro TRAINER_RONALD, MahoganyTown_Gym_Text_BoarderRonaldBeaten
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_GYM_WEATHER_STATE, 2
+    release
+    end
+
+MahoganyTown_Gym_EventScript_RonaldSimulateTrainerPing::
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_RONALD, Common_Movement_ExclamationMark
+    delay 60
+    return
+
+MahoganyTown_Gym_EventScript_RonaldAfterFight::
+    msgbox MahoganyTown_Gym_Text_BoarderRonaldAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
 MahoganyTown_Gym_Text_BoarderRonaldSeen:
     .string "I'll freeze your Pokémon,\n"
     .string "so you can't do a thing!$"
@@ -206,6 +242,74 @@ MahoganyTown_Gym_Text_BoarderRonaldAfter:
     .string "I think there's a move a\n"
     .string "Pokémon can use while it's\l"
     .string "frozen.$"
+
+
+
+
+
+
+@MahoganyTown_Gym_EventScript_Roxanne::
+@    trainerbattle_single TRAINER_ROXANNE MahoganyTown_Gym_Text_SkierRoxanneSeen, MahoganyTown_Gym_Text_SkierRoxanneBeaten
+@	msgbox MahoganyTown_Gym_Text_SkierRoxanneAfter, MSGBOX_AUTOCLOSE
+@	end
+
+@MahoganyTown_Gym_EventScript_Brad::
+@	trainerbattle_single TRAINER_BRAD MahoganyTown_Gym_Text_BoarderBradSeen, MahoganyTown_Gym_Text_BoarderBradBeaten
+@	msgbox MahoganyTown_Gym_Text_BoarderBradAfter, MSGBOX_AUTOCLOSE
+@	end
+
+MahoganyTown_Gym_EventScript_RoxanneAndBrad::
+    lock
+    playbgm MUS_ENCOUNTER_INTENSE, FALSE
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_BRAD, Common_Movement_ExclamationMark
+    delay 60
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+    waitmovement 0
+    msgbox MahoganyTown_Gym_Text_BoarderBradSeen, MSGBOX_DEFAULT
+    playbgm MUS_ENCOUNTER_INTENSE, FALSE
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_ROXANNE, Common_Movement_ExclamationMark
+    delay 60
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+    waitmovement 0
+    msgbox MahoganyTown_Gym_Text_SkierRoxanneSeen, MSGBOX_DEFAULT
+    setweather WEATHER_SNOW
+    doweather
+    special HealPlayerPartyStatusOnly
+    trainerbattle_two_trainers TRAINER_BRAD, MahoganyTown_Gym_Text_BoarderBradBeaten, TRAINER_ROXANNE, MahoganyTown_Gym_Text_SkierRoxanneBeaten
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_GYM_WEATHER_STATE, 3
+    release
+    end
+
+MahoganyTown_Gym_EventScript_Roxanne::
+    lock
+    faceplayer
+    msgbox MahoganyTown_Gym_Text_SkierRoxanneAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+MahoganyTown_Gym_EventScript_Brad::
+    lock
+    faceplayer
+    msgbox MahoganyTown_Gym_Text_BoarderBradAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+MahoganyTown_Gym_Text_SkierRoxanneSeen:
+    .string "To get to Pryce, our Gym Leader,\n"
+    .string "you need to think before you skate.$"
+
+MahoganyTown_Gym_Text_SkierRoxanneBeaten:
+    .string "I wouldn't lose to you in skiing!$"
+
+MahoganyTown_Gym_Text_SkierRoxanneAfter:
+    .string "If you don't skate with precision,\n"
+    .string "you won't get far in this Gym.$"
 
 MahoganyTown_Gym_Text_BoarderBradSeen:
     .string "This Gym has a slippery floor.\p"
@@ -221,6 +325,76 @@ MahoganyTown_Gym_Text_BoarderBradAfter:
     .string "I love boarding with my\l"
     .string "Pokémon!$"
 
+MahoganyTown_Gym_EventScript_Clarissa::
+    lock
+    faceplayer
+    goto_if_gt VAR_GYM_WEATHER_STATE, 3, MahoganyTown_Gym_EventScript_ClarissaAfterFight
+    playbgm MUS_ENCOUNTER_INTENSE, FALSE
+    specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_NORTH, MahoganyTown_Gym_EventScript_ClarissaSimulateTrainerPing
+    msgbox MahoganyTown_Gym_Text_SkierClarissaSeen, MSGBOX_DEFAULT
+    setweather WEATHER_SNOW
+    doweather
+    special HealPlayerPartyStatusOnly
+    trainerbattle_no_intro TRAINER_CLARISSA, MahoganyTown_Gym_Text_SkierClarissaBeaten
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_GYM_WEATHER_STATE, 4
+    release
+    end
+
+MahoganyTown_Gym_EventScript_ClarissaSimulateTrainerPing::
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_CLARISSA, Common_Movement_ExclamationMark
+    delay 60
+    return
+
+MahoganyTown_Gym_EventScript_ClarissaAfterFight::
+    msgbox MahoganyTown_Gym_Text_SkierClarissaAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+MahoganyTown_Gym_Text_SkierClarissaSeen:
+    .string "Check out my parallel turn!$"
+
+MahoganyTown_Gym_Text_SkierClarissaBeaten:
+    .string "No! You made me wipe out!$"
+
+MahoganyTown_Gym_Text_SkierClarissaAfter:
+    .string "I shouldn't have been bragging\n"
+    .string "about my skiing…$"
+
+MahoganyTown_Gym_EventScript_Douglas::
+    lock
+    faceplayer
+    goto_if_gt VAR_GYM_WEATHER_STATE, 4, MahoganyTown_Gym_EventScript_DouglasAfterFight
+    playbgm MUS_ENCOUNTER_INTENSE, FALSE
+    specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_EAST, MahoganyTown_Gym_EventScript_DouglasSimulateTrainerPing
+    msgbox MahoganyTown_Gym_Text_BoarderDouglasSeen, MSGBOX_DEFAULT
+    setweather WEATHER_SNOW
+    doweather
+    special HealPlayerPartyStatusOnly
+    trainerbattle_no_intro TRAINER_DOUGLAS, MahoganyTown_Gym_Text_BoarderDouglasBeaten
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_GYM_WEATHER_STATE, 5
+    release
+    end
+
+MahoganyTown_Gym_EventScript_DouglasSimulateTrainerPing::
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_DOUGLAS, Common_Movement_ExclamationMark
+    delay 60
+    return
+
+MahoganyTown_Gym_EventScript_DouglasAfterFight::
+    msgbox MahoganyTown_Gym_Text_BoarderDouglasAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
 MahoganyTown_Gym_Text_BoarderDouglasSeen:
     .string "I know Pryce's secret.$"
 
@@ -233,31 +407,40 @@ MahoganyTown_Gym_Text_BoarderDouglasAfter:
     .string "daily to strengthen his mind\l"
     .string "and body.$"
 
-MahoganyTown_Gym_Text_SkierRoxanneSeen:
-    .string "To get to Pryce, our Gym Leader,\n"
-    .string "you need to think before you skate.$"
-
-MahoganyTown_Gym_Text_SkierRoxanneBeaten:
-    .string "I wouldn't lose to you in skiing!$"
-
-MahoganyTown_Gym_Text_SkierRoxanneAfter:
-    .string "If you don't skate with precision,\n"
-    .string "you won't get far in this Gym.$"
-
-MahoganyTown_Gym_Text_SkierClarissaSeen:
-    .string "Check out my parallel turn!$"
-
-MahoganyTown_Gym_Text_SkierClarissaBeaten:
-    .string "No! You made me wipe out!$"
-
-MahoganyTown_Gym_Text_SkierClarissaAfter:
-    .string "I shouldn't have been bragging\n"
-    .string "about my skiing…$"
+@MahoganyTown_Gym_EventScript_Dean::
+@	trainerbattle_single TRAINER_DEAN MahoganyTown_Gym_Text_CamperDeanSeen, MahoganyTown_Gym_Text_CamperDeanBeaten
+@	msgbox MahoganyTown_Gym_Text_CamperDeanAfter, MSGBOX_AUTOCLOSE
+@	end
 
 MahoganyTown_Gym_EventScript_Dean::
-	trainerbattle_single TRAINER_DEAN MahoganyTown_Gym_Text_CamperDeanSeen, MahoganyTown_Gym_Text_CamperDeanBeaten
-	msgbox MahoganyTown_Gym_Text_CamperDeanAfter, MSGBOX_AUTOCLOSE
-	end
+    lock
+    faceplayer
+    goto_if_gt VAR_GYM_WEATHER_STATE, 5, MahoganyTown_Gym_EventScript_DeanAfterFight
+    playbgm MUS_HG_ENCOUNTER_BOY_1, FALSE
+    specialvar VAR_RESULT, GetPlayerFacingDirection
+	call_if_eq VAR_RESULT, DIR_WEST, MahoganyTown_Gym_EventScript_DeanSimulateTrainerPing
+    msgbox MahoganyTown_Gym_Text_CamperDeanSeen, MSGBOX_DEFAULT
+    setweather WEATHER_SNOW
+    doweather
+    special HealPlayerPartyStatusOnly
+    trainerbattle_no_intro TRAINER_DEAN, MahoganyTown_Gym_Text_CamperDeanBeaten
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_GYM_WEATHER_STATE, 6
+    release
+    end
+
+MahoganyTown_Gym_EventScript_DeanSimulateTrainerPing::
+    playse SE_PIN
+    applymovement LOCALID_MAHOGANY_GYM_DEAN, Common_Movement_ExclamationMark
+    delay 60
+    return
+
+MahoganyTown_Gym_EventScript_DeanAfterFight::
+    msgbox MahoganyTown_Gym_Text_CamperDeanAfter, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
 
 MahoganyTown_Gym_Text_CamperDeanSeen:
 	.string "Think you're ready to take on Pryce?\n"

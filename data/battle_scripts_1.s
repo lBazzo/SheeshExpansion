@@ -4821,6 +4821,41 @@ BattleScript_OverworldWeatherStarts::
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
+BattleScript_StartingHailWeatherStarts::
+	printfromtable gHailStartsStringIds
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_StartingSnowWeatherStarts::
+	printfromtable gSnowStartsStringIds 
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_StartingSunWeatherStarts::
+	printfromtable gSunStartsStringIds 
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_StartingSandstormWeatherStarts::
+	printfromtable gSandstormStartsStringIds 
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_StartingRainWeatherStarts::
+	printfromtable gRainStartsStringIds 
+	waitmessage B_WAIT_TIME_LONG
+	playanimation_var BS_BATTLER_0, sB_ANIM_ARG1
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
 BattleScript_OverworldTerrain::
 	printfromtable gTerrainStartsStringIds
 	waitmessage B_WAIT_TIME_LONG

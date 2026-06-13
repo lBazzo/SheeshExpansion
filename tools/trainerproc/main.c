@@ -19,7 +19,7 @@
 #define PARTY_SIZE 255
 #define MAX_MON_MOVES 4
 #define MAX_MON_TAGS 32
-#define STARTING_STATUS_COUNT 64
+#define STARTING_STATUS_COUNT 68
 
 struct String
 {

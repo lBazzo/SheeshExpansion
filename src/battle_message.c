@@ -1242,6 +1242,36 @@ const u16 gBallEscapeStringIds[] =
     [BALL_3_SHAKES_FAIL] = STRINGID_SHOOTSOCLOSE
 };
 
+const u16 gSnowStartsStringIds[] =
+{
+    [WEATHER_NONE]               = STRINGID_ITISSNOWING,
+    [WEATHER_SNOW]               = STRINGID_ITISSNOWING
+};
+
+const u16 gHailStartsStringIds[] =
+{
+    [WEATHER_NONE]               = STRINGID_ITISHAILING,
+    [WEATHER_SNOW]               = STRINGID_ITISHAILING
+};
+
+const u16 gSunStartsStringIds[] =
+{
+    [WEATHER_NONE]               = STRINGID_SUNLIGHTISHARSH,
+    [WEATHER_DROUGHT]            = STRINGID_SUNLIGHTISHARSH
+};
+
+const u16 gSandstormStartsStringIds[] =
+{
+    [WEATHER_NONE]               = STRINGID_SANDSTORMISRAGING,
+    [WEATHER_SANDSTORM]          = STRINGID_SANDSTORMISRAGING
+};
+
+const u16 gRainStartsStringIds[] =
+{
+    [WEATHER_NONE]               = STRINGID_ITISRAINING,
+    [WEATHER_RAIN]               = STRINGID_ITISRAINING
+};
+
 // Overworld weathers that don't have an associated battle weather default to "It is raining."
 const u16 gWeatherStartsStringIds[] =
 {
@@ -1260,7 +1290,8 @@ const u16 gWeatherStartsStringIds[] =
     [WEATHER_DROUGHT]            = STRINGID_SUNLIGHTISHARSH,
     [WEATHER_DOWNPOUR]           = STRINGID_ITISRAINING,
     [WEATHER_UNDERWATER_BUBBLES] = STRINGID_ITISRAINING,
-    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING
+    [WEATHER_ABNORMAL]           = STRINGID_ITISRAINING,
+    //[WEATHER_HAIL]               = STRINGID_ITISHAILING,
 };
 
 const u16 gTerrainStartsStringIds[] =

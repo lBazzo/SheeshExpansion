@@ -269,7 +269,7 @@
 #define VAR_RAIKOU_EVENT                                 0x40F9
 #define VAR_GOLDENROD_SILVER_STATE                       0x40FA // Used for Goldenrod Rival
 #define VAR_LIGHTHOUSE_TRAINER_COUNTER                   0x40FB // Used for counting whether each floor's lighthouse gauntlet is finished or not
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_ROUTE_45_FOG_VAR                             0x40FC 
 #define VAR_SURF_MON_SLOT                                0x40FD // Added new VAR for Surfing Overworld Sprites - Holds Surfing Party Mon index
 #define VAR_FREEZE_SURF_BLOB                             0x40FE // Added new VAR for Surfing Overworld Sprites - Set on surf init to stop blob overlay being offset incorrectly
 #define VAR_GARBAGEVAR                                   0x40FF // Used to replace little root state

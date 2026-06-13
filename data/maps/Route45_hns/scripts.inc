@@ -1,7 +1,28 @@
 .set LOCALID_POTTER, 25
 
 Route45_hns_MapScripts::
+    map_script MAP_SCRIPT_ON_TRANSITION, Route45_OnTransition
 	.byte 0
+
+Route45_OnTransition::
+    call Route45_EventScript_SetOrResetFogVar
+    end
+
+Route45_EventScript_SetOrResetFogVar::
+    setvar VAR_ROUTE_45_FOG_VAR, 1
+    return
+
+Route45_EventScript_SetFog::
+    setweather WEATHER_FOG_HORIZONTAL
+    doweather
+    setvar VAR_ROUTE_45_FOG_VAR, 2
+    end
+
+Route45_EventScript_RemoveFog::
+    setweather WEATHER_NONE
+    doweather
+    setvar VAR_ROUTE_45_FOG_VAR, 1
+    end
 
 Route45_EventScript_Erik::
 	trainerbattle_single TRAINER_ERIK Route45_Text_HikerErikSeen, Route45_Text_HikerErikBeaten
@@ -19,7 +40,7 @@ Route45_EventScript_Parry::
 	end
 
 Route45_EventScript_Kenji::
-	trainerbattle_single TRAINER_MIKEY Route45_Text_BlackbeltKenjiSeen, Route45_Text_BlackbeltKenjiBeaten
+	trainerbattle_single TRAINER_KENJI Route45_Text_BlackbeltKenjiSeen, Route45_Text_BlackbeltKenjiBeaten
 	msgbox Route45_Text_BlackbeltKenjiAfter, MSGBOX_AUTOCLOSE
 	end
 

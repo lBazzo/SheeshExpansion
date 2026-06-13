@@ -20,6 +20,7 @@
 #define WEATHER_ROUTE119_CYCLE          20
 #define WEATHER_ROUTE123_CYCLE          21
 #define WEATHER_FOG                     22  // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL 
+//#define WEATHER_HAIL                    23
 #define WEATHER_COUNT                   23
 
 // These are used in maps' coord_weather_event entries.
@@ -38,6 +39,7 @@
 #define COORD_EVENT_WEATHER_DROUGHT             11
 #define COORD_EVENT_WEATHER_ROUTE119_CYCLE      20
 #define COORD_EVENT_WEATHER_ROUTE123_CYCLE      21
+//#define COORD_EVENT_WEATHER_HAIL                23
 
 // These are the "abnormal weather events" that are used
 // to find Kyogre and Groudon.

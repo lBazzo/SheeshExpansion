@@ -700,6 +700,7 @@ struct BattleStruct
     u8 toxicChainPriority:1; // If Toxic Chain will trigger on target, all other non volatiles will be blocked
     u8 battlersSorted:1; // To avoid unnessasery computation
     u16 startingStatusTimer;
+    u8 weatherDuration;
     struct BattleTvMovePoints tvMovePoints;
     struct BattleTv tv;
     u8 AI_monToSwitchIntoId[MAX_BATTLERS_COUNT];
