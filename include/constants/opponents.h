@@ -4,8 +4,8 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                       0
-#define TRAINER_WHEELER                   1 // UNUSED
-#define TRAINER_SAYO                       2
+#define TRAINER_WHEELER                    1 // UNUSED
+#define TRAINER_ROSE_5                     2
 #define TRAINER_SCOTT                      3
 #define TRAINER_SEAN                       4
 #define TRAINER_RENJI                      5
@@ -46,7 +46,7 @@
 #define TRAINER_ROSE_2                     40 // UNUSED
 #define TRAINER_ROSE_3                     41 // UNUSED
 #define TRAINER_ROSE_4                     42 // UNUSED
-#define TRAINER_ROSE_5                     43 // UNUSED
+#define TRAINER_SAYO                       43 // UNUSED
 #define TRAINER_KRISE                      44
 #define TRAINER_GRUNT_16                   45
 #define TRAINER_RAYMOND                    46
