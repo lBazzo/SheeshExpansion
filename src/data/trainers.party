@@ -152,6 +152,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Togepi @ Eviolite  
 Ability: Hustle   
@@ -167,11 +168,11 @@ Level: 64
 Relaxed Nature  
 - Explosion  
 - Pursuit  
-- Toxic  
+- Ice Punch  
 - Venoshock  
 
 Marowak @ Thick Club  
-Ability: Battle Armor  
+Ability: Unburden  
 Level: 63    
 Adamant Nature  
 - Bonemerang  
@@ -193,7 +194,8 @@ Ability: Static
 Level: 62   
 Adamant Nature  
 - Volt Switch  
-- U-turn  
+- U-turn
+- Explosion  
 
 === TRAINER_GRUNT_42 ===
 Name: Grunt
@@ -203,6 +205,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Avalugg-Hisui @ Covert Cloak  
 Ability: Sturdy  
@@ -258,6 +261,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Sableye @ Iapapa Berry  
 Ability: Prankster  
@@ -630,14 +634,14 @@ Calm Nature
 - Leech Seed  
 - Sleep Powder  
 
-Feraligatr @ Mystic Water  
-Ability: Torrent  
-Level: 33   
+Golduck @ Scope Lens  
+Ability: Super Luck  
+Level: 33    
 Jolly Nature  
-- Aqua Tail  
-- Brick Break  
-- Bulldoze  
+- Aqua Cutter  
+- Cross Chop  
 - Ice Punch  
+- Bulk Up 
 
 Doublade @ Eviolite  
 Ability: No Guard  
@@ -657,24 +661,14 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Skarmory @ Salac Berry  
+Skarmory @ Rocky Helmet  
 Ability: Sturdy  
 Level: 34   
 Modest Nature  
 - Stealth Rock  
 - Metal Sound  
-- Air Cutter  
-- Flash Cannon  
-
-Claydol @ Lum Berry  
-Ability: Levitate  
-Level: 35   
-Timid Nature  
-IVs: 0 Atk  
-- Hyper Beam  
-- Scorching Sands  
-- Psyshock  
-- Ancient Power  
+- Air Slash  
+- Steel Beam  
 
 Grimmsnarl @ Eject Button  
 Ability: Prankster  
@@ -684,6 +678,16 @@ Adamant Nature
 - Thunder Wave  
 - Spirit Break  
 - Sucker Punch  
+
+Claydol @ Ground Gem  
+Ability: Levitate  
+Level: 35   
+Relaxed Nature  
+IVs: 0 Atk  
+- Hyper Beam  
+- Scorching Sands  
+- Psyshock  
+- Bulldoze  
 
 Nidoqueen @ Black Sludge  
 Ability: Poison Point  
@@ -1695,6 +1699,7 @@ Pic: Bird Keeper2
 Gender: Male
 Music: Male
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Bastiodon @ Leppa Berry  
@@ -1794,7 +1799,7 @@ Jolly Nature
 - Swords Dance  
 - Night Slash  
 - Cross Poison  
-- Leaf Blade  
+- Snap Trap  
 
 === TRAINER_ROY ===
 Name: ROY
@@ -2525,7 +2530,7 @@ Ability: Dancer
 Level: 62   
 Sassy Nature  
 - Petal Dance  
-- Aqua Step  
+- Surf  
 - Teeter Dance  
 - Ice Beam  
 
@@ -2536,7 +2541,7 @@ Naive Nature
 - Fiery Dance  
 - Quiver Dance  
 - Air Slash  
-- U-turn  
+- Alluring Voice 
 
 Bellossom @ Choice Scarf  
 Ability: Tangled Feet  
@@ -3145,6 +3150,7 @@ Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Avalugg-Hisui @ Ice Gem 
@@ -4268,14 +4274,15 @@ Timid Nature
 - Energy Ball  
 - Aura Sphere  
 
-Shiinotic @ Miracle Seed  
+Vileplume @ Big Root  
 Ability: Effect Spore  
-Level: 54    
-Bold Nature   
+Level: 53   
+Modest Nature  
+IVs: 30 Atk / 30 SpA / 30 Spe
 - Giga Drain  
-- Moonblast  
 - Leech Seed  
-- Spore  
+- Draining Kiss  
+- Hidden Power
 
 Togedemaru @ Salac Berry  
 Ability: Sturdy  
@@ -4306,16 +4313,36 @@ Timid Nature
 
 === TRAINER_LARRY ===
 Name: LARRY
-Class: Pokemaniac
-Pic: Pokemaniac2
+Class: Bug Catcher
+Pic: Bug Catcher2
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Larvitar
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Accelgor @ Choice Scarf  
+Ability: Unburden  
+Level: 55  
+Timid Nature   
+- Final Gambit  
+
+Ribombee @ Focus Sash  
+Ability: Shield Dust  
+Level: 52  
+Timid Nature  
+- Rage Powder  
+- Pollen Puff  
+- Struggle Bug  
+- Moonblast  
+
+Shiinotic @ Bright Powder  
+Ability: Effect Spore  
+Level: 55  
+Modest Nature   
+- Spotlight  
+- Pollen Puff  
+- Draining Kiss  
+- Giga Drain  
 
 === TRAINER_ANDREW ===
 Name: ANDREW
@@ -4516,6 +4543,15 @@ Impish Nature
 - Rage Fist  
 - Stone Edge  
 
+Numel @ Focus Sash  
+Ability: Simple  
+Level: 65   
+Timid Nature  
+- Shell Smash  
+- Flamethrower  
+- Earth Power  
+- Ancient Power
+
 === TRAINER_RON ===
 Name: Ron
 Class: Pokemaniac
@@ -4626,6 +4662,7 @@ Pic: Psychic M
 Gender: Male
 Music: Male
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Alakazam @ Focus Sash  
@@ -5418,6 +5455,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Dedenne @ Salac Berry  
 Ability: Cheek Pouch  
@@ -5428,15 +5466,14 @@ Naive Nature
 - Super Fang  
 - Thunder  
 
-Eldegoss @ Focus Sash  
+Eldegoss @ Focus Band  
 Ability: Cotton Down  
-Level: 64   
-Modest Nature  
-IVs: 30 Atk / 30 SpA / 30 Spe
+Level: 64  
+Rash Nature  
 - Sing  
 - Leech Seed  
-- Giga Drain  
-- Hidden Power 
+- Snap Trap  
+- Air Slash 
 
 Zweilous @ Bright Powder  
 Ability: Hustle  
@@ -5464,6 +5501,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Cursola @ Lum Berry  
 Ability: Perish Body  
@@ -5527,6 +5565,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Flygon @ Life Orb  
 Ability: Levitate  
@@ -5581,6 +5620,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Klefki @ Light Clay  
 Ability: Prankster  
@@ -5644,6 +5684,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Grumpig @ Bright Powder  
 Ability: Thick Fat  
@@ -5680,6 +5721,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Arcanine @ Faulty Shield  
 Ability: Intimidate  
@@ -5709,6 +5751,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Talonflame @ Power Herb  
 Ability: Gale Wings  
@@ -5899,6 +5942,7 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 Mugshot: DarkRed
+Starting Status: Spikes Player L1
 
 Marshadow @ Eject Pack  
 Ability: Technician  
@@ -6170,6 +6214,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Vivillon @ Focus Sash  
 Ability: Shield Dust  
@@ -6356,6 +6401,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Archeops @ Rock Gem  
 Ability: Defeatist  
@@ -7669,6 +7715,7 @@ Pic: Gentleman2
 Gender: Male
 Music: Rich
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Lunatone @ Twisted Spoon  
@@ -7705,6 +7752,7 @@ Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Solrock @ Twisted Spoon  
@@ -9734,11 +9782,14 @@ Adamant Nature
 - Poison Jab  
 - Final Gambit  
 
-Clefable @ Choice Band  
-Ability: Magic Guard  
-Level: 64   
-Adamant Nature  
-- Meteor Mash  
+Granbull @ Assault Vest  
+Ability: Fluffy  
+Level: 63  
+Careful Nature  
+- Play Rough  
+- Spirit Break  
+- Earthquake  
+- Power-Up Punch
 
 === TRAINER_TOM ===
 Name: Tom
@@ -9767,24 +9818,25 @@ Naive Nature
 - Megahorn  
 - Icy Wind  
 
-Ampharos @ Electric Seed  
+Ampharos @ Weakness Policy  
 Ability: Galvanize  
 Level: 62   
-Mild Nature  
+Naive Nature  
 IVs: 30 Atk  
 - Tri Attack  
 - Hidden Power 
 - Trailblaze  
 - Substitute  
 
-Meganium @ Iapapa Berry  
-Ability: Triage  
-Level: 63    
-Calm Nature   
-- Giga Drain  
-- Nature Power  
-- Draining Kiss  
-- Fake Tears  
+Gallade @ Electric Seed  
+Ability: Sharpness  
+Level: 63  
+Tera Type: Psychic  
+Jolly Nature  
+- Psyblade  
+- Sacred Sword  
+- Kowtow Cleave  
+- Bitter Blade 
 
 === TRAINER_PAT ===
 Name: Pat
@@ -10945,6 +10997,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Aegislash @ Choice Specs  
 Ability: Stance Change  
@@ -11006,6 +11059,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Starmie @ Wise Glasses  
 Ability: Illuminate  
@@ -11048,7 +11102,7 @@ Ability: Sheer Force
 Level: 62  
 Modest Nature    
 - Alluring Voice  
-- Heat Wave  
+- Psychic  
 - Double Team  
 - Roost  
 
@@ -11060,7 +11114,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
-Starting Status: Psychic Terrain
+Starting Status: Spikes Player L1
 
 Tauros @ Life Orb  
 Ability: Sheer Force  
@@ -11142,6 +11196,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Haxorus @ Assault Vest  
 Ability: Mold Breaker  
@@ -12484,6 +12539,7 @@ Pic: Psychic M
 Gender: Male
 Music: Hg Boy 1
 Double Battle: No
+Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Obstagoon @ Flame Orb  
@@ -12767,7 +12823,7 @@ Relaxed Nature
 Yanmega @ Life Orb  
 Ability: Speed Boost  
 Level: 31   
-Modest Nature   
+Jolly Nature   
 - Air Slash  
 - Bug Buzz  
 - Psychic  
@@ -12854,11 +12910,11 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Wormadam-Trash @ Sitrus Berry  
+Wormadam-Trash @ Occa Berry  
 Ability: Overcoat  
 Level: 36   
 Quiet Nature  
-- Steel Beam  
+- Flash Cannon  
 - Bug Buzz  
 - Sucker Punch  
 - Metal Burst  
@@ -12866,10 +12922,10 @@ Quiet Nature
 Golem @ Covert Cloak  
 Ability: Sturdy  
 Level: 37  
-Impish Nature  
+Adamant Nature  
 - Stealth Rock  
-- Stomping Tantrum  
-- Rock Slide  
+- Bulldoze  
+- Rock Tomb  
 - Fire Punch  
 
 Ledian @ Blunder Policy  
@@ -12893,7 +12949,7 @@ Modest Nature
 Simisear @ Power Herb  
 Ability: Blaze  
 Level: 36  
-Hasty Nature  
+Naughty Nature  
 - Blaze Kick  
 - Solar Beam  
 - Iron Tail  
@@ -13617,19 +13673,19 @@ Adamant Nature
 - Sucker Punch  
 - Fling 
 
-Ribombee @ Life Orb  
-Ability: Shield Dust  
-Level: 63   
-Modest Nature   
-- Moonblast  
-- Bug Buzz  
-- Energy Ball  
-- Powder  
+Gengar @ Focus Sash  
+Ability: Levitate  
+Level: 62    
+Adamant Nature  
+- Swords Dance  
+- Gunk Shot  
+- Poltergeist  
+- Dynamic Punch 
 
 Camerupt @ Absorb Bulb  
-Ability: Sheer Force  
+Ability: Solid Rock  
 Level: 63    
-Modest Nature   
+Timid Nature   
 - Fire Blast  
 - Earth Power  
 - Ancient Power  
@@ -14798,7 +14854,7 @@ Quiet Nature
 Vanilluxe @ Choice Scarf  
 Ability: Weak Armor  
 Level: 50   
-Rash Nature  
+Modest Nature  
 IVs: 1 Atk / 30 SpA / 30 SpD  
 - Ice Beam  
 - Freeze-Dry  
@@ -15168,7 +15224,7 @@ Emboar @ Misty Seed
 Ability: Blaze  
 Level: 63    
 Jolly Nature  
-- Heat Crash  
+- Raging Fury  
 - Low Kick  
 - Earthquake  
 - Rock Slide  
@@ -15582,52 +15638,25 @@ Pic: Parasol Lady
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Clefable @ Flame Orb  
-Ability: Magic Guard  
-Level: 55    
-Timid Nature  
-- Draining Kiss  
-- Knock Off  
-- Icy Wind  
-- Trick  
+Luvdisc @ Clear Amulet  
+Ability: Soul-Heart  
+Level: 85  
+Timid Nature   
+- Surf  
+- Ice Beam  
+- Moonblast  
+- Protect  
 
-Banette @ Choice Band  
-Ability: Shadow Tag  
-Level: 54    
+Kingambit @ Dark Gem  
+Ability: Supreme Overlord  
+Level: 53   
 Adamant Nature  
-- Return  
-- Shadow Claw  
-- Knock Off  
-- Trick  
-
-Marowak @ Thick Club  
-Ability: Battle Armor  
-Level: 52   
-Adamant Nature  
-- Bonemerang  
-- Rock Slide  
-- Ice Punch  
-- Giga Impact  
-
-Spiritomb @ Leftovers  
-Ability: Dark Aura  
-Level: 52    
-Adamant Nature  
-- Payback  
 - Sucker Punch  
-- Night Shade  
-- Hypnosis  
-
-Bewear @ Lum Berry  
-Ability: Fluffy  
-Level: 52   
-Jolly Nature  
-- Drain Punch  
-- Retaliate  
-- Shadow Claw  
-- Payback  
+- Kowtow Cleave  
+- Swords Dance  
+- Protect  
 
 === TRAINER_TF ===
 Name: TF
@@ -15940,6 +15969,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Ditto @ Lum Berry  
 Ability: Imposter  
@@ -16031,6 +16061,7 @@ Gender: Male
 Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Starting Status: Spikes Player L1
 
 Weavile @ Bright Powder  
 Ability: Technician  
@@ -18300,6 +18331,7 @@ Music: Silver
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
+Starting Status: Spikes Player L1
 
 Dusknoir @ Weakness Policy  
 Ability: Shadow Shield  
@@ -18657,7 +18689,7 @@ Trevenant @ Blunder Policy
 Ability: Cursed Body  
 Level: 35   
 Adamant Nature  
-- Wood Hammer  
+- Needle Arm  
 - Poltergeist  
 - Dynamic Punch  
 - Leech Seed  
@@ -18669,7 +18701,7 @@ Brave Nature
 IVs: 0 Spe  
 - Comeuppance  
 - Sucker Punch  
-- Brave Bird  
+- Dual Wingbeat 
 - Roost  
 
 Lycanroc-Midnight @ Lum Berry  
@@ -18690,6 +18722,7 @@ Music: Silver
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
+Starting Status: Spikes Player L1
 
 Dusknoir @ Weakness Policy  
 Ability: Shadow Shield  
@@ -19079,6 +19112,7 @@ Music: Silver
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 Mugshot: DarkRed
+Starting Status: Spikes Player L1
 
 Dusknoir @ Weakness Policy  
 Ability: Shadow Shield  
@@ -19872,6 +19906,7 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: DarkRed
+Starting Status: Spikes Player L1
 
 Claydol @ Focus Sash  
 Ability: Levitate  
@@ -20164,7 +20199,7 @@ IVs: 1 Atk / 30 SpA / 30 SpD
 - Hidden Power 
 - Roost  
 
-=== TRAINER_DAHLIA_HARD ===
+=== TRAINER_DAHLIA_HARD_SUN ===
 Name: Dahlia
 Class: TRAINER_CLASS_ARCADE_STAR
 Pic: Ariana
@@ -20173,6 +20208,73 @@ Music: Rocket
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 Mugshot: Yellow
+
+Greninja @ Eject Button  
+Ability: Protean  
+Level: 56    
+Timid Nature  
+- Spikes  
+- Toxic Spikes  
+- Hydro Steam  
+- Mist Ball  
+
+Tangrowth @ Assault Vest  
+Ability: Chlorophyll  
+Level: 56    
+Timid Nature  
+- Giga Drain  
+- Ancient Power  
+- Terrain Pulse  
+- Weather Ball  
+
+Grafaiai @ Psychic Seed  
+Ability: Unburden  
+Level: 56    
+Adamant Nature  
+- Retaliate  
+- Knock Off  
+- Low Kick  
+- Baton Pass  
+
+Tyranitar @ Expert Belt  
+Ability: Solid Rock  
+Level: 56   
+Jolly Nature  
+- Pursuit  
+- Rock Slide  
+- Fire Punch  
+- Dragon Dance  
+
+Armarouge @ Focus Sash  
+Ability: Weak Armor  
+Level: 56    
+Modest Nature  
+- Armor Cannon  
+- Expanding Force  
+- Focus Blast  
+- Destiny Bond  
+
+Zapdos @ Leftovers  
+Ability: Static  
+Level: 56  
+Tera Type: Electric  
+Bold Nature  
+IVs: 1 Atk / 30 SpA / 30 SpD  
+- Aeroblast  
+- Charge Beam  
+- Hidden Power 
+- Roost  
+
+=== TRAINER_DAHLIA_HARD_PSYCHIC ===
+Name: Dahlia
+Class: TRAINER_CLASS_ARCADE_STAR
+Pic: Ariana
+Gender: Male
+Music: Rocket
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
+Mugshot: Yellow
+Starting Status: Psychic Terrain
 
 Greninja @ Eject Button  
 Ability: Protean  

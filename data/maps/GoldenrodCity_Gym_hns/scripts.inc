@@ -80,7 +80,7 @@ GoldenrodCity_Gym_EventScript_Whitney::
 	goto_if_eq VAR_GOLDENROD_CITY_STATE, 4, GoldenrodCity_Gym_EventScript_WhitneyBadge
 	goto_if_set FLAG_DEFEATED_GOLDENROD_CITY_GYM, GoldenrodCity_Gym_EventScript_WhitneyDefeated
 	msgbox GoldenrodCity_Gym_Text_WhitneyBefore, MSGBOX_DEFAULT
-	special HealPlayerParty
+	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_WHITNEY_1, GoldenrodCity_Gym_Text_WhitneyShouldntBeSoSerious
 	msgbox GoldenrodCity_Gym_Text_WhitneyYouMeanie, MSGBOX_DEFAULT
 	setvar VAR_GOLDENROD_CITY_STATE, 3
@@ -313,6 +313,7 @@ GoldenrodCity_Gym_EventScript_B2B1::
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautySamanthaSeen, MSGBOX_DEFAULT
 	playbgm MUS_HG_GYM, TRUE
+	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_SAMANTHA, GoldenrodCity_Gym_Text_BeautySamanthaBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
 	playse SE_PIN
@@ -337,6 +338,7 @@ GoldenrodCity_Gym_EventScript_B2B2::
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_TeacherHillarySeen, MSGBOX_DEFAULT
 	playbgm MUS_HG_GYM, TRUE
+	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_HILLARY, GoldenrodCity_Gym_Text_TeacherHillaryBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN
@@ -361,6 +363,7 @@ GoldenrodCity_Gym_EventScript_B2B3::
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautyVictoriaSeen, MSGBOX_DEFAULT
 	playbgm MUS_HG_GYM, TRUE
+	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_VICTORIA, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
 	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN

@@ -1784,7 +1784,7 @@ BattleTower_Outside_EventScript_ChallengedByDahliaPostIntro::
 	multichoice 20, 6, MULTI_DAHLIACHALLENGE, FALSE 
 	switch VAR_RESULT
 	case 0, BattleTower_Outside_EventScript_DahliaBattleNormal
-	case 1, BattleTower_Outside_EventScript_DahliaBattleHard
+	case 1, BattleTower_Outside_EventScript_DahliaBattleHardRandomPrepare
 	case MULTI_B_PRESSED, BattleTower_Outside_EventScript_DeclineDahliaChallenge
 	goto BattleTower_Outside_EventScript_DeclineDahliaChallenge
 
@@ -1809,10 +1809,38 @@ BattleTower_Outside_EventScript_DahliaBattleNormal::
 	release
 	end
 
-BattleTower_Outside_EventScript_DahliaBattleHard::
+BattleTower_Outside_EventScript_DahliaBattleHardRandomPrepare::
+	random 2
+	goto_if_eq VAR_RESULT, 1, BattleTower_Outside_EventScript_DahliaBattleHardSun
+	goto BattleTower_Outside_EventScript_DahliaBattleHardPsychicTerrain
+
+BattleTower_Outside_EventScript_DahliaBattleHardSun::
 	msgbox BattleTower_Outside_Text_DahliaBattleHard, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_DAHLIA_HARD, BattleTower_Outside_Text_DahliaWin
+	setweather WEATHER_DROUGHT
+	doweather
+	trainerbattle_no_intro TRAINER_DAHLIA_HARD_SUN, BattleTower_Outside_Text_DahliaWin
 	setweather WEATHER_NONE
+	doweather
+	msgbox BattleTower_Outside_Text_DahliaHardAfter, MSGBOX_DEFAULT
+	giveitem ITEM_HEART_SCALE, 4
+	msgbox BattleTower_Outside_Text_DahliaLeaving, MSGBOX_DEFAULT
+	closemessage
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 13, BattleTower_Outside_EventScript_DahliaLeavePlayerLeft
+	call_if_eq VAR_TEMP_0, 14, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	call_if_eq VAR_TEMP_0, 15, BattleTower_Outside_EventScript_DahliaLeavePlayerRightOrDown
+	setflag FLAG_DEFEATED_DAHLIA
+	removeobject LOCALID_BATTLETOWER_DAHLIA
+	setvar VAR_DAHLIA_STATE, 3
+	fadedefaultbgm
+	release
+	end
+
+BattleTower_Outside_EventScript_DahliaBattleHardPsychicTerrain::
+	msgbox BattleTower_Outside_Text_DahliaBattleHard, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_DAHLIA_HARD_PSYCHIC, BattleTower_Outside_Text_DahliaWin
+	setweather WEATHER_NONE
+	doweather
 	msgbox BattleTower_Outside_Text_DahliaHardAfter, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 4
 	msgbox BattleTower_Outside_Text_DahliaLeaving, MSGBOX_DEFAULT

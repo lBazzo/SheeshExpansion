@@ -207,7 +207,7 @@ BlackthornGym_EventScript_Clair::
 	goto_if_ge VAR_BLACKTHORN_CITY_STATE, 4, BlackthornGym_EventScript_Clair_Defeated
 	goto_if_eq VAR_BLACKTHORN_CITY_STATE, 2, BlackthornGym_EventScript_ClairDuringChallenge
 	msgbox BlackthornGym_Text_ClairIntroText, MSGBOX_DEFAULT
-	special HealPlayerParty
+	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_CLAIR_1, BlackthornGym_Text_ClairWinText
 	msgbox BlackthornGym_Text_ClairText_GoToDragonsDen, MSGBOX_DEFAULT
 	setvar VAR_0x8008, 8
@@ -451,6 +451,7 @@ BlackthornGym_EventScript_B2B::
 	waitmovement 0 
 	msgbox BlackthornGym_Text_IrisSeen, MSGBOX_DEFAULT
 	playbgm MUS_HG_GYM, FALSE
+	special HealPlayerPartyStatusOnly
     trainerbattle_no_intro TRAINER_IRIS, BlackthornGym_Text_IrisBeaten
     playbgm MUS_ENCOUNTER_RICH, TRUE
     playse SE_PIN

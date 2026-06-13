@@ -300,7 +300,7 @@ Route110_TrickHousePuzzle7_EventScript_Alexis::
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Mariela::
-	trainerbattle_single TRAINER_MARIELA, Route110_TrickHousePuzzle7_Text_MarielaIntro, Route110_TrickHousePuzzle7_Text_MarielaDefeat
+	trainerbattle_single TRAINER_DAHLIA_HARD_PSYCHIC, Route110_TrickHousePuzzle7_Text_MarielaIntro, Route110_TrickHousePuzzle7_Text_MarielaDefeat
 	msgbox Route110_TrickHousePuzzle7_Text_MarielaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

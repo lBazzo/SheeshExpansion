@@ -287,17 +287,35 @@ Route39_EventScript_Ruth::
 	end
 
 Route39_Text_PokefanFRuthSeen:
-	.string "Such darling Pokémon.\p"
-	.string "Let's show our Pokémon\n"
-	.string "together at the same time.$"
+	.string "Love is all about putting your\n"
+	.string "partner's hard work and devotion to\l"
+	.string "good use. Don't you think so?$"
 
 Route39_Text_PokefanFRuthBeaten:
-	.string "I don't mind losing.$"
+	.string "Oh no! I couldn't do it!$"
 
 Route39_Text_PokefanFRuthAfter:
-	.string "Do you know about baby\n"
-	.string "Pokémon?\p"
-	.string "I bet they're just adorable!$"
+	.string "Don't be upset, dear Larry. It's my\n"
+	.string "fault for not living up to your\l"
+	.string "affections for me.$"
+
+Route39_EventScript_Larry::
+	trainerbattle_single TRAINER_LARRY, Route39_Text_BugCatcherLarrySeen, Route39_Text_BugCatcherLarryBeaten
+	msgbox Route39_Text_BugCatcherLarryAfter, MSGBOX_AUTOCLOSE
+	end
+
+Route39_Text_BugCatcherLarrySeen:
+	.string "The only thing I love more than bugs is\n"
+	.string "my girlfriend.\p"
+	.string "I'll be by her side forever!$"
+
+Route39_Text_BugCatcherLarryBeaten:
+	.string "Ack! Were my feelings not strong\n"
+	.string "enough...?$"
+
+Route39_Text_BugCatcherLarryAfter:
+	.string "Ruth, dearest... It's because I wasn't\n"
+	.string "strong enough...$"
 
 Route39_EventScript_Norman::
 	trainerbattle_single TRAINER_NORMAN, Route39_Text_PsychicNormanSeen, Route39_Text_PsychicNormanBeaten

@@ -75,7 +75,8 @@ bool32 IsTeraTrainer(u16 trainerId)
         case TRAINER_MIRANDA:
         case TRAINER_GORDO:
         case TRAINER_DAHLIA_NORMAL:
-        case TRAINER_DAHLIA_HARD:
+        case TRAINER_DAHLIA_HARD_SUN:
+        case TRAINER_DAHLIA_HARD_PSYCHIC:
         case TRAINER_CAITLIN_CASTLE:
         case TRAINER_DARACH:
         case TRAINER_DARACH_CAIT:

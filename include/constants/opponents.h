@@ -851,7 +851,7 @@
 #define TRAINER_THALIA_3                   845 // UNUSED
 #define TRAINER_THALIA_4                   846 /
 #define TRAINER_THALIA_5                   847 // UNUSED
-#define TRAINER_MARIELA                    848 // UNUSED
+#define TRAINER_DAHLIA_HARD_PSYCHIC        848 // UNUSED
 #define TRAINER_BORIS                      849
 #define TRAINER_NICOLE                     850
 #define TRAINER_RED                         851
@@ -861,7 +861,7 @@
 #define TRAINER_GRUNT_12                    855 //857
 #define TRAINER_WALLACE2                    856 //858
 #define TRAINER_DAHLIA_NORMAL                    857 //859
-#define TRAINER_DAHLIA_HARD                    858 //85A
+#define TRAINER_DAHLIA_HARD_SUN                    858 //85A
 #define TRAINER_CHANSEY5                    859 //85B
 #define TRAINER_SIDNEY2                     860 //85C
 #define TRAINER_PHOEBE2                     861 //85D

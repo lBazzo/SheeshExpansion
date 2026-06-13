@@ -54,7 +54,7 @@ CianwoodGym_EventScript_Chuck::
 	msgbox CianwoodGym_Text_ChuckIntro3, MSGBOX_DEFAULT
 	@goto_if_set FLAG_DEFEATED_OLIVINE_CITY_GYM, CianwoodGym_EventScript_OlivineCheckMahog
 	@goto_if_set FLAG_DEFEATED_MAHOGANY_TOWN_GYM, CianwoodGym_EventScript_MahogCheckOlivine
-	special HealPlayerParty
+	special HealPlayerPartyStatusOnly
 	goto CianwoodGym_EventScript_Chuck_Battle1
 
 CianwoodGym_EventScript_ChuckVictory::
