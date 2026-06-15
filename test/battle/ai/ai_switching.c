@@ -378,7 +378,7 @@ AI_SINGLE_BATTLE_TEST("When AI switches out due to having no move that affects t
 
 AI_DOUBLE_BATTLE_TEST("AI will not try to switch for the same Pokémon for 2 spots in a double battle (Wonder Guard)")
 {
-    KNOWN_FAILING; //Bazzo note: changed switch ai
+    //KNOWN_FAILING; //Bazzo note: changed switch ai
     //PASSES_RANDOMLY(SHOULD_SWITCH_WONDER_GUARD_PERCENTAGE, 100, RNG_AI_SWITCH_WONDER_GUARD);
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_SMART_SWITCHING);

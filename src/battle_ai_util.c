@@ -5758,7 +5758,10 @@ void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
       || IsPowerBasedOnStatus(BATTLE_PARTNER(battlerAtk), EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_SLEEP))
         ADJUST_SCORE_PTR(+1);
 
-    if ((AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)) && CanTargetFaintAi(battlerDef, battlerAtk))
+    if ((AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)) 
+    && (CanTargetFaintAi(battlerDef, battlerAtk))
+    && (gBattleMons[battlerDef].item != ITEM_CHESTO_BERRY)
+    && (gBattleMons[battlerDef].item != ITEM_LUM_BERRY))
         ADJUST_SCORE_PTR(+1);
 }
 
@@ -5778,8 +5781,9 @@ void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
           //|| (gAiLogicData->abilities[battlerAtk] == ABILITY_SERENE_GRACE && HasMoveWithMoveEffectExcept(battlerAtk, MOVE_EFFECT_FLINCH, EFFECT_FIRST_TURN_ONLY)))
           && (RandomPercentage(RNG_AI_CUSTOM_AI_NINETY_PERCENT, CUSTOM_AI_NINETY_PERCENT)))
             ADJUST_SCORE_PTR(+2);
-        else
-            ADJUST_SCORE_PTR(NO_INCREASE);
+        if (gBattleMons[battlerDef].item != ITEM_PERSIM_BERRY
+        && (gBattleMons[battlerDef].item != ITEM_LUM_BERRY))
+            ADJUST_SCORE_PTR(+1);
     }
 }
 

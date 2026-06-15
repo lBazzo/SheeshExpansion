@@ -3,7 +3,7 @@
 
 AI_SINGLE_BATTLE_TEST("AI_FLAG_SEQUENCE_SWITCHING: AI will always switch after a KO in exactly party order")
 {
-    KNOWN_FAILING; //idc about whatever tf this is
+    //KNOWN_FAILING; //idc about whatever tf this is
     u32 aiSequenceSwitchingFlag = 0;
 
     PARAMETRIZE { aiSequenceSwitchingFlag = 0; }

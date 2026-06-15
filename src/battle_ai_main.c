@@ -4611,6 +4611,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     u32 aiIsFaster = AI_IsFaster(battlerAtk, battlerDef, MOVE_NONE, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY);
     u32 noOfHitsToFaint = NoOfHitsForTargetToFaintBattler(battlerDef, battlerAtk);
     u32 shouldSetUp = ((noOfHitsToFaint >= 2 && aiIsFaster) || (noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS);
+    u32 AIHitsToKOPlayer = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING);
+    u32 PlayerHitsToKOAI = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING);
 
     // The AI should understand that while Dynamaxed, status moves function like Protect.
     if (GetActiveGimmick(battlerAtk) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
@@ -4749,6 +4751,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
         */
+    case EFFECT_HEALING_WISH: 
+    {
+        if (CountUsablePartyMons(battlerAtk) != 0
+        && (!IsPartyFullyHealedExceptBattler(battlerAtk)))
+        {
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_THIRTY_PERCENT, CUSTOM_AI_THIRTY_PERCENT))
+                ADJUST_SCORE(DECENT_EFFECT);
+            else
+                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+        }
+        break;
+    }
     case EFFECT_FINAL_GAMBIT:
     //Bazzo note: hopefully doesn't matter, sui flag only
     /*
@@ -5221,9 +5235,20 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         else if (!gDisableStructs[battlerAtk].isFirstTurn)
             {
                 if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE + 1);
                 else
-                    ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+
+                if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+                && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
+                && (AIHitsToKOPlayer != 0)
+                && (AIHitsToKOPlayer != 1))
+                    ADJUST_SCORE(-1);
+                else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+                && (AIHitsToKOPlayer < PlayerHitsToKOAI)
+                && (AIHitsToKOPlayer != 0)
+                && (AIHitsToKOPlayer != 1))
+                    ADJUST_SCORE(-1);
             }
         else
             ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
@@ -5231,6 +5256,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         //fallthrough
     case EFFECT_HIT_ESCAPE:
     //uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
+        // LAST MON CASES FIRST
         // Never use if last mon and not highest damage
         
         if (CountUsablePartyMons(battlerAtk) == 0
@@ -5262,8 +5288,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
         //if (effectiveness < UQ_4_12(1.0))
         //    ADJUST_SCORE(-1);
-        u32 AIHitsToKOPlayer = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING);
-        u32 PlayerHitsToKOAI = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING);
+        // END OF LAST MON CASES
+
+        //u32 AIHitsToKOPlayer = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING);
+        //u32 PlayerHitsToKOAI = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING);
         DebugPrintf("AIHitsToKOPlayer %d PlayerHitsToKOAI %d", AIHitsToKOPlayer, PlayerHitsToKOAI);
         //if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
         //&& (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
@@ -5306,21 +5334,37 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
                 ADJUST_SCORE(+1);
         }
-        if (AnyStatIsLowered(battlerAtk))
-        //&& (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        if (AnyStatIsLowered(battlerAtk)
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
             ADJUST_SCORE(+1);
+        if (AnyStatIsRaised(battlerAtk)
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+            ADJUST_SCORE(-1);
             break;
     case EFFECT_PARTING_SHOT:
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (CanTargetFaintAi(battlerDef, battlerAtk))
-        && (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
-        && (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK)))
-            ADJUST_SCORE(WEAK_EFFECT);
+        && (CanTargetFaintAi(battlerDef, battlerAtk)))
+        {
+                ADJUST_SCORE(+1);
+            if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
+            && (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK)))
+                ADJUST_SCORE(+1);
+        }
         else if ((!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
         || (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK)))
-            ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
-        else
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            ADJUST_SCORE(-1);
+
+        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            ADJUST_SCORE(-1);
+        else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            ADJUST_SCORE(-1);
         break;
     case EFFECT_CHILLY_RECEPTION:
     if (ShouldSetWeather(battlerAtk, B_WEATHER_SNOW))
@@ -5363,6 +5407,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(BEST_EFFECT);
         break;
     */
+
         if (gBattleMons[battlerDef].volatiles.escapePrevention
         || gBattleMons[battlerAtk].statStages[STAT_ATK] == (DEFAULT_STAT_STAGE + 1)
         || gBattleMons[battlerAtk].statStages[STAT_DEF] == (DEFAULT_STAT_STAGE + 1)
@@ -5389,7 +5434,22 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 else
                     ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
             }
-        else if (!gDisableStructs[battlerAtk].isFirstTurn)
+        else if (!gDisableStructs[battlerAtk].isFirstTurn
+        && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                else
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
+            }
+        else if (!gDisableStructs[battlerAtk].isFirstTurn
+        && !AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
             {
                 if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -5560,6 +5620,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         }
         break;
     case EFFECT_ENDURE:
+        u32 endureUses = gDisableStructs[battlerAtk].protectUses;
+        if (endureUses == 1
+        && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+        {
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            break;
+        }
+        else if (endureUses == 2)
+        {
+            ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            break;
+        }    
         if (CanTargetFaintAi(battlerDef, battlerAtk))
         {
             if (gBattleMons[battlerAtk].hp > gBattleMons[battlerAtk].maxHP / 4 // Pinch berry couldn't have activated yet
@@ -6414,14 +6486,16 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     }
     */
-        if (gBattleMons[battlerDef].defense != gBattleMons[battlerAtk].defense)
+        if (gBattleMons[battlerDef].defense != gBattleMons[battlerAtk].defense
+        || (gBattleMons[battlerDef].spDefense != gBattleMons[battlerAtk].spDefense))
         {
             if(RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                 ADJUST_SCORE(WEAK_EFFECT);
             else 
                 ADJUST_SCORE(NO_INCREASE);
         }
-        else if (gBattleMons[battlerDef].defense == gBattleMons[battlerAtk].defense)
+        else if (gBattleMons[battlerDef].defense == gBattleMons[battlerAtk].defense
+             && (gBattleMons[battlerDef].spDefense == gBattleMons[battlerAtk].spDefense))
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_POWER_SPLIT:
@@ -6745,6 +6819,13 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     */
         if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
             ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL);
+        else if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
+        && (AIHitsToKOPlayer != 0)
+        && (AIHitsToKOPlayer != 1))
+            ADJUST_SCORE(NO_INCREASE);
+        else
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_LUCKY_CHANT:
         if (isBattle1v1 && CountUsablePartyMons(battlerDef) > 0)
@@ -6977,7 +7058,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
         */
     case EFFECT_ASSIST:
-        ADJUST_SCORE(GOOD_EFFECT);
+        if (gDisableStructs[battlerAtk].isFirstTurn
+            && (HasMoveWithEffect(battlerAtk, EFFECT_FIRST_TURN_ONLY)))
+                ADJUST_SCORE(DECENT_EFFECT);
+            else 
+                ADJUST_SCORE(GOOD_EFFECT);
         break;
     case EFFECT_PURSUIT:
         u32 pursuitDmg;   

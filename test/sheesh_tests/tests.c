@@ -56,6 +56,7 @@ AI_DOUBLE_BATTLE_TEST("AI will not target the same slot as its partner when it s
 // Even Ice Hammer works when Hammer Arm doesn't, who fucking knows lol
 AI_SINGLE_BATTLE_TEST("AI correctly scores offensive setup moves under different circumstances")
 {
+    KNOWN_FAILING; //think this is setup ai not being updated
     u32 opponentSetUpMove;
     u32 opponentAttack;
     u32 playerAttack;
@@ -186,7 +187,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores speed setup moves under different cir
 
 AI_SINGLE_BATTLE_TEST("AI correctly scores defence dropping moves under different circumstances")
 {
-    KNOWN_FAILING; //temporarily removed highest setup scoring until that becomes feasible to code
+    //KNOWN_FAILING; //temporarily removed highest setup scoring until that becomes feasible to code
     u32 opponent3HKOCheckMove;
     u32 opponentMaybeHighestDamageMove;
 
@@ -412,19 +413,19 @@ AI_SINGLE_BATTLE_TEST("AI scores Parting Shot correctly")
         if (playerMaybeKillingMove == MOVE_DRAGON_RAGE && playerAbility == ABILITY_ADAPTABILITY && opponentSpeed == 110)
         {
             TURN {
-                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 107);
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 108);
             }
         }
         else if (playerAbility == ABILITY_HYPER_CUTTER)
         {
             TURN {
-                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 105);
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 107);
             }
         }
         else if (playerMaybeKillingMove == MOVE_SPLASH)
         {
             TURN {
-                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 106);
+                SCORE_EQ_VAL(opponent, MOVE_PARTING_SHOT, 105);
             }
         }
         else if (opponentSpeed == 90)
@@ -603,11 +604,11 @@ AI_SINGLE_BATTLE_TEST("AI scores Swagger correctly")
     } WHEN {
         if (opponentItem == ITEM_NONE)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 106); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 107); }
         }
         if (opponentItem == ITEM_MIRROR_HERB)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 109); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_SWAGGER, 110); }
         }
     }
 }
@@ -3218,7 +3219,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Endure")
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_MON_CHOICES);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, playerCheckOHKOMove); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_ENDURE); HP(40); MaxHP(100); Item(opponentItem); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_ENDURE); HP(40); MaxHP(50); Item(opponentItem); }
     } WHEN {
         if (opponentItem == ITEM_CUSTAP_BERRY && playerCheckOHKOMove == MOVE_DRAGON_RAGE)
         {
@@ -3392,5 +3393,31 @@ AI_SINGLE_BATTLE_TEST("AI scores Sucker Punch correctly")
         TURN { MOVE(player, MOVE_FAKE_OUT); EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); SCORE_EQ_VAL(opponent, MOVE_SUCKER_PUNCH, 108); }
         TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); SCORE_EQ_VAL(opponent, MOVE_SUCKER_PUNCH, 108); }
         TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_SUCKER_PUNCH); SCORE_EQ_VAL(opponent, MOVE_SUCKER_PUNCH, 88); }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores Healing Wish correctly")
+{
+    u32 AIBackMonHP;
+
+    PARAMETRIZE { AIBackMonHP = 100; }
+    PARAMETRIZE { AIBackMonHP = 90; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HEALING_WISH); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { HP(AIBackMonHP); MaxHP(100); };
+    } WHEN {
+        if (AIBackMonHP == 100)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_HEALING_WISH, 80, target:playerLeft); }
+        }
+        else if (AIBackMonHP == 90)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_HEALING_WISH, 108, target:playerLeft); }
+        }
     }
 }

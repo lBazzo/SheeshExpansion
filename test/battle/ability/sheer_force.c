@@ -434,6 +434,7 @@ static inline bool32 IsMoveSheerForceBoosted(u32 move)
         case MOVE_FLAME_WHEEL:
         case MOVE_FLAMETHROWER:
         case MOVE_FLARE_BLITZ:
+        case MOVE_FLASH:
         case MOVE_FLASH_CANNON:
         case MOVE_FOCUS_BLAST:
         case MOVE_FORCE_PALM:
