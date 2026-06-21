@@ -75,6 +75,7 @@
 #include "constants/form_change_types.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
+#include "constants/layouts.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
@@ -114,6 +115,16 @@ enum {
     MENU_CATALOG_MOWER,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
+    MENU_STATUS,
+    MENU_DAMAGE,
+    MENU_POISON,
+    MENU_REGULAR,
+    MENU_TOXIC,
+    MENU_PARALYSIS,
+    MENU_SLEEP,
+    MENU_BURN,
+    MENU_FREEZE,
+    MENU_FROSTBITE,
     MENU_FIELD_MOVES
 };
 
@@ -136,6 +147,9 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_STATUS,
+    ACTIONS_DAMAGE,
+    ACTIONS_POISON
 };
 
 enum {
@@ -384,6 +398,8 @@ static void Task_CancelAfterAorBPress(u8);
 static void DisplayFieldMoveExitAreaMessage(u8);
 static void DisplayCantUseFlashMessage(void);
 static void DisplayCantUseSurfMessage(void);
+//static bool8 InEliteFour(void);
+static bool8 InGauntlet(void);
 static void Task_FieldMoveExitAreaYesNo(u8);
 static void Task_HandleFieldMoveExitAreaYesNoInput(u8);
 static void Task_FieldMoveWaitForFade(u8);
@@ -502,6 +518,16 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
+static void CursorCb_Status(u8);
+static void CursorCb_Damage(u8);
+static void CursorCb_Poison(u8);
+static void CursorCb_Burn(u8);
+static void CursorCb_Frostbite(u8);
+static void CursorCb_Toxic(u8);
+static void CursorCb_Paralysis(u8);
+static void CursorCb_Sleep(u8);
+static void CursorCb_Freeze(u8);
+static void CursorCb_Regular(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
@@ -2819,6 +2845,12 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_APPLIANCE:
             *windowPtr = AddWindow(&sOrderWhichApplianceMsgWindowTemplate);
             break;
+        case PARTY_MSG_WHICH_STATUS:
+            *windowPtr = AddWindow(&sWhichStatusMsgWindowTemplate);
+            break;
+        case PARTY_MSG_SET_HP:
+            *windowPtr = AddWindow(&sWhichStatusMsgWindowTemplate);
+            break;
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2883,6 +2915,15 @@ static u8 DisplaySelectionWindow(u8 windowType)
         break;
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_STATUS:
+        window = sStatusWindowTemplate;
+        break;
+    case SELECTWINDOW_DAMAGE:
+        window = sDamageWindowTemplate;
+        break;
+    case SELECTWINDOW_POISON:
+        window = sPoisonWindowTemplate;
         break;
     default: // SELECTWINDOW_MOVES
         window = sMoveSelectWindowTemplate;
@@ -2966,6 +3007,20 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
+/*static bool8 InEliteFour(void)
+{
+    return gMapHeader.mapLayoutId == LAYOUT_EVER_GRANDE_CITY_SHORT_HALL
+        || gMapHeader.mapLayoutId == LAYOUT_EVER_GRANDE_CITY_SIDNEYS_ROOM
+        || gMapHeader.mapLayoutId == LAYOUT_EVER_GRANDE_CITY_PHOEBES_ROOM
+        || gMapHeader.mapLayoutId == LAYOUT_EVER_GRANDE_CITY_GLACIAS_ROOM
+        || gMapHeader.mapLayoutId == LAYOUT_EVER_GRANDE_CITY_DRAKES_ROOM;
+}*/
+
+static bool8 InGauntlet(void)
+{
+    return FlagGet(FLAG_IN_GAUNTLET);
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
@@ -2995,10 +3050,23 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         }
     }
 
-    if (!InBattlePike())
+    if(InGauntlet())
     {
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
+        if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
+        else
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
+    }
+    else if (!InBattlePike())
+    {
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
+        {
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STATUS);
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_DAMAGE);
+        }
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
@@ -3083,6 +3151,15 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
     // PARTY_MENU_TYPE_MULTI_SHOWCASE
     // PARTY_MENU_TYPE_MOVE_RELEARNER
     // PARTY_MENU_TYPE_MINIGAME
+    case PARTY_MENU_TYPE_STATUS:
+        actionType = ACTIONS_STATUS;
+        break;
+    case PARTY_MENU_TYPE_DAMAGE:
+        actionType = ACTIONS_DAMAGE;
+        break;
+    case PARTY_MENU_TYPE_POISON:
+        actionType = ACTIONS_POISON;
+        break;
     default:
         actionType = ACTIONS_NONE;
         break;
@@ -3500,6 +3577,159 @@ static void CursorCb_Item(u8 taskId)
     DisplayPartyMenuStdMessage(PARTY_MSG_DO_WHAT_WITH_ITEM);
     gTasks[taskId].data[0] = 0xFF;
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_Status(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_STATUS);
+    DisplaySelectionWindow(SELECTWINDOW_STATUS);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+bool32 TryMonStatusChange(u8 taskId, u16 status)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    struct PartyMenuBox *menuBox = &sPartyMenuBoxes[gPartyMenu.slotId];
+    u32 currentSpecies = GetMonData(mon, MON_DATA_SPECIES);
+
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+
+    if (currentSpecies != SPECIES_EGG)
+    {
+        gPartyMenuUseExitCallback = TRUE;
+        PlaySE(SE_SELECT);
+        SetMonData(mon, MON_DATA_STATUS, &status);
+        gSprites[menuBox->statusSpriteId].invisible = TRUE;
+        CreatePartyMonStatusSprite(mon, menuBox);
+        gSprites[menuBox->statusSpriteId].invisible = FALSE;
+        DisplayPartyPokemonData(gPartyMenu.slotId);
+        DisplayPartyMenuStdMessage(PARTY_MSG_CHOOSE_MON);
+        gTasks[taskId].func = Task_HandleChooseMonInput;
+        ScheduleBgCopyTilemapToVram(2);
+        return TRUE;
+    }
+    else
+    {
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_HandleChooseMonInput;
+        return FALSE;
+    }
+}
+
+static void PrintHP(u8 windowId, s16 quantity)
+{
+    ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, 3);
+    StringExpandPlaceholders(gStringVar4, gText_xVar2);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, 0, 0, 0, 0);
+}
+
+#define thealthPoints data[8]
+static void Task_ChooseHPAmount(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    s16 maxHP=gPlayerParty[gPartyMenu.slotId].maxHP;
+    struct Pokemon *mon=&gPlayerParty[gPartyMenu.slotId];
+
+
+    if (AdjustQuantityAccordingToDPadInput(&thealthPoints, maxHP) == TRUE)
+    {
+        PrintHP(sPartyMenuInternal->windowId[0], thealthPoints);
+        gTasks[taskId].func = Task_ChooseHPAmount;
+        ScheduleBgCopyTilemapToVram(2);
+    }
+    else if (JOY_NEW(A_BUTTON))
+    {
+        if (thealthPoints == 0)
+        {
+            CursorCb_Cancel1(taskId);
+        }
+        else
+        {
+            PlaySE(SE_SELECT);
+            PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+            PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+            SetMonData(mon, MON_DATA_HP, &thealthPoints);
+            UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
+            CursorCb_Cancel1(taskId);
+        }
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        CursorCb_Cancel1(taskId);
+    }
+}
+#undef thealthPoints
+
+static void CursorCb_Damage(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_DAMAGE);
+     //DisplaySelectionWindow(SELECTWINDOW_DAMAGE);
+    sPartyMenuInternal->windowId[0] = AddWindow(&sDamageWindowTemplate);
+    DrawStdFrameWithCustomTileAndPalette(sPartyMenuInternal->windowId[0], FALSE, 0x4F, 13);
+    PrintHP(sPartyMenuInternal->windowId[0], 0);
+    DisplayPartyMenuStdMessage(PARTY_MSG_SET_HP);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_ChooseHPAmount;
+}
+
+static void CursorCb_Poison(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gPlayerParty, gPartyMenu.slotId, ACTIONS_POISON);
+    DisplaySelectionWindow(SELECTWINDOW_POISON);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_STATUS);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+static void CursorCb_Burn(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_BURN);
+}
+
+static void CursorCb_Frostbite(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_FROSTBITE);
+}
+
+static void CursorCb_Toxic(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_TOXIC_POISON);
+}
+
+static void CursorCb_Paralysis(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_PARALYSIS);
+}
+
+static void CursorCb_Sleep(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_SLEEP);
+}
+
+static void CursorCb_Freeze(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_FREEZE);
+}
+
+static void CursorCb_Regular(u8 taskId)
+{
+    TryMonStatusChange(taskId, STATUS1_POISON);
 }
 
 static void CursorCb_Give(u8 taskId)

@@ -70,6 +70,10 @@
 #define PARTY_MENU_TYPE_SPIN_TRADE                10 // Unused beta for Gen IV's Spin Trade
 #define PARTY_MENU_TYPE_MINIGAME                  11
 #define PARTY_MENU_TYPE_STORE_PYRAMID_HELD_ITEMS  12
+#define PARTY_MENU_TYPE_STATUS                    13
+#define PARTY_MENU_TYPE_DAMAGE                    14
+#define PARTY_MENU_TYPE_POISON                    15
+
 
 #define PARTY_ACTION_CHOOSE_MON         0
 #define PARTY_ACTION_SEND_OUT           1
@@ -121,6 +125,9 @@
 #define PARTY_MSG_NO_POKEMON                29
 #define PARTY_MSG_CHOOSE_MON_FOR_BOX        30
 #define PARTY_MSG_MOVE_ITEM_WHERE           31
+#define PARTY_MSG_WHICH_STATUS              32
+#define PARTY_MSG_SET_HP                    33 
+#define PARTY_MSG_CANNOT_SELECT             34
 
 #define PARTY_MSG_NONE                      127
 
@@ -145,5 +152,8 @@
 #define SELECTWINDOW_MOVES       3
 #define SELECTWINDOW_CATALOG     4
 #define SELECTWINDOW_ZYGARDECUBE 5
+#define SELECTWINDOW_STATUS      6
+#define SELECTWINDOW_DAMAGE      7
+#define SELECTWINDOW_POISON      8
 
 #endif // GUARD_CONSTANTS_PARTY_MENU_H
