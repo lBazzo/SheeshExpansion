@@ -6045,20 +6045,38 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             if (predictedMoveOnPartner != MOVE_NONE && !IsBattleMoveStatus(predictedMoveOnPartner))
                 ADJUST_SCORE(GOOD_EFFECT);
         }
-    */
+    */  u32 partnerHitsToKOPlayer1 = GetBestNoOfHitsToKO(battlerPartnerAtk, BATTLE_OPPOSITE(battlerAtk), AI_ATTACKING);
+        u32 partnerHitsToKOPlayer2 = GetBestNoOfHitsToKO(battlerPartnerAtk, BATTLE_OPPOSITE(battlerPartnerAtk), AI_ATTACKING);    
+
         if (hasPartner)
         {
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+
             if (CanTargetFaintAi(BATTLE_OPPOSITE(battlerAtk), battlerPartnerAtk)
              || CanTargetFaintAi(BATTLE_OPPOSITE(battlerPartnerAtk), battlerPartnerAtk))
             {
-                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                    ADJUST_SCORE(GOOD_EFFECT + 3);
-                else
-                    ADJUST_SCORE(GOOD_EFFECT);
+                    ADJUST_SCORE(+1);
+
+                if (partnerHitsToKOPlayer1 == 1
+                 || partnerHitsToKOPlayer2 == 1)
+                    ADJUST_SCORE(+1);
+                
+                if (!CanTargetFaintAi(BATTLE_OPPOSITE(battlerAtk), battlerAtk)
+                && (!CanTargetFaintAi(BATTLE_OPPOSITE(battlerPartnerAtk), battlerAtk)))
+                    ADJUST_SCORE(+1);
+                //if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                //    ADJUST_SCORE(GOOD_EFFECT + 3);
+                //else
+                //   ADJUST_SCORE(GOOD_EFFECT);
             }
-            else 
-                ADJUST_SCORE(NO_DAMAGE_OR_FAILS);
+            //else 
+            //    ADJUST_SCORE(NO_DAMAGE_OR_FAILS);
+            if (gLastMoves[battlerAtk] == move
+            && (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT)))
+                ADJUST_SCORE(-10);
         }
+        else
+            ADJUST_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_CHARGE:
         if (HasDamagingMoveOfType(battlerAtk, TYPE_ELECTRIC))

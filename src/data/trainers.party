@@ -251,7 +251,7 @@ Adamant Nature
 - Thunder Punch  
 - Leer  
 
-Zorua @ Black Glasses  
+Zorua @ Dark Gem 
 Ability: Illusion  
 Level: 13  
 Jolly Nature  
@@ -270,7 +270,7 @@ Ability: Poison Touch
 Level: 13  
 Adamant Nature  
 - Fake Out  
-- Karate Chop  
+- Mach Punch  
 - Rock Smash  
 - Poison Sting  
 
@@ -556,21 +556,21 @@ Sassy Nature
 
 Mightyena @ Muscle Band  
 Ability: Intimidate  
-Level: 20   
+Level: 21  
 Adamant Nature  
 - Retaliate  
 - Sucker Punch  
-- Play Rough  
-- Charm  
+- Psychic Fangs  
+- Yawn  
 
-Axew @ Bug Gem  
+Pinsir @ Bug Gem  
 Ability: Mold Breaker  
 Level: 21  
-Adamant Nature  
+Jolly Nature  
 - First Impression  
-- Psychic Fangs  
+- Aerial Ace  
+- Rock Smash   
 - Substitute  
-- Bulldoze   
 
 === TRAINER_LIZ ===
 Name: Liz
@@ -578,44 +578,44 @@ Class: Picnicker
 Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Kecleon @ Enigma Berry  
 Ability: Color Change  
-Level: 20  
+Level: 22    
 Relaxed Nature  
 - Fake Out  
 - Charge Beam  
 - Icy Wind  
 - Cosmic Power  
 
-Makuhita @ Punching Glove  
+Makuhita @ Eviolite  
 Ability: Thick Fat  
-Level: 24  
-Adamant Nature  
+Level: 25   
+Jolly Nature  
 - Power-Up Punch  
 - Bullet Punch  
-- Ice Punch  
+- Seismic Toss  
 - Thunder Punch  
 
-Noctowl @ Shell Bell  
-Ability: Night Owl  
+Poltchageist @ Berry Juice  
+Ability: Hospitality  
+Level: 24    
+Timid Nature  
+- Giga Drain  
+- Poltergeist  
+- Scald  
+- Will-O-Wisp  
+
+Noctowl @ Metronome  
+Ability: Insomnia  
 Level: 21  
-Timid Nature   
+Timid Nature  
 - Uproar  
 - Air Cutter  
 - Silver Wind  
-- Stored Power  
-
-Tangela @ Poison Barb  
-Ability: Tangling Hair  
-Level: 22    
-Calm Nature   
-- Sleep Powder  
-- Mega Drain  
-- Sludge  
-- Ancient Power    
+- Stored Power    
 
 === TRAINER_HENRY ===
 Name: Henry
@@ -634,7 +634,7 @@ Adamant Nature
 - Aqua Jet  
 
 Joltik @ Electric Gem  
-Ability: Compound Eyes  
+Ability: Unnerve  
 Level: 25   
 Hasty Nature  
 - Volt Switch  
@@ -734,7 +734,7 @@ Level: 24
 Calm Nature  
 - Dragon Tail  
 - Hex  
-- Thunder Wave  
+- Will-O-Wisp  
 
 Dunsparce @ Leftovers  
 Ability: Serene Grace  
@@ -743,7 +743,7 @@ Sassy Nature
 - Headbutt  
 - Bite  
 - Rock Slide  
-- Yawn  
+- Glare  
 
 === TRAINER_RAY ===
 Name: Ray
@@ -755,7 +755,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Bronzor @ Sitrus Berry  
-Ability: Heatproof  
+Ability: Heavy Metal 
 Level: 25   
 Modest Nature    
 - Future Sight  
@@ -769,7 +769,7 @@ Level: 22
 Adamant Nature  
 - Avalanche  
 - Crunch  
-- Dragon Rage  
+- Super Fang  
 - Curse  
 
 Monferno @ Assault Vest  
@@ -789,6 +789,15 @@ Quiet Nature
 - Shock Wave  
 - Shadow Ball  
 - Calm Mind  
+
+Archen @ Life Orb  
+Ability: Defeatist  
+Level: 21  
+Tera Type: Rock  
+Jolly Nature  
+- Peck  
+- Accelerock  
+- Bite
 
 === TRAINER_GRUNT_21 ===
 Name: Grunt
@@ -830,14 +839,14 @@ Modest Nature
 - Icy Wind  
 - Chilling Water  
 
-Lunatone @ Water Gem  
+Lunatone @ Chesto Berry  
 Ability: Levitate  
-Level: 22  
+Level: 23   
 Quiet Nature  
-IVs: 0 Atk / 30 Def / 30 SpA  
+IVs: 0 Atk  
 - Cosmic Power  
 - Stored Power  
-- Hidden Power 
+- Sparkling Aria  
 - Rest
 
 === TRAINER_GRUNT_22 ===
@@ -970,41 +979,41 @@ Music: Rocket
 Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Chansey @ Leftovers  
+Chansey @ Chople Berry  
 Ability: Natural Cure  
-Level: 25   
+Level: 25  
 Bold Nature  
 - Helping Hand  
 - Heal Pulse  
-- Seismic Toss
+- Seismic Toss  
 - Hyper Voice  
 
-Xatu @ Expert Belt  
-Ability: Sun Gazer  
-Level: 25   
-Naive Nature  
-- Air Cutter  
-- Zen Headbutt  
-- Giga Drain  
-- Calm Mind  
-
-Krokorok @ Sitrus Berry  
-Ability: Intimidate  
-Level: 25    
-Jolly Nature  
+Minior @ Liechi Berry  
+Ability: Shields Down  
+Level: 23  
+Hasty Nature  
 - Rock Slide  
+- Acrobatics  
+- Earth Power  
+- Charge Beam  
+
+Cacturne @ Expert Belt  
+Ability: Iron Barbs  
+Level: 22  
+Mild Nature  
+- Fiery Wrath  
+- Mega Drain  
 - Stomping Tantrum  
-- Bite  
-- Bulk Up  
+- Spiky Shield  
 
 Illumise @ Silver Powder  
 Ability: Prankster  
-Level: 25   
+Level: 25  
 Modest Nature   
 - Tailwind  
-- Bug Buzz  
-- Infestation  
-- Protect  
+- Silver Wind  
+- Thunder Wave  
+- Helping Hand  
 
 === TRAINER_PROTON_1 ===
 Name: Proton
@@ -1119,52 +1128,50 @@ Class: Swimmer M
 Pic: Swimmer M
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Lanturn @ Salac Berry  
+Lanturn @ Expert Belt  
 Ability: Volt Absorb  
-Level: 30   
-Timid Nature   
-- Thunder Wave  
-- Electro Ball  
-- Bubble Beam  
-- Icy Wind  
-
-Sudowoodo @ Loaded Dice  
-Ability: Rattled  
-Level: 28   
-Jolly Nature  
-- Rock Blast  
-- Bullet Seed  
-- Sucker Punch  
-- Rock Polish  
-
-Slowking-Galar @ Poison Barb  
-Ability: Own Tempo  
 Level: 29    
-Brave Nature  
-- Poison Jab  
-- Zen Headbutt  
-- Drain Punch  
-- Yawn  
+Modest Nature   
+- Electroweb  
+- Aurora Beam  
+- Signal Beam  
+- Brine  
+
+Brionne @ Throat Spray  
+Ability: Liquid Voice  
+Level: 30  
+Naive Nature  
+- Echoed Voice  
+- Acrobatics  
 
 Bibarel @ Silk Scarf  
 Ability: Simple  
-Level: 30   
-Brave Nature  
+Level: 30  
+Adamant Nature  
 - Fake Out  
 - Swords Dance  
 - Last Resort  
 
-Brionne @ Throat Spray  
-Ability: Liquid Voice  
-Level: 30   
-Naive Nature  
-- Hyper Voice  
-- Moonblast  
-- Acrobatics  
-- Life Dew  
+Dhelmise @ Power Herb  
+Ability: Steelworker  
+Level: 28   
+Modest Nature  
+- Astonish  
+- Phantom Force  
+- Solar Beam  
+- Whirlpool  
+
+Clodsire @ Black Sludge  
+Ability: Poison Point  
+Level: 30  
+Impish Nature  
+- Poison Jab  
+- Stomping Tantrum  
+- Counter  
+- Recover  
 
 === TRAINER_BRIANA ===
 Name: Briana
@@ -1409,42 +1416,43 @@ Class: Camper
 Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Swoobat @ Focus Sash  
-Ability: Unaware  
-Level: 35   
-Hasty Nature  
-- Future Sight  
-- Fly  
-
-Pinsir @ Sitrus Berry  
-Ability: Mold Breaker  
-Level: 34   
-Jolly Nature  
-- Pounce  
-- Karate Chop  
-- Rock Tomb  
-- Seismic Toss  
-
-Misdreavus @ Wise Glasses  
-Ability: Levitate  
-Level: 35   
-Timid Nature  
-- Shadow Ball  
-- Dazzling Gleam  
-- Psychic  
-- Calm Mind  
-
-Granbull @ Black Belt  
-Ability: Intimidate  
+Toxtricity @ Air Balloon  
+Ability: Technician  
 Level: 33  
+Naive Nature  
+- Fake Out  
+- Acid Spray  
+- Charge Beam  
+- Nuzzle  
+
+Tauros-Paldea-Aqua @ Sitrus Berry  
+Ability: Intimidate  
+Level: 31   
 Jolly Nature  
-- Play Rough  
-- Brick Break  
-- Bulldoze  
-- Super Fang  
+- Endeavor  
+- Thunderous Kick  
+- Lash Out  
+- Aqua Jet  
+
+Porygon2 @ Power Herb  
+Ability: Download  
+Level: 32  
+Bold Nature  
+- Foul Play  
+- Skull Bash  
+- Icy Wind  
+- Recover  
+
+Klinklang @ Assault Vest  
+Ability: Download  
+Level: 32  
+- Steel Beam  
+- Magnet Bomb  
+- Thunderbolt  
+- Wild Charge    
 
 === TRAINER_GINA ===
 Name: Gina
@@ -1493,7 +1501,7 @@ Adamant Nature
 
 Unown @ Choice Scarf  
 Ability: Technician  
-Level: 33    
+Level: 35    
 Timid Nature    
 - MOVE_HIDDEN_POWER_PSYCHIC_2  
 - MOVE_HIDDEN_POWER_FLYING_2  
@@ -1725,11 +1733,11 @@ Ability: Filter
 Level: 37  
 Modest Nature   
 - Psychic  
-- Freeze-Dry  
-- Thunderbolt  
+- Shadow Ball  
+- Dazzling Gleam  
 - Follow Me  
 
-Voltorb @ Normal Gem  
+Voltorb @ Electric Gem  
 Ability: Aftermath  
 Level: 39   
 Naive Nature  
@@ -1763,32 +1771,39 @@ Jolly Nature
 - Shadow Sneak  
 - X-Scissor  
 
-Sandslash-Alola @ Occa Berry  
-Ability: Iron Barbs  
-Level: 37  
-Adamant Nature  
-- Agility  
-- Iron Head  
-- Ice Punch  
-- Drill Run  
-
-Sliggoo @ Dragon Fang  
-Ability: Gooey  
-Level: 36   
-Timid Nature   
-- Dragon Pulse  
-- Fire Blast  
-- Blizzard  
-- Thunder  
-
 Politoed @ Mystic Water  
 Ability: Liquid Voice  
-Level: 36    
-Timid Nature   
-- Uproar  
+Level: 36  
+Timid Nature  
+- Hyper Voice  
 - Earth Power  
 - Icy Wind  
 - Hypnosis  
+
+Mawile @ Rocky Helmet  
+Ability: Intimidate  
+Level: 36   
+Careful Nature  
+- Meteor Mash  
+- Spirit Break  
+
+Armaldo @ Luminous Moss  
+Ability: Battle Armor  
+Level: 34   
+Jolly Nature  
+- Leech Life  
+- Rock Tomb  
+- Superpower  
+- Facade  
+
+Sliggoo @ Expert Belt  
+Ability: Gooey  
+Level: 38   
+Quiet Nature  
+- Dragon Pulse  
+- Fire Blast  
+- Hydro Pump  
+- Thunder  
 
 === TRAINER_KIM ===
 Name: Kim
@@ -1799,7 +1814,7 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Wormadam-Trash @ Occa Berry  
+Wormadam-Trash @ Rocky Helmet  
 Ability: Overcoat  
 Level: 36   
 Quiet Nature  
@@ -1978,7 +1993,7 @@ Adamant Nature
 - Flail  
 - Rock Tomb  
 
-Arcanine-Hisui @ Leftovers  
+Arcanine @ Leftovers  
 Ability: Intimidate  
 Level: 36  
 Bold Nature    
@@ -2047,7 +2062,7 @@ Jolly Nature
 - Defense Curl  
 - Rollout  
 
-Sylveon @ Fairy Feather  
+Sylveon @ Leftovers  
 Ability: Serene Grace  
 Level: 36  
 Modest Nature  
@@ -2125,62 +2140,63 @@ Class: Leader
 Pic: Leader Whitney
 Gender: Male
 Music: Male
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 Mugshot: Pink
 
 Purugly @ Silk Scarf  
-Ability: Scrappy  
-Level: 39   
+Ability: Defiant  
+Level: 39  
 Jolly Nature  
 - Fake Out  
 - Double-Edge  
-- Sucker Punch  
+- Foul Play  
 - Superpower  
 
-Ditto @ Leftovers  
-Ability: Imposter  
-Level: 45  
-Timid Nature  
-IVs: 30 Atk  
-- Transform  
-
-Reuniclus @ Life Orb  
-Ability: Magic Guard  
-Level: 38   
-Modest Nature   
-- Psychic  
-- Dazzling Gleam  
-- Energy Ball  
-- Calm Mind  
-
-Mimikyu @ Sitrus Berry  
-Ability: Disguise  
+Jynx @ Rocky Helmet  
+Ability: Forcefield
 Level: 38  
-Jolly Nature  
-IVs: 29 HP  
-- Spirit Break  
-- Bitter Malice 
-- Curse  
-- Night Shade  
+Modest Nature   
+- Ice Beam  
+- Psychic  
+- Icy Wind  
+- Nasty Plot  
 
 Cyclizar @ Eject Pack  
 Ability: Regenerator  
-Level: 39   
+Level: 39    
 Hasty Nature  
 - Shed Tail  
 - Retaliate  
 - Overheat  
 - Dragon Claw  
 
-Ursaluna-Bloodmoon @ Assault Vest  
-Ability: Mind's Eye  
-Level: 40   
-Calm Nature   
-- Blood Moon  
-- Earth Power  
-- Focus Blast  
-- Vacuum Wave  
+Whimsicott @ Focus Sash  
+Ability: Cotton Down  
+Level: 39   
+Timid Nature    
+- Leaf Storm  
+- Light of Ruin  
+- Follow Me  
+- Helping Hand  
+
+Chandelure @ Expert Belt  
+Ability: Levitate  
+Level: 37   
+Modest Nature  
+- Mind Flare  
+- Shadow Ball  
+- Energy Ball  
+- Psychic  
+
+Ursaluna @ Flame Orb  
+Ability: Guts  
+Level: 40  
+Adamant Nature  
+- Facade  
+- Bulldoze  
+- Stomping Tantrum  
+- Crunch    
 
 === TRAINER_MARK ===
 Name: Mark
@@ -2200,14 +2216,14 @@ Naive Nature
 - Knock Off  
 - U-turn  
 
-Jynx @ Colbur Berry  
-Ability: Dry Skin  
-Level: 45  
-Timid Nature   
-- Ice Beam  
-- Extrasensory  
-- Energy Ball  
-- Lovely Kiss  
+Lapras @ Leftovers  
+Ability: Water Absorb  
+Level: 44  
+Modest Nature   
+- Freeze-Dry  
+- Scald  
+- Psychic  
+- Icy Wind  
 
 Coalossal @ Fire Gem  
 Ability: Steam Engine  
@@ -2236,14 +2252,14 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Magcargo @ Passho Berry  
+Magcargo @ Focus Sash  
 Ability: Gooey  
 Level: 46   
 Modest Nature  
 - Flamethrower  
 - Power Gem  
 - Mud Shot  
-- Yawn  
+- Fire Spin  
 
 Dracovish @ Lum Berry  
 Ability: Water Absorb  
@@ -2254,7 +2270,7 @@ Timid Nature
 - Dragon Rush  
 - Rock Slide  
 
-Altaria @ Dragon Fang  
+Altaria @ Yache Berry  
 Ability: Cotton Down  
 Level: 45  
 Modest Nature  
@@ -2335,7 +2351,7 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Malamar @ Psychic Gem  
+Malamar @ Tanga Berry  
 Ability: Contrary  
 Level: 44   
 Jolly Nature  
@@ -2444,7 +2460,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Wormadam @ Focus Sash  
+Wormadam @ Bug Gem  
 Ability: Overcoat  
 Level: 46  
 Modest Nature   
@@ -2469,52 +2485,16 @@ Adamant Nature
 - Roost  
 - Earthquake  
 - Dual Wingbeat  
-- Rock Slide  
+- U-turn  
 
-Houndstone @ Spell Tag  
+Houndstone @ Expert Belt  
 Ability: Sand Rush  
 Level: 44   
 Jolly Nature  
 - Phantom Force  
 - Stomping Tantrum  
-- Thunder Fang  
+- Ice Fang  
 - Play Rough  
-
-=== TRAINER_GREG ===
-Name: Greg
-Class: Gentleman
-Pic: Gentleman2
-Gender: Male
-Music: Rich
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
-
-Torterra @ Leftovers  
-Ability: Rock Head  
-Level: 44   
-Jolly Nature  
-- Stealth Rock  
-- Wood Hammer  
-- Headlong Rush  
-- Double-Edge  
-
-Probopass @ Power Herb  
-Ability: Sturdy  
-Level: 45  
-Quiet Nature  
-- Steel Beam  
-- Meteor Beam  
-- Body Press  
-- Explosion  
-
-Gigalith @ Zoom Lens  
-Ability: Sand Force  
-Level: 45   
-Adamant Nature  
-- Stone Edge  
-- Earthquake  
-- Heavy Slam  
-- Explosion  
 
 Clefable @ Iapapa Berry  
 Ability: Magic Guard  
@@ -2525,6 +2505,58 @@ Bold Nature
 - Wish  
 - Amnesia  
 
+=== TRAINER_GREG ===
+Name: Greg
+Class: Gentleman
+Pic: Gentleman2
+Gender: Male
+Music: Rich
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
+
+Probopass @ Eject Pack  
+Ability: Sand Force  
+Level: 44  
+Modest Nature   
+- Make It Rain  
+- Ancient Power  
+- Body Press  
+- Thunder Wave  
+
+Leavanny @ Covert Cloak  
+Ability: Overcoat  
+Level: 45  
+Jolly Nature  
+- Rage Powder  
+- Leaf Blade  
+- Lunge  
+- Triple Axel  
+
+Piloswine @ Eviolite  
+Ability: Thick Fat  
+Level: 44  
+Careful Nature  
+- Avalanche  
+- High Horsepower  
+- Ice Shard  
+- Curse  
+
+Masquerain @ Safety Goggles  
+Ability: Intimidate  
+Level: 46  
+Timid Nature  
+- Struggle Bug  
+- Scald  
+- Air Slash  
+- Energy Ball  
+
+Lycanroc @ Rock Gem  
+Ability: Sand Rush  
+Level: 44  
+Adamant Nature  
+- Rock Slide  
+- Last Resort    
+
 === TRAINER_BROOKE ===
 Name: Brooke
 Class: Picnicker
@@ -2534,14 +2566,14 @@ Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Kommo-o @ Kee Berry  
+Kommo-o @ Roseli Berry  
 Ability: Overcoat  
 Level: 45    
-Sassy Nature  
+Jolly Nature  
 - Stealth Rock  
 - Clanging Scales  
 - Body Press  
-- Rock Slide  
+- Poison Jab  
 
 Stunfisk @ Bright Powder  
 Ability: Sand Veil  
@@ -2912,14 +2944,14 @@ Rillaboom @ Miracle Seed
 Ability: Grassy Surge  
 Level: 49   
 Adamant Nature  
-- Fake Out  
+- Seed Bomb
 - Grassy Glide  
 - Drain Punch  
 - Knock Off  
 
 Florges @ Grassy Seed  
-Ability: Flower Veil  
-Level: 47    
+Ability: Pastel Veil  
+Level: 48    
 Bold Nature  
 - Alluring Voice  
 - Stored Power  
@@ -2934,6 +2966,16 @@ Careful Nature
 - Body Press  
 - Rock Slide  
 - Leech Seed  
+
+Torterra @ Weakness Policy  
+Ability: Shell Armor  
+Level: 50  
+Tera Type: Grass  
+Adamant Nature  
+- Amnesia  
+- Iron Defense  
+- Smack Down  
+- Earthquake
 
 Typhlosion @ Blunder Policy  
 Ability: Blaze  
@@ -2990,14 +3032,14 @@ IVs: 30 Atk / 30 Def
 - Hidden Power 
 - Will-O-Wisp  
 
-Whiscash @ Magnet  
+Whiscash @ Custap Berry  
 Ability: Earth Eater  
-Level: 50    
+Level: 50  
 Brave Nature  
-- Aqua Tail  
-- High Horsepower  
-- Spark  
-- Icy Wind  
+- Endure  
+- Muddy Water  
+- Earthquake  
+- Ice Beam 
 
 === TRAINER_HOPE ===
 Name: Hope
@@ -3035,7 +3077,7 @@ Timid Nature
 - Energy Ball  
 - Moonblast  
 
-Serperior @ Lum Berry  
+Serperior @ Wise Glasses  
 Ability: Contrary  
 Level: 48    
 Timid Nature  
@@ -3117,7 +3159,7 @@ Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Sunflora @ Focus Sash  
+Sunflora @ Custap Berry  
 Ability: Sun Gazer 
 Level: 50    
 Relaxed Nature  
@@ -3404,7 +3446,7 @@ Relaxed Nature
 - Misty Explosion  
 - Explosion  
 
-Beedrill @ Expert Belt  
+Beedrill @ Life Orb 
 Ability: Sniper  
 Level: 55    
 Jolly Nature  
@@ -3575,6 +3617,68 @@ Level: 55
 Adamant Nature  
 - Circle Throw  
 
+=== TRAINER_ROLAND ===
+Name: Roland
+Class: Camper
+Pic: Camper2
+Gender: Male
+Music: Hg Boy 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
+
+Mr. Mime-Galar @ Eviolite  
+Ability: Filter  
+Level: 53    
+Timid Nature  
+- Fake Out  
+- Hypnosis  
+- Psychic  
+- Freeze-Dry  
+
+Frosmoth @ Assault Vest  
+Ability: Ice Scales  
+Level: 54  
+Modest Nature  
+- Blizzard  
+- Icy Wind  
+- Bug Buzz  
+- Water Pulse    
+
+=== TRAINER_ALICE ===
+Name: Alice
+Class: Lass
+Pic: Lass2
+Gender: Male
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
+
+Staraptor @ Eject Pack  
+Ability: Intimidate  
+Level: 52   
+Jolly Nature  
+- Retaliate  
+- U-turn  
+- Close Combat  
+
+Pupitar @ Focus Sash  
+Ability: Intimidate  
+Level: 55  
+Jolly Nature  
+- Stone Edge  
+- High Horsepower  
+- Stomping Tantrum  
+- Sand Tomb  
+
+Tauros-Paldea-Blaze @ Liechi Berry  
+Ability: Intimidate  
+Level: 52   
+Naive Nature  
+- Close Combat  
+- Raging Bull  
+- Wild Charge  
+- Fire Spin  
+
 === TRAINER_GORDON ===
 Name: Gordon
 Class: Youngster
@@ -3671,65 +3775,9 @@ Ability: Unburden
 Level: 55    
 Modest Nature  
 - Fake Out  
-- Psychic  
+- Extrasensory  
 - Dazzling Gleam  
 - Earth Power  
-
-=== TRAINER_ROLAND ===
-Name: Roland
-Class: Camper
-Pic: Camper2
-Gender: Male
-Music: Hg Boy 1
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
-
-Tauros @ Life Orb  
-Ability: Sheer Force  
-Level: 53  
-Jolly Nature  
-- Rock Climb  
-- Zen Headbutt  
-- Rock Slide  
-- Close Combat  
-
-Primarina @ Choice Scarf  
-Ability: Liquid Voice  
-Level: 52  
-Tera Type: Water  
-Naive Nature  
-- Echoed Voice  
-- Freeze-Dry  
-- Draining Kiss  
-- Flip Turn  
-
-Rapidash-Galar @ Muscle Band  
-Ability: Pixilate  
-Level: 52  
-Adamant Nature  
-- Psychic Fangs  
-- Extreme Speed  
-- Megahorn  
-- Iron Tail  
-
-Manectric @ Expert Belt  
-Ability: Fiery Demeanour  
-Level: 55   
-Timid Nature  
-IVs: 30 Atk / 30 Def  
-- Thunder  
-- Flamethrower  
-- Hyper Beam  
-- Hidden Power    
-
-Decidueye-Hisui @ Scope Lens  
-Ability: Super Luck  
-Level: 53  
-Adamant Nature  
-- Triple Arrows  
-- Leaf Blade  
-- Sucker Punch  
-- Trailblaze  
 
 === TRAINER_JO_AND_ZOE ===
 Name: Jo & Zoe
@@ -3822,14 +3870,14 @@ Timid Nature
 - Quiver Dance  
 - Baton Pass  
 
-Gastrodon @ Rocky Helmet  
-Ability: Storm Drain  
-Level: 54   
-Modest Nature   
-- Surf  
-- Earth Power  
-- Ice Beam  
-- Amnesia  
+Floatzel @ Choice Scarf  
+Ability: Technician  
+Level: 55  
+Timid Nature  
+- Surging Strikes  
+- Triple Axel  
+- Hydro Pump  
+- Blizzard
 
 Ampharos @ Throat Spray  
 Ability: Galvanize  
@@ -3912,12 +3960,12 @@ Timid Nature
 - Moonblast  
 - Protect  
 
-Kingambit @ Dark Gem  
+Kingambit @ Chople Berry  
 Ability: Supreme Overlord  
-Level: 53   
+Level: 55   
 Adamant Nature  
 - Sucker Punch  
-- Kowtow Cleave  
+- Meteor Mash
 - Swords Dance  
 - Protect  
 
@@ -4316,14 +4364,14 @@ Music: Hg Boy 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TERA
 
-Carbink @ Iapapa Berry  
+Bastiodon @ Covert Cloak  
 Ability: Sturdy  
-Level: 54   
-Relaxed Nature   
-- Body Press  
+Level: 55  
+Impish Nature   
 - Stealth Rock  
-- Spikes  
-- Misty Explosion  
+- Body Press  
+- Foul Play  
+- Metal Burst  
 
 Pelipper @ Life Orb  
 Ability: Gale Wings  
@@ -4398,7 +4446,7 @@ Careful Nature
 - Bulldoze  
 - Rock Slide  
 
-Noctowl @ Kasib Berry  
+Noctowl @ Leppa Berry  
 Ability: Night Owl 
 Level: 53  
 Tera Type: Ghost  
@@ -4479,7 +4527,7 @@ Tera Type: Dragon
 Modest Nature   
 - Origin Pulse  
 - Dragon Pulse  
-- Flash Cannon  
+- Make It Rain  
 - Shell Smash  
 
 === TRAINER_DAHLIA_NORMAL ===
@@ -5441,7 +5489,7 @@ Adamant Nature
 - Protect  
 
 Raichu-Alola @ Expert Belt  
-Ability: Static  
+Ability: Levitate  
 Level: 56   
 Timid Nature  
 - Fake Out  
@@ -12253,61 +12301,70 @@ Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
-Froslass @ Focus Sash  
-Ability: Cursed Body  
-Level: 80   
-Hasty Nature   
-- Spikes  
-- Destiny Bond  
-- Icicle Spear  
-- Shadow Ball  
-
-Mantine @ Choice Scarf  
-Ability: No Guard  
-Level: 81   
-Modest Nature   
-- Inferno  
-- Hurricane  
-- Blizzard  
-- Signal Beam  
-
-Camerupt @ Fire Gem  
-Ability: Solid Rock  
-Level: 81    
-Timid Nature   
-- Eruption  
-- Fire Blast  
-- Earth Power  
-- Power Gem  
-
-Honchkrow @ Shell Bell  
-Ability: Prankster  
-Level: 81  
-Adamant Nature  
-- Tailwind  
-- Knock Off  
-- Brave Bird  
+Enamorus @ Ability Shield  
+Ability: Contrary  
+Level: 80  
+Modest Nature  
+- Fleur Cannon  
 - Superpower  
+- Power Trip  
+- Taunt  
 
-Perrserker @ Assault Vest  
-Ability: Steely Spirit  
-Level: 81    
-Adamant Nature  
-- Bullet Punch  
-- Iron Tail  
-- Close Combat  
-- Gunk Shot  
+Raichu-Alola @ Colbur Berry  
+Ability: Speed Boost  
+Level: 81  
+Modest Nature  
+- Tail Glow  
+- Electro Ball  
+- Stored Power  
+- Dazzling Gleam  
 
-Kingambit @ Black Glasses  
-Ability: Supreme Overlord  
-Level: 80   
-Adamant Nature  
-- Sucker Punch  
-- Kowtow Cleave  
-- Iron Head  
-- Low Kick  
+Slowbro @ Clear Amulet  
+Ability: Simple  
+Level: 81   
+Calm Nature   
+- Calm Mind  
+- Iron Defense  
+- Scald  
+- Body Press   
+
+=== TRAINER_DORIS ===
+Name: Doris
+Class: Lass
+Pic: Lass2
+Gender: Male
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
+
+Jumpluff @ Focus Sash  
+Ability: Cotton Down  
+Level: 81  
+Timid Nature   
+- Leaf Storm  
+- Pollen Puff  
+- Rage Powder  
+- Memento  
+
+Wailord @ Eject Button  
+Ability: Friend Guard  
+Level: 82   
+Calm Nature  
+- Water Spout  
+- Final Gambit  
+- Slack Off  
+- Follow Me  
+
+Talonflame @ Covert Cloak  
+Ability: Flame Body  
+Level: 82  
+Naive Nature  
+- Revival Blessing  
+- Healing Wish  
+- Overheat  
+- U-turn  
 
 === TRAINER_KELLY ===
 Name: Kelly
@@ -18289,27 +18346,6 @@ Fearow
 Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ALICE ===
-Name: ALICE
-Class: Lass
-Pic: Lass2
-Gender: Male
-Music: Hg Girl 1
-Double Battle: No
-AI: Check Bad Move
-
-Vileplume
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Arbok
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Vileplume
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_NICK ===
 Name: NICK
 Class: Cooltrainer
@@ -20139,27 +20175,6 @@ AI: Check Bad Move
 
 Haunter
 Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_DORIS ===
-Name: DORIS
-Class: Psychic
-Pic: Psychic F
-Gender: Male
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Noctowl
-Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Slowbro
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Xatu
-Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ROBERT ===

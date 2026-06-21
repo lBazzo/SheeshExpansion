@@ -34,6 +34,11 @@ Route45_EventScript_Michael::
 	msgbox Route45_Text_HikerMichaelAfter, MSGBOX_AUTOCLOSE
 	end
 
+Route45_EventScript_Doris::
+	trainerbattle_single TRAINER_DORIS Route45_Text_LassDorisSeen, Route45_Text_LassDorisBeaten
+	msgbox Route45_Text_LassDorisAfter, MSGBOX_AUTOCLOSE
+	end
+
 Route45_EventScript_Parry::
 	trainerbattle_single TRAINER_PARRY Route45_Text_HikerParrySeen, Route45_Text_HikerParryBeaten
 	msgbox Route45_Text_HikerParryAfter, MSGBOX_AUTOCLOSE
@@ -87,13 +92,11 @@ Route45_Text_HikerErikAfter:
     .string "Ice Path and train some more.$"
 
 Route45_Text_HikerMichaelSeen:
-    .string "Yo! You're spunky! But you know\n"
-    .string "what?\p"
-    .string "When it comes to sheer\n"
-    .string "spunkiness, I'm the man!$"
+    .string "Hey there, trainer! Fancy a quick\n"
+    .string "battle with my daughter and I?$"
 
 Route45_Text_HikerMichaelBeaten:
-    .string "My Pokémon weren't spunky enough!$"
+    .string "Jeez. Kids these days learn so quickly.$"
 
 Route45_Text_HikerMichaelAfter:
     .string "Boy, do I love HP UP! Mmmm, yum!\p"
@@ -107,9 +110,13 @@ Route45_Text_HikerParryBeaten:
     .string "Wahahah! I'm the big loser!$"
 
 Route45_Text_HikerParryAfter:
-    .string "I'm not much good at thinking,\n"
-    .string "see?\p"
-    .string "So, I just plow ahead with power!$"
+    .string "Hmm? Why do I have a legendary on my\n"
+    .string "team?\p"
+    .string "You might not believe it, but I was a pro\n"
+    .string "back in the day.\p"
+    .string "Of course, I had to leave that behind.\p"
+    .string "Not even fame and fortune could\n"
+    .string "compare to the joy of raising my child!$"
 
 Route45_Text_HikerParryGivesIron:
     .string "I just can't find a way to win!\p"
@@ -165,6 +172,18 @@ Route45_Text_CooltrainerfKellyAfter:
     .string "powerful moves.\p"
     .string "I want to win, but I also don't\n"
     .string "want to harm Pokémon.$"
+
+Route45_Text_LassDorisSeen:
+	.string "My dad used to be a pro trainer.\p"
+	.string "Isn't that so freaking cool?$"
+
+Route45_Text_LassDorisBeaten:
+	.string "Whoa! Are you a pro too?$"
+
+Route45_Text_LassDorisAfter:
+	.string "I've already learned so much, but I've\n"
+	.string "got even more than that to learn in the\n"
+    .string "future, too...$"
 
 Route45_Text_Sign:
     .string "Route 45\n"

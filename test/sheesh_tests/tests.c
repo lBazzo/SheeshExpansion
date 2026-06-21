@@ -616,6 +616,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Swagger correctly")
 // I have no idea where this -10 comes from when it doesn't apply, but 
 AI_DOUBLE_BATTLE_TEST("AI scores Follow Me correctly")
 {
+    KNOWN_FAILING; //Bazzo note: updated follow me ai
     u32 playerMaybeDragonRage;
     u32 playerPartnerMaybeDragonRage;
 
@@ -3418,6 +3419,43 @@ AI_DOUBLE_BATTLE_TEST("AI scores Healing Wish correctly")
         else if (AIBackMonHP == 90)
         {
             TURN { SCORE_EQ_VAL(opponentLeft, MOVE_HEALING_WISH, 108, target:playerLeft); }
+        }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI scores updated Follow Me correctly")
+{
+    u32 playerLeftMaybeKillingAIMove;
+    u32 playerLeftMaybeKillingAIPartnerMove;
+    u32 playerRightMaybeKillingAIMove;
+    u32 playerRightMaybeKillingAIPartnerMove;
+    u32 AIPartnerMaybeKillingPlayerLeftMove;
+    u32 AIPartnerMaybeKillingPlayerRightMove;
+
+    PARAMETRIZE { playerLeftMaybeKillingAIMove = MOVE_SPLASH; playerLeftMaybeKillingAIPartnerMove = MOVE_SPLASH; playerRightMaybeKillingAIMove = MOVE_SPLASH; playerRightMaybeKillingAIPartnerMove = MOVE_SPLASH; AIPartnerMaybeKillingPlayerLeftMove = MOVE_SPLASH; AIPartnerMaybeKillingPlayerRightMove = MOVE_SPLASH; }
+    PARAMETRIZE { playerLeftMaybeKillingAIMove = MOVE_BRAVE_BIRD; playerLeftMaybeKillingAIPartnerMove = MOVE_CLOSE_COMBAT; playerRightMaybeKillingAIMove = MOVE_BRAVE_BIRD; playerRightMaybeKillingAIPartnerMove = MOVE_BODY_PRESS; AIPartnerMaybeKillingPlayerLeftMove = MOVE_BRAVE_BIRD; AIPartnerMaybeKillingPlayerRightMove = MOVE_BODY_PRESS; }
+    PARAMETRIZE { playerLeftMaybeKillingAIMove = MOVE_SPLASH; playerLeftMaybeKillingAIPartnerMove = MOVE_CLOSE_COMBAT; playerRightMaybeKillingAIMove = MOVE_SPLASH; playerRightMaybeKillingAIPartnerMove = MOVE_SPLASH; AIPartnerMaybeKillingPlayerLeftMove = MOVE_BRAVE_BIRD; AIPartnerMaybeKillingPlayerRightMove = MOVE_BODY_PRESS; }
+    //PARAMETRIZE { playerLeftMaybeKillingAIMove = ; playerLeftMaybeKillingAIPartnerMove = ; playerRightMaybeKillingAIMove = ; playerRightMaybeKillingAIPartnerMove = ; AIPartnerMaybeKillingPlayerLeftMove = ; AIPartnerMaybeKillingPlayerRightMove = ;}
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_LEAVANNY) { Moves(MOVE_CELEBRATE, playerLeftMaybeKillingAIMove, playerLeftMaybeKillingAIPartnerMove); HP(100); Level(100); }
+        PLAYER(SPECIES_PROBOPASS) { Moves(MOVE_CELEBRATE, playerRightMaybeKillingAIMove, playerRightMaybeKillingAIPartnerMove); HP(100); Level(100); Ability(ABILITY_SAND_FORCE); }
+        OPPONENT(SPECIES_LEAVANNY) { Moves(MOVE_CELEBRATE, MOVE_FOLLOW_ME); HP(100); Level(100); }
+        OPPONENT(SPECIES_PROBOPASS) { Moves(MOVE_CELEBRATE, AIPartnerMaybeKillingPlayerLeftMove, AIPartnerMaybeKillingPlayerRightMove); HP(100); Level(100); Ability(ABILITY_SAND_FORCE); }
+        ASSUME(GetMoveEffect(MOVE_FOLLOW_ME) == EFFECT_FOLLOW_ME);
+    } WHEN {
+        if (playerLeftMaybeKillingAIMove == MOVE_SPLASH && playerLeftMaybeKillingAIPartnerMove == MOVE_SPLASH && playerRightMaybeKillingAIMove == MOVE_SPLASH && playerRightMaybeKillingAIPartnerMove == MOVE_SPLASH && AIPartnerMaybeKillingPlayerLeftMove == MOVE_SPLASH && AIPartnerMaybeKillingPlayerRightMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 106, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 106, target:playerRight); }
+        }
+        else if (playerLeftMaybeKillingAIMove == MOVE_BRAVE_BIRD && playerLeftMaybeKillingAIPartnerMove == MOVE_CLOSE_COMBAT && playerRightMaybeKillingAIMove == MOVE_BRAVE_BIRD && playerRightMaybeKillingAIPartnerMove == MOVE_BODY_PRESS && AIPartnerMaybeKillingPlayerLeftMove == MOVE_BRAVE_BIRD && AIPartnerMaybeKillingPlayerRightMove == MOVE_BODY_PRESS)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerRight); }
+        }
+        else if (playerLeftMaybeKillingAIMove == MOVE_SPLASH && playerLeftMaybeKillingAIPartnerMove == MOVE_CLOSE_COMBAT && playerRightMaybeKillingAIMove == MOVE_SPLASH && playerRightMaybeKillingAIPartnerMove == MOVE_SPLASH && AIPartnerMaybeKillingPlayerLeftMove == MOVE_BRAVE_BIRD && AIPartnerMaybeKillingPlayerRightMove == MOVE_BODY_PRESS)
+        {
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerRight); }
         }
     }
 }

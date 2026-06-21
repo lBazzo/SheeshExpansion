@@ -448,6 +448,22 @@ Route39_EventScript_BirdkeeperPeter::
 	msgbox Route39_Text_BirdKeeperPeter_After, MSGBOX_AUTOCLOSE
 	end
 
+Route39_EventScript_LassAlice::
+	trainerbattle_single TRAINER_ALICE Route39_Text_LassAlice_Before, Route39_Text_LassAlice_Beaten
+	msgbox Route39_Text_LassAlice_After, MSGBOX_AUTOCLOSE
+	end
+
+Route39_Text_LassAlice_Before:
+	.string "There's too many people here...\n"
+	.string "How about some peace and quiet?$"
+
+Route39_Text_LassAlice_Beaten:
+	.string "Battles are so loud, too.$"
+
+Route39_Text_LassAlice_After:
+	.string "Sigh...\n"
+	.string "I just can't concentrate at all.$"
+
 Route39_Text_FisherRalph1_Seen:
 	.string "I'm really good at both\n"
 	.string "chess and Pokémon.\p"
