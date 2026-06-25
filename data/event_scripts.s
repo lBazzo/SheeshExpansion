@@ -621,6 +621,7 @@ gStdScripts_End::
 	.include "data/maps/FuchsiaCity_SafariZoneCave_hns/scripts.inc"
 	.include "data/maps/MtSilver_SummitNight_hns/scripts.inc"
 	.include "data/maps/Route19_Cave_hns/scripts.inc"
+	.include "data/maps/ScaryCave_hns/scripts.inc"
 #else	
 	.include "data/maps/PetalburgCity/scripts.inc"
 	.include "data/maps/SlateportCity/scripts.inc"

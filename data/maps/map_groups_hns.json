@@ -1,7 +1,4 @@
 {
-  "build_name": [
-    "hns"
-  ],
   "group_order": [
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorNewBark",
@@ -473,7 +470,8 @@
     "RuinsOfAlph_WordsRoom4_hns",
     "ArtisanCave_B1F_hns",
     "ArtisanCave_1F_hns",
-    "Route19_Cave_hns"
+    "Route19_Cave_hns",
+    "ScaryCave_hns"
   ],
   "gMapGroup_IndoorDynamic": [
     "BattlePyramidSquare01_hns",
@@ -603,5 +601,8 @@
     "BattleFrontier_PokemonCenter_1F_hns",
     "BattleFrontier_PokemonCenter_2F_hns",
     "BattleFrontier_Mart_hns"
+  ],
+  "build_name": [
+    "hns"
   ]
 }

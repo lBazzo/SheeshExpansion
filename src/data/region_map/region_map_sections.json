@@ -1464,6 +1464,10 @@
     {
       "id": "MAPSEC_GOLDENROD_GAMECORNER",
       "name": "Goldenrod Game Corner"
+    },
+    {
+      "id": "MAPSEC_SCARY_CAVE",
+      "name": "Scary Cave"
     }
   ]
 }

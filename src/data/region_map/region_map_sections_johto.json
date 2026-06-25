@@ -161,6 +161,14 @@
       "height": 5
     },
     {
+      "id": "MAPSEC_SCARY_CAVE",
+      "name": "Scary Cave",
+      "x": 7,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_ROUTE_33",
       "name": "Route 33",
       "x": 7,

@@ -481,6 +481,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE32_POKEMON_CENTER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_SCARY_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

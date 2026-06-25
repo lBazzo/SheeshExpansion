@@ -5500,6 +5500,16 @@
       "border_filepath": "data/layouts/HiddenGrove_hns/border.bin",
       "blockdata_filepath": "data/layouts/HiddenGrove_hns/map.bin",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SCARY_CAVE",
+      "name": "ScaryCave_Layout",
+      "width": 26,
+      "height": 18,
+      "primary_tileset": "gTileset_Johto_General",
+      "secondary_tileset": "gTileset_Cave_DragonsDen",
+      "border_filepath": "data/layouts/ScaryCave/border.bin",
+      "blockdata_filepath": "data/layouts/ScaryCave/map.bin"
     }
   ],
   "build_name": [
