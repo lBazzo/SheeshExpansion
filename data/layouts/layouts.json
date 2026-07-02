@@ -5509,7 +5509,8 @@
       "primary_tileset": "gTileset_Johto_General",
       "secondary_tileset": "gTileset_Cave_DragonsDen",
       "border_filepath": "data/layouts/ScaryCave/border.bin",
-      "blockdata_filepath": "data/layouts/ScaryCave/map.bin"
+      "blockdata_filepath": "data/layouts/ScaryCave/map.bin",
+      "layout_version": "hns"
     }
   ],
   "build_name": [

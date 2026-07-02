@@ -339,7 +339,7 @@
 #define TRAINER_ALLEN                      333
 #define TRAINER_TIMMY                      334 // UNUSED
 #define TRAINER_WALLACE                    335 // UNUSED
-#define TRAINER_ANDREW                     336
+#define TRAINER_SETH                     336
 #define TRAINER_IVAN                       337
 #define TRAINER_CLAUDE                     338 // UNUSED
 #define TRAINER_MASA                       339 // UNUSED

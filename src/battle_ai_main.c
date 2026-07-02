@@ -5991,6 +5991,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         //    ADJUST_SCORE(DECENT_EFFECT); // TODO: check if opp has status move?
         //if (CountUsablePartyMons(battlerDef) != 0)
             //ADJUST_SCORE(8);
+        if (!(gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_SAFEGUARD))
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_COURT_CHANGE:
@@ -6117,8 +6118,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                         IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
                     }
                 break;
-                default:
+                case HOLD_EFFECT_FLOAT_STONE:
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                break;
+                default:
+                    //ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                    break;
             }
             break;
             // Bazzo note: used to include trick here in bestow ai
@@ -6137,14 +6142,21 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
         case HOLD_EFFECT_TOXIC_ORB:
-            if (!ShouldPoison(battlerAtk, battlerAtk))
-                ADJUST_SCORE(DECENT_EFFECT);
+            if (AI_CanPoison(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], move, gAiLogicData->partnerMove))
+                {
+                    IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+                }
             break;
         case HOLD_EFFECT_FLAME_ORB:
-            if (!ShouldBurn(battlerAtk, battlerAtk, aiData->abilities[battlerAtk]))
-                ADJUST_SCORE(DECENT_EFFECT);
+            if (AI_CanBurn(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, gAiLogicData->partnerMove))
+                {
+                    IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+                }
             break;
-        case HOLD_EFFECT_BLACK_SLUDGE:
+        case HOLD_EFFECT_FLOAT_STONE:
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                    break;
+        /*case HOLD_EFFECT_BLACK_SLUDGE:
             if (!IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && aiData->abilities[battlerDef] != ABILITY_MAGIC_GUARD)
                 ADJUST_SCORE(DECENT_EFFECT);
             break;
@@ -6180,7 +6192,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             if (HasDamagingMove(battlerAtk)
              || (hasPartner && HasDamagingMove(BATTLE_PARTNER(battlerAtk))))
                 ADJUST_SCORE(DECENT_EFFECT); // Force 'em out next turn
-            break;
+            break;*/
         default:
         /*
             if (GetMoveEffect(move) != EFFECT_BESTOW && aiData->items[battlerAtk] == ITEM_NONE && aiData->items[battlerDef] != ITEM_NONE)
@@ -6504,16 +6516,16 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     }
     */
-        if (gBattleMons[battlerDef].defense != gBattleMons[battlerAtk].defense
-        || (gBattleMons[battlerDef].spDefense != gBattleMons[battlerAtk].spDefense))
+        if (gBattleMons[battlerDef].defense > gBattleMons[battlerAtk].defense
+        || (gBattleMons[battlerDef].spDefense > gBattleMons[battlerAtk].spDefense))
         {
             if(RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                 ADJUST_SCORE(WEAK_EFFECT);
             else 
                 ADJUST_SCORE(NO_INCREASE);
         }
-        else if (gBattleMons[battlerDef].defense == gBattleMons[battlerAtk].defense
-             && (gBattleMons[battlerDef].spDefense == gBattleMons[battlerAtk].spDefense))
+        else if (gBattleMons[battlerDef].defense <= gBattleMons[battlerAtk].defense
+             && (gBattleMons[battlerDef].spDefense <= gBattleMons[battlerAtk].spDefense))
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         break;
     case EFFECT_POWER_SPLIT:

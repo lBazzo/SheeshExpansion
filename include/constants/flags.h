@@ -800,7 +800,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
 
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
+#define FLAG_ITEM_SCARY_CAVE_SITRUS                                 0x2D9 // Unused Flag
 
 #define FLAG_GOT_SILK_SCARF                                         0x2DA //CRYSTALRANDOMFLAGS, NOT STRICTLY STORY //weekday siblings
 #define FLAG_GOT_MYSTICWATER                                        0x2DB
@@ -1325,7 +1325,7 @@
 #define FLAG_ITEM_NATIONAL_PARK_ZOOM_LENS                           0x4DC 
 #define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 
 #define FLAG_ITEM_BELLCHIME_BIG_MUSHROOM                            0x4DE 
-#define FLAG_PLAYER_CAUGHT_SILVALLY                            0x4DF 
+#define FLAG_PLAYER_CAUGHT_SILVALLY                                 0x4DF 
 #define FLAG_ITEM_TIN_TOWER_4F_ULTRA_BALL                           0x4E0 
 #define FLAG_ITEM_TIN_TOWER_4F_ESCAPE_ROPE                          0x4E1 
 #define FLAG_ITEM_TIN_TOWER_4F_MAX_POTION                           0x4E2 
@@ -1341,7 +1341,7 @@
 #define FLAG_ITEM_BURNED_TOWER_B1F_TM_TAUNT                         0x4EC 
 #define FLAG_ITEM_BURNED_TOWER_B1F_ULTRA_BALL                       0x4ED 
 #define FLAG_ITEM_ROUTE38_VOLT_SWITCH                               0x4EE 
-#define FLAG_ITEM_ROUTE39_TM_DAZZLING_GLEAM                            0x4EF 
+#define FLAG_ITEM_ROUTE39_TM_DAZZLING_GLEAM                         0x4EF 
 
 #define FLAG_DEFEATED_GYM_1                                         0x4F0 // Begin Gym Flags
 #define FLAG_DEFEATED_GYM_2                                         0x4F1

@@ -4842,7 +4842,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
                     BattleScriptExecute(BattleScript_IceBodyHeal);
-                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 8);
                     effect++;
                 }
                 break;
@@ -4855,7 +4855,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                  && !IsBattlerAtMaxHp(battler)
                  && !gBattleMons[battler].volatiles.healBlock)
                 {
-                    s32 healAmount = gLastUsedAbility == ABILITY_RAIN_DISH ? 16 : 8;
+                    s32 healAmount = gLastUsedAbility == ABILITY_RAIN_DISH ? 8 : 8;
                     SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / healAmount);
                     BattleScriptExecute(BattleScript_RainDishActivates);
                     effect++;
@@ -7740,7 +7740,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-    case ABILITY_NIGHT_OWL:
+    case ABILITY_NOCTURNAL:
         if (IsMoonMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;    
@@ -8171,12 +8171,12 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
                 RecordAbilityBattle(battlerDef, ABILITY_PURIFYING_SALT);
         }
         break;
-    case ABILITY_NIGHT_OWL:
+    case ABILITY_NOCTURNAL:
         if (moveType == TYPE_DARK || moveType == TYPE_FAIRY)
         {
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(0.5));
             if (ctx->updateFlags)
-                RecordAbilityBattle(battlerDef, ABILITY_NIGHT_OWL);
+                RecordAbilityBattle(battlerDef, ABILITY_NOCTURNAL);
         }
         break;
     default:

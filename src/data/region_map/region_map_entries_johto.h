@@ -26,6 +26,7 @@ static const u8 sJMapName_Route_29[] = _("Route 29");
 static const u8 sJMapName_Route_30[] = _("Route 30");
 static const u8 sJMapName_Route_31[] = _("Route 31");
 static const u8 sJMapName_Route_32[] = _("Route 32");
+static const u8 sJMapName_Scary_Cave[] = _("Scary Cave");
 static const u8 sJMapName_Route_33[] = _("Route 33");
 static const u8 sJMapName_Route_34[] = _("Route 34");
 static const u8 sJMapName_Route_35[] = _("Route 35");
@@ -269,6 +270,13 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .width = 1,
         .height = 5,
         .name = sJMapName_Route_32,
+    },
+    [MAPSEC_SCARY_CAVE] = {
+        .x = 7,
+        .y = 7,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_Scary_Cave,
     },
     [MAPSEC_ROUTE_33] = {
         .x = 7,

@@ -12094,7 +12094,7 @@ static void Cmd_recoverbasedonsunlight(void)
             else
                 recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
         }
-        else if (GetMoveEffect(gCurrentMove) == EFFECT_MOONLIGHT && GetBattlerAbility(gBattlerAttacker) == ABILITY_NIGHT_OWL)
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_MOONLIGHT && GetBattlerAbility(gBattlerAttacker) == ABILITY_NOCTURNAL)
         {
             recoverAmount = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
         }

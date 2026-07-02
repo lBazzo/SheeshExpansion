@@ -3072,7 +3072,7 @@ SINGLE_BATTLE_TEST("Night Owl increases damage for Moon based moves", s16 damage
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SOUNDPROOF; }
-    PARAMETRIZE { ability = ABILITY_NIGHT_OWL; }
+    PARAMETRIZE { ability = ABILITY_NOCTURNAL; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
         OPPONENT(SPECIES_NOCTOWL) { Ability(ability); Moves(MOVE_MOONBLAST); }
@@ -3088,7 +3088,7 @@ SINGLE_BATTLE_TEST("Night Owl increases damage for Moon based moves", s16 damage
 SINGLE_BATTLE_TEST("Moonlight recovers 2/3 of the user's max HP with Night Owl")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); Ability(ABILITY_NIGHT_OWL); }
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); MaxHP(300); Ability(ABILITY_NOCTURNAL); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_MOONLIGHT); }
@@ -3101,7 +3101,7 @@ SINGLE_BATTLE_TEST("Night Owl halves damage taken from dark/fairy moves", s16 da
 {
     enum Ability ability;
     PARAMETRIZE { ability = ABILITY_SOUNDPROOF; }
-    PARAMETRIZE { ability = ABILITY_NIGHT_OWL; }
+    PARAMETRIZE { ability = ABILITY_NOCTURNAL; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Ability(ability); }
         OPPONENT(SPECIES_NOCTOWL) { Moves(MOVE_MOONBLAST); }

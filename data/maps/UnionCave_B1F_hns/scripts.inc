@@ -12,7 +12,7 @@ UnionCave_B1F_EventScript_HikerLeonard::
 	end
 
 UnionCave_B1F_EventScript_PokemaniacAndrew::
-	trainerbattle_single TRAINER_ANDREW, UnionCave_B1F_Text_PokemaniacAndrewSeen, UnionCave_B1F_Text_PokemaniacAndrewBeaten
+	trainerbattle_single TRAINER_SETH, UnionCave_B1F_Text_PokemaniacAndrewSeen, UnionCave_B1F_Text_PokemaniacAndrewBeaten
 	msgbox UnionCave_B1F_Text_PokemaniacAndrewAfter, MSGBOX_AUTOCLOSE
 	end
 

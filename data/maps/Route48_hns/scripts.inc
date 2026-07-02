@@ -39,6 +39,26 @@ Route48_Text_YoungsterJasonAfterBattle:
 	.string "I'm going to catch more Pokémon in\n"
 	.string "the grass.$"
 
+Route48_EventScript_Seth::
+	trainerbattle_single TRAINER_RENJI Route48_Text_SwimmermSethSeen, Route48_Text_SwimmermSethBeaten
+	msgbox Route48_Text_SwimmermSethAfterBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route48_Text_SwimmermSethSeen:
+	.string "I came here to be all depressed wrapped\n"
+	.string "up in how much my life sucks, and now\l"
+	.string "this jolly dude comes next to me\l"
+	.string "talking about loving everything.\p"
+	.string "Please, let's end this battle quickly.$"
+
+Route48_Text_SwimmermSethBeaten:
+	.string "Finally.\n"
+	.string "Thank goodness that's over.$"
+
+Route48_Text_SwimmermSethAfterBattle:
+	.string "Now I can go back to my brooding.\n"
+	.string "Thanks, kid.$"
+
 Route48_Text_PsychicFidelSeen:
 	.string "The taste of the mountain air…\n"
 	.string "Isn't it wonderful?$"
