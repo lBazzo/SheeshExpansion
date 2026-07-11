@@ -407,7 +407,7 @@ static bool32 HandleEndTurnAquaRing(u32 battler)
      && !IsBattlerAtMaxHp(battler)
      && IsBattlerAlive(battler))
     {
-        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16));
+        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 8));
         BattleScriptExecute(BattleScript_AquaRingHeal);
         effect = TRUE;
     }
@@ -426,7 +426,7 @@ static bool32 HandleEndTurnIngrain(u32 battler)
      && !IsBattlerAtMaxHp(battler)
      && IsBattlerAlive(battler))
     {
-        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 16));
+        SetHealAmount(battler, GetDrainedBigRootHp(battler, GetNonDynamaxMaxHP(battler) / 8));
         BattleScriptExecute(BattleScript_IngrainTurnHeal);
         effect = TRUE;
     }

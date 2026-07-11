@@ -6295,8 +6295,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_GASTRO_ACID:
     case EFFECT_ROLE_PLAY:
     case EFFECT_OVERWRITE_ABILITY:
-        AbilityChangeScore(battlerAtk, battlerDef, move, &score, aiData);
-        return score;
+        if (CanEffectChangeAbility(battlerAtk, battlerDef, move, aiData))
+            ADJUST_AND_RETURN_SCORE(BEST_DAMAGE_MOVE);
+        break;
+        //AbilityChangeScore(battlerAtk, battlerDef, move, &score, aiData);
+        //return score;
     case EFFECT_SKILL_SWAP:
         if (IsTargetingPartner(battlerAtk, battlerDef))
             {
