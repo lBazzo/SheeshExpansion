@@ -1297,6 +1297,20 @@ void PrepareStringBattle(enum StringID stringId, u32 battler)
             stringId = STRINGID_DEFENDERSSTATROSE;
         }
         break;
+    case STRINGID_PKMNCUTSSPECIALATTACKWITH:
+        if (GetConfig(CONFIG_UPDATED_INTIMIDATE) >= GEN_8
+         && targetAbility == ABILITY_RATTLED
+         && CompareStat(gBattlerTarget, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, targetAbility))
+        {
+            gBattlerAbility = gBattlerTarget;
+            BattleScriptCall(BattleScript_AbilityRaisesDefenderStat);
+            SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+        }
+        else if (targetAbility == ABILITY_CONTRARY)
+        {
+            stringId = STRINGID_DEFENDERSSTATROSE;
+        }
+        break;
     case STRINGID_ITDOESNTAFFECT:
     case STRINGID_PKMNUNAFFECTED:
         TryInitializeTrainerSlideEnemyMonUnaffected(gBattlerTarget);
@@ -4620,6 +4634,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 gBattlerAttacker = battler;
                 SET_STATCHANGER(STAT_ATK, 1, TRUE);
                 BattleScriptCall(BattleScript_IntimidateActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_MIND_GAME:
+            if (shouldAbilityTrigger && !IsOpposingSideEmpty(battler))
+            {
+                SaveBattlerAttacker(gBattlerAttacker);
+                gBattlerAttacker = battler;
+                SET_STATCHANGER(STAT_SPATK, 1, TRUE);
+                BattleScriptCall(BattleScript_MindGameActivates);
                 effect++;
             }
             break;

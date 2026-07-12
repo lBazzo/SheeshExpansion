@@ -3641,6 +3641,7 @@ bool32 IsStatusChangeLegal(u16 status)
                 return FALSE;
             else
                 return TRUE;
+            break;
         default:
                 return TRUE;
             break;        

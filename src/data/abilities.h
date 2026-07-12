@@ -2498,4 +2498,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Powers up Water moves."),
         .aiRating = 6,
     },
+
+    [ABILITY_MIND_GAME] =
+    {
+        .name = _("Mind Game"),
+        .description = COMPOUND_STRING("Lowers the foe's SpAtk."),
+        .aiRating = 7,
+    },
 };

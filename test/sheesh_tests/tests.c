@@ -3459,3 +3459,28 @@ AI_DOUBLE_BATTLE_TEST("AI scores updated Follow Me correctly")
         }
     }
 }
+
+SINGLE_BATTLE_TEST("Mind Game (opponent) lowers player's attack after switch out", s16 damage)
+{
+    enum Ability ability;
+    PARAMETRIZE { ability = ABILITY_MIND_GAME; }
+    PARAMETRIZE { ability = ABILITY_SHED_SKIN; }
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_ARBOK) { Ability(ability); }
+    } WHEN {
+        TURN { SWITCH(opponent, 1); }
+        TURN { MOVE(player, MOVE_WATER_GUN); }
+    } SCENE {
+        if (ability == ABILITY_MIND_GAME)
+        {
+            ABILITY_POPUP(opponent, ABILITY_MIND_GAME);
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);
+            MESSAGE("The opposing Arbok's Mind Game cuts Wobbuffet's Special Attack!");
+        }
+        HP_BAR(opponent, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
+    }
+}
