@@ -3591,6 +3591,63 @@ static void CursorCb_Status(u8 taskId)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
+bool32 IsStatusChangeLegal(u16 status)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 species;
+    u32 ability;
+    species = GetMonData(mon, MON_DATA_SPECIES);
+    ability = GetMonAbility(mon);
+
+    switch (status)
+    {
+        case STATUS1_TOXIC_POISON:
+        case STATUS1_POISON:
+            if (GetSpeciesType(species, 0) == TYPE_STEEL || GetSpeciesType(species, 0) == TYPE_POISON
+            || GetSpeciesType(species, 1) == TYPE_STEEL || GetSpeciesType(species, 1) == TYPE_POISON)
+                return FALSE;
+            else if (ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+                return FALSE;
+            else
+                return TRUE;
+            break;
+        case STATUS1_PARALYSIS:
+            if (GetSpeciesType(species, 0) == TYPE_ELECTRIC
+            || GetSpeciesType(species, 1) == TYPE_ELECTRIC)
+                return FALSE;
+            else if (ability == ABILITY_LIMBER)
+                return FALSE;
+            else
+                return TRUE;
+            break;
+        case STATUS1_SLEEP:
+            if (ability == ABILITY_INSOMNIA || ability == ABILITY_VITAL_SPIRIT)
+                return FALSE;
+            else
+                return TRUE;
+            break;
+        case STATUS1_BURN:
+            if (GetSpeciesType(species, 0) == TYPE_FIRE || GetSpeciesType(species, 1) == TYPE_FIRE)
+                return FALSE;
+            else if (ability == ABILITY_WATER_VEIL || ability == ABILITY_WATER_BUBBLE)
+                return FALSE;
+            else
+                return TRUE;
+        case STATUS1_FREEZE:
+        case STATUS1_FROSTBITE:
+            if (GetSpeciesType(species, 0) == TYPE_ICE || GetSpeciesType(species, 1) == TYPE_ICE)
+                return FALSE;
+            else if (ability == ABILITY_MAGMA_ARMOR)
+                return FALSE;
+            else
+                return TRUE;
+        default:
+                return TRUE;
+            break;        
+    }
+    //return FALSE;
+}
+
 bool32 TryMonStatusChange(u8 taskId, u16 status)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
@@ -3600,7 +3657,9 @@ bool32 TryMonStatusChange(u8 taskId, u16 status)
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
 
-    if (currentSpecies != SPECIES_EGG)
+    if (currentSpecies != SPECIES_EGG
+    && (GetMonData(mon, MON_DATA_HP) != 0)
+    && (IsStatusChangeLegal(status)))
     {
         gPartyMenuUseExitCallback = TRUE;
         PlaySE(SE_SELECT);
@@ -3618,9 +3677,9 @@ bool32 TryMonStatusChange(u8 taskId, u16 status)
     {
         gPartyMenuUseExitCallback = FALSE;
         PlaySE(SE_SELECT);
-        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, FALSE);
         ScheduleBgCopyTilemapToVram(2);
-        gTasks[taskId].func = Task_HandleChooseMonInput;
+        gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         return FALSE;
     }
 }
