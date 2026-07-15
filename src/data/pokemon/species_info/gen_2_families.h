@@ -7987,9 +7987,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INNER_FOCUS },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_VOLT_ABSORB, ABILITY_INNER_FOCUS },
     #else
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_VOLT_ABSORB },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_VOLT_ABSORB, ABILITY_INNER_FOCUS },
     #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Raikou"),
@@ -8069,9 +8069,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INNER_FOCUS },
+        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_OWN_TEMPO, ABILITY_INNER_FOCUS },
     #else
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_FLASH_FIRE },
+        .abilities = { ABILITY_TOUGH_CLAWS, ABILITY_OWN_TEMPO, ABILITY_INNER_FOCUS },
     #endif
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Entei"),
@@ -8150,9 +8150,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_WIND_RIDER, ABILITY_PRESSURE },
+        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_WIND_RIDER, ABILITY_INNER_FOCUS },
     #else
-        .abilities = { ABILITY_INNER_FOCUS, ABILITY_WIND_RIDER, ABILITY_PRESSURE },
+        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_WIND_RIDER, ABILITY_INNER_FOCUS },
     #endif
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Suicune"),
