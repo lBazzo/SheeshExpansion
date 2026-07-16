@@ -714,7 +714,7 @@ SINGLE_BATTLE_TEST("(TERA) Terapagos retains its base defensive profile when Ter
 
 SINGLE_BATTLE_TEST("(TERA) Illusion breaks if the Pokémon Terastallizes when illusioned as a mon that changes forms by Terastallizing")
 {
-    //KNOWN_FAILING; // Bazzo note: fails because of zoroark ability change
+    KNOWN_FAILING; // Bazzo note: fails because of zoroark ability change
     u32 species;
     PARAMETRIZE { species = SPECIES_TERAPAGOS; }
     PARAMETRIZE { species = SPECIES_OGERPON; }
@@ -733,6 +733,7 @@ SINGLE_BATTLE_TEST("(TERA) Illusion breaks if the Pokémon Terastallizes when il
 // Visual test to make sure Zoroark appears as Wobbuffet/Zigzagoon until illusion breaks
 SINGLE_BATTLE_TEST("(TERA) Illusion doesn't break upon Terastallizing when illusioned as a mon that doesn't change forms by Terastallizing")
 {
+    KNOWN_FAILING; // Bazzo note: fails because of zoroark ability change
     u32 species;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     PARAMETRIZE { species = SPECIES_ZIGZAGOON; }

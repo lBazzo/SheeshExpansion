@@ -59,7 +59,7 @@ SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects")
     PARAMETRIZE { move = MOVE_HYPNOSIS; status = STATUS1_SLEEP; }
     PARAMETRIZE { move = MOVE_THUNDER_WAVE; status = STATUS1_PARALYSIS; }
     PARAMETRIZE { move = MOVE_TOXIC; status = STATUS1_TOXIC_POISON; }
-    PARAMETRIZE { move = MOVE_POWDER_SNOW; status = STATUS1_FREEZE; }
+    PARAMETRIZE { move = MOVE_ICE_BEAM; status = STATUS1_FREEZE; }
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WILL_O_WISP) == EFFECT_NON_VOLATILE_STATUS);
         ASSUME(GetMoveNonVolatileStatus(MOVE_WILL_O_WISP) == MOVE_EFFECT_BURN);
@@ -69,13 +69,13 @@ SINGLE_BATTLE_TEST("Purifying Salt grants immunity to status effects")
         ASSUME(GetMoveNonVolatileStatus(MOVE_THUNDER_WAVE) == MOVE_EFFECT_PARALYSIS);
         ASSUME(GetMoveEffect(MOVE_TOXIC) == EFFECT_NON_VOLATILE_STATUS);
         ASSUME(GetMoveNonVolatileStatus(MOVE_TOXIC) == MOVE_EFFECT_TOXIC);
-        ASSUME(MoveHasAdditionalEffect(MOVE_POWDER_SNOW, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
+        ASSUME(MoveHasAdditionalEffect(MOVE_ICE_BEAM, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
         PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_PURIFYING_SALT); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(opponent, move); }
     } SCENE {
-        if (move != MOVE_POWDER_SNOW) {
+        if (move != MOVE_ICE_BEAM) {
             NOT ANIMATION(ANIM_TYPE_MOVE, move, opponent);
             ABILITY_POPUP(player, ABILITY_PURIFYING_SALT);
             MESSAGE("It doesn't affect Wobbuffet…");

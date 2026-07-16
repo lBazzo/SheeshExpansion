@@ -30,7 +30,7 @@ SINGLE_BATTLE_TEST("Thunder Shock cannot paralyze an Electric-type (Gen6+)")
         WITH_CONFIG(CONFIG_PARALYZE_ELECTRIC, gen);
         ASSUME(GetSpeciesType(SPECIES_PIKACHU, 0) == TYPE_ELECTRIC);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_PIKACHU);
+        OPPONENT(SPECIES_PIKACHU) {Ability(ABILITY_SURGE_SURFER); }
     } WHEN {
         TURN { MOVE(player, MOVE_THUNDER_SHOCK, secondaryEffect: TRUE); }
     } SCENE {

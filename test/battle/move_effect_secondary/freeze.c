@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(MoveHasAdditionalEffect(MOVE_POWDER_SNOW, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
+    ASSUME(MoveHasAdditionalEffect(MOVE_ICE_BEAM, MOVE_EFFECT_FREEZE_OR_FROSTBITE) == TRUE);
 }
 
 #if B_USE_FROSTBITE == TRUE
@@ -16,9 +16,9 @@ SINGLE_BATTLE_TEST("Powder Snow inflicts freeze")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_POWDER_SNOW); }
+        TURN { MOVE(player, MOVE_ICE_BEAM); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_POWDER_SNOW, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ICE_BEAM, player);
         HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_STATUS, (B_USE_FROSTBITE ? B_ANIM_STATUS_FRB : B_ANIM_STATUS_FRZ), opponent);
         FREEZE_OR_FROSTBURN_STATUS(opponent, TRUE);
@@ -36,9 +36,9 @@ SINGLE_BATTLE_TEST("Powder Snow cannot freeze an Ice-type Pokémon")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_SNORUNT);
     } WHEN {
-        TURN { MOVE(player, MOVE_POWDER_SNOW); }
+        TURN { MOVE(player, MOVE_ICE_BEAM); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_POWDER_SNOW, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_ICE_BEAM, player);
         HP_BAR(opponent);
         NONE_OF {
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_FRZ, opponent);

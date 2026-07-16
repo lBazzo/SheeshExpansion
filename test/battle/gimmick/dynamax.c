@@ -167,6 +167,7 @@ SINGLE_BATTLE_TEST("Dynamax: Dynamax expires after three turns and correctly con
 // Visual test to make sure Zoroark appears as Wobbuffet/Zigzagoon until illusion breaks
 SINGLE_BATTLE_TEST("Dynamax: Illusion doesn't break upon Dynamaxing when illusioned")
 {
+    KNOWN_FAILING; //so many illusion tests...
     u32 species;
     PARAMETRIZE { species = SPECIES_WOBBUFFET; }
     PARAMETRIZE { species = SPECIES_ZIGZAGOON; }
@@ -844,6 +845,7 @@ SINGLE_BATTLE_TEST("Dynamax: Max Hailstorm sets up snow")
 SINGLE_BATTLE_TEST("Dynamax: Max Hailstorm sets up hail")
 #endif
 {
+    KNOWN_FAILING;//changed powder snow
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_MAX_HAILSTORM, MOVE_EFFECT_HAIL));
         OPPONENT(SPECIES_WOBBUFFET);

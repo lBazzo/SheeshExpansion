@@ -12,8 +12,8 @@ SINGLE_BATTLE_TEST("Thick Fat halves damage from fire and ice type moves", s16 d
 {
     u16 move;
 
-    PARAMETRIZE { move = MOVE_POWDER_SNOW; }
-    PARAMETRIZE { move = MOVE_EMBER; }
+    PARAMETRIZE { move = MOVE_ICE_BEAM; }
+    PARAMETRIZE { move = MOVE_FLAMETHROWER; }
 
     GIVEN {
         PLAYER (SPECIES_WOBBUFFET);

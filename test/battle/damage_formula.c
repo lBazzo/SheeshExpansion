@@ -123,8 +123,8 @@ DOUBLE_BATTLE_TEST("A spread move will do correct damage to the second mon if th
 {
     s16 damage[6];
     GIVEN {
-        PLAYER(SPECIES_REGIROCK);
-        PLAYER(SPECIES_REGIROCK);
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
         OPPONENT(SPECIES_WOBBUFFET) { HP(200); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -157,8 +157,8 @@ MULTI_BATTLE_TEST("A spread move will do correct damage to the second mon if the
 {
     s16 damage[6];
     GIVEN {
-        MULTI_PLAYER(SPECIES_REGIROCK);
-        MULTI_PARTNER(SPECIES_REGIROCK);
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
+        MULTI_PARTNER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
         MULTI_OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }
         MULTI_OPPONENT_B(SPECIES_WOBBUFFET);
     } WHEN {
@@ -191,8 +191,8 @@ TWO_VS_ONE_BATTLE_TEST("A spread move will do correct damage to the second mon i
 {
     s16 damage[6];
     GIVEN {
-        MULTI_PLAYER(SPECIES_REGIROCK);
-        MULTI_PARTNER(SPECIES_REGIROCK);
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
+        MULTI_PARTNER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
         MULTI_OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }
         MULTI_OPPONENT_A(SPECIES_WOBBUFFET);
     } WHEN {
@@ -225,8 +225,8 @@ ONE_VS_TWO_BATTLE_TEST("A spread move will do correct damage to the second mon i
 {
     s16 damage[6];
     GIVEN {
-        MULTI_PLAYER(SPECIES_REGIROCK);
-        MULTI_PLAYER(SPECIES_REGIROCK);
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
+        MULTI_PLAYER(SPECIES_REGIROCK) { Ability(ABILITY_CLEAR_BODY); }
         MULTI_OPPONENT_A(SPECIES_WOBBUFFET) { HP(200); }
         MULTI_OPPONENT_B(SPECIES_WOBBUFFET);
     } WHEN {

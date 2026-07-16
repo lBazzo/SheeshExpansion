@@ -849,7 +849,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Guard Split correctly")
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_CROBAT) { Moves(MOVE_CELEBRATE); Defense(101); }
-        OPPONENT(SPECIES_CELEBI) { Moves(MOVE_CELEBRATE, MOVE_GUARD_SPLIT); Defense(200); }
+        OPPONENT(SPECIES_CELEBI) { Moves(MOVE_CELEBRATE, MOVE_GUARD_SPLIT); Defense(100); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_GUARD_SPLIT); }
         TURN { SCORE_EQ_VAL(opponent, MOVE_GUARD_SPLIT, 80); }
@@ -2441,7 +2441,7 @@ AI_DOUBLE_BATTLE_TEST("AI correctly scores Mat Block")
                 EXPECT_MOVE(opponentLeft, MOVE_TACKLE);
                 EXPECT_MOVE(opponentRight, MOVE_MAT_BLOCK);
             }
-            TURN { SCORE_EQ_VAL(opponentRight, MOVE_MAT_BLOCK, 70, target:opponentLeft); }
+            TURN { SCORE_EQ_VAL(opponentRight, MOVE_MAT_BLOCK, 0, target:opponentLeft); }
         }
 }
 

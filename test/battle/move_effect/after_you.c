@@ -56,7 +56,7 @@ DOUBLE_BATTLE_TEST("After You calculates correct turn order if only one Pokémon
 {
     GIVEN {
         PLAYER(SPECIES_GRENINJA) { Speed(120); }
-        PLAYER(SPECIES_REGIROCK) { Speed(10); }
+        PLAYER(SPECIES_REGIROCK) { Speed(10); Ability(ABILITY_CLEAR_BODY); }
         OPPONENT(SPECIES_PIDGEOT) { Speed(100); }
         OPPONENT(SPECIES_DRAGONITE) { Speed(60); }
     } WHEN {

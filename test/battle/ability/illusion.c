@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Illusion can only imitate Normal Form terapagos")
 
 SINGLE_BATTLE_TEST("Illusion breaks if the target faints")
 {
-    //KNOWN_FAILING; //Bazzo note: illusion removed from zoroark
+    KNOWN_FAILING; //Bazzo note: illusion removed from zoroark
     GIVEN {
         PLAYER(SPECIES_ZOROARK) { HP(1); Ability(ABILITY_ILLUSION); }
         PLAYER(SPECIES_WYNAUT);
@@ -42,6 +42,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if the target faints")
 
 SINGLE_BATTLE_TEST("Illusion breaks if the attacker faints")
 {
+    KNOWN_FAILING; // no longer has illusion
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_FINAL_GAMBIT) == EFFECT_FINAL_GAMBIT);
         PLAYER(SPECIES_ZOROARK) { HP(1); Ability(ABILITY_ILLUSION); }
@@ -59,6 +60,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if the attacker faints")
 
 SINGLE_BATTLE_TEST("Illusion cannot imitate if the user is on the last slot")
 {
+    //KNOWN_FAILING; // no longer has illusion
     GIVEN {
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
@@ -73,6 +75,7 @@ SINGLE_BATTLE_TEST("Illusion cannot imitate if the user is on the last slot")
 
 SINGLE_BATTLE_TEST("Illusion breaks in Neutralizing Gas")
 {
+    KNOWN_FAILING; // no longer has illusion
     GIVEN {
         PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
         PLAYER(SPECIES_WYNAUT);
@@ -87,6 +90,7 @@ SINGLE_BATTLE_TEST("Illusion breaks in Neutralizing Gas")
 
 SINGLE_BATTLE_TEST("Illusion breaks if affected by Gastro Acid")
 {
+    KNOWN_FAILING; // no longer has illusion
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_GASTRO_ACID) == EFFECT_GASTRO_ACID);
         PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
@@ -102,6 +106,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if affected by Gastro Acid")
 
 SINGLE_BATTLE_TEST("Illusion breaks if user loses Illusion due to Worry Seed")
 {
+    KNOWN_FAILING; // no longer has illusion
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_WORRY_SEED) == EFFECT_OVERWRITE_ABILITY);
         PLAYER(SPECIES_ZOROARK) { Ability(ABILITY_ILLUSION); } 
@@ -117,6 +122,7 @@ SINGLE_BATTLE_TEST("Illusion breaks if user loses Illusion due to Worry Seed")
 
 SINGLE_BATTLE_TEST("Illusion breaks when attacked behind a substitute")
 {
+    KNOWN_FAILING; // no longer has illusion
     GIVEN {
         PLAYER(SPECIES_DRAGAPULT) {Ability(ABILITY_INFILTRATOR); Speed(1);};
         OPPONENT(SPECIES_WOBBUFFET) {Speed(2);};
