@@ -458,7 +458,7 @@ NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	giveitem ITEM_EVERSTONE
 	giveitem ITEM_SUPER_ROD
 	giveitem ITEM_POKEMON_BOX_LINK
-	giveitem ITEM_ABILITY_CAPSULE, 900	
+	giveitem ITEM_INFINITE_CAPSULE	
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FIRST_BALLS
 	setvar VAR_NEWBARKTOWN_LABSTATE, 6

@@ -1787,4 +1787,10 @@ void ItemUseOutOfBattle_PokeVial (u8 taskId)
     }
 }
 
+void ItemUseOutOfBattle_InfiniteCapsule (u8 taskId)
+{
+    gItemUseCB = ItemUseCB_InfiniteCapsule;
+    SetUpItemUseCallback(taskId);
+}
+
 #undef tUsingRegisteredKeyItem

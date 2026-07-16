@@ -9,8 +9,8 @@
 static const u8 sJMapName_Violet_City[] = _("Violet City");
 static const u8 sJMapName_Azalea_Town[] = _("Azalea Town");
 static const u8 sJMapName_Goldenrod_City[] = _("Goldenrod City");
-static const u8 sJMapName_Goldenrod_Pokecenter[] = _("Goldenrod Pokecenter");
-static const u8 sJMapName_Goldenrod_Game_Corner[] = _("Goldenrod Game Corner");
+static const u8 sJMapName_Golden_Pokecenter[] = _("Golden Pokecenter");
+static const u8 sJMapName_Game_Corner[] = _("Game Corner");
 static const u8 sJMapName_Ecruteak_City[] = _("Ecruteak City");
 static const u8 sJMapName_Olivine_City[] = _("Olivine City");
 static const u8 sJMapName_Cianwood_City[] = _("Cianwood City");
@@ -154,17 +154,17 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
     },
     [MAPSEC_GOLDENROD_PCENTER] = {
         .x = 8,
-        .y = 8,
+        .y = 9,
         .width = 1,
         .height = 1,
-        .name = sJMapName_Goldenrod_Pokecenter,
+        .name = sJMapName_Golden_Pokecenter,
     },
     [MAPSEC_GOLDENROD_GAMECORNER] = {
-        .x = 8,
-        .y = 8,
+        .x = 9,
+        .y = 9,
         .width = 1,
         .height = 1,
-        .name = sJMapName_Goldenrod_Game_Corner,
+        .name = sJMapName_Game_Corner,
     },
     [MAPSEC_ECRUTEAK_CITY] = {
         .x = 10,

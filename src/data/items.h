@@ -15372,6 +15372,22 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Flute,
         .iconPalette = gItemIconPalette_RedFlute,
     },
+
+    [ITEM_INFINITE_CAPSULE] =
+    {
+        .name = ITEM_NAME("Infinite Capsule"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Switches a Poké-\n"
+            "mon's ability."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteCapsule,
+        //.effect = gItemEffect_AbilityCapsule,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
+    },
 };
 
 #undef ITEM_NAME

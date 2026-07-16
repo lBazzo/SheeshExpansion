@@ -26,17 +26,17 @@
     },
     {
       "id": "MAPSEC_GOLDENROD_PCENTER",
-      "name": "Goldenrod Pokecenter",
+      "name": "Golden Pokecenter",
       "x": 8,
-      "y": 8,
+      "y": 9,
       "width": 1,
       "height": 1
     },
     {
       "id": "MAPSEC_GOLDENROD_GAMECORNER",
-      "name": "Goldenrod Game Corner",
-      "x": 8,
-      "y": 8,
+      "name": "Game Corner",
+      "x": 9,
+      "y": 9,
       "width": 1,
       "height": 1
     },
