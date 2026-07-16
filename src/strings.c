@@ -2395,10 +2395,10 @@ const u8 gText_WillOWisp[]       = _("Will-O-Wisp");
 const u8 gText_ThunderWave[]       = _("Thunder Wave");
 const u8 gText_SteelWing[]       = _("Steel Wing");
 const u8 gText_Defog[]       = _("Defog");
-const u8 gText_UTurn[]       = _("U-Turn");
+const u8 gText_SignalBeam[]       = _("Signal Beam");
 const u8 gText_Reflect[]       = _("Reflect");
 const u8 gText_LightScreen[]       = _("Light Screen");
-const u8 gText_FlipTurn[]       = _("Flip Turn");
+const u8 gText_Scald[]       = _("Scald");
 
 // Plain Badge TMs
 
@@ -2454,6 +2454,8 @@ const u8 gText_FocusPunch[]       = _("Focus Punch");
 const u8 gText_BodyPress[]       = _("Body Press");
 const u8 gText_WeatherBall[]      = _("Weather Ball");
 const u8 gText_TripleAxel[]       = _("Triple Axel");
+const u8 gText_UTurn[]       = _("U-Turn");
+const u8 gText_FlipTurn[]       = _("Flip Turn");
 
 // Well tutor
 

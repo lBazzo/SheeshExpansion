@@ -1941,10 +1941,10 @@ CherryGrove_Pokecenter_EventScript_TMClerkHiveBadge::
 	case 3, CherryGrove_Pokecenter_EventScript_TMClerkThunderWave
 	case 4, CherryGrove_Pokecenter_EventScript_TMClerkSteelWing
 	case 5, CherryGrove_Pokecenter_EventScript_TMClerkDefog
-	case 6, CherryGrove_Pokecenter_EventScript_TMClerkUTurn
+	case 6, CherryGrove_Pokecenter_EventScript_TMClerkSignalBeam
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkReflect
 	case 8, CherryGrove_Pokecenter_EventScript_TMClerkLightScreen
-	case 9, CherryGrove_Pokecenter_EventScript_TMClerkFlipTurn
+	case 9, CherryGrove_Pokecenter_EventScript_TMClerkScald
 	case 10, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
@@ -2045,16 +2045,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveDefog::
 	release
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkUTurn::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantUTurn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveUTurn
+CherryGrove_Pokecenter_EventScript_TMClerkSignalBeam::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantSignalBeam, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveSignalBeam
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGiveUTurn::
+CherryGrove_Pokecenter_EventScript_TMClerkGiveSignalBeam::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_U_TURN
+	giveitem ITEM_TM_SIGNAL_BEAM
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -2093,16 +2093,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveLightScreen::
 	release
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkFlipTurn::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantFlipTurn, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveFlipTurn
+CherryGrove_Pokecenter_EventScript_TMClerkScald::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantScald, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveScald
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGiveFlipTurn::
+CherryGrove_Pokecenter_EventScript_TMClerkGiveScald::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_FLIP_TURN
+	giveitem ITEM_TM_SCALD
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -2769,7 +2769,9 @@ CherryGrove_Pokecenter_EventScript_TMClerkGlacierBadge::
 	case 6, CherryGrove_Pokecenter_EventScript_TMClerkBodyPress
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkWeatherBall
 	case 8, CherryGrove_Pokecenter_EventScript_TMClerkTripleAxel
-	case 9, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	case 9, CherryGrove_Pokecenter_EventScript_TMClerkUTurn
+	case 10, CherryGrove_Pokecenter_EventScript_TMClerkFlipTurn
+	case 11, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
@@ -2949,6 +2951,38 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveAromatherapy::
 	release
 	end
 
+CherryGrove_Pokecenter_EventScript_TMClerkUTurn::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantUTurn, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveUTurn
+	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkGiveUTurn::
+	checkitem ITEM_HEART_SCALE, 1
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
+	giveitem ITEM_TM_U_TURN
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkFlipTurn::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantFlipTurn, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveFlipTurn
+	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkGiveFlipTurn::
+	checkitem ITEM_HEART_SCALE, 1
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
+	giveitem ITEM_TM_FLIP_TURN
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 @OTHER EVENTS
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -3082,6 +3116,8 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs::
 	giveitem ITEM_TM_BODY_PRESS
 	giveitem ITEM_TM_HEAL_BELL
 	giveitem ITEM_TM_AROMATHERAPY
+	giveitem ITEM_TM_FLIP_TURN
+	giveitem ITEM_TM_U_TURN
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_PRYCE
 	closemessage
 	releaseall
@@ -3269,12 +3305,20 @@ CherryGrove_Pokecenter_Text_TMClerkWantUTurn::
 	.string "You want the U-Turn TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
+CherryGrove_Pokecenter_Text_TMClerkWantSignalBeam::
+	.string "You want the Signal Beam TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
+
 CherryGrove_Pokecenter_Text_TMClerkWantReflect::
 	.string "You want the Reflect TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantLightScreen::
 	.string "You want the Light Screen TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
+
+CherryGrove_Pokecenter_Text_TMClerkWantScald::
+	.string "You want the Scald TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFlipTurn::

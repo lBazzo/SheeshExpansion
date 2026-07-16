@@ -2669,10 +2669,10 @@ extern const u8 gText_WillOWisp[];
 extern const u8 gText_ThunderWave[];
 extern const u8 gText_SteelWing[];
 extern const u8 gText_Defog[];
-extern const u8 gText_UTurn[];
+extern const u8 gText_SignalBeam[];
 extern const u8 gText_Reflect[];
 extern const u8 gText_LightScreen[];
-extern const u8 gText_FlipTurn[];
+extern const u8 gText_Scald[];
 
 // Plain Badge TMs
 
@@ -2728,6 +2728,8 @@ extern const u8 gText_FocusPunch[];
 extern const u8 gText_BodyPress[];
 extern const u8 gText_WeatherBall[];
 extern const u8 gText_TripleAxel[];
+extern const u8 gText_UTurn[];
+extern const u8 gText_FlipTurn[];
 
 // Punch tutor
 // extern const u8 gText_[];

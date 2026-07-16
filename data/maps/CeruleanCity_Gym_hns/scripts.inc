@@ -201,7 +201,7 @@ CeruleanCity_Gym_EventScript_Misty::
 	@call Common_EventScript_SetGymTrainers
 	msgbox CeruleanGym_Text_MistyTm, MSGBOX_DEFAULT
 	giveitem ITEM_HEART_SCALE, 4
-	giveitem ITEM_TM_FLIP_TURN
+	giveitem ITEM_TM_SCALD
 	msgbox CeruleanGym_Text_MistyFightDone, MSGBOX_DEFAULT
 	setvar VAR_AZALEA_TOWN_STATE, 5
 	closemessage
@@ -354,6 +354,5 @@ CeruleanGym_Text_GuideWin:
 
 CeruleanGym_Text_MistyTm:
 	.string "Here, take this too.\n"
-	.string "It's just as good as Bugsy's U-Turn,\l" 
-	.string "so promise you'll use it, okay?$"
+	.string "Promise you'll use it, okay?$"
 

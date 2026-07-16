@@ -813,7 +813,7 @@ IlexForest_EventScript_BugsyPreWell::
 
 IlexForest_EventScript_BugsyGiftTM::
 	msgbox IlexForest_Text_BugsyGiftTM, MSGBOX_DEFAULT
-	giveitem ITEM_TM_U_TURN
+	giveitem ITEM_TM_SIGNAL_BEAM
 	setflag FLAG_BUGSY_GIFT_TM
 	goto IlexForest_EventScript_BugsyGiftStone
 
@@ -899,9 +899,9 @@ IlexForest_Text_BugsyGiftTM:
 	.string "you've done for the people and Pokémon\l"
 	.string "of Azalea Town, but I want you to have\l"
 	.string "this TM.\p"
-	.string "It contains U-Turn. It lets you attack\n"
-	.string "and then reposition quickly during a\l"
-	.string "battle. I'm sure you'll use it well.$"
+	.string "It contains Signal Beam.\p"
+	.string "It inflicts good damage while also\n"
+	.string "disorientating your opponent.$"
 
 IlexForest_Text_BugsyGiftStone:
 	.string "Say, you're probably going to challenge\n"

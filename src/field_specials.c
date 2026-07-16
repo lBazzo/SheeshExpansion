@@ -2627,7 +2627,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_TM_CLERK_POST_PRYCE_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 10;
+        task->tNumItems = 12;
         task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
@@ -3076,10 +3076,10 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ThunderWave,
         gText_SteelWing,
         gText_Defog,
-        gText_UTurn,
+        gText_SignalBeam,
         gText_Reflect,
         gText_LightScreen,
-        gText_FlipTurn,
+        gText_Scald,
         gText_Exit
     },
     [SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS] =
@@ -3140,6 +3140,8 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_BodyPress,
         gText_WeatherBall,
         gText_TripleAxel,
+        gText_UTurn,
+        gText_FlipTurn,
         gText_Exit
     },
     [SCROLL_MULTI_PUNCH_TUTOR] =

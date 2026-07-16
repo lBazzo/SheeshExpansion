@@ -66,7 +66,9 @@
     F(WILL_O_WISP) \
     F(X_SCISSOR) \
     F(HEAL_BELL) \
-    F(AROMATHERAPY)
+    F(AROMATHERAPY) \
+    F(SCALD) \
+    F(SIGNAL_BEAM)
 
 #define FOREACH_HM(F) \
     F(CUT) \

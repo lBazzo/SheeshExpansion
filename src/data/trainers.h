@@ -3213,7 +3213,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1296
-                MOVE_WATER_PLEDGE,
+                MOVE_SCALD,
                 MOVE_PSYSHOCK,
                 MOVE_THUNDERBOLT,
                 MOVE_ICE_BEAM,
