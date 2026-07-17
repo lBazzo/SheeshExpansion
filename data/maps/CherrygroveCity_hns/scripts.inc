@@ -401,7 +401,7 @@ CherryGroveCity_Text_Corsola:
 	.string "Corsola: Corsola! La!$"
 
 CherryGroveCity_Text_Krabby:
-	.string "Krabby: KOOOOKEEE!$"
+	.string "Krabby: Kooookeee!$"
 
 CherryGroveCity_Movement_Trigger_Gent:
 	walk_down

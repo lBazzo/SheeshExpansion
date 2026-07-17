@@ -46,7 +46,7 @@ Route31_Text_BugCatcherDonBeaten:
 	.string "Argh! You're too strong!$"
 
 Route31_Text_BugCatcherDonAfter:
-	.string "I ran out of POKé BALLS while\n"
+	.string "I ran out of Poké Balls while\n"
 	.string "I was catching Pokémon.\p"
 	.string "I should've bought some more…$"
 

@@ -11844,7 +11844,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_SHADOW_TAG, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_LEVITATE, ABILITY_MIND_GAME, ABILITY_SHADOW_TAG },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Gastly"),
         .cryId = CRY_GASTLY,
@@ -11918,7 +11918,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_SHADOW_TAG, ABILITY_CURSED_BODY },
+        .abilities = { ABILITY_LEVITATE, ABILITY_MIND_GAME, ABILITY_SHADOW_TAG },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Haunter"),
         .cryId = CRY_HAUNTER,
@@ -11975,9 +11975,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_UPDATED_ABILITIES >= GEN_7
-#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_SHADOW_TAG, ABILITY_CURSED_BODY}
+#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_MIND_GAME, ABILITY_SHADOW_TAG}
 #else
-#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_SHADOW_TAG, ABILITY_CURSED_BODY}
+#define GENGAR_ABILITIES {ABILITY_LEVITATE, ABILITY_MIND_GAME, ABILITY_SHADOW_TAG}
 #endif
 
     [SPECIES_GENGAR] =
@@ -18202,7 +18202,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MAGIC_GUARD, ABILITY_NONE },
+        .abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_MIND_GAME, ABILITY_MAGIC_GUARD },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Espeon"),
         .cryId = CRY_ESPEON,

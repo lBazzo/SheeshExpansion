@@ -3155,7 +3155,7 @@ CherryGrove_Pokecenter_Text_TMClerkIntro::
 	.string "I used to work in the Mart before, and\n"
 	.string "it's been a bit of a transition getting\l"
 	.string "used to-\p"
-	.string "Oh! Sorry, Nurse ~Joy says I can be a bit\n"
+	.string "Oh! Sorry, Nurse Joy says I can be a bit\n"
 	.string "too chatty sometimes...\p"
 	.string "Anyway, come and see me whenever you\n"
 	.string "get a new Badge, and I'll have some\l"

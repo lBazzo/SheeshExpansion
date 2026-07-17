@@ -4,15 +4,15 @@ Route30_House_hns_MapScripts::
 Route30_House_EventScript_BaldMan::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_BERRY_ROUTE_30_HOUSE, Route30_House_EventScript_BaldMan2
+	@goto_if_set FLAG_GOT_BERRY_ROUTE_30_HOUSE, Route30_House_EventScript_BaldMan2
 	msgbox Route30_BerryHouse_Text_MonEatBerries, MSGBOX_DEFAULT
-	giveitem ITEM_CHERI_BERRY
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	@giveitem ITEM_CHERI_BERRY
+	@goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	closemessage
-	setflag FLAG_GOT_BERRY_ROUTE_30_HOUSE
-Route30_House_EventScript_BaldMan2::
-	msgbox Route30_BerryHouse_Text_CheckTrees MSGBOX_DEFAULT
-	closemessage
+	@setflag FLAG_GOT_BERRY_ROUTE_30_HOUSE
+@Route30_House_EventScript_BaldMan2::
+	@msgbox Route30_BerryHouse_Text_CheckTrees MSGBOX_DEFAULT
+	@closemessage
 	release
 	end
 
@@ -26,8 +26,7 @@ Route30_BerryHouse_Text_MonEatBerries:
 	.string "They can even eat Berries\n"
 	.string "they're holding in battle.\p"
 	.string "Berries can also be turned into\n"
-	.string "Balls by Kurt in Azalea Town.\p"
-	.string "Here. I'll share one with you!$"
+	.string "Balls by Kurt in Azalea Town.$"
 
 Route30_BerryHouse_Text_CheckTrees:
 	.string "Check trees for Berries.\n"

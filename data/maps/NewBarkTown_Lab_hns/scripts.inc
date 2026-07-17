@@ -462,6 +462,7 @@ NewBarkTown_Lab_EventScript_TriggerAideGiveBalls::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FIRST_BALLS
 	setvar VAR_NEWBARKTOWN_LABSTATE, 6
+	closemessage
 	applymovement LOCALID_AIDE1, NewBarkTown_Lab_Movement_Aide1LeavePlayer
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_SOUTH
@@ -892,7 +893,7 @@ NewBarkTown_Lab_Text_LabMonEgg:
 
 NewBarkTown_Lab_Text_AideGivePotion:
 	.string "{PLAYER}, I want you to have\n"
-	.string "this for your errand.$"
+	.string "these for your errand.$"
 
 NewBarkTown_Lab_Text_AideAlwaysBusy:
 	.string "There are only three of us, so\n"
@@ -901,7 +902,7 @@ NewBarkTown_Lab_Text_AideAlwaysBusy:
 NewBarkTown_Lab_Text_AideSave:
 	.string "Don't forget to save your game\n"
 	.string "regularly!\p"
-	.string "Press the START button, then\n"
+	.string "Press the Start button, then\n"
 	.string "Save the game!$"
 
 NewBarkTown_Lab_Text_AideTheftTestimony:

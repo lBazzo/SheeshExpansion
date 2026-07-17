@@ -6,8 +6,17 @@ VioletCity_Mart_EventScript_Clerk::
 	faceplayer
 	message gText_HowMayIServeYou
 	waitmessage
-	pokemart 0
+	pokemart VioletMart_Pokemart_Pokemart
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 3
+VioletMart_Pokemart_Pokemart:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
 	release
 	end
 

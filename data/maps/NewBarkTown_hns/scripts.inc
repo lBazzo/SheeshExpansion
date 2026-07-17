@@ -259,7 +259,7 @@ NewBarkTown_Text_Wooper:
 	.string "Wooper: Woooooop.$"
 
 NewBarkTown_Text_FatManState2:
-	.string "Wow, your POKéGEAR is impressive!\n"
+	.string "Wow, your Pokégear is impressive!\n"
 	.string "Did your mom get it for you?$"
 
 NewBarkTown_Text_FatManState3:
