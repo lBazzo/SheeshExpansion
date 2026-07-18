@@ -1646,7 +1646,7 @@ Class: Firebreather
 Pic: Firebreather
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Magmar @ Eviolite  
@@ -1664,7 +1664,7 @@ Class: Juggler
 Pic: Juggler
 Gender: Male
 Music: Hg Suspicious 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Mr. Mime @ Sitrus Berry  
@@ -2287,7 +2287,7 @@ Class: Parasol Lady
 Pic: Parasol Lady
 Gender: Male
 Music: Hg Girl 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Malamar @ Tanga Berry  
@@ -2314,7 +2314,7 @@ Class: Lass
 Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Kingler @ Covert Cloak  
@@ -2940,7 +2940,7 @@ Class: Picnicker
 Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Zebstrika @ Covert Cloak  
@@ -2967,7 +2967,7 @@ Class: Beauty
 Pic: Beauty2
 Gender: Male
 Music: Hg Girl 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Rotom-Wash @ Sitrus Berry  
@@ -3569,7 +3569,7 @@ Class: Camper
 Pic: Camper2
 Gender: Male
 Music: Hg Boy 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Mr. Mime-Galar @ Eviolite  
@@ -3596,7 +3596,7 @@ Class: Lass
 Pic: Lass2
 Gender: Male
 Music: Hg Girl 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Staraptor @ Eject Pack  
@@ -3894,7 +3894,7 @@ Class: Parasol Lady
 Pic: Parasol Lady
 Gender: Male
 Music: Hg Girl 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Luvdisc @ Clear Amulet  
@@ -3921,7 +3921,7 @@ Class: Bug Catcher
 Pic: Bug Catcher2
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Accelgor @ Choice Scarf  
@@ -4236,7 +4236,7 @@ Class: Hex Maniac
 Pic: Medium
 Gender: Male
 Music: Female
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
 Pikachu @ Light Ball  
@@ -4271,7 +4271,7 @@ Class: Hex Maniac
 Pic: Medium
 Gender: Male
 Music: Female
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
 Gastrodon @ Mystic Water  
@@ -4681,7 +4681,7 @@ Class: Swimmer M
 Pic: Swimmer M
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Starmie @ Choice Scarf  
@@ -4705,7 +4705,7 @@ Class: Swimmer M
 Pic: Swimmer M
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Mantine @ Covert Cloak  
@@ -6015,7 +6015,7 @@ Class: Picnicker
 Pic: Picnicker2
 Gender: Male
 Music: Hg Girl 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Typhlosion-Hisui @ Focus Sash  
@@ -6048,7 +6048,7 @@ Class: Fisherman
 Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Jellicent @ Focus Sash  
@@ -8181,7 +8181,7 @@ Class: Expert
 Pic: Expert M
 Gender: Male
 Music: Rich
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Snow
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -8218,7 +8218,7 @@ Class: Expert
 Pic: Expert F
 Gender: Male
 Music: Intense
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Snow
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -8676,7 +8676,7 @@ Class: Policeman
 Pic: Policeman
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Oricorio @ Choice Scarf  
@@ -8710,7 +8710,7 @@ Class: Juggler
 Pic: Juggler
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Sceptile @ Weakness Policy  
@@ -9327,7 +9327,7 @@ Class: Hiker
 Pic: Hiker2
 Gender: Male
 Music: Hg Boy 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Electrode @ Choice Specs  
@@ -9357,7 +9357,7 @@ Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Hg Suspicious 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Shedinja @ Life Orb  
@@ -9393,7 +9393,7 @@ Class: Juggler
 Pic: Juggler
 Gender: Male
 Music: Hg Suspicious 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Greninja @ Mystic Water  
@@ -9429,7 +9429,7 @@ Class: Juggler
 Pic: Juggler
 Gender: Male
 Music: Hg Suspicious 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Charizard @ Charcoal  
@@ -11348,7 +11348,7 @@ Class: Super Nerd
 Pic: Super Nerd
 Gender: Male
 Music: Hg Suspicious 1
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -11385,7 +11385,7 @@ Class: Cooltrainer
 Pic: Cooltrainer M2
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Sun
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -12052,7 +12052,7 @@ Class: Fisherman
 Pic: Fisherman2
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -12089,7 +12089,7 @@ Class: Gentleman
 Pic: Gentleman2
 Gender: Male
 Music: Rich
-Double Battle: No
+Battle Type: Doubles /*2*/
 Starting Status: Psychic Terrain
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
@@ -12253,7 +12253,7 @@ Class: Hiker
 Pic: Hiker2
 Gender: Male
 Music: Hg Boy 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Enamorus @ Ability Shield  
@@ -12289,7 +12289,7 @@ Class: Lass
 Pic: Lass2
 Gender: Male
 Music: Female
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Jumpluff @ Focus Sash  
@@ -12771,7 +12771,7 @@ Class: Team Rocket
 Pic: Rocket Grunt F
 Gender: Male
 Music: Rocket
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Scovillain @ Quick Claw  
@@ -12807,7 +12807,7 @@ Class: Team Rocket
 Pic: Rocket Grunt F
 Gender: Male
 Music: Rocket
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING
 
 Annihilape @ Assault Vest  
@@ -15696,7 +15696,7 @@ Class: Dragon Tamer
 Pic: Dragon Tamer
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
 Braviary @ Assault Vest  
@@ -15733,7 +15733,7 @@ Class: Cooltrainer
 Pic: Cooltrainer F
 Gender: Male
 Music: Hg Girl 2
-Double Battle: No
+Battle Type: Doubles /*2*/
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_SMART_TARGETING / AI_FLAG_SMART_TERA
 
 Altaria @ Yache Berry  

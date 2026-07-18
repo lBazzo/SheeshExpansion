@@ -114,6 +114,7 @@ SlowpokeWell_EventScript_Tutor::
 	case MULTI_B_PRESSED, SlowpokeWell_EventScript_TutorDeclined
 	case 0, SlowpokeWell_EventScript_TutorScreech
 	case 1, SlowpokeWell_EventScript_TutorFakeTears
+	case 2, SlowpokeWell_EventScript_TutorMetalSound
 	goto SlowpokeWell_EventScript_TutorDeclined
 
 SlowpokeWell_EventScript_TutorScreech::
@@ -138,6 +139,25 @@ SlowpokeWell_EventScript_TutorScreech::
 SlowpokeWell_EventScript_TutorFakeTears::
 	msgbox SlowpokeWell_Text_TutorWhichMonFakeTears, MSGBOX_DEFAULT
 	setvar VAR_0x8005, MOVE_FAKE_TEARS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, SlowpokeWell_EventScript_TutorDeclined
+	applymovement LOCALID_WELL_TUTOR, Common_Movement_FaceRight
+	msgbox SlowpokeWell_Text_TutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_WELL_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 9, SlowpokeWell_EventScript_TeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 8, SlowpokeWell_EventScript_TeachPlayerLeft
+	goto_if_set FLAG_TALKED_WELL_TUTOR, SlowpokeWell_EventScript_WellTutorFriend
+	msgbox SlowpokeWell_Text_TutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_WELL_TUTOR
+	closemessage
+	release
+	end
+
+SlowpokeWell_EventScript_TutorMetalSound::
+	msgbox SlowpokeWell_Text_TutorWhichMonMetalSound, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_METAL_SOUND
 	call MoveTutor_EventScript_OpenPartyMenu
 	goto_if_eq VAR_RESULT, 0, SlowpokeWell_EventScript_TutorDeclined
 	applymovement LOCALID_WELL_TUTOR, Common_Movement_FaceRight
@@ -242,12 +262,14 @@ SlowpokeWell_Text_TutorLetMeTeach:
 	.string "Mom says I can make all the noise I like\n"
 	.string "down here, as long as it's not near her.\p"
 	.string "Sometimes I like to Screech.\n"
-	.string "Sometimes I like to cry with Fake Tears.\p"
+	.string "Sometimes I like to cry with Fake Tears.\l"
+	.string "Sometimes I like to make Metal Sounds.\p"
 	.string "You like making noise too, right?$"
 
 SlowpokeWell_Text_TutorWhichMove:
 	.string "OK! You like the WEEEEEEEEE noise or\n"
-	.string "the WAHHHHHHHH noise? I can do both!$"
+	.string "the WAHHHHHHHH noise? or maybe the\l"
+	.string "EEEEEEEEEK noise? I can do them all!$"
 
 SlowpokeWell_Text_TutorWhichMonScreech:
 	.string "The WEEEEEEEEE noise! Yay! Who wants\n"
@@ -256,6 +278,10 @@ SlowpokeWell_Text_TutorWhichMonScreech:
 SlowpokeWell_Text_TutorWhichMonFakeTears:
 	.string "The WAHHHHHHHH noise! Yay! Who wants\n"
 	.string "to make the WAHHHHHHHH noise?$"
+
+SlowpokeWell_Text_TutorWhichMonMetalSound:
+	.string "The EEEEEEEEEK noise! Yay! Who wants\n"
+	.string "to make the EEEEEEEEEK noise?$"
 
 SlowpokeWell_Text_TutorTeachingMove:
 	.string "OK! Bonsly, get ready!\p"

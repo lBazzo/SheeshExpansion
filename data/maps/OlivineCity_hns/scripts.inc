@@ -2,6 +2,8 @@
 .set LOCALID_OLIVINE_DAHLIA, 24
 .set LOCALID_OLIVINE_ELEMENTAL_TUTOR, 25
 .set LOCALID_OLIVINE_CASTFORM, 26
+.set LOCALID_OLIVINE_WEIRD_TUTOR, 27
+.set LOCALID_OLIVINE_AUDINO, 28
 
 OlivineCity_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, OlivineCity_MapScript_OnTransition
@@ -742,3 +744,487 @@ OlivineCity_Text_ElementalTutorFriend:
 	.string "in this way.\p"
 	.string "Best enjoy the breeze while it lasts...$"
 
+
+
+
+
+
+
+
+
+@WEIRD TUTOR 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+OlivineCity_EventScript_Audino::
+	lock
+	faceplayer
+	playmoncry SPECIES_AUDINO, CRY_MODE_NORMAL
+	msgbox OlivineCity_Text_Audino, MSGBOX_DEFAULT
+	waitmoncry
+	applymovement LOCALID_OLIVINE_AUDINO, Common_Movement_FaceDown
+	waitmovement 0
+	closemessage
+	release
+	end
+
+OlivineCity_Text_Audino:
+	.string "Audino: Meep meep!$"
+
+OlivineCity_EventScript_WeirdTutor::
+	lock
+	faceplayer
+	msgbox OlivineCity_Text_WeirdTutorLetMeTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OlivineCity_EventScript_WeirdTutorDeclined
+	msgbox OlivineCity_Text_WeirdTutorWhichMove, MSGBOX_DEFAULT
+	waitmessage
+	setvar VAR_0x8004, SCROLL_MULTI_WEIRD_TUTOR
+	special ShowScrollableMultichoice
+	waitstate
+	switch VAR_RESULT
+	case 0, OlivineCity_EventScript_WeirdTutorAfterYou
+	case 1, OlivineCity_EventScript_WeirdTutorAllySwitch
+	case 2, OlivineCity_EventScript_WeirdTutorBestow
+	case 3, OlivineCity_EventScript_WeirdTutorEmbargo
+	case 4, OlivineCity_EventScript_WeirdTutorFollowMe
+	case 5, OlivineCity_EventScript_WeirdTutorHealPulse
+	case 6, OlivineCity_EventScript_WeirdTutorHelpingHand
+	case 7, OlivineCity_EventScript_WeirdTutorImprison
+	case 8, OlivineCity_EventScript_WeirdTutorLaserFocus
+	case 9, OlivineCity_EventScript_WeirdTutorLuckyChant
+	case 10, OlivineCity_EventScript_WeirdTutorRagePowder
+	case 11, OlivineCity_EventScript_WeirdTutorRoar
+	case 12, OlivineCity_EventScript_WeirdTutorSafeguard
+	case 13, OlivineCity_EventScript_WeirdTutorSpotlight
+	case 14, OlivineCity_EventScript_WeirdTutorWhirlwind
+	case 15, OlivineCity_EventScript_WeirdTutorDeclined
+	case MULTI_B_PRESSED, OlivineCity_EventScript_WeirdTutorDeclined
+	end
+
+OlivineCity_EventScript_WeirdTutorAfterYou::
+	msgbox OlivineCity_Text_WeirdTutorAfterYouWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_AFTER_YOU
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorAllySwitch::
+	msgbox OlivineCity_Text_WeirdTutorAllySwitchWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ALLY_SWITCH
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorBestow::
+	msgbox OlivineCity_Text_WeirdTutorBestowWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BESTOW
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorEmbargo::
+	msgbox OlivineCity_Text_WeirdTutorEmbargoWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_EMBARGO
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorFollowMe::
+	msgbox OlivineCity_Text_WeirdTutorFollowMeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_FOLLOW_ME
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorHealPulse::
+	msgbox OlivineCity_Text_WeirdTutorHealPulseWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_HEAL_PULSE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorHelpingHand::
+	msgbox OlivineCity_Text_WeirdTutorHelpingHandWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_HELPING_HAND
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorImprison::
+	msgbox OlivineCity_Text_WeirdTutorImprisonWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_IMPRISON
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorLaserFocus::
+	msgbox OlivineCity_Text_WeirdTutorLaserFocusWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LASER_FOCUS
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorLuckyChant::
+	msgbox OlivineCity_Text_WeirdTutorLuckyChantWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_LUCKY_CHANT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorRagePowder::
+	msgbox OlivineCity_Text_WeirdTutorRagePowderWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_RAGE_POWDER
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorRoar::
+	msgbox OlivineCity_Text_WeirdTutorRoarWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_ROAR
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorSafeguard::
+	msgbox OlivineCity_Text_WeirdTutorSafeguardWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SAFEGUARD
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorSpotlight::
+	msgbox OlivineCity_Text_WeirdTutorSpotlightWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_SPOTLIGHT
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorWhirlwind::
+	msgbox OlivineCity_Text_WeirdTutorWhirlwindWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_WHIRLWIND
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, OlivineCity_EventScript_WeirdTutorDeclined
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FaceRight
+	msgbox OlivineCity_Text_WeirdTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_OLIVINE_WEIRD_TUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 38, OlivineCity_EventScript_WeirdTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 37, OlivineCity_EventScript_WeirdTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR, OlivineCity_EventScript_WeirdTutorFriend
+	msgbox OlivineCity_Text_WeirdTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorFriend::
+	msgbox OlivineCity_Text_WeirdTutorFriend, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OlivineCity_EventScript_WeirdTutorTeachPlayerBelow::
+	applymovement LOCALID_OLIVINE_AUDINO, OlivineCity_Movement_TeachPlayerBelow1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	playmoncry SPECIES_AUDINO, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_OLIVINE_AUDINO, OlivineCity_Movement_TeachPlayerBelow2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_WeirdTutorTeachPlayerLeft::
+	applymovement LOCALID_OLIVINE_AUDINO, OlivineCity_Movement_TeachPlayerLeft1
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playmoncry SPECIES_AUDINO, CRY_MODE_NORMAL
+	waitmoncry
+	applymovement LOCALID_OLIVINE_AUDINO, OlivineCity_Movement_TeachPlayerLeft2
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+OlivineCity_EventScript_WeirdTutorDeclined::
+	msgbox OlivineCity_Text_WeirdTutorDeclined, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+OlivineCity_Text_WeirdTutorDeclined::
+	.string "Hm? Heh, don't worry about it then.\p"
+	.string "You've just yet to come across the\n"
+	.string "perfect moment for these moves.\p"
+	.string "See ya around, when the time comes!$"
+
+OlivineCity_Text_WeirdTutorLetMeTeach:
+	.string "Situational moves are weird, yeah?\p"
+	.string "Sometimes you teach them and never use\n"
+	.string "them, thinking you've made a mistake.\p"
+	.string "Then...\n"
+	.string "Ta-da! The perfect opportunity arises!\p"
+	.string "Think you've found that golden moment,\n"
+	.string "trainer?$"
+
+OlivineCity_Text_WeirdTutorWhichMove:
+	.string "Sweet! Tell me, then. What's the last\n"
+	.string "piece of the puzzle?$"
+
+OlivineCity_Text_WeirdTutorAfterYouWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock After You's potential?$"
+
+OlivineCity_Text_WeirdTutorAllySwitchWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Ally Switch's potential?$"
+
+OlivineCity_Text_WeirdTutorBestowWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Bestow's potential?$"
+
+OlivineCity_Text_WeirdTutorEmbargoWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Embargo's potential?$"
+
+OlivineCity_Text_WeirdTutorFollowMeWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Follow Me's potential?$"
+
+OlivineCity_Text_WeirdTutorHealPulseWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Heal Pulse's potential?$"
+
+OlivineCity_Text_WeirdTutorHelpingHandWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Helping Hand's potential?$"
+
+OlivineCity_Text_WeirdTutorImprisonWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Imprison's potential?$"
+
+OlivineCity_Text_WeirdTutorLaserFocusWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Laser Focus' potential?$"
+
+OlivineCity_Text_WeirdTutorLuckyChantWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Lucky Chant's potential?$"
+
+OlivineCity_Text_WeirdTutorRagePowderWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Rage Powder's potential?$"
+
+OlivineCity_Text_WeirdTutorRoarWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Roar's potential?$"
+
+OlivineCity_Text_WeirdTutorSafeguardWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Safeguard's potential?$"
+
+OlivineCity_Text_WeirdTutorSpotlightWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Spotlight's potential?$"
+
+OlivineCity_Text_WeirdTutorWhirlwindWhichMon:
+	.string "Coolness. And which of your friends will\n"
+	.string "unlock Whirlwind's potential?$"
+
+OlivineCity_Text_WeirdTutorTeachingMove:
+	.string "'Kay then, Audino. Time to show your\n"
+	.string "stuff!$"
+
+OlivineCity_Text_WeirdTutorMoveTaught:
+	.string "Isn't it satisfying to come up with\n"
+	.string "plans that make use of lesser used\l"
+	.string "tools for once?\p"
+	.string "It just makes your strategies feel\n"
+	.string "unique, doesn't it?\p"
+	.string "Come back when me and Audino can help\n"
+	.string "you out again, yeah?$"
+
+OlivineCity_Text_WeirdTutorFriend:
+	.string "Good luck in your next battle, my fellow\n"
+	.string "strategist!\p"
+	.string "Go out there and show them the power\p"
+	.string "of these unconventional moves!$"

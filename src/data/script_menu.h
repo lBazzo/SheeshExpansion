@@ -906,6 +906,7 @@ static const struct MenuAction MultichoiceList_WellTutor[] =
 {
     {gText_Screech},
     {gText_FakeTears},
+    {gText_MetalSound},
     {gText_Exit},
 };
 

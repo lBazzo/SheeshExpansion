@@ -2228,6 +2228,21 @@ const u8 gText_IceStone[]                           = _("Ice Stone");
 
 const u8 gText_B2B[]                                = _("B2B");
 
+const u8 gText_AfterYou[]                           = _("After You");
+const u8 gText_AllySwitch[]                         = _("Ally Switch");
+const u8 gText_Bestow[]                             = _("Bestow");
+const u8 gText_Embargo[]                            = _("Embargo");
+const u8 gText_FollowMe[]                           = _("Follow Me");
+const u8 gText_HealPulse[]                          = _("Heal Pulse");
+const u8 gText_HelpingHand[]                        = _("Helping Hand");
+const u8 gText_Imprison[]                           = _("Imprison");
+const u8 gText_LaserFocus[]                         = _("Laser Focus");
+const u8 gText_LuckyChant[]                         = _("Lucky Chant");
+const u8 gText_RagePowder[]                         = _("Rage Powder");
+const u8 gText_Roar[]                               = _("Roar");
+const u8 gText_Safeguard[]                          = _("Safeguard");
+const u8 gText_Spotlight[]                          = _("Spotlight");
+const u8 gText_Whirlwind[]                          = _("Whirlwind");
 
 
 // Darach E4 shop terms
@@ -2461,6 +2476,7 @@ const u8 gText_FlipTurn[]       = _("Flip Turn");
 
 const u8 gText_Screech[]         = _("Screech");
 const u8 gText_FakeTears[]       = _("Fake Tears");
+const u8 gText_MetalSound[]       = _("Metal Sound");
 
 // Punch tutor
 // const u8 gText_[];          = _("")

@@ -2725,6 +2725,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_MULTI_WEIRD_TUTOR:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 18;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -3244,6 +3254,25 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ShinyStone,
         gText_SunStone,
         gText_IceStone,
+        gText_Exit
+    },
+    [SCROLL_MULTI_WEIRD_TUTOR] =
+    {
+        gText_AfterYou,
+        gText_AllySwitch,
+        gText_Bestow,
+        gText_Embargo,
+        gText_FollowMe,
+        gText_HealPulse,
+        gText_HelpingHand,
+        gText_Imprison,
+        gText_LaserFocus,
+        gText_LuckyChant,
+        gText_RagePowder,
+        gText_Roar,
+        gText_Safeguard,
+        gText_Spotlight,
+        gText_Whirlwind,
         gText_Exit
     },
 };

@@ -2429,6 +2429,7 @@ extern const u8 gText_B2B[];
 //new strings for well tutor
 extern const u8 gText_Screech[];
 extern const u8 gText_FakeTears[];
+extern const u8 gText_MetalSound[];
 
 //new strings for darach scroll multi menu
 extern const u8 gText_BabiriBerry1BP[];
@@ -2815,6 +2816,24 @@ extern const u8 gText_PsychoCut[];
 extern const u8 gText_ShadowClaw[];
 extern const u8 gText_Slash[];
 extern const u8 gText_BlazeKick[];
+
+// Weird Tutor
+
+extern const u8 gText_AfterYou[];
+extern const u8 gText_AllySwitch[];
+extern const u8 gText_Bestow[];
+extern const u8 gText_Embargo[];
+extern const u8 gText_FollowMe[];
+extern const u8 gText_HealPulse[];
+extern const u8 gText_HelpingHand[];
+extern const u8 gText_Imprison[];
+extern const u8 gText_LaserFocus[];
+extern const u8 gText_LuckyChant[];
+extern const u8 gText_RagePowder[];
+extern const u8 gText_Roar[];
+extern const u8 gText_Safeguard[];
+extern const u8 gText_Spotlight[];
+extern const u8 gText_Whirlwind[];
 
 // Map name pop-up
 extern const u8 gText_AM[];

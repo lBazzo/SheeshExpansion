@@ -1649,7 +1649,7 @@
 #define FLAG_SYS_POKERIDER_UNLOCKED                 (SYSTEM_FLAGS + 0xB1) // Unused Flag
 #define FLAG_HIDE_GOLDENROD_GIOVANNI                (SYSTEM_FLAGS + 0xB2) // Unused Flag
 #define FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE  (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
+#define FLAG_TALKED_OLIVINE_CITY_WEIRD_TUTOR        (SYSTEM_FLAGS + 0xB4) // Unused Flag
 #define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
 #define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
 #define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
