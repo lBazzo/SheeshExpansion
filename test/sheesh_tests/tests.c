@@ -3484,3 +3484,27 @@ SINGLE_BATTLE_TEST("Mind Game (opponent) lowers player's attack after switch out
         EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI still correctly scores the next highest damaging move while an inelegible move does the most damage")
+{
+    u32 maybePivotMove;
+
+    PARAMETRIZE { maybePivotMove = MOVE_SPLASH; }
+    PARAMETRIZE { maybePivotMove = MOVE_VOLT_SWITCH; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_THUNDER_SHOCK); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_THUNDER_SHOCK, maybePivotMove); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        if (maybePivotMove == MOVE_SPLASH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_THUNDER_SHOCK, 108); }
+        }
+        else if (maybePivotMove == MOVE_VOLT_SWITCH)
+        {
+            TURN { SCORE_EQ_VAL(opponent, maybePivotMove, 104); SCORE_EQ_VAL(opponent, MOVE_THUNDER_SHOCK, 108); }
+        }
+    }
+}

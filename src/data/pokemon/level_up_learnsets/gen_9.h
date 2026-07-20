@@ -8417,11 +8417,11 @@ static const struct LevelUpMove sSpindaLevelUpLearnset[] = {
 
 #if P_FAMILY_TRAPINCH
 static const struct LevelUpMove sTrapinchLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE( 1, MOVE_SAND_TOMB),
     LEVEL_UP_MOVE( 1, MOVE_BULLDOZE),
     LEVEL_UP_MOVE( 1, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_BITE),
-    LEVEL_UP_MOVE( 1, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE(19, MOVE_ICE_FANG),
     LEVEL_UP_MOVE(19, MOVE_FIRE_FANG),
     LEVEL_UP_MOVE(19, MOVE_THUNDER_FANG),

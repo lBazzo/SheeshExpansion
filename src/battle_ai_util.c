@@ -1596,7 +1596,8 @@ void GetBestDmgMoveFromBattler(u32 battlerAtk, u32 battlerDef, enum DamageCalcCo
     for (moveIndex = 0; moveIndex < MAX_MON_MOVES; moveIndex++)
     {
         if (IsMoveUnusable(moveIndex, moves[moveIndex], moveLimitations) || (GetMovePower(moves[moveIndex]) == 0)
-        || (AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData) == 0))
+        || (AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData) == 0)
+        || (!IsElegibleForBestDmgMove(moves[moveIndex])))
             continue;
 
         if (bestDmg < AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData))
@@ -1623,6 +1624,36 @@ u16 GetMoveIndex(u32 battler, u32 move)
     }
     return MAX_MON_MOVES;
 }
+
+bool32 IsElegibleForBestDmgMove(u32 move)
+{
+    enum BattleMoveEffects effect = GetMoveEffect(move);
+
+    if (effect != EFFECT_FINAL_GAMBIT
+        && effect != EFFECT_EXPLOSION
+        && effect != EFFECT_MISTY_EXPLOSION
+        && effect != EFFECT_HIT_ESCAPE
+        && effect != EFFECT_FUTURE_SIGHT
+        && effect != EFFECT_FLING
+        && effect != EFFECT_OHKO
+        && effect != EFFECT_SHEER_COLD
+        && effect != EFFECT_MIRROR_COAT
+        && effect != EFFECT_COUNTER
+        && effect != EFFECT_METAL_BURST
+        && effect != EFFECT_SHELL_TRAP)
+        {
+            DebugPrintf("IS elegible move");
+            return TRUE;
+        }
+    else
+        {
+            DebugPrintf("not elegible move");
+            return FALSE;
+        }
+
+    //return TRUE;
+}
+
 
 bool32 IsBestDmgMove(u32 battlerAtk, u32 battlerDef, enum DamageCalcContext calcContext, u32 move)
 {

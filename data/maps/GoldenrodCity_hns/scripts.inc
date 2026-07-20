@@ -687,7 +687,7 @@ GoldenrodCity_Text_GameCornerGuardItemLove:
 	.string "here.\p"
 	.string "As a responsible adult, it's my duty to\n"
 	.string "instead give you a gambling alternative\l"
-	.string "to develop your addiciton now, so that\l"
+	.string "to develop your addiction now, so that\l"
 	.string "you're ready to take on the slots when\l"
 	.string "you're older.\p"
 	.string "Here, take these.$"

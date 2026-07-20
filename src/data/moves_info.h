@@ -1062,7 +1062,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_RECOIL,
         .power = 90,
         .type = TYPE_NORMAL,
-        .accuracy = 85,
+        .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -1399,7 +1399,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_FIXED_HP_DAMAGE,
         .power = 1,
         .type = TYPE_NORMAL,
-        .accuracy = 90,
+        .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -2370,7 +2370,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_ELECTRIC,
-        .accuracy = B_UPDATED_MOVE_DATA >= GEN_7 ? 90 : 100,
+        .accuracy = B_UPDATED_MOVE_DATA >= GEN_7 ? 95 : 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
@@ -5845,8 +5845,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An attack that increases\n"
             "in power with friendship."),
-        .effect = EFFECT_RETURN,
-        .power = 1,
+        .effect = EFFECT_HIT,
+        .power = 102,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -5891,8 +5891,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "An attack that is stronger\n"
             "if the Trainer is disliked."),
-        .effect = EFFECT_FRUSTRATION,
-        .power = 1,
+        .effect = EFFECT_HIT,
+        .power = 102,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -7540,7 +7540,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Brick Break"),
         .description = COMPOUND_STRING(
             "Destroys barriers such as\n"
-            "REFLECT and causes damage."),
+            "Reflect and causes damage."),
         .effect = EFFECT_BRICK_BREAK,
         .power = 75,
         .type = TYPE_FIGHTING,

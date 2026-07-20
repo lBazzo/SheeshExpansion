@@ -1783,7 +1783,7 @@ EventScript_VsSeekerChargingDone::
 	end
 
 PokeVialHealScript::
-	special HealPlayerParty
+	special HealNoneFaintedPartyMons
 	playse SE_USE_ITEM
 	msgbox PokeVialText, MSGBOX_DEFAULT
 	releaseall

@@ -2098,7 +2098,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (gWishFutureKnock.futureSightCounter[LEFT_FOE(battlerAtk)] > 0
              || gWishFutureKnock.futureSightCounter[RIGHT_FOE(battlerAtk)] > 0)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
-            else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_DARK))
+            else if ((move == MOVE_FUTURE_SIGHT)
+                 && (IS_BATTLER_OF_TYPE(battlerDef, TYPE_DARK)))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
             //else
             //    ADJUST_SCORE(WEAK_EFFECT);
@@ -8470,15 +8471,6 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
         // Target diagonally
         if (bothFaintBoth)
             return score;
-        // Partner only KOs across opponent
-        else if (battlerFaintsBoth && !partnerFaintsOpposite && partnerFaintsOppositePartner)
-            return score;
-        // Partner only KOs diagonal opponent
-        else if (battlerFaintsBoth && partnerFaintsOpposite && !partnerFaintsOppositePartner)
-        {
-            score = 0;
-            return score;
-        }
         // Partner KOs both but battlerAtk only KOs diagonal opponent
         else if (battlerFaintsOpposite && !battlerFaintsOppositePartner && partnerFaintsBoth)
             return score;
@@ -8496,6 +8488,16 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
         // Both only KO across opponent to battlerAtk
         else if (!battlerFaintsOpposite && battlerFaintsOppositePartner && !partnerFaintsOpposite && partnerFaintsOppositePartner)
         {
+            score = 0;
+            return score;
+        }
+        // Partner only KOs across opponent
+        else if (!partnerFaintsOpposite && partnerFaintsOppositePartner)
+            return score;
+        // Partner only KOs diagonal opponent
+        else if (partnerFaintsOpposite && !partnerFaintsOppositePartner)
+        {
+            score = 0;
             return score;
         }
         // Only KO seen is battlerAtk on diagonal opponent
@@ -8523,17 +8525,6 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
             score = 0;
             return score;
         } 
-        // Partner only KOs across opponent
-        else if (battlerFaintsBoth && !partnerFaintsOpposite && partnerFaintsOppositePartner)
-        {
-            score = 0;
-            return score;
-        } 
-        // Partner only KOs diagonal opponent
-        else if (battlerFaintsBoth && partnerFaintsOpposite && !partnerFaintsOppositePartner)
-        {
-            return score;
-        }
         // Partner KOs both but battlerAtk only KOs diagonal opponent
         else if (battlerFaintsOpposite && !battlerFaintsOppositePartner && partnerFaintsBoth)
         {
@@ -8557,6 +8548,17 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
             score = 0;
             return score;
         } 
+        // Partner only KOs across opponent
+        else if (!partnerFaintsOpposite && partnerFaintsOppositePartner)
+        {
+            score = 0;
+            return score;
+        } 
+        // Partner only KOs diagonal opponent
+        else if (partnerFaintsOpposite && !partnerFaintsOppositePartner)
+        {
+            return score;
+        }
         // Only KO seen is battlerAtk on diagonal opponent
         else if (battlerFaintsOpposite && !battlerFaintsOppositePartner && !partnerFaintsOpposite && !partnerFaintsOppositePartner)
         {

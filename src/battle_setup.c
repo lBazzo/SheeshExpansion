@@ -738,6 +738,9 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_POND;
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_WATER;
+        if ((GetCurrentRegionMapSectionId() == MAPSEC_GOLDENROD_CITY)
+        && (!MetatileBehavior_IsTallGrass(tileBehavior)))
+            return BATTLE_ENVIRONMENT_BUILDING;
         return BATTLE_ENVIRONMENT_GRASS;
     case MAP_TYPE_ROUTE:
         return BATTLE_ENVIRONMENT_GRASS;

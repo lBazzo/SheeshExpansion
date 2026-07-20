@@ -327,10 +327,10 @@ static void HandleChooseMonSelection(u8, s8 *);
 static u16 PartyMenuButtonHandler(s8 *);
 static s8 *GetCurrentPartySlotPtr(void);
 static bool8 IsSelectedMonNotEgg(u8 *);
-static bool8 DoesSelectedMonKnowHM(u8 *);
-static bool8 CanSelectedMonUseUniqueHM(u8 *); // HnS PORT - identify if a mon is your only user of a given HM
-static bool8 CanMonUseFieldMove(struct Pokemon *, u16); // HnS PORT - centralizes field move moveset/learnset checks
-static bool8 CanPlayerUseFieldMove(u16); // HnS PORT - centralizes field move flag checks
+//static bool8 DoesSelectedMonKnowHM(u8 *);
+//static bool8 CanSelectedMonUseUniqueHM(u8 *); // HnS PORT - identify if a mon is your only user of a given HM
+//static bool8 CanMonUseFieldMove(struct Pokemon *, u16); // HnS PORT - centralizes field move moveset/learnset checks
+//static bool8 CanPlayerUseFieldMove(u16); // HnS PORT - centralizes field move flag checks
 static void PartyMenuRemoveWindow(u8 *);
 static void CB2_SetUpExitToBattleScreen(void);
 static void Task_ClosePartyMenuAfterText(u8);
@@ -1582,13 +1582,13 @@ static void HandleChooseMonSelection(u8 taskId, s8 *slotPtr)
                 ScheduleBgCopyTilemapToVram(2);
                 gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
             }
-            else if (CanSelectedMonUseUniqueHM((u8 *)slotPtr)) // HnS PORT NOTE - stronger anti-softlock
+            /*else if (CanSelectedMonUseUniqueHM((u8 *)slotPtr)) // HnS PORT NOTE - stronger anti-softlock
             {
                 PlaySE(SE_FAILURE);
                 DisplayPartyMenuMessage(gText_CannotSendMonToBoxHM, FALSE);
                 ScheduleBgCopyTilemapToVram(2);
                 gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
-            }
+            }*/
             else
             {
                 PlaySE(SE_SELECT);
@@ -1618,7 +1618,7 @@ static bool8 IsSelectedMonNotEgg(u8 *slotPtr)
 }
 
 // Only returns true if the mon knows an HM and B_CATCH_SWAP_CHECK_HMS makes that prevent catch-swap
-static bool8 DoesSelectedMonKnowHM(u8 *slotPtr)
+/*static bool8 DoesSelectedMonKnowHM(u8 *slotPtr)
 {
     if (B_CATCH_SWAP_CHECK_HMS == FALSE)
         return FALSE;
@@ -1629,10 +1629,10 @@ static bool8 DoesSelectedMonKnowHM(u8 *slotPtr)
             return TRUE;
     }
     return FALSE;
-}
+}*/
 
 // HnS NOTE - Returns true if the mon knows any HMs that prevent catch-swap, including "knowing" an HM no other mon in the party knows
-static bool8 CanSelectedMonUseUniqueHM(u8 *slotPtr)
+/*static bool8 CanSelectedMonUseUniqueHM(u8 *slotPtr)
 {
     // do the simpler check if possible
     if (B_CATCH_SWAP_CHECK_HMS == TRUE)
@@ -1654,12 +1654,12 @@ static bool8 CanSelectedMonUseUniqueHM(u8 *slotPtr)
     }
 
     return FALSE;
-}
+}*/
 
 // returns false if CanPlayerUseFieldMove() would return false
 // if OW_LEARNSET_FIELD_MOVES is set,
 //   uses learnset instead of moveset for moves requiring Player Flags, such as HMs
-static bool8 CanMonUseFieldMove(struct Pokemon *mon, u16 move)
+/*static bool8 CanMonUseFieldMove(struct Pokemon *mon, u16 move)
 {
     switch (move)
     {
@@ -1676,11 +1676,11 @@ static bool8 CanMonUseFieldMove(struct Pokemon *mon, u16 move)
     default:
         return MonKnowsMove(mon, move);
     }
-}
+}*/
 
 // should have a case for every Field Move requiring Player Flags, such as HMs
 // TODO? - current implementation prevents using HMs learned by level-up without having received the item
-static bool8 CanPlayerUseFieldMove(u16 move)
+/*static bool8 CanPlayerUseFieldMove(u16 move)
 {
     switch (move)
     {
@@ -1705,7 +1705,7 @@ static bool8 CanPlayerUseFieldMove(u16 move)
     default:
         return TRUE;
     }
-}
+}*/
 
 static void HandleChooseMonCancel(u8 taskId, s8 *slotPtr)
 {

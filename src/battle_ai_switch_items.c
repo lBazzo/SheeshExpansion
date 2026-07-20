@@ -1176,30 +1176,43 @@ bool32 ShouldSwitch(u32 battler)
 
     if (ShouldSwitchIfWonderGuard(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if ((gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING) && (CanMonSurviveHazardSwitchin(battler) == FALSE))
         return FALSE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfTrapperInParty(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (FindMonThatAbsorbsOpponentsMove(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfOpponentChargingOrInvulnerable(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfTruant(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAllMovesBad(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfBadlyStatused(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAbilityBenefit(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfHasBadOdds(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfEncored(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfBadChoiceLock(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAttackingStatsLowered(battler))
         return TRUE;
+    DebugPrintf("%d",__LINE__);
 
     // Removing switch capabilites under specific conditions
     // These Functions prevent the "FindMonWithFlagsAndSuperEffective" from getting out of hand.
@@ -1213,9 +1226,10 @@ bool32 ShouldSwitch(u32 battler)
 
     // Default Function
     // Can prompt switch if AI has a pokemon in party that resists current opponent & has super effective move
-    if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 50)
-        || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 33))
+    if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 0)
+        || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 0))
         return TRUE;
+        DebugPrintf("%d",__LINE__);
 
     return FALSE;
 }

@@ -7949,9 +7949,9 @@ const struct Item gItemsInfo[] =
             "raises the Sp. Def\n"
             "of Clamperl."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HELD_ITEM,
-        .type = EVO_HELD_ITEM_TYPE,
-        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_DeepSeaScale,
@@ -7969,9 +7969,9 @@ const struct Item gItemsInfo[] =
             "raises the Sp. Atk\n"
             "of Clamperl."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_HELD_ITEM,
-        .type = EVO_HELD_ITEM_TYPE,
-        .fieldUseFunc = EVO_HELD_ITEM_FIELD_FUNC,
+        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
         .effect = gItemEffect_EvoItem,
         .flingPower = 90,
         .iconPic = gItemIcon_DeepSeaTooth,
@@ -15369,7 +15369,8 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Poke Vial"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Heals all party\n"
+            "Heals all non-\n"
+            "fainted party\n"
             "Pokémon."), 
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,

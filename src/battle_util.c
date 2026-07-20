@@ -8918,6 +8918,7 @@ s32 DoFixedDamageMoveCalc(struct DamageContext *ctx)
     }
 
     gBattleStruct->moveResultFlags[ctx->battlerDef] &= ~(MOVE_RESULT_NOT_VERY_EFFECTIVE | MOVE_RESULT_SUPER_EFFECTIVE);
+    gSpecialStatuses[ctx->battlerDef].criticalHit = FALSE;
 
     if (dmg == 0)
         dmg = 1;

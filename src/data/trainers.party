@@ -235,8 +235,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Pachirisu @ Electric Gem  
 Ability: Pickup  
-Level: 13  
-Tera Type: Electric  
+Level: 13   
 Adamant Nature  
 - Shock Wave  
 - Sonic Boom  
@@ -245,8 +244,7 @@ Adamant Nature
 
 Pumpkaboo @ Sitrus Berry  
 Ability: Pickup  
-Level: 13  
-Tera Type: Ghost  
+Level: 13   
 Calm Nature   
 - Leech Seed  
 - Protect  
@@ -313,7 +311,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Porygon @ Toxic Orb  
-Ability: Trace  
+Ability: Download  
 Level: 17   
 Timid Nature  
 - Trick  
@@ -450,7 +448,7 @@ Calm Nature
 - Air Cutter  
 - Yawn  
 
-Delibird @ Normal Gem  
+Delibird @ Ice Gem  
 Ability: Refrigerate  
 Level: 19   
 Jolly Nature  
@@ -723,8 +721,7 @@ Quiet Nature
 
 Archen @ Life Orb  
 Ability: Defeatist  
-Level: 21  
-Tera Type: Rock  
+Level: 21   
 Jolly Nature  
 - Peck  
 - Accelerock  
@@ -1076,7 +1073,7 @@ Ability: Liquid Voice
 Level: 30  
 Naive Nature  
 - Echoed Voice  
-- Acrobatics  
+- Acrobatics   
 
 Bibarel @ Silk Scarf  
 Ability: Simple  
@@ -1093,7 +1090,7 @@ Modest Nature
 - Astonish  
 - Phantom Force  
 - Solar Beam 
-- Brick Break  
+- Brick Break 
 
 Clodsire @ Black Sludge  
 Ability: Poison Point  
@@ -1442,7 +1439,7 @@ Unown @ Choice Scarf
 Ability: Technician  
 Level: 35    
 Timid Nature    
-- MOVE_HIDDEN_POWER_PSYCHIC_2  
+- MOVE_HIDDEN_POWER_PSYCHIC_2
 - MOVE_HIDDEN_POWER_FLYING_2  
 - MOVE_HIDDEN_POWER_ICE_2  
 - MOVE_HIDDEN_POWER_GRASS_2 
@@ -3173,7 +3170,7 @@ Mugshot: Green
 Tapu Bulu @ Kebia Berry  
 Ability: Grassy Surge  
 Level: 50    
-Adamant Nature  
+Adamant Nature 
 - Drum Beating  
 - Zen Headbutt  
 - Nature's Madness  
@@ -7171,14 +7168,15 @@ Calm Nature
 - Volt Switch  
 - Super Fang  
 
-Steelix @ Metal Coat  
+Steelix @ Red Card  
 Ability: Sturdy  
 Level: 61  
-Adamant Nature  
-- Explosion  
-- Iron Head  
-- Earthquake  
-- Crunch  
+Brave Nature  
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe  
+- Spin Out  
+- Gyro Ball  
+- Metal Burst  
+- Dragon Tail
 
 Cryogonal @ Ice Gem  
 Ability: Levitate  
