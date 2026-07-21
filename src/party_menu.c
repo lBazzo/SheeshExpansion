@@ -3654,17 +3654,18 @@ bool32 TryMonStatusChange(u8 taskId, u16 status)
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     struct PartyMenuBox *menuBox = &sPartyMenuBoxes[gPartyMenu.slotId];
     u32 currentSpecies = GetMonData(mon, MON_DATA_SPECIES);
+    u32 status1 = (u32)status;
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
 
     if (currentSpecies != SPECIES_EGG
     && (GetMonData(mon, MON_DATA_HP) != 0)
-    && (IsStatusChangeLegal(status)))
+    && (IsStatusChangeLegal(status1)))
     {
         gPartyMenuUseExitCallback = TRUE;
         PlaySE(SE_SELECT);
-        SetMonData(mon, MON_DATA_STATUS, &status);
+        SetMonData(mon, MON_DATA_STATUS, &status1);
         gSprites[menuBox->statusSpriteId].invisible = TRUE;
         CreatePartyMonStatusSprite(mon, menuBox);
         gSprites[menuBox->statusSpriteId].invisible = FALSE;
