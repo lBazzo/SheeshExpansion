@@ -83,7 +83,7 @@ GoldenrodCity_BillsHouse_Text_Nickname:
 
 BillHouse_Text_TakeThisEevee:
     .string "Bill: Hi, {PLAYER}! Do us a favor and\n"
-    .string "take this EEVEE.\p"
+    .string "take this Eevee.\p"
     .string "It came over when I was adjusting\n"
     .string "the Time Capsule.\p"
     .string "Someone has to take care of it,\n"

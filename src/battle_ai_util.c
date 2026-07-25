@@ -1642,12 +1642,12 @@ bool32 IsElegibleForBestDmgMove(u32 move)
         && effect != EFFECT_METAL_BURST
         && effect != EFFECT_SHELL_TRAP)
         {
-            DebugPrintf("IS elegible move");
+            //DebugPrintf("IS elegible move");
             return TRUE;
         }
     else
         {
-            DebugPrintf("not elegible move");
+            //DebugPrintf("not elegible move");
             return FALSE;
         }
 

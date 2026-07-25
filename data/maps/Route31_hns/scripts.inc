@@ -39,7 +39,7 @@ Route31_EventScript_Bugcatcher_Don::
 	end
 
 Route31_Text_BugCatcherDonSeen:
-	.string "Instead of a bug Pokémon,\n"
+	.string "Instead of a Pokémon,\n"
 	.string "I found a trainer!$"
 
 Route31_Text_BugCatcherDonBeaten:

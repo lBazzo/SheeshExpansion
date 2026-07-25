@@ -106,7 +106,7 @@ Route35_Text_PicnickerBrookeAfter:
 	.string "my boyfriend.$"
 
 Route35_Text_PicnickerKimSeen:
-	.string "Are you going to the GYM? Me too!$"
+	.string "Are you going to the Gym soon?$"
 
 Route35_Text_PicnickerKimBeaten:
 	.string "Oh. I couldn't win…$"

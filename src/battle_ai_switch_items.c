@@ -2439,6 +2439,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
 
             if (isSwitchinFirst
             && (AIRawDamageToPlayer >= playerMonHP)
+            && (canSwitchinWin1v1)
             && (AIFastOHKOId == PARTY_SIZE))
             { 
                     DebugPrintf("Fast OHKO by AI i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
@@ -2455,6 +2456,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
             else if (!isSwitchinFirst
                 && (AIRawDamageToPlayer >= playerMonHP)
                 && (hitsToKOAI > 1)
+                && (canSwitchinWin1v1)
                 && (AISlowOHKOId == PARTY_SIZE))
                 {
                     DebugPrintf("Slow OHKO by AI without being OHKOd itself i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);

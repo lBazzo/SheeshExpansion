@@ -133,6 +133,7 @@ GoldenrodCity_Trigger_Silver::
 	setflag FLAG_HIDE_GOLDENROD_CITY_SILVER
 	removeobject LOCALID_GOLDENROD_CITY_SILVER
 	setvar VAR_GOLDENROD_SILVER_STATE, 2
+	setflag FLAG_DEFEATED_GOLDENROD_CITY_SILVER
 	fadedefaultbgm
 	release
 	end
@@ -504,7 +505,7 @@ GoldenrodCity_Text_HikerNight:
 	.string "in there?!$"
 
 GoldenrodCity_Text_Snubbull:
-	.string "Snubbull: SNUUUBUUUULL!$"
+	.string "Snubbull: Snuh buh!$"
 
 GoldenrodCity_Text_MrMime:
 	.string "............................$"

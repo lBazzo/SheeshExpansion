@@ -3440,7 +3440,11 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL);
         break;
     case EFFECT_MAT_BLOCK:
-        if (gDisableStructs[battlerAtk].isFirstTurn)
+        u32 blockerSpeed = aiData->speedStats[battlerAtk];
+        u32 blockerFoe1Speed = aiData->speedStats[LEFT_FOE(battlerAtk)];
+        u32 blockerFoe2Speed = aiData->speedStats[RIGHT_FOE(battlerAtk)];
+        if (gDisableStructs[battlerAtk].isFirstTurn
+        && (blockerSpeed >= blockerFoe1Speed || blockerSpeed >= blockerFoe2Speed))
             ADJUST_SCORE(+13);
         else
             ADJUST_SCORE(-20); 
@@ -8488,12 +8492,13 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
         // Both only KO across opponent to battlerAtk
         else if (!battlerFaintsOpposite && battlerFaintsOppositePartner && !partnerFaintsOpposite && partnerFaintsOppositePartner)
         {
-            score = 0;
             return score;
         }
         // Partner only KOs across opponent
         else if (!partnerFaintsOpposite && partnerFaintsOppositePartner)
+        {
             return score;
+        }
         // Partner only KOs diagonal opponent
         else if (partnerFaintsOpposite && !partnerFaintsOppositePartner)
         {
@@ -8568,6 +8573,18 @@ static s32 AI_SmartTargeting (u32 battlerAtk, u32 battlerDef, u32 move, s32 scor
         // Only KO seen is partner on diagonal opponent to battlerAtk
         else if (!battlerFaintsOpposite && !battlerFaintsOppositePartner && partnerFaintsOpposite && !partnerFaintsOppositePartner)
         {
+            return score;
+        }
+        // battlerAtk KOs both and Partner KOs neither, battlerAtk should go diagonally
+        else if (battlerFaintsOpposite && battlerFaintsOppositePartner && !partnerFaintsOpposite && !partnerFaintsOppositePartner)
+        {
+            score = 0;
+            return score;
+        }
+        // Partner KOs both and battlerAtk KOs neither, battlerAtk should go diagonally
+        else if (!battlerFaintsOpposite && !battlerFaintsOppositePartner && partnerFaintsOpposite && partnerFaintsOppositePartner)
+        {
+            score = 0;
             return score;
         }
         else

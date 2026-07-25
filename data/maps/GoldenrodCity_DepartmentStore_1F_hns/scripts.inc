@@ -18,6 +18,7 @@ GoldenrodDeptStore1_EventScript_Receptionist::
 	giveitem ITEM_BLACK_GLASSES
 	giveitem ITEM_CHARCOAL
 	giveitem ITEM_DRAGON_FANG
+	giveitem ITEM_FAIRY_FEATHER
 	giveitem ITEM_HARD_STONE
 	giveitem ITEM_MAGNET
 	giveitem ITEM_METAL_COAT

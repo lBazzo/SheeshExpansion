@@ -351,7 +351,7 @@ Route32_Text_CooltrainerM_HaveThisSeed:
 	.string "As a souvenir of Violet City, here.\p"
 	.string "It increases the toughness of Pokémon\n"
 	.string "that aren't fully evolved.\p"
-	.string "Those Deep Sea items can also help to\l"
+	.string "Those Deep Sea items can also help to\n"
 	.string "evolve a Clamperl, if you have one.$"
 
 Route32_Text_CooltrainerM_Experiences:

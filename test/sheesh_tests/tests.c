@@ -3508,3 +3508,41 @@ AI_SINGLE_BATTLE_TEST("AI still correctly scores the next highest damaging move 
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly sees Belch as usable when its Custap Berry is about to proc")
+{
+    u32 AICurrentHP;
+    u32 AIItem;
+    enum Ability AIAbility;
+    enum Ability playerAbility;
+
+    PARAMETRIZE { AICurrentHP = 100; AIItem = ITEM_CUSTAP_BERRY; AIAbility = ABILITY_SHADOW_TAG; playerAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { AICurrentHP = 199; AIItem = ITEM_CUSTAP_BERRY; AIAbility = ABILITY_SHADOW_TAG; playerAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { AICurrentHP = 199; AIItem = ITEM_CUSTAP_BERRY; AIAbility = ABILITY_GLUTTONY; playerAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { AICurrentHP = 299; AIItem = ITEM_CUSTAP_BERRY; AIAbility = ABILITY_GLUTTONY; playerAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { AICurrentHP = 199; AIItem = ITEM_PECHA_BERRY; AIAbility = ABILITY_GLUTTONY; playerAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { AICurrentHP = 199; AIItem = ITEM_CUSTAP_BERRY; AIAbility = ABILITY_GLUTTONY; playerAbility = ABILITY_UNNERVE; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Ability(playerAbility); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_SLUDGE, MOVE_BELCH); Item(AIItem); Ability(AIAbility); MaxHP(400); HP(AICurrentHP); }
+    } WHEN {
+        if (AICurrentHP == 100)
+        {
+            TURN { EXPECT_MOVE(opponent, MOVE_BELCH); }
+        }
+        else if (AICurrentHP == 199 && AIAbility == ABILITY_SHADOW_TAG)
+        {
+            TURN { EXPECT_MOVE(opponent, MOVE_SLUDGE); }
+        }
+        else if (AICurrentHP == 199 && AIItem == ITEM_CUSTAP_BERRY && AIAbility == ABILITY_GLUTTONY && playerAbility == ABILITY_SHADOW_TAG)
+        {
+            TURN { EXPECT_MOVE(opponent, MOVE_BELCH); }
+        }
+        else
+        {
+            TURN { EXPECT_MOVE(opponent, MOVE_SLUDGE); }
+        }
+    }
+}

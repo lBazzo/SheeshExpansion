@@ -1422,8 +1422,21 @@ bool32 IsHealBlockPreventingMove(u32 battler, u32 move)
 
 bool32 IsBelchPreventingMove(u32 battler, u32 move)
 {
+    enum Ability belcherAbility = GetBattlerAbility(battler);
+
     if (GetMoveEffect(move) != EFFECT_BELCH)
         return FALSE;
+
+    if ((gBattleMons[battler].item == ITEM_CUSTAP_BERRY)
+    && (!IsUnnerveAbilityOnOpposingSide(battler)))
+    {
+        if ((belcherAbility == ABILITY_GLUTTONY)
+        && (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP / 2)))
+            return FALSE;
+        else if ((belcherAbility != ABILITY_GLUTTONY)
+        && (gBattleMons[battler].hp <= (gBattleMons[battler].maxHP / 4)))
+            return FALSE;
+    }
 
     return !GetBattlerPartyState(battler)->ateBerry;
 }

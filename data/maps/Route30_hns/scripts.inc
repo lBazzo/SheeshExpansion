@@ -149,7 +149,7 @@ Route30_Text_YoungsterMikeyAfter:
 	.string "people to get better.$"
 
 Route30_Text_BugCatcherDonSeen:
-	.string "Instead of a bug Pokémon,\n"
+	.string "Instead of a Pokémon,\n"
 	.string "I found a trainer!$"
 
 Route30_Text_BugCatcherDonBeaten:

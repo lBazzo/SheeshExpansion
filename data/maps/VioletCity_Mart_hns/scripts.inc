@@ -17,6 +17,7 @@ VioletMart_Pokemart_Pokemart:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_NONE
 	release
 	end
 

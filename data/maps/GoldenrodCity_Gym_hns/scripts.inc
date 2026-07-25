@@ -260,10 +260,10 @@ GoldenrodCity_Gym_Text_BeautySamanthaSeen:
     .string "you down!$"
 
 GoldenrodCity_Gym_Text_BeautySamanthaBeaten:
-    .string "No! Oh, Meowth, I'm so sorry!$"
+    .string "No! Oh, Wyrdeer, I'm so sorry!$"
 
 GoldenrodCity_Gym_Text_BeautySamanthaAfter:
-    .string "I taught Meowth moves for taking on\n"
+    .string "I taught Wyrdeer moves for taking on\n"
     .string "any type…$"
 
 GoldenrodCity_Gym_Text_GymGuide:

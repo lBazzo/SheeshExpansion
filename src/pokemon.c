@@ -6170,6 +6170,33 @@ bool32 IsSpeciesInHoennDex(u16 species)
         return TRUE;
 }
 
+bool32 IsKantoMusicTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_DIANA:
+        case TRAINER_PARKER:
+        case TRAINER_BRIANA:
+        case TRAINER_MICHELLE:
+        case TRAINER_TANYA:
+        case TRAINER_JULIA:
+        case TRAINER_HOPE:
+        case TRAINER_SHARON:
+        case TRAINER_QUINN:
+        case TRAINER_PAT:
+        case TRAINER_KEVIN:
+        case TRAINER_BENNY:
+        case TRAINER_JOSH:
+        case TRAINER_AL:
+        case TRAINER_STEPHEN:
+        case TRAINER_AMY_AND_MAY:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+    return FALSE;
+}
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
@@ -6210,6 +6237,11 @@ u16 GetBattleBGM(void)
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
+        if (IsKantoMusicTrainer(TRAINER_BATTLE_PARAM.opponentA))
+        {
+            return MUS_HG_VS_TRAINER_KANTO;
+        }
+
         enum TrainerClassID trainerClass;
 
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)

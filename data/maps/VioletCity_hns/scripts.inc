@@ -225,7 +225,7 @@ VioletCity_EventScript_ElmCall_Trigger::
 
 VioletCity_EventScript_Kimono_Girl::
 	lock
-	playbgm MUS_HG_KIMONO_GIRL, TRUE
+	playbgm MUS_HG_KIMONO_GIRL, FALSE
 	playse SE_PIN
 	applymovement LOCALID_VIOLET_KIMONO, Common_Movement_ExclamationMark
 	delay 60
@@ -511,7 +511,7 @@ VioletCity_Text_Bellsprout:
 	.string "Bellsprout: Sprouuuut.$"
 
 VioletCity_Text_Rattata:
-	.string "Rattata: RATTATARATTA!$"
+	.string "Rattata: rattatatatatata!$"
 
 VioletCity_Text_Elm_Call:
 	.string "Elm: Hello, {PLAYER}? We\n"
