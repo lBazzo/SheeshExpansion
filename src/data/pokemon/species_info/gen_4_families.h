@@ -3389,7 +3389,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseDefense   = 84,
         .baseSpeed     = 120,
         .baseSpAttack  = 54,
-        .baseSpDefense = 96,
+        .baseSpDefense = 91,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 168 : 178,

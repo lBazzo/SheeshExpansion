@@ -2134,7 +2134,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_AMPHAROS}),
     },
 
-#define AMPHAROS_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 100 : 100)
+#define AMPHAROS_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 95 : 95)
 
     [SPECIES_AMPHAROS] =
     {
@@ -2143,7 +2143,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .baseDefense   = AMPHAROS_DEFENSE,
         .baseSpeed     = 55,
         .baseSpAttack  = 115,
-        .baseSpDefense = 105,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_ELECTRIC),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -3895,7 +3895,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_SHADOW_SHIELD, ABILITY_SHADOW_TAG },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NOCTURNAL, ABILITY_SHADOW_TAG },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Misdreavus"),
         .cryId = CRY_MISDREAVUS,
@@ -3976,7 +3976,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 35,
         .growthRate = GROWTH_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_SHADOW_SHIELD, ABILITY_SHADOW_TAG },
+        .abilities = { ABILITY_LEVITATE, ABILITY_NOCTURNAL, ABILITY_SHADOW_TAG },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Mismagius"),
         .cryId = CRY_MISMAGIUS,
@@ -5029,7 +5029,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSnubbullLevelUpLearnset,
         .teachableLearnset = sSnubbullTeachableLearnset,
         .eggMoveLearnset = sSnubbullEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 23, SPECIES_GRANBULL}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_GRANBULL}),
     },
 
     [SPECIES_GRANBULL] =

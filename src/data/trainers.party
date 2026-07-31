@@ -279,7 +279,7 @@ Ability: Gluttony
 Level: 13  
 Sassy Nature  
 - Bug Bite  
-- Wrap  
+- Snap Trap  
 - Tickle  
 - Sleep Powder  
 
@@ -289,13 +289,13 @@ Level: 15
 Naive Nature  
 - U-turn  
 - Giga Drain  
+- Air Cutter  
 - Reflect  
-- Counter  
 
 Smoochum @ Never-Melt Ice  
 Ability: Dry Skin  
 Level: 15  
-Mild Nature  
+Hasty Nature  
 - Fake Out  
 - Icy Wind  
 - Confusion  
@@ -420,7 +420,7 @@ Mugshot: LightBlue
 
 Skiploom @ Focus Sash  
 Ability: Leaf Guard  
-Level: 18  
+Level: 19  
 Timid Nature  
 - Endeavor  
 - Giga Drain  
@@ -11870,12 +11870,14 @@ Modest Nature
 - Solar Beam  
 - Earth Power  
 
-Leafeon @ Muscle Band  
+Sawsbuck @ Focus Sash  
 Ability: Chlorophyll  
 Level: 80  
 Adamant Nature  
 - Solar Blade  
-- Last Resort  
+- Mega Kick  
+- Close Combat  
+- Bite
 
 Magmortar @ Assault Vest  
 Ability: Mega Launcher  
@@ -13582,7 +13584,7 @@ Level: 85
 Bold Nature   
 - Whirlpool  
 - Recover  
-- Frost Breath  
+- Freeze-Dry  
 - Water Pulse  
 
 Aerodactyl @ Choice Band  

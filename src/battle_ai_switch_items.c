@@ -2504,6 +2504,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
                 DebugPrintf("DITTO/WOBB - wobb and ditto i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
                 AIDittoOrWobbId = i;
             } 
+            // Check if just faster
             else if (isSwitchinFirst
             && (AIJustFasterId == PARTY_SIZE))
             {
@@ -2517,13 +2518,16 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
                 DebugPrintf("Player fast ohkos i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
                 PlayerFastOHKOsId = i;
             }*/
+            // Check if default losing matchup - also checks to avoid being assigned to fast OKHO'd
             else if (!isSwitchinFirst
             && (!canSwitchinWin1v1)
+            && (playerRawDamageToAI < AIMonHP)
             && (AIDefaultId == PARTY_SIZE))
             {
                 DebugPrintf("default i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
                 AIDefaultId = i;
             }
+            // Check if fast OHKO'd
             else if (!isSwitchinFirst
             && (playerRawDamageToAI >= AIMonHP)
             && (PlayerFastOHKOsId == PARTY_SIZE))

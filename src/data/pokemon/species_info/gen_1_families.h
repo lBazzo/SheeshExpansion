@@ -5797,7 +5797,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sGolbatLevelUpLearnset,
         .teachableLearnset = sGolbatTeachableLearnset,
     #if P_GEN_2_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_CROBAT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_CROBAT}),
     #endif
     },
 
@@ -10755,7 +10755,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #else
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MAGNEZONE, CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})},
 #endif
-                                {EVO_LEVEL, 48, SPECIES_MAGNEZONE}),
+                                {EVO_LEVEL, 52, SPECIES_MAGNEZONE}),
     #endif
     },
 
@@ -14899,11 +14899,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     [SPECIES_KANGASKHAN] =
     {
         .baseHP        = 105,
-        .baseAttack    = 115,
-        .baseDefense   = 100,
+        .baseAttack    = 105,
+        .baseDefense   = 90,
         .baseSpeed     = 90,
         .baseSpAttack  = 60,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 100 : 100,
+        .baseSpDefense = P_UPDATED_STATS >= GEN_2 ? 90 : 90,
         .types = MON_TYPES(TYPE_NORMAL),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 175,
@@ -18337,7 +18337,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = 35,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SHARPNESS, ABILITY_TECHNICIAN, ABILITY_CHLOROPHYLL },
+        .abilities = { ABILITY_SHARPNESS, ABILITY_LEAF_GUARD, ABILITY_TECHNICIAN },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Leafeon"),
         .cryId = CRY_LEAFEON,

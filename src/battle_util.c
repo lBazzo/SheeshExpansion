@@ -7399,7 +7399,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower = 100 * gDisableStructs[battlerAtk].stockpileCounter;
         break;
     case EFFECT_REVENGE:
-        if (gProtectStructs[battlerAtk].revengeDoubled & 1u << battlerDef)
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            //if (!AI_IsFaster(battlerAtk, battlerDef))
+            //    basePower *= 2;
+        }
+        else if (gProtectStructs[battlerAtk].revengeDoubled & 1u << battlerDef)
             basePower *= 2;
         break;
     case EFFECT_WEATHER_BALL:
