@@ -14,31 +14,33 @@ GoldenrodDeptStore1_EventScript_Receptionist::
 	applymovement LOCALID_GOLDENROD_CITY_RECEPTIONIST1F, Common_Movement_ExclamationMark
 	delay 60
 	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay2, MSGBOX_DEFAULT
-	giveitem ITEM_BLACK_BELT
-	giveitem ITEM_BLACK_GLASSES
-	giveitem ITEM_CHARCOAL
-	giveitem ITEM_DRAGON_FANG
-	giveitem ITEM_FAIRY_FEATHER
-	giveitem ITEM_HARD_STONE
-	giveitem ITEM_MAGNET
-	giveitem ITEM_METAL_COAT
-	giveitem ITEM_MIRACLE_SEED
-	giveitem ITEM_MYSTIC_WATER
-	giveitem ITEM_NEVER_MELT_ICE
-	giveitem ITEM_POISON_BARB
-	giveitem ITEM_SHARP_BEAK
-	giveitem ITEM_SILK_SCARF
-	giveitem ITEM_SILVER_POWDER
-	giveitem ITEM_SOFT_SAND
-	giveitem ITEM_SPELL_TAG
-	giveitem ITEM_TWISTED_SPOON
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox GoldenrodDeptStor1_Text_ReceptionistObtainedBoostingItems
+	waitfanfare
+	additem ITEM_BLACK_BELT
+	additem ITEM_BLACK_GLASSES
+	additem ITEM_CHARCOAL
+	additem ITEM_DRAGON_FANG
+	additem ITEM_FAIRY_FEATHER
+	additem ITEM_HARD_STONE
+	additem ITEM_MAGNET
+	additem ITEM_METAL_COAT
+	additem ITEM_MIRACLE_SEED
+	additem ITEM_MYSTIC_WATER
+	additem ITEM_NEVER_MELT_ICE
+	additem ITEM_POISON_BARB
+	additem ITEM_SHARP_BEAK
+	additem ITEM_SILK_SCARF
+	additem ITEM_SILVER_POWDER
+	additem ITEM_SOFT_SAND
+	additem ITEM_SPELL_TAG
+	additem ITEM_TWISTED_SPOON
 	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay3, MSGBOX_DEFAULT
 	setflag FLAG_GOT_TYPE_BOOSTING_ITEMS
 	closemessage
 	release
 	end
-
-
 
 GoldenrodDeptStore1_EventScript_ReceptionistAfter::
 	msgbox GoldenrodDeptStor1_Text_ReceptionistLuckyDay3, MSGBOX_DEFAULT
@@ -88,6 +90,9 @@ GoldenrodDeptStor1_Text_ReceptionistLuckyDay2:
 	.string "I've got a few little goodies from her\n"
 	.string "to give to you. Promise you'll go back\l"
 	.string "sometime to thank her in person, 'kay?$"
+
+GoldenrodDeptStor1_Text_ReceptionistObtainedBoostingItems:
+	.string "{PLAYER} obtained the type-boosting items!$"
 
 GoldenrodDeptStor1_Text_ReceptionistLuckyDay3:
 	.string "Good luck with your journey!\n"

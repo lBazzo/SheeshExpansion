@@ -89,28 +89,52 @@ Route36_EventScript_SudoWoodoWater::
 	applymovement LOCALID_ROUTE36_SUDOWOODO, Route36_Movement_SudoWoodo
 	waitmovement 0
 	faceplayer
+	playse SE_DOWNPOUR_STOP
+	waitse
 	msgbox Route36_Text_SudowoodoAttacked	
 	closemessage
 	waitse
 	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setvar VAR_LAST_TALKED, LOCALID_ROUTE36_SUDOWOODO
-	setwildbattle SPECIES_SUDOWOODO, 20
+	applymovement LOCALID_ROUTE36_SUDOWOODO, Route36_Movement_SudowoodoEscape
+	playse SE_LEDGE
+	delay 16
+	playse SE_LEDGE
+	delay 16
+	waitmovement 0
+	goto Route36_EventScript_Defeated_Sudowoodo
+
+	@setvar VAR_LAST_TALKED, LOCALID_ROUTE36_SUDOWOODO
+	@setwildbattle SPECIES_SUDOWOODO, 20
 	@setflag FLAG_SYS_CTRL_OBJ_DELETE
-	dowildbattle
+	@dowildbattle
 	@clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route36_EventScript_Defeated_Sudowoodo
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route36_EventScript_RanSudowoodo
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route36_EventScript_RanSudowoodo
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_WON, Route36_EventScript_Defeated_Sudowoodo
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route36_EventScript_RanSudowoodo
+	@goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route36_EventScript_RanSudowoodo
+	goto Route36_EventScript_Defeated_Sudowoodo
 Route36_EventScript_Defeated_Sudowoodo::
 	setflag FLAG_HIDE_SUDOWOODO
 	removeobject LOCALID_ROUTE36_SUDOWOODO
-	checkitem ITEM_HM_ROCK_SMASH
-	call_if_eq VAR_RESULT, FALSE, Route36_EventScript_RockSmashGuySudoWoodo
+	@checkitem ITEM_HM_ROCK_SMASH
+	@call_if_eq VAR_RESULT, FALSE, Route36_EventScript_RockSmashGuySudoWoodo
 	release
 	end
+
+Route36_Movement_SudowoodoEscape::
+	jump_in_place_down
+	jump_in_place_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
 
 Route36_EventScript_RanSudowoodo::
 	turnobject LOCALID_ROUTE36_SUDOWOODO, DIR_NORTH
@@ -205,7 +229,7 @@ Route36_Text_UsedSquirtbottle:
 Route36_Text_SudowoodoAttacked:
 	.string "The weird tree doesn't like the\n"
 	.string "Squirtbottle!\p"
-	.string "The weird tree attacked!$"
+	.string "The weird tree ran away!$"
 
 Route36_Text_RockSmashGuy1:
 	.string "Wa-hey!\p"
@@ -344,8 +368,8 @@ Route36_Text_Lass1:
 	.string "to it.$"
 
 Route36_Text_Lass2_ClearedSudowoodo:
-	.string "That odd tree disappeared without\n"
-	.string "a trace.\p"
+	.string "That odd tree just walked right\n"
+	.string "through here! How on earth...?\p"
 	.string "Oh! That tree was really a\n"
 	.string "Pokémon?\p"
 	.string "Wow, I learned something new today!\p"

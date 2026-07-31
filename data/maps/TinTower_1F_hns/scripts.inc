@@ -59,23 +59,27 @@ TinTower_1F_EventScript_SageD::
 	baobacheckmon 5
 	goto_if_eq VAR_RESULT, FALSE, TinTower_1F_EventScript_SageDNotSilvally
 	msgbox TinTower_1F_Text_SageDPlayerHasSilvally, MSGBOX_DEFAULT
-	giveitem ITEM_BUG_MEMORY
-	giveitem ITEM_DARK_MEMORY
-	giveitem ITEM_DRAGON_MEMORY
-	giveitem ITEM_ELECTRIC_MEMORY
-	giveitem ITEM_FAIRY_MEMORY
-	giveitem ITEM_FIGHTING_MEMORY
-	giveitem ITEM_FIRE_MEMORY
-	giveitem ITEM_FLYING_MEMORY
-	giveitem ITEM_GHOST_MEMORY
-	giveitem ITEM_GRASS_MEMORY
-	giveitem ITEM_GROUND_MEMORY
-	giveitem ITEM_ICE_MEMORY
-	giveitem ITEM_POISON_MEMORY
-	giveitem ITEM_PSYCHIC_MEMORY
-	giveitem ITEM_ROCK_MEMORY
-	giveitem ITEM_STEEL_MEMORY
-	giveitem ITEM_WATER_MEMORY
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox TinTower_1F_Text_SageDObtainedSylvallyMemories
+	waitfanfare
+	additem ITEM_BUG_MEMORY
+	additem ITEM_DARK_MEMORY
+	additem ITEM_DRAGON_MEMORY
+	additem ITEM_ELECTRIC_MEMORY
+	additem ITEM_FAIRY_MEMORY
+	additem ITEM_FIGHTING_MEMORY
+	additem ITEM_FIRE_MEMORY
+	additem ITEM_FLYING_MEMORY
+	additem ITEM_GHOST_MEMORY
+	additem ITEM_GRASS_MEMORY
+	additem ITEM_GROUND_MEMORY
+	additem ITEM_ICE_MEMORY
+	additem ITEM_POISON_MEMORY
+	additem ITEM_PSYCHIC_MEMORY
+	additem ITEM_ROCK_MEMORY
+	additem ITEM_STEEL_MEMORY
+	additem ITEM_WATER_MEMORY
 	setflag FLAG_PLAYER_CAUGHT_SILVALLY
 	goto TinTower_1F_EventScript_SageDPostMemories
 	end
@@ -106,6 +110,9 @@ TinTower_1F_Text_SageDPlayerHasSilvally:
 	.string "It's truly breathtaking...\p"
 	.string "Please. Take these with you.\n"
 	.string "Help Silvally realise its potential.$"
+
+TinTower_1F_Text_SageDObtainedSylvallyMemories:
+	.string "{PLAYER} obtained the Sylvally memories!$"	
 
 TinTower_1F_Text_SageDThatsNotSilvally:
 	.string "...Sorry, I don't think that's what\n"

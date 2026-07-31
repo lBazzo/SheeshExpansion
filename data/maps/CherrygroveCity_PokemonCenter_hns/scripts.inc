@@ -555,7 +555,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeHPIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -599,7 +599,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeAttackIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -643,7 +643,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeDefenseIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -687,7 +687,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialAttackIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -731,7 +731,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialDefenseIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -775,7 +775,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpeedIVsLower::
 	dynmultipush CherryGrove_Pokecenter_Text_16, 16
 	dynmultipush CherryGrove_Pokecenter_Text_17, 17
 	dynmultipush CherryGrove_Pokecenter_Text_18, 18
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 18, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -971,7 +971,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeHPIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -1008,7 +1008,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeAttackIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -1045,7 +1045,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeDefenseIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -1082,7 +1082,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialAttackIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -1119,7 +1119,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpecialDefenseIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT
@@ -1156,7 +1156,7 @@ CherryGrove_Pokecenter_EventScript_ScaleAttendantChangeSpeedIVsHigher::
 	dynmultipush CherryGrove_Pokecenter_Text_29, 10
 	dynmultipush CherryGrove_Pokecenter_Text_30, 11
 	dynmultipush CherryGrove_Pokecenter_Text_31, 12
-	dynmultistack 2, 2, FALSE, 1, FALSE, 0, NULL
+	dynmultistack 2, 2, FALSE, 1, FALSE, 12, NULL
 	switch VAR_RESULT
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_ScaleAttendantExit
 	copyvar VAR_0x8005, VAR_RESULT

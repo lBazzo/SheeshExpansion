@@ -6910,21 +6910,33 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
         && (!CanTargetFaintAi(battlerDef, battlerAtk))
         && (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)))
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            {
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
+                    ADJUST_SCORE(+2);
+            }
         break;
     case EFFECT_MIRROR_COAT:
         if (!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
         && (!CanTargetFaintAi(battlerDef, battlerAtk))
         && (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL)))
-            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+            {
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
+                    ADJUST_SCORE(+2);
+            }
         break;
     case EFFECT_METAL_BURST:
-            if (!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
-            && (!CanTargetFaintAi(battlerDef, battlerAtk))
-            && (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
-            && (HasDamagingMove(battlerDef)))
-                ADJUST_AND_RETURN_SCORE(BEST_DAMAGE_MOVE);
-            break;
+        if (!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
+        && (!CanTargetFaintAi(battlerDef, battlerAtk))
+        && (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
+        && (HasDamagingMove(battlerDef)))
+            {
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
+                    ADJUST_SCORE(+2);
+            }
+        break;
     case EFFECT_SHORE_UP:
         //if ((AI_GetWeather() & B_WEATHER_SANDSTORM) && ShouldRecover(battlerAtk, battlerDef, move, 67))
         //    ADJUST_SCORE(DECENT_EFFECT);

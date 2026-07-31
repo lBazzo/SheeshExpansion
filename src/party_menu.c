@@ -3061,11 +3061,13 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     }
     else if (!InBattlePike())
     {
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STATUS);
+        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_DAMAGE);
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
         {
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STATUS);
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_DAMAGE);
+            //AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_STATUS);
+            //AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_DAMAGE);
         }
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);

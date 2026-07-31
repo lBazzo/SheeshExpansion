@@ -959,7 +959,7 @@ Modest Nature
 - Helping Hand  
 
 === TRAINER_PROTON_1 ===
-Name: /*Slowpoke Well*/ Proton /* 1*/
+Name: Proton /* 1 Slowpoke Well*/
 Class: Rocket Admin
 Pic: Proton
 Gender: Male
@@ -984,7 +984,7 @@ Timid Nature
 IVs: 31 HP / 0 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe  
 - Volt Switch  
 - Energy Ball  
-- Hidden Power  
+- Hidden Power
 - Metal Sound  
 
 Lampent @ Eviolite  

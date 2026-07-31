@@ -128,12 +128,18 @@ GoldenrodCity_Gym_EventScript_WhitneyDefeated::
 	end
 
 GoldenrodCity_Gym_EventScript_Trigger::	
-	turnobject LOCALID_GOLDENROD_CITY_GYM_BRIDGET DIR_WEST
+	lock
+	playse SE_PIN
+	applymovement LOCALID_GOLDENROD_CITY_GYM_BRIDGET, Common_Movement_ExclamationMark
+	delay 60
+	@turnobject LOCALID_GOLDENROD_CITY_GYM_BRIDGET DIR_WEST
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
 	msgbox GoldenrodCity_Gym_Text_BridgetWhitneyCries, MSGBOX_DEFAULT
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp1
 	waitmovement 0
 	setvar VAR_GOLDENROD_CITY_STATE, 4
-	closemessage
 	release
 	end
 
