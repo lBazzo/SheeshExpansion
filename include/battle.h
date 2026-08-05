@@ -338,6 +338,8 @@ struct AiLogicData
     u8 shouldSwitch:4; // Stores result of ShouldSwitch, which decides whether a mon should be switched out
     u8 padding2:4;
     u16 predictedMove[MAX_BATTLERS_COUNT];
+    u32 switchInCalc:1; // Indicates if we're doing switch in calcs, this is purely for Retaliate damage calcs
+    //u32 padding2:18;
 };
 
 struct AiThinkingStruct

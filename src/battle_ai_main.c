@@ -629,6 +629,8 @@ static void SetBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u3
     SaveBattlerData(battlerAtk);
     SetBattlerData(battlerAtk);
 
+    gAiLogicData->switchInCalc = TRUE;
+
     // Simulate dmg for both ai controlled mons and for player controlled mons.
     for (battlerDef = 0; battlerDef < battlersCount; battlerDef++)
     {
@@ -641,6 +643,7 @@ static void SetBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u3
         RestoreBattlerData(battlerDef);
     }
     RestoreBattlerData(battlerAtk);
+    gAiLogicData->switchInCalc = FALSE;
 }
 
 void SetAiLogicDataForTurn(struct AiLogicData *aiData)
@@ -3423,13 +3426,21 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             ADJUST_SCORE(WEAK_EFFECT);
     }
         break;
-    case EFFECT_SKILL_SWAP:
+    /*case EFFECT_SKILL_SWAP:
         if (IsTargetingPartner(battlerAtk, battlerDef))
             {
-            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER)
-                ADJUST_SCORE(GOOD_EFFECT);
+            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER
+            && (aiData->abilities[battlerDef] != ABILITY_SAP_SIPPER))
+                {
+                        ADJUST_SCORE(GOOD_EFFECT);
+                    if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                        ADJUST_SCORE(+4);
+                }
             }
-        break;
+        //else if (aiData->abilities[battlerAtk] == ABILITY_TRUANT
+        //      || aiData->abilities[battlerAtk] == ABILITY_SLOW_START)
+        //        ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        break;*/
     case EFFECT_TAILWIND:
         u32 speed = aiData->speedStats[battlerAtk];
         u32 partnerSpeed = aiData->speedStats[BATTLE_PARTNER(battlerAtk)];
@@ -3858,7 +3869,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                         ADJUST_SCORE(NO_INCREASE);
                     }
                 }
-                else
+                else if (move != MOVE_SKILL_SWAP)
                 {
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
@@ -3978,7 +3989,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                         ADJUST_SCORE(NO_INCREASE);
                     }
                 }
-                else
+                else 
                 {
                     isMoveAffectedByPartnerAbility = FALSE;
                 }
@@ -4060,6 +4071,22 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_OVERWRITE_ABILITY:
                 AbilityChangeScore(battlerAtk, battlerAtkPartner, move, &score, aiData);
                 return score;
+                break;
+            case EFFECT_SKILL_SWAP:
+                if (IsTargetingPartner(battlerAtk, battlerDef))
+                    {
+                    if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER
+                    && (aiData->abilities[battlerDef] != ABILITY_SAP_SIPPER))
+                        {
+                                ADJUST_SCORE(GOOD_EFFECT);
+                            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                                ADJUST_SCORE(+4);
+                        }
+                    }
+                //else if (aiData->abilities[battlerAtk] == ABILITY_TRUANT
+                //      || aiData->abilities[battlerAtk] == ABILITY_SLOW_START)
+                //        ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                break;
             case EFFECT_SPICY_EXTRACT:
                 enum Ability partnerAbility = aiData->abilities[battlerAtkPartner];
                 if ((gBattleMons[battlerAtkPartner].statStages[STAT_ATK] > DEFAULT_STAT_STAGE)
@@ -6309,8 +6336,13 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_SKILL_SWAP:
         if (IsTargetingPartner(battlerAtk, battlerDef))
             {
-            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER)
-                ADJUST_SCORE(GOOD_EFFECT);
+            if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER
+            && (aiData->abilities[battlerDef] != ABILITY_SAP_SIPPER))
+                {
+                        ADJUST_SCORE(GOOD_EFFECT);
+                    if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                        ADJUST_SCORE(+4);
+                }
             }
         else if (aiData->abilities[battlerAtk] == ABILITY_TRUANT
               || aiData->abilities[battlerAtk] == ABILITY_SLOW_START)

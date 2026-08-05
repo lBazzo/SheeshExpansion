@@ -127,13 +127,11 @@ EcruteakCity_Theater_Text_KimonoRocket1:
 EcruteakCity_Theater_Text_Rocket2:
 	.string "Rocket: Huh?\p"
 	.string "Are you telling me you don't\n"
-	.string "respect what the customer\l"
-	.string "wants?$"
+	.string "respect what the customer wants?$"
 
 EcruteakCity_Theater_Text_Rocket3:
-	.string "Well, then I'll show you how\n"
-	.string "to dance. I'll show you a\l"
-	.string "great one.\p"
+	.string "Well, then I'll show you how to\n"
+	.string "dance. I'll show you a great one.\p"
 	.string "Wahahaha!$"
 
 EcruteakCity_Theater_EventScript_Rocket::
@@ -207,8 +205,8 @@ EcruteakCity_Theater_Text_RocketAfter:
 	.string "I better leave now!$"
 
 EcruteakCity_Theater_Text_KimonoRocket3:
-	.string "You must be {PLAYER},\n"
-	.string "correct? That was indeed excellent.\p"
+	.string "You must be {PLAYER}, correct? \n"
+	.string "That was indeed excellent.\p"
 	.string "Kind and strong...\n"
 	.string "Good at raising Pokémon as well...\p"
 	.string "That person does know what\n"

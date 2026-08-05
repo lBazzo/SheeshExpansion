@@ -2365,6 +2365,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
     //bool32 isSwitchinFirst;
     u32 invalidMons = 0;
     uq4_12_t effectiveness = UQ_4_12(1.0);
+    gAiLogicData->switchInCalc = TRUE;
 
     // Iterate through mons
     for (i = firstId; i < lastId; i++)
@@ -2541,7 +2542,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         if (monMaxDamage == 0)
             invalidMons |= 1u << i;
     }
-
+    gAiLogicData->switchInCalc = FALSE;
         // Return Fast OHKO, slow OHKO, fast oudamage, slow outdamage/wobb/ditto, faster, default, ai gets fast OHKO'd
         if (AIFastOHKOId != PARTY_SIZE)                      return AIFastOHKOId;
         else if (AISlowOHKOId != PARTY_SIZE)                 return AISlowOHKOId;
@@ -2561,6 +2562,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         return bestMonId;
 
     return PARTY_SIZE;
+    //gAiLogicData->switchInCalc = FALSE;
 }
 
 static u32 GetNextMonInParty(struct Pokemon *party, int firstId, int lastId, u32 battlerIn1, u32 battlerIn2)

@@ -69,9 +69,8 @@ BurnedTower_Movement_Silver2:
 BurnedTower_1FSilverIntroText:
 	.string "..............................\p"
 	.string "...Oh, it's you.\p"
-	.string "I came looking for some\n"
-	.string "legendary Pokémon they say\l"
-	.string "roost here.\p"
+	.string "I came looking for some legendary\n"
+	.string "Pokémon they say roost here.\p"
 	.string "But there's nothing here!\p"
 	.string "Nothing, after all the effort\n"
 	.string "of coming to this dump?\p"
@@ -267,20 +266,18 @@ BurnedTower_1F_EventScript_Richardo::
 
 BurnedTower_Text_NardSeen:
 	.string "Don't worry!\p"
-	.string "We fire-breathers know the true\n"
-	.string "power of fire better than anyone!$"
+	.string "I'll catch the legendary Pokémon before\n"
+	.string "it poses a threat to anyone!$"
 BurnedTower_Text_NardBeaten:
 	.string "Thanks for such a heated battle!$"
 BurnedTower_Text_NardAfter:
 	.string "The reason this tower's burned is\n"
 	.string "that it was hit by lightning.\p"
-	.string "The fire I'm breathing is tiny\n"
-	.string "in comparison...$"
+	.string "Do you think a Pokémon did it...?$"
 
 BurnedTower_Text_RichardoSeen:
 	.string "I'm practicing my stealing in the\n"
-	.string "Burned Tower! Don't try this at\p"
-	.string "home!$"
+	.string "Burned Tower! Don't try this at home!$"
 BurnedTower_Text_RichardoBeaten:
 	.string "Pfffffffffffffff.$"
 BurnedTower_Text_RichardoAfter:

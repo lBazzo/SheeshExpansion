@@ -1178,6 +1178,8 @@ static bool32 HandleEndTurnMagicRoom(u32 battler)
 
 static bool32 EndTurnTerrain(u32 terrainFlag, u32 stringTableId)
 {
+    return FALSE;
+
     if (gFieldTimers.terrainTimer > 0 && --gFieldTimers.terrainTimer == 0)
     {
         gFieldStatuses &= ~terrainFlag;
@@ -1187,7 +1189,7 @@ static bool32 EndTurnTerrain(u32 terrainFlag, u32 stringTableId)
         return TRUE;
     }
 
-    return FALSE;
+    //return FALSE;
 }
 
 static bool32 HandleEndTurnTerrain(u32 battler)

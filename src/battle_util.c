@@ -1236,6 +1236,38 @@ bool32 IsLastMonToMove(u32 battler)
     return TRUE;
 }
 
+static u32 GetAiTurnOrder(u8 *aiTurnOrder, enum BattlerId battler)
+{
+    for (u32 i = 0; i < gBattlersCount; i++)
+    {
+        if (aiTurnOrder[i] == battler)
+            return i;
+    }
+    return 0;
+}
+
+static bool32 Ai_AttackerMovesAfterTarget(struct DamageContext *ctx)
+{
+    return GetAiTurnOrder(ctx->aiTurnOrder, ctx->battlerAtk) > GetAiTurnOrder(ctx->aiTurnOrder, ctx->battlerDef);
+}
+
+static bool32 Ai_AttackerMovesLast(struct DamageContext *ctx)
+{
+    u32 numAliveBattlers = 0;
+    u32 battlerTurnOrder = GetAiTurnOrder(ctx->aiTurnOrder, ctx->battlerAtk);
+
+    for (enum BattlerId battler = B_BATTLER_0; battler < gBattlersCount; battler++)
+    {
+        if (IsBattlerAlive(battler))
+            numAliveBattlers++;
+    }
+
+    if (battlerTurnOrder >= numAliveBattlers - 1)
+        return TRUE;
+
+    return FALSE;
+}
+
 bool32 ShouldDefiantCompetitiveActivate(u32 battler, enum Ability ability)
 {
     u32 side = GetBattlerSide(battler);
@@ -7505,14 +7537,34 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         }
         break;
     case EFFECT_PAYBACK:
-        if (HasBattlerActedThisTurn(battlerDef)
+        //if (HasBattlerActedThisTurn(battlerDef)
+        //    && (B_PAYBACK_SWITCH_BOOST < GEN_5 || gDisableStructs[battlerDef].isFirstTurn != 2))
+        //    basePower *= 2;
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            if (Ai_AttackerMovesAfterTarget(ctx))
+                basePower *= 2;
+        }
+        else if (HasBattlerActedThisTurn(battlerDef)
             && (B_PAYBACK_SWITCH_BOOST < GEN_5 || gDisableStructs[battlerDef].isFirstTurn != 2))
+        {
             basePower *= 2;
+        }
         break;
     case EFFECT_BOLT_BEAK:
-        if (!HasBattlerActedThisTurn(battlerDef)
-            || gDisableStructs[battlerDef].isFirstTurn == 2)
+        //if (!HasBattlerActedThisTurn(battlerDef)
+        //    || gDisableStructs[battlerDef].isFirstTurn == 2)
+        //    basePower *= 2;
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            if (!Ai_AttackerMovesAfterTarget(ctx))
+                basePower *= 2;
+        }
+        else if (!HasBattlerActedThisTurn(battlerDef)
+            && (B_PAYBACK_SWITCH_BOOST < GEN_5 || gDisableStructs[battlerDef].isFirstTurn != 2))
+        {
             basePower *= 2;
+        }
         break;
     case EFFECT_FUSION_COMBO:
         if (move == gLastUsedMove)
@@ -7532,6 +7584,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     //case EFFECT_MISTY_EXPLOSION:
     //    if (IsBattlerTerrainAffected(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk, STATUS_FIELD_MISTY_TERRAIN))
     //        basePower = uq4_12_multiply(basePower, UQ_4_12(1.5));
+    case EFFECT_EXPLOSION:
+    case EFFECT_MISTY_EXPLOSION:
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            basePower = 0;
+        }
         break;
     case EFFECT_DYNAMAX_DOUBLE_DMG:
         if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
@@ -7638,15 +7696,21 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case EFFECT_RETALIATE:
-        if (gSideTimers[atkSide].retaliateTimer == 1)
-            modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
-        break;
+        //if (gSideTimers[atkSide].retaliateTimer == 1)
+            //modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+        //break;
+        {
+            u32 retaliateTimer = gSideTimers[atkSide].retaliateTimer;
+            if (retaliateTimer  == 1 || (gAiLogicData->switchInCalc && retaliateTimer == 2))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+            break;
+        }
     case EFFECT_SOLAR_BEAM:
         if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     case EFFECT_STOMPING_TANTRUM:
-        if (gBattleStruct->battlerState[battlerAtk].stompingTantrumTimer == 1)
+        if ((!gAiLogicData->switchInCalc) && gBattleStruct->battlerState[battlerAtk].stompingTantrumTimer == 1)
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case EFFECT_MAGNITUDE:
@@ -7727,8 +7791,20 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        //if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+        //   modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        if (moveEffect == EFFECT_FUTURE_SIGHT)
+            break;
+
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            if (Ai_AttackerMovesLast(ctx))
+               modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        }
+        else if (IsLastMonToMove(battlerAtk))
+        {
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        }
         break;
     case ABILITY_TOUGH_CLAWS:
         if (IsMoveMakingContact(battlerAtk, battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
@@ -8668,7 +8744,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         }
         break;
     case ABILITY_SUN_GAZER:
-        if (ctx->typeEffectivenessModifier >= UQ_4_12(1.0))
+        if (ctx->typeEffectivenessModifier == UQ_4_12(1.0))
         {
             modifier = UQ_4_12(0.67);
             recordAbility = TRUE;

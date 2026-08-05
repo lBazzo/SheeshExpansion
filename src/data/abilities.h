@@ -2466,7 +2466,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
 
     [ABILITY_NOCTURNAL] =
     {
-        .name = _("Night Owl"),
+        .name = _("Nocturnal"),
         .description = COMPOUND_STRING("Gains moon powers."),
         .aiRating = 6,
     },

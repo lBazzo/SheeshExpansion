@@ -107,16 +107,19 @@ Route37_Text_TwinsAnnAndAnne2_After:
 	.string "our Pokémon.$"
 
 Route37_Text_PsychicGreg_Seen:
-	.string "Pokémon can't do a thing if they are\n"
-	.string "asleep.\p"
-	.string "I'll show you how scary that is!$"
+	.string "Goodness, isn't this sandstorm wild?\p"
+	.string "But you know, a battle in such\n"
+	.string "conditions would make for productive\l"
+	.string "training, wouldn't it?$"
 
 Route37_Text_PsychicGreg_Beaten:
-	.string "I lost. That's pretty sad…$"
+	.string "Ack... It seems I was in need of training\n"
+	.string "after all.$"
 
 Route37_Text_PsychicGreg_After:
-	.string "Putting Pokémon to sleep or paralyz-\n"
-	.string "ing them are good battle techniques.$"
+	.string "Life just isn't as fun if you always\n"
+	.string "take the easy way out.\p"
+	.string "That's what I think.$"
 
 Route37_Text_Sunny_Meet:
 	.string "SUNNY: Hi!\p"

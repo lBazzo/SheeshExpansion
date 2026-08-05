@@ -176,6 +176,7 @@ struct DamageContext
     enum Ability abilityDef;
     enum HoldEffect holdEffectAtk;
     enum HoldEffect holdEffectDef;
+    u8 aiTurnOrder[MAX_BATTLERS_COUNT];
 };
 
 struct BattleContext
@@ -186,6 +187,7 @@ struct BattleContext
     u32 padding:10;
     enum Ability abilities[MAX_BATTLERS_COUNT];
     enum HoldEffect holdEffects[MAX_BATTLERS_COUNT];
+    //u8 aiTurnOrder[MAX_BATTLERS_COUNT];
 };
 
 enum SleepClauseBlock
