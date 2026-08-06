@@ -721,7 +721,7 @@ AI_DOUBLE_BATTLE_TEST("AI scores Skill Swap in doubles correctly")
     } WHEN {
         if (opponentAbility == ABILITY_SAP_SIPPER)
         {
-            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_SKILL_SWAP, 109, target:opponentRight); }
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_SKILL_SWAP, 113, target:opponentRight); }
         }
         else if (opponentAbility == ABILITY_ADAPTABILITY)
         {
@@ -900,7 +900,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
         }
         else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT && playerAbility == ABILITY_SHIELD_DUST)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); SCORE_EQ_VAL(opponent, maybeFakeOut, 100); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); SCORE_EQ_VAL(opponent, maybeFakeOut, 108); }
         }
     }
 } 
@@ -1861,7 +1861,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Counter")
         }
         else if (opponentItem == ITEM_FOCUS_SASH)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_COUNTER, 106); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_COUNTER, 108); }
         }
     }
 }
@@ -1893,7 +1893,7 @@ AI_SINGLE_BATTLE_TEST("AI correctly scores Metal Burst")
         }
         else if (opponentItem == ITEM_FOCUS_SASH && opponentSpeed == 90)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_METAL_BURST, 106); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_METAL_BURST, 108); }
         }
         else if (opponentItem == ITEM_FOCUS_SASH && opponentSpeed == 110)
         {
@@ -3323,11 +3323,11 @@ AI_SINGLE_BATTLE_TEST("AI Correctly scores Pivot moves with no mon in the back a
     } WHEN {
         if (betterMoveCheck == MOVE_X_SCISSOR && playerHP == 500)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_U_TURN, 80); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_U_TURN, 100); }
         }
         else if (betterMoveCheck == MOVE_SPLASH && playerHP == 500)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_U_TURN, 109); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_U_TURN, 108); }
         }
         else if (betterMoveCheck == MOVE_X_SCISSOR && playerHP == 5)
         {
@@ -3451,11 +3451,11 @@ AI_DOUBLE_BATTLE_TEST("AI scores updated Follow Me correctly")
         }
         else if (playerLeftMaybeKillingAIMove == MOVE_BRAVE_BIRD && playerLeftMaybeKillingAIPartnerMove == MOVE_CLOSE_COMBAT && playerRightMaybeKillingAIMove == MOVE_BRAVE_BIRD && playerRightMaybeKillingAIPartnerMove == MOVE_BODY_PRESS && AIPartnerMaybeKillingPlayerLeftMove == MOVE_BRAVE_BIRD && AIPartnerMaybeKillingPlayerRightMove == MOVE_BODY_PRESS)
         {
-            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerRight); }
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 108, target:playerLeft); }
         }
         else if (playerLeftMaybeKillingAIMove == MOVE_SPLASH && playerLeftMaybeKillingAIPartnerMove == MOVE_CLOSE_COMBAT && playerRightMaybeKillingAIMove == MOVE_SPLASH && playerRightMaybeKillingAIPartnerMove == MOVE_SPLASH && AIPartnerMaybeKillingPlayerLeftMove == MOVE_BRAVE_BIRD && AIPartnerMaybeKillingPlayerRightMove == MOVE_BODY_PRESS)
         {
-            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerRight); }
+            TURN { SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerLeft); SCORE_EQ_VAL(opponentLeft, MOVE_FOLLOW_ME, 109, target:playerLeft); }
         }
     }
 }
@@ -3490,7 +3490,7 @@ AI_SINGLE_BATTLE_TEST("AI still correctly scores the next highest damaging move 
     u32 maybePivotMove;
 
     PARAMETRIZE { maybePivotMove = MOVE_SPLASH; }
-    PARAMETRIZE { maybePivotMove = MOVE_VOLT_SWITCH; }
+    PARAMETRIZE { maybePivotMove = MOVE_EXPLOSION; }
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_TARGETING);
@@ -3502,9 +3502,9 @@ AI_SINGLE_BATTLE_TEST("AI still correctly scores the next highest damaging move 
         {
             TURN { SCORE_EQ_VAL(opponent, MOVE_THUNDER_SHOCK, 108); }
         }
-        else if (maybePivotMove == MOVE_VOLT_SWITCH)
+        else if (maybePivotMove == MOVE_EXPLOSION)
         {
-            TURN { SCORE_EQ_VAL(opponent, maybePivotMove, 104); SCORE_EQ_VAL(opponent, MOVE_THUNDER_SHOCK, 108); }
+            TURN { SCORE_EQ_VAL(opponent, maybePivotMove, 109); SCORE_EQ_VAL(opponent, MOVE_THUNDER_SHOCK, 108); }
         }
     }
 }

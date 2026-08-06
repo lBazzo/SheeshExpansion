@@ -4670,7 +4670,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
 */
 
     // check guaranteed flinch, a la Fake Out Bazzo note: hoping this also includes fling with king's rock???
-    if (IsFlinchGuaranteed(battlerAtk, battlerDef, move))
+    if (IsFlinchGuaranteed(battlerAtk, battlerDef, move)
+    && (!(gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST))
+    && (!(gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS)))
         ADJUST_SCORE(GOOD_EFFECT); //Bazzo TODO: check if this is actually applying to king's rock fling or not at some point, +9
 
     // Non-volatile statuses
@@ -5291,7 +5293,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     //uq4_12_t effectiveness = aiData->effectiveness[battlerAtk][battlerDef][movesetIndex];
         // LAST MON CASES FIRST
         // Never use if last mon and not highest damage
-        
+        /*
         if (CountUsablePartyMons(battlerAtk) == 0
         && (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)))
         {
@@ -5317,7 +5319,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 break;
             }
             break;
+        }*/
+        if (CountUsablePartyMons(battlerAtk) == 0)
+        {
+            break;
         }
+            
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
         //if (effectiveness < UQ_4_12(1.0))
         //    ADJUST_SCORE(-1);
@@ -7626,6 +7633,15 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
                     && effect != EFFECT_COUNTER
                     && effect != EFFECT_METAL_BURST
                     && effect != EFFECT_SHELL_TRAP)
+            {
+                ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                    if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)) // newly added rnb +2
+                        ADJUST_SCORE(2);
+            }
+            else if (gAiThinkingStruct->aiFlags[battlerAtk] & (AI_FLAG_RISKY | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE) 
+                    && IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && effect == EFFECT_HIT_ESCAPE
+                    && (CountUsablePartyMons(battlerAtk) == 0))
             {
                 ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     if (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)) // newly added rnb +2

@@ -7557,11 +7557,12 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         //    basePower *= 2;
         if (gAiLogicData->aiCalcInProgress == TRUE)
         {
+            //DebugPrintf("calc in progress bolt beak");
             if (!Ai_AttackerMovesAfterTarget(ctx))
                 basePower *= 2;
         }
         else if (!HasBattlerActedThisTurn(battlerDef)
-            && (B_PAYBACK_SWITCH_BOOST < GEN_5 || gDisableStructs[battlerDef].isFirstTurn != 2))
+            || (gDisableStructs[battlerDef].isFirstTurn == 2))
         {
             basePower *= 2;
         }

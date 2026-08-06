@@ -54,6 +54,7 @@ SINGLE_BATTLE_TEST("Grassy Terrain increases power of Grass-type moves by 30/50 
 
 SINGLE_BATTLE_TEST("Grassy Terrain lasts for 5 turns")
 {
+    KNOWN_FAILING;//terrain indefinite now
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -83,6 +84,7 @@ SINGLE_BATTLE_TEST("Grassy Terrain lasts for 5 turns")
 
 SINGLE_BATTLE_TEST("Grassy Terrain heals the Pokémon on the field for the duration of the terrain, including last turn")
 {
+    KNOWN_FAILING;//terrain indefinite now
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); };

@@ -62,7 +62,7 @@ AI_SINGLE_BATTLE_TEST("AI will increase speed if it is slower")
 
 AI_SINGLE_BATTLE_TEST("AI will not waste a turn setting up if it knows target can faint it")
 {
-    KNOWN_FAILING; // Bazzo note: This fails because of the Kanga buffs
+    //KNOWN_FAILING; // Bazzo note: This fails because of the Kanga buffs
     u16 move;
 
     PARAMETRIZE { move = MOVE_HOWL; }

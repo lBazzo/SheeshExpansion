@@ -1599,7 +1599,7 @@ void GetBestDmgMoveFromBattler(u32 battlerAtk, u32 battlerDef, enum DamageCalcCo
     {
         if (IsMoveUnusable(moveIndex, moves[moveIndex], moveLimitations) || (GetMovePower(moves[moveIndex]) == 0)
         || (AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData) == 0)
-        || (!IsElegibleForBestDmgMove(moves[moveIndex])))
+        || (!IsElegibleForBestDmgMove(moves[moveIndex], battlerAtk)))
             continue;
 
         if (bestDmg < AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData))
@@ -1627,14 +1627,14 @@ u16 GetMoveIndex(u32 battler, u32 move)
     return MAX_MON_MOVES;
 }
 
-bool32 IsElegibleForBestDmgMove(u32 move)
+bool32 IsElegibleForBestDmgMove(u32 move, u32 battlerAtk)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
 
     if (effect != EFFECT_FINAL_GAMBIT
         && effect != EFFECT_EXPLOSION
         && effect != EFFECT_MISTY_EXPLOSION
-        && effect != EFFECT_HIT_ESCAPE
+        //&& effect != EFFECT_HIT_ESCAPE
         && effect != EFFECT_FUTURE_SIGHT
         && effect != EFFECT_FLING
         && effect != EFFECT_OHKO
@@ -1646,6 +1646,16 @@ bool32 IsElegibleForBestDmgMove(u32 move)
         {
             //DebugPrintf("IS elegible move");
             return TRUE;
+        }
+    else if (effect == EFFECT_HIT_ESCAPE
+    && (CountUsablePartyMons(battlerAtk) == 0))
+        {
+            return TRUE;
+        }
+    else if (effect == EFFECT_HIT_ESCAPE
+    && (CountUsablePartyMons(battlerAtk) != 0))
+        {
+            return FALSE;
         }
     else
         {
