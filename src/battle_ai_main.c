@@ -5319,7 +5319,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 break;
             }
             break;
-        }*/
+        }*/       
         if (CountUsablePartyMons(battlerAtk) == 0)
         {
             break;
@@ -6737,17 +6737,19 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(GOOD_EFFECT);
             break;
         }*/
+        if (IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+            break;
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_TOXIC_ORB)
         {
-                IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
+            IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
         }
         else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_FLAME_ORB)
         {
-                IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+            IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
         }
         else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_LIGHT_BALL)
         {
-                IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
+            IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
         }
         else if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_FLINCH)
         {
@@ -7186,7 +7188,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
-    case EFFECT_SOLAR_BEAM:
+    /*case EFFECT_SOLAR_BEAM:
     case EFFECT_TWO_TURNS_ATTACK:
         if (IsTwoTurnNotSemiInvulnerableMove(battlerAtk, move))
         {
@@ -7201,7 +7203,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             else
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
         }
-        break;
+        break;*/
     case EFFECT_HIT_SWITCH_TARGET:
         if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
         && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
@@ -7258,7 +7260,8 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 case MOVE_EFFECT_SPD_PLUS_1:
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
                 case MOVE_EFFECT_SP_DEF_PLUS_1:
-                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)) //Bazzo note: should stop moves from gaining setup scores and best damage move scores
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (move != MOVE_SKULL_BASH)) //Bazzo note: should stop moves from gaining setup scores and best damage move scores
                         {
                         StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
                         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId, move));

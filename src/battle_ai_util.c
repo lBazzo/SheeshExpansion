@@ -1599,7 +1599,7 @@ void GetBestDmgMoveFromBattler(u32 battlerAtk, u32 battlerDef, enum DamageCalcCo
     {
         if (IsMoveUnusable(moveIndex, moves[moveIndex], moveLimitations) || (GetMovePower(moves[moveIndex]) == 0)
         || (AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData) == 0)
-        || (!IsElegibleForBestDmgMove(moves[moveIndex], battlerAtk)))
+        || (!IsEligibleForBestDmgMove(moves[moveIndex], battlerAtk)))
             continue;
 
         if (bestDmg < AI_GetDamage(battlerAtk, battlerDef, moveIndex, calcContext, aiData))
@@ -1627,16 +1627,78 @@ u16 GetMoveIndex(u32 battler, u32 move)
     return MAX_MON_MOVES;
 }
 
-bool32 IsElegibleForBestDmgMove(u32 move, u32 battlerAtk)
+bool32 IsEligibleForBestDmgMove(u32 move, u32 battlerAtk)
 {
-    enum BattleMoveEffects effect = GetMoveEffect(move);
+    //enum BattleMoveEffects effect = GetMoveEffect(move);
+    enum HoldEffect holdEffect = gAiLogicData->holdEffects[battlerAtk];
 
-    if (effect != EFFECT_FINAL_GAMBIT
+    switch (GetMoveEffect(move))
+    {
+    case EFFECT_HIT_ESCAPE:
+        if (CountUsablePartyMons(battlerAtk) == 0)
+            return TRUE;
+        else 
+            return FALSE;
+        break;
+    case EFFECT_SOLAR_BEAM:
+        if (AI_GetWeather() & B_WEATHER_SUN || holdEffect == HOLD_EFFECT_POWER_HERB)
+            return TRUE;
+        else
+            return FALSE;
+        break;
+    case EFFECT_TWO_TURNS_ATTACK:
+        if (holdEffect == HOLD_EFFECT_POWER_HERB)
+            return TRUE;
+        else if (move == MOVE_ELECTRO_SHOT)
+        {
+            if (AI_GetWeather() & B_WEATHER_RAIN)
+                return TRUE;
+            else if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return TRUE;
+        }
+        else if (move == MOVE_SKULL_BASH || move == MOVE_METEOR_BEAM)
+        {
+            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return TRUE;
+        }
+        else
+            return FALSE;
+        break;
+    case EFFECT_FINAL_GAMBIT:
+    case EFFECT_EXPLOSION:
+    case EFFECT_MISTY_EXPLOSION:
+    case EFFECT_FUTURE_SIGHT:
+    case EFFECT_OHKO:
+    case EFFECT_SHEER_COLD:
+    case EFFECT_MIRROR_COAT:
+    case EFFECT_COUNTER:
+    case EFFECT_METAL_BURST:
+    case EFFECT_SHELL_TRAP:
+        return FALSE;
+        break;
+    default:
+        return TRUE;
+        break;
+    }
+
+    return TRUE;
+
+    /*if (effect == EFFECT_HIT_ESCAPE
+    && (CountUsablePartyMons(battlerAtk) == 0))
+        {
+            return TRUE;
+        }
+    else if (effect == EFFECT_HIT_ESCAPE
+    && (CountUsablePartyMons(battlerAtk) != 0))
+        {
+            return FALSE;
+        }
+    else if (effect != EFFECT_FINAL_GAMBIT
         && effect != EFFECT_EXPLOSION
         && effect != EFFECT_MISTY_EXPLOSION
         //&& effect != EFFECT_HIT_ESCAPE
         && effect != EFFECT_FUTURE_SIGHT
-        && effect != EFFECT_FLING
+        //&& effect != EFFECT_FLING
         && effect != EFFECT_OHKO
         && effect != EFFECT_SHEER_COLD
         && effect != EFFECT_MIRROR_COAT
@@ -1647,23 +1709,13 @@ bool32 IsElegibleForBestDmgMove(u32 move, u32 battlerAtk)
             //DebugPrintf("IS elegible move");
             return TRUE;
         }
-    else if (effect == EFFECT_HIT_ESCAPE
-    && (CountUsablePartyMons(battlerAtk) == 0))
-        {
-            return TRUE;
-        }
-    else if (effect == EFFECT_HIT_ESCAPE
-    && (CountUsablePartyMons(battlerAtk) != 0))
-        {
-            return FALSE;
-        }
     else
         {
             //DebugPrintf("not elegible move");
             return FALSE;
         }
 
-    //return TRUE;
+    //return TRUE;*/
 }
 
 
@@ -5400,6 +5452,7 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
     GetBestDmgMoveFromBattler(battlerAtk, battlerDef, AI_ATTACKING, bestMoves);
     u32 statUpMoveDamage;
     statUpMoveDamage = gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, move)].maximum;
+    enum HoldEffect holdEffect = gAiLogicData->holdEffects[battlerAtk];
     
     //DebugPrintf("should set up %d", shouldSetUp);
     //DebugPrintf("stat id %d", statId);
@@ -5411,6 +5464,11 @@ u32 IncreaseStatUpScore(u32 battlerAtk, u32 battlerDef, enum StatChange statChan
     if (!ShouldRaiseAnyStat(battlerAtk, battlerDef))
         return NO_INCREASE;
 
+    if (move == MOVE_SKULL_BASH || move == MOVE_METEOR_BEAM)
+    {
+        if (holdEffect != HOLD_EFFECT_POWER_HERB)
+            return NO_INCREASE;
+    }
         /*
     // Don't increase stats if opposing battler has Unaware
     if (HasBattlerSideAbility(battlerDef, ABILITY_UNAWARE, gAiLogicData))

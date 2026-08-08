@@ -292,13 +292,11 @@ OlivineCity_Gym_Text_ReceivedMineralBadge:
 	.string "{PLAYER} received the Mineral Badge.$"
 
 OlivineCity_Gym_Text_JasmineBadgeSpeech:
-	.string "The Mineral Badge raises Pokémon's \n"
-	.string "SPECIAL DEFENSE.\p"
 	.string "…Um… Please take this too…$"
 
 OlivineCity_Gym_Text_JasmineIronTailSpeech:
 	.string "…You could use that TM to teach\n"
-	.string "IRON TAIL.$"
+	.string "Iron Tail.$"
 
 OlivineCity_Gym_Text_JasmineGoodLuck:
 	.string "Um… I don't know how to say this,\n"

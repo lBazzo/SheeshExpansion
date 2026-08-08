@@ -11997,6 +11997,10 @@ static void Cmd_tryactivateitem(void)
         if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsOnHpThresholdActivation))
             return;
         break;
+    case ACTIVATION_ON_STATUS_CHANGE:
+        if (ItemBattleEffects(battler, 0, GetBattlerHoldEffect(battler), IsOnStatusChangeActivation))
+            return;
+        break;
     }
 }
 

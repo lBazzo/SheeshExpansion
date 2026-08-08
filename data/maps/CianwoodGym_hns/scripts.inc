@@ -159,14 +159,12 @@ CianwoodGym_Text_ChuckIntro3:
 CianwoodGym_Text_ChuckLoss:
 	.string "Wha? Huh? I lost?\p"
 	.string "How about that!\n"
-	.string "You're worthy of Storm Badge!$"
+	.string "You're worthy of the Storm Badge!$"
 
 CianwoodGym_Text_GetStormBadge:
 	.string "{PLAYER} received Storm Badge.$"
 
 CianwoodGym_Text_ChuckBadgeSpeech:
-	.string "The Storm Badge lets you use \n"
-	.string "Fly when you're not in a battle.\p"
 	.string "Here, take this too!$"
 
 CianwoodGym_Text_ChuckTMSpeech:

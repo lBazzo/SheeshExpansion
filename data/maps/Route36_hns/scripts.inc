@@ -263,25 +263,29 @@ Route36_EventScript_Lass::
 	end
 Route36_EventScript_Lass2::
 	msgbox Route36_Text_Lass2_ClearedSudowoodo, MSGBOX_DEFAULT
-	giveitem ITEM_CUSTAP_BERRY, 1
-	giveitem ITEM_KEE_BERRY, 1
-	giveitem ITEM_MARANGA_BERRY, 1
-	giveitem ITEM_BLUK_BERRY, 3
-	giveitem ITEM_NANAB_BERRY, 3
-	giveitem ITEM_WEPEAR_BERRY, 3
-	giveitem ITEM_PINAP_BERRY, 3
-	giveitem ITEM_POMEG_BERRY, 3
-	giveitem ITEM_KELPSY_BERRY, 3
-	giveitem ITEM_QUALOT_BERRY, 3
-	giveitem ITEM_HONDEW_BERRY, 3
-	giveitem ITEM_GREPA_BERRY, 3
-	giveitem ITEM_TAMATO_BERRY, 3
-	giveitem ITEM_CORNN_BERRY, 3
-	giveitem ITEM_MAGOST_BERRY, 3
-	giveitem ITEM_RABUTA_BERRY, 3
-	giveitem ITEM_NOMEL_BERRY, 3
-	giveitem ITEM_SPELON_BERRY, 3
-	giveitem ITEM_PAMTRE_BERRY, 3
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox Route36_Text_ObtainedNaturalGiftBerries
+	waitfanfare
+	additem ITEM_CUSTAP_BERRY, 1
+	additem ITEM_KEE_BERRY, 1
+	additem ITEM_MARANGA_BERRY, 1
+	additem ITEM_BLUK_BERRY, 3
+	additem ITEM_NANAB_BERRY, 3
+	additem ITEM_WEPEAR_BERRY, 3
+	additem ITEM_PINAP_BERRY, 3
+	additem ITEM_POMEG_BERRY, 3
+	additem ITEM_KELPSY_BERRY, 3
+	additem ITEM_QUALOT_BERRY, 3
+	additem ITEM_HONDEW_BERRY, 3
+	additem ITEM_GREPA_BERRY, 3
+	additem ITEM_TAMATO_BERRY, 3
+	additem ITEM_CORNN_BERRY, 3
+	additem ITEM_MAGOST_BERRY, 3
+	additem ITEM_RABUTA_BERRY, 3
+	additem ITEM_NOMEL_BERRY, 3
+	additem ITEM_SPELON_BERRY, 3
+	additem ITEM_PAMTRE_BERRY, 3
 	setflag FLAG_GOT_NATURAL_GIFT_BERRIES
 	goto Route36_EventScript_NaturalGiftTutor
 	end
@@ -366,6 +370,9 @@ Route36_Text_Lass1:
 	.string "I saw a Pokémon that looked like\n"
 	.string "Growlithe, but it had a scary aura\l"
 	.string "to it.$"
+
+Route36_Text_ObtainedNaturalGiftBerries:
+	.string "{PLAYER} obtained the Natural Gift berries!$"
 
 Route36_Text_Lass2_ClearedSudowoodo:
 	.string "That odd tree just walked right\n"
@@ -520,16 +527,18 @@ Route36_Text_PokefanFBeverly_After:
 	.string "cute, too.$"
 
 Route36_Text_PokefanmWilliam_Seen:
-	.string "We adore our Pokémon, even if they\n"
-	.string "dislike us.\p"
-	.string "That's what being a Fan is about.$"
+	.string "Bet you're feeling confident being so\n"
+	.string "close to Ecruteak, aren't you?\p"
+	.string "Don't get too cocky just yet, there's\n"
+	.string "still me to get through!$"
 
 Route36_Text_PokefanmWilliam_Beaten:
-	.string "M-my Pokémon!$"
+	.string "Huh. I guess you earned that\n"
+	.string "confidence.$"
 
 Route36_Text_PokefanmWilliam_After:
-	.string "I lost the battle, but my Pokémon win\n"
-	.string "the prize for being most lovely.$"
+	.string "I've nothing left to say. Enjoy your\n"
+	.string "victory.$"
 
 Route36_Text_LassKrise_Seen:
 	.string "Hello? Why are you staring at me?\p"

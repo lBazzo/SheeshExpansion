@@ -8901,7 +8901,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sAnorithLevelUpLearnset,
         .teachableLearnset = sAnorithTeachableLearnset,
         .eggMoveLearnset = sAnorithEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_ARMALDO}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_ARMALDO}),
     },
 
     [SPECIES_ARMALDO] =

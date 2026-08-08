@@ -73,17 +73,12 @@ VioletGym_Text_Falkner_WinLoss:
 	.string "Pokémon…\p"
 	.string "All right. Take this.\p"
 	.string "It's the official Pokémon League\n"
-	.string "ZephyrBadge.$"
+	.string "Zephyr Badge.$"
 
 VioletGym_Text_ReceivedZephyrBadge:
 	.string "{PLAYER} received ZephyrBadge.$"
 
 VioletGym_Text_Falkner_BadgeExplain:
-	.string "ZephyrBadge raises the Attack\n"
-	.string "power of Pokémon.\p"
-	.string "It also enables Pokémon to use\n"
-	.string "Flash, if they can learn it,\l"
-	.string "anytime.\p"
 	.string "Here--take this too.$"
 
 VioletGym_Text_Falkner_TMExplain:

@@ -220,11 +220,7 @@ AzaleaTown_Gym_Text_HiveBadgeSpeechMisty:
 	.string "Sorry. I lost my cool there.\p"
 	.string "You know, if I get to battle strong\n"
 	.string "trainers like you, then running this Gym\l"
-	.string "isn't so bad.\p"
-	.string "Do you know the benefits\n"
-	.string "of the Hive Badge?\p"
-	.string "Pokémon that know Cut will be able\n"
-	.string "to use it outside of battle.$"
+	.string "isn't so bad.$"
 
 CeruleanCity_Gym_SetSuicuneScene::
 	setvar VAR_SUICUNE_ENCOUNTERS, 6

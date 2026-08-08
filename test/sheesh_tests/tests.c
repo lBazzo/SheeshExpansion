@@ -873,7 +873,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
         PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); Status1(playerStatus); Speed(10); Ability(playerAbility); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FLING, maybeFakeOut); Item(opponentItem); Speed(30); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_FLING, maybeFakeOut, MOVE_SUPER_FANG); Item(opponentItem); Speed(30); }
         ASSUME(gItemsInfo[ITEM_KINGS_ROCK].holdEffect == HOLD_EFFECT_FLINCH);
     } WHEN {
         if (opponentItem == ITEM_LIGHT_BALL)
@@ -900,7 +900,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Fling correctly with different items")
         }
         else if (opponentItem == ITEM_KINGS_ROCK && maybeFakeOut == MOVE_FAKE_OUT && playerAbility == ABILITY_SHIELD_DUST)
         {
-            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); SCORE_EQ_VAL(opponent, maybeFakeOut, 108); }
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FLING, 80); SCORE_EQ_VAL(opponent, MOVE_SUPER_FANG, 108); }
         }
     }
 } 
@@ -1285,12 +1285,12 @@ AI_SINGLE_BATTLE_TEST("AI scores Two Turn Attack moves correctly")
         if (opponentTwoTurnMove == MOVE_SOLARBEAM && playerMaybeDragonRage == MOVE_SPLASH)
         {
             TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
-            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 88); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 100); }
         }
         else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 80)
         {
             TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
-            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 88); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 100); }
         }
         else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 100)
         {
@@ -3546,3 +3546,65 @@ AI_SINGLE_BATTLE_TEST("AI correctly sees Belch as usable when its Custap Berry i
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI correctly identifies eligible moves for highest damage scoring")
+{
+    u32 testedHDM;
+    u32 HDMWhenIneligible;
+    u32 AIItem;
+    enum Ability AIAbility;
+
+    PARAMETRIZE { testedHDM = MOVE_SOLARBEAM; HDMWhenIneligible = MOVE_ENERGY_BALL; AIItem = ITEM_NONE; AIAbility = ABILITY_DROUGHT; }
+    PARAMETRIZE { testedHDM = MOVE_SOLARBEAM; HDMWhenIneligible = MOVE_ENERGY_BALL; AIItem = ITEM_POWER_HERB; AIAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { testedHDM = MOVE_EXPLOSION; HDMWhenIneligible = MOVE_TACKLE; AIItem = ITEM_NONE; AIAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { testedHDM = MOVE_VOLT_SWITCH; HDMWhenIneligible = MOVE_THUNDER_SHOCK; AIItem = ITEM_NONE; AIAbility = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { testedHDM = MOVE_VOLT_SWITCH; HDMWhenIneligible = MOVE_THUNDERBOLT; AIItem = ITEM_NONE; AIAbility = ABILITY_SHADOW_TAG; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(testedHDM, HDMWhenIneligible); Item(AIItem); Ability(AIAbility); }
+    } WHEN {
+        if (testedHDM == MOVE_SOLARBEAM && AIAbility == ABILITY_DROUGHT)
+        {
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 108); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 100); }
+        }
+        else if (testedHDM == MOVE_SOLARBEAM && AIItem == ITEM_POWER_HERB)
+        {
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 108); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 100); }
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 100); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 108); }
+        }
+        else if (testedHDM == MOVE_EXPLOSION)
+        {
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 109); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 108); }
+        }
+        else if (HDMWhenIneligible == MOVE_THUNDER_SHOCK)
+        {
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 108); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 100); }
+        }
+        else if (HDMWhenIneligible == MOVE_THUNDERBOLT)
+        {
+            TURN { SCORE_EQ_VAL(opponent, testedHDM, 100); SCORE_EQ_VAL(opponent, HDMWhenIneligible, 108); }
+        }
+    }
+}
+
+SINGLE_BATTLE_TEST("Chesto Berry cures sleep when Yawn takes effect")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_YAWN) == EFFECT_YAWN);
+        ASSUME(gItemsInfo[ITEM_CHESTO_BERRY].holdEffect == HOLD_EFFECT_CURE_SLP);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_CHESTO_BERRY); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(opponent, MOVE_YAWN); }
+        TURN { MOVE(opponent, MOVE_CELEBRATE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_YAWN, opponent);
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_SLP, player);
+        STATUS_ICON(player, sleep: TRUE);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
+        STATUS_ICON(player, sleep: FALSE);
+    }
+}
+

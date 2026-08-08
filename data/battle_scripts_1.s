@@ -1606,7 +1606,7 @@ BattleScript_EffectToxicThread::
 	setstatchanger STAT_SPEED, 1, TRUE
 	attackcanceler
 	jumpifsubstituteblocks BattleScript_ButItFailed
-	checknonvolatiletrigger MOVE_EFFECT_POISON, BattleScript_EffectStatDownFromAccCheck
+	checknonvolatiletrigger MOVE_EFFECT_TOXIC, BattleScript_EffectStatDownFromAccCheck
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	attackanimation
 	waitanimation
@@ -1622,7 +1622,7 @@ BattleScript_ToxicThreadPrintString::
 	printfromtable gStatDownStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_ToxicThreadTryPsn::
-	seteffectprimary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_POISON
+	seteffectprimary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_TOXIC
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectVenomDrench::
@@ -4980,6 +4980,7 @@ BattleScript_LeechSeedTurnDrain:
 	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
 	tryfaintmon BS_ATTACKER
+	tryactivateitem BS_ATTACKER, ACTIVATION_ON_HP_THRESHOLD
 	return
 
 BattleScript_BideStoringEnergy::
@@ -6273,6 +6274,7 @@ BattleScript_YawnMakesAsleepEnd2::
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_EFFECT_BATTLER
 	waitstate
+	tryactivateitem BS_EFFECT_BATTLER, ACTIVATION_ON_STATUS_CHANGE
 	jumpfifsemiinvulnerable BS_EFFECT_BATTLER, STATE_SKY_DROP, BattleScript_YawnEnd
 	makevisible BS_EFFECT_BATTLER
 	skydropyawn

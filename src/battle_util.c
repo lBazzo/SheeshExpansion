@@ -11254,6 +11254,7 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
 
     if ((gBattleMons[battlerDef].volatiles.lockOn && gDisableStructs[battlerDef].battlerWithSureHit == battlerAtk)
      || (GetConfig(CONFIG_TOXIC_NEVER_MISS) >= GEN_6 && nonVolatileStatus == MOVE_EFFECT_TOXIC && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
+     || (GetConfig(CONFIG_TOXIC_NEVER_MISS) >= GEN_6 && moveEffect == EFFECT_TOXIC_THREAD && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_POISON))
      || (nonVolatileStatus == MOVE_EFFECT_PARALYSIS && IS_BATTLER_OF_TYPE(battlerAtk, TYPE_ELECTRIC))
      || gBattleMons[battlerDef].volatiles.glaiveRush)
     {
