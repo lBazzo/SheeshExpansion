@@ -20,6 +20,7 @@
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
+#include "constants/item.h"
 #include "constants/items.h"
 #include "config/save.h"
 
@@ -1062,6 +1063,11 @@ struct Bag
     struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
     struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
     struct ItemSlot berries[BAG_BERRIES_COUNT];
+    struct ItemSlot medicine[BAG_MEDICINE_COUNT];
+    struct ItemSlot damageup[BAG_DAMAGEUP_COUNT];
+    struct ItemSlot consumables[BAG_CONSUMABLES_COUNT];
+    struct ItemSlot battleitems[BAG_BATTLEITEMS_COUNT];
+    struct ItemSlot specific[BAG_SPECIFIC_COUNT];
 };
 
 struct SaveBlock1

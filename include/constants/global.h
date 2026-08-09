@@ -93,32 +93,37 @@
 
 // capacities of various saveblock objects
 #define DAYCARE_MON_COUNT 2
-#define POKEBLOCKS_COUNT 40
+#define POKEBLOCKS_COUNT 1
 #define OBJECT_EVENTS_COUNT 16
 #define MAIL_COUNT (10 + PARTY_SIZE)
-#define SECRET_BASES_COUNT 20
+#define SECRET_BASES_COUNT 1
 #define POKE_NEWS_COUNT 16
 #define PC_ITEMS_COUNT 10
 #define OBJECT_EVENT_TEMPLATES_COUNT 64
-#define DECOR_MAX_SECRET_BASE 16
-#define DECOR_MAX_PLAYERS_HOUSE 12
+#define DECOR_MAX_SECRET_BASE 1
+#define DECOR_MAX_PLAYERS_HOUSE 1
 #define APPRENTICE_COUNT 4
 #define APPRENTICE_MAX_QUESTIONS 9
-#define MAX_REMATCH_ENTRIES 92 // only REMATCH_TABLE_ENTRIES (78) are used
+#define MAX_REMATCH_ENTRIES 1 // only REMATCH_TABLE_ENTRIES (78) are used
 #define NUM_CONTEST_WINNERS 13
 #define UNION_ROOM_KB_ROW_COUNT 10
 #define GIFT_RIBBONS_COUNT 11
 #define SAVED_TRENDS_COUNT 5
-#define PYRAMID_BAG_ITEMS_COUNT 10
+#define PYRAMID_BAG_ITEMS_COUNT 1
 #define MAX_REGISTERED_ITEMS 4
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
 
 // Bag constants
-#define BAG_ITEMS_COUNT 80
-#define BAG_KEYITEMS_COUNT 20
+#define BAG_ITEMS_COUNT 50
+#define BAG_KEYITEMS_COUNT 18
 #define BAG_POKEBALLS_COUNT 16
 #define BAG_TMHM_COUNT 75
-#define BAG_BERRIES_COUNT 40
+#define BAG_BERRIES_COUNT 62
+#define BAG_MEDICINE_COUNT 23
+#define BAG_DAMAGEUP_COUNT 23
+#define BAG_CONSUMABLES_COUNT 44
+#define BAG_BATTLEITEMS_COUNT 42
+#define BAG_SPECIFIC_COUNT 21
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.
