@@ -1,6 +1,10 @@
 CliffEdgeGate_hns_MapScripts::
 	.byte 0
 
+CliffEdgeGate_EventScript_Item_RedCard::
+    finditem ITEM_RED_CARD
+    end
+
 CliffEdgeGate_EventScript_Woman::
 	lock
 	faceplayer

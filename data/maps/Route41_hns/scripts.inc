@@ -9,6 +9,10 @@ Route41_MapScript_OnTransition::
 Route41_MapScript_DoNothing::
 	end
 
+Route41_EventScript_Item_BindingBand::
+	finditem ITEM_BINDING_BAND
+	end
+
 Route41_EventScript_George::
 	trainerbattle_single TRAINER_GEORGE, Route41_Text_SwimmermGeorgeSeen, Route41_Text_SwimmermGeorgeBeaten
 	msgbox Route41_Text_SwimmermGeorgeAfter, MSGBOX_AUTOCLOSE

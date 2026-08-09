@@ -3608,3 +3608,17 @@ SINGLE_BATTLE_TEST("Chesto Berry cures sleep when Yawn takes effect")
     }
 }
 
+AI_SINGLE_BATTLE_TEST("AI Correctly doesn't see stomping tantrum as boosted for switch AI if its last move before fainting failed")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_STOMPING_TANTRUM) == EFFECT_STOMPING_TANTRUM);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_MEOWTH) { Moves(MOVE_FAKE_OUT, MOVE_QUICK_ATTACK); }
+        OPPONENT(SPECIES_CHANSEY) { HP(542); Moves(MOVE_CELEBRATE); } 
+        OPPONENT(SPECIES_DIGLETT) { Moves(MOVE_STOMPING_TANTRUM); } 
+        OPPONENT(SPECIES_DIGLETT) { Item(ITEM_GROUND_GEM); Moves(MOVE_HEADLONG_RUSH); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_FAKE_OUT); }
+        TURN { MOVE(player, MOVE_QUICK_ATTACK); EXPECT_SEND_OUT(opponent, 2); }
+    }
+}

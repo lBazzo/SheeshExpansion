@@ -71,21 +71,21 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 10,
-      "y": 30,
+      "x": 19,
+      "y": 92,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route32_EventScript_GreatBall",
-      "flag": "FLAG_ITEM_ROUTE_32_GREATBALL"
+      "script": "Route32_EventScript_RingTarget",
+      "flag": "FLAG_ITEM_ROUTE_32_RINGTARGET"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
       "x": 8,
-      "y": 59,
+      "y": 62,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,

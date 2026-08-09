@@ -477,8 +477,8 @@ GoldenrodCity_UndergroundSwitches_EventScript_Item_Revive::
 	finditem ITEM_MAX_REVIVE
 	end
 
-GoldenrodCity_UndergroundSwitches_EventScript_Item_MaxPotion::
-	finditem ITEM_MAX_POTION
+GoldenrodCity_UndergroundSwitches_EventScript_Item_MentalHerb::
+	finditem ITEM_MENTAL_HERB
 	end
 
 GoldenrodCity_UndergroundSwitches_EventScript_Item_SmokeBall::

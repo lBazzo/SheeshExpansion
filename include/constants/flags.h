@@ -1078,7 +1078,7 @@
 #define FLAG_ITEM_ROUTE39_DRAINING_KISS                                    0x3E9
 #define FLAG_ITEM_ROUTE42_ULTRA_BALL                                0x3EA
 #define FLAG_ITEM_ROUTE42_SUPER_POTION                              0x3EB
-#define FLAG_ITEM_ROUTE42_MODEST_MINT                               0x3EC
+#define FLAG_ITEM_ROUTE42_ADRENALINE_ORB                            0x3EC
 #define FLAG_ITEM_MTMORTAR1_REVIVE                                  0x3ED
 #define FLAG_ITEM_MTMORTAR1_ELIXIR                                  0x3EE
 #define FLAG_ITEM_MTMORTAR2_MAX_REPEL                               0x3EF
@@ -1134,10 +1134,10 @@
 #define FLAG_ITEM_WHIRL_ISLANDS_B2F_CALCIUM                         0x420
 #define FLAG_ITEM_WHIRL_ISLANDS_B2F_ESCAPE_ROPE                     0x421
 #define FLAG_ITEM_ROUTE47_WEATHER_BALL_TM                           0x422
-#define FLAG_ITEM_ROUTE47_REVIVE                                    0x423
+#define FLAG_ITEM_CLIFF_EDGE_GATE_RED_CARD                          0x423
 #define FLAG_ITEM_ROUTE47_WHITE_FLUTE                               0x424
 #define FLAG_ITEM_ROUTE47_STARDUST                                  0x425
-#define FLAG_ITEM_ROUTE43_MAX_ETHER                                 0x426
+#define FLAG_ITEM_ROUTE43_ROOM_SERVICE                              0x426
 #define FLAG_ITEM_LAKEOFRAGE_FULL_RESTORE                           0x427
 #define FLAG_ITEM_LAKEOFRAGE_MAX_REVIVE                             0x428
 #define FLAG_ITEM_LAKEOFRAGE_RED_FLUTE                              0x429
@@ -1263,28 +1263,28 @@
 #define FLAG_NO_SLOW_STAIR_MOVEMENT                                 0x49F // Used to temporaly remove slow stair movement, as it glitches things 
                                                                           // like Steven in Sootopolis leading to Origin Cave.
 #define FLAG_ITEM_ROUTE_29_POTION                                   0x4A0 // HnS ItemFlags Block 1
-#define FLAG_ITEM_ROUTE_31_LIGHT_CLAY                                  0x4A1 
-#define FLAG_ITEM_ROUTE_31_PUNCHING_GLOVE                                 0x4A2 
+#define FLAG_ITEM_ROUTE_31_LIGHT_CLAY                               0x4A1 
+#define FLAG_ITEM_ROUTE_31_PUNCHING_GLOVE                           0x4A2 
 #define FLAG_ITEM_VIOLET_CITY_BERRY_JUICE                           0x4A3 
 #define FLAG_ITEM_VIOLET_CITY_SHELL_BELL                            0x4A4 
 #define FLAG_ITEM_VIOLET_CITY_HYPER_POTION                          0x4A5 
 #define FLAG_EXP_SHARE                                              0x4A6 // EXP SHARE
 #define FLAG_ITEM_SPROUT_TOWER_BIG_ROOT                             0x4A7 
 #define FLAG_ITEM_SPROUT_TOWER_X_DEFEND                             0x4A8 
-#define FLAG_ITEM_SPROUT_TOWER_POTION                               0x4A9 
+#define FLAG_ITEM_SPROUT_TOWER_GRIP_CLAW                            0x4A9 
 #define FLAG_ITEM_SPROUT_TOWER_ESCAPE_ROPE                          0x4AA 
 #define FLAG_ITEM_HELIX_FOSSIL                                      0x4AB 
 #define FLAG_ITEM_DOME_FOSSIL                                       0x4AC 
 #define FLAG_ITEM_OLD_AMBER                                         0x4AD 
 #define FLAG_ITEM_GS_BALL                                           0x4AE 
 #define FLAG_GARBAGEFLAG3                                           0x4AF 
-#define FLAG_ITEM_ROUTE_32_GREATBALL                                0x4B0 
+#define FLAG_ITEM_ROUTE_32_RINGTARGET                               0x4B0 
 #define FLAG_ITEM_ROUTE_32_REFLECT                                  0x4B1 
 #define FLAG_ITEM_ROUTE_32_LIGHT_SCREEN                             0x4B2 
 #define FLAG_ITEM_ROUTE_32_PROTECTIVE_PADS                          0x4B3 
 #define FLAG_ITEM_UNION_CAVE_POTION                                 0x4B4 
 #define FLAG_ITEM_UNION_CAVE_GREAT_BALL                             0x4B5 
-#define FLAG_ITEM_UNION_CAVE_X_ATTACK                               0x4B6 
+#define FLAG_ITEM_UNION_CAVE_FLOAT_STONE                            0x4B6 
 #define FLAG_ITEM_UNION_CAVE_AWAKENING                              0x4B7 
 #define FLAG_ITEM_UNION_CAVE_SECRET_POWER                           0x4B8 
 #define FLAG_ITEM_UNION_CAVE_X_DEFEND                               0x4B9 
@@ -1301,7 +1301,7 @@
 #define FLAG_ITEM_ILEX_FOREST_SUPER_POTION                          0x4C4 
 #define FLAG_ITEM_ILEX_FOREST_SWEET_APPLE                           0x4C5 
 #define FLAG_ITEM_ILEX_FOREST_TART_APPLE                            0x4C6 
-#define FLAG_ITEM_ROUTE34_SUPERPOTION                               0x4C7 
+#define FLAG_ITEM_ROUTE41_BINDING_BAND                              0x4C7 
 #define FLAG_ITEM_ROUTE34_SYRUPY_APPLE                              0x4C8 
 #define FLAG_ITEM_ROUTE34_SOFTSAND                                  0x4C9 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_COIN_CASE                   0x4CA 
@@ -1315,7 +1315,7 @@
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_ULTRA_BALL2                 0x4D2 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_TM_CALM_MIND                0x4D3 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_MAX_ETHER                   0x4D4 
-#define FLAG_ITEM_GOLDENROD_UNDERGROUND_MAX_POTION                  0x4D5 
+#define FLAG_ITEM_GOLDENROD_UNDERGROUND_MENTAL_HERB                 0x4D5 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_REVIVE                      0x4D6 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_SMOKE_BALL                  0x4D7 
 #define FLAG_ITEM_ROUTE35_LOW_KICK                                  0x4D8 

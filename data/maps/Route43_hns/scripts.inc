@@ -39,8 +39,8 @@ Route43_EventScript_Sign2::
 	msgbox Route43_TrainerTips, MSGBOX_SIGN
 	end
 
-Route43_EventScript_Item_Max_Ether::
-	finditem ITEM_MAX_ETHER
+Route43_EventScript_Item_Room_Service::
+	finditem ITEM_ROOM_SERVICE
 	end
 
 Route43_Text_PokemaniacBenSeen:

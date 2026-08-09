@@ -62,8 +62,8 @@ UnionCave_1F_EventScript_Item_GreatBall::
 	finditem ITEM_GREAT_BALL
 	end
 
-UnionCave_1F_EventScript_Item_Xattack::
-	finditem ITEM_X_ATTACK
+UnionCave_1F_EventScript_Item_FloatStone::
+	finditem ITEM_FLOAT_STONE
 	end
 
 UnionCave_1F_EventScript_Item_Awakening::

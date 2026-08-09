@@ -193,8 +193,8 @@ Route42_EventScript_MortarSign::
 Route42_EventScript_Item_SuperPotion::
 	finditem ITEM_SUPER_POTION
 	end
-Route42_EventScript_Item_Mint::
-	finditem ITEM_MODEST_MINT
+Route42_EventScript_Item_AdrenalineOrb::
+	finditem ITEM_ADRENALINE_ORB
 	end
 Route42_EventScript_Item_UltraBall::
 	finditem ITEM_ULTRA_BALL

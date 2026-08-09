@@ -78,6 +78,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CliffEdgeGate_EventScript_Picnicker",
       "flag": "FLAG_HIDE_CLIFF_EDGE_GATE_ENGINEERS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CliffEdgeGate_EventScript_Item_RedCard",
+      "flag": "FLAG_ITEM_CLIFF_EDGE_GATE_RED_CARD"
     }
   ],
   "warp_events": [

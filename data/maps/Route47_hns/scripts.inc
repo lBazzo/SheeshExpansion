@@ -130,10 +130,6 @@ Route47_EventScript_Item_WeatherBallTM::
     finditem ITEM_TM_WEATHER_BALL
     end
 
-Route47_EventScript_Item_Revive::
-    finditem ITEM_REVIVE
-    end
-
 Route47_EventScript_Item_WhiteFlute::
     finditem ITEM_WHITE_FLUTE
     end

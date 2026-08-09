@@ -255,8 +255,8 @@ Route32_EventScript_BaldingManEgg::
 Route32_EventScript_Potion::
 	finditem ITEM_POTION
 	end
-Route32_EventScript_GreatBall::
-	finditem ITEM_GREAT_BALL
+Route32_EventScript_RingTarget::
+	finditem ITEM_RING_TARGET
 	end
 Route32_EventScript_GreatBallII::
 	finditem ITEM_GREAT_BALL

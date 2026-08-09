@@ -32,8 +32,8 @@ SproutTower_3F_EventScript_Painting::
 	release
 	end
 
-SproutTower_3F_EventScript_Potion::
-	finditem ITEM_POTION
+SproutTower_3F_EventScript_GripClaw::
+	finditem ITEM_GRIP_CLAW
 	end
 
 SproutTower_3F_EventScript_EscapeRope::

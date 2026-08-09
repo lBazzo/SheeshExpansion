@@ -79,16 +79,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 4,
-      "y": 23,
+      "x": 2,
+      "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route43_EventScript_Item_Max_Ether",
-      "flag": "FLAG_ITEM_ROUTE43_MAX_ETHER"
+      "script": "Route43_EventScript_Item_Room_Service",
+      "flag": "FLAG_ITEM_ROUTE43_ROOM_SERVICE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VENOMOTH)",

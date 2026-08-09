@@ -109,11 +109,6 @@ Route34_EventScript_Item_SyrupyApple::
 	finditem ITEM_SYRUPY_APPLE
 	end
 
-Route34_EventScript_Item_SuperPotion::
-	finditem ITEM_SUPER_POTION
-	end
-
-
 Route34_Text_YoungsterSamuel_Seen:
 	.string "Hey! I'm looking for Mankey!$"
 
