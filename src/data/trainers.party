@@ -163,7 +163,7 @@ Level: 14
 Bold Nature  
 - Infernal Parade  
 - Ember  
-- Night Shade  
+- Seismic Toss 
 - Rest  
 
 Drowzee @ Leftovers  
@@ -335,12 +335,6 @@ Timid Nature
 - Charge Beam  
 - Recover  
 
-Scyther @ Choice Band  
-Ability: Technician  
-Level: 18    
-Adamant Nature  
-- False Swipe  
-
 Flittle @ Rocky Helmet  
 Ability: Speed Boost  
 Level: 18  
@@ -348,7 +342,13 @@ Timid Nature
 - Night Shade  
 - Endeavor  
 - Foul Play  
-- Captivate  
+- Captivate
+
+Scyther @ Choice Band  
+Ability: Technician  
+Level: 18    
+Adamant Nature  
+- False Swipe  
 
 Cutiefly @ Focus Sash  
 Ability: Shield Dust  
@@ -12418,7 +12418,7 @@ Calm Nature
 - Follow Me  
 
 Talonflame @ Covert Cloak  
-Ability: Flame Body  
+Ability: Wind Rider  
 Level: 82  
 Naive Nature  
 - Revival Blessing  
@@ -16652,7 +16652,7 @@ Timid Nature
 - Focus Blast  
 
 Delphox @ Charcoal  
-Ability: Blaze  
+Ability: Levitate  
 Level: 93   
 Timid Nature  
 - Psychic  
@@ -17494,7 +17494,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Talonflame @ Life Orb  
-Ability: Flame Body  
+Ability: Gale Wings  
 Level: 94    
 Jolly Nature  
 - Brave Bird  

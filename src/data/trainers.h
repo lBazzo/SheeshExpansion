@@ -447,7 +447,7 @@
 #line 164
                 MOVE_INFERNAL_PARADE,
                 MOVE_EMBER,
-                MOVE_NIGHT_SHADE,
+                MOVE_SEISMIC_TOSS,
                 MOVE_REST,
             },
             },
@@ -902,45 +902,45 @@
             },
             {
 #line 338
-            .species = SPECIES_SCYTHER,
+            .species = SPECIES_FLITTLE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 338
-            .heldItem = ITEM_CHOICE_BAND,
+            .heldItem = ITEM_ROCKY_HELMET,
 #line 342
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 339
-            .ability = ABILITY_TECHNICIAN,
+            .ability = ABILITY_SPEED_BOOST,
 #line 340
             .lvl = 18,
 #line 341
-            .nature = NATURE_ADAMANT,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 342
-                MOVE_FALSE_SWIPE,
-            },
-            },
-            {
-#line 344
-            .species = SPECIES_FLITTLE,
-            .gender = TRAINER_MON_RANDOM_GENDER,
-#line 344
-            .heldItem = ITEM_ROCKY_HELMET,
-#line 348
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 345
-            .ability = ABILITY_SPEED_BOOST,
-#line 346
-            .lvl = 18,
-#line 347
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 348
+#line 342
                 MOVE_NIGHT_SHADE,
                 MOVE_ENDEAVOR,
                 MOVE_FOUL_PLAY,
                 MOVE_CAPTIVATE,
+            },
+            },
+            {
+#line 347
+            .species = SPECIES_SCYTHER,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 347
+            .heldItem = ITEM_CHOICE_BAND,
+#line 351
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 348
+            .ability = ABILITY_TECHNICIAN,
+#line 349
+            .lvl = 18,
+#line 350
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 351
+                MOVE_FALSE_SWIPE,
             },
             },
             {
@@ -31838,7 +31838,7 @@ F_TRAINER_FEMALE |
 #line 12424
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 12421
-            .ability = ABILITY_FLAME_BODY,
+            .ability = ABILITY_WIND_RIDER,
 #line 12422
             .lvl = 82,
 #line 12423
@@ -42669,7 +42669,7 @@ F_TRAINER_FEMALE |
 #line 16658
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 16655
-            .ability = ABILITY_BLAZE,
+            .ability = ABILITY_LEVITATE,
 #line 16656
             .lvl = 93,
 #line 16657
@@ -44808,7 +44808,7 @@ F_TRAINER_FEMALE |
 #line 17500
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 17497
-            .ability = ABILITY_FLAME_BODY,
+            .ability = ABILITY_GALE_WINGS,
 #line 17498
             .lvl = 94,
 #line 17499
