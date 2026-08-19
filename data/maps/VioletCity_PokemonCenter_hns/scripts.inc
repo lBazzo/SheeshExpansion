@@ -50,8 +50,8 @@ VioletCity_PokemonCenter_EventScript_Aide_Accepted::
 	msgbox VioletCity_PokeCenter_Text_Nickname, MSGBOX_YESNO
 	call_if_eq VAR_RESULT, YES, VioletCity_PokemonCenter_EventScript_NicknameSpinda
 	setflag FLAG_RECEIVED_SPINDA
-	msgbox VioletCity_PokeCenter_Text_ElmsAideGiveItem, MSGBOX_DEFAULT
-	giveitem ITEM_EXP_SHARE_SMALL
+	@msgbox VioletCity_PokeCenter_Text_ElmsAideGiveItem, MSGBOX_DEFAULT
+	@giveitem ITEM_EXP_SHARE_SMALL
 	setflag FLAG_HIDE_VIOLET_CITY_AIDE
 	setvar VAR_VIOLET_CITY_KIMONO_GIRL, 1
 	clearflag FLAG_HIDE_VIOLET_CITY_KIMONO_GIRL

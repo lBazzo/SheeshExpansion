@@ -310,7 +310,7 @@ EventScript_ResetAllMapFlags::
 	setvar VAR_KARENS_ROOM_STATE, 0
 	setvar VAR_SLOWPOKE_WELL_B2B_STATE, 0
 
-	additem ITEM_EXP_SHARE
+	@additem ITEM_EXP_SHARE
 	setflag FLAG_EXP_SHARE
 #else
 	setflag FLAG_HIDE_CONTEST_POKE_BALL

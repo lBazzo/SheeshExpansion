@@ -204,19 +204,22 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	goto_if_unset FLAG_BADGE03_GET, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlGoBeatWhitney
 	goto_if_set FLAG_GOT_GOLDENROD_BERRIES, GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
 	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlHaveTheseBerries, MSGBOX_DEFAULT
-	giveitem ITEM_FIGY_BERRY, 10
-	giveitem ITEM_WIKI_BERRY, 10
-	giveitem ITEM_MAGO_BERRY, 10
-	giveitem ITEM_AGUAV_BERRY, 10
-	giveitem ITEM_IAPAPA_BERRY, 10
-	giveitem ITEM_ENIGMA_BERRY, 25
-	giveitem ITEM_LUM_BERRY, 900
-	giveitem ITEM_LEPPA_BERRY, 25
-	giveitem ITEM_LANSAT_BERRY, 5
-	giveitem ITEM_MICLE_BERRY, 5
-	giveitem ITEM_ROWAP_BERRY, 3
-	giveitem ITEM_JABOCA_BERRY, 3
-	giveitem ITEM_CUSTAP_BERRY, 1
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox GoldenrodCity_FlowerShop_Text_ManyBerryGirlObtainedTheBerries
+	waitfanfare
+	additem ITEM_FIGY_BERRY, 5
+	additem ITEM_WIKI_BERRY, 5
+	additem ITEM_MAGO_BERRY, 5
+	additem ITEM_AGUAV_BERRY, 5
+	additem ITEM_IAPAPA_BERRY, 5
+	additem ITEM_ENIGMA_BERRY, 10
+	additem ITEM_LUM_BERRY, 900
+	additem ITEM_LANSAT_BERRY, 5
+	additem ITEM_MICLE_BERRY, 5
+	additem ITEM_ROWAP_BERRY, 3
+	additem ITEM_JABOCA_BERRY, 3
+	additem ITEM_CUSTAP_BERRY, 1
 	setflag FLAG_GOT_GOLDENROD_BERRIES
 	goto GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
 	end
@@ -245,3 +248,6 @@ GoldenrodCity_FlowerShop_Text_ManyBerryGirlHaveTheseBerries:
 GoldenrodCity_FlowerShop_Text_ManyBerryGirlSpreadTheBerryLove:
 	.string "Spread these fruits, plant those roots,\n"
 	.string "then loot them en route!$"
+
+GoldenrodCity_FlowerShop_Text_ManyBerryGirlObtainedTheBerries:
+	.string "{PLAYER} obtained the berry collection!$"	

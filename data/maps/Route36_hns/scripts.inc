@@ -552,7 +552,7 @@ Route36_Text_LassKrise_After:
 	.string "because I'm cute!$"
 
 Route36_Text_Sign_HiddenGrottoLeft:
-	.string "Hidden Grotto on your left$"
+	.string "Hidden Grove on your left$"
 
 
 

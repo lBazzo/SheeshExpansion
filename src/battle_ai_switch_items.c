@@ -1176,43 +1176,43 @@ bool32 ShouldSwitch(u32 battler)
 
     if (ShouldSwitchIfWonderGuard(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if ((gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING) && (CanMonSurviveHazardSwitchin(battler) == FALSE))
         return FALSE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfTrapperInParty(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (FindMonThatAbsorbsOpponentsMove(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfOpponentChargingOrInvulnerable(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfTruant(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAllMovesBad(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfBadlyStatused(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAbilityBenefit(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfHasBadOdds(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfEncored(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfBadChoiceLock(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
     if (ShouldSwitchIfAttackingStatsLowered(battler))
         return TRUE;
-    DebugPrintf("%d",__LINE__);
+    //DebugPrintf("%d",__LINE__);
 
     // Removing switch capabilites under specific conditions
     // These Functions prevent the "FindMonWithFlagsAndSuperEffective" from getting out of hand.
