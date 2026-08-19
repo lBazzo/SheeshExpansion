@@ -1194,6 +1194,8 @@ struct MapPosition
     s8 elevation;
 };
 
+//const u16 gTutorMoves[1] = {0};
+
 #if T_SHOULD_RUN_MOVE_ANIM
 extern bool32 gLoadFail;
 extern bool32 gCountAllocs;

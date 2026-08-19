@@ -5934,7 +5934,8 @@ u32 GetRelearnerTutorMoves(struct Pokemon *mon, u16 *moves)
     if (!FlagGet(P_FLAG_TUTOR_MOVES) && !P_ENABLE_MOVE_RELEARNERS)
         return 0;
 
-#if P_TUTOR_MOVES_ARRAY
+#if 0 
+//P_TUTOR_MOVES_ARRAY
     u16 learnedMoves[MAX_MON_MOVES] = {0};
     u32 numMoves = 0;
     u32 species = GetMonData(mon, MON_DATA_SPECIES, 0);

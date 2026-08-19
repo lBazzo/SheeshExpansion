@@ -2393,12 +2393,12 @@ static u8 CanTeachMove(struct Pokemon *mon, u16 move)
 // Lives in party_menu.c so it can see gTutorMoves/TUTOR_MOVE_COUNT safely.
 s8 MoveIdToTutorIndex(u16 moveId)
 {
-    u8 i;
-    for (i = 0; i < TUTOR_MOVE_COUNT; i++)
-    {
-        if (gTutorMoves[i] == moveId)
-            return (s8)i;
-    }
+    //u8 i;
+    //for (i = 0; i < TUTOR_MOVE_COUNT; i++)
+    //{
+    //    if (gTutorMoves[i] == moveId)
+    //        return (s8)i;
+    //}
     return -1;
 }
 

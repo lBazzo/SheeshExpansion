@@ -3957,6 +3957,7 @@ void ScrollableMultichoice_RedrawPersistentMenu(void)
 // HnS
 void GetBattleFrontierTutorMoveIndex(void)
 {
+    return;
     u8 i;
     u16 moveTutor = 0;
     u16 moveIndex = 0;
@@ -3970,7 +3971,7 @@ void GetBattleFrontierTutorMoveIndex(void)
         i = 0;
         do
         {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
+            //if (gTutorMoves[i] == sBattleFrontier_TutorMoves2[moveIndex])
             {
                 gSpecialVar_0x8005 = i;
                 break;
@@ -3983,7 +3984,7 @@ void GetBattleFrontierTutorMoveIndex(void)
         i = 0;
         do
         {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
+            //if (gTutorMoves[i] == sBattleFrontier_TutorMoves1[moveIndex])
             {
                 gSpecialVar_0x8005 = i;
                 break;
@@ -3996,7 +3997,7 @@ void GetBattleFrontierTutorMoveIndex(void)
         i = 0;
         do
         {
-            if (gTutorMoves[i] == sBattleFrontier_TutorMoves3[moveIndex])
+            //if (gTutorMoves[i] == sBattleFrontier_TutorMoves3[moveIndex])
             {
                 gSpecialVar_0x8005 = i;
                 break;
