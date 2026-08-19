@@ -840,7 +840,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Power Swap correctly")
         OPPONENT(SPECIES_CELEBI) { Moves(MOVE_CELEBRATE, MOVE_LEAF_STORM, MOVE_POWER_SWAP); }
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); EXPECT_MOVE(opponent, MOVE_LEAF_STORM); }
-        TURN { SCORE_EQ_VAL(opponent, MOVE_POWER_SWAP, 108); }
+        TURN { SCORE_EQ_VAL(opponent, MOVE_POWER_SWAP, 107); }
     }
 }
 
@@ -1290,7 +1290,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Two Turn Attack moves correctly")
         else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 80)
         {
             TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 108); MOVE(player, MOVE_DRAGON_RAGE); EXPECT_MOVE(opponent, opponentTwoTurnMove); }
-            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 100); }
+            TURN { SCORE_EQ_VAL(opponent, opponentTwoTurnMove, 88); }
         }
         else if (opponentTwoTurnMove == MOVE_METEOR_BEAM && playerMaybeDragonRage == MOVE_DRAGON_RAGE && opponentHP == 100)
         {
@@ -3620,5 +3620,59 @@ AI_SINGLE_BATTLE_TEST("AI Correctly doesn't see stomping tantrum as boosted for 
     } WHEN {
         TURN { MOVE(player, MOVE_FAKE_OUT); }
         TURN { MOVE(player, MOVE_QUICK_ATTACK); EXPECT_SEND_OUT(opponent, 2); }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI Correctly sees crit/hustle for switch in kills")
+{
+    enum Ability ability;
+    u32 AIMove;
+
+    PARAMETRIZE { AIMove = MOVE_FIERY_WRATH; ability = ABILITY_TORRENT; }
+    PARAMETRIZE { AIMove = MOVE_WICKED_BLOW; ability = ABILITY_TORRENT; }
+    PARAMETRIZE { AIMove = MOVE_NIGHT_SLASH; ability = ABILITY_TORRENT; }
+    PARAMETRIZE { AIMove = MOVE_NIGHT_SLASH; ability = ABILITY_HUSTLE; }
+    PARAMETRIZE { AIMove = MOVE_NIGHT_SLASH; ability = ABILITY_SUPER_LUCK; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        PLAYER(SPECIES_FARIGIRAF) { Moves(MOVE_TACKLE); HP(264); Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Moves(MOVE_CELEBRATE, MOVE_TACKLE); Speed(1); }
+        OPPONENT(SPECIES_GRENINJA) { Moves(AIMove); Ability(ability); Item(ITEM_SCOPE_LENS); Speed(3); }
+        OPPONENT(SPECIES_ABSOL) { Moves(MOVE_CRUNCH); Speed(3); }
+    } WHEN {
+        if (AIMove == MOVE_FIERY_WRATH)
+        {
+            TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 1); }
+        }
+        else if (AIMove == MOVE_WICKED_BLOW)
+        {
+            TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 1); }
+        }
+        else if (AIMove == MOVE_NIGHT_SLASH && ability == ABILITY_TORRENT)
+        {
+            TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 2); }
+        }
+        else if (AIMove == MOVE_NIGHT_SLASH && ability == ABILITY_HUSTLE)
+        {
+            TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 1); }
+        }
+        else if (AIMove == MOVE_NIGHT_SLASH && ability == ABILITY_SUPER_LUCK)
+        {
+            TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 1); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("Checking AI is just not seeing ability only for switch")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        PLAYER(SPECIES_FARIGIRAF) { Moves(MOVE_TACKLE); HP(264); Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TACKLE); HP(1); Speed(1); }
+        OPPONENT(SPECIES_SIRFETCHD) { Moves(MOVE_NIGHT_SLASH); Item(ITEM_LEEK); Speed(3); }
+        OPPONENT(SPECIES_ABSOL) { Moves(MOVE_CRUNCH); Speed(3); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); EXPECT_SEND_OUT(opponent, 1); }
     }
 }

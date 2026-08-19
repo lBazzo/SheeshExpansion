@@ -2386,7 +2386,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
 
         InitializeSwitchinCandidate(&party[i]);
         u32 bestPlayerMove = MOVE_NONE;
-        s32 playerMonHP = gBattleMons[opposingBattler].hp, AIMonHP = gAiLogicData->switchinCandidate.battleMon.hp, monMaxDamage = 0;
+        /*s32 playerMonHP = gBattleMons[opposingBattler].hp, */s32 AIMonHP = gAiLogicData->switchinCandidate.battleMon.hp, monMaxDamage = 0;
         //s32 playerMonMaxHP = gBattleMons[opposingBattler].maxHP, AIMonMaxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
         u32 /*playerDamagePercentToAI = 0, AIDamagePercentToPlayer = 0, */playerRawDamageToAI = 0, AIRawDamageToPlayer = 0;
         // Get max number of hits for player to KO AI mon and type matchup for defensive switching
@@ -2439,11 +2439,11 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
             }*/
 
             if (isSwitchinFirst
-            && (AIRawDamageToPlayer >= playerMonHP)
+            && (hitsToKOPlayer == 1)
             && (canSwitchinWin1v1)
             && (AIFastOHKOId == PARTY_SIZE))
             { 
-                    DebugPrintf("Fast OHKO by AI i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                    DebugPrintf("Fast OHKO by AI - i %d playerRawDamageToAI %d AIMonHP %d hitsToKOPlayer %d", i, playerRawDamageToAI, AIMonHP, hitsToKOPlayer);
                     AIFastOHKOId = i;
             }
             // Checks for AI mon Slow OHKOing player mon + not being dead to Player mon
@@ -2455,12 +2455,12 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
                 AISlowOHKOId = i;
             }*/
             else if (!isSwitchinFirst
-                && (AIRawDamageToPlayer >= playerMonHP)
+                && (hitsToKOPlayer == 1)
                 && (hitsToKOAI > 1)
                 && (canSwitchinWin1v1)
                 && (AISlowOHKOId == PARTY_SIZE))
                 {
-                    DebugPrintf("Slow OHKO by AI without being OHKOd itself i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                    DebugPrintf("Slow OHKO by AI without being OHKOd itself - i %d playerRawDamageToAI %d AIMonHP %d hitsToKOPlayer %d", i, playerRawDamageToAI, AIMonHP, hitsToKOPlayer);
                     AISlowOHKOId = i;
                 }
             // Checks for AI mon being faster while killing player in equal or less hits
@@ -2477,7 +2477,7 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
             && (canSwitchinWin1v1)
             && (AIFastWin1v1Id == PARTY_SIZE))
             {
-                DebugPrintf("Faster + less/equal hits for AI to KO - i %d playerRawDamageToAI %d AIMonHP %d", i, playerRawDamageToAI, AIMonHP);
+                DebugPrintf("Faster + less/equal hits for AI to KO - i %d playerRawDamageToAI %d AIMonHP %d hitsToKOPlayer %d", i, playerRawDamageToAI, AIMonHP, hitsToKOPlayer);
                 AIFastWin1v1Id = i;
             }
             // Checks for AI mon fast outdamaging Player mon while no one sees kill - note outdamage can mean equal here

@@ -722,7 +722,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         PlayerGetDestCoords(&x, &y);
 
     if (GetSavedWeather() == WEATHER_SANDSTORM
-    && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE37) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE37)))
+    && (GetCurrentRegionMapSectionId() == MAPSEC_ROUTE_37))
         return BATTLE_ENVIRONMENT_SAND;
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);

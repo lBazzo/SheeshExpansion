@@ -21,6 +21,8 @@ enum DamageCalcContext
 {
     AI_DEFENDING,
     AI_ATTACKING,
+    AI_DEFENDING_MAX_ROLL,
+    AI_ATTACKING_MAX_ROLL,
 };
 
 // Higher priority at the bottom; note that these are used in the formula MAX_MON_MOVES ^ AiCompareMovesPriority, which must fit within a u32.

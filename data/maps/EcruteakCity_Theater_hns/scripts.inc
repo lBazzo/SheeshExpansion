@@ -194,8 +194,7 @@ EcruteakCity_Theater_Text_RocketSeen:
 
 EcruteakCity_Theater_Text_RocketBeaten:
 	.string "Oh, no!\n"
-	.string "You make me look like a\l"
-	.string "villain!$"
+	.string "You make me look like a villain!$"
 
 EcruteakCity_Theater_Text_RocketAfter:
 	.string "Oops! I have an important mission!\n"

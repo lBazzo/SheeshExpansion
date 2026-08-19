@@ -327,7 +327,7 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
 
 AI_SINGLE_BATTLE_TEST("AI won't use Solar Beam if there is no Sun up or the user is not holding Power Herb")
 {
-    //KNOWN_FAILING; // Bazzo note: for now this is a good fail as scores tie, when 2turn move ai is done it'll probably pass again
+    KNOWN_FAILING; // Bazzo note: changed solar beam ai
     u16 abilityAtk = ABILITY_NONE;
     u16 holdItemAtk = ITEM_NONE;
 

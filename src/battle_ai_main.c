@@ -496,7 +496,7 @@ void Ai_InitPartyStruct(void)
 }
 
 void Ai_UpdateSwitchInData(u32 battler)
-{
+{/*
     u32 i;
     u32 side = GetBattlerSide(battler);
     struct AiPartyMon *aiMon = &gAiPartyData->mons[side][gBattlerPartyIndexes[battler]];
@@ -522,7 +522,7 @@ void Ai_UpdateSwitchInData(u32 battler)
         ClearBattlerAbilityHistory(battler);
         ClearBattlerItemEffectHistory(battler);
         CopyBattlerDataToAIParty(GetBattlerPosition(battler), side);
-    }
+    }*/
 }
 
 void Ai_UpdateFaintData(u32 battler)
@@ -629,7 +629,7 @@ static void SetBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u3
     SaveBattlerData(battlerAtk);
     SetBattlerData(battlerAtk);
 
-    gAiLogicData->switchInCalc = TRUE;
+    //gAiLogicData->switchInCalc = TRUE;
 
     // Simulate dmg for both ai controlled mons and for player controlled mons.
     for (battlerDef = 0; battlerDef < battlersCount; battlerDef++)
@@ -643,7 +643,7 @@ static void SetBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u3
         RestoreBattlerData(battlerDef);
     }
     RestoreBattlerData(battlerAtk);
-    gAiLogicData->switchInCalc = FALSE;
+    //gAiLogicData->switchInCalc = FALSE;
 }
 
 void SetAiLogicDataForTurn(struct AiLogicData *aiData)
@@ -3210,7 +3210,7 @@ static s32 AI_TryToFaint(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     
     enum BattleMoveEffects effect = GetMoveEffect(move);
     if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING)
-        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION && effect != EFFECT_FINAL_GAMBIT && effect != EFFECT_SHELL_TRAP)
+        && effect != EFFECT_EXPLOSION && effect != EFFECT_MISTY_EXPLOSION && effect != EFFECT_FINAL_GAMBIT && effect != EFFECT_SHELL_TRAP && effect != EFFECT_ENDEAVOR)
     { 
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY))
             ADJUST_SCORE(FAST_KILL);
@@ -4646,6 +4646,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     u32 shouldSetUp = ((noOfHitsToFaint >= 2 && aiIsFaster) || (noOfHitsToFaint >= 3 && !aiIsFaster) || noOfHitsToFaint == UNKNOWN_NO_OF_HITS);
     u32 AIHitsToKOPlayer = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING);
     u32 PlayerHitsToKOAI = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING);
+    u32 AIHitsToKOPlayerMaxRoll = GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING_MAX_ROLL);
+    u32 PlayerHitsToKOAIMaxRoll = GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING_MAX_ROLL);
 
     // The AI should understand that while Dynamaxed, status moves function like Protect.
     if (GetActiveGimmick(battlerAtk) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
@@ -5275,14 +5277,14 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
 
                 if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-                && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
-                && (AIHitsToKOPlayer != 0)
-                && (AIHitsToKOPlayer != 1))
+                && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+                && (AIHitsToKOPlayerMaxRoll != 0)
+                && (AIHitsToKOPlayerMaxRoll != 1))
                     ADJUST_SCORE(-1);
                 else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-                && (AIHitsToKOPlayer < PlayerHitsToKOAI)
-                && (AIHitsToKOPlayer != 0)
-                && (AIHitsToKOPlayer != 1))
+                && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
+                && (AIHitsToKOPlayerMaxRoll != 0)
+                && (AIHitsToKOPlayerMaxRoll != 1))
                     ADJUST_SCORE(-1);
             }
         else
@@ -5340,14 +5342,14 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
 
         // Give -2 if AI wins the matchup vs Player
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             ADJUST_SCORE(-2);
         else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             ADJUST_SCORE(-2);
 
         //{
@@ -5361,7 +5363,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         //    ADJUST_SCORE(+1);
         //}
         // Give +2 sometimes if Player wins the matchup
-        else if (AIHitsToKOPlayer > PlayerHitsToKOAI)
+        else if (AIHitsToKOPlayerMaxRoll > PlayerHitsToKOAIMaxRoll)
         {
             if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                 ADJUST_SCORE(+2);
@@ -5396,14 +5398,14 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(-1);
 
         if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             ADJUST_SCORE(-1);
         else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             ADJUST_SCORE(-1);
         break;
     case EFFECT_CHILLY_RECEPTION:
@@ -5476,9 +5478,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             }
         else if (!gDisableStructs[battlerAtk].isFirstTurn
         && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
-        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             {
                 if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -5487,9 +5489,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             }
         else if (!gDisableStructs[battlerAtk].isFirstTurn
         && !AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer < PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             {
                 if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
                     ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -5889,6 +5891,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         && aiData->abilities[battlerAtk] != ABILITY_CONTRARY
         && CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING))
             ADJUST_SCORE(BEST_EFFECT);
+        break;
+    case EFFECT_ROLLOUT:
+        if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
     case EFFECT_BELLY_DRUM:
     /*
@@ -6475,6 +6481,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_TIDY_UP:
         IncreaseTidyUpScore(battlerAtk, battlerDef, move, &score);
+        break;
     case EFFECT_DRAGON_DANCE:
         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK, move));
         break;
@@ -6503,12 +6510,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (gBattleMons[battlerAtk].statStages[STAT_ATK] <= DEFAULT_STAT_STAGE - 2)
         {
             if (gBattleMons[battlerDef].statStages[STAT_ATK] >= DEFAULT_STAT_STAGE)
-                ADJUST_SCORE(DECENT_EFFECT);
+                ADJUST_SCORE(WEAK_EFFECT);
         }
         else if (gBattleMons[battlerAtk].statStages[STAT_SPATK] <= DEFAULT_STAT_STAGE - 2)
         {
             if (gBattleMons[battlerDef].statStages[STAT_SPATK] >= DEFAULT_STAT_STAGE)
-                ADJUST_SCORE(DECENT_EFFECT);
+                ADJUST_SCORE(WEAK_EFFECT);
         }
         break;
     case EFFECT_POWER_TRICK:
@@ -6900,9 +6907,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
             ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL);
         else if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (AIHitsToKOPlayer <= PlayerHitsToKOAI)
-        && (AIHitsToKOPlayer != 0)
-        && (AIHitsToKOPlayer != 1))
+        && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0)
+        && (AIHitsToKOPlayerMaxRoll != 1))
             ADJUST_SCORE(NO_INCREASE);
         else
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
@@ -7296,6 +7303,28 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                     break;
                 }
             }
+            else if (aiData->abilities[battlerAtk] == ABILITY_CONTRARY)
+            {
+                switch (additionalEffect->moveEffect)
+                {
+                case MOVE_EFFECT_SP_ATK_MINUS_2:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                        {
+                            StageStatId = STAT_CHANGE_SPATK + additionalEffect->moveEffect - MOVE_EFFECT_SP_ATK_PLUS_2;
+                            ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId, move));
+                        }
+                    break;
+                case MOVE_EFFECT_ATK_DEF_DOWN:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                        {
+                            StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
+                            ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId, move));
+                        }
+                    break;
+                default:
+                    break;
+                }
+            }
             else
                 break;
             /*
@@ -7357,42 +7386,53 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 //    score += ShouldTryToFlinch(battlerAtk, battlerDef, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], move);
                 //    break;
                 case MOVE_EFFECT_SPD_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED, move));
+                        break;
                 case MOVE_EFFECT_SPD_MINUS_2:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED_2, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))    
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED_2, move));
+                        break;
                 case MOVE_EFFECT_ATK_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ATK, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ATK, move));
+                        break;
                 case MOVE_EFFECT_DEF_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_DEF, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_DEF))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_DEF, move));
+                        break;
                 case MOVE_EFFECT_SP_ATK_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK, move));
+                        break;
                 case MOVE_EFFECT_SP_DEF_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPDEF))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF, move));
+                        break;
                 case MOVE_EFFECT_ACC_MINUS_1:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ACC, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ACC))    
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ACC, move));
+                        break;
                 case MOVE_EFFECT_EVS_MINUS_1:
                     //if (aiData->abilities[battlerDef] != ABILITY_CONTRARY)
                     //    ADJUST_SCORE(DECENT_EFFECT);
                     break;
                 case MOVE_EFFECT_ATK_MINUS_2:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ATK_2, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_ATK_2, move));
+                        break;
                 case MOVE_EFFECT_DEF_MINUS_2:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_DEF_2, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_DEF))    
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_DEF_2, move));
+                        break;
                 case MOVE_EFFECT_SP_ATK_MINUS_2:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK_2, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))    
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK_2, move));
+                        break;
                 case MOVE_EFFECT_SP_DEF_MINUS_2:
-                    ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF_2, move));
-                    break;
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPDEF))    
+                        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF_2, move));
+                        break;
                 //case MOVE_EFFECT_ACC_MINUS_2:
                 //case MOVE_EFFECT_EVS_MINUS_2:
                     //if (aiData->abilities[battlerDef] != ABILITY_CONTRARY)

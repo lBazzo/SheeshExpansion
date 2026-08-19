@@ -928,7 +928,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = 20,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_TINTED_LENS, ABILITY_NONE },
+        .abilities = { ABILITY_SWARM, ABILITY_SUPER_LUCK, ABILITY_TINTED_LENS },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Nymble"),
         .cryId = CRY_NYMBLE,
@@ -993,7 +993,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .friendship = 0,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_TINTED_LENS, ABILITY_NONE },
+        .abilities = { ABILITY_SWARM, ABILITY_SUPER_LUCK, ABILITY_TINTED_LENS },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Lokix"),
         .cryId = CRY_LOKIX,
@@ -4291,7 +4291,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sVaroomLevelUpLearnset,
         .teachableLearnset = sVaroomTeachableLearnset,
         .eggMoveLearnset = sVaroomEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_REVAVROOM}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 32, SPECIES_REVAVROOM}),
     },
 
     [SPECIES_REVAVROOM] =

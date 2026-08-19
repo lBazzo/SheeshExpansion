@@ -17,7 +17,7 @@ SINGLE_BATTLE_TEST("Toxic Thread both reduces speed and inflicts Poison")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_THREAD, player);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
-        STATUS_ICON(opponent, poison: TRUE);
+        STATUS_ICON(opponent, badPoison: TRUE);
     } THEN {
         EXPECT_EQ(opponent->statStages[STAT_SPEED], DEFAULT_STAT_STAGE - 1);
     }
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Toxic Thread still inflicts Poison if speed can't go lower")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_THREAD, player);
         NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
-        STATUS_ICON(opponent, poison: TRUE);
+        STATUS_ICON(opponent, badPoison: TRUE);
     } THEN {
         EXPECT_EQ(opponent->statStages[STAT_SPEED], DEFAULT_STAT_STAGE - 6);
     }
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Toxic Thread still inflicts Poison if speed can't be lowered
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_THREAD, player);
         NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
-        STATUS_ICON(opponent, poison: TRUE);
+        STATUS_ICON(opponent, badPoison: TRUE);
     } THEN {
         EXPECT_EQ(opponent->statStages[STAT_SPEED], DEFAULT_STAT_STAGE);
     }

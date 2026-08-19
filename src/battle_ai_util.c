@@ -91,6 +91,14 @@ u32 AI_GetDamage(u32 battlerAtk, u32 battlerDef, u32 moveIndex, enum DamageCalcC
             return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum;
         return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].median; // Default assumes it takes median damage
     }
+    else if (calcContext == AI_ATTACKING_MAX_ROLL && BattlerHasAi(battlerAtk))
+    {
+        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum; 
+    }
+    else if (calcContext == AI_DEFENDING_MAX_ROLL && BattlerHasAi(battlerDef))
+    {
+        return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].maximum; 
+    }
     else
     {
         return aiData->simulatedDmg[battlerAtk][battlerDef][moveIndex].median;
@@ -362,7 +370,7 @@ bool32 ShouldRecordStatusMove(u32 move)
 
     return RandomPercentage(RNG_AI_ASSUME_ALL_STATUS, ASSUME_ALL_STATUS_ODDS) && IsBattleMoveStatus(move);
 }
-
+/*
 static bool32 ShouldFailForIllusion(u32 illusionSpecies, u32 battlerId)
 {
     u32 i, j;
@@ -397,10 +405,10 @@ static bool32 ShouldFailForIllusion(u32 illusionSpecies, u32 battlerId)
     }
 
     return TRUE;
-}
+}*/
 
 void SetBattlerData(u32 battlerId)
-{
+{/*
     if (!BattlerHasAi(battlerId) && gAiThinkingStruct->saved[battlerId].saved)
     {
         u32 i, species, illusionSpecies, side;
@@ -440,7 +448,7 @@ void SetBattlerData(u32 battlerId)
             if (gAiPartyData->mons[side][gBattlerPartyIndexes[battlerId]].moves[i] == 0)
                 gBattleMons[battlerId].moves[i] = 0;
         }
-    }
+    }*/
 }
 
 void RestoreBattlerData(u32 battlerId)
@@ -953,6 +961,8 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     ctx.abilityDef = AI_GetMoldBreakerSanitizedAbility(battlerAtk, ctx.abilityAtk, aiData->abilities[battlerDef], ctx.holdEffectDef, move);
     ctx.typeEffectivenessModifier = CalcTypeEffectivenessMultiplier(&ctx);
     AI_SetBattlerTurnOrder(ctx.aiTurnOrder);
+
+    DebugPrintf("AI Ability %d", ctx.abilityAtk);
 
     u32 movePower = GetMovePower(move);
     if (movePower)

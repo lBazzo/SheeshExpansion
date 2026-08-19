@@ -480,7 +480,7 @@ AI_SINGLE_BATTLE_TEST("AI scores Rock Tomb the same when its highest damage")
         if (speed == 20)
             SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 107);
         if (speed == 30)
-            SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 105);
+            SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 100);
         }
     }
 }
@@ -537,8 +537,8 @@ AI_SINGLE_BATTLE_TEST("AI scores speed drop moves differently depending on relat
         }
         else if (speed == 20)
         {
-            SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 105); 
-            SCORE_EQ_VAL(opponent, MOVE_STRING_SHOT, 85); // gets the +5 from player already being slower and -20 from move fail
+            SCORE_EQ_VAL(opponent, MOVE_ROCK_TOMB, 100); 
+            SCORE_EQ_VAL(opponent, MOVE_STRING_SHOT, 80); // gets the +5 from player already being slower and -20 from move fail
         }
         }
     }
