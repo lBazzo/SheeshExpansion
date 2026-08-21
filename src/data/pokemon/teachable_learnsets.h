@@ -322,8 +322,10 @@ static const u16 sCharizardTeachableLearnset[] = {
     MOVE_STRENGTH,
     MOVE_SWIFT,
     MOVE_TOXIC,
+    MOVE_WATER_PULSE,
     MOVE_WEATHER_BALL,
     MOVE_WILL_O_WISP,
+    MOVE_WATER_PULSE,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CHARMANDER

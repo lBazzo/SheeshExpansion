@@ -656,7 +656,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_WEEDLE"
+                "species": "SPECIES_BLIPBUG"
               },
               {
                 "min_level": 5,
@@ -819,7 +819,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TORCHIC"
+                "species": "SPECIES_TEPIG"
               },
               {
                 "min_level": 5,
@@ -854,7 +854,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHIMCHAR"
+                "species": "SPECIES_TORCHIC"
               },
               {
                 "min_level": 5,
@@ -1022,7 +1022,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_BUDEW"
+                "species": "SPECIES_SUNKERN"
               },
               {
                 "min_level": 5,
@@ -3960,7 +3960,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SEVIPER"
+                "species": "SPECIES_CRABRAWLER"
               },
               {
                 "min_level": 5,
@@ -4129,7 +4129,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PAWMI"
+                "species": "SPECIES_JOLTIK"
               },
               {
                 "min_level": 5,
@@ -5975,17 +5975,17 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SLOWPOKE"
+                "species": "SPECIES_VANILLITE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TENTACOOL"
+                "species": "SPECIES_VANILLITE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_MANTYKE"
+                "species": "SPECIES_FLABEBE"
               },
               {
                 "min_level": 5,
@@ -6035,42 +6035,42 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_VANILLITE"
+                "species": "SPECIES_MANTYKE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_VANILLITE"
+                "species": "SPECIES_DEWPIDER"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_SQUIRTLE"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_FLABEBE"
+                "species": "SPECIES_SQUIRTLE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_SLOWPOKE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_FRILLISH"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
                 "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_MARILL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_POPPLIO"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_POPPLIO"
               },
               {
                 "min_level": 5,
@@ -34922,12 +34922,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SEWADDLE"
+                "species": "SPECIES_BLIPBUG"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SEWADDLE"
+                "species": "SPECIES_BLIPBUG"
               },
               {
                 "min_level": 5,
@@ -35433,7 +35433,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TADBULB"
+                "species": "SPECIES_PAWMI"
               },
               {
                 "min_level": 5,
