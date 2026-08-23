@@ -495,8 +495,13 @@ void Ai_InitPartyStruct(void)
     }
 }
 
-void Ai_UpdateSwitchInData(u32 battler)
-{/*
+/*void Ai_UpdateSwitchInData(u32 battler)
+{
+    struct AiLogicData *aiData = gAiLogicData;
+    
+    SetBattlerAiData(battler, aiData);
+    SetBattlerAiMovesData(aiData, battler, gBattlersCount, AI_GetWeather());
+    /*
     u32 i;
     u32 side = GetBattlerSide(battler);
     struct AiPartyMon *aiMon = &gAiPartyData->mons[side][gBattlerPartyIndexes[battler]];
@@ -522,8 +527,8 @@ void Ai_UpdateSwitchInData(u32 battler)
         ClearBattlerAbilityHistory(battler);
         ClearBattlerItemEffectHistory(battler);
         CopyBattlerDataToAIParty(GetBattlerPosition(battler), side);
-    }*/
-}
+    }
+}*/
 
 void Ai_UpdateFaintData(u32 battler)
 {
@@ -644,6 +649,41 @@ static void SetBattlerAiMovesData(struct AiLogicData *aiData, u32 battlerAtk, u3
     }
     RestoreBattlerData(battlerAtk);
     //gAiLogicData->switchInCalc = FALSE;
+}
+
+void Ai_UpdateSwitchInData(u32 battler)
+{
+    struct AiLogicData *aiData = gAiLogicData;
+    
+    SetBattlerAiData(battler, aiData);
+    SetBattlerAiMovesData(aiData, battler, gBattlersCount, AI_GetWeather());
+    /*
+    u32 i;
+    u32 side = GetBattlerSide(battler);
+    struct AiPartyMon *aiMon = &gAiPartyData->mons[side][gBattlerPartyIndexes[battler]];
+
+    // See if the switched-in mon has been already in battle
+    if (aiMon->wasSentInBattle)
+    {
+        if (aiMon->ability)
+            gBattleHistory->abilities[battler] = aiMon->ability;
+        if (aiMon->heldEffect)
+            gBattleHistory->itemEffects[battler] = aiMon->heldEffect;
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            if (aiMon->moves[i])
+                gBattleHistory->usedMoves[battler][i] = aiMon->moves[i];
+        }
+        aiMon->switchInCount++;
+        aiMon->status = gBattleMons[battler].status1; // Copy status, because it could've been changed in battle.
+    }
+    else // If not, copy the newly switched-in mon in battle and clear battle history.
+    {
+        ClearBattlerMoveHistory(battler);
+        ClearBattlerAbilityHistory(battler);
+        ClearBattlerItemEffectHistory(battler);
+        CopyBattlerDataToAIParty(GetBattlerPosition(battler), side);
+    }*/
 }
 
 void SetAiLogicDataForTurn(struct AiLogicData *aiData)

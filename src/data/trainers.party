@@ -5375,7 +5375,60 @@ Gender: Male
 Music: Hg Girl 2
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
-set 
+
+Luvdisc @ Water Gem  
+Ability: Swift Swim  
+Level: 56   
+Rash Nature  
+- Hydro Pump  
+- Substitute  
+- Endeavor  
+- Flail  
+
+Galvantula @ Focus Sash  
+Ability: Swarm  
+Level: 55  
+Timid Nature    
+- Thunder  
+- Signal Beam  
+- Energy Ball  
+- Volt Switch  
+
+Beartic @ White Herb  
+Ability: Swift Swim  
+Level: 55   
+Jolly Nature  
+- Icicle Crash  
+- Liquidation  
+- Superpower  
+- Swords Dance  
+
+Swanna @ Wacan Berry  
+Ability: Hydration  
+Level: 55  
+Timid Nature   
+- Hydro Pump  
+- Hurricane  
+- Endeavor  
+- Sleep Talk  
+
+Anorith @ Choice Band  
+Ability: Swift Swim  
+Level: 56  
+Adamant Nature  
+- Rock Blast  
+- Pin Missile  
+- Liquidation  
+- Knock Off  
+
+Archaludon @ Power Herb  
+Ability: Stamina  
+Level: 54   
+Timid Nature  
+- Electro Shot  
+- Meteor Beam  
+- Dragon Pulse  
+- Flash Cannon  
 
 === TRAINER_EUSINE_2 ===
 Name: Eusine /*2 Cianwood City*/

@@ -2024,6 +2024,7 @@ void Ability_(u32 sourceLine, enum Ability ability)
     {
         if (info->abilities[i] == ability)
         {
+            DebugPrintf("%S", gAbilitiesInfo[ability].name);
             SetMonData(DATA.currentMon, MON_DATA_ABILITY_NUM, &i);
             break;
         }

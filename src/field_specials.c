@@ -3960,7 +3960,7 @@ void GetBattleFrontierTutorMoveIndex(void)
     return;
     u8 i;
     u16 moveTutor = 0;
-    u16 moveIndex = 0;
+    //u16 moveIndex = 0;
     gSpecialVar_0x8005 = 0;
 
     moveTutor = VarGet(VAR_TEMP_FRONTIER_TUTOR_ID);

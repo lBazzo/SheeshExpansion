@@ -8122,9 +8122,11 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     if (ctx->isSelfInflicted)
         return uq4_12_multiply_by_int_half_down(ApplyOffensiveBadgeBoost(modifier, battlerAtk, move), atkStat);
 
+    if (ctx->battlerAtk == B_BATTLER_1)
+    DebugPrintf("AI Ability %S", gAbilitiesInfo[ctx->abilityAtk].name);
     // attacker's abilities
     switch (ctx->abilityAtk)
-    {
+    { 
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (IsBattleMovePhysical(move))
@@ -8185,7 +8187,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
     case ABILITY_HUSTLE:
-        //DebugPrintf("HUSTLE FOUND ALERT");
+        DebugPrintf("HUSTLE FOUND ALERT");
         if (IsBattleMovePhysical(move))
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
         break;
@@ -8270,6 +8272,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
         break;
     default:
+        DebugPrintf("DIDNT FIND ABILITY HUSTLE");
         break;
     }
 
@@ -8940,6 +8943,8 @@ static inline s32 DoMoveDamageCalcVars(struct DamageContext *ctx)
 
     userFinalAttack = CalcAttackStat(ctx);
     targetFinalDefense = CalcDefenseStat(ctx);
+
+    DebugPrintf("userFinalAttack %d", userFinalAttack);
 
     dmg = CalculateBaseDamage(gBattleMovePower, userFinalAttack, gBattleMons[ctx->battlerAtk].level, targetFinalDefense);
     DAMAGE_APPLY_MODIFIER(GetTargetDamageModifier(ctx));

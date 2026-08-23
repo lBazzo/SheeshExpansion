@@ -126,15 +126,9 @@
 // - MOVE_TERA_BLAST                                   //
 // *************************************************** //
 // Near-universal moves found from sUniversalMoves:    //
-// - MOVE_BIDE                                         //
-// - MOVE_FRUSTRATION                                  //
 // - MOVE_HIDDEN_POWER                                 //
-// - MOVE_MIMIC                                        //
 // - MOVE_NATURAL_GIFT                                 //
-// - MOVE_RAGE                                         //
 // - MOVE_RETURN                                       //
-// - MOVE_SECRET_POWER                                 //
-// - MOVE_SUBSTITUTE                                   //
 // - MOVE_TERA_BLAST                                   //
 // - MOVE_REST                                         //
 // - MOVE_SLEEP_TALK                                   //

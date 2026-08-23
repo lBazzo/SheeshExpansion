@@ -1748,6 +1748,8 @@ static void SetBattlerMonData(u32 battler, struct Pokemon *party, u32 monId)
             SetMonData(&party[monId], MON_DATA_SPEED, &battlePokemon->speed);
             SetMonData(&party[monId], MON_DATA_SPATK, &battlePokemon->spAttack);
             SetMonData(&party[monId], MON_DATA_SPDEF, &battlePokemon->spDefense);
+            u32 abilityNum = battlePokemon->abilityNum;
+            SetMonData(&party[monId], MON_DATA_ABILITY_NUM, &abilityNum);
         }
         break;
     case REQUEST_SPECIES_BATTLE:

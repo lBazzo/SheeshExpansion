@@ -408,15 +408,15 @@ static bool32 ShouldFailForIllusion(u32 illusionSpecies, u32 battlerId)
 }*/
 
 void SetBattlerData(u32 battlerId)
-{/*
+{
     if (!BattlerHasAi(battlerId) && gAiThinkingStruct->saved[battlerId].saved)
     {
-        u32 i, species, illusionSpecies, side;
+        u32 i, species, /*illusionSpecies, */side;
         side = GetBattlerSide(battlerId);
 
         // Simulate Illusion
         species = gBattleMons[battlerId].species;
-        illusionSpecies = GetIllusionMonSpecies(battlerId);
+        /*illusionSpecies = GetIllusionMonSpecies(battlerId);
         if (illusionSpecies != SPECIES_NONE && ShouldFailForIllusion(illusionSpecies, battlerId))
         {
             // If the battler's type has not been changed, AI assumes the types of the illusion mon.
@@ -427,7 +427,7 @@ void SetBattlerData(u32 battlerId)
                 gBattleMons[battlerId].types[1] = GetSpeciesType(illusionSpecies, 1);
             }
             species = illusionSpecies;
-        }
+        }*/
 
         // Use the known battler's ability.
         if (gAiPartyData->mons[side][gBattlerPartyIndexes[battlerId]].ability != ABILITY_NONE)
@@ -448,7 +448,7 @@ void SetBattlerData(u32 battlerId)
             if (gAiPartyData->mons[side][gBattlerPartyIndexes[battlerId]].moves[i] == 0)
                 gBattleMons[battlerId].moves[i] = 0;
         }
-    }*/
+    }
 }
 
 void RestoreBattlerData(u32 battlerId)
@@ -891,6 +891,8 @@ static inline bool32 ShouldCalcCritDamage(u32 battlerAtk, u32 battlerDef, u32 mo
 
     if (critChanceIndex == CRITICAL_HIT_ALWAYS)
         return TRUE;
+    if (GetCriticalHitOdds(critChanceIndex) == 1)
+        return TRUE;
     if (critChanceIndex >= RISKY_AI_CRIT_STAGE_THRESHOLD // Not guaranteed but above Risky threshold
         && (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY)
         && GetConfig(CONFIG_CRIT_CHANCE) != GEN_1)
@@ -962,7 +964,7 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
     ctx.typeEffectivenessModifier = CalcTypeEffectivenessMultiplier(&ctx);
     AI_SetBattlerTurnOrder(ctx.aiTurnOrder);
 
-    DebugPrintf("AI Ability %d", ctx.abilityAtk);
+    //DebugPrintf("AI Ability %d", ctx.abilityAtk);
 
     u32 movePower = GetMovePower(move);
     if (movePower)

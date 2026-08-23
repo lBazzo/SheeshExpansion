@@ -2399,13 +2399,13 @@ static u32 GetBestMonIntegratedCustom(struct Pokemon *party, int firstId, int la
         //    playerDamagePercentToAI = 1;
         //else 
             //playerDamagePercentToAI = playerRawDamageToAI * 1000 / AIMonHP;
-
+        
 
 
         //Bazzo Note: used later, looks important
         monMaxDamage = 0;
         species = GetMonData(&party[i], MON_DATA_SPECIES, NULL);
-        
+
         // Check through current mon's moves
         for (j = 0; j < MAX_MON_MOVES; j++)
         {
