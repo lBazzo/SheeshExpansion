@@ -68,7 +68,8 @@
     F(HEAL_BELL) \
     F(AROMATHERAPY) \
     F(SCALD) \
-    F(SIGNAL_BEAM)
+    F(SIGNAL_BEAM) \
+    F(SECRET_SWORD) 
 
 #define FOREACH_HM(F) \
     F(CUT) \

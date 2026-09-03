@@ -102,6 +102,7 @@ static const u8 sJMapName_Ilex_Forest[] = _("Ilex Forest");
 static const u8 sJMapName_National_Park[] = _("National Park");
 static const u8 sJMapName_Whirl_Islands[] = _("Whirl Islands");
 static const u8 sJMapName_Cliff_Cave[] = _("Cliff Cave");
+static const u8 sJMapName_Bellchime_Trail[] = _("Bellchime Trail");
 static const u8 sJMapName_Mr_Mortar[] = _("Mr Mortar");
 static const u8 sJMapName_Lake_of_Rage[] = _("Lake of Rage");
 static const u8 sJMapName_Ice_Path[] = _("Ice Path");
@@ -816,6 +817,13 @@ const struct RegionMapLocation gRegionMapEntries_Johto[] = {
         .width = 1,
         .height = 1,
         .name = sJMapName_Cliff_Cave,
+    },
+    [MAPSEC_BELLCHIME_TRAIL] = {
+        .x = 11,
+        .y = 1,
+        .width = 1,
+        .height = 1,
+        .name = sJMapName_Bellchime_Trail,
     },
     [MAPSEC_MT_MORTAR] = {
         .x = 12,

@@ -785,6 +785,14 @@
       "height": 1
     },
     {
+      "id": "MAPSEC_BELLCHIME_TRAIL",
+      "name": "Bellchime Trail",
+      "x": 11,
+      "y": 1,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_MT_MORTAR",
       "name": "Mr Mortar",
       "x": 12,
