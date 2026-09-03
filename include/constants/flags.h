@@ -1326,9 +1326,9 @@
 #define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 
 #define FLAG_ITEM_BELLCHIME_BIG_MUSHROOM                            0x4DE 
 #define FLAG_PLAYER_CAUGHT_SILVALLY                                 0x4DF 
-#define FLAG_ITEM_TIN_TOWER_4F_ULTRA_BALL                           0x4E0 
+#define FLAG_ITEM_TIN_TOWER_4F_SCROLL_OF_WATERS                     0x4E0 
 #define FLAG_ITEM_TIN_TOWER_4F_ESCAPE_ROPE                          0x4E1 
-#define FLAG_ITEM_TIN_TOWER_4F_MAX_POTION                           0x4E2 
+#define FLAG_ITEM_TIN_TOWER_4F_SCROLL_OF_DARKNESS                   0x4E2 
 #define FLAG_ITEM_TIN_TOWER_5F_RARE_CANDY                           0x4E3 
 #define FLAG_ITEM_TIN_TOWER_5F_MAX_POTION                           0x4E4 
 #define FLAG_ITEM_TIN_TOWER_5F_CARBOS                               0x4E5 

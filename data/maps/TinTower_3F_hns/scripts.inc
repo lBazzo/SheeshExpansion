@@ -5,16 +5,16 @@ TinTower_3F_EvetScript_Item_FullHeal::
 	finditem ITEM_FULL_HEAL
 	end
 
-TinTower_4F_EventScript_Item_UltraBall::
-	finditem ITEM_ULTRA_BALL
+TinTower_4F_EventScript_Item_ScrollOfWaters::
+	finditem ITEM_SCROLL_OF_WATERS
 	end
 
 TinTower_4F_EventScript_Item_EscapeRope::
     finditem ITEM_ESCAPE_ROPE
     end
 
-TinTower_4F_EventScript_Item_MaxPotion::
-    finditem ITEM_MAX_POTION
+TinTower_4F_EventScript_Item_ScrollOfDarkness::
+    finditem ITEM_SCROLL_OF_DARKNESS
     end
 
 TinTower_5F_EventScript_Item_RareCandy::
