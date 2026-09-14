@@ -5665,8 +5665,12 @@ bool8 TryIncrementMonLevel(struct Pokemon *mon)
 
 static const u16 sUniversalMoves[] =
 {
+    MOVE_AFTER_YOU,
+    MOVE_ENDURE,
+    MOVE_HELPING_HAND,
     MOVE_HIDDEN_POWER,
     MOVE_NATURAL_GIFT,
+    MOVE_PROTECT,
     MOVE_RETURN,
     MOVE_TERA_BLAST,
     MOVE_REST,
@@ -5679,7 +5683,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     {
         return FALSE;
     }
-    else if (species == SPECIES_MEW)
+    else if (species == SPECIES_MEW || species == SPECIES_SPINDA || species == SPECIES_SILVALLY)
     {
         switch (move)
         {
@@ -5696,7 +5700,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
         case MOVE_SIZZLY_SLIDE:
         case MOVE_SPARKLY_SWIRL:
         case MOVE_SPLISHY_SPLASH:
-        case MOVE_VOLT_TACKLE:
+        //case MOVE_VOLT_TACKLE:
         case MOVE_ZIPPY_ZAP:
             return FALSE;
         default:

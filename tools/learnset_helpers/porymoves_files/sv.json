@@ -47752,6 +47752,7 @@
       "MOVE_OVERHEAT",
       "MOVE_PAYBACK",
       "MOVE_ROCK_SLIDE",
+      "MOVE_SOLAR_BLADE",
       "MOVE_STONE_EDGE",
       "MOVE_X_SCISSOR",
       "MOVE_CUT",
@@ -47763,8 +47764,10 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
+      "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_CROSS_POISON",
       "MOVE_CRUNCH",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",

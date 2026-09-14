@@ -7984,15 +7984,15 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: DarkRed
 Starting Status: Spikes Player L1
 
-Claydol @ Focus Sash  
-Ability: Levitate  
-Level: 65   
-Quiet Nature  
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe   
+Cofagrigus @ Iapapa Berry  
+Ability: Mummy  
+Level: 65  
+Sassy Nature  
+IVs: 0 Spe  
 - Trick Room  
-- Explosion  
-- Extrasensory  
-- Blizzard  
+- Body Press  
+- Dark Pulse  
+- Toxic Spikes
 
 Bronzong @ Occa Berry  
 Ability: Levitate  
@@ -8005,7 +8005,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Future Sight  
 
 Umbreon @ Starf Berry  
-Ability: Synchronize  
+Ability: Magic Guard  
 Level: 65   
 Relaxed Nature  
 IVs: 28 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe  
@@ -8013,6 +8013,16 @@ IVs: 28 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Baton Pass  
 - Substitute  
 - Foul Play  
+
+Aromatisse @ Electric Gem  
+Ability: Aroma Veil  
+Level: 65   
+Quiet Nature  
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe   
+- Trick Room  
+- Sparkly Swirl  
+- Thunder  
+- Misty Explosion 
 
 Trevenant @ Custap Berry  
 Ability: Harvest  
@@ -8022,17 +8032,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Trick Room  
 - Dynamic Punch  
 - Needle Arm  
-- Endure
-
-Aromatisse @ Electric Gem  
-Ability: Healer  
-Level: 65   
-Quiet Nature  
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe   
-- Trick Room  
-- Moonblast  
-- Thunderbolt  
-- Misty Explosion  
+- Endure 
 
 Regice @ Focus Band  
 Ability: Clear Body  

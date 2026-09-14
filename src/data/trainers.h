@@ -20515,25 +20515,25 @@
         {
             {
 #line 7987
-            .species = SPECIES_CLAYDOL,
+            .species = SPECIES_COFAGRIGUS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7987
-            .heldItem = ITEM_FOCUS_SASH,
+            .heldItem = ITEM_IAPAPA_BERRY,
 #line 7991
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
 #line 7988
-            .ability = ABILITY_LEVITATE,
+            .ability = ABILITY_MUMMY,
 #line 7989
             .lvl = 65,
 #line 7990
-            .nature = NATURE_QUIET,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 7992
                 MOVE_TRICK_ROOM,
-                MOVE_EXPLOSION,
-                MOVE_EXTRASENSORY,
-                MOVE_BLIZZARD,
+                MOVE_BODY_PRESS,
+                MOVE_DARK_PULSE,
+                MOVE_TOXIC_SPIKES,
             },
             },
             {
@@ -20568,7 +20568,7 @@
 #line 8011
             .iv = TRAINER_PARTY_IVS(28, 31, 31, 0, 31, 31),
 #line 8008
-            .ability = ABILITY_SYNCHRONIZE,
+            .ability = ABILITY_MAGIC_GUARD,
 #line 8009
             .lvl = 65,
 #line 8010
@@ -20584,48 +20584,48 @@
             },
             {
 #line 8017
-            .species = SPECIES_TREVENANT,
+            .species = SPECIES_AROMATISSE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8017
-            .heldItem = ITEM_CUSTAP_BERRY,
+            .heldItem = ITEM_ELECTRIC_GEM,
 #line 8021
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
 #line 8018
-            .ability = ABILITY_HARVEST,
+            .ability = ABILITY_AROMA_VEIL,
 #line 8019
             .lvl = 65,
 #line 8020
-            .nature = NATURE_BRAVE,
+            .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 8022
                 MOVE_TRICK_ROOM,
-                MOVE_DYNAMIC_PUNCH,
-                MOVE_NEEDLE_ARM,
-                MOVE_ENDURE,
+                MOVE_SPARKLY_SWIRL,
+                MOVE_THUNDER,
+                MOVE_MISTY_EXPLOSION,
             },
             },
             {
 #line 8027
-            .species = SPECIES_AROMATISSE,
+            .species = SPECIES_TREVENANT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8027
-            .heldItem = ITEM_ELECTRIC_GEM,
+            .heldItem = ITEM_CUSTAP_BERRY,
 #line 8031
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 0, 31, 31),
 #line 8028
-            .ability = ABILITY_HEALER,
+            .ability = ABILITY_HARVEST,
 #line 8029
             .lvl = 65,
 #line 8030
-            .nature = NATURE_QUIET,
+            .nature = NATURE_BRAVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 8032
                 MOVE_TRICK_ROOM,
-                MOVE_MOONBLAST,
-                MOVE_THUNDERBOLT,
-                MOVE_MISTY_EXPLOSION,
+                MOVE_DYNAMIC_PUNCH,
+                MOVE_NEEDLE_ARM,
+                MOVE_ENDURE,
             },
             },
             {

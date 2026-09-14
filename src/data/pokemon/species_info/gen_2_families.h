@@ -7987,9 +7987,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_ILLUMINATE, ABILITY_VOLT_ABSORB, ABILITY_INNER_FOCUS },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_GALVANIZE, ABILITY_INNER_FOCUS },
     #else
-        .abilities = { ABILITY_ILLUMINATE, ABILITY_VOLT_ABSORB, ABILITY_INNER_FOCUS },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_GALVANIZE, ABILITY_INNER_FOCUS },
     #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Raikou"),
@@ -8685,7 +8685,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .friendship = 100,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_SUN_GAZER, ABILITY_FLOWER_BLOCK, ABILITY_SERENE_GRACE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Celebi"),
         .cryId = CRY_CELEBI,

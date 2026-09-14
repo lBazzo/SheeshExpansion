@@ -14632,6 +14632,7 @@ static const u16 sHaxorusTeachableLearnset[] = {
     MOVE_PAYBACK,
     MOVE_ROCK_SLIDE,
     MOVE_ROCK_SMASH,
+    MOVE_SOLAR_BLADE,
     MOVE_STONE_EDGE,
     MOVE_STRENGTH,
     MOVE_SURF,
