@@ -6085,7 +6085,7 @@ static void Task_DoLearnedMoveFanfareAfterText(u8 taskId)
 {
     if (IsPartyMenuTextPrinterActive() != TRUE)
     {
-        PlayFanfare(MUS_LEVEL_UP);
+        PlayFanfare(MUS_HG_LEVEL_UP);
         gTasks[taskId].func = Task_LearnNextMoveOrClosePartyMenu;
     }
 }
@@ -6301,9 +6301,10 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     {
         cannotUseEffect = TRUE;
     }
-    PlaySE(SE_SELECT);
+    //PlaySE(SE_SELECT);
     if (cannotUseEffect)
     {
+        PlaySE(SE_SELECT);
         u32 targetSpecies = SPECIES_NONE;
         bool32 canStopEvo = TRUE;
 
@@ -6342,7 +6343,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
         {
-            PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+            PlaySE(MUS_LEVEL_UP);
             if (holdEffectParam == 0) // Rare Candy
             {
                 ConvertIntToDecimalStringN(gStringVar2, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -8853,9 +8854,10 @@ void ItemUseCB_InfiniteCandy(u8 taskId, TaskFunc task)
     {
         cannotUseEffect = TRUE;
     }
-    PlaySE(SE_SELECT);
+    //PlaySE(SE_SELECT);
     if (cannotUseEffect)
     {
+        PlaySE(SE_SELECT);
         u16 targetSpecies = SPECIES_NONE;
         bool32 canStopEvo = TRUE;
 
@@ -8892,7 +8894,7 @@ void ItemUseCB_InfiniteCandy(u8 taskId, TaskFunc task)
         GetMonNickname(mon, gStringVar1);
         if (sFinalLevel > sInitialLevel)
         {
-            PlayFanfareByFanfareNum(FANFARE_LEVEL_UP);
+            PlaySE(MUS_LEVEL_UP);
             if (holdEffectParam == 0) // Rare Candy
             {
                 ConvertIntToDecimalStringN(gStringVar2, sFinalLevel, STR_CONV_MODE_LEFT_ALIGN, 3);

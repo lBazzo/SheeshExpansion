@@ -73,7 +73,7 @@ CherryGroveCity_EventScript_TriggerGent_Bottom::
 	closemessage
 	applymovement LOCALID_GUIDE_GENT, CherryGroveCity_Movement_Trigger_Gent
 	waitmovement 0 
-	applymovement OBJ_EVENT_ID_PLAYER, CherryGroveCity_Movement_Trigger_Bottom
+	applymovement OBJ_EVENT_ID_PLAYER, CherryGroveCity_Movement_Trigger_Top
 	waitmovement 0 
 	goto CherryGroveCity_EventScript_GentTour
 	release

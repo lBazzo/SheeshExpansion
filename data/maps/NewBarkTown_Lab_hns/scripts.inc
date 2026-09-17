@@ -313,12 +313,12 @@ NewBarkTown_Lab_EventScript_TriggerAideGivePotion::
 	waitmovement 0
 	turnobject OBJ_EVENT_ID_PLAYER, DIR_WEST
 	msgbox NewBarkTown_Lab_Text_AideGivePotion, MSGBOX_DEFAULT
-	closemessage
 	giveitem ITEM_POTION
 	giveitem ITEM_SUPER_CANDY
 	giveitem ITEM_INFINITE_CANDY
 	giveitem ITEM_REPELLENT
 	giveitem ITEM_POKE_VIAL
+	closemessage
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_FIRST_POTION
 	setvar VAR_NEWBARKTOWN_LABSTATE, 3

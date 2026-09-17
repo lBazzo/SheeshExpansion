@@ -221,7 +221,9 @@ Route29_Text_Boy_WaitingForDay:
 
 Route29_Text_Boy_WaitingForNight:
 	.string "I'm waiting for Pokémon that\n"
-	.string "appear only at night.$"
+	.string "appear only at night.\p"
+	.string "...\p"
+	.string "That is still a thing, right?$"
 
 Route29_Text_MeetTuscany:
 	.string "Tuscany: I do believe that this\n"
