@@ -393,14 +393,14 @@ Hasty Nature
 - Discharge  
 - U-turn  
 
-Zubat @ Eviolite  
-Ability: Inner Focus  
-Level: 19   
-Timid Nature  
-- Confuse Ray  
-- Toxic  
-- Venoshock  
-- Air Cutter  
+Golett @ Leftovers  
+Ability: Iron Fist  
+Level: 16  
+Careful Nature  
+- Fly  
+- Phantom Force  
+- Protect  
+- Drain Punch 
 
 Psyduck @ Berry Juice  
 Ability: Super Luck  
@@ -1002,16 +1002,16 @@ Level: 25
 Jolly Nature  
 - Infestation  
 - Dig  
-- Toxic Thread  
+- Super Fang  
 - Sucker Punch  
 
-Voltorb-Hisui @ Wise Glasses  
+Voltorb-Hisui @ Focus Sash  
 Ability: Aftermath  
 Level: 26  
 Timid Nature  
 IVs: 31 HP / 0 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe  
 - Volt Switch  
-- Energy Ball  
+- Giga Drain  
 - Hidden Power
 - Metal Sound  
 
@@ -1341,7 +1341,7 @@ Calm Nature
 
 Golduck @ Scope Lens  
 Ability: Super Luck  
-Level: 32   
+Level: 34   
 Jolly Nature  
 - Aqua Cutter  
 - Cross Chop  
@@ -1374,14 +1374,14 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Skarmory @ Rocky Helmet  
-Ability: Sturdy  
+Skarmory @ Focus Sash  
+Ability: Weak Armor  
 Level: 35   
-Modest Nature  
+Jolly Nature  
 - Spikes  
-- Metal Sound  
-- Air Slash  
-- Flash Cannon
+- Iron Head  
+- Body Press  
+- Mirror Coat
 
 Grimmsnarl @ Eject Button  
 Ability: Prankster  
@@ -1451,9 +1451,9 @@ Ability: Download
 Level: 33  
 Relaxed Nature  
 - Psychic  
-- Egg Bomb  
-- Icy Wind  
-- Recover  
+- Giga Impact  
+- Ice Beam  
+- Shadow Ball  
 
 Klinklang @ Assault Vest  
 Ability: Download  
@@ -1461,7 +1461,7 @@ Level: 33
 Adamant Nature  
 - Steel Beam  
 - Ice Spinner  
-- Overheat  
+- Stomping Tantrum  
 - Wild Charge  
 
 === TRAINER_GINA ===
@@ -1732,21 +1732,21 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Magmar @ Eviolite  
 Ability: Flame Body  
-Level: 38   
+Level: 38  
 Modest Nature  
 - Flamethrower  
 - Heat Wave  
 - Thunderbolt  
-- Focus Blast 
+- Focus Blast  
 
 Sceptile @ Scope Lens  
 Ability: Super Luck  
-Level: 37    
+Level: 39    
 Jolly Nature  
 - Leaf Blade  
 - X-Scissor  
-- Drill Run  
-- Cross Chop
+- Night Slash  
+- Cross Chop  
 
 === TRAINER_IRWIN ===
 Name: Irwin
@@ -1759,8 +1759,8 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Mr. Mime @ Sitrus Berry  
 Ability: Filter  
-Level: 37  
-Modest Nature   
+Level: 38  
+Modest Nature  
 - Psychic  
 - Shadow Ball  
 - Dazzling Gleam  
@@ -1768,19 +1768,19 @@ Modest Nature
 
 Voltorb @ Electric Gem  
 Ability: Aftermath  
-Level: 39   
+Level: 40   
 Naive Nature  
 - Thunderbolt  
 - Explosion  
 
-Hitmonlee @ Muscle Band  
-Ability: Limber  
-Level: 36   
+Hitmonlee @ Normal Gem  
+Ability: Unburden  
+Level: 38   
 Jolly Nature  
 - Fake Out  
 - Brick Break  
 - Blaze Kick  
-- Stone Edge  
+- Stone Edge   
 
 === TRAINER_ELLIOT ===
 Name: Elliot
@@ -2095,8 +2095,8 @@ Jolly Nature
 
 Sylveon @ Sitrus Berry  
 Ability: Mind Game  
-Level: 38  
-Modest Nature  
+Level: 36  
+Bold Nature  
 - Draining Kiss  
 - Mystical Fire  
 - Psyshock  
@@ -2159,7 +2159,7 @@ Naive Nature
 
 Kleavor @ Hard Stone  
 Ability: Sheer Force  
-Level: 37   
+Level: 36   
 Adamant Nature  
 - Skitter Smack  
 - Rock Tomb  
@@ -2270,6 +2270,7 @@ Victreebel @ Starf Berry
 Ability: Gluttony  
 Level: 46   
 Rash Nature  
+IVs: 31 HP / 31 Atk / 30 Def / 30 SpA / 31 SpD / 30 Spe  
 - Chloroblast  
 - Sludge Bomb  
 - Hidden Power 
@@ -2293,18 +2294,27 @@ Modest Nature
 - Mud Shot  
 - Mud-Slap 
 
+Swalot @ Black Sludge  
+Ability: Gooey  
+Level: 46  
+Adamant Nature  
+- Poison Jab  
+- Bulldoze  
+- Fire Punch  
+- Protect
+
 Dracovish @ Water Gem  
 Ability: Water Absorb  
-Level: 46   
+Level: 45   
 Jolly Nature  
 - Fishious Rend  
 - Leech Life  
-- Liquidation  
+- Dragon Claw  
 - Ice Fang
 
 Altaria @ Yache Berry  
 Ability: Cotton Down  
-Level: 46  
+Level: 45  
 Sassy Nature  
 - Dragon Rush  
 - Heat Wave  
@@ -2331,7 +2341,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Crustle @ Covert Cloak  
 Ability: Sturdy  
-Level: 46   
+Level: 44   
 Adamant Nature  
 - Sticky Web  
 - Hammer Arm  
@@ -2659,13 +2669,13 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
 Flygon @ Soft Sand  
-Ability: Levitate  
+Ability: Bug Eyed  
 Level: 46   
 Jolly Nature  
 - U-turn  
 - Fire Punch  
 - Stomping Tantrum  
-- Thunder Punch  
+- Aqua Tail  
 
 Ninetales-Alola @ Never-Melt Ice  
 Ability: Snow Warning  
@@ -2782,6 +2792,15 @@ IVs: 0 Spe
 - Steamroller  
 - Flip Turn  
 
+Cryogonal @ Focus Band  
+Ability: Perish Body  
+Level: 45  
+Mild Nature  
+- Freeze-Dry  
+- Bind  
+- Mirror Coat  
+- Perish Song  
+
 Clodsire @ Faulty Shield  
 Ability: Corrosion  
 Level: 46   
@@ -2791,15 +2810,6 @@ Adamant Nature
 - Liquidation  
 - Recover  
 
-Kangaskhan @ Focus Band  
-Ability: Scrappy  
-Level: 44   
-Jolly Nature  
-- Body Slam  
-- Drain Punch  
-- Facade  
-- Rock Smash  
-
 Weezing-Galar @ Bright Powder  
 Ability: Corrosion  
 Level: 45   
@@ -2808,6 +2818,15 @@ Modest Nature
 - Toxic  
 - Venoshock  
 - Flamethrower       
+
+Carvanha @ Berserk Gene  
+Ability: Speed Boost  
+Level: 45  
+Lonely Nature  
+- Protect  
+- Scale Shot  
+- Aqua Jet  
+- Submission  
 
 === TRAINER_RICHARDO ===
 Name: Richardo

@@ -1056,6 +1056,9 @@
 #define ITEMS_COUNT 873
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
+//#define ITEM_TM_BODY_PRESS ITEM_TM01 
+ 
+
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
 // Its icon is defined at ITEMS_COUNT as the "return to field" arrow
 #define ITEM_LIST_END 0xFFFF

@@ -301,3 +301,5 @@ SlowpokeWell_Text_WellTutorFriend:
 	.string "My mom says I'm the noisiest person in\n"
 	.string "the world, but you can have second\l"
 	.string "place if you want!$"
+
+@special ChooseMonForMoveTutor

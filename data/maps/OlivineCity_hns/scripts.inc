@@ -1228,3 +1228,5 @@ OlivineCity_Text_WeirdTutorFriend:
 	.string "strategist!\p"
 	.string "Go out there and show them the power\p"
 	.string "of these unconventional moves!$"
+
+@special ChooseMonForMoveTutor

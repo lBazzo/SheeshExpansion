@@ -9007,7 +9007,14 @@ s32 DoFixedDamageMoveCalc(struct DamageContext *ctx)
         dmg = GetNonDynamaxHP(ctx->battlerDef) * GetMoveDamagePercentage(ctx->move) / 100;
         break;
     case EFFECT_FINAL_GAMBIT:
-        dmg = GetNonDynamaxHP(ctx->battlerAtk);
+        if (gAiLogicData->aiCalcInProgress == TRUE)
+        {
+            dmg = 0;
+        }
+        else
+        {
+            dmg = GetNonDynamaxHP(ctx->battlerAtk);
+        }
         break;
     case EFFECT_BEAT_UP:
         if (GetConfig(CONFIG_BEAT_UP) < GEN_5)

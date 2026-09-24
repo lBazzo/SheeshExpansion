@@ -3713,3 +3713,40 @@ AI_SINGLE_BATTLE_TEST("AI Correctly sees hustle for switch in kills")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI Correctly reads pursuit damage with and without technician")
+{
+    u32 playerHP;
+
+    PARAMETRIZE { playerHP = 280; }
+    PARAMETRIZE { playerHP = 350; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); HP(playerHP); }
+        PLAYER(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_SNEASEL) { Moves(MOVE_PURSUIT); Ability(ABILITY_TECHNICIAN); }
+    } WHEN {
+        if (playerHP == 280)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 128); }
+        }
+        else if (playerHP == 350)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_PURSUIT, 108); }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI Correctly does not see Last Resort for switchin calcs")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        PLAYER(SPECIES_PATRAT) { Moves(MOVE_QUICK_ATTACK); HP(10); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE, MOVE_TACKLE); HP(1); }
+        OPPONENT(SPECIES_FURRET) { Moves(MOVE_LAST_RESORT, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_ABSOL) { Moves(MOVE_NIGHT_SLASH); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_QUICK_ATTACK); EXPECT_SEND_OUT(opponent, 2); }
+    }
+}

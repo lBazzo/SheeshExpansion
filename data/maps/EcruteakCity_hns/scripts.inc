@@ -687,3 +687,5 @@ EcruteakCity_Text_TrappingTutorFriend:
 	.string "Another trap to add to the collection.\p"
 	.string "It's always good to work with a fellow\n"
 	.string "craftsman, don't you agree?$"
+
+@special ChooseMonForMoveTutor

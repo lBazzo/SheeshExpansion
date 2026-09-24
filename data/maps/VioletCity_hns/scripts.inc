@@ -522,14 +522,13 @@ VioletCity_Text_Elm_Call:
 
 VioletCity_Text_Kimono_Girl1:
 .string "Me oh my...\n"
-.string "That Egg must be...!$"
+.string "That Spinda must be...!$"
 
 VioletCity_Text_Kimono_Girl2:
 .string "I see...\p"
 .string "So it was handed from Mr. Pokémon\n"
 .string "to Prof.Elm, then from \l"
-.string "Prof.Elm to you.\p"
-.string "Now I get it...$"
+.string "Prof.Elm to you. Now I get it...$"
 
 VioletCity_Text_Kimono_Girl3:
 .string "That Pokémon is truly important.\p"

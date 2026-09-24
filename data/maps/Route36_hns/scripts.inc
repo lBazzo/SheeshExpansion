@@ -554,7 +554,7 @@ Route36_Text_LassKrise_After:
 Route36_Text_Sign_HiddenGrottoLeft:
 	.string "Hidden Grove on your left$"
 
-
+@special ChooseMonForMoveTutor
 
 
 

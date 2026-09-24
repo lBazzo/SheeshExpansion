@@ -27174,7 +27174,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_MANKEY"
+                "species": "SPECIES_DRIFLOON"
               },
               {
                 "min_level": 5,
@@ -36206,7 +36206,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 60,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 5,

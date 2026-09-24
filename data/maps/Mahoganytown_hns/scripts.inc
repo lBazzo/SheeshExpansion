@@ -1578,3 +1578,5 @@ MahoganyTown_Text_CastleTesterItemGiven:
 
 MahoganyTown_Text_CastleTesterGiveWhichItem:
 	.string "Which item?$"
+
+@special ChooseMonForMoveTutor

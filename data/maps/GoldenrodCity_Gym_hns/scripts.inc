@@ -311,24 +311,24 @@ GoldenrodCity_Gym_Text_TeacherHillaryAfterBattle:
 
 GoldenrodCity_Gym_EventScript_B2B1::
 	lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
 	playse SE_PIN
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	applymovement LOCALID_GOLDENROD_CITY_GYM_SAMANTHA, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautySamanthaSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_SAMANTHA, GoldenrodCity_Gym_Text_BeautySamanthaBeaten
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_CARRIE, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_LassCarrieSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_CARRIE, GoldenrodCity_Gym_Text_LassCarrieBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 2
 	release
@@ -336,24 +336,24 @@ GoldenrodCity_Gym_EventScript_B2B1::
 
 GoldenrodCity_Gym_EventScript_B2B2::
 	lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_HILLARY, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_TeacherHillarySeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_HILLARY, GoldenrodCity_Gym_Text_TeacherHillaryBeaten
-	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_COLETTE, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_TeacherColetteSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_COLETTE, GoldenrodCity_Gym_Text_TeacherColetteBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 3
 	release
@@ -371,7 +371,7 @@ GoldenrodCity_Gym_EventScript_B2B3::
 	playbgm MUS_HG_GYM, TRUE
 	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_VICTORIA, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
-	playbgm MUS_HG_ENCOUNTER_GIRL_2, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_BRIDGET, Common_Movement_ExclamationMark
 	delay 60

@@ -705,6 +705,8 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
     case EFFECT_LAST_RESORT:
         if (!CanUseLastResort(ctx->battlerAtk) && !IsConsideringZMove(ctx->battlerAtk, ctx->battlerDef, ctx->move))
             return TRUE;
+        else if (gAiLogicData->switchInCalc)
+            return TRUE;
         break;
     case EFFECT_LOW_KICK:
     case EFFECT_HEAT_CRASH:

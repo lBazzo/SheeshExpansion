@@ -60074,6 +60074,7 @@
       "MOVE_CRUNCH",
       "MOVE_FIRE_PUNCH",
       "MOVE_ICE_PUNCH",
+      "MOVE_LOW_SWEEP",
       "MOVE_LASER_FOCUS",
       "MOVE_POISON_JAB",
       "MOVE_POUNCE",
@@ -83857,6 +83858,7 @@
       "MOVE_HEAL_PULSE",
       "MOVE_LUCKY_CHANT",
       "MOVE_MIRACLE_EYE",
+      "MOVE_PSYCHIC_FANGS",
       "MOVE_PSYCHO_CUT"
     ]
   },

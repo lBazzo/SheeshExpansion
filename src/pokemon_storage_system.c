@@ -4888,7 +4888,7 @@ static void SetBoxMonIconObjMode(u8 boxPosition, u8 objMode)
 
 static void  CreatePartyMonSprite(u8 partyPosition, bool8 visible)
 {
-    struct Pokemon *partyPokemon = gPlayerParty;
+    struct Pokemon *partyPokemon = &gPlayerParty[partyPosition];
 
     u16 species = GetMonData(partyPokemon, MON_DATA_SPECIES);
     //bool32 isEgg = GetMonData(partyPokemon, MON_DATA_IS_EGG);

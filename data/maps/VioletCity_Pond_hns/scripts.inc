@@ -205,3 +205,5 @@ VioletCity_Pond_Text_BirdFeederAfterBerriesGiven:
 	.string "with people.\p"
 	.string "I guess as a trainer, you must get along\n"
 	.string "well with both. That sounds fun!$"
+
+@special ChooseMonForMoveTutor

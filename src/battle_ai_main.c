@@ -7205,21 +7205,44 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_PURSUIT:
         u32 pursuitDmg;   
-        pursuitDmg = gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, MOVE_PURSUIT)].maximum;
         
-        if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
-        && (pursuitDmg >= gBattleMons[battlerDef].hp)
-        && (CountUsablePartyMons(battlerDef) != 0))
+        if (aiData->abilities[battlerAtk] != ABILITY_TECHNICIAN)
         {
-            ADJUST_SCORE(+30);
-        }
-        else if (pursuitDmg * 2 >= gBattleMons[battlerDef].hp
+            pursuitDmg = gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, MOVE_PURSUIT)].maximum;
+        
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+            && (pursuitDmg >= gBattleMons[battlerDef].hp)
             && (CountUsablePartyMons(battlerDef) != 0))
+            {
+                ADJUST_SCORE(+30);
+            }
+            else if (pursuitDmg * 2 >= gBattleMons[battlerDef].hp
+                && (CountUsablePartyMons(battlerDef) != 0))
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(+20);
+                else
+                    ADJUST_SCORE(NO_INCREASE);
+            }
+        }
+        else if (aiData->abilities[battlerAtk] == ABILITY_TECHNICIAN)
         {
-            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                ADJUST_SCORE(+20);
-            else
-                ADJUST_SCORE(NO_INCREASE);
+            pursuitDmg = (gAiLogicData->simulatedDmg[battlerAtk][battlerDef][GetIndexInMoveArray(battlerAtk, MOVE_PURSUIT)].maximum) / 1.5;
+
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+            && (pursuitDmg >= gBattleMons[battlerDef].hp)
+            && (CountUsablePartyMons(battlerDef) != 0))
+            {
+                ADJUST_SCORE(+30);
+            }
+            else if (pursuitDmg * 2 >= gBattleMons[battlerDef].hp
+                && (CountUsablePartyMons(battlerDef) != 0))
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                    ADJUST_SCORE(+20);
+                else
+                    ADJUST_SCORE(NO_INCREASE);
+            }
         }
         break;
     case EFFECT_PAIN_SPLIT:

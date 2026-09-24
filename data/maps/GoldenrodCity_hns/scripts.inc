@@ -2101,3 +2101,5 @@ GoldenrodCity_Text_GiovanniGoodLuck:
 	.string "last we see of each other.\p"
 	.string "Give 'em hell for me, will ya?$"
 
+@special ChooseMonForMoveTutor
+
