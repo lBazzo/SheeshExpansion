@@ -55,16 +55,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 11,
-      "y": 18,
+      "x": 19,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "UnionCave_1F_EventScript_Item_Awakening",
-      "flag": "FLAG_ITEM_UNION_CAVE_AWAKENING"
+      "script": "UnionCave_1F_EventScript_Item_ScopeLens",
+      "flag": "FLAG_ITEM_UNION_CAVE_SCOPE_LENS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIREBREATHER",

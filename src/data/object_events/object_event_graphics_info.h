@@ -2128,7 +2128,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Whirlpool = {
     .images = sPicTable_Whirlpool,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
-
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TowerBeam_hns = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_TOWER_BEAM_HNS, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 2048, 
+    .width = 64, 
+    .height = 64, 
+    .paletteSlot = 4, 
+    .shadowSize = SHADOW_SIZE_NONE, 
+    .inanimate = FALSE, 
+    .compressed = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_64x64, 
+    .subspriteTables = sOamTables_64x64, 
+    .anims = sAnimTable_TowerBeam_hns, 
+    .images = sPicTable_TowerBeam_hns, 
+    .affineAnims = gDummySpriteAffineAnimTable
+};
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistF = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_SCIENTIST_F,

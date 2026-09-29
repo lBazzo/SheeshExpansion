@@ -5675,6 +5675,7 @@ static const u16 sUniversalMoves[] =
     MOVE_TERA_BLAST,
     MOVE_REST,
     MOVE_SLEEP_TALK,
+    MOVE_SWIFT,
 };
 
 u8 CanLearnTeachableMove(u16 species, u16 move)

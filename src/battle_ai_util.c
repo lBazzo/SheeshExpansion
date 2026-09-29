@@ -2766,7 +2766,7 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum StatChange statCh
         u32 predictedMoveSpeedCheck = MOVE_TACKLE;
         u32 playerSpeed = GetBattlerTotalSpeedStatArgs(battlerDef, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], -1);
         u32 AISpeed = GetBattlerTotalSpeedStatArgs(battlerAtk, gAiLogicData->abilities[battlerAtk], gAiLogicData->holdEffects[battlerAtk], 0);
-        DebugPrintf(" playerSpeed %d AISpeed%d", playerSpeed, AISpeed);
+        //DebugPrintf(" playerSpeed %d AISpeed%d", playerSpeed, AISpeed);
         //if ((!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
         //&& (AI_IsSlower(battlerAtk, battlerDef, gAiThinkingStruct->moveConsidered, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY) 
         //&& (gAiLogicData->speedStats[battlerAtk] * 1.5 >= gAiLogicData->speedStats[battlerDef])

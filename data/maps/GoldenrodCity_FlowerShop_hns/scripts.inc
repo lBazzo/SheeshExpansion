@@ -214,7 +214,7 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	additem ITEM_AGUAV_BERRY, 5
 	additem ITEM_IAPAPA_BERRY, 5
 	additem ITEM_ENIGMA_BERRY, 10
-	additem ITEM_LUM_BERRY, 900
+	additem ITEM_LUM_BERRY, 50
 	additem ITEM_LANSAT_BERRY, 5
 	additem ITEM_MICLE_BERRY, 5
 	additem ITEM_ROWAP_BERRY, 3

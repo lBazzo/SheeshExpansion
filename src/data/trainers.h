@@ -283,7 +283,7 @@
 #line 102
             .lvl = 13,
 #line 103
-            .nature = NATURE_SASSY,
+            .nature = NATURE_BRAVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 104
@@ -348,7 +348,7 @@
 #line 126
             .ability = ABILITY_LIBERO,
 #line 127
-            .lvl = 15,
+            .lvl = 14,
 #line 128
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -440,7 +440,7 @@
 #line 162
             .ability = ABILITY_LEVITATE,
 #line 163
-            .lvl = 15,
+            .lvl = 14,
 #line 164
             .nature = NATURE_BOLD,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -868,7 +868,7 @@
         .trainerPic = TRAINER_PIC_BIRD_KEEPER2,
         .encounterMusic_gender =
 #line 326
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_HG_BOY_1,
 #line 327
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 328
@@ -1003,7 +1003,7 @@
         .trainerPic = TRAINER_PIC_BIRD_KEEPER2,
         .encounterMusic_gender =
 #line 377
-            TRAINER_ENCOUNTER_MUSIC_MALE,
+            TRAINER_ENCOUNTER_MUSIC_HG_BOY_1,
 #line 378
         .battleType = TRAINER_BATTLE_TYPE_SINGLES,
 #line 379
@@ -1067,7 +1067,7 @@
 #line 397
             .ability = ABILITY_IRON_FIST,
 #line 398
-            .lvl = 16,
+            .lvl = 17,
 #line 399
             .nature = NATURE_CAREFUL,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -1466,9 +1466,9 @@
             .moves = {
 #line 553
                 MOVE_FAKE_OUT,
-                MOVE_CHARGE_BEAM,
-                MOVE_ICY_WIND,
-                MOVE_COSMIC_POWER,
+                MOVE_THUNDERBOLT,
+                MOVE_ICE_BEAM,
+                MOVE_REVELATION_DANCE,
             },
             },
             {
@@ -1505,7 +1505,7 @@
 #line 568
             .ability = ABILITY_HOSPITALITY,
 #line 569
-            .lvl = 26,
+            .lvl = 25,
 #line 570
             .nature = NATURE_NAIVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -1612,7 +1612,7 @@
             .species = SPECIES_MEOWTH_ALOLA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 610
-            .heldItem = ITEM_LUM_BERRY,
+            .heldItem = ITEM_BLACK_GLASSES,
 #line 614
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 611
@@ -2483,7 +2483,7 @@
 #line 939
                 MOVE_TRAILBLAZE,
                 MOVE_SUCKER_PUNCH,
-                MOVE_LOW_KICK,
+                MOVE_AERIAL_ACE,
                 MOVE_THUNDER_FANG,
             },
             },
@@ -2523,7 +2523,7 @@
 #line 955
             .lvl = 25,
 #line 956
-            .nature = NATURE_BOLD,
+            .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 957
@@ -2669,7 +2669,7 @@
 #line 1013
                 MOVE_VOLT_SWITCH,
                 MOVE_GIGA_DRAIN,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_FIRE,
                 MOVE_METAL_SOUND,
             },
             },
@@ -2936,7 +2936,7 @@
 #line 1117
             .ability = ABILITY_VOLT_ABSORB,
 #line 1118
-            .lvl = 29,
+            .lvl = 28,
 #line 1119
             .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -2959,7 +2959,7 @@
 #line 1126
             .ability = ABILITY_LIQUID_VOICE,
 #line 1127
-            .lvl = 31,
+            .lvl = 30,
 #line 1128
             .nature = NATURE_NAIVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -3274,7 +3274,7 @@
 #line 1244
             .ability = ABILITY_THICK_FAT,
 #line 1245
-            .lvl = 30,
+            .lvl = 32,
 #line 1246
             .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -3406,7 +3406,7 @@
             .species = SPECIES_GARDEVOIR,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1297
-            .heldItem = ITEM_WISE_GLASSES,
+            .heldItem = ITEM_ABILITY_SHIELD,
 #line 1301
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 1298
@@ -3779,7 +3779,7 @@
 #line 1441
             .ability = ABILITY_INTIMIDATE,
 #line 1442
-            .lvl = 33,
+            .lvl = 34,
 #line 1443
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -3862,25 +3862,25 @@
         {
             {
 #line 1476
-            .species = SPECIES_LICKITUNG,
+            .species = SPECIES_TSAREENA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1476
-            .heldItem = ITEM_CHOPLE_BERRY,
+            .heldItem = ITEM_LIGHT_BALL,
 #line 1480
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 1477
-            .ability = ABILITY_NO_GUARD,
+            .ability = ABILITY_QUEENLY_MAJESTY,
 #line 1478
-            .lvl = 34,
+            .lvl = 33,
 #line 1479
-            .nature = NATURE_RELAXED,
+            .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1480
-                MOVE_ROCK_CLIMB,
-                MOVE_LICK,
-                MOVE_EARTHQUAKE,
-                MOVE_THUNDERBOLT,
+                MOVE_TROP_KICK,
+                MOVE_LOW_SWEEP,
+                MOVE_ZEN_HEADBUTT,
+                MOVE_FLING,
             },
             },
             {
@@ -3894,7 +3894,7 @@
 #line 1486
             .ability = ABILITY_SPEED_BOOST,
 #line 1487
-            .lvl = 33,
+            .lvl = 34,
 #line 1488
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -3917,7 +3917,7 @@
 #line 1495
             .ability = ABILITY_MOLD_BREAKER,
 #line 1496
-            .lvl = 35,
+            .lvl = 36,
 #line 1497
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -4584,7 +4584,7 @@
             .species = SPECIES_MR_MIME,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1760
-            .heldItem = ITEM_SITRUS_BERRY,
+            .heldItem = ITEM_COVERT_CLOAK,
 #line 1764
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 1761
@@ -4607,7 +4607,7 @@
             .species = SPECIES_VOLTORB,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 1769
-            .heldItem = ITEM_ELECTRIC_GEM,
+            .heldItem = ITEM_LIFE_ORB,
 #line 1773
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 1770
@@ -4619,7 +4619,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1773
-                MOVE_THUNDERBOLT,
+                MOVE_ZAP_CANNON,
                 MOVE_EXPLOSION,
             },
             },
@@ -4728,7 +4728,7 @@
 #line 1814
             .lvl = 39,
 #line 1815
-            .nature = NATURE_CAREFUL,
+            .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 1816
@@ -5214,9 +5214,9 @@
             .moves = {
 #line 2004
                 MOVE_OCTAZOOKA,
-                MOVE_FLAMETHROWER,
-                MOVE_SIGNAL_BEAM,
-                MOVE_ICE_BEAM,
+                MOVE_TWIN_FLAME,
+                MOVE_SLUDGE_WAVE,
+                MOVE_ICY_WIND,
             },
             },
             {
@@ -5557,7 +5557,7 @@
 #line 2137
                 MOVE_TAILWIND,
                 MOVE_AEROBLAST,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_GROUND,
                 MOVE_NASTY_PLOT,
             },
             },
@@ -5689,16 +5689,16 @@
 #line 2189
             .ability = ABILITY_FORCEFIELD,
 #line 2190
-            .lvl = 39,
+            .lvl = 40,
 #line 2191
-            .nature = NATURE_MODEST,
+            .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2192
                 MOVE_FREEZE_DRY,
                 MOVE_FREEZING_GLARE,
                 MOVE_ICY_WIND,
-                MOVE_LOVELY_KISS,
+                MOVE_FAKE_TEARS,
             },
             },
             {
@@ -5790,7 +5790,7 @@
                 MOVE_FACADE,
                 MOVE_BULLDOZE,
                 MOVE_STOMPING_TANTRUM,
-                MOVE_CRUNCH,
+                MOVE_LASH_OUT,
             },
             },
         },
@@ -5873,14 +5873,14 @@
 #line 2261
             .ability = ABILITY_STEAM_ENGINE,
 #line 2262
-            .lvl = 46,
+            .lvl = 47,
 #line 2263
-            .nature = NATURE_SASSY,
+            .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2264
                 MOVE_BODY_PRESS,
-                MOVE_FIRE_BLAST,
+                MOVE_BURN_UP,
                 MOVE_ANCIENT_POWER,
                 MOVE_EARTH_POWER,
             },
@@ -5904,7 +5904,7 @@
 #line 2274
                 MOVE_CHLOROBLAST,
                 MOVE_SLUDGE_BOMB,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_FIRE,
                 MOVE_SUCKER_PUNCH,
             },
             },
@@ -5948,7 +5948,7 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2292
-                MOVE_MAGMA_STORM,
+                MOVE_FLAMETHROWER,
                 MOVE_POWER_GEM,
                 MOVE_MUD_SHOT,
                 MOVE_MUD_SLAP,
@@ -6011,16 +6011,16 @@
 #line 2316
             .ability = ABILITY_COTTON_DOWN,
 #line 2317
-            .lvl = 45,
+            .lvl = 44,
 #line 2318
             .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2319
-                MOVE_DRAGON_RUSH,
-                MOVE_HEAT_WAVE,
-                MOVE_CHATTER,
-                MOVE_WILL_O_WISP,
+                MOVE_FLOATY_FALL,
+                MOVE_DRAGON_PULSE,
+                MOVE_EARTH_POWER,
+                MOVE_LOVELY_KISS,
             },
             },
             {
@@ -6126,7 +6126,7 @@
 #line 2361
             .ability = ABILITY_ICE_SCALES,
 #line 2362
-            .lvl = 46,
+            .lvl = 45,
 #line 2363
             .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -6172,7 +6172,7 @@
 #line 2379
             .ability = ABILITY_NOCTURNAL,
 #line 2380
-            .lvl = 45,
+            .lvl = 44,
 #line 2381
             .nature = NATURE_BOLD,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -6376,15 +6376,15 @@
 #line 2457
             .ability = ABILITY_QUICK_DRAW,
 #line 2458
-            .lvl = 45,
+            .lvl = 44,
 #line 2459
-            .nature = NATURE_QUIET,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2460
                 MOVE_TOXIC_SPIKES,
                 MOVE_TOXIC,
-                MOVE_SLUDGE_BOMB,
+                MOVE_POISON_JAB,
                 MOVE_FLAMETHROWER,
             },
             },
@@ -6408,7 +6408,7 @@
                 MOVE_HEX,
                 MOVE_AIR_SLASH,
                 MOVE_VENOSHOCK,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_GROUND,
             },
             },
             {
@@ -6485,13 +6485,13 @@
             .species = SPECIES_SPIDOPS,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 2502
-            .heldItem = ITEM_MUSCLE_BAND,
+            .heldItem = ITEM_FOCUS_SASH,
 #line 2506
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2503
             .ability = ABILITY_STAKEOUT,
 #line 2504
-            .lvl = 47,
+            .lvl = 48,
 #line 2505
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -6500,7 +6500,7 @@
                 MOVE_LEECH_LIFE,
                 MOVE_KNOCK_OFF,
                 MOVE_LOW_KICK,
-                MOVE_BULLET_SEED,
+                MOVE_FIRST_IMPRESSION,
             },
             },
         },
@@ -6721,16 +6721,16 @@
 #line 2593
             .ability = ABILITY_THICK_FAT,
 #line 2594
-            .lvl = 46,
+            .lvl = 48,
 #line 2595
-            .nature = NATURE_CAREFUL,
+            .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2596
-                MOVE_AVALANCHE,
-                MOVE_HIGH_HORSEPOWER,
-                MOVE_STONE_EDGE,
-                MOVE_CURSE,
+                MOVE_BLIZZARD,
+                MOVE_ANCIENT_POWER,
+                MOVE_STOMPING_TANTRUM,
+                MOVE_THRASH,
             },
             },
             {
@@ -7247,14 +7247,14 @@
 #line 2797
             .lvl = 45,
 #line 2798
-            .nature = NATURE_MILD,
+            .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2799
                 MOVE_FREEZE_DRY,
                 MOVE_BIND,
-                MOVE_MIRROR_COAT,
-                MOVE_PERISH_SONG,
+                MOVE_STRENGTH_SAP,
+                MOVE_NASTY_PLOT,
             },
             },
             {
@@ -7368,7 +7368,7 @@
 #line 2844
                 MOVE_FIRE_SPIN,
                 MOVE_KNOCK_OFF,
-                MOVE_CLOSE_COMBAT,
+                MOVE_DRAIN_PUNCH,
                 MOVE_OVERHEAT,
             },
             },
@@ -7381,9 +7381,9 @@
 #line 2853
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 2850
-            .ability = ABILITY_CLEAR_BODY,
+            .ability = ABILITY_CURSED_BODY,
 #line 2851
-            .lvl = 47,
+            .lvl = 48,
 #line 2852
             .nature = NATURE_NAIVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -7408,7 +7408,7 @@
 #line 2860
             .lvl = 48,
 #line 2861
-            .nature = NATURE_QUIET,
+            .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 2862
@@ -7438,7 +7438,7 @@
                 MOVE_SAND_TOMB,
                 MOVE_SLACK_OFF,
                 MOVE_ICE_FANG,
-                MOVE_THUNDER_FANG,
+                MOVE_STONE_EDGE,
             },
             },
             {
@@ -8209,7 +8209,7 @@
 #line 3171
             .ability = ABILITY_CONTRARY,
 #line 3172
-            .lvl = 50,
+            .lvl = 51,
 #line 3173
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -8217,7 +8217,7 @@
 #line 3175
                 MOVE_LEAF_STORM,
                 MOVE_DRAGON_PULSE,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_FIRE,
                 MOVE_GLARE,
             },
             },
@@ -8287,7 +8287,7 @@
                 MOVE_TAILWIND,
                 MOVE_U_TURN,
                 MOVE_HURRICANE,
-                MOVE_INFESTATION,
+                MOVE_SLEEP_POWDER,
             },
             },
             {
@@ -8364,13 +8364,13 @@
             .species = SPECIES_ROTOM_FAN,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 3234
-            .heldItem = ITEM_WISE_GLASSES,
+            .heldItem = ITEM_LUM_BERRY,
 #line 3238
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 3235
             .ability = ABILITY_WIND_POWER,
 #line 3236
-            .lvl = 51,
+            .lvl = 50,
 #line 3237
             .nature = NATURE_MODEST,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -8560,8 +8560,8 @@
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 3310
-                MOVE_BLOOD_MOON,
-                MOVE_EARTH_POWER,
+                MOVE_TRI_ATTACK,
+                MOVE_SCORCHING_SANDS,
                 MOVE_MOONBLAST,
                 MOVE_CALM_MIND,
             },
@@ -8632,9 +8632,9 @@
             .moves = {
 #line 3338
                 MOVE_BATON_PASS,
-                MOVE_ENERGY_BALL,
+                MOVE_GIGA_DRAIN,
                 MOVE_BUG_BUZZ,
-                MOVE_THUNDERBOLT,
+                MOVE_ELECTROWEB,
             },
             },
             {
@@ -9323,7 +9323,7 @@
                 MOVE_GIGA_DRAIN,
                 MOVE_LEECH_SEED,
                 MOVE_DRAINING_KISS,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_FIRE,
             },
             },
             {
@@ -9987,7 +9987,7 @@
 #line 3868
                 MOVE_OVERHEAT,
                 MOVE_SLUDGE_BOMB,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_GRASS,
                 MOVE_THUNDER_WAVE,
             },
             },
@@ -10861,7 +10861,7 @@
                 MOVE_ICE_BEAM,
                 MOVE_FREEZE_DRY,
                 MOVE_FLASH_CANNON,
-                MOVE_HIDDEN_POWER,
+                MOVE_HIDDEN_POWER_GROUND,
             },
             },
         },

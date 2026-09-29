@@ -97,7 +97,7 @@ AzaleaTown_KurtsHouse_EventScript_ReturnFromWell::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox KurtsHouse_Text_KurtTeamRocketLeftThis, MSGBOX_DEFAULT
 	giveitem ITEM_UPGRADE
-	msgbox KurtsHouse_Text_KurtBallsFromApricorns, MSGBOX_DEFAULT
+	@msgbox KurtsHouse_Text_KurtBallsFromApricorns, MSGBOX_DEFAULT
 	closemessage
 	turnobject LOCALID_AZALEA_TOWN_KURT, DIR_NORTH
 	setvar VAR_AZALEA_TOWN_STATE, 4
@@ -114,9 +114,13 @@ AzaleaTown_KurtsHouse_EventScript_Kurt::
 	faceplayer
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 8, AzaleaTown_KurtsHouse_EventScript_KurtGsBall2
 	goto_if_eq VAR_AZALEA_TOWN_STATE, 9, AzaleaTown_KurtsHouse_EventScript_KurtGsBall3
-	msgbox KurtsHouse_Text_KurtAskYouHaveAnApricorn, MSGBOX_DEFAULT
+	@msgbox KurtsHouse_Text_KurtAskYouHaveAnApricorn, MSGBOX_DEFAULT
+	msgbox KurtsHouse_Text_KurtThanksForHelp, MSGBOX_DEFAULT
 	closemessage
-	call_if_unset FLAG_CAUGHT_CELEBI, AzaleaTown_KurtsHouse_EventScript_KurtCheckGSBall
+	release
+	end
+
+	@call_if_unset FLAG_CAUGHT_CELEBI, AzaleaTown_KurtsHouse_EventScript_KurtCheckGSBall
 AzaleaTown_KurtsHouse_EventScript_Kurt2::
 	multichoice 20, 0, MULTI_KURT_BALLS, FALSE
 	switch VAR_RESULT
@@ -130,6 +134,11 @@ AzaleaTown_KurtsHouse_EventScript_Kurt2::
 	case 7, AzaleaTown_KurtsHouse_EventScript_KurtCancel
 	case MULTI_B_PRESSED, AzaleaTown_KurtsHouse_EventScript_KurtCancel
 	closemessage
+
+KurtsHouse_Text_KurtThanksForHelp:
+	.string "{PLAYER}!\p"
+	.string "Good to see you. Don't worry.\n"
+	.string "Team Rocket are gone for good! Haha!$"
 
 AzaleaTown_KurtsHouse_EventScript_Kurt_Love::
 	closemessage

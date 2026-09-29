@@ -1285,7 +1285,7 @@
 #define FLAG_ITEM_UNION_CAVE_POTION                                 0x4B4 
 #define FLAG_ITEM_UNION_CAVE_GREAT_BALL                             0x4B5 
 #define FLAG_ITEM_UNION_CAVE_FLOAT_STONE                            0x4B6 
-#define FLAG_ITEM_UNION_CAVE_AWAKENING                              0x4B7 
+#define FLAG_ITEM_UNION_CAVE_SCOPE_LENS                             0x4B7 
 #define FLAG_ITEM_UNION_CAVE_SECRET_POWER                           0x4B8 
 #define FLAG_ITEM_UNION_CAVE_X_DEFEND                               0x4B9 
 #define FLAG_ITEM_UNION_CAVE_ETHER                                  0x4BA 

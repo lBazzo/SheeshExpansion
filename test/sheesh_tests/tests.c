@@ -3750,3 +3750,26 @@ AI_SINGLE_BATTLE_TEST("AI Correctly does not see Last Resort for switchin calcs"
         TURN { MOVE(player, MOVE_QUICK_ATTACK); EXPECT_SEND_OUT(opponent, 2); }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI Correctly doesn't score fake out extra when it kills")
+{
+    u32 playerHP;
+
+    PARAMETRIZE { playerHP = 50; }
+    PARAMETRIZE { playerHP = 15; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE | AI_FLAG_SMART_SWITCHING);
+        PLAYER(SPECIES_WOBBUFFET) { HP(playerHP); Speed(2); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_HORN_ATTACK, MOVE_FAKE_OUT); Speed(3); }
+    } WHEN {
+        if (playerHP == 50)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FAKE_OUT, 109); }
+        }
+        else if (playerHP == 15)
+        {
+            TURN { SCORE_EQ_VAL(opponent, MOVE_FAKE_OUT, 115); }
+        }
+    }
+}

@@ -10649,10 +10649,10 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
     [SPECIES_FROSLASS] =
     {
         .baseHP        = 60,
-        .baseAttack    = 95,
+        .baseAttack    = 85,
         .baseDefense   = 60,
         .baseSpeed     = 130,
-        .baseSpAttack  = 95,
+        .baseSpAttack  = 85,
         .baseSpDefense = 60,
         .types = MON_TYPES(TYPE_ICE, TYPE_GHOST),
         .catchRate = 75,

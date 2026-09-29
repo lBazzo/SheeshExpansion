@@ -529,6 +529,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Snorlax,                   OBJ_EVENT_PAL_TAG_SNORLAX},
     {gObjectEventPal_Slowpoke,                   OBJ_EVENT_PAL_TAG_SLOWPOKE},
     {gObjectEventPal_Lapras,               OBJ_EVENT_PAL_TAG_LAPRAS},
+    {gObjectEventPal_TowerBeam_hns,               OBJ_EVENT_PAL_TAG_TOWER_BEAM_HNS},
     
 
 

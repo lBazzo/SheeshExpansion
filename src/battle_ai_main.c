@@ -4116,10 +4116,11 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 if (IsTargetingPartner(battlerAtk, battlerDef))
                     {
                     if (aiData->abilities[battlerAtk] == ABILITY_SAP_SIPPER
-                    && (aiData->abilities[battlerDef] != ABILITY_SAP_SIPPER))
+                    && (aiData->abilities[battlerDef] != ABILITY_SAP_SIPPER)
+                    && (AI_GetMoveEffectiveness(MOVE_ENERGY_BALL, battlerAtk, battlerAtkPartner) >= UQ_4_12(2.0)))
                         {
                                 ADJUST_SCORE(GOOD_EFFECT);
-                            if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                            if (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT))
                                 ADJUST_SCORE(+4);
                         }
                     }
@@ -4711,10 +4712,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     }
 */
 
-    // check guaranteed flinch, a la Fake Out Bazzo note: hoping this also includes fling with king's rock???
+    // check guaranteed flinch, a la Fake Out 
     if (IsFlinchGuaranteed(battlerAtk, battlerDef, move)
     && (!(gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST))
-    && (!(gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS)))
+    && (!(gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS))
+    && (!(CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING)))
+    && (!(gBattleMons[battlerDef].volatiles.substitute)))
         ADJUST_SCORE(GOOD_EFFECT); //Bazzo TODO: check if this is actually applying to king's rock fling or not at some point, +9
 
     // Non-volatile statuses
@@ -6803,6 +6806,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             if (!(gAiLogicData->abilities[battlerDef] == ABILITY_SHIELD_DUST) 
             && (!(gAiLogicData->abilities[battlerDef] == ABILITY_INNER_FOCUS))
             //&& (DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
+            && (!(gBattleMons[battlerDef].volatiles.substitute))
             && (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)))
                 {
                     if (gDisableStructs[battlerAtk].isFirstTurn

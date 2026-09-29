@@ -98,6 +98,7 @@ const u16 gObjectEventPal_ScientistF[] = INCBIN_U16("graphics/object_events/pale
 const u16 gObjectEventPal_ShinyGyarados[] = INCBIN_U16("graphics/object_events/palettes/shiny_gyarados.gbapal");
 const u16 gObjectEventPal_TowerBeam[] = INCBIN_U16("graphics/object_events/palettes/tower_beam.gbapal");
 const u16 gObjectEventPal_Whirlpool[] = INCBIN_U16("graphics/object_events/palettes/whirlpool.gbapal");
+const u16 gObjectEventPal_TowerBeam_hns[] = INCBIN_U16("graphics/object_events/palettes/tower_beam_hns.gbapal");
 const u16 gObjectEventPal_Snorlax[] = INCBIN_U16("graphics/object_events/palettes/snorlax.gbapal");
 const u16 gObjectEventPal_Slowpoke[] = INCBIN_U16("graphics/object_events/palettes/slowpoke.gbapal");
 const u16 gObjectEventPal_Lapras[] = INCBIN_U16("graphics/object_events/palettes/lapras.gbapal");
@@ -430,6 +431,7 @@ const u32 gObjectEventPic_BigLaprasDoll[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_BigSnorlaxDoll[] = INCBIN_U32("graphics/object_events/pics/dolls/big_snorlax_doll.4bpp"); //Special for HnS
 
 const u32 gObjectEventPic_Whirlpool[] = INCBIN_U32("graphics/object_events/pics/misc/whirlpool.4bpp");
+const u32 gObjectEventPic_TowerBeam_hns[] = INCBIN_U32("graphics/object_events/pics/misc/tower_beam_hns.4bpp");
 
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/lugia.gbapal");

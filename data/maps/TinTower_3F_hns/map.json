@@ -28,7 +28,7 @@
       "flag": "FLAG_PLAYER_CAUGHT_SILVALLY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA",
+      "graphics_id": "OBJ_EVENT_GFX_TOWER_BEAM_HNS",
       "x": 9,
       "y": 10,
       "elevation": 0,

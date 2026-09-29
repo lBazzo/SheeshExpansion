@@ -206,6 +206,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreAslee
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonAsleep;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rayquaza;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Whirlpool;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TowerBeam_hns;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zigzagoon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pikachu;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Azumarill;
@@ -464,7 +465,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KYOGRE_ASLEEP] =            &gObjectEventGraphicsInfo_KyogreAsleep,
     [OBJ_EVENT_GFX_GROUDON_ASLEEP] =           &gObjectEventGraphicsInfo_GroudonAsleep,
     [OBJ_EVENT_GFX_RAYQUAZA] =                 &gObjectEventGraphicsInfo_Rayquaza,
-     [OBJ_EVENT_GFX_WHIRLPOOL] =                 &gObjectEventGraphicsInfo_Whirlpool,   
+    [OBJ_EVENT_GFX_WHIRLPOOL] =                 &gObjectEventGraphicsInfo_Whirlpool,
+    [OBJ_EVENT_GFX_TOWER_BEAM_HNS] =               &gObjectEventGraphicsInfo_TowerBeam_hns,   
     [OBJ_EVENT_GFX_ZIGZAGOON_2] =              &gObjectEventGraphicsInfo_Zigzagoon,
     [OBJ_EVENT_GFX_PIKACHU] =                  &gObjectEventGraphicsInfo_Pikachu,
     [OBJ_EVENT_GFX_AZUMARILL] =                &gObjectEventGraphicsInfo_Azumarill,

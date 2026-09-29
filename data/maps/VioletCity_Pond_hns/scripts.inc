@@ -172,13 +172,17 @@ VioletCity_Pond_EventScript_BirdFeeder::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_BERRIES_BIRD_FEEDER, VioletCity_Pond_EventScript_BirdFeederPostBerries
 	msgbox VioletCity_Pond_Text_BirdFeederGiveBerries, MSGBOX_DEFAULT
-	giveitem ITEM_ORAN_BERRY, 900
-	giveitem ITEM_CHERI_BERRY, 900
-	giveitem ITEM_CHESTO_BERRY, 900
-	giveitem ITEM_PECHA_BERRY, 900
-	giveitem ITEM_RAWST_BERRY, 900
-	giveitem ITEM_ASPEAR_BERRY, 900
-	giveitem ITEM_PERSIM_BERRY, 900
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox VioletCity_Pond_Text_BirdFeederGotBerries
+	waitfanfare
+	additem ITEM_ORAN_BERRY, 900
+	additem ITEM_CHERI_BERRY, 900
+	additem ITEM_CHESTO_BERRY, 900
+	additem ITEM_PECHA_BERRY, 900
+	additem ITEM_RAWST_BERRY, 900
+	additem ITEM_ASPEAR_BERRY, 900
+	additem ITEM_PERSIM_BERRY, 900
 	msgbox VioletCity_Pond_Text_BirdFeederAfterBerriesGiven, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_BERRIES_BIRD_FEEDER
 	closemessage
@@ -205,5 +209,8 @@ VioletCity_Pond_Text_BirdFeederAfterBerriesGiven:
 	.string "with people.\p"
 	.string "I guess as a trainer, you must get along\n"
 	.string "well with both. That sounds fun!$"
+
+VioletCity_Pond_Text_BirdFeederGotBerries:
+	.string "{PLAYER} obtained the berry collection!$"
 
 @special ChooseMonForMoveTutor

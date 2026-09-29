@@ -13709,7 +13709,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_GLIGAR"
+                "species": "SPECIES_ARCHEN"
               },
               {
                 "min_level": 5,
@@ -26861,12 +26861,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHINCHOU"
+                "species": "SPECIES_CLAMPERL"
               },
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PSYDUCK"
+                "species": "SPECIES_VANILLITE"
               },
               {
                 "min_level": 5,
@@ -26886,7 +26886,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_SQUIRTLE"
+                "species": "SPECIES_WAILMER"
               },
               {
                 "min_level": 5,
@@ -34769,7 +34769,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_WAILMER"
+                "species": "SPECIES_SQUIRTLE"
               },
               {
                 "min_level": 5,

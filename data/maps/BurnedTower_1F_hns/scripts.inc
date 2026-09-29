@@ -37,6 +37,7 @@ BurnedTower_1F_EventScript_MeetSilver::
 	waitmovement 0
 	msgbox BurnedTower_1FSilverIntroText, MSGBOX_DEFAULT
 	closemessage
+	playse SE_WALL_HIT
 	applymovement OBJ_EVENT_ID_PLAYER, BurnedTower_Movement_PlayerPushedBySilver
 	waitmovement 30
 	applymovement LOCALID_BURNED_TOWER_SILVER, BurnedTower_Movement_Silver2

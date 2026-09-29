@@ -137,6 +137,7 @@ EcruteakCity_Theater_Text_Rocket3:
 EcruteakCity_Theater_EventScript_Rocket::
 	lock
 	faceplayer
+	playbgm MUS_HG_ENCOUNTER_ROCKET, FALSE
 	msgbox EcruteakCity_Theater_Text_RocketSeen, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_33, EcruteakCity_Theater_Text_RocketBeaten
 	msgbox EcruteakCity_Theater_Text_RocketAfter, MSGBOX_DEFAULT

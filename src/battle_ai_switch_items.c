@@ -1229,7 +1229,7 @@ bool32 ShouldSwitch(u32 battler)
     if (FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_DOESNT_AFFECT_FOE, 0)
         || FindMonWithFlagsAndSuperEffective(battler, MOVE_RESULT_NOT_VERY_EFFECTIVE, 0))
         return TRUE;
-        DebugPrintf("%d",__LINE__);
+        //DebugPrintf("%d",__LINE__);
 
     return FALSE;
 }

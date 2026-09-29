@@ -66,8 +66,8 @@ UnionCave_1F_EventScript_Item_FloatStone::
 	finditem ITEM_FLOAT_STONE
 	end
 
-UnionCave_1F_EventScript_Item_Awakening::
-	finditem ITEM_AWAKENING
+UnionCave_1F_EventScript_Item_ScopeLens::
+	finditem ITEM_SCOPE_LENS
 	end
 
 UnionCave_1F_Text_HikerRussellSeen:

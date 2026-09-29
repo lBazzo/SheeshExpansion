@@ -5469,17 +5469,17 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sSnoverLevelUpLearnset,
         .teachableLearnset = sSnoverTeachableLearnset,
         .eggMoveLearnset = sSnoverEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_ABOMASNOW}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_ABOMASNOW}),
     },
 
     [SPECIES_ABOMASNOW] =
     {
         .baseHP        = 100,
-        .baseAttack    = 97,
-        .baseDefense   = 120,
+        .baseAttack    = 92,
+        .baseDefense   = 110,
         .baseSpeed     = 20,
-        .baseSpAttack  = 97,
-        .baseSpDefense = 120,
+        .baseSpAttack  = 92,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_GRASS, TYPE_ICE),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 173 : 214,
