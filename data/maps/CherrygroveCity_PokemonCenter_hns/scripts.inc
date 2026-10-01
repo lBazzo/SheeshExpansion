@@ -2120,11 +2120,11 @@ CherryGrove_Pokecenter_EventScript_TMClerkPlainBadge::
 	special ShowScrollableMultichoice
 	waitstate
 	switch VAR_RESULT
-	case 0, CherryGrove_Pokecenter_EventScript_TMClerkXScissor
+	case 0, CherryGrove_Pokecenter_EventScript_TMClerkExtrasensory
 	case 1, CherryGrove_Pokecenter_EventScript_TMClerkFlashCannon
 	case 2, CherryGrove_Pokecenter_EventScript_TMClerkDarkPulse
 	case 3, CherryGrove_Pokecenter_EventScript_TMClerkShadowBall
-	case 4, CherryGrove_Pokecenter_EventScript_TMClerkDragonClaw
+	case 4, CherryGrove_Pokecenter_EventScript_TMClerkPowerGem
 	case 5, CherryGrove_Pokecenter_EventScript_TMClerkPsychoShift
 	case 6, CherryGrove_Pokecenter_EventScript_TMClerkLowKick
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkReturn
@@ -2133,16 +2133,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkPlainBadge::
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkXScissor::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantXScissor, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveXScissor
+CherryGrove_Pokecenter_EventScript_TMClerkExtrasensory::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantExtrasensory, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveExtrasensory
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGiveXScissor::
+CherryGrove_Pokecenter_EventScript_TMClerkGiveExtrasensory::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_X_SCISSOR
+	giveitem ITEM_TM_EXTRASENSORY
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -2197,16 +2197,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveShadowBall::
 	release
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkDragonClaw::
-	msgbox CherryGrove_Pokecenter_Text_TMClerkWantDragonClaw, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveDragonClaw
+CherryGrove_Pokecenter_EventScript_TMClerkPowerGem::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantPowerGem, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGivePowerGem
 	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
-CherryGrove_Pokecenter_EventScript_TMClerkGiveDragonClaw::
+CherryGrove_Pokecenter_EventScript_TMClerkGivePowerGem::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_DRAGON_CLAW
+	giveitem ITEM_TM_POWER_GEM
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -3059,11 +3059,11 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostMistyTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostWhitneyTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostWhitneyTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_X_SCISSOR
+	giveitem ITEM_TM_EXTRASENSORY
 	giveitem ITEM_TM_FLASH_CANNON
 	giveitem ITEM_TM_DARK_PULSE
 	giveitem ITEM_TM_SHADOW_BALL
-	giveitem ITEM_TM_DRAGON_CLAW
+	giveitem ITEM_TM_POWER_GEM
 	giveitem ITEM_TM_PSYCHO_SHIFT
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_WHITNEY
 	closemessage
@@ -3325,8 +3325,8 @@ CherryGrove_Pokecenter_Text_TMClerkWantFlipTurn::
 	.string "You want the Flip Turn TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
-CherryGrove_Pokecenter_Text_TMClerkWantXScissor::
-	.string "You want the X-Scissor TM?\n"
+CherryGrove_Pokecenter_Text_TMClerkWantExtrasensory::
+	.string "You want the Extrasensory TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantFlashCannon::
@@ -3341,8 +3341,8 @@ CherryGrove_Pokecenter_Text_TMClerkWantShadowBall::
 	.string "You want the Shadow Ball TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
-CherryGrove_Pokecenter_Text_TMClerkWantDragonClaw::
-	.string "You want the Dragon Claw TM?\n"
+CherryGrove_Pokecenter_Text_TMClerkWantPowerGem::
+	.string "You want the Power Gem TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantPsychoShift::

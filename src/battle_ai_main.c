@@ -7331,11 +7331,20 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 {
                 case MOVE_EFFECT_ATK_PLUS_1:
                 case MOVE_EFFECT_DEF_PLUS_1:
-                case MOVE_EFFECT_SPD_PLUS_1:
                 case MOVE_EFFECT_SP_ATK_PLUS_1:
                 case MOVE_EFFECT_SP_DEF_PLUS_1:
                     if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
                     && (move != MOVE_SKULL_BASH)) //Bazzo note: should stop moves from gaining setup scores and best damage move scores
+                        {
+                        StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
+                        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId, move));
+                        }
+                    break;
+                case MOVE_EFFECT_SPD_PLUS_1:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (aiData->abilities[battlerDef] != ABILITY_COTTON_DOWN)
+                    && (aiData->abilities[battlerDef] != ABILITY_GOOEY)
+                    && (aiData->abilities[battlerDef] != ABILITY_TANGLING_HAIR)) //Bazzo note: stops ai using speed drop when it would also drop itself in the process
                         {
                         StageStatId = STAT_CHANGE_ATK + additionalEffect->moveEffect - MOVE_EFFECT_ATK_PLUS_1;
                         ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, StageStatId, move));
@@ -7453,7 +7462,10 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 //    score += ShouldTryToFlinch(battlerAtk, battlerDef, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], move);
                 //    break;
                 case MOVE_EFFECT_SPD_MINUS_1:
-                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))
+                    if (CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED)
+                    && (aiData->abilities[battlerDef] != ABILITY_COTTON_DOWN)
+                    && (aiData->abilities[battlerDef] != ABILITY_GOOEY)
+                    && (aiData->abilities[battlerDef] != ABILITY_TANGLING_HAIR))
                         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED, move));
                         break;
                 case MOVE_EFFECT_SPD_MINUS_2:
@@ -7683,24 +7695,38 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 */
                 case MOVE_EFFECT_POISON:
                 case MOVE_EFFECT_TOXIC:
-                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] > 85))
                     {
                         IncreasePoisonScore(battlerAtk, battlerDef, move, &score);
                     }
                     break;
                 case MOVE_EFFECT_SLEEP:
-                    IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
-                    break;
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] > 85))
+                    {
+                        IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
+                        break;
+                    }
                 case MOVE_EFFECT_PARALYSIS:
-                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] > 85))
                     {
                         IncreaseParalyzeScore(battlerAtk, battlerDef, move, &score);
                     }
                     break;
                 case MOVE_EFFECT_BURN:
-                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move))
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (gAiLogicData->moveAccuracy[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] > 85))
                     {
                         IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
+                    }
+                    break;
+                case MOVE_EFFECT_CONFUSION:
+                    if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
+                    && (move == MOVE_CHATTER))
+                    {
+                        IncreaseConfusionScore(battlerAtk, battlerDef, move, &score);
                     }
                     break;
                 default:

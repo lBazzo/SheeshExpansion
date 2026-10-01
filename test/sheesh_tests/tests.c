@@ -3773,3 +3773,65 @@ AI_SINGLE_BATTLE_TEST("AI Correctly doesn't score fake out extra when it kills")
         }
     }
 }
+
+AI_SINGLE_BATTLE_TEST("AI only gives accurate Paralysis moves bonus scores")
+{
+    u32 paralysisMove;
+
+    PARAMETRIZE { paralysisMove = MOVE_NUZZLE; }
+    PARAMETRIZE { paralysisMove = MOVE_ZAP_CANNON; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(90); Moves(MOVE_CELEBRATE, paralysisMove, MOVE_DARK_PULSE); }
+    } WHEN {
+        if (paralysisMove == MOVE_NUZZLE)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, paralysisMove, 107);
+            }
+        }
+        else if (paralysisMove == MOVE_ZAP_CANNON)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, paralysisMove, 100);
+            }
+        }
+    }
+}
+
+AI_SINGLE_BATTLE_TEST("AI correctly doesn't score up speed control either way against certain abilities")
+{
+    u32 speedControlMove;
+    enum Ability ability;
+
+    PARAMETRIZE { speedControlMove = MOVE_ROCK_TOMB; ability = ABILITY_SHADOW_TAG; }
+    PARAMETRIZE { speedControlMove = MOVE_ROCK_TOMB; ability = ABILITY_COTTON_DOWN; }
+    PARAMETRIZE { speedControlMove = MOVE_TRAILBLAZE; ability = ABILITY_GOOEY; }
+
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE);
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Moves(MOVE_CELEBRATE); Ability(ability); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(90); Moves(MOVE_CELEBRATE, speedControlMove, MOVE_STONE_EDGE); }
+    } WHEN {
+        if (speedControlMove == MOVE_ROCK_TOMB && ability == ABILITY_SHADOW_TAG)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedControlMove, 107);
+            }
+        }
+        else if (speedControlMove == MOVE_ROCK_TOMB && ability == ABILITY_COTTON_DOWN)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedControlMove, 100);
+            }
+        }
+        else if (speedControlMove == MOVE_TRAILBLAZE && ability == ABILITY_GOOEY)
+        {
+            TURN {
+                SCORE_EQ_VAL(opponent, speedControlMove, 100);
+            }
+        }
+    }
+}

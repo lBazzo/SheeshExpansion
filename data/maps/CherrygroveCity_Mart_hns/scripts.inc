@@ -44,7 +44,16 @@ Cherrygrove_Pokemart_EventScript_Clerk2::
 	.align 3
 Cherrygrove_Pokemart_Pokemart:
 	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_HYPER_POTION
+	.2byte ITEM_MAX_POTION
+	.2byte ITEM_FULL_RESTORE
+	.2byte ITEM_MAX_ETHER
+	.2byte ITEM_MAX_ELIXIR
+	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_NONE
 	release
 	end

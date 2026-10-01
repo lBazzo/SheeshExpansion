@@ -40,7 +40,6 @@ MountMortar4_EventScript_KiyoTryGiveTyrogue::
 	@HnS gift pokemon setup
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TYROGUE
 	bufferspeciesname STR_VAR_1, SPECIES_TYROGUE
-	givemon SPECIES_TYROGUE, 25
 	call Common_EventScript_GiftMon
 	setflag FLAG_GOT_TYROGUE
 MountMortar4_EventScript_KiyoAfter::

@@ -514,7 +514,7 @@ RocketHideout_B2F_Trigger_Electrode::
 
 RocketHideout_B2F_EventScript_Electrode::
 	lock
-	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_ELECTRODE_HISUI, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	setwildbattle SPECIES_ELECTRODE_HISUI, 30

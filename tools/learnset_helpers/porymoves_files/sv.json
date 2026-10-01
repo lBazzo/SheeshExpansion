@@ -364,7 +364,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -391,6 +390,7 @@
     "EggMoves": [
     ],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_PUNCH",
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
@@ -449,7 +449,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -476,6 +475,7 @@
     "EggMoves": [
     ],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_PUNCH",
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
@@ -551,7 +551,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -580,6 +579,7 @@
     "EggMoves": [
     ],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_PUNCH",
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
@@ -688,6 +688,7 @@
       "MOVE_ICY_WIND",
       "MOVE_ROCK_SMASH",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -791,6 +792,7 @@
       "MOVE_ICY_WIND",
       "MOVE_ROCK_SMASH",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -882,6 +884,7 @@
       "MOVE_WEATHER_BALL",
       "MOVE_STRENGTH",
       "MOVE_WATERFALL",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ],
     "EggMoves": [],
@@ -1500,7 +1503,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SLUDGE_BOMB",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -1516,7 +1518,8 @@
       "MOVE_POISON_JAB",
       "MOVE_ROCK_TOMB",
       "MOVE_SAND_TOMB",
-      "MOVE_SHADOW_CLAW"
+      "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SANDSLASH": {
@@ -1606,7 +1609,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SLUDGE_BOMB",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
     ],
@@ -1622,7 +1624,8 @@
       "MOVE_POISON_JAB",
       "MOVE_ROCK_TOMB",
       "MOVE_SAND_TOMB",
-      "MOVE_SHADOW_CLAW"
+      "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR"
     ]
   },
   "NIDORAN_F": {
@@ -2605,7 +2608,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_SLUDGE_BOMB",
       "MOVE_STEEL_WING",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY"
     ],
     "EggMoves": [],
@@ -2621,7 +2623,8 @@
       "MOVE_ODOR_SLEUTH",
       "MOVE_PSYCHIC_FANGS",
       "MOVE_SCREECH",
-      "MOVE_WHIRLWIND"
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GOLBAT": {
@@ -2639,7 +2642,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_SLUDGE_BOMB",
       "MOVE_STEEL_WING",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY"
     ],
     "EggMoves": [],
@@ -2655,7 +2657,8 @@
       "MOVE_ODOR_SLEUTH",
       "MOVE_PSYCHIC_FANGS",
       "MOVE_SCREECH",
-      "MOVE_WHIRLWIND"
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
     ]
   },
   "ODDISH": {
@@ -3429,6 +3432,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
@@ -3439,6 +3443,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_PSYCHO_CUT",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -3548,6 +3553,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
@@ -3558,6 +3564,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_PSYCHO_CUT",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -7700,7 +7707,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_BODY_PRESS",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -7731,6 +7737,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -7805,7 +7812,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_FLASH_CANNON",
@@ -7824,6 +7830,7 @@
     "TutorMoves": [
       "MOVE_AQUA_CUTTER",
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_HURRICANE",
       "MOVE_HYDRO_PUMP",
@@ -7831,6 +7838,7 @@
       "MOVE_LASER_FOCUS",
       "MOVE_LOCK_ON",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -7892,7 +7900,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_FLASH_CANNON",
@@ -7911,6 +7918,7 @@
     "TutorMoves": [
       "MOVE_AQUA_CUTTER",
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_HURRICANE",
       "MOVE_HYDRO_PUMP",
@@ -7918,6 +7926,7 @@
       "MOVE_LASER_FOCUS",
       "MOVE_LOCK_ON",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -7965,6 +7974,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_SPOTLIGHT",
       "MOVE_WHIRLPOOL",
       "MOVE_THUNDER"
@@ -8000,6 +8010,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_SPOTLIGHT",
       "MOVE_WHIRLPOOL",
       "MOVE_THUNDER"
@@ -8072,7 +8083,6 @@
       "MOVE_DEFOG",
       "MOVE_ROOST",
       "MOVE_FACADE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -8086,7 +8096,8 @@
       "MOVE_INFESTATION",
       "MOVE_NIGHT_SLASH",
       "MOVE_POUNCE",
-      "MOVE_SLASH"
+      "MOVE_SLASH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "JYNX": {
@@ -8339,7 +8350,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -8357,7 +8367,8 @@
       "MOVE_POUNCE",
       "MOVE_ROCK_TOMB",
       "MOVE_SCREECH",
-      "MOVE_WRAP"
+      "MOVE_WRAP",
+      "MOVE_X_SCISSOR"
     ]
   },
   "TAUROS": {
@@ -8565,7 +8576,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRACO_METEOR",
       "MOVE_EARTHQUAKE",
@@ -8592,6 +8602,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_HURRICANE",
@@ -9322,14 +9333,12 @@
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_GIGA_DRAIN",
       "MOVE_GIGA_IMPACT",
       "MOVE_LOW_KICK",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_CUT",
       "MOVE_SURF",
@@ -9343,6 +9352,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRAGON_CLAW",
       "MOVE_INFESTATION",
       "MOVE_LASER_FOCUS",
       "MOVE_LOW_SWEEP",
@@ -9353,21 +9363,20 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "KABUTOPS": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_GIGA_DRAIN",
       "MOVE_GIGA_IMPACT",
       "MOVE_LOW_KICK",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_CUT",
       "MOVE_SURF",
@@ -9381,6 +9390,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRAGON_CLAW",
       "MOVE_INFESTATION",
       "MOVE_LASER_FOCUS",
       "MOVE_LOW_SWEEP",
@@ -9391,14 +9401,14 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "AERODACTYL": {
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -9417,6 +9427,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -9771,6 +9782,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_AURA_SPHERE",
       "MOVE_BLAZE_KICK",
+      "MOVE_DRILL_PECK",
       "MOVE_ELECTROWEB",
       "MOVE_FIRE_BLAST",
       "MOVE_HURRICANE",
@@ -9947,7 +9959,6 @@
     "TMMoves": [
       "MOVE_DRACO_METEOR",
       "MOVE_DEFOG",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_GIGA_IMPACT",
@@ -9965,6 +9976,7 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HEAL_PULSE",
@@ -10039,7 +10051,6 @@
     "TMMoves": [
       "MOVE_DRACO_METEOR",
       "MOVE_DEFOG",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_GIGA_IMPACT",
@@ -10057,6 +10068,7 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HEAL_PULSE",
@@ -10155,7 +10167,6 @@
     "TMMoves": [
       "MOVE_DRACO_METEOR",
       "MOVE_DEFOG",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTHQUAKE",
@@ -10182,6 +10193,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_PUNCH",
       "MOVE_FIRE_SPIN",
@@ -10952,7 +10964,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
@@ -10980,6 +10991,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_HYDRO_PUMP",
@@ -11059,7 +11071,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
@@ -11087,6 +11098,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_HYDRO_PUMP",
@@ -11170,7 +11182,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
@@ -11200,6 +11211,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_HYDRO_PUMP",
@@ -11687,7 +11699,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_SLUDGE_BOMB",
       "MOVE_TOXIC",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_FLASH"
     ],
@@ -11711,7 +11722,8 @@
       "MOVE_RAGE_POWDER",
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "ARIADOS": {
@@ -11808,7 +11820,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_SLUDGE_BOMB",
       "MOVE_TOXIC",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_FLASH"
     ],
@@ -11832,7 +11843,8 @@
       "MOVE_RAGE_POWDER",
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CROBAT": {
@@ -11850,7 +11862,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_SLUDGE_BOMB",
       "MOVE_STEEL_WING",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY"
     ],
     "EggMoves": [],
@@ -11866,7 +11877,8 @@
       "MOVE_ODOR_SLEUTH",
       "MOVE_PSYCHIC_FANGS",
       "MOVE_SCREECH",
-      "MOVE_WHIRLWIND"
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CHINCHOU": {
@@ -12339,6 +12351,7 @@
       "MOVE_ALLY_SWITCH",
       "MOVE_AURA_SPHERE",
       "MOVE_BESTOW",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FORESIGHT",
@@ -12382,6 +12395,7 @@
       "MOVE_ALLY_SWITCH",
       "MOVE_AURA_SPHERE",
       "MOVE_BESTOW",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FORESIGHT",
@@ -12460,7 +12474,6 @@
     "TMMoves": [
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
       "MOVE_FACADE",
@@ -12561,7 +12574,6 @@
     "TMMoves": [
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
       "MOVE_FACADE",
@@ -12687,7 +12699,6 @@
     "TMMoves": [
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
       "MOVE_FACADE",
@@ -12714,6 +12725,7 @@
     "TutorMoves": [
       "MOVE_AURA_SPHERE",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRAGON_CLAW",
       "MOVE_ELECTROWEB",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_PUNCH",
@@ -13224,6 +13236,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_ROCK_TOMB",
       "MOVE_MUD_SHOT",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -14454,6 +14467,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -14464,6 +14478,7 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR",
       "MOVE_WHIRLWIND"
     ]
   },
@@ -15065,7 +15080,6 @@
       "MOVE_BODY_PRESS",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -15100,6 +15114,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FOLLOW_ME",
@@ -15185,7 +15200,6 @@
       "MOVE_STEEL_WING",
       "MOVE_STONE_EDGE",
       "MOVE_TOXIC",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH"
     ],
@@ -15210,7 +15224,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SCREECH",
       "MOVE_WHIRLWIND",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "STEELIX": {
@@ -15642,7 +15657,6 @@
       "MOVE_FACADE",
       "MOVE_PAYBACK",
       "MOVE_STEEL_WING",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -15658,7 +15672,8 @@
       "MOVE_SLASH",
       "MOVE_METAL_SOUND",
       "MOVE_POUNCE",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SHUCKLE": {
@@ -15739,7 +15754,6 @@
       "MOVE_FOCUS_PUNCH",
       "MOVE_STEEL_WING",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -15755,7 +15769,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_BULLDOZE",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SNEASEL": {
@@ -16424,6 +16439,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -16469,6 +16485,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL",
       "MOVE_WRAP"
     ]
@@ -16515,6 +16532,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_HEAL_PULSE",
@@ -16945,7 +16963,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_FLASH_CANNON",
@@ -16971,6 +16988,7 @@
       "MOVE_LASER_FOCUS",
       "MOVE_LOCK_ON",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -17966,7 +17984,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_BODY_PRESS",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -17991,6 +18008,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -18419,7 +18437,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -18447,6 +18464,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
@@ -18718,7 +18736,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTHQUAKE",
       "MOVE_ENERGY_BALL",
@@ -18732,7 +18749,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_SOLAR_BLADE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_AROMATHERAPY",
       "MOVE_CUT",
       "MOVE_FLASH",
@@ -18754,7 +18770,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_SAFEGUARD",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GROVYLE": {
@@ -18839,7 +18856,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTHQUAKE",
       "MOVE_ENERGY_BALL",
@@ -18853,7 +18869,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_SOLAR_BLADE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_AROMATHERAPY",
       "MOVE_CUT",
       "MOVE_FLASH",
@@ -18864,6 +18879,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -18875,7 +18891,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_SAFEGUARD",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SCEPTILE": {
@@ -18964,7 +18981,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTHQUAKE",
       "MOVE_ENERGY_BALL",
@@ -18978,7 +18994,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_SOLAR_BLADE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_AROMATHERAPY",
       "MOVE_CUT",
       "MOVE_FLASH",
@@ -18989,6 +19004,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -19000,7 +19016,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_SAFEGUARD",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "TORCHIC": {
@@ -19186,7 +19203,6 @@
       "MOVE_STONE_EDGE",
       "MOVE_WEATHER_BALL",
       "MOVE_WILL_O_WISP",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -19208,7 +19224,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_THUNDER_PUNCH"
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "BLAZIKEN": {
@@ -19312,7 +19329,6 @@
       "MOVE_STONE_EDGE",
       "MOVE_WEATHER_BALL",
       "MOVE_WILL_O_WISP",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -19334,7 +19350,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_THUNDER_PUNCH"
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "MUDKIP": {
@@ -20416,6 +20433,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_HURRICANE",
       "MOVE_LASER_FOCUS",
@@ -20444,6 +20462,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_HURRICANE",
       "MOVE_LASER_FOCUS",
@@ -21145,9 +21164,19 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_ENERGY_BALL",
+      "MOVE_FACADE",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_GRASS_KNOT",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_AROMATHERAPY"
+    ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_FAKE_TEARS",
+      "MOVE_SWEET_SCENT"
+    ]
   },
   "BRELOOM": {
     "LevelMoves": [
@@ -21229,9 +21258,36 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_ENERGY_BALL",
+      "MOVE_FACADE",
+      "MOVE_FOCUS_BLAST",
+      "MOVE_FOCUS_PUNCH",
+      "MOVE_GIGA_DRAIN",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_GRASS_KNOT",
+      "MOVE_LOW_KICK",
+      "MOVE_IRON_TAIL",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_SOLAR_BEAM",
+      "MOVE_SOLAR_BLADE",
+      "MOVE_STONE_EDGE",
+      "MOVE_AROMATHERAPY",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_AERIAL_ACE",
+      "MOVE_AURA_SPHERE",
+      "MOVE_BRICK_BREAK",
+      "MOVE_FAKE_TEARS",
+      "MOVE_LASER_FOCUS",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SWEET_SCENT"
+    ]
   },
   "SLAKOTH": {
     "LevelMoves": [
@@ -22092,7 +22148,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_BODY_PRESS",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -22117,6 +22172,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FIRE_PUNCH",
       "MOVE_ICE_PUNCH",
@@ -23650,7 +23706,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_IRON_TAIL",
@@ -23662,6 +23717,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_FANG",
@@ -23764,7 +23820,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRACO_METEOR",
       "MOVE_DEFOG",
@@ -23791,6 +23846,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -23907,7 +23963,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAIN_PUNCH",
@@ -23940,6 +23995,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_BRICK_BREAK",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -24236,7 +24292,6 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAINING_KISS",
       "MOVE_DUAL_WINGBEAT",
@@ -24268,6 +24323,8 @@
       "MOVE_AIR_CUTTER",
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
@@ -24350,7 +24407,6 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAINING_KISS",
       "MOVE_DUAL_WINGBEAT",
@@ -24382,6 +24438,8 @@
       "MOVE_AIR_CUTTER",
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
@@ -24509,7 +24567,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
       "MOVE_GIGA_IMPACT",
@@ -24518,7 +24575,6 @@
       "MOVE_PLAY_ROUGH",
       "MOVE_SEISMIC_TOSS",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -24529,6 +24585,7 @@
       "MOVE_BLAZE_KICK",
       "MOVE_BRICK_BREAK",
       "MOVE_CROSS_POISON",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_PUNCH",
@@ -24544,7 +24601,8 @@
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_THUNDER_PUNCH"
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SEVIPER": {
@@ -24633,7 +24691,6 @@
       "MOVE_SLUDGE_BOMB",
       "MOVE_THUNDERBOLT",
       "MOVE_TOXIC",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_FLASH",
       "MOVE_ROCK_SMASH"
@@ -24660,7 +24717,8 @@
       "MOVE_SHADOW_CLAW",
       "MOVE_SNAP_TRAP",
       "MOVE_THUNDER_FANG",
-      "MOVE_WRAP"
+      "MOVE_WRAP",
+      "MOVE_X_SCISSOR"
     ]
   },
   "LUNATONE": {
@@ -25156,7 +25214,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_BODY_PRESS",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -25166,7 +25223,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH",
@@ -25178,6 +25234,7 @@
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_INFESTATION",
       "MOVE_NIGHT_SLASH",
@@ -25185,7 +25242,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SAFEGUARD",
       "MOVE_SLASH",
-      "MOVE_SHADOW_CLAW"
+      "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR"
     ]
   },
   "ARMALDO": {
@@ -25193,7 +25251,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_BODY_PRESS",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -25203,7 +25260,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SEISMIC_TOSS",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH",
@@ -25215,6 +25271,7 @@
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_INFESTATION",
       "MOVE_NIGHT_SLASH",
@@ -25222,7 +25279,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SAFEGUARD",
       "MOVE_SLASH",
-      "MOVE_SHADOW_CLAW"
+      "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR"
     ]
   },
   "FEEBAS": {
@@ -25901,7 +25959,6 @@
       "MOVE_SHADOW_BALL",
       "MOVE_THUNDERBOLT",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -25924,7 +25981,8 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "WYNAUT": {
@@ -26405,7 +26463,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_FLAMETHROWER",
@@ -26423,6 +26480,7 @@
     "TutorMoves": [
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -26495,7 +26553,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_FLAMETHROWER",
@@ -26513,6 +26570,7 @@
     "TutorMoves": [
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -26598,7 +26656,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -26627,6 +26684,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -27238,7 +27296,6 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_ENERGY_BALL",
@@ -27268,6 +27325,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BESTOW",
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -27358,7 +27416,6 @@
       "MOVE_DARK_PULSE",
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_ENERGY_BALL",
@@ -27388,6 +27445,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BESTOW",
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -28393,6 +28451,7 @@
       "MOVE_AQUA_CUTTER",
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICY_WIND",
@@ -28481,6 +28540,7 @@
       "MOVE_AQUA_CUTTER",
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICY_WIND",
@@ -28589,6 +28649,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRILL_PECK",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
@@ -28665,6 +28726,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_HURRICANE",
       "MOVE_LASER_FOCUS",
       "MOVE_SCREECH",
@@ -28737,6 +28799,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_HURRICANE",
       "MOVE_LASER_FOCUS",
       "MOVE_SCREECH",
@@ -28816,6 +28879,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_BLAZE_KICK",
       "MOVE_BRICK_BREAK",
       "MOVE_HURRICANE",
@@ -28998,7 +29062,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
       "MOVE_VOLT_TACKLE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -29019,7 +29082,8 @@
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
       "MOVE_THUNDER",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "LUXIO": {
@@ -29090,7 +29154,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
       "MOVE_VOLT_TACKLE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -29111,7 +29174,8 @@
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
       "MOVE_THUNDER",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "LUXRAY": {
@@ -29179,7 +29243,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_FACADE",
       "MOVE_GIGA_IMPACT",
       "MOVE_IRON_TAIL",
@@ -29188,7 +29251,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
       "MOVE_VOLT_TACKLE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -29197,6 +29259,7 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_ELECTROWEB",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -29209,7 +29272,8 @@
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
       "MOVE_THUNDER",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "BUDEW": {
@@ -29327,7 +29391,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -29354,6 +29417,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -29426,7 +29490,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -29453,6 +29516,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -30011,6 +30075,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_ROCK_TOMB",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -30119,6 +30184,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_ROCK_TOMB",
       "MOVE_SHOCK_WAVE",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -30758,9 +30824,40 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_DARK_PULSE",
+      "MOVE_DEFOG",
+      "MOVE_DUAL_WINGBEAT",
+      "MOVE_FACADE",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_NIGHT_SHADE",
+      "MOVE_PAYBACK",
+      "MOVE_PLUCK",
+      "MOVE_PSYCHIC",
+      "MOVE_ROOST",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_HEAL_BELL",
+      "MOVE_STEEL_WING",
+      "MOVE_FLY"
+    ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_AERIAL_ACE",
+      "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
+      "MOVE_EMBARGO",
+      "MOVE_FAKE_TEARS",
+      "MOVE_FEINT_ATTACK",
+      "MOVE_HURRICANE",
+      "MOVE_LASER_FOCUS",
+      "MOVE_IMPRISON",
+      "MOVE_NIGHT_SLASH",
+      "MOVE_PSYCHO_CUT",
+      "MOVE_SCREECH",
+      "MOVE_SHADOW_CLAW",
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
+    ]
   },
   "GLAMEOW": {
     "LevelMoves": [],
@@ -31493,7 +31590,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -31513,6 +31609,7 @@
     "TutorMoves": [
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -31581,7 +31678,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -31596,7 +31692,6 @@
       "MOVE_SOLAR_BLADE",
       "MOVE_STEEL_WING",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_SURF",
@@ -31611,6 +31706,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -31624,7 +31720,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_THUNDER_FANG",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GARCHOMP": {
@@ -31685,7 +31782,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -31700,7 +31796,6 @@
       "MOVE_SOLAR_BLADE",
       "MOVE_STEEL_WING",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_SURF",
@@ -31715,6 +31810,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
@@ -31728,7 +31824,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_THUNDER_FANG",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "MUNCHLAX": {
@@ -32037,7 +32134,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
@@ -32066,6 +32162,7 @@
       "MOVE_BULLDOZE",
       "MOVE_BRICK_BREAK",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_PUNCH",
@@ -33788,7 +33885,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_SOLAR_BLADE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_FLASH",
       "MOVE_ROCK_SMASH"
@@ -33805,7 +33901,8 @@
       "MOVE_LUCKY_CHANT",
       "MOVE_MAGICAL_LEAF",
       "MOVE_POUNCE",
-      "MOVE_ROCK_TOMB"
+      "MOVE_ROCK_TOMB",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GLACEON": {
@@ -34013,7 +34110,6 @@
       "MOVE_STEEL_WING",
       "MOVE_STONE_EDGE",
       "MOVE_TOXIC",
-      "MOVE_X_SCISSOR",
       "MOVE_FLY",
       "MOVE_ROCK_SMASH"
     ],
@@ -34038,7 +34134,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SCREECH",
       "MOVE_WHIRLWIND",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "MAMOSWINE": {
@@ -34392,7 +34489,6 @@
       "MOVE_REFLECT",
       "MOVE_SEISMIC_TOSS",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -34412,7 +34508,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_THUNDER_PUNCH"
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "PROBOPASS": {
@@ -36859,7 +36956,6 @@
     "TMMoves": [
       "MOVE_BODY_PRESS",
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_BLAST",
@@ -36872,7 +36968,6 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_WATER_PULSE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_CUT",
       "MOVE_STRENGTH",
@@ -36889,6 +36984,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
@@ -36899,7 +36995,9 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_ROCK_TOMB",
       "MOVE_SMART_STRIKE",
-      "MOVE_WHIRLPOOL"
+      "MOVE_SNIPE_SHOT",
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "PATRAT": {
@@ -37347,7 +37445,6 @@
       "MOVE_FACADE",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -37356,6 +37453,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRILL_PECK",
       "MOVE_DRILL_RUN",
       "MOVE_LASER_FOCUS",
       "MOVE_MAGNET_BOMB",
@@ -37365,7 +37463,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "EXCADRILL": {
@@ -37439,7 +37538,6 @@
       "MOVE_GIGA_IMPACT",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -37458,7 +37556,8 @@
       "MOVE_SAND_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "AUDINO": {
@@ -37890,7 +37989,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_SOLAR_BLADE",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_AROMATHERAPY",
       "MOVE_CUT",
       "MOVE_FLASH",
@@ -37909,7 +38007,8 @@
       "MOVE_POUNCE",
       "MOVE_SAFEGUARD",
       "MOVE_RAGE_POWDER",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "VENIPEDE": {
@@ -38562,7 +38661,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -38581,6 +38679,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
@@ -38668,7 +38767,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_PUNCH",
@@ -38687,6 +38785,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
@@ -38793,7 +38892,6 @@
       "MOVE_IRON_TAIL",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -38810,7 +38908,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_POUNCE",
       "MOVE_ROCK_TOMB",
-      "MOVE_SLASH"
+      "MOVE_SLASH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CRUSTLE": {
@@ -38823,7 +38922,6 @@
       "MOVE_IRON_TAIL",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -38841,7 +38939,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_POUNCE",
       "MOVE_ROCK_TOMB",
-      "MOVE_SLASH"
+      "MOVE_SLASH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SCRAGGY": {
@@ -38910,7 +39009,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -38928,6 +39026,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -39003,7 +39102,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -39022,6 +39120,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -39102,7 +39201,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -39123,6 +39221,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -39304,7 +39403,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_ENERGY_BALL",
       "MOVE_FLAMETHROWER",
       "MOVE_FOCUS_BLAST",
@@ -39326,6 +39424,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BRICK_BREAK",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -40242,7 +40341,6 @@
       "MOVE_GIGA_IMPACT",
       "MOVE_PAYBACK",
       "MOVE_ROCK_SLIDE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -40261,7 +40359,8 @@
       "MOVE_POUNCE",
       "MOVE_ROCK_TOMB",
       "MOVE_SCREECH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "FOONGUS": {
@@ -40585,7 +40684,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_CUT",
       "MOVE_FLASH"
@@ -40599,7 +40697,8 @@
       "MOVE_POISON_JAB",
       "MOVE_RAGE_POWDER",
       "MOVE_SHOCK_WAVE",
-      "MOVE_THUNDER"
+      "MOVE_THUNDER",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GALVANTULA": {
@@ -40673,7 +40772,6 @@
       "MOVE_SOLAR_BEAM",
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_CUT",
       "MOVE_FLASH"
@@ -40687,7 +40785,8 @@
       "MOVE_POISON_JAB",
       "MOVE_RAGE_POWDER",
       "MOVE_SHOCK_WAVE",
-      "MOVE_THUNDER"
+      "MOVE_THUNDER",
+      "MOVE_X_SCISSOR"
     ]
   },
   "FERROSEED": {
@@ -41281,7 +41380,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
@@ -41296,7 +41394,6 @@
       "MOVE_PAYBACK",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -41309,6 +41406,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -41322,7 +41420,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SCREECH",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "FRAXURE": {
@@ -41402,7 +41501,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
@@ -41417,7 +41515,6 @@
       "MOVE_PAYBACK",
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -41430,6 +41527,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -41443,7 +41541,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SCREECH",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "HAXORUS": {
@@ -41523,7 +41622,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
@@ -41539,7 +41637,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_SOLAR_BLADE",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_FLASH",
@@ -41554,6 +41651,7 @@
       "MOVE_BULLDOZE",
       "MOVE_CROSS_POISON",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -41567,7 +41665,8 @@
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
       "MOVE_SCREECH",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CUBCHOO": {
@@ -41861,7 +41960,8 @@
       "MOVE_INFESTATION",
       "MOVE_MUD_SHOT",
       "MOVE_NATURE_POWER",
-      "MOVE_POUNCE"
+      "MOVE_POUNCE",
+      "MOVE_SNIPE_SHOT"
     ]
   },
   "STUNFISK": {
@@ -42062,7 +42162,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -42089,6 +42188,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_PUNCH",
@@ -42382,7 +42482,6 @@
       "MOVE_LOW_KICK",
       "MOVE_PAYBACK",
       "MOVE_SEISMIC_TOSS",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -42401,7 +42500,8 @@
       "MOVE_POISON_JAB",
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "BISHARP": {
@@ -42482,7 +42582,6 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_SHADOW_BALL",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -42502,7 +42601,8 @@
       "MOVE_POISON_JAB",
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "BOUFFALANT": {
@@ -42589,6 +42689,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_FEINT_ATTACK",
       "MOVE_NIGHT_SLASH",
       "MOVE_SCREECH",
@@ -42676,6 +42777,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_FEINT_ATTACK",
       "MOVE_NIGHT_SLASH",
       "MOVE_SCREECH",
@@ -42910,7 +43012,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_FACADE",
       "MOVE_FLAMETHROWER",
       "MOVE_NIGHT_SHADE",
@@ -42919,6 +43020,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FIRE_BLAST"
     ]
@@ -43001,7 +43103,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_FACADE",
       "MOVE_FLAMETHROWER",
       "MOVE_NIGHT_SHADE",
@@ -43010,6 +43111,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FIRE_BLAST"
     ]
@@ -43101,7 +43203,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
       "MOVE_FACADE",
@@ -43123,6 +43224,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_AURA_SPHERE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FIRE_BLAST",
       "MOVE_HURRICANE",
@@ -43302,7 +43404,6 @@
       "MOVE_ROOST",
       "MOVE_SOLAR_BEAM",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_FLASH"
     ],
@@ -43318,7 +43419,8 @@
       "MOVE_INFESTATION",
       "MOVE_POUNCE",
       "MOVE_SAFEGUARD",
-      "MOVE_WHIRLWIND"
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
     ]
   },
   "COBALION": {
@@ -44844,6 +44946,7 @@
       "MOVE_LASER_FOCUS",
       "MOVE_NATURE_POWER",
       "MOVE_NIGHT_SLASH",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -44940,6 +45043,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_NIGHT_SLASH",
       "MOVE_POISON_JAB",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -45052,6 +45156,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_NIGHT_SLASH",
       "MOVE_POISON_JAB",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -45138,6 +45243,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_BLAZE_KICK",
+      "MOVE_DRILL_PECK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HURRICANE",
@@ -45224,6 +45330,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_BLAZE_KICK",
+      "MOVE_DRILL_PECK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HURRICANE",
@@ -45318,6 +45425,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_BLAZE_KICK",
+      "MOVE_DRILL_PECK",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HURRICANE",
@@ -46199,7 +46307,6 @@
       "MOVE_REFLECT",
       "MOVE_SHADOW_BALL",
       "MOVE_SOLAR_BLADE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -46214,7 +46321,8 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "DOUBLADE": {
@@ -46228,7 +46336,6 @@
       "MOVE_REFLECT",
       "MOVE_SHADOW_BALL",
       "MOVE_SOLAR_BLADE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -46243,7 +46350,8 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "AEGISLASH": {
@@ -46257,7 +46365,6 @@
       "MOVE_REFLECT",
       "MOVE_SHADOW_BALL",
       "MOVE_SOLAR_BLADE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT"
     ],
     "EggMoves": [],
@@ -46272,7 +46379,8 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SPRITZEE": {
@@ -46705,6 +46813,7 @@
       "MOVE_POUNCE",
       "MOVE_SAFEGUARD",
       "MOVE_SCREECH",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -46808,6 +46917,7 @@
       "MOVE_PSYCHIC_FANGS",
       "MOVE_SAFEGUARD",
       "MOVE_SCREECH",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -46829,7 +46939,6 @@
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FLAMETHROWER",
@@ -46845,6 +46954,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_HYPER_FANG",
@@ -46862,7 +46972,6 @@
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRACO_METEOR",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
@@ -46880,6 +46989,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_HYPER_FANG",
@@ -47605,7 +47715,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -47635,6 +47744,7 @@
     "TutorMoves": [
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_PUNCH",
       "MOVE_FIRE_SPIN",
@@ -48130,7 +48240,6 @@
       "MOVE_DARK_PULSE",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_FLAMETHROWER",
@@ -48145,6 +48254,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -48237,7 +48347,6 @@
       "MOVE_DARK_PULSE",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_FLAMETHROWER",
@@ -48254,6 +48363,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
@@ -48515,7 +48625,6 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -48540,6 +48649,7 @@
     "TutorMoves": [
       "MOVE_AURA_SPHERE",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_SPIN",
       "MOVE_HYDRO_PUMP",
@@ -48836,6 +48946,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_HURRICANE",
@@ -49778,7 +49889,6 @@
       "MOVE_REFLECT",
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_FLASH"
     ],
@@ -49792,7 +49902,8 @@
       "MOVE_SCREECH",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
-      "MOVE_THUNDER"
+      "MOVE_THUNDER",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CHARJABUG": {
@@ -49858,7 +49969,6 @@
       "MOVE_REFLECT",
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_FLASH"
     ],
@@ -49872,7 +49982,8 @@
       "MOVE_SCREECH",
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
-      "MOVE_THUNDER"
+      "MOVE_THUNDER",
+      "MOVE_X_SCISSOR"
     ]
   },
   "VIKAVOLT": {
@@ -49968,7 +50079,6 @@
       "MOVE_STEEL_WING",
       "MOVE_THUNDER_WAVE",
       "MOVE_THUNDERBOLT",
-      "MOVE_X_SCISSOR",
       "MOVE_SIGNAL_BEAM",
       "MOVE_FLY",
       "MOVE_FLASH"
@@ -49986,7 +50096,8 @@
       "MOVE_SAFEGUARD",
       "MOVE_SHOCK_WAVE",
       "MOVE_THUNDER",
-      "MOVE_WHIRLWIND"
+      "MOVE_WHIRLWIND",
+      "MOVE_X_SCISSOR"
     ]
   },
   "CRABRAWLER": {
@@ -50931,7 +51042,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_TOXIC",
       "MOVE_WATER_PULSE",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_SIGNAL_BEAM",
       "MOVE_SURF",
@@ -50949,7 +51059,8 @@
       "MOVE_INFESTATION",
       "MOVE_POUNCE",
       "MOVE_SAFEGUARD",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "ARAQUANID": {
@@ -51023,7 +51134,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_TOXIC",
       "MOVE_WATER_PULSE",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_SIGNAL_BEAM",
       "MOVE_SURF",
@@ -51041,7 +51151,8 @@
       "MOVE_INFESTATION",
       "MOVE_POUNCE",
       "MOVE_SAFEGUARD",
-      "MOVE_WHIRLPOOL"
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "FOMANTIS": {
@@ -51180,7 +51291,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_ENERGY_BALL",
       "MOVE_FACADE",
@@ -51193,7 +51303,6 @@
       "MOVE_SOLAR_BLADE",
       "MOVE_STONE_EDGE",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_AROMATHERAPY",
       "MOVE_CUT",
       "MOVE_FLASH",
@@ -51214,7 +51323,8 @@
       "MOVE_SAFEGUARD",
       "MOVE_SLASH",
       "MOVE_SNAP_TRAP",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_X_SCISSOR"
     ]
   },
   "MORELULL": {
@@ -51395,7 +51505,6 @@
     "TMMoves": [
       "MOVE_DARK_PULSE",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_OVERHEAT",
@@ -51411,6 +51520,7 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_CROSS_POISON",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -52208,7 +52318,6 @@
     "TMMoves": [
       "MOVE_BODY_PRESS",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -52226,6 +52335,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -52405,7 +52515,6 @@
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_FACADE",
@@ -52434,6 +52543,7 @@
     "TutorMoves": [
       "MOVE_AIR_CUTTER",
       "MOVE_BLIZZARD",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_FANG",
       "MOVE_FIRE_SPIN",
@@ -52548,51 +52658,49 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_LOW_KICK",
-      "MOVE_FACADE",
-      "MOVE_BULLDOZE",
-      "MOVE_ROCK_TOMB",
-      "MOVE_DRAGON_TAIL",
-      "MOVE_ENDURE",
-      "MOVE_SANDSTORM",
-      "MOVE_FALSE_SWIPE",
-      "MOVE_BRICK_BREAK",
-      "MOVE_SHADOW_CLAW",
-      "MOVE_BULK_UP",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_DRAGON_CLAW",
-      "MOVE_REST",
-      "MOVE_ROCK_SLIDE",
-      "MOVE_TAUNT",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_IRON_HEAD",
-      "MOVE_DRAGON_DANCE",
-      "MOVE_SUBSTITUTE",
-      "MOVE_IRON_DEFENSE",
-      "MOVE_X_SCISSOR",
-      "MOVE_DRAGON_PULSE",
-      "MOVE_REVERSAL",
-      "MOVE_EARTHQUAKE",
-      "MOVE_OUTRAGE",
-      "MOVE_FOCUS_BLAST",
+      "MOVE_BODY_PRESS",
+      "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_TERA_BLAST",
-      "MOVE_ROAR",
+      "MOVE_DRAGON_PULSE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_DUAL_WINGBEAT",
+      "MOVE_EARTH_POWER",
+      "MOVE_EARTHQUAKE",
+      "MOVE_FACADE",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FLASH_CANNON",
+      "MOVE_FOCUS_BLAST",
       "MOVE_FOCUS_PUNCH",
-      "MOVE_SCALE_SHOT",
-      "MOVE_BREAKING_SWIPE",
-      "MOVE_DRAGON_CHEER"
+      "MOVE_GIGA_IMPACT",
+      "MOVE_IRON_TAIL",
+      "MOVE_LOW_KICK",
+      "MOVE_PAYBACK",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_ROOST",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_STEEL_WING",
+      "MOVE_STONE_EDGE",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
     ],
-    "EggMoves": [
-      "MOVE_COUNTER",
-      "MOVE_DRAGON_BREATH",
-      "MOVE_FOCUS_PUNCH"
-    ],
-    "TutorMoves": []
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_AURA_SPHERE",
+      "MOVE_BRICK_BREAK",
+      "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
+      "MOVE_FAKE_TEARS",
+      "MOVE_FEINT_ATTACK",
+      "MOVE_FIRE_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_METAL_SOUND",
+      "MOVE_POISON_JAB",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SAFEGUARD",
+      "MOVE_SCREECH",
+      "MOVE_SMART_STRIKE",
+      "MOVE_THUNDER_PUNCH"
+    ]
   },
   "HAKAMO_O": {
     "LevelMoves": [
@@ -52655,62 +52763,49 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_LOW_KICK",
-      "MOVE_FACADE",
-      "MOVE_AERIAL_ACE",
-      "MOVE_BULLDOZE",
-      "MOVE_METAL_CLAW",
-      "MOVE_ROCK_TOMB",
-      "MOVE_FLING",
-      "MOVE_DRAGON_TAIL",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_SANDSTORM",
-      "MOVE_FALSE_SWIPE",
-      "MOVE_BRICK_BREAK",
-      "MOVE_SHADOW_CLAW",
-      "MOVE_BULK_UP",
-      "MOVE_BODY_SLAM",
-      "MOVE_SLEEP_TALK",
-      "MOVE_DRAIN_PUNCH",
-      "MOVE_DRAGON_CLAW",
-      "MOVE_REST",
-      "MOVE_ROCK_SLIDE",
-      "MOVE_TAUNT",
-      "MOVE_SWORDS_DANCE",
-      "MOVE_IRON_HEAD",
-      "MOVE_DRAGON_DANCE",
-      "MOVE_SUBSTITUTE",
-      "MOVE_IRON_DEFENSE",
-      "MOVE_X_SCISSOR",
-      "MOVE_DRAGON_PULSE",
-      "MOVE_REVERSAL",
-      "MOVE_EARTHQUAKE",
-      "MOVE_OUTRAGE",
-      "MOVE_FOCUS_BLAST",
-      "MOVE_CLOSE_COMBAT",
+      "MOVE_BODY_PRESS",
+      "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_TERA_BLAST",
-      "MOVE_ROAR",
-      "MOVE_VACUUM_WAVE",
+      "MOVE_DRAGON_PULSE",
+      "MOVE_DRAIN_PUNCH",
+      "MOVE_DUAL_WINGBEAT",
+      "MOVE_EARTH_POWER",
+      "MOVE_EARTHQUAKE",
+      "MOVE_FACADE",
+      "MOVE_FLAMETHROWER",
+      "MOVE_FLASH_CANNON",
+      "MOVE_FOCUS_BLAST",
       "MOVE_FOCUS_PUNCH",
-      "MOVE_SCALE_SHOT",
-      "MOVE_DOUBLE_EDGE",
-      "MOVE_COACHING",
-      "MOVE_THROAT_CHOP",
-      "MOVE_BREAKING_SWIPE",
-      "MOVE_DRAGON_CHEER",
-      "MOVE_UPPER_HAND"
+      "MOVE_GIGA_IMPACT",
+      "MOVE_IRON_TAIL",
+      "MOVE_LOW_KICK",
+      "MOVE_PAYBACK",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_ROOST",
+      "MOVE_SEISMIC_TOSS",
+      "MOVE_STEEL_WING",
+      "MOVE_STONE_EDGE",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
     ],
-    "EggMoves": [
-      "MOVE_COUNTER",
-      "MOVE_DRAGON_BREATH",
-      "MOVE_FOCUS_PUNCH"
-    ],
-    "TutorMoves": []
+    "EggMoves": [],
+    "TutorMoves": [
+      "MOVE_AURA_SPHERE",
+      "MOVE_BRICK_BREAK",
+      "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
+      "MOVE_FAKE_TEARS",
+      "MOVE_FEINT_ATTACK",
+      "MOVE_FIRE_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_METAL_SOUND",
+      "MOVE_POISON_JAB",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SAFEGUARD",
+      "MOVE_SCREECH",
+      "MOVE_SMART_STRIKE",
+      "MOVE_THUNDER_PUNCH"
+    ]
   },
   "KOMMO_O": {
     "LevelMoves": [
@@ -52792,7 +52887,6 @@
       "MOVE_BODY_PRESS",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DRAIN_PUNCH",
       "MOVE_DUAL_WINGBEAT",
@@ -52820,6 +52914,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_FIRE_PUNCH",
@@ -53284,7 +53379,6 @@
       "MOVE_DARK_PULSE",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_ENERGY_BALL",
@@ -53309,6 +53403,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_CROSS_POISON",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -53322,7 +53417,8 @@
       "MOVE_POUNCE",
       "MOVE_PSYCHO_CUT",
       "MOVE_THUNDER",
-      "MOVE_THUNDER_FANG"
+      "MOVE_THUNDER_FANG",
+      "MOVE_SNIPE_SHOT"
     ]
   },
   "STAKATAKA": {
@@ -53998,6 +54094,7 @@
       "MOVE_ICY_WIND",
       "MOVE_LASER_FOCUS",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -54070,6 +54167,7 @@
       "MOVE_ICY_WIND",
       "MOVE_LASER_FOCUS",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -54170,6 +54268,7 @@
       "MOVE_MUD_SHOT",
       "MOVE_NATURE_POWER",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -54345,42 +54444,8 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_FAKE_TEARS",
-      "MOVE_AGILITY",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_THIEF",
-      "MOVE_FACADE",
-      "MOVE_AERIAL_ACE",
-      "MOVE_SWIFT",
-      "MOVE_AIR_CUTTER",
-      "MOVE_ENDURE",
-      "MOVE_U_TURN",
-      "MOVE_AIR_SLASH",
-      "MOVE_SLEEP_TALK",
-      "MOVE_REST",
-      "MOVE_TAUNT",
-      "MOVE_FLY",
-      "MOVE_SUBSTITUTE",
-      "MOVE_TAILWIND",
-      "MOVE_REVERSAL",
-      "MOVE_NASTY_PLOT",
-      "MOVE_BRAVE_BIRD",
-      "MOVE_TERA_BLAST",
-      "MOVE_SPITE",
-      "MOVE_DUAL_WINGBEAT"
-    ],
-    "EggMoves": [
-      "MOVE_DEFOG",
-      "MOVE_ROCK_SMASH",
-      "MOVE_ROOST",
-      "MOVE_SAND_ATTACK",
-      "MOVE_SKY_ATTACK",
-      "MOVE_SPITE",
-      "MOVE_TAILWIND"
-    ],
+    "TMMoves": [],
+    "EggMoves": [],
     "TutorMoves": []
   },
   "CORVISQUIRE": {
@@ -54431,44 +54496,8 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [
-      "MOVE_TAKE_DOWN",
-      "MOVE_FAKE_TEARS",
-      "MOVE_AGILITY",
-      "MOVE_SCARY_FACE",
-      "MOVE_PROTECT",
-      "MOVE_THIEF",
-      "MOVE_FACADE",
-      "MOVE_AERIAL_ACE",
-      "MOVE_SWIFT",
-      "MOVE_AIR_CUTTER",
-      "MOVE_ENDURE",
-      "MOVE_SUNNY_DAY",
-      "MOVE_U_TURN",
-      "MOVE_AIR_SLASH",
-      "MOVE_SLEEP_TALK",
-      "MOVE_REST",
-      "MOVE_TAUNT",
-      "MOVE_FLY",
-      "MOVE_SUBSTITUTE",
-      "MOVE_TAILWIND",
-      "MOVE_REVERSAL",
-      "MOVE_NASTY_PLOT",
-      "MOVE_HURRICANE",
-      "MOVE_BRAVE_BIRD",
-      "MOVE_TERA_BLAST",
-      "MOVE_SPITE",
-      "MOVE_DUAL_WINGBEAT"
-    ],
-    "EggMoves": [
-      "MOVE_DEFOG",
-      "MOVE_ROCK_SMASH",
-      "MOVE_ROOST",
-      "MOVE_SAND_ATTACK",
-      "MOVE_SKY_ATTACK",
-      "MOVE_SPITE",
-      "MOVE_TAILWIND"
-    ],
+    "TMMoves": [],
+    "EggMoves": [],
     "TutorMoves": []
   },
   "CORVIKNIGHT": {
@@ -55151,7 +55180,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_FACADE",
@@ -55169,6 +55197,7 @@
     "TutorMoves": [
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_HEAL_PULSE",
       "MOVE_HURRICANE",
@@ -55257,7 +55286,6 @@
     "TMMoves": [
       "MOVE_BODY_PRESS",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -55278,6 +55306,7 @@
     "EggMoves": [],
     "TutorMoves": [
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_HEAL_PULSE",
       "MOVE_INFESTATION",
@@ -57444,7 +57473,6 @@
     "TMMoves": [
       "MOVE_DARK_PULSE",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_HYPER_BEAM",
@@ -57460,6 +57488,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -57548,7 +57577,6 @@
     "TMMoves": [
       "MOVE_DARK_PULSE",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_HYPER_BEAM",
@@ -57564,6 +57592,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -57656,7 +57685,6 @@
     "TMMoves": [
       "MOVE_DARK_PULSE",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FLAMETHROWER",
       "MOVE_HYPER_BEAM",
@@ -57672,6 +57700,7 @@
     ],
     "EggMoves": [],
     "TutorMoves": [
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
@@ -58604,7 +58633,6 @@
       "MOVE_DEFOG",
       "MOVE_ROOST",
       "MOVE_FACADE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_LOW_KICK",
@@ -58624,7 +58652,8 @@
       "MOVE_BRICK_BREAK",
       "MOVE_NIGHT_SLASH",
       "MOVE_ROCK_TOMB",
-      "MOVE_SLASH"
+      "MOVE_SLASH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "URSALUNA": {
@@ -58898,7 +58927,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_FACADE",
       "MOVE_FOCUS_BLAST",
@@ -58919,6 +58947,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_CROSS_POISON",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -60206,7 +60235,6 @@
       "MOVE_DARK_PULSE",
       "MOVE_FACADE",
       "MOVE_PAYBACK",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_ROCK_SMASH"
     ],
@@ -60220,7 +60248,8 @@
       "MOVE_LASER_FOCUS",
       "MOVE_NIGHT_SLASH",
       "MOVE_POUNCE",
-      "MOVE_SCREECH"
+      "MOVE_SCREECH",
+      "MOVE_X_SCISSOR"
     ]
   },
   "LOKIX": {
@@ -60311,7 +60340,6 @@
       "MOVE_LOW_KICK",
       "MOVE_PAYBACK",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -60329,7 +60357,8 @@
       "MOVE_NIGHT_SLASH",
       "MOVE_POUNCE",
       "MOVE_SCREECH",
-      "MOVE_SHADOW_CLAW"
+      "MOVE_SHADOW_CLAW",
+      "MOVE_X_SCISSOR"
     ]
   },
   "PAWMI": {
@@ -63906,7 +63935,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_FACADE",
@@ -63942,6 +63970,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_DRILL_RUN",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -64021,9 +64050,32 @@
       }
     ],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_BODY_PRESS",
+      "MOVE_EARTHQUAKE",
+      "MOVE_EXPLOSION",
+      "MOVE_FACADE",
+      "MOVE_FLASH_CANNON",
+      "MOVE_GIGA_IMPACT",
+      "MOVE_IRON_TAIL",
+      "MOVE_ROCK_SLIDE",
+      "MOVE_STONE_EDGE",
+      "MOVE_STRENGTH",
+      "MOVE_ROCK_SMASH"
+    ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_BULLDOZE",
+      "MOVE_DRILL_RUN",
+      "MOVE_EMBARGO",
+      "MOVE_FEINT_ATTACK",
+      "MOVE_INFESTATION",
+      "MOVE_MAGNET_BOMB",
+      "MOVE_METAL_SOUND",
+      "MOVE_ROCK_TOMB",
+      "MOVE_SAND_TOMB",
+      "MOVE_WRAP"
+    ]
   },
   "GLIMMET": {
     "LevelMoves": [
@@ -65207,7 +65259,6 @@
       "MOVE_BODY_PRESS",
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_DUAL_WINGBEAT",
       "MOVE_EARTH_POWER",
@@ -65242,6 +65293,7 @@
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FAKE_TEARS",
       "MOVE_FIRE_BLAST",
       "MOVE_FOLLOW_ME",
@@ -65338,7 +65390,6 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_SHADOW_BALL",
       "MOVE_STONE_EDGE",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -65358,7 +65409,8 @@
       "MOVE_POISON_JAB",
       "MOVE_ROCK_TOMB",
       "MOVE_SHADOW_CLAW",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "GREAT_TUSK": {
@@ -66065,7 +66117,6 @@
       "MOVE_TRIPLE_AXEL",
       "MOVE_WATER_PULSE",
       "MOVE_WEATHER_BALL",
-      "MOVE_SURF",
       "MOVE_WATERFALL",
       "MOVE_WHIRLPOOL"
     ],
@@ -66074,11 +66125,13 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_BLIZZARD",
+      "MOVE_DRILL_PECK",
       "MOVE_HEAL_PULSE",
       "MOVE_HYDRO_PUMP",
       "MOVE_ICE_PUNCH",
       "MOVE_ICY_WIND",
       "MOVE_SAFEGUARD",
+      "MOVE_SNIPE_SHOT",
       "MOVE_WHIRLPOOL"
     ]
   },
@@ -66510,7 +66563,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_ICE_BEAM",
@@ -66521,6 +66573,7 @@
     "TutorMoves": [
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_ICE_FANG",
       "MOVE_ICE_PUNCH",
       "MOVE_ICY_WIND",
@@ -66581,7 +66634,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_FACADE",
       "MOVE_ICE_BEAM",
@@ -66592,6 +66644,7 @@
     "TutorMoves": [
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_ICE_FANG",
       "MOVE_ICE_PUNCH",
       "MOVE_ICY_WIND",
@@ -66673,7 +66726,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -66694,6 +66746,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_ICE_FANG",
       "MOVE_ICE_PUNCH",
       "MOVE_ICY_WIND",
@@ -68258,7 +68311,6 @@
     "TMMoves": [
       "MOVE_DEFOG",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_ENERGY_BALL",
@@ -68968,7 +69020,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -68990,7 +69041,8 @@
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "SANDSLASH_ALOLA": {
@@ -69089,7 +69141,6 @@
       "MOVE_ROCK_SLIDE",
       "MOVE_STONE_EDGE",
       "MOVE_TRIPLE_AXEL",
-      "MOVE_X_SCISSOR",
       "MOVE_CUT",
       "MOVE_STRENGTH",
       "MOVE_ROCK_SMASH"
@@ -69111,7 +69162,8 @@
       "MOVE_SCREECH",
       "MOVE_SHADOW_CLAW",
       "MOVE_SLASH",
-      "MOVE_SMART_STRIKE"
+      "MOVE_SMART_STRIKE",
+      "MOVE_X_SCISSOR"
     ]
   },
   "VULPIX_ALOLA": {
@@ -70083,7 +70135,6 @@
     "TMMoves": [
       "MOVE_DAZZLING_GLEAM",
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_ENERGY_BALL",
       "MOVE_EXPLOSION",
@@ -70492,6 +70543,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_FORESIGHT",
       "MOVE_LASER_FOCUS",
       "MOVE_LEAF_BLADE",
@@ -70819,6 +70871,7 @@
       "MOVE_BLAZE_KICK",
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
+      "MOVE_DRILL_PECK",
       "MOVE_DRILL_RUN",
       "MOVE_HURRICANE",
       "MOVE_LASER_FOCUS",
@@ -71670,7 +71723,6 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAIN_PUNCH",
       "MOVE_FACADE",
       "MOVE_FOCUS_BLAST",
@@ -71691,6 +71743,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_CROSS_POISON",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -71783,7 +71836,6 @@
     "TMMoves": [
       "MOVE_BODY_PRESS",
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_EARTHQUAKE",
       "MOVE_FACADE",
       "MOVE_FOCUS_BLAST",
@@ -71796,7 +71848,6 @@
       "MOVE_SEISMIC_TOSS",
       "MOVE_WATER_PULSE",
       "MOVE_WEATHER_BALL",
-      "MOVE_X_SCISSOR",
       "MOVE_SCALD",
       "MOVE_CUT",
       "MOVE_STRENGTH",
@@ -71813,6 +71864,7 @@
       "MOVE_BRICK_BREAK",
       "MOVE_BULLDOZE",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_HYDRO_PUMP",
@@ -71823,7 +71875,9 @@
       "MOVE_PSYCHO_CUT",
       "MOVE_ROCK_TOMB",
       "MOVE_SMART_STRIKE",
-      "MOVE_WHIRLPOOL"
+      "MOVE_SNIPE_SHOT",
+      "MOVE_WHIRLPOOL",
+      "MOVE_X_SCISSOR"
     ]
   },
   "LILLIGANT_HISUI": {
@@ -72180,7 +72234,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DARK_PULSE",
-      "MOVE_DRAGON_CLAW",
       "MOVE_ENERGY_BALL",
       "MOVE_FLAMETHROWER",
       "MOVE_FOCUS_BLAST",
@@ -72202,6 +72255,7 @@
       "MOVE_AURA_SPHERE",
       "MOVE_BRICK_BREAK",
       "MOVE_CRUNCH",
+      "MOVE_DRAGON_CLAW",
       "MOVE_EMBARGO",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
@@ -72313,6 +72367,7 @@
       "MOVE_AERIAL_ACE",
       "MOVE_AIR_CUTTER",
       "MOVE_AURA_SPHERE",
+      "MOVE_DRILL_PECK",
       "MOVE_EMBARGO",
       "MOVE_FIRE_BLAST",
       "MOVE_FORESIGHT",
@@ -72501,7 +72556,6 @@
     "PreEvoMoves": [],
     "TMMoves": [
       "MOVE_DRACO_METEOR",
-      "MOVE_DRAGON_CLAW",
       "MOVE_DRAGON_PULSE",
       "MOVE_EARTH_POWER",
       "MOVE_EARTHQUAKE",
@@ -72531,6 +72585,7 @@
     "TutorMoves": [
       "MOVE_BLIZZARD",
       "MOVE_BULLDOZE",
+      "MOVE_DRAGON_CLAW",
       "MOVE_FIRE_BLAST",
       "MOVE_FIRE_PUNCH",
       "MOVE_FIRE_SPIN",
@@ -72751,6 +72806,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_AURA_SPHERE",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_FAKE_TEARS",
       "MOVE_FEINT_ATTACK",
       "MOVE_HURRICANE",
@@ -75192,6 +75248,7 @@
       "MOVE_AIR_CUTTER",
       "MOVE_AQUA_CUTTER",
       "MOVE_BRICK_BREAK",
+      "MOVE_DRILL_PECK",
       "MOVE_FORESIGHT",
       "MOVE_LASER_FOCUS",
       "MOVE_LEAF_BLADE",

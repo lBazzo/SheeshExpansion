@@ -400,7 +400,7 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP::
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
-	finditem ITEM_TM_DRAGON_CLAW
+	finditem ITEM_TM_POWER_GEM
 	end
 
 NewMauville_Inside_EventScript_ItemUltraBall::

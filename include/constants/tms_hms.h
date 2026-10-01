@@ -7,7 +7,7 @@
     F(DAZZLING_GLEAM) \
     F(DEFOG) \
     F(DRACO_METEOR) \
-    F(DRAGON_CLAW) \
+    F(POWER_GEM) \
     F(DRAGON_PULSE) \
     F(DRAIN_PUNCH) \
     F(DRAINING_KISS) \
@@ -64,7 +64,7 @@
     F(WATER_PULSE) \
     F(WEATHER_BALL) \
     F(WILL_O_WISP) \
-    F(X_SCISSOR) \
+    F(EXTRASENSORY) \
     F(HEAL_BELL) \
     F(AROMATHERAPY) \
     F(SCALD) \

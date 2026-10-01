@@ -2524,7 +2524,7 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_ABILITY_NUM:
             retVal = GetSubstruct3(boxMon)->abilityNum;
             EncryptBoxMon(boxMon);
-            DebugPrintf("%S retVal %d", GetSpeciesName(GetMonData((struct Pokemon *)boxMon, MON_DATA_SPECIES)), retVal);
+            //DebugPrintf("%S retVal %d", GetSpeciesName(GetMonData((struct Pokemon *)boxMon, MON_DATA_SPECIES)), retVal);
             return retVal;
             break;
         case MON_DATA_COOL_RIBBON:

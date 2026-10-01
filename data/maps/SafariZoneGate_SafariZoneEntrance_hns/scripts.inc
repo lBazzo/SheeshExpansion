@@ -176,7 +176,7 @@ SafariZoneGate_SafariZoneEntrance_EventScript_BaobaDone::
 
 SafariZoneGate_SafariZoneEntrance_EventScript_Test::
 	givemon SPECIES_BELDUM, 5
-	givemon SPECIES_CASTFORM, 5
+	givemon SPECIES_PIKACHU, 5
 	givemon SPECIES_MEDICHAM, 5
 	givemon SPECIES_BAGON, 5
 	end

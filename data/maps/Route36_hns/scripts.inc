@@ -94,7 +94,7 @@ Route36_EventScript_SudoWoodoWater::
 	msgbox Route36_Text_SudowoodoAttacked	
 	closemessage
 	waitse
-	playmoncry SPECIES_SUDOWOODO, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_PIKACHU, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	applymovement LOCALID_ROUTE36_SUDOWOODO, Route36_Movement_SudowoodoEscape
@@ -106,7 +106,7 @@ Route36_EventScript_SudoWoodoWater::
 	goto Route36_EventScript_Defeated_Sudowoodo
 
 	@setvar VAR_LAST_TALKED, LOCALID_ROUTE36_SUDOWOODO
-	@setwildbattle SPECIES_SUDOWOODO, 20
+	@setwildbattle SPECIES_PIKACHU, 20
 	@setflag FLAG_SYS_CTRL_OBJ_DELETE
 	@dowildbattle
 	@clearflag FLAG_SYS_CTRL_OBJ_DELETE

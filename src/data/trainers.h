@@ -1275,7 +1275,7 @@
 #line 478
             .ability = ABILITY_TORRENT,
 #line 479
-            .lvl = 18,
+            .lvl = 17,
 #line 480
             .nature = NATURE_CALM,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

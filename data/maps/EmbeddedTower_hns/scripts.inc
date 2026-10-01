@@ -10,7 +10,7 @@ EmbeddedTower_EventScript_Groudon::
 	faceplayer
 	playmoncry SPECIES_GROUDON, CRY_MODE_ENCOUNTER
 	waitmoncry
-	seteventmon SPECIES_GROUDON, 70
+	seteventmon SPECIES_PIKACHU, 70
 	special BattleSetup_StartLegendaryBattle
 waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -31,7 +31,7 @@ EmbeddedTower_EventScript_Kyogre::
 	faceplayer
 	playmoncry SPECIES_KYOGRE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	seteventmon SPECIES_KYOGRE, 70
+	seteventmon SPECIES_PIKACHU, 70
 	special BattleSetup_StartLegendaryBattle
 waitstate
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -53,7 +53,7 @@ EmbeddedTower_EventScript_Rayquaza::
 	faceplayer
 	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
 	waitmoncry
-	seteventmon SPECIES_RAYQUAZA, 70
+	seteventmon SPECIES_PIKACHU, 70
 	special BattleSetup_StartLegendaryBattle
 waitstate
 	specialvar VAR_RESULT, GetBattleOutcome

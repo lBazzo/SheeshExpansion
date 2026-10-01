@@ -134,18 +134,28 @@ s32 DoPoisonFieldEffect(void)
     {
         if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && GetAilmentFromStatus(GetMonData(pokemon, MON_DATA_STATUS)) == AILMENT_PSN)
         {
-            // Apply poison damage
-            hp = GetMonData(pokemon, MON_DATA_HP);
-            if (OW_POISON_DAMAGE < GEN_4 && (hp == 0 || --hp == 0))
+            enum Ability ability = GetMonAbility(pokemon);
+            switch (ability)
             {
-                TryFormChange(i, B_SIDE_PLAYER, FORM_CHANGE_FAINT);
-                numFainted++;
-            }
-            else if (OW_POISON_DAMAGE >= GEN_4 && (hp == 1 || --hp == 1))
-                numFainted++;
+                case ABILITY_POISON_HEAL:
+                case ABILITY_MAGIC_GUARD:
+                case ABILITY_IMMUNITY:
+                    break;
+                default:
+                    // Apply poison damage
+                    hp = GetMonData(pokemon, MON_DATA_HP);
+                    if (OW_POISON_DAMAGE < GEN_4 && (hp == 0 || --hp == 0))
+                    {
+                        TryFormChange(i, B_SIDE_PLAYER, FORM_CHANGE_FAINT);
+                        numFainted++;
+                    }
+                    else if (OW_POISON_DAMAGE >= GEN_4 && (hp == 1 || --hp == 1))
+                        numFainted++;
 
-            SetMonData(pokemon, MON_DATA_HP, &hp);
-            numPoisoned++;
+                    SetMonData(pokemon, MON_DATA_HP, &hp);
+                    numPoisoned++;
+                    break;
+            }
         }
         pokemon++;
     }

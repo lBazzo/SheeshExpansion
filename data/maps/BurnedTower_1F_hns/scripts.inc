@@ -127,6 +127,8 @@ BurnedTower_1F_EventScript_Eusine::
 	trainerbattle_no_intro TRAINER_MORTY_1, MortyWinLossText2
 	msgbox BurnedTower_1FMortyAfterText, MSGBOX_DEFAULT
 	closemessage
+	fadeoutbgm 0
+	playbgm MUS_DUMMY, FALSE
 	setvar VAR_0x8004, 1  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
 	setvar VAR_0x8006, 20  @ num shakes
