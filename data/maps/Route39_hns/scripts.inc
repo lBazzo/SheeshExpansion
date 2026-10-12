@@ -1,5 +1,7 @@
 .set LOCALID_R39_SHADOW, 17
 .set LOCALID_R39_BAOBA, 2
+.set LOCALID_R39_EUGENE, 5
+.set LOCALID_R39_JENN, 31
 
 Route39_hns_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route39_OnTransition
@@ -246,23 +248,85 @@ Route39_EventScript_Miltank::
 Route39_Text_Miltank:
 	.string "Miltank: Mooo!$"
 
+
+@B2B
+
+Route39_EventScript_EugeneJennB2B::
+    lock
+	playbgm MUS_HG_ENCOUNTER_SUSPICIOUS_1, FALSE
+    playse SE_PIN
+	applymovement LOCALID_R39_EUGENE, Common_Movement_ExclamationMark
+	delay 60
+    getplayerxy VAR_TEMP_0, VAR_TEMP_1
+    call_if_eq VAR_TEMP_0, 26, Route39_EventScript_AdjustEugene
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0 
+	msgbox Route39_Text_SailorEugeneSeen, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_EUGENE, Route39_Text_SailorEugeneBeaten
+    playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
+    playse SE_PIN
+	applymovement LOCALID_R39_JENN, Common_Movement_ExclamationMark
+	delay 60
+    getplayerxy VAR_TEMP_0, VAR_TEMP_1
+    call_if_eq VAR_TEMP_0, 25, Route39_EventScript_AdjustJenn
+    applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0 
+    msgbox Route39_Text_LassJenn_Seen, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_JENN, Route39_Text_LassJenn_Beaten
+    setvar VAR_WHITNEY_GYM_B2B_STATE, 5
+    release
+    end
+
+Route39_EventScript_AdjustEugene::
+    applymovement LOCALID_R39_EUGENE, Common_Movement_WalkRight1
+    waitmovement 0
+    return
+
+Route39_EventScript_AdjustJenn::
+    applymovement LOCALID_R39_JENN, Common_Movement_WalkLeft1
+    waitmovement 0
+    return
+
 Route39_EventScript_Eugene::
-	trainerbattle_single TRAINER_EUGENE, Route39_Text_SailorEugeneSeen, Route39_Text_SailorEugeneBeaten
-	msgbox Route39_Text_SailorEugeneAfter, MSGBOX_AUTOCLOSE
+	lock
+	faceplayer
+	msgbox Route39_Text_SailorEugeneAfter, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 Route39_Text_SailorEugeneSeen:
-	.string "I just got back to Olivine.\p"
-	.string "So how about a Pokémon battle?$"
+	.string "Life's better when you take things nice\n"
+	.string "and slow. Don't you agree?$"
 
 Route39_Text_SailorEugeneBeaten:
-	.string "Awaaargh!$"
+	.string "Awaaargh! I couldn't keep up!$"
 
 Route39_Text_SailorEugeneAfter:
 	.string "My Pokémon were caught and\n"
 	.string "raised overseas.\p"
 	.string "They're my companions on\n"
-	.string "those long voyages.$"
+	.string "long journeys.$"
+
+Route39_EventScript_Jenn::
+	lock
+	faceplayer
+	msgbox Route39_Text_LassJenn_After, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Route39_Text_LassJenn_Seen:
+	.string "Come on! Hurry up! Let's pick up the\n"
+	.string "pace and start battling! Go go go!$"
+
+Route39_Text_LassJenn_Beaten:
+	.string "Waaaah! Slow down and wait for me!$"
+
+Route39_Text_LassJenn_After:
+	.string "Maybe I shouldn't be in such a rush all\n"
+	.string "of the time. It's hard to make the right\l"
+	.string "decisions without slowing down a bit.$"
 
 Route39_EventScript_Derek::
 	trainerbattle_single TRAINER_DEREK, Route39_Text_PokefanMDerekSeen, Route39_Text_PokefanMDerekBeaten

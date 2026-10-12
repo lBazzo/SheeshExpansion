@@ -65,12 +65,8 @@ Route35_EventScript_Item_LowKick::
 	finditem ITEM_TM_LOW_KICK
 	end
 
-Route35_EventScript_Item_Nugget::
-	finditem ITEM_BIG_NUGGET
-	end
-
-Route35_EventScript_Item_ParalyzeHeal::
-	finditem ITEM_PARALYZE_HEAL
+Route35_EventScript_Item_EndureTM::
+	finditem ITEM_TM_ENDURE
 	end
 
 Route35_Text_CamperIvanSeen:

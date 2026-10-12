@@ -92,7 +92,7 @@ GoldenrodDeptStor1_Text_ReceptionistLuckyDay2:
 	.string "sometime to thank her in person, 'kay?$"
 
 GoldenrodDeptStor1_Text_ReceptionistObtainedBoostingItems:
-	.string "{PLAYER} obtained the type-boosting items!$"
+	.string "{PLAYER} obtained the Type-Boosting items!$"
 
 GoldenrodDeptStor1_Text_ReceptionistLuckyDay3:
 	.string "Good luck with your journey!\n"

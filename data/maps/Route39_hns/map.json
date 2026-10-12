@@ -80,12 +80,12 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 24,
-      "y": 37,
+      "y": 40,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route39_EventScript_Eugene",
       "flag": "0"
@@ -414,6 +414,19 @@
       "trainer_sight_or_berry_tree_id": "6",
       "script": "Route39_EventScript_LassAlice",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 27,
+      "y": 40,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route39_EventScript_Jenn",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -511,6 +524,24 @@
       "var": "VAR_OLIVINE_CITY_STATE",
       "var_value": "0",
       "script": "OlivineCity_EventScript_CityTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_WHITNEY_GYM_B2B_STATE",
+      "var_value": "4",
+      "script": "Route39_EventScript_EugeneJennB2B"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 40,
+      "elevation": 0,
+      "var": "VAR_WHITNEY_GYM_B2B_STATE",
+      "var_value": "4",
+      "script": "Route39_EventScript_EugeneJennB2B"
     }
   ],
   "bg_events": [

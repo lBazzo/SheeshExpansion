@@ -200,7 +200,7 @@
 #define TRAINER_SHAWN                      194 // UNUSED
 #define TRAINER_NORTON                     195 // UNUSED
 #define TRAINER_JENN                       196
-#define TRAINER_SARTORIUS                     197 // UNUSED
+#define TRAINER_SARTORIUS                  197 // UNUSED
 #define TRAINER_JERRY                      198
 #define TRAINER_JESSICA                    199 // UNUSED
 #define TRAINER_JILL                       200 // UNUSED

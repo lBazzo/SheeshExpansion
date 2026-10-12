@@ -220,6 +220,11 @@ GoldenrodCity_FlowerShop_EventScript_ManyBerryGirl::
 	additem ITEM_ROWAP_BERRY, 3
 	additem ITEM_JABOCA_BERRY, 3
 	additem ITEM_CUSTAP_BERRY, 1
+	additem ITEM_LIECHI_BERRY, 1
+	additem ITEM_GANLON_BERRY, 1
+	additem ITEM_SALAC_BERRY, 1
+	additem ITEM_PETAYA_BERRY, 1
+	additem ITEM_APICOT_BERRY, 1
 	setflag FLAG_GOT_GOLDENROD_BERRIES
 	goto GoldenrodCity_FlowerShop_EventScript_ManyBerryGirlBerriesGiven
 	end
@@ -250,4 +255,4 @@ GoldenrodCity_FlowerShop_Text_ManyBerryGirlSpreadTheBerryLove:
 	.string "then loot them en route!$"
 
 GoldenrodCity_FlowerShop_Text_ManyBerryGirlObtainedTheBerries:
-	.string "{PLAYER} obtained the berry collection!$"	
+	.string "{PLAYER} obtained the Berry Collection!$"	

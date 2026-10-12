@@ -16393,6 +16393,7 @@
       "MOVE_NATURE_POWER",
       "MOVE_ROCK_TOMB",
       "MOVE_SAFEGUARD",
+      "MOVE_SCREECH",
       "MOVE_SPOTLIGHT",
       "MOVE_WHIRLPOOL"
     ]
@@ -21286,7 +21287,8 @@
       "MOVE_FAKE_TEARS",
       "MOVE_LASER_FOCUS",
       "MOVE_ROCK_TOMB",
-      "MOVE_SWEET_SCENT"
+      "MOVE_SWEET_SCENT",
+      "MOVE_THUNDER_PUNCH"
     ]
   },
   "SLAKOTH": {
@@ -42692,6 +42694,7 @@
       "MOVE_DRILL_PECK",
       "MOVE_FEINT_ATTACK",
       "MOVE_NIGHT_SLASH",
+      "MOVE_ROCK_TOMB",
       "MOVE_SCREECH",
       "MOVE_WHIRLWIND"
     ]
@@ -42780,6 +42783,7 @@
       "MOVE_DRILL_PECK",
       "MOVE_FEINT_ATTACK",
       "MOVE_NIGHT_SLASH",
+      "MOVE_ROCK_TOMB",
       "MOVE_SCREECH",
       "MOVE_WHIRLWIND"
     ]
@@ -72373,6 +72377,7 @@
       "MOVE_FORESIGHT",
       "MOVE_IMPRISON",
       "MOVE_PSYCHO_CUT",
+      "MOVE_ROCK_TOMB",
       "MOVE_WHIRLWIND"
     ]
   },

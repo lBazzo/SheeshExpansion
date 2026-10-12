@@ -647,6 +647,7 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
     enum Ability battlerDefAbility;
     enum Ability partnerDefAbility;
     struct AiLogicData *aiData = gAiLogicData;
+    enum HoldEffect holdEffect = gAiLogicData->holdEffects[ctx->battlerAtk];
 
     if (ctx->typeEffectivenessModifier == UQ_4_12(0.0))
         return TRUE;
@@ -727,6 +728,28 @@ bool32 IsDamageMoveUnusable(struct DamageContext *ctx)
         break;
     case EFFECT_FIRST_TURN_ONLY:
         if (!gDisableStructs[ctx->battlerAtk].isFirstTurn)
+            return TRUE;
+        break;
+    case EFFECT_SOLAR_BEAM:
+        if (AI_GetWeather() & B_WEATHER_SUN || holdEffect == HOLD_EFFECT_POWER_HERB)
+            return FALSE;
+        else
+            return TRUE;
+        break;
+    case EFFECT_TWO_TURNS_ATTACK:
+        if (holdEffect == HOLD_EFFECT_POWER_HERB)
+            return FALSE;
+        else if (MoveHasAdditionalEffect(ctx->move, MOVE_EFFECT_DEF_PLUS_1)
+             || (MoveHasAdditionalEffect(ctx->move, MOVE_EFFECT_SP_ATK_PLUS_1)))
+        {
+            if (AI_GetWeather() & B_WEATHER_RAIN)
+                return FALSE;
+            else if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                return FALSE;
+            else 
+                return TRUE;
+        }
+        else
             return TRUE;
         break;
     default:

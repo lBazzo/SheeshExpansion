@@ -70,11 +70,6 @@ Route34_EventScript_Irene::
 	msgbox Route34_Text_CooltrainerIrene_After2, MSGBOX_AUTOCLOSE
 	end
 
-Route34_EventScript_Jenn::
-	trainerbattle_single TRAINER_JENN Route34_Text_CooltrainerJenn_Seen, Route34_Text_CooltrainerJenn_Beaten
-	msgbox Route34_Text_CooltrainerJenn_After2, MSGBOX_AUTOCLOSE
-	end
-
 Route34_EventScript_Kate::
 	trainerbattle_single TRAINER_KATE Route34_Text_CooltrainerKate_Seen, Route34_Text_CooltrainerKate_Beaten
 	msgbox Route34_Text_CooltrainerKate_After, MSGBOX_AUTOCLOSE
@@ -110,7 +105,7 @@ Route34_EventScript_Item_SyrupyApple::
 	end
 
 Route34_Text_YoungsterSamuel_Seen:
-	.string "Hey! I'm looking for Mankey!$"
+	.string "Hey! I'm looking for Tepig!$"
 
 Route34_Text_YoungsterSamuel_Beaten:
 	.string "Beaten by a passing stranger!$"
@@ -209,21 +204,6 @@ Route34_Text_CooltrainerIrene_After1:
 Route34_Text_CooltrainerIrene_After2:
 	.string "IRENE: Isn't this beach great?\p"
 	.string "It's our secret little getaway!$"
-
-Route34_Text_CooltrainerJenn_Seen:
-	.string "JENN: You can't beat IRENE and go\n"
-	.string "unpunished!$"
-
-Route34_Text_CooltrainerJenn_Beaten:
-	.string "JENN: So sorry, IRENE! Dear Sis!$"
-
-Route34_Text_CooltrainerJenn_After1:
-	.string "JENN: Don't get cocky! My sister\n"
-	.string "KATE is tough!$"
-
-Route34_Text_CooltrainerJenn_After2:
-	.string "JENN: Sunlight makes your body\n"
-	.string "stronger.$"
 
 Route34_Text_CooltrainerKate_Seen:
 	.string "KATE: You sure were mean to my\n"

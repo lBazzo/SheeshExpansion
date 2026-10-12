@@ -1262,7 +1262,7 @@
 #define FLAG_SUICUNE_BATTLE_2                                       0x49E
 #define FLAG_NO_SLOW_STAIR_MOVEMENT                                 0x49F // Used to temporaly remove slow stair movement, as it glitches things 
                                                                           // like Steven in Sootopolis leading to Origin Cave.
-#define FLAG_ITEM_ROUTE_29_POTION                                   0x4A0 // HnS ItemFlags Block 1
+#define FLAG_ITEM_SCARY_CAVE_LUM                                    0x4A0 // HnS ItemFlags Block 1
 #define FLAG_ITEM_ROUTE_31_LIGHT_CLAY                               0x4A1 
 #define FLAG_ITEM_ROUTE_31_PUNCHING_GLOVE                           0x4A2 
 #define FLAG_ITEM_VIOLET_CITY_BERRY_JUICE                           0x4A3 
@@ -1319,8 +1319,8 @@
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_REVIVE                      0x4D6 
 #define FLAG_ITEM_GOLDENROD_UNDERGROUND_SMOKE_BALL                  0x4D7 
 #define FLAG_ITEM_ROUTE35_LOW_KICK                                  0x4D8 
-#define FLAG_ITEM_ROUTE35_PARALYZE_HEAL                             0x4D9 
-#define FLAG_ITEM_ROUTE35_BIG_NUGGET                                0x4DA 
+#define FLAG_ITEM_ROUTE35_ENDURE                                    0x4D9 
+#define FLAG_ITEM_ROUTE36_REAPER_CLOTH                              0x4DA 
 #define FLAG_ITEM_NATIONAL_PARK_WIDE_LENS                           0x4DB 
 #define FLAG_ITEM_NATIONAL_PARK_ZOOM_LENS                           0x4DC 
 #define FLAG_ITEM_ECRUTEAK_WHITE_HERB                               0x4DD 

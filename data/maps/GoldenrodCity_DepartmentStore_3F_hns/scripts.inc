@@ -53,20 +53,11 @@ LilycoveCity_DepartmentStore_3F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_3F_Pokemart_OtherEvolutionItems:
-	.2byte ITEM_DUBIOUS_DISC
-	.2byte ITEM_ELECTIRIZER
-	.2byte ITEM_MAGMARIZER
 	.2byte ITEM_KINGS_ROCK
 	.2byte ITEM_METAL_COAT
-	.2byte ITEM_BLACK_AUGURITE
-	.2byte ITEM_GALARICA_CUFF
-	.2byte ITEM_GALARICA_WREATH
 	.2byte ITEM_METAL_ALLOY
-	.2byte ITEM_SYRUPY_APPLE
-	.2byte ITEM_PROTECTOR
 	.2byte ITEM_RAZOR_CLAW
 	.2byte ITEM_RAZOR_FANG
-	.2byte ITEM_REAPER_CLOTH
 	.2byte ITEM_LINKING_CORD
 	pokemartlistend
 

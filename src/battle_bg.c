@@ -650,6 +650,18 @@ static void LoadBattleEnvironmentEntryGfx(u16 terrain)
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[terrain].background.entryTilemap, (void *)BG_SCREEN_ADDR(28));
 }
 
+bool32 IsCaveBackgroundTrainer(u16 trainerId)
+{
+    switch (trainerId)
+    {
+        case TRAINER_MORTY_1:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+    return FALSE;
+}
+
 bool32 IsGrassBackgroundTrainer(u16 trainerId)
 {
     switch (trainerId)
@@ -744,6 +756,10 @@ static u8 GetBattleEnvironmentOverride(void)
         default:
             return gBattleEnvironment;
         }
+    }
+    else if (IsCaveBackgroundTrainer(TRAINER_BATTLE_PARAM.opponentA))
+    {
+        return BATTLE_ENVIRONMENT_CAVE;
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {

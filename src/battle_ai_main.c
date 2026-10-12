@@ -4332,29 +4332,32 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                     ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
                 break;
             case EFFECT_TOPSY_TURVY:
-            DebugPrintf("Atk: %d partner: %d partnerMove: %S", battlerAtk, BATTLE_PARTNER(battlerAtk), GetMoveName(aiData->partnerMove));
-            DebugPrintf("isSlower %d", AI_IsSlower(battlerAtk, BATTLE_PARTNER(battlerAtk), move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY));
+            //DebugPrintf("Atk: %d partner: %d partnerMove: %S", battlerAtk, BATTLE_PARTNER(battlerAtk), GetMoveName(aiData->partnerMove));
+            //DebugPrintf("isSlower %d", AI_IsSlower(battlerAtk, BATTLE_PARTNER(battlerAtk), move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY));
                 if (AI_IsSlower(battlerAtk, BATTLE_PARTNER(battlerAtk), move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY))
-                { DebugPrintf("print 1");
-                    if (MoveHasAdditionalEffectSelf(gBattleMons[BATTLE_PARTNER(battlerAtk)].moves[gAiBattleData->chosenMoveIndex[BATTLE_PARTNER(battlerAtk)]], MOVE_EFFECT_DEF_SPDEF_DOWN))
-                    {   DebugPrintf("print additional effect check");
-                        if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                            ADJUST_SCORE(DECENT_EFFECT);
-                        else 
-                            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                { //DebugPrintf("print 1");
+                    if (MoveHasAdditionalEffectSelf(gBattleMons[BATTLE_PARTNER(battlerAtk)].moves[gAiBattleData->chosenMoveIndex[BATTLE_PARTNER(battlerAtk)]], MOVE_EFFECT_DEF_SPDEF_DOWN)
+                    || (MoveHasAdditionalEffectSelf(gBattleMons[BATTLE_PARTNER(battlerAtk)].moves[gAiBattleData->chosenMoveIndex[BATTLE_PARTNER(battlerAtk)]], MOVE_EFFECT_SPD_MINUS_1))
+                    || (MoveHasAdditionalEffectSelf(gBattleMons[BATTLE_PARTNER(battlerAtk)].moves[gAiBattleData->chosenMoveIndex[BATTLE_PARTNER(battlerAtk)]], MOVE_EFFECT_V_CREATE))
+                    || (MoveHasAdditionalEffectSelf(gBattleMons[BATTLE_PARTNER(battlerAtk)].moves[gAiBattleData->chosenMoveIndex[BATTLE_PARTNER(battlerAtk)]], MOVE_EFFECT_SP_ATK_MINUS_2)))
+                    {   //DebugPrintf("print additional effect check");
+                        //if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                            ADJUST_SCORE(WEAK_EFFECT);
+                        //else 
+                        //    ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     }
                     //break;
                 }
                 else if (AnyStatIsLowered(BATTLE_PARTNER(battlerAtk)))
-                { DebugPrintf("print 2");
-                    if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                            ADJUST_SCORE(DECENT_EFFECT);
-                        else 
-                            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+                { //DebugPrintf("print 2");
+                    //if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
+                            ADJUST_SCORE(WEAK_EFFECT);
+                        //else 
+                        //    ADJUST_SCORE(BEST_DAMAGE_MOVE);
                     //break;
                 }    
                 else
-                { DebugPrintf("print 3");
+                { //DebugPrintf("print 3");
                     ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
                 //break;
                 }
@@ -4750,7 +4753,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     switch (moveEffect)
     {
     case EFFECT_YAWN:
-        IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
+        //IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
         break;
     /*
     case EFFECT_ABSORB:
@@ -7280,15 +7283,23 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;*/
     case EFFECT_HIT_SWITCH_TARGET:
         if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
-        && ((GetBestDmgFromBattler(battlerAtk, battlerDef, AI_ATTACKING) * 1000 / gBattleMons[battlerDef].hp) < (GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) * 1000 / gBattleMons[battlerAtk].hp))
         && (CountUsablePartyMons(battlerDef) != 0)
         && (!(CanTargetFaintAi(battlerDef, battlerAtk))))
-        { DebugPrintf("print going in");
-            if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount != 0
-             || gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount != 0
-             || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK))
-                ADJUST_SCORE(BEST_DAMAGE_MOVE);
-        } DebugPrintf("print going out");
+        { //DebugPrintf("print going in");
+            //if (gSideTimers[GetBattlerSide(battlerDef)].spikesAmount != 0
+            // || gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount != 0
+            // || IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_STEALTH_ROCK))
+            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0))
+            break;
+        else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
+        && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
+        && (AIHitsToKOPlayerMaxRoll != 0))
+            break;
+        else
+            ADJUST_SCORE(BEST_DAMAGE_MOVE);
+        } //DebugPrintf("print going out");
         break;
     default:
         break;

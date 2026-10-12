@@ -7444,7 +7444,8 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_PURSUIT:
-        if (gBattleStruct->battlerState[battlerDef].pursuitTarget)
+        if (gBattleStruct->battlerState[battlerDef].pursuitTarget
+        && (gAiLogicData->aiCalcInProgress == FALSE))
             basePower *= 2;
         break;
     case EFFECT_NATURAL_GIFT:
@@ -7723,8 +7724,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case EFFECT_KNOCK_OFF:
         if (B_KNOCK_OFF_DMG >= GEN_6
             && gBattleMons[battlerDef].item != ITEM_NONE
-            && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item)
-            && gBattleMons[battlerDef].ability != ABILITY_STICKY_HOLD)
+            && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     default:
@@ -8122,7 +8122,7 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     if (ctx->isSelfInflicted)
         return uq4_12_multiply_by_int_half_down(ApplyOffensiveBadgeBoost(modifier, battlerAtk, move), atkStat);
 
-    if (ctx->battlerAtk == B_BATTLER_1)
+    //if (ctx->battlerAtk == B_BATTLER_1)
     //DebugPrintf("AI Ability %S", gAbilitiesInfo[ctx->abilityAtk].name);
     // attacker's abilities
     switch (ctx->abilityAtk)

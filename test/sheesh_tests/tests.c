@@ -3835,3 +3835,34 @@ AI_SINGLE_BATTLE_TEST("AI correctly doesn't score up speed control either way ag
         }
     }
 }
+
+SINGLE_BATTLE_TEST("Fiery Demeanour increases Fire-type move damage", s16 damage)
+{
+    u32 move;
+    enum Ability ability;
+
+    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_BIG_PECKS; }
+    PARAMETRIZE { move = MOVE_SCRATCH; ability = ABILITY_FIERY_DEMEANOUR; }
+    PARAMETRIZE { move = MOVE_FLAME_CHARGE; ability = ABILITY_BIG_PECKS; }
+    PARAMETRIZE { move = MOVE_FLAME_CHARGE; ability = ABILITY_FIERY_DEMEANOUR; }
+    PARAMETRIZE { move = MOVE_LAVA_PLUME; ability = ABILITY_BIG_PECKS; }
+    PARAMETRIZE { move = MOVE_LAVA_PLUME; ability = ABILITY_FIERY_DEMEANOUR; }
+
+    GIVEN {
+        ASSUME(GetMoveType(MOVE_SCRATCH) != TYPE_FIRE);
+        ASSUME(GetMoveType(MOVE_FLAME_CHARGE) == TYPE_FIRE);
+        ASSUME(GetMoveType(MOVE_LAVA_PLUME) == TYPE_FIRE);
+        ASSUME(GetMoveCategory(MOVE_FLAME_CHARGE) == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_LAVA_PLUME) == DAMAGE_CATEGORY_SPECIAL);
+        PLAYER(SPECIES_BOMBIRDIER) { Ability(ability); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, move); }
+    } SCENE {
+        HP_BAR(opponent, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_EQ(results[0].damage, results[1].damage); // Scratch should be unaffected
+        EXPECT_MUL_EQ(results[2].damage, Q_4_12(1.5), results[3].damage); // Flame Wheel should be affected
+        EXPECT_MUL_EQ(results[4].damage, Q_4_12(1.5), results[5].damage); // Flamethrower should be affected
+    }
+}

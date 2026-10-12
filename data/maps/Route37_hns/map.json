@@ -65,9 +65,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 22,
-      "y": 32,
+      "graphics_id": "OBJ_EVENT_GFX_LINK_BRENDAN",
+      "x": -6,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,

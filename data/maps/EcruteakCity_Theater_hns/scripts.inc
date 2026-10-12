@@ -314,10 +314,15 @@ EcruteakCity_Theater_EventScript_TriggerSurfGuyPart2::
 	closemessage
 	setflag FLAG_RECEIVED_HM_SURF
 	setvar VAR_ECRUTEAK_CITY_THEATER, 3
-	applymovement LOCALID_SURF_GUY, EcruteakCity_Theater_Movement_SurfGuy2
-	waitmovement 0 
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_0, 10, EcruteakCity_Theater_MovementScript_MoveSurfGuy
 	release
 	end
+
+EcruteakCity_Theater_MovementScript_MoveSurfGuy::
+	applymovement LOCALID_SURF_GUY, EcruteakCity_Theater_Movement_SurfGuy2
+	waitmovement 0 
+	return
 
 EcruteakCity_Theater_EventScript_Psyduck::
 	lock

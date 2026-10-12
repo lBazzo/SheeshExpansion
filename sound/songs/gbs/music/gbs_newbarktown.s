@@ -173,19 +173,21 @@ gbs_newbarktown_Ch2.mainloop:
 	octave 5
 	note B_, 6
 	note A_, 6
-	volume_envelope 7, 7
 	octave 6
+	volume_envelope 10, 7
 	note D_, 4
-	note Cs, 16
+	note Cs, 6
+	rest 10
 	sound_call gbs_newbarktown_Ch2.sub2
 	volume_envelope 8, 7
 	octave 5
 	note B_, 6
 	note A_, 6
-	volume_envelope 7, 7
+	volume_envelope 10, 7
 	octave 6
 	note D_, 4
-	note E_, 16
+	note E_, 6
+	rest 10
 	sound_loop 0, gbs_newbarktown_Ch2.mainloop
 
 gbs_newbarktown_Ch2.sub1:
@@ -249,7 +251,8 @@ gbs_newbarktown_Ch2.sub2:
 	note A_, 12
 	note G_, 8
 	note_type 12, 9, 7
-	note E_, 16
+	note E_, 6
+	rest 10
 	sound_ret
 
 gbs_newbarktown_Ch3:

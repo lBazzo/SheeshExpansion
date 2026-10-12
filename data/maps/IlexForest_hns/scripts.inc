@@ -905,7 +905,7 @@ IlexForest_Text_BugsyGiftTM:
 
 IlexForest_Text_BugsyGiftStone:
 	.string "Say, you're probably going to challenge\n"
-	.string "the Azalea Gym now, right?\p"
+	.string "the other Gyms of Johto, right?\p"
 	.string "Your Pokémon could maybe use a boost\n"
 	.string "from one of these evolution stones.\p"
 	.string "I find a bunch of these while looking\n"

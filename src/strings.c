@@ -2436,6 +2436,9 @@ const u8 gText_PsychicFangs[]       = _("Psychic Fangs");
 const u8 gText_LowKick[]       = _("Low Kick");
 const u8 gText_Return[]       = _("Return");
 const u8 gText_Facade[]       = _("Facade");
+const u8 gText_Extrasensory[]       = _("Extrasensory");
+const u8 gText_PowerGem[]       = _("Power Gem");
+const u8 gText_Endure[]       = _("Endure");
 
 // Fog Badge TMs
 
@@ -2506,6 +2509,7 @@ const u8 gText_RockTomb[]         = _("Rock Tomb");
 const u8 gText_LowSweep[]         = _("Low Sweep");
 const u8 gText_MudShot[]         = _("Mud Shot");
 const u8 gText_Pounce[]         = _("Pounce");
+const u8 gText_Bulldoze[]         = _("Bulldoze");
 
 // Never Miss tutor
 
@@ -2571,7 +2575,10 @@ const u8 gText_NightSlash[]         = _("Night Slash");
 const u8 gText_PsychoCut[]         = _("Psycho Cut");
 const u8 gText_ShadowClaw[]         = _("Shadow Claw");
 //const u8 gText_Slash[]         = _("Slash");
+const u8 gText_Slash2[]         = _("Slash");
 const u8 gText_BlazeKick[]         = _("Blaze Kick");
+const u8 gText_SnipeShot[]         = _("Snipe Shot");
+const u8 gText_DrillPeck[]         = _("Drill Peck");
 
 ALIGNED(4) const u8 gText_Ghost[] = _("GHOST");
 const u8 gText_Boulderbadge[] = _("BOULDERBADGE");

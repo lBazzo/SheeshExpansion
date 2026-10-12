@@ -556,6 +556,8 @@ Route36_Text_Sign_HiddenGrottoLeft:
 
 @special ChooseMonForMoveTutor
 
-
+Route36_EventScript_Item_ReaperCloth::
+	finditem ITEM_REAPER_CLOTH
+	end
 
 

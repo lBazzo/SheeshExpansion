@@ -2691,6 +2691,9 @@ extern const u8 gText_PsychicFangs[];
 extern const u8 gText_LowKick[];
 extern const u8 gText_Return[];
 extern const u8 gText_Facade[];
+extern const u8 gText_Extrasensory[];
+extern const u8 gText_PowerGem[];
+extern const u8 gText_Endure[];
 
 // Fog Badge TMs
 
@@ -2755,6 +2758,7 @@ extern const u8 gText_RockTomb[];
 extern const u8 gText_LowSweep[];
 extern const u8 gText_MudShot[];
 extern const u8 gText_Pounce[];
+extern const u8 gText_Bulldoze[];
 
 // Never Miss tutor
 
@@ -2814,13 +2818,15 @@ extern const u8 gText_PinMissile[];
 extern const u8 gText_AquaCutter[];
 extern const u8 gText_AirCutter[];
 extern const u8 gText_CrossPoison[];
+extern const u8 gText_DrillPeck[];
 extern const u8 gText_DrillRun[];
 extern const u8 gText_LeafBlade[];
 extern const u8 gText_NightSlash[];
 extern const u8 gText_PsychoCut[];
 extern const u8 gText_ShadowClaw[];
-extern const u8 gText_Slash[];
+extern const u8 gText_Slash2[];
 extern const u8 gText_BlazeKick[];
+extern const u8 gText_SnipeShot[];
 
 // Weird Tutor
 

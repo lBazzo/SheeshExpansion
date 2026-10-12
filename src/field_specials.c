@@ -2597,7 +2597,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 10;
+        task->tNumItems = 11;
         task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2647,7 +2647,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_SPEED_DROP_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 7;
+        task->tNumItems = 8;
         task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
@@ -2707,7 +2707,7 @@ void ShowScrollableMultichoice(void)
         break;
     case SCROLL_MULTI_HIGH_CRIT_TUTOR:
         task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-        task->tNumItems = 11;
+        task->tNumItems = 15;
         task->tLeft = 18;
         task->tTop = 1;
         task->tWidth = 15;
@@ -3094,15 +3094,16 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_TM_CLERK_POST_WHITNEY_TMS] =
     {
-        gText_XScissor,
+        gText_Extrasensory,
         gText_FlashCannon,
         gText_DarkPulse,
         gText_ShadowBall,
-        gText_DragonClaw,
+        gText_PowerGem,
         gText_PsychicFangs,
         gText_LowKick,
         gText_Return,
         gText_Facade,
+        gText_Endure,
         gText_Exit
     },
     [SCROLL_MULTI_TM_CLERK_POST_ERIKA_TMS] =
@@ -3172,6 +3173,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_LowSweep,
         gText_MudShot,
         gText_Pounce,
+        gText_Bulldoze,
         gText_Exit
     },
     [SCROLL_MULTI_NEVER_MISS_TUTOR] =
@@ -3236,14 +3238,18 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     {
         gText_AquaCutter,
         gText_AirCutter,
+        gText_BlazeKick,
         gText_CrossPoison,
+        gText_DragonClaw,
+        gText_DrillPeck,
         gText_DrillRun,
         gText_LeafBlade,
         gText_NightSlash,
         gText_PsychoCut,
         gText_ShadowClaw,
-        gText_Slash,
-        gText_BlazeKick,
+        gText_Slash2,
+        gText_SnipeShot,
+        gText_XScissor,
         gText_Exit
     },
     [SCROLL_MULTI_BUGSY_STONES] =

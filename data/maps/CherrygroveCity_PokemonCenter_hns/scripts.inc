@@ -2129,7 +2129,8 @@ CherryGrove_Pokecenter_EventScript_TMClerkPlainBadge::
 	case 6, CherryGrove_Pokecenter_EventScript_TMClerkLowKick
 	case 7, CherryGrove_Pokecenter_EventScript_TMClerkReturn
 	case 8, CherryGrove_Pokecenter_EventScript_TMClerkFacade
-	case 9, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	case 9, CherryGrove_Pokecenter_EventScript_TMClerkEndure
+	case 10, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	case MULTI_B_PRESSED, CherryGrove_Pokecenter_EventScript_TMClerkExit
 	end
 
@@ -2271,6 +2272,22 @@ CherryGrove_Pokecenter_EventScript_TMClerkGiveFacade::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
 	giveitem ITEM_TM_FACADE
+	removeitem ITEM_HEART_SCALE
+	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkEndure::
+	msgbox CherryGrove_Pokecenter_Text_TMClerkWantEndure, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, CherryGrove_Pokecenter_EventScript_TMClerkGiveEndure
+	goto_if_eq VAR_RESULT, NO, CherryGrove_Pokecenter_EventScript_TMClerkExit
+	end
+
+CherryGrove_Pokecenter_EventScript_TMClerkGiveEndure::
+	checkitem ITEM_HEART_SCALE, 1
+	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
+	giveitem ITEM_TM_ENDURE
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -3359,6 +3376,10 @@ CherryGrove_Pokecenter_Text_TMClerkWantReturn::
 
 CherryGrove_Pokecenter_Text_TMClerkWantFacade::
 	.string "You want the Facade TM?\n"
+	.string "It'll cost you one Heart Scale, okay?$"
+
+CherryGrove_Pokecenter_Text_TMClerkWantEndure::
+	.string "You want the Endure TM?\n"
 	.string "It'll cost you one Heart Scale, okay?$"
 
 CherryGrove_Pokecenter_Text_TMClerkWantEnergyBall::

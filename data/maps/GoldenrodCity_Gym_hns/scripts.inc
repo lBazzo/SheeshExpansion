@@ -361,24 +361,24 @@ GoldenrodCity_Gym_EventScript_B2B2::
 
 GoldenrodCity_Gym_EventScript_B2B3::
 	lock
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_VICTORIA, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_BeautyVictoriaSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	special HealPlayerPartyStatusOnly
 	trainerbattle_no_intro TRAINER_VICTORIA, GoldenrodCity_Gym_Text_BeautyVictoriaBeaten
-	playbgm MUS_HG_ENCOUNTER_GIRL_1, TRUE
+	playbgm MUS_HG_ENCOUNTER_GIRL_1, FALSE
 	playse SE_PIN
 	applymovement LOCALID_GOLDENROD_CITY_GYM_BRIDGET, Common_Movement_ExclamationMark
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0 
 	msgbox GoldenrodCity_Gym_Text_LassBridgetSeen, MSGBOX_DEFAULT
-	playbgm MUS_HG_GYM, TRUE
+	@playbgm MUS_HG_GYM, TRUE
 	trainerbattle_no_intro TRAINER_BRIDGET, GoldenrodCity_Gym_Text_LassBridgetBeaten
 	setvar VAR_WHITNEY_GYM_B2B_STATE, 4
 	release

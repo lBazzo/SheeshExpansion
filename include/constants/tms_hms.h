@@ -69,7 +69,8 @@
     F(AROMATHERAPY) \
     F(SCALD) \
     F(SIGNAL_BEAM) \
-    F(SECRET_SWORD) 
+    F(SECRET_SWORD) \
+    F(ENDURE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

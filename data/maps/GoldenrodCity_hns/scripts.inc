@@ -105,7 +105,7 @@ GoldenrodCity_Trigger_Silver::
 	delay 10
 	clearflag FLAG_HIDE_GOLDENROD_CITY_SILVER
 	addobject LOCALID_GOLDENROD_CITY_SILVER
-	playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
+	playbgm MUS_HG_ENCOUNTER_RIVAL, FALSE
 	playse SE_BANG
 	applymovement LOCALID_GOLDENROD_CITY_SILVER, GoldenrodCity_Movement_Silver1
 	applymovement OBJ_EVENT_ID_PLAYER, GoldenrodCity_Movement_Player1
@@ -125,7 +125,7 @@ GoldenrodCity_Trigger_Silver::
 	call_if_eq VAR_STARTER_MON, 0, GoldenrodCity_Silver_Battle_Cyndaquil
 	call_if_eq VAR_STARTER_MON, 1, GoldenrodCity_Silver_Battle_Totodile
 	call_if_eq VAR_STARTER_MON, 2, GoldenrodCity_Silver_Battle_Chikorita
-	@playbgm MUS_HG_ENCOUNTER_RIVAL, TRUE
+	playbgm MUS_HG_ENCOUNTER_RIVAL, FALSE
 	msgbox GoldenrodCity_Text_RivalAfter, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_GOLDENROD_CITY_SILVER, GoldenrodCity_Movement_Silver_Leave
@@ -1058,7 +1058,8 @@ GoldenrodCity_EventScript_SpeedDropTutor::
 	case 3, GoldenrodCity_EventScript_SpeedDropTutorLowSweep
 	case 4, GoldenrodCity_EventScript_SpeedDropTutorMudShot
 	case 5, GoldenrodCity_EventScript_SpeedDropTutorPounce
-	case 6, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	case 6, GoldenrodCity_EventScript_SpeedDropTutorBulldoze
+	case 7, GoldenrodCity_EventScript_SpeedDropTutorDeclined
 	case MULTI_B_PRESSED, GoldenrodCity_EventScript_SpeedDropTutorDeclined
 	end
 
@@ -1188,6 +1189,27 @@ GoldenrodCity_EventScript_SpeedDropTutorPounce::
 	release
 	end
 
+GoldenrodCity_EventScript_SpeedDropTutorBulldoze::
+	msgbox GoldenrodCity_Text_SpeedDropTutorBulldozeWhichMon, MSGBOX_DEFAULT
+	setvar VAR_0x8005, MOVE_BULLDOZE
+	call MoveTutor_EventScript_OpenPartyMenu
+	goto_if_eq VAR_RESULT, 0, GoldenrodCity_EventScript_SpeedDropTutorDeclined
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceRight
+	msgbox GoldenrodCity_Text_SpeedDropTutorTeachingMove, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FacePlayer
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	call_if_eq VAR_TEMP_1, 22, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerBelow
+	call_if_eq VAR_TEMP_1, 21, GoldenrodCity_EventScript_SpeedDropTutorTeachPlayerLeft
+	goto_if_set FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR, GoldenrodCity_EventScript_SpeedDropTutorFriend
+	msgbox GoldenrodCity_Text_SpeedDropTutorMoveTaught, MSGBOX_DEFAULT
+	setflag FLAG_TALKED_GOLDENROD_CITY_SPEED_DROP_TUTOR
+	closemessage
+	applymovement LOCALID_GOLDENROD_CITY_SPEEDDROPTUTOR, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
 GoldenrodCity_EventScript_SpeedDropTutorFriend::
 	msgbox GoldenrodCity_Text_SpeedDropTutorFriend, MSGBOX_DEFAULT
 	closemessage
@@ -1281,6 +1303,10 @@ GoldenrodCity_Text_SpeedDropTutorMudShotWhichMon:
 GoldenrodCity_Text_SpeedDropTutorPounceWhichMon:
 	.string "Pounce it is! And who's going to\n"
 	.string "learn the move?$"				
+
+GoldenrodCity_Text_SpeedDropTutorBulldozeWhichMon:
+	.string "Bulldoze it is! And who's going to\n"
+	.string "learn the move?$"
 
 GoldenrodCity_Text_SpeedDropTutorTeachingMove:
 	.string "Let's do it. Accelgor, give us a\n"
@@ -1778,7 +1804,7 @@ GoldenrodCity_EventScript_FangTutor::
 	case 4, GoldenrodCity_EventScript_FangTutorHyperFang
 	case 5, GoldenrodCity_EventScript_FangTutorPoisonFang
 	case 6, GoldenrodCity_EventScript_FangTutorPsychicFangs
-	case MULTI_B_PRESSED, GoldenrodCity_EventScript_NeverMissTutorDeclined
+	case MULTI_B_PRESSED, GoldenrodCity_EventScript_FangTutorDeclined
 	end
 
 GoldenrodCity_EventScript_FangTutorThunderFang::

@@ -85,10 +85,14 @@ BurnedTower_1F_EventScript_Eusine::
 	lock
 	playse SE_PIN
 	applymovement LOCALID_BURNED_TOWER_EUSINE, Common_Movement_ExclamationMark
+	applymovement LOCALID_BURNED_TOWER_MORTY, Common_Movement_ExclamationMark
 	delay 60
+	waitmovement 0
 	playbgm MUS_HG_EUSINE, TRUE
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkRight1
 	applymovement LOCALID_BURNED_TOWER_EUSINE, Common_Movement_WalkLeft1
+	applymovement LOCALID_BURNED_TOWER_MORTY, Common_Movement_FaceDown
+	waitmovement 0
 	waitmovement 0
 	waitmovement 0
 	msgbox BurnedTower_1FEusineIntroText, MSGBOX_DEFAULT
