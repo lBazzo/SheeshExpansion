@@ -65,7 +65,7 @@
       "flag": "FLAG_HIDE_SILVER_NEWBARKTOWN"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOPER)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SENTRET)",
       "x": 10,
       "y": 23,
       "elevation": 0,
@@ -74,11 +74,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewBarkTown_EventScript_Wooper",
+      "script": "NewBarkTown_EventScript_Sentret",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PINECO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
       "x": 27,
       "y": 21,
       "elevation": 0,
@@ -91,7 +91,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PINECO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
       "x": -2,
       "y": 23,
       "elevation": 0,
@@ -104,7 +104,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PINECO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
       "x": 16,
       "y": 4,
       "elevation": 0,
@@ -117,7 +117,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PINECO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
       "x": 10,
       "y": 27,
       "elevation": 0,
@@ -130,7 +130,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PINECO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AIPOM)",
       "x": 7,
       "y": 2,
       "elevation": 0,

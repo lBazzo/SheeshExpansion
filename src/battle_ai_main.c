@@ -2190,8 +2190,13 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case EFFECT_MEMENTO:
             if (CountUsablePartyMons(battlerAtk) == 0 || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
-            else if (gBattleMons[battlerDef].statStages[STAT_ATK] == MIN_STAT_STAGE && gBattleMons[battlerDef].statStages[STAT_SPATK] == MIN_STAT_STAGE)
+            else if (gBattleMons[battlerDef].statStages[STAT_ATK] == MIN_STAT_STAGE || gBattleMons[battlerDef].statStages[STAT_SPATK] == MIN_STAT_STAGE)
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
+            else if (aiData->abilities[battlerDef] == ABILITY_CLEAR_BODY
+                  || aiData->abilities[battlerDef] == ABILITY_FLOWER_BLOCK
+                  || aiData->abilities[battlerDef] == ABILITY_WHITE_SMOKE
+                  || aiData->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET)
+                ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);  
             break;
         case EFFECT_FOLLOW_ME:
             if (!hasPartner
@@ -2204,6 +2209,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (!hasPartner
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove)
               || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_GOOD_AS_GOLD
+              || aiData->abilities[BATTLE_PARTNER(battlerAtk)] == ABILITY_SLIPPERY
               || (aiData->partnerMove != MOVE_NONE && IsBattleMoveStatus(aiData->partnerMove))
               || gBattleStruct->monToSwitchIntoId[BATTLE_PARTNER(battlerAtk)] != PARTY_SIZE) //Partner is switching out.
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
@@ -3141,6 +3147,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
              && (HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL)
               || aiData->abilities[battlerDef] == ABILITY_CLEAR_BODY
               || aiData->abilities[battlerDef] == ABILITY_GOOD_AS_GOLD
+              || aiData->abilities[battlerDef] == ABILITY_SLIPPERY
               || aiData->abilities[battlerDef] == ABILITY_FLOWER_BLOCK
               || aiData->holdEffects[battlerDef] == HOLD_EFFECT_CLEAR_AMULET))
                 ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
@@ -3354,6 +3361,7 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         if (!hasPartner
          || !HasDamagingMove(battlerAtkPartner)
          || aiData->abilities[battlerAtkPartner] == ABILITY_GOOD_AS_GOLD
+         || aiData->abilities[battlerAtkPartner] == ABILITY_SLIPPERY
          || (aiData->partnerMove != MOVE_NONE && IsBattleMoveStatus(aiData->partnerMove)))
         {
             ADJUST_AND_RETURN_SCORE(NO_DAMAGE_OR_FAILS);
@@ -4132,7 +4140,8 @@ static s32 AI_DoubleBattle(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 enum Ability partnerAbility = aiData->abilities[battlerAtkPartner];
                 if ((gBattleMons[battlerAtkPartner].statStages[STAT_ATK] > DEFAULT_STAT_STAGE)
                 || (partnerAbility == ABILITY_CONTRARY)
-                || (partnerAbility == ABILITY_GOOD_AS_GOLD))
+                || (partnerAbility == ABILITY_GOOD_AS_GOLD)
+                || (partnerAbility == ABILITY_SLIPPERY))
                 {
                     RETURN_SCORE_PLUS(BEST_DAMAGE_MOVE - 1);
                 }
@@ -4814,7 +4823,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                     }
             }
         else
-            ADJUST_SCORE(GOOD_EFFECT);
+            {
+                if (RandomPercentage(RNG_AI_CUSTOM_AI_SEVENTY_PERCENT, CUSTOM_AI_SEVENTY_PERCENT))
+                    ADJUST_SCORE(GOOD_EFFECT);
+            }
         break;
     }
     case EFFECT_MEMENTO:
@@ -5128,10 +5140,10 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                     ADJUST_SCORE(WEAK_EFFECT);
                 }
                 else if (!IS_BATTLER_OF_TYPE(battlerAtk, TYPE_NORMAL)
-                && (RandomPercentage(RNG_AI_CUSTOM_AI_TWENTY_PERCENT, CUSTOM_AI_TWENTY_PERCENT)))
+                && (RandomPercentage(RNG_AI_CUSTOM_AI_TEN_PERCENT, CUSTOM_AI_TEN_PERCENT)))
                 {
-                    DebugPrintf("20 percent");
-                    ADJUST_SCORE(WEAK_EFFECT);
+                    DebugPrintf("10 percent");
+                    ADJUST_SCORE(BEST_DAMAGE_MOVE);
                 }
             }
         break;
@@ -5326,12 +5338,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 && (AIHitsToKOPlayerMaxRoll <= PlayerHitsToKOAIMaxRoll)
                 && (AIHitsToKOPlayerMaxRoll != 0)
                 && (AIHitsToKOPlayerMaxRoll != 1))
-                    ADJUST_SCORE(-1);
+                    ADJUST_SCORE(-2);
                 else if (!AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, DONT_CONSIDER_PRIORITY)
                 && (AIHitsToKOPlayerMaxRoll < PlayerHitsToKOAIMaxRoll)
                 && (AIHitsToKOPlayerMaxRoll != 0)
                 && (AIHitsToKOPlayerMaxRoll != 1))
-                    ADJUST_SCORE(-1);
+                    ADJUST_SCORE(-2);
             }
         else
             ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
@@ -7071,7 +7083,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         && (!(AnyStatIsRaised(battlerAtk))))
         { 
             if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2);
+                ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL - 1);
             else
                 ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
         }
@@ -7085,7 +7097,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         && (!CanTargetFaintAi(battlerDef, battlerAtk)))
         {
             if (RandomPercentage(RNG_AI_CUSTOM_AI_FIFTY_PERCENT, CUSTOM_AI_FIFTY_PERCENT))
-                ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL + 2);
+                ADJUST_SCORE(BEST_DAMAGE_MOVE + SLOW_KILL - 1);
             else
                 ADJUST_SCORE(BEST_DAMAGE_MOVE - 1);
         }
@@ -7143,8 +7155,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     */
         if (!IsBestDmgMove(battlerAtk, battlerDef, AI_ATTACKING, move)
         && (CanKnockOffItem(battlerDef, aiData->items[battlerDef]))
-        && (GetNoOfHitsToKOBattler(battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex, AI_ATTACKING) > 2)
-        && (GetNoOfHitsToKOBattler(battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex, AI_DEFENDING) > 2))
+        && (GetBestNoOfHitsToKO(battlerAtk, battlerDef, AI_ATTACKING) > 2)
+        && (GetBestNoOfHitsToKO(battlerDef, battlerAtk, AI_DEFENDING) > 2))
             ADJUST_SCORE(BEST_DAMAGE_MOVE);
         break;
         //Bazzo note: removing this, seems silly

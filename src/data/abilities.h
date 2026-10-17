@@ -2505,4 +2505,12 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Lowers the foe's SpAtk."),
         .aiRating = 7,
     },
+
+    [ABILITY_SLIPPERY] =
+    {
+        .name = _("Slippery"),
+        .description = COMPOUND_STRING("Avoids status moves."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
 };

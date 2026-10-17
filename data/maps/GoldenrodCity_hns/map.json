@@ -196,8 +196,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SNUBBULL)",
-      "x": 35,
-      "y": 32,
+      "x": 10,
+      "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 4,
@@ -208,7 +208,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAWLUCHA)",
       "x": 22,
       "y": 27,
       "elevation": 0,
@@ -221,7 +221,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAWLUCHA)",
       "x": 45,
       "y": 32,
       "elevation": 0,
@@ -234,7 +234,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAWLUCHA)",
       "x": 42,
       "y": 19,
       "elevation": 0,
@@ -247,7 +247,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CLEFAIRY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PASSIMIAN)",
       "x": 41,
       "y": 10,
       "elevation": 0,
@@ -260,11 +260,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOTHOOT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PASSIMIAN)",
       "x": 29,
       "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -351,11 +351,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPEAROW)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PASSIMIAN)",
       "x": 28,
       "y": 33,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",

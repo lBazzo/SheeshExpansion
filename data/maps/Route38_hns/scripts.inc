@@ -71,7 +71,7 @@ Route38_EventScript_Sign2::
 	end
 
 Route38_EventScript_Item_VoltSwitch::
-	finditem ITEM_TM_VOLT_SWITCH
+	finditem ITEM_TM_WILD_CHARGE
 	end
 
 Route38_Text_BirdKeeperTobySeen:

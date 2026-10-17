@@ -59,7 +59,7 @@
     F(TOXIC) \
     F(TRIPLE_AXEL) \
     F(U_TURN) \
-    F(VOLT_SWITCH) \
+    F(WILD_CHARGE) \
     F(VOLT_TACKLE) \
     F(WATER_PULSE) \
     F(WEATHER_BALL) \

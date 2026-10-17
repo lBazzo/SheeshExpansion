@@ -3517,6 +3517,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, enum Ability abilityA
             battleScriptBlocksMove = BattleScript_SoundproofProtected;
         break;
     case ABILITY_GOOD_AS_GOLD:
+    case ABILITY_SLIPPERY:
         if (IsBattleMoveStatus(move))
         {
             if (!(GetBattlerMoveTargetType(battlerAtk, move) & (MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_ALL_BATTLERS)))

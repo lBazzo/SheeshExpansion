@@ -182,12 +182,12 @@ VioletCity_EventScript_Lass::
 	release
 	end
 
-VioletCity_EventScript_Pichu::
+VioletCity_EventScript_Togepi::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_PICHU, CRY_MODE_NORMAL
-	msgbox VioletCity_Text_Pichu, MSGBOX_DEFAULT
+	playmoncry SPECIES_TOGEPI, CRY_MODE_NORMAL
+	msgbox VioletCity_Text_Togepi, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
@@ -504,8 +504,8 @@ VioletCity_Text_SproutTowerSign:
 VioletCity_Text_EarlsAcademySign:
 	.string "Earl'S Pokémon Academy$"
 
-VioletCity_Text_Pichu:
-	.string "Pichu: Chuuuu!$"
+VioletCity_Text_Togepi:
+	.string "Togepi: Toge, Togeprrrri!$"
 
 VioletCity_Text_Bellsprout:
 	.string "Bellsprout: Sprouuuut.$"

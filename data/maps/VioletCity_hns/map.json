@@ -192,7 +192,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEOTTO)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOTHOOT)",
       "x": 22,
       "y": 33,
       "elevation": 0,
@@ -205,7 +205,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BELLSPROUT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOGEPI)",
       "x": 45,
       "y": 35,
       "elevation": 0,
@@ -214,11 +214,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VioletCity_EventScript_Bellsprout",
+      "script": "VioletCity_EventScript_Togepi",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GASTLY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
       "x": 21,
       "y": 45,
       "elevation": 0,
@@ -231,7 +231,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GASTLY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
       "x": 9,
       "y": 47,
       "elevation": 0,
@@ -257,7 +257,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLIWAG)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARLY)",
       "x": 44,
       "y": 21,
       "elevation": 0,
@@ -270,7 +270,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLIWAG)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(STARLY)",
       "x": 45,
       "y": 23,
       "elevation": 0,
@@ -283,7 +283,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PICHU)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOGEPI)",
       "x": 35,
       "y": 49,
       "elevation": 0,
@@ -292,7 +292,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VioletCity_EventScript_Pichu",
+      "script": "VioletCity_EventScript_Togepi",
       "flag": "FLAG_DAY_POKEMON"
     },
     {
@@ -322,7 +322,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RATTATA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOGEPI)",
       "x": 19,
       "y": 40,
       "elevation": 0,
@@ -331,7 +331,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VioletCity_EventScript_Rattata",
+      "script": "VioletCity_EventScript_Togepi",
       "flag": "0"
     },
     {
@@ -400,7 +400,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MISDREAVUS)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NATU)",
       "x": 45,
       "y": 41,
       "elevation": 0,

@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route47_EventScript_Chinchou",
+      "script": "NULL",
       "flag": "FLAG_HIDE_CERULEAN_GYM_POKEMON"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CherryGroveCity_EventScript_Staryu",
+      "script": "NULL",
       "flag": "FLAG_HIDE_CERULEAN_GYM_POKEMON"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CherryGroveCity_EventScript_Corsola",
+      "script": "NULL",
       "flag": "FLAG_HIDE_CERULEAN_GYM_POKEMON"
     }
   ],

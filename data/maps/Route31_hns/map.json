@@ -117,7 +117,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GASTLY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WATTREL)",
       "x": 39,
       "y": 7,
       "elevation": 0,
@@ -156,7 +156,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BELLSPROUT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PACHIRISU)",
       "x": 23,
       "y": 9,
       "elevation": 0,
@@ -169,7 +169,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BELLSPROUT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PACHIRISU)",
       "x": 24,
       "y": 7,
       "elevation": 0,
@@ -182,7 +182,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(POLIWAG)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELEKID)",
       "x": 10,
       "y": 5,
       "elevation": 0,
@@ -195,7 +195,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PACHIRISU)",
       "x": 39,
       "y": 15,
       "elevation": 0,
@@ -208,7 +208,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOOTHOOT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WATTREL)",
       "x": 3,
       "y": 8,
       "elevation": 0,
@@ -221,7 +221,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZUBAT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WATTREL)",
       "x": 56,
       "y": 11,
       "elevation": 0,
@@ -273,7 +273,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GASTLY)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRUBBIN)",
       "x": 33,
       "y": 5,
       "elevation": 0,
@@ -286,7 +286,7 @@
       "flag": "FLAG_NIGHT_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WATTREL)",
       "x": 5,
       "y": 19,
       "elevation": 0,

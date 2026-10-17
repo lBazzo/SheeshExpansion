@@ -190,7 +190,11 @@ Route120_EventScript_StevenBattleKecleon::
 	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_KECLEON, 30
+	setwildbattle SPECIES_ROTOM_FAN, 30
+	setwildbattle SPECIES_ROTOM_FROST, 30
+	setwildbattle SPECIES_ROTOM_HEAT, 30
+	setwildbattle SPECIES_ROTOM_MOW, 30
+	setwildbattle SPECIES_ROTOM_WASH, 30
 	setvar VAR_0x8009, 0
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle

@@ -91,7 +91,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(UNOWN)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPOINK)",
       "x": 35,
       "y": 21,
       "elevation": 0,
@@ -157,28 +157,28 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOPER)",
-      "x": 4,
-      "y": 8,
+      "x": -6,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewBarkTown_EventScript_Wooper",
+      "script": "NULL",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(QUAGSIRE)",
-      "x": 5,
-      "y": 8,
+      "x": -5,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RuinsOfAlph_Outside_EventScript_Quagsire",
+      "script": "NULL",
       "flag": "0"
     },
     {
@@ -247,7 +247,7 @@
       "flag": "FLAG_DAY_POKEMON"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPOINK)",
       "x": 39,
       "y": 45,
       "elevation": 0,

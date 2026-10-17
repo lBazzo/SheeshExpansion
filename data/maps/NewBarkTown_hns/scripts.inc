@@ -97,12 +97,12 @@ NewBarkTown_EventScript_LassState4::
 	release
 	end
 
-NewBarkTown_EventScript_Wooper::
+NewBarkTown_EventScript_Sentret::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_WOOPER, CRY_MODE_NORMAL
-	msgbox NewBarkTown_Text_Wooper, MSGBOX_DEFAULT
+	playmoncry SPECIES_SENTRET, CRY_MODE_NORMAL
+	msgbox NewBarkTown_Text_Sentret, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
@@ -255,8 +255,8 @@ NewBarkTown_Text_LabSign:
 NewBarkTown_Text_Door:
 	.string "The door is locked.$"
 
-NewBarkTown_Text_Wooper:
-	.string "Wooper: Woooooop.$"
+NewBarkTown_Text_Sentret:
+	.string "Sentret: Sen! Tret!$"
 
 NewBarkTown_Text_FatManState2:
 	.string "Wow, your Pokégear is impressive!\n"

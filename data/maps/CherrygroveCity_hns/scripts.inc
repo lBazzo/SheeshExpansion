@@ -194,12 +194,12 @@ CherryGroveCity_EventScript_Staryu::
 	release
 	end
 
-CherryGroveCity_EventScript_Corsola::
+CherryGroveCity_EventScript_Psyduck::
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_CORSOLA, CRY_MODE_NORMAL
-	msgbox CherryGroveCity_Text_Corsola, MSGBOX_DEFAULT
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
+	msgbox CherryGroveCity_Text_Psyduck, MSGBOX_DEFAULT
 	waitmoncry
 	release
 	end
@@ -397,8 +397,8 @@ CherrygroveCity_Text_GuideGentsHouseSign:
 CherryGroveCity_Text_Staryu:
 	.string "Staryu: Yuuuuuuuu.$"
 
-CherryGroveCity_Text_Corsola:
-	.string "Corsola: Corsola! La!$"
+CherryGroveCity_Text_Psyduck:
+	.string "..............Psy?$"
 
 CherryGroveCity_Text_Krabby:
 	.string "Krabby: Kooookeee!$"

@@ -70,7 +70,10 @@ SkyPillar_Top_EventScript_RayquazaHard::
 	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_RAYQUAZA, 50
+	setwildbattle SPECIES_MELOETTA, 50
+	setwildbattle SPECIES_MELOETTA_PIROUETTE, 30
+	setwildbattle SPECIES_KELDEO_RESOLUTE, 30
+	setwildbattle SPECIES_SHAYMIN_SKY, 30
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	call_if_set FLAG_DIFFICULTY_HARD, SkyPillar_Top_EventScript_RayquazaHard_Stats
 	special BattleSetup_StartLegendaryBattle

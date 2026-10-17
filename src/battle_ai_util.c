@@ -1410,6 +1410,17 @@ u32 GetBestNoOfHitsToKO(u32 battlerAtk, u32 battlerDef, enum DamageCalcContext c
             result = tempResult;
     }
 
+    if (result == 1)
+    {
+        if (AI_BattlerAtMaxHp(battlerDef) 
+        && (gBattleMons[battlerDef].hp == gBattleMons[battlerDef].maxHP))
+            result++; 
+        else if (!IsMoldBreakerTypeAbility(battlerAtk, gAiLogicData->abilities[battlerAtk])
+             && (GetConfig(CONFIG_STURDY) >= GEN_5)
+             && (gAiLogicData->abilities[battlerDef] == ABILITY_STURDY))
+            result++; 
+    }
+
     return result;
 }
 
@@ -6797,6 +6808,7 @@ bool32 AI_ShouldSpicyExtract(u32 battlerAtk, u32 battlerAtkPartner, u32 move, st
     if (gBattleMons[battlerAtkPartner].statStages[STAT_ATK] == MAX_STAT_STAGE
      || partnerAbility == ABILITY_CONTRARY
      || partnerAbility == ABILITY_GOOD_AS_GOLD
+     || partnerAbility == ABILITY_SLIPPERY
      || HasBattlerSideMoveWithEffect(LEFT_FOE(battlerAtk), EFFECT_FOUL_PLAY))
         return FALSE;
 
@@ -7266,6 +7278,7 @@ s32 BattlerBenefitsFromAbilityScore(u32 battler, enum Ability ability, struct Ai
     // Transferrable abilities that can be assumed to be always beneficial.
     case ABILITY_CLEAR_BODY:
     case ABILITY_GOOD_AS_GOLD:
+    case ABILITY_SLIPPERY:
     case ABILITY_MAGIC_GUARD:
     case ABILITY_MOODY:
     case ABILITY_PURIFYING_SALT:

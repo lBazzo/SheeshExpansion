@@ -1548,7 +1548,7 @@ Timid Nature
 - Reflect  
 
 Greninja @ Scope Lens  
-Ability: Super Luck  
+Ability: Protean  
 Level: 36   
 Jolly Nature  
 - Aqua Cutter  
@@ -3387,11 +3387,11 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Furret @ Chople Berry  
 Ability: Unburden  
-Level: 70  
+Level: 67  
 Rash Nature  
 - Facade  
-- Blizzard  
-- Thunder  
+- Ice Beam  
+- Thunderbolt  
 - Knock Off  
 
 === TRAINER_TOBY ===
@@ -3408,9 +3408,9 @@ Ability: Gulp Missile
 Level: 55  
 Modest Nature  
 - Surf  
-- Hurricane  
+- Air Slash  
 - Blizzard  
-- Tailwind  
+- Icy Wind  
 
 Salamence @ Expert Belt  
 Ability: Sheer Force  
@@ -3444,7 +3444,7 @@ Name: Harry
 Class: Sailor
 Pic: Sailor
 Gender: Male
-Music: Hg Boy 2
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -3484,11 +3484,11 @@ Music: Hg Girl 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Chesnaught @ Assault Vest  
+Chesnaught @ Occa Berry  
 Ability: Overgrow  
 Level: 54  
-Impish Nature  
-- Ceaseless Edge  
+Careful Nature  
+- Scary Face  
 - Drain Punch  
 - Horn Leech  
 - Earthquake  
@@ -3496,7 +3496,7 @@ Impish Nature
 Shedinja @ Berserk Gene  
 Ability: Wonder Guard  
 Level: 56   
-Adamant Nature  
+Jolly Nature  
 - Shadow Sneak  
 - Pin Missile  
 - Brick Break  
@@ -3516,7 +3516,7 @@ Name: Dirk
 Class: Policeman
 Pic: Policeman
 Gender: Male
-Music: Hg Boy 2
+Music: Hg Suspicious 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
@@ -3538,7 +3538,7 @@ Adamant Nature
 - Low Kick  
 
 Cyclizar @ Focus Sash  
-Ability: Shed Skin  
+Ability: Unburden  
 Level: 55    
 Adamant Nature  
 - Shift Gear  
@@ -3564,7 +3564,7 @@ Music: Hg Boy 1
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE / AI_FLAG_SMART_MON_CHOICES
 
-Carbink @ Enigma Berry  
+Carbink @ Covert Cloak  
 Ability: Sturdy  
 Level: 55  
 Relaxed Nature  
@@ -3585,7 +3585,7 @@ Jolly Nature
 === TRAINER_OLIVIA ===
 Name: Olivia
 Class: Cooltrainer
-Pic: Cooltrainer F
+Pic: Cooltrainer F2
 Gender: Male
 Music: Hg Girl 2
 Double Battle: No
@@ -3593,7 +3593,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_OMNISCIENT / AI_FL
 
 Meowstic @ Wise Glasses  
 Ability: Keen Eye  
-Level: 55   
+Level: 53   
 Timid Nature  
 - Kinesis  
 - Psychic  
@@ -3612,9 +3612,9 @@ IVs: 31 HP / 30 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
 
 Togedemaru @ Salac Berry  
 Ability: Sturdy  
-Level: 54   
+Level: 53   
 Adamant Nature  
-- Zippy Zap  
+- Zing Zap  
 - Iron Tail  
 - Spiky Shield  
 - Reversal  
@@ -3639,7 +3639,7 @@ Sassy Nature
 
 Girafarig @ Eviolite  
 Ability: Technician  
-Level: 56   
+Level: 53   
 Relaxed Nature  
 - Twin Beam  
 - Double Kick  
@@ -3714,45 +3714,45 @@ Ability: Sturdy
 Level: 55  
 Adamant Nature  
 - Metal Burst  
-- Spikes  
+- Stealth Rock  
 - Whirlwind  
 - Metal Claw  
 
 Delibird @ Blunder Policy  
 Ability: Hustle  
-Level: 55    
+Level: 55   
 Adamant Nature  
 - Triple Axel  
 - Brave Bird  
 - Spikes  
 - Obstruct  
 
-Mienshao @ Muscle Band  
-Ability: Reckless  
+Mienshao @ Focus Sash  
+Ability: Inner Focus  
 Level: 54  
 Jolly Nature  
 - U-turn  
-- High Jump Kick  
-- Stone Edge  
+- Drain Punch  
+- Rock Slide  
 - Knock Off  
 
-Palossand @ Absorb Bulb  
+Palossand @ Rindo Berry  
 Ability: Water Compaction  
 Level: 55  
 Modest Nature  
 - Stealth Rock  
 - Ancient Power  
-- Destiny Bond  
+- Earth Power  
 - Shadow Ball  
 
-Omastar @ Rindo Berry  
+Omastar @ Zoom Lens  
 Ability: Weak Armor  
 Level: 54  
 Timid Nature  
-- Stealth Rock  
 - Spikes  
-- Ice Beam  
+- Hydro Pump  
 - Ancient Power  
+- Icy Wind  
 
 Pangoro @ Roseli Berry  
 Ability: Scrappy  
@@ -10311,7 +10311,7 @@ Modest Nature
 - Destiny Bond  
 
 Cyclizar @ Expert Belt  
-Ability: Shed Skin  
+Ability: Multiscale  
 Level: 77   
 Naive Nature  
 - Overheat  

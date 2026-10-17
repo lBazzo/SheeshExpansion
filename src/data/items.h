@@ -12233,7 +12233,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_VOLT_SWITCH] =
+    [ITEM_TM_WILD_CHARGE] =
     {
         .name = ITEM_NAME("TM58"),
         .price = 3000,

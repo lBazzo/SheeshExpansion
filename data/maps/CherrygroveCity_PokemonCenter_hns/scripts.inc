@@ -2711,7 +2711,7 @@ CherryGrove_Pokecenter_EventScript_TMClerkVoltSwitch::
 CherryGrove_Pokecenter_EventScript_TMClerkGiveVoltSwitch::
 	checkitem ITEM_HEART_SCALE, 1
 	goto_if_eq VAR_RESULT, FALSE, CherryGrove_Pokecenter_EventScript_TMClerkNotEnoughHeartScales
-	giveitem ITEM_TM_VOLT_SWITCH
+	giveitem ITEM_TM_WILD_CHARGE
 	removeitem ITEM_HEART_SCALE
 	msgbox CherryGrove_Pokecenter_Text_ScaleAttendantHandedOverHeartScale, MSGBOX_DEFAULT
 	closemessage
@@ -3045,16 +3045,17 @@ CherryGrove_Pokecenter_EventScript_TMClerkGoBeatPryce::
 	release
 	end
 
-
-
-
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostFalknerTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostFalknerTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_GRASS_KNOT
-	giveitem ITEM_TM_NIGHT_SHADE
-	giveitem ITEM_TM_SEISMIC_TOSS
-	giveitem ITEM_TM_WATER_PULSE
-	giveitem ITEM_TM_PLUCK
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_GRASS_KNOT
+	additem ITEM_TM_NIGHT_SHADE
+	additem ITEM_TM_SEISMIC_TOSS
+	additem ITEM_TM_WATER_PULSE
+	additem ITEM_TM_PLUCK
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_FALKNER
 	closemessage
 	releaseall
@@ -3063,12 +3064,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostFalknerTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostMistyTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostMistyTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_PROTECT
-	giveitem ITEM_TM_WILL_O_WISP
-	giveitem ITEM_TM_TOXIC
-	giveitem ITEM_TM_THUNDER_WAVE
-	giveitem ITEM_TM_STEEL_WING
-	giveitem ITEM_TM_DEFOG
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_PROTECT
+	additem ITEM_TM_WILL_O_WISP
+	additem ITEM_TM_TOXIC
+	additem ITEM_TM_THUNDER_WAVE
+	additem ITEM_TM_STEEL_WING
+	additem ITEM_TM_DEFOG
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_MISTY
 	closemessage
 	releaseall
@@ -3076,12 +3081,16 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostMistyTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostWhitneyTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostWhitneyTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_EXTRASENSORY
-	giveitem ITEM_TM_FLASH_CANNON
-	giveitem ITEM_TM_DARK_PULSE
-	giveitem ITEM_TM_SHADOW_BALL
-	giveitem ITEM_TM_POWER_GEM
-	giveitem ITEM_TM_PSYCHO_SHIFT
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_EXTRASENSORY
+	additem ITEM_TM_FLASH_CANNON
+	additem ITEM_TM_DARK_PULSE
+	additem ITEM_TM_SHADOW_BALL
+	additem ITEM_TM_POWER_GEM
+	additem ITEM_TM_PSYCHO_SHIFT
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_WHITNEY
 	closemessage
 	releaseall
@@ -3089,16 +3098,20 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostWhitneyTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostErikaTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostErikaTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_ENERGY_BALL
-	giveitem ITEM_TM_SLUDGE_BOMB
-	giveitem ITEM_TM_FLAMETHROWER
-	giveitem ITEM_TM_THUNDERBOLT
-	giveitem ITEM_TM_ICE_BEAM
-	giveitem ITEM_TM_PSYCHIC
-	giveitem ITEM_TM_MOONBLAST
-	giveitem ITEM_TM_PLAY_ROUGH
-	giveitem ITEM_TM_EARTH_POWER
-	giveitem ITEM_TM_HYPER_VOICE
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_ENERGY_BALL
+	additem ITEM_TM_SLUDGE_BOMB
+	additem ITEM_TM_FLAMETHROWER
+	additem ITEM_TM_THUNDERBOLT
+	additem ITEM_TM_ICE_BEAM
+	additem ITEM_TM_PSYCHIC
+	additem ITEM_TM_MOONBLAST
+	additem ITEM_TM_PLAY_ROUGH
+	additem ITEM_TM_EARTH_POWER
+	additem ITEM_TM_HYPER_VOICE
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_ERIKA
 	closemessage
 	releaseall
@@ -3106,16 +3119,20 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostErikaTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostChuckTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostChuckTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_STONE_EDGE
-	giveitem ITEM_TM_ROCK_SLIDE
-	giveitem ITEM_TM_EARTHQUAKE
-	giveitem ITEM_TM_IRON_TAIL
-	giveitem ITEM_TM_FOCUS_BLAST
-	giveitem ITEM_TM_SOLAR_BEAM
-	giveitem ITEM_TM_SOLAR_BLADE
-	giveitem ITEM_TM_HYPER_BEAM
-	giveitem ITEM_TM_GIGA_IMPACT
-	giveitem ITEM_TM_DRAGON_PULSE
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_STONE_EDGE
+	additem ITEM_TM_ROCK_SLIDE
+	additem ITEM_TM_EARTHQUAKE
+	additem ITEM_TM_IRON_TAIL
+	additem ITEM_TM_FOCUS_BLAST
+	additem ITEM_TM_SOLAR_BEAM
+	additem ITEM_TM_SOLAR_BLADE
+	additem ITEM_TM_HYPER_BEAM
+	additem ITEM_TM_GIGA_IMPACT
+	additem ITEM_TM_DRAGON_PULSE
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_CHUCK
 	closemessage
 	releaseall
@@ -3123,18 +3140,22 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostChuckTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostPryceTMs, MSGBOX_DEFAULT
-	giveitem ITEM_TM_REST
-	giveitem ITEM_TM_SLEEP_TALK
-	giveitem ITEM_TM_ROOST
-	giveitem ITEM_TM_EXPLOSION
-	giveitem ITEM_TM_MISTY_EXPLOSION
-	giveitem ITEM_TM_PSYCHIC
-	giveitem ITEM_TM_FOCUS_PUNCH
-	giveitem ITEM_TM_BODY_PRESS
-	giveitem ITEM_TM_HEAL_BELL
-	giveitem ITEM_TM_AROMATHERAPY
-	giveitem ITEM_TM_FLIP_TURN
-	giveitem ITEM_TM_U_TURN
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs
+	waitfanfare
+	additem ITEM_TM_REST
+	additem ITEM_TM_SLEEP_TALK
+	additem ITEM_TM_ROOST
+	additem ITEM_TM_EXPLOSION
+	additem ITEM_TM_MISTY_EXPLOSION
+	additem ITEM_TM_PSYCHIC
+	additem ITEM_TM_FOCUS_PUNCH
+	additem ITEM_TM_BODY_PRESS
+	additem ITEM_TM_HEAL_BELL
+	additem ITEM_TM_AROMATHERAPY
+	additem ITEM_TM_FLIP_TURN
+	additem ITEM_TM_U_TURN
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_PRYCE
 	closemessage
 	releaseall
@@ -3142,24 +3163,28 @@ CherryGrove_Pokecenter_EventScript_TMClerkGivePostPryceTMs::
 
 CherryGrove_Pokecenter_EventScript_TMClerkGivePostBlaineSurgeBerries::
 	msgbox CherryGrove_Pokecenter_Text_TMClerkGivingPostBlaineSurgeBerries, MSGBOX_DEFAULT
-	giveitem ITEM_BABIRI_BERRY
-	giveitem ITEM_CHARTI_BERRY
-	giveitem ITEM_CHILAN_BERRY
-	giveitem ITEM_CHOPLE_BERRY
-	giveitem ITEM_COBA_BERRY
-	giveitem ITEM_COLBUR_BERRY
-	giveitem ITEM_HABAN_BERRY
-	giveitem ITEM_KASIB_BERRY
-	giveitem ITEM_KEBIA_BERRY
-	giveitem ITEM_OCCA_BERRY
-	giveitem ITEM_PASSHO_BERRY
-	giveitem ITEM_PAYAPA_BERRY
-	giveitem ITEM_RINDO_BERRY
-	giveitem ITEM_ROSELI_BERRY
-	giveitem ITEM_SHUCA_BERRY
-	giveitem ITEM_TANGA_BERRY
-	giveitem ITEM_WACAN_BERRY
-	giveitem ITEM_YACHE_BERRY
+	closemessage
+	playfanfare  MUS_HG_OBTAIN_ITEM
+	msgbox CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsBerries
+	waitfanfare
+	additem ITEM_BABIRI_BERRY
+	additem ITEM_CHARTI_BERRY
+	additem ITEM_CHILAN_BERRY
+	additem ITEM_CHOPLE_BERRY
+	additem ITEM_COBA_BERRY
+	additem ITEM_COLBUR_BERRY
+	additem ITEM_HABAN_BERRY
+	additem ITEM_KASIB_BERRY
+	additem ITEM_KEBIA_BERRY
+	additem ITEM_OCCA_BERRY
+	additem ITEM_PASSHO_BERRY
+	additem ITEM_PAYAPA_BERRY
+	additem ITEM_RINDO_BERRY
+	additem ITEM_ROSELI_BERRY
+	additem ITEM_SHUCA_BERRY
+	additem ITEM_TANGA_BERRY
+	additem ITEM_WACAN_BERRY
+	additem ITEM_YACHE_BERRY
 	clearflag FLAG_TM_CLERK_COLLECTION_POST_BLAINE_SURGE
 	closemessage
 	releaseall
@@ -3192,6 +3217,12 @@ CherryGrove_Pokecenter_Text_TMClerkExit::
 CherryGrove_Pokecenter_Text_TMClerkWhichTMWouldYouLike::
 	.string "Yes of course, right away! And which TM\n"
 	.string "would you like from the list?$"
+
+CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsTMs::
+	.string "{PLAYER} obtained the TM Collection!$"
+
+CherryGrove_Pokecenter_Text_TMClerkPlayerObtainsBerries:
+	.string "{PLAYER} obtained the Berry Collection!$"
 
 CherryGrove_Pokecenter_Text_TMClerkGivingPostFalknerTMs::
 	.string "Hey, {PLAYER}, over here!\p"
